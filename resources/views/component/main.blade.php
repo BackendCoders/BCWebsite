@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Backend Coders India | Backend Engineering Collective</title>
   <meta name="description" content="Backend Coders India is a collaborative team of backend engineers building scalable digital platforms, APIs, and cloud infrastructure for ambitious businesses." />
-  <!-- @vite('resources/css/app.css') -->
+  
  <script src="https://cdn.tailwindcss.com"></script>
 <link rel="icon" type="image/svg+xml" href="{{asset('assets/images/bci_icon.png')}}" class="bg-black"/>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
