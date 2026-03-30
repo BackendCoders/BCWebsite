@@ -15,17 +15,17 @@
 
       <!-- Social Icons -->
       <div class="flex gap-4 mt-6">
-        <a href="#" class="w-10 h-10 flex items-center justify-center bg-[#111] rounded-lg hover:bg-[#FD5528] transition">
-          <i class="fab fa-facebook-f text-white"></i>
+        <a href="#" class="w-10 h-10 flex items-center justify-center bg-[#111] rounded-lg hover:bg-[#e6d1cb]   transition">
+        <img src="https://img.icons8.com/?size=100&id=118468&format=png&color=f44918" alt="">
         </a>
-        <a href="#" class="w-10 h-10 flex items-center justify-center bg-[#111] rounded-lg hover:bg-[#FD5528] transition">
-          <i class="fab fa-linkedin-in text-white"></i>
+        <a href="#" class="w-10 h-10 flex items-center justify-center bg-[#111] rounded-lg hover:bg-[#e6d1cb]   transition">
+          <img src="https://img.icons8.com/?size=100&id=32292&format=png&color=f44918" alt="">
         </a>
-        <a href="#" class="w-10 h-10 flex items-center justify-center bg-[#111] rounded-lg hover:bg-[#FD5528] transition">
-          <i class="fab fa-instagram text-white"></i>
+        <a href="#" class="w-10 h-10 flex items-center justify-center bg-[#111] rounded-lg hover:bg-[#e6d1cb]   transition">
+          <img src="https://img.icons8.com/?size=100&id=6Fsj3rv2DCmG&format=png&color=f44918" alt="">
         </a>
-        <a href="#" class="w-10 h-10 flex items-center justify-center bg-[#111] rounded-lg hover:bg-[#FD5528] transition">
-          <i class="fab fa-twitter text-white"></i>
+        <a href="#" class="w-10 h-10 flex items-center justify-center bg-[#111] rounded-lg hover:bg-[#e6d1cb]   transition">
+          <img src="https://img.icons8.com/?size=100&id=16712&format=png&color=f44918" alt="">
         </a>
       </div>
     </div>
