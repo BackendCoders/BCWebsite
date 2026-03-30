@@ -10,7 +10,7 @@
       <div data-aos="fade-right">
 
         <h2 class="text-3xl md:text-5xl font-extrabold text-gray-900 mb-6 leading-tight">
-          About <span class="text-primary">Backend Coders India</span>
+          About <span class="text-[#EA580C]">Backend Coders India</span>
         </h2>
 
         <p class="text-gray-600 mb-4 leading-relaxed">
@@ -30,13 +30,13 @@
 
           <div data-aos="zoom-in" data-aos-delay="100"
                class="bg-white p-6 rounded-2xl shadow-md text-center hover:shadow-xl hover:-translate-y-1 transition duration-300">
-            <h5 class="text-3xl font-bold text-primary">17+</h5>
+            <h5 class="text-3xl font-bold text-[#EA580C]">17+</h5>
             <p class="text-sm text-gray-500 mt-1">Years Experience</p>
           </div>
 
           <div data-aos="zoom-in" data-aos-delay="200"
                class="bg-white p-6 rounded-2xl shadow-md text-center hover:shadow-xl hover:-translate-y-1 transition duration-300">
-            <h5 class="text-3xl font-bold text-primary">500+</h5>
+            <h5 class="text-3xl font-bold text-[#EA580C]">500+</h5>
             <p class="text-sm text-gray-500 mt-1">Projects Delivered</p>
           </div>
 
@@ -45,7 +45,7 @@
         <!-- Button -->
         <a href="#"
            data-aos="fade-up"
-           class="inline-flex items-center gap-2 bg-primary text-white px-7 py-3 rounded-xl font-semibold shadow-lg hover:primary hover:scale-105 transition duration-300">
+           class="inline-flex items-center gap-2 bg-[#EA580C] text-white px-7 py-3 rounded-xl font-semibold shadow-lg hover:bg-[#D97706] hover:scale-105 transition duration-300">
 
           Learn More
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
@@ -84,7 +84,7 @@
     <!-- Heading -->
     <div class="text-center mb-16" data-aos="fade-up">
       <h2 class="text-3xl md:text-5xl font-extrabold text-gray-900">
-        Our <span class="text-primary">Mission & Vision</span>
+        Our <span class="text-[#EA580C]">Mission & Vision</span>
       </h2>
       <p class="text-gray-500 mt-4 max-w-2xl mx-auto">
         We focus on delivering scalable solutions and building long-term value for businesses worldwide.
@@ -102,7 +102,7 @@
         <div class="absolute -top-8 -right-8 w-56 h-56 bg-orange-100 rounded-full blur-3xl opacity-40 group-hover:scale-110 transition"></div>
 
         <!-- Icon -->
-        <div class="w-14 h-14 flex items-center justify-center bg-primary text-white rounded-xl mb-6 shadow-md">
+        <div class="w-14 h-14 flex items-center justify-center bg-[#EA580C] text-white rounded-xl mb-6 shadow-md">
           <img src="https://img.icons8.com/?size=100&id=lEDHtWo9fVxM&format=png&color=FFFFFF" alt="">
         </div>
 
@@ -110,7 +110,7 @@
           Mission
         </p>
 
-        <h3 class="mt-3 text-2xl md:text-3xl font-bold text-gray-900 group-hover:text-primary transition">
+        <h3 class="mt-3 text-2xl md:text-3xl font-bold text-gray-900 group-hover:text-[#EA580C] transition">
           Transform Ideas Into Powerful Products
         </h3>
 
@@ -136,7 +136,7 @@
           Vision
         </p>
 
-        <h3 class="mt-3 text-2xl md:text-3xl font-bold text-gray-900 group-hover:text-primary transition">
+        <h3 class="mt-3 text-2xl md:text-3xl font-bold text-gray-900 group-hover:text-[#F44918] transition">
           Build the Future of Scalable Technology
         </h3>
 
