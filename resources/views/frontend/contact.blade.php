@@ -33,7 +33,7 @@
 
 
 <div class="bg-gray-100 flex items-center justify-center min-h-100 py-12">
-  <div class="container flex justify-center items-center min-h-auto">
+  <div class="container max-w-5xl flex justify-center items-center min-h-auto">
       <div class="form-box login">
         <form action="#">
           <h1>Login</h1>

@@ -23,7 +23,6 @@
 <section class="py-20">
   <div class="max-w-7xl mx-auto px-6">
 
-    <h2 class="text-3xl font-bold text-center mb-16">Our Process</h2>
 
     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
 

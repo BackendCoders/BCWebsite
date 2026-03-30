@@ -12,61 +12,20 @@
   </p>
 </section>
 
-<!-- PROCESS SECTION -->
-<section class="py-20">
-  <div class="max-w-7xl mx-auto px-6">
-
-    <h2 class="text-3xl font-bold text-center mb-16">Our Process</h2>
-
-    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-
-      <!-- STEP -->
-      <div class="bg-white p-6 rounded-xl shadow hover:shadow-xl transition" data-aos="fade-up">
-        <h3 class="font-bold text-lg mb-3 text-[#FC5124]">Discovery & Planning</h3>
-        <p class="text-sm text-gray-600">
-          We analyze your goals, challenges, and vision to define a clear roadmap for success.
-        </p>
-      </div>
-
-      <div class="bg-white p-6 rounded-xl shadow hover:shadow-xl transition" data-aos="fade-up">
-        <h3 class="font-bold text-lg mb-3 text-[#FC5124]">Design & Architecture</h3>
-        <p class="text-sm text-gray-600">
-          We build scalable, secure, and efficient backend architectures tailored to your needs.
-        </p>
-      </div>
-
-      <div class="bg-white p-6 rounded-xl shadow hover:shadow-xl transition" data-aos="fade-up">
-        <h3 class="font-bold text-lg mb-3 text-[#FC5124]">Development</h3>
-        <p class="text-sm text-gray-600">
-          Clean, optimized, and maintainable code ensures high performance and reliability.
-        </p>
-      </div>
-
-      <div class="bg-white p-6 rounded-xl shadow hover:shadow-xl transition" data-aos="fade-up">
-        <h3 class="font-bold text-lg mb-3 text-[#FC5124]">Testing & Quality</h3>
-        <p class="text-sm text-gray-600">
-          Rigorous testing guarantees performance, security, and seamless functionality.
-        </p>
-      </div>
-
-    </div>
-
-  </div>
-</section>
 
 
 <section class="py-20 bg-gradient-to-b from-gray-50 to-white">
   <div class="max-w-7xl mx-auto px-6">
 
     <!-- Heading -->
-    <div class="text-center mb-16" data-aos="fade-up">
+    <!-- <div class="text-center mb-16" data-aos="fade-up">
       <h2 class="text-3xl md:text-5xl font-extrabold text-gray-900">
         Our <span class="text-[#F44918]">Services</span>
       </h2>
       <p class="text-gray-500 mt-4 max-w-2xl mx-auto">
         End-to-end software development services to transform your ideas into powerful digital products.
       </p>
-    </div>
+    </div> -->
 
     <!-- Grid -->
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
