@@ -672,12 +672,12 @@
 
 
 
-<section class="relative overflow-hidden py-20 bg-[#F9FAFB]">
+<section class="relative overflow-hidden md:py-20 bg-[#F9FAFB]">
 
   <div class="max-w-7xl mx-auto px-6">
 
     <!-- Heading -->
-    <div class="text-center mb-16">
+    <div class="text-center md:mb-16">
          <p 
       data-aos="fade-up"
       class="inline-block text-xs sm:text-sm font-semibold uppercase tracking-[0.35em] 
@@ -820,7 +820,7 @@
 <!-- pr -->
 
 
-<section class="bg-[#F9FAFB] py-24 px-6">
+<section class="bg-[#F9FAFB] md:py-24 px-6">
   <div class="max-w-7xl mx-auto text-center mb-16 items-center">
         <!-- Heading -->
             <p 
@@ -950,7 +950,7 @@
 
 
 <!-- serve industry -->
-<section id="industries" class="bg-white px-6 py-24">
+<section id="industries" class="bg-white px-6 md:py-24">
 
   <div class="max-w-6xl mx-auto text-center">
        <p 
