@@ -108,7 +108,130 @@
     </div>
 
 
+<!-- PROCESS SECTION -->
+<section id="process" class="bg-[#F9FAFB] px-6 py-24">
 
+
+  <div class="max-w-7xl mx-auto">
+
+    <!-- Heading -->
+    <div class="text-center max-w-3xl mx-auto">
+
+      <p class="text-xs font-semibold uppercase tracking-[0.35em] text-[#FD5528]">
+        Process
+      </p>
+
+      <h2 class="mt-4 text-3xl font-bold text-gray-900 md:text-4xl">
+        Predictable Delivery
+      </h2>
+
+      <p class="mt-4 text-gray-600">
+        Structured milestones that keep your project moving forward.
+      </p>
+
+    </div>
+
+    <!-- Grid -->
+    <div class="mt-16 grid gap-10 sm:grid-cols-2 lg:grid-cols-3 relative">
+
+      <!-- STEP 1 -->
+      <article class="process-card group rounded-2xl border border-gray-200 bg-white p-7 shadow-sm transition hover:-translate-y-2 hover:shadow-xl">
+
+        <span class="text-3xl font-bold text-[#FD5528]">01</span>
+
+        <h3 class="mt-4 text-xl font-semibold text-gray-900">
+          Discovery & Planning
+        </h3>
+
+        <p class="mt-2 text-sm text-gray-600">
+          Understanding your goals and defining a clear, pragmatic project scope.
+        </p>
+
+      </article>
+
+      <!-- STEP 2 -->
+      <article class="process-card group rounded-2xl border border-gray-200 bg-white p-7 shadow-sm transition hover:-translate-y-2 hover:shadow-xl">
+
+        <span class="text-3xl font-bold text-[#FD5528]">02</span>
+
+        <h3 class="mt-4 text-xl font-semibold text-gray-900">
+          UI / UX Design
+        </h3>
+
+        <p class="mt-2 text-sm text-gray-600">
+          Crafting intuitive interfaces that enhance user engagement.
+        </p>
+
+      </article>
+
+      <!-- STEP 3 -->
+      <article class="process-card group rounded-2xl border border-gray-200 bg-white p-7 shadow-sm transition hover:-translate-y-2 hover:shadow-xl">
+
+        <span class="text-3xl font-bold text-[#FD5528]">03</span>
+
+        <h3 class="mt-4 text-xl font-semibold text-gray-900">
+          Development
+        </h3>
+
+        <p class="mt-2 text-sm text-gray-600">
+          Clean, scalable code built with modern frameworks.
+        </p>
+
+      </article>
+
+      <!-- STEP 4 -->
+      <article class="process-card group rounded-2xl border border-gray-200 bg-white p-7 shadow-sm transition hover:-translate-y-2 hover:shadow-xl">
+
+        <span class="text-3xl font-bold text-[#FD5528]">04</span>
+
+        <h3 class="mt-4 text-xl font-semibold text-gray-900">
+          Testing & QA
+        </h3>
+
+        <p class="mt-2 text-sm text-gray-600">
+          Ensuring reliability, performance, and security.
+        </p>
+
+      </article>
+
+      <!-- STEP 5 -->
+      <article class="process-card group rounded-2xl border border-gray-200 bg-white p-7 shadow-sm transition hover:-translate-y-2 hover:shadow-xl">
+
+        <span class="text-3xl font-bold text-[#FD5528]">05</span>
+
+        <h3 class="mt-4 text-xl font-semibold text-gray-900">
+          Deployment
+        </h3>
+
+        <p class="mt-2 text-sm text-gray-600">
+          Production-ready deployment with monitoring.
+        </p>
+
+      </article>
+
+      <!-- STEP 6 -->
+      <article class="process-card group rounded-2xl border border-gray-200 bg-white p-7 shadow-sm transition hover:-translate-y-2 hover:shadow-xl">
+
+        <span class="text-3xl font-bold text-[#FD5528]">06</span>
+
+        <h3 class="mt-4 text-xl font-semibold text-gray-900">
+          Continuous Support
+        </h3>
+
+        <p class="mt-2 text-sm text-gray-600">
+          Ongoing improvements and feature enhancements.
+        </p>
+
+      </article>
+
+    </div>
+
+  </div>
+
+
+</section>
+
+<!-- END PROCESS SECTION -->
 
       <!-- CARD -->
 

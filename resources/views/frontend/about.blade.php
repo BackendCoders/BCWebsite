@@ -77,6 +77,76 @@
 {{--  --}}
 
 
+<!-- WHO WE ARE-->
+<section id="who-we-are" class="bg-[#F9FAFB] px-6 py-24">
+
+    <div class="max-w-6xl mx-auto text-center">
+
+        <p 
+        class="text-sm font-semibold uppercase tracking-[0.35em] text-[#FD5528] "
+        data-aos="fade-up">
+        Who We Are
+        </p>
+
+        <h2 
+        class="mt-4 text-3xl font-bold text-gray-900 md:text-4xl"
+        data-aos="fade-up"
+        data-aos-delay="100">
+        Backend Coders India
+        </h2>
+
+        <p 
+        class="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-gray-600"
+        data-aos="fade-up"
+        data-aos-delay="200">
+        Backend Coders India is a boutique technology studio crafting high-performance
+        web, mobile, and SaaS platforms for startups and enterprises that demand
+        scalability, security, and modern digital experiences.
+        </p>
+
+        <!-- Services -->
+        <div class="mt-12 grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-5">
+
+            <span 
+            data-aos="zoom-in"
+            class="rounded-xl border border-gray-200 bg-[#ffe6d7] px-5 py-4 text-sm font-medium text-gray-700 transition hover:border-[#FD5528]  hover:text-[#FD5528]  hover:shadow-md">
+            SaaS Platforms
+            </span>
+
+            <span 
+            data-aos="zoom-in"
+            data-aos-delay="100"
+            class="rounded-xl border border-gray-200 bg-[#ffe6d7] px-5 py-4 text-sm font-medium text-gray-700 transition hover:border-[#FD5528]  hover:text-[#FD5528]  hover:shadow-md">
+            ERP Systems
+            </span>
+
+            <span 
+            data-aos="zoom-in"
+            data-aos-delay="200"
+            class="rounded-xl border border-gray-200 bg-[#ffe6d7] px-5 py-4 text-sm font-medium text-gray-700 transition hover:border-[#FD5528]  hover:text-[#FD5528]  hover:shadow-md">
+            POS Systems
+            </span>
+
+            <span 
+            data-aos="zoom-in"
+            data-aos-delay="300"
+            class="rounded-xl border border-gray-200 bg-[#ffe6d7] px-5 py-4 text-sm font-medium text-gray-700 transition hover:border-[#FD5528]  hover:text-[#FD5528]  hover:shadow-md">
+            E-commerce
+            </span>
+
+            <span 
+            data-aos="zoom-in"
+            data-aos-delay="400"
+            class="rounded-xl border border-gray-200 bg-[#ffe6d7] px-5 py-4 text-sm font-medium text-gray-700 transition hover:border-[#FD5528]  hover:text-[#FD5528]  hover:shadow-md">
+            Custom Web Apps
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- END WHO WE ARE -->
 {{--  --}}
 <section class="py-20 bg-gradient-to-b from-gray-50 to-white">
   <div class="max-w-7xl mx-auto px-6">
@@ -289,114 +359,7 @@
 </section>
 
 
-      <!-- <section class="px-4 py-16 md:py-20 bg-slate-50" data-aos="fade-up">
-        <div class="max-w-6xl mx-auto grid gap-10 md:grid-cols-2">
-          <div>
-            <p class="text-xs uppercase tracking-[0.4em] text-slate-400">Engineering mindset</p>
-            <h2 class="mt-3 text-3xl font-semibold text-slate-900">Engineering culture meets product thinking</h2>
-            <p class="mt-3 text-sm text-slate-600 leading-relaxed">Pods blend architectural rigor, experimentation, and transparent reporting so teams can iterate confidently.</p>
-            <ul class="mt-4 space-y-2 text-sm text-slate-600 list-disc pl-5">
-              <li>Daily syncs with product, design, and QA.</li>
-              <li>Architecture reviews with shared ownership.</li>
-              <li>Cross-team learning sessions every sprint.</li>
-              <li>Blameless post-mortems and safe experiments.</li>
-            </ul>
-          </div>
-          <div>
-            <p class="text-xs uppercase tracking-[0.4em] text-slate-400">Collaboration culture</p>
-            <h3 class="mt-3 text-2xl font-semibold text-slate-900">We ship in close partnership</h3>
-            <p class="mt-3 text-sm text-slate-600 leading-relaxed">Engineers, architects, and delivery leads embed with product teams, pairing constantly and sharing progress in transparent dashboards.</p>
-            <div class="mt-4 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm relative overflow-hidden">
-              <div class="absolute -right-6 -top-6 h-20 w-20 rounded-3xl bg-gradient-to-br from-primary to-[#182663] opacity-60 blur-2xl"></div>
-              <p class="relative text-sm text-slate-600">Embedded rituals include co-planning, architecture guilds, and shared accountability for metrics.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="px-4 py-16 md:py-20" data-aos="fade-up">
-        <div class="max-w-6xl mx-auto">
-          <div class="flex items-center justify-between">
-            <p class="text-[0.7rem] uppercase tracking-[0.4em] text-primary font-semibold">Timeline</p>
-            <span class="text-xs text-slate-500">Seventeen years of backend focus</span>
-          </div>
-          <div class="mt-8 glow-slab p-10 shadow-lg">
-            <div class="timeline-line">
-              
-              <div class="timeline-entry" data-aos="fade-right" data-aos-delay="0">
-                <div class="flex items-start gap-4">
-                  <span class="timeline-icon">1</span>
-                  <div>
-                    <p class="text-xs uppercase tracking-[0.4em] text-slate-400">Year 1</p>
-                    <p class="text-lg font-semibold text-slate-900">Company founded</p>
-                    <p class="text-sm text-slate-500">Backend Coders India began as a backend consultancy guiding manufacturing ERP and integration work.</p>
-                  </div>
-                </div>
-              </div>
-            
-              <div class="timeline-entry" data-aos="fade-right" data-aos-delay="80">
-                <div class="flex items-start gap-4">
-                  <span class="timeline-icon">2</span>
-                  <div>
-                    <p class="text-xs uppercase tracking-[0.4em] text-slate-400">Year 3</p>
-                    <p class="text-lg font-semibold text-slate-900">First enterprise platform</p>
-                    <p class="text-sm text-slate-500">Delivered a multi-country ERP stack with finance and logistics automation across eight sites.</p>
-                  </div>
-                </div>
-              </div>
-            
-              <div class="timeline-entry" data-aos="fade-right" data-aos-delay="160">
-                <div class="flex items-start gap-4">
-                  <span class="timeline-icon">3</span>
-                  <div>
-                    <p class="text-xs uppercase tracking-[0.4em] text-slate-400">Year 5</p>
-                    <p class="text-lg font-semibold text-slate-900">International clients</p>
-                    <p class="text-sm text-slate-500">Started advising product and cloud leaders in the US, Middle East, and Europe.</p>
-                  </div>
-                </div>
-              </div>
-            
-              <div class="timeline-entry" data-aos="fade-right" data-aos-delay="240">
-                <div class="flex items-start gap-4">
-                  <span class="timeline-icon">4</span>
-                  <div>
-                    <p class="text-xs uppercase tracking-[0.4em] text-slate-400">Year 10</p>
-                    <p class="text-lg font-semibold text-slate-900">Scaling engineering teams</p>
-                    <p class="text-sm text-slate-500">Expanded into pods pairing architects, backend engineers, and DevOps specialists.</p>
-                  </div>
-                </div>
-              </div>
-            
-              <div class="timeline-entry" data-aos="fade-right" data-aos-delay="320">
-                <div class="flex items-start gap-4">
-                  <span class="timeline-icon">5</span>
-                  <div>
-                    <p class="text-xs uppercase tracking-[0.4em] text-slate-400">Year 17+</p>
-                    <p class="text-lg font-semibold text-slate-900">Trusted development partner</p>
-                    <p class="text-sm text-slate-500">Today we co-engineer platforms, APIs, and infrastructure for ambitious product teams.</p>
-                  </div>
-                </div>
-              </div>
-            
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="px-4 py-12 md:py-16" data-aos="fade-up">
-        <div class="max-w-6xl mx-auto">
-          <div class="rounded-[2rem] border border-slate-100 bg-gradient-to-r from-primary via-indigo-900 to-[#1f3273] p-10 text-white relative overflow-hidden">
-            <div class="absolute inset-0 opacity-30 bg-[radial-gradient(circle_at_top,_rgba(255,106,40,0.6),_transparent_55%)]"></div>
-            <div class="relative space-y-4">
-              <p class="text-[0.7rem] uppercase tracking-[0.4em] text-white/80">Next step</p>
-              <h2 class="text-3xl font-semibold">Bring us into your backend conversations</h2>
-              <p class="text-sm text-white/90 leading-relaxed">Share your architecture sketch, backlog, or sprint plan and we will map an engineering partnership with clarity.</p>
-              <div class="flex flex-wrap gap-3 pt-4">
-                <a href="contact.html" class="inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-primary">Schedule a discovery</a>
-                <a href="services.html" class="inline-flex items-center gap-2 rounded-full border border-white/70 px-5 py-3 text-sm font-semibold text-white hover:bg-white/10">Review services</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>  -->
+   
 
 <!-- Collaboration Culture -->
 <section class="py-20 bg-gradient-to-b from-gray-50 to-white">
@@ -453,73 +416,120 @@
 
   </div>
 </section>
-{{--  --}}
 
-{{--  --}}
-<section class="py-20 bg-white">
-  <div class="max-w-7xl mx-auto px-6">
+<!-- OUR JOURNEY SECTION -->
 
-    <!-- Heading -->
-    <div class="text-center mb-16" data-aos="fade-up">
-      <h2 class="text-3xl md:text-5xl font-extrabold text-gray-900">
-        Our <span class="text-[#F44918]">Journey</span>
-      </h2>
-      <p class="text-gray-500 mt-4">
-        17+ years of building scalable backend systems
-      </p>
+<section class="bg-white text-black py-16 sm:py-20">
+  <div class="max-w-5xl mx-auto px-4 text-center mb-10 sm:mb-16">
+    <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold text-[#FD5528]">
+      Our Journey
+    </h1>
+  </div>
+
+  <div class="relative max-w-4xl mx-auto px-4">
+
+    <!-- Vertical Line -->
+    <div class="absolute left-1/2 transform -translate-x-1/2 w-1 bg-black h-full hidden md:block"></div>
+
+    <!-- Timeline Items -->
+    <div class="space-y-12 sm:space-y-16">
+
+      <!-- ITEM -->
+      <div class="timeline-item opacity-0 translate-y-10 transition-all duration-700 flex flex-col md:flex-row items-center justify-between">
+        
+        <div class="w-full md:w-1/2 md:pr-8 text-center md:text-right">
+          <div class="bg-[#FD5528] text-white p-4 sm:p-5 rounded-xl shadow-lg inline-block">
+            <time class="font-bold text-base sm:text-lg block">2008</time>
+            <p class="text-sm sm:text-base">Backend Coders India began its journey with a passion for building innovative digital solutions.</p>
+          </div>
+        </div>
+
+        <div class="w-6 h-6 sm:w-8 sm:h-8 bg-[#FD5528] rounded-full border-4 border-black  hidden md:block z-10 my-4 md:my-0"></div>
+
+        <div class="w-full md:w-1/2 md:pl-8"></div>
+      </div>
+
+      <!-- ITEM -->
+      <div class="timeline-item opacity-0 translate-y-10 transition-all duration-700 flex flex-col md:flex-row items-center justify-between">
+        
+        <div class="w-full md:w-1/2 md:pr-8"></div>
+
+        <div class="w-6 h-6 sm:w-8 sm:h-8 bg-[#FD5528] rounded-full border-4 border-black  hidden md:block z-10 my-4 md:my-0"></div>
+
+        <div class="w-full md:w-1/2 md:pl-8 text-center md:text-left">
+          <div class="bg-[#FD5528] text-white p-4 sm:p-5 rounded-xl shadow-lg inline-block">
+            <time class="font-bold text-base sm:text-lg block">2012</time>
+            <p class="text-sm sm:text-base">Successfully delivered our first enterprise-grade software.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ITEM -->
+      <div class="timeline-item opacity-0 translate-y-10 transition-all duration-700 flex flex-col md:flex-row items-center justify-between">
+        
+        <div class="w-full md:w-1/2 md:pr-8 text-center md:text-right">
+          <div class="bg-[#FD5528] text-white p-4 sm:p-5 rounded-xl shadow-lg inline-block">
+            <time class="font-bold text-base sm:text-lg block">2016</time>
+            <p class="text-sm sm:text-base">Developed ERP and POS systems for multiple industries.</p>
+          </div>
+        </div>
+
+        <div class="w-6 h-6 sm:w-8 sm:h-8 bg-[#FD5528] rounded-full border-4 border-black  hidden md:block z-10 my-4 md:my-0"></div>
+
+        <div class="w-full md:w-1/2 md:pl-8"></div>
+      </div>
+
+      <!-- ITEM -->
+      <div class="timeline-item opacity-0 translate-y-10 transition-all duration-700 flex flex-col md:flex-row items-center justify-between">
+        
+        <div class="w-full md:w-1/2 md:pr-8"></div>
+
+        <div class="w-6 h-6 sm:w-8 sm:h-8 bg-[#FD5528] rounded-full border-4 border-black  hidden md:block z-10 my-4 md:my-0"></div>
+
+        <div class="w-full md:w-1/2 md:pl-8 text-center md:text-left">
+          <div class="bg-[#FD5528] text-white p-4 sm:p-5 rounded-xl shadow-lg inline-block">
+            <time class="font-bold text-base sm:text-lg block">2020</time>
+            <p class="text-sm sm:text-base">Expanded into web, mobile, and SaaS platforms.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ITEM -->
+      <div class="timeline-item opacity-0 translate-y-10 transition-all duration-700 flex flex-col md:flex-row items-center justify-between">
+        
+        <div class="w-full md:w-1/2 md:pr-8 text-center md:text-right">
+          <div class="bg-[#FD5528] text-white p-4 sm:p-5 rounded-xl shadow-lg inline-block">
+            <time class="font-bold text-base sm:text-lg block">2024</time>
+            <p class="text-sm sm:text-base">Partnered with global clients delivering scalable solutions.</p>
+          </div>
+        </div>
+
+        <div class="w-6 h-6 sm:w-8 sm:h-8 bg-[#FD5528] rounded-full border-4 border-black  hidden md:block z-10 my-4 md:my-0"></div>
+
+        <div class="w-full md:w-1/2 md:pl-8"></div>
+      </div>
+
+      <!-- ITEM -->
+      <div class="timeline-item opacity-0 translate-y-10 transition-all duration-700 flex flex-col md:flex-row items-center justify-between">
+        
+        <div class="w-full md:w-1/2 md:pr-8"></div>
+
+        <div class="w-6 h-6 sm:w-8 sm:h-8 bg-[#FD5528] rounded-full border-4 border-black  hidden md:block z-10 my-4 md:my-0"></div>
+
+        <div class="w-full md:w-1/2 md:pl-8 text-center md:text-left">
+          <div class="bg-[#FD5528] text-white p-4 sm:p-5 rounded-xl shadow-lg inline-block">
+            <time class="font-bold text-base sm:text-lg block">2026</time>
+            <p class="text-sm sm:text-base">Driving innovation globally with cutting-edge technology.</p>
+          </div>
+        </div>
+      </div>
+
     </div>
-
-    <!-- Timeline -->
-    <div class="space-y-10">
-
-      <!-- Item -->
-      <div class="flex gap-6 items-start" data-aos="fade-right">
-        <div class="w-12 h-12 flex items-center justify-center bg-[#F44918] text-white rounded-full font-bold shadow-lg">1</div>
-        <div>
-          <h4 class="text-lg font-semibold text-gray-900">Company Founded</h4>
-          <p class="text-gray-600 text-sm mt-1">Started as backend consultancy.</p>
-        </div>
-      </div>
-
-      <div class="flex gap-6 items-start" data-aos="fade-right" data-aos-delay="100">
-        <div class="w-12 h-12 flex items-center justify-center bg-[#F44918] text-white rounded-full font-bold shadow-lg">2</div>
-        <div>
-          <h4 class="text-lg font-semibold text-gray-900">Enterprise Platform</h4>
-          <p class="text-gray-600 text-sm mt-1">Delivered multi-country ERP.</p>
-        </div>
-      </div>
-
-      <div class="flex gap-6 items-start" data-aos="fade-right" data-aos-delay="200">
-        <div class="w-12 h-12 flex items-center justify-center bg-[#F44918] text-white rounded-full font-bold shadow-lg">3</div>
-        <div>
-          <h4 class="text-lg font-semibold text-gray-900">Global Clients</h4>
-          <p class="text-gray-600 text-sm mt-1">Expanded internationally.</p>
-        </div>
-      </div>
-
-      <div class="flex gap-6 items-start" data-aos="fade-right" data-aos-delay="300">
-        <div class="w-12 h-12 flex items-center justify-center bg-[#F44918] text-white rounded-full font-bold shadow-lg">4</div>
-        <div>
-          <h4 class="text-lg font-semibold text-gray-900">Scaling Teams</h4>
-          <p class="text-gray-600 text-sm mt-1">Built engineering pods.</p>
-        </div>
-      </div>
-
-      <div class="flex gap-6 items-start" data-aos="fade-right" data-aos-delay="400">
-        <div class="w-12 h-12 flex items-center justify-center bg-[#F44918] text-white rounded-full font-bold shadow-lg">5</div>
-        <div>
-          <h4 class="text-lg font-semibold text-gray-900">Trusted Partner</h4>
-          <p class="text-gray-600 text-sm mt-1">Co-engineering platforms globally.</p>
-        </div>
-      </div>
-
-    </div>
-
   </div>
 </section>
-{{--  --}}
 
-{{--  --}}
+
+<!-- END OUR JOURNEY SECTION -->
 <section class="py-20 bg-[#F44918] text-white relative overflow-hidden">
 
   <!-- Glow -->
@@ -553,6 +563,104 @@
 </section>
 {{--  --}}
 
+<!-- why choose us -->
+<section class="bg-[#F9FAFB] text-black py-20">
+  <div class="max-w-6xl mx-auto px-6 text-center">
+
+    <!-- Heading -->
+    <h2 
+      data-aos="fade-up"
+      class="text-4xl md:text-5xl font-heading text-[#FD5528] mb-4">
+      Why Choose Us
+    </h2>
+
+    <p 
+      data-aos="fade-up"
+      data-aos-delay="100"
+      class="text-gray-400 max-w-2xl mx-auto mb-12">
+      Built for long-term partnerships, we deliver scalable, reliable, and future-ready solutions.
+    </p>
+
+    <!-- Grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <!-- Card 1 -->
+      <div data-aos="fade-up" data-aos-delay="100"
+        class="group bg-white border border-gray-300 p-6 rounded-2xl hover:border-[#FD5528] hover:-translate-y-2 transition duration-300">
+        <div class="flex justify-center mb-4">
+          <img src="https://img.icons8.com/?size=100&id=DCkAZ79sIYhT&format=png&color=FD5528" class="w-12 h-12">
+        </div>
+        <h3 class="font-heading text-xl mb-2">17+ Years Experience</h3>
+        <p class="text-gray-400 text-sm">
+          Delivering reliable and high-quality software solutions across industries.
+        </p>
+      </div>
+
+      <!-- Card 2 -->
+      <div data-aos="fade-up" data-aos-delay="200"
+        class="group bg-white border border-gray-300 p-6 rounded-2xl hover:border-[#FD5528] hover:-translate-y-2 transition duration-300">
+        <div class="flex justify-center mb-4">
+          <img src="https://img.icons8.com/?size=100&id=124222&format=png&color=FD5528" class="w-12 h-12">
+        </div>
+        <h3 class="font-heading text-xl mb-2">Dedicated Teams</h3>
+        <p class="text-gray-400 text-sm">
+          Expert developers assigned exclusively to your project for focused execution.
+        </p>
+      </div>
+
+      <!-- Card 3 -->
+      <div data-aos="fade-up" data-aos-delay="300"
+        class="group bg-white border border-gray-300 p-6 rounded-2xl hover:border-[#FD5528] hover:-translate-y-2 transition duration-300">
+        <div class="flex justify-center mb-4">
+          <img src="https://img.icons8.com/?size=100&id=5TJlel7-79RU&format=png&color=FD5528" class="w-12 h-12">
+        </div>
+        <h3 class="font-heading text-xl mb-2">Scalable Architecture</h3>
+        <p class="text-gray-400 text-sm">
+          Future-ready systems designed to grow seamlessly with your business.
+        </p>
+      </div>
+
+      <!-- Card 4 -->
+      <div data-aos="fade-up" data-aos-delay="400"
+        class="group bg-white border border-gray-300 p-6 rounded-2xl hover:border-[#FD5528] hover:-translate-y-2 transition duration-300">
+        <div class="flex justify-center mb-4">
+          <img src="https://img.icons8.com/?size=100&id=68443&format=png&color=FD5528" class="w-12 h-12">
+        </div>
+        <h3 class="font-heading text-xl mb-2">Agile & Transparent</h3>
+        <p class="text-gray-400 text-sm">
+          Clear communication and agile workflows ensure faster and better results.
+        </p>
+      </div>
+
+      <!-- Card 5 -->
+      <div data-aos="fade-up" data-aos-delay="500"
+        class="group bg-white border border-gray-300 p-6 rounded-2xl hover:border-[#FD5528] hover:-translate-y-2 transition duration-300">
+        <div class="flex justify-center mb-4">
+          <img src="https://img.icons8.com/?size=100&id=117533&format=png&color=FD5528" class="w-12 h-12">
+        </div>
+        <h3 class="font-heading text-xl mb-2">Startup-Friendly Pricing</h3>
+        <p class="text-gray-400 text-sm">
+          Flexible and affordable pricing models tailored for growing startups.
+        </p>
+      </div>
+
+      <!-- Card 6 -->
+      <div data-aos="fade-up" data-aos-delay="600"
+        class="group bg-white border border-gray-300 p-6 rounded-2xl hover:border-[#FD5528] hover:-translate-y-2 transition duration-300">
+        <div class="flex justify-center mb-4">
+          <img src="https://img.icons8.com/?size=100&id=neBRkBaejCVJ&format=png&color=FD5528" class="w-12 h-12">
+        </div>
+        <h3 class="font-heading text-xl mb-2">Long-Term Support</h3>
+        <p class="text-gray-400 text-sm">
+          Continuous maintenance and technical support to keep your systems running smoothly.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+<!-- END WHY CHOOSE US -->
 
 
 

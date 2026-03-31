@@ -7,6 +7,21 @@ use App\Http\Controllers\HomeController;
 //     return view('welcome');
 // });
 
+// video route for caching and performance:;
+
+Route::get('/video/{file}', function ($file) {
+
+    $path = public_path("assets/images/$file");
+
+    if (!file_exists($path)) {
+        abort(404);
+    }
+
+    return response()->file($path, [
+        'Cache-Control' => 'public, max-age=31536000, immutable'
+    ]);
+
+});
 
 // frontend::
 Route::get('/', [HomeController::class, 'index'])->name('frontend.index');

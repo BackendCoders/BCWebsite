@@ -62,7 +62,7 @@
             <a href="{{ route('frontend.contact') }}"
                class="nav-link px-3 py-2 rounded-md text-white hover:bg-orange-50 hover:text-[#FD5528] transition {{ $activeNavClass('frontend.contact') }}"
                aria-current="{{ request()->routeIs('frontend.contact') ? 'page' : '' }}">
-                ping us
+                Ping Us
             </a>
 
         </nav>
