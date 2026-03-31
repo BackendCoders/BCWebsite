@@ -307,9 +307,69 @@
 </style>
     @include('component.header')
 
-    <div class="" style="font-family:Space Grotesk, sans-serif; font-body: Inter, sans-serif;
+<div class="" style="font-family:Space Grotesk, sans-serif; font-body: Inter, sans-serif;
     font-mono:JetBrains Mono, monospace; muted-foreground: 215 14% 40%;">
-    @yield('content')</div>
+<!-- FLOATING CONTACT BUTTON -->
+<div class="fixed right-5 bottom-6 z-50">
+
+  <!-- TOGGLE BUTTON -->
+  <button id="contactToggle"
+    class="w-14 h-14 flex items-center justify-center rounded-full 
+           bg-[#1aac26] p-2 text-white shadow-lg hover:scale-110 transition">
+    
+    <img src="https://img.icons8.com/?size=100&id=16712&format=png&color=ffffff" alt="">
+  </button>
+
+  <!-- MENU -->
+  <div id="contactMenu"
+    class="absolute bottom-16 right-0 w-64 rounded-2xl shadow-xl 
+           p-4 space-y-3 opacity-0 pointer-events-none translate-y-5 
+           transition-all duration-300">
+
+    <!-- PHONE -->
+    <a href="tel:+919140092133"
+      class="flex items-center gap-3 p-3 rounded-xl hover:bg-gray-100 transition">
+      
+      <img src="https://img.icons8.com/?size=100&id=9659&format=png&color=FD5528" class="w-5 h-5">
+      <span class="text-sm font-medium text-gray-700">Call Us</span>
+    </a>
+
+    <!-- WHATSAPP -->
+    <a href="https://wa.me/919140092133"
+      target="_blank"
+      class="flex items-center gap-3 p-3 rounded-xl hover:bg-gray-100 transition">
+      
+      <img src="https://img.icons8.com/?size=100&id=16713&format=png&color=FD5528" class="w-5 h-5">
+      <span class="text-sm font-medium text-gray-700">WhatsApp</span>
+    </a>
+
+
+
+  </div>
+
+</div>
+
+<!-- JS -->
+<script>
+  const toggleBtn = document.getElementById('contactToggle');
+  const menu = document.getElementById('contactMenu');
+
+  toggleBtn.addEventListener('click', () => {
+    menu.classList.toggle('opacity-0');
+    menu.classList.toggle('pointer-events-none');
+    menu.classList.toggle('translate-y-5');
+  });
+
+  // Close when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!toggleBtn.contains(e.target) && !menu.contains(e.target)) {
+      menu.classList.add('opacity-0', 'pointer-events-none', 'translate-y-5');
+    }
+  });
+</script>
+
+
+    @yield('content') </div>
 
     @include('component.footer')
 
