@@ -445,42 +445,167 @@
         <div class="flex gap-6">
 
        <!-- ORIGINAL -->
-          <div class="marquee-content my-12">
-            
-            <!-- Cards -->
-            <div class="tech-card"><img src="https://img.icons8.com/?size=100&id=14462&format=png&color=fd5528"><span>.NET Core</span></div>
-            <div class="tech-card"><img src="https://img.icons8.com/?size=100&id=047WZAFDnkVp&format=png&color=fd5528"><span>React</span></div>
-            <div class="tech-card"><img src="https://img.icons8.com/?size=100&id=FQlr_bFSqEdG&format=png&color=fd5528"><span>Node.js</span></div>
-            <div class="tech-card"><img src="https://img.icons8.com/?size=100&id=OdTjgPoHJeaK&format=png&color=fd5528"><span>MERN</span></div>
-            <div class="tech-card"><img src="https://img.icons8.com/?size=100&id=12472&format=png&color=fd5528"><span>WordPress</span></div>
-            <div class="tech-card"><img src="https://img.icons8.com/?size=100&id=PIkrB3sbBDNs&format=png&color=fd5528"><span>Shopify</span></div>
-            <div class="tech-card"><img src="https://img.icons8.com/?size=100&id=114956&format=png&color=fd5528"><span>Laravel</span></div>
-            <div class="tech-card"><img src="https://img.icons8.com/?size=100&id=wDKHrGlFU936&format=png&color=fd5528"><span>SQL</span></div>
-            <div class="tech-card"><img src="https://img.icons8.com/?size=100&id=5pr1cz6sq9qI&format=png&color=fd5528"><span>Firebase</span></div>
-            <div class="tech-card"><img src="https://img.icons8.com/?size=100&id=BiW0cKUWFuoO&format=png&color=fd5528"><span>Cloud</span></div>
-            <div class="tech-card"><img src="https://img.icons8.com/?size=100&id=vMqgHSToxrJR&format=png&color=fd5528"><span>TS</span></div>
-            <div class="tech-card "><img src="https://img.icons8.com/?size=100&id=r2OarXWQc7B6&format=png&color=fd5528"><span>Next.js</span></div>
+       
 
-          </div>
+<div class="marquee-content my-12">
+
+  <!-- .NET -->
+  <div class="tech-card">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg" class="w-10 h-10">
+    <span>.NET Core</span>
+  </div>
+
+  <!-- React -->
+  <div class="tech-card">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" class="w-10 h-10">
+    <span>React</span>
+  </div>
+
+  <!-- Node -->
+  <div class="tech-card">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" class="w-10 h-10">
+    <span>Node.js</span>
+  </div>
+
+  <!-- MongoDB (MERN) -->
+  <div class="tech-card">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" class="w-10 h-10">
+    <span>MERN</span>
+  </div>
+
+  <!-- WordPress -->
+  <div class="tech-card">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-original.svg" class="w-10 h-10">
+    <span>WordPress</span>
+  </div>
+
+  <!-- Shopify -->
+  <div class="tech-card">
+    <img src="https://cdn.simpleicons.org/spotify/1DB954" class="w-10 h-10">
+    <span>Shopify</span>
+  </div>
+
+  <!-- Laravel -->
+  <div class="tech-card">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" class="w-10 h-10">
+    <span>Laravel</span>
+  </div>
+
+  <!-- SQL Server -->
+  <div class="tech-card">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" class="w-10 h-10">
+    <span>SQL Server</span>
+  </div>
+
+  <!-- Firebase -->
+  <div class="tech-card">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" class="w-10 h-10">
+    <span>Firebase</span>
+  </div>
+
+  <!-- Cloud (AWS) -->
+  <div class="tech-card">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" class="w-10 h-10">
+    <span>Cloud</span>
+  </div>
+
+  <!-- TypeScript -->
+  <div class="tech-card">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" class="w-10 h-10">
+    <span>TypeScript</span>
+  </div>
+
+  <!-- Next.js -->
+  <div class="tech-card">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" class="w-10 h-10 bg-white p-1 rounded">
+    <span>Next.js</span>
+  </div>
+
+</div>
+
+
 
           <!-- DUPLICATE -->
-          <div class="marquee-content pl-6 py-12">
-             <div class="tech-card "><img src="https://img.icons8.com/?size=100&id=14462&format=png&color=fd5528"><span>.NET Core</span></div>
-            <div class="tech-card"><img src="https://img.icons8.com/?size=100&id=047WZAFDnkVp&format=png&color=fd5528"><span>React</span></div>
-            <div class="tech-card"><img src="https://img.icons8.com/?size=100&id=FQlr_bFSqEdG&format=png&color=fd5528"><span>Node.js</span></div>
-            <div class="tech-card"><img src="https://img.icons8.com/?size=100&id=OdTjgPoHJeaK&format=png&color=fd5528"><span>MERN</span></div>
-            <div class="tech-card"><img src="https://img.icons8.com/?size=100&id=12472&format=png&color=fd5528"><span>WordPress</span></div>
-            <div class="tech-card"><img src="https://img.icons8.com/?size=100&id=PIkrB3sbBDNs&format=png&color=fd5528"><span>Shopify</span></div>
-            <div class="tech-card"><img src="https://img.icons8.com/?size=100&id=114956&format=png&color=fd5528"><span>Laravel</span></div>
-            <div class="tech-card"><img src="https://img.icons8.com/?size=100&id=wDKHrGlFU936&format=png&color=fd5528"><span>SQL</span></div>
-            <div class="tech-card"><img src="https://img.icons8.com/?size=100&id=5pr1cz6sq9qI&format=png&color=fd5528"><span>Firebase</span></div>
-            <div class="tech-card"><img src="https://img.icons8.com/?size=100&id=BiW0cKUWFuoO&format=png&color=fd5528"><span>Cloud</span></div>
-            <div class="tech-card"><img src="https://img.icons8.com/?size=100&id=vMqgHSToxrJR&format=png&color=fd5528"><span>TS</span></div>
-            <div class="tech-card"><img src="https://img.icons8.com/?size=100&id=r2OarXWQc7B6&format=png&color=fd5528"><span>Next.js</span></div>
-            <!-- EXACT SAME CONTENT COPY -->
-          </div>
+    
+<div class="marquee-content py-12 pl-6">
 
-      
+  <!-- .NET -->
+  <div class="tech-card">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg" class="w-10 h-10">
+    <span>.NET Core</span>
+  </div>
+
+  <!-- React -->
+  <div class="tech-card">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" class="w-10 h-10">
+    <span>React</span>
+  </div>
+
+  <!-- Node -->
+  <div class="tech-card">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" class="w-10 h-10">
+    <span>Node.js</span>
+  </div>
+
+  <!-- MongoDB (MERN) -->
+  <div class="tech-card">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" class="w-10 h-10">
+    <span>MERN</span>
+  </div>
+
+  <!-- WordPress -->
+  <div class="tech-card">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-original.svg" class="w-10 h-10">
+    <span>WordPress</span>
+  </div>
+
+  <!-- Shopify -->
+  <div class="tech-card">
+   
+<!-- Spotify SVG -->
+<img src="https://cdn.simpleicons.org/spotify/1DB954" class="w-10 h-10">
+    <span>Shopify</span>
+  </div>
+
+  <!-- Laravel -->
+  <div class="tech-card">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" class="w-10 h-10">
+    <span>Laravel</span>
+  </div>
+
+  <!-- SQL Server -->
+  <div class="tech-card">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" class="w-10 h-10">
+    <span>SQL Server</span>
+  </div>
+
+  <!-- Firebase -->
+  <div class="tech-card">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" class="w-10 h-10">
+    <span>Firebase</span>
+  </div>
+
+  <!-- Cloud (AWS) -->
+  <div class="tech-card">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" class="w-10 h-10">
+    <span>Cloud</span>
+  </div>
+
+  <!-- TypeScript -->
+  <div class="tech-card">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" class="w-10 h-10">
+    <span>TypeScript</span>
+  </div>
+
+  <!-- Next.js -->
+  <div class="tech-card">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" class="w-10 h-10 bg-white p-1 rounded">
+    <span>Next.js</span>
+  </div>
+
+</div>
+
+
 
       </div>
 
@@ -493,6 +618,9 @@
 
 
 <!-- process-directions -->
+
+
+
 <section class="relative overflow-hidden py-20 bg-[#F9FAFB]">
 
   <div class="max-w-7xl mx-auto px-6">
@@ -510,94 +638,112 @@
       </p>
     </div>
 
-    <!-- Steps -->
-    <div class="relative grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-y-16 text-center">
+    <div class="relative">
 
-      <!-- LINE (Desktop) -->
+      <!-- 🔴 MOBILE LINE (BEHIND CONTENT) -->
+      <div class="absolute left-6 top-0 h-full border-l-2 border-dashed border-[#FD5528]/30 z-0 lg:hidden"></div>
+
+      <!-- 🔴 DESKTOP LINE -->
       <div class="hidden lg:block absolute top-6 left-0 w-full border-t-2 border-dashed border-[#FD5528]/40"></div>
 
-      <!-- STEP -->
-      <div class="relative group flex flex-col items-center">
+      <!-- STEPS -->
+      <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-y-12 relative z-10">
 
-        <!-- Circle -->
-        <div class="w-12 h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#FD5528] font-semibold z-10 transition group-hover:bg-[#FD5528] group-hover:text-white">
-          01
+        <!-- STEP -->
+        <div class="flex items-start gap-4 lg:flex-col lg:items-center text-left lg:text-center group">
+
+          <!-- CIRCLE -->
+          <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#FD5528] font-semibold transition group-hover:bg-[#FD5528] group-hover:text-white">
+            01
+          </div>
+
+          <!-- TEXT -->
+          <div>
+            <h3 class="font-semibold text-gray-900 group-hover:text-[#FD5528]">
+              Discovery
+            </h3>
+            <p class="text-sm text-gray-500 mt-1">
+              Understanding goals & defining scope
+            </p>
+          </div>
+
         </div>
 
-        <!-- Title -->
-        <h3 class="mt-4 font-semibold text-gray-900 group-hover:text-[#FD5528]">
-          Discovery
-        </h3>
-
-        <p class="text-sm text-gray-500 mt-1">
-          Understanding goals & defining scope
-        </p>
-
-      </div>
-
-      <!-- STEP -->
-      <div class="relative group flex flex-col items-center">
-        <div class="w-12 h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#FD5528] font-semibold z-10 transition group-hover:bg-[#FD5528] group-hover:text-white">
-          02
+        <!-- STEP -->
+        <div class="flex items-start gap-4 lg:flex-col lg:items-center text-left lg:text-center group">
+          <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#FD5528] font-semibold transition group-hover:bg-[#FD5528] group-hover:text-white">
+            02
+          </div>
+          <div>
+            <h3 class="font-semibold text-gray-900 group-hover:text-[#FD5528]">
+              UI / UX
+            </h3>
+            <p class="text-sm text-gray-500 mt-1">
+              Designing intuitive experiences
+            </p>
+          </div>
         </div>
-        <h3 class="mt-4 font-semibold text-gray-900 group-hover:text-[#FD5528]">
-          UI / UX
-        </h3>
-        <p class="text-sm text-gray-500 mt-1">
-          Designing intuitive experiences
-        </p>
-      </div>
 
-      <!-- STEP -->
-      <div class="relative group flex flex-col items-center">
-        <div class="w-12 h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#FD5528] font-semibold z-10 transition group-hover:bg-[#FD5528] group-hover:text-white">
-          03
+        <!-- STEP -->
+        <div class="flex items-start gap-4 lg:flex-col lg:items-center text-left lg:text-center group">
+          <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#FD5528] font-semibold transition group-hover:bg-[#FD5528] group-hover:text-white">
+            03
+          </div>
+          <div>
+            <h3 class="font-semibold text-gray-900 group-hover:text-[#FD5528]">
+              Development
+            </h3>
+            <p class="text-sm text-gray-500 mt-1">
+              Building scalable applications
+            </p>
+          </div>
         </div>
-        <h3 class="mt-4 font-semibold text-gray-900 group-hover:text-[#FD5528]">
-          Development
-        </h3>
-        <p class="text-sm text-gray-500 mt-1">
-          Building scalable applications
-        </p>
-      </div>
 
-      <!-- STEP -->
-      <div class="relative group flex flex-col items-center">
-        <div class="w-12 h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#FD5528] font-semibold z-10 transition group-hover:bg-[#FD5528] group-hover:text-white">
-          04
+        <!-- STEP -->
+        <div class="flex items-start gap-4 lg:flex-col lg:items-center text-left lg:text-center group">
+          <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#FD5528] font-semibold transition group-hover:bg-[#FD5528] group-hover:text-white">
+            04
+          </div>
+          <div>
+            <h3 class="font-semibold text-gray-900 group-hover:text-[#FD5528]">
+              Testing
+            </h3>
+            <p class="text-sm text-gray-500 mt-1">
+              Ensuring quality & performance
+            </p>
+          </div>
         </div>
-        <h3 class="mt-4 font-semibold text-gray-900 group-hover:text-[#FD5528]">
-          Testing
-        </h3>
-        <p class="text-sm text-gray-500 mt-1">
-          Ensuring quality & performance
-        </p>
-      </div>
 
-      <!-- STEP -->
-      <div class="relative group flex flex-col items-center">
-        <div class="w-12 h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#FD5528] font-semibold z-10 transition group-hover:bg-[#FD5528] group-hover:text-white">
-          05
+        <!-- STEP -->
+        <div class="flex items-start gap-4 lg:flex-col lg:items-center text-left lg:text-center group">
+          <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#FD5528] font-semibold transition group-hover:bg-[#FD5528] group-hover:text-white">
+            05
+          </div>
+          <div>
+            <h3 class="font-semibold text-gray-900 group-hover:text-[#FD5528]">
+              Deployment
+            </h3>
+            <p class="text-sm text-gray-500 mt-1">
+              Launching production-ready apps
+            </p>
+          </div>
         </div>
-        <h3 class="mt-4 font-semibold text-gray-900 group-hover:text-[#FD5528]">
-          Deployment
-        </h3>
-        <p class="text-sm text-gray-500 mt-1">
-          Launching production-ready apps
-        </p>
-      </div>
 
-      <!-- STEP -->
-      <div class="relative group flex flex-col items-center">
-        <div class="w-12 h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#FD5528] font-semibold z-10 transition group-hover:bg-[#FD5528] group-hover:text-white">
-          06
+        <!-- STEP -->
+        <div class="flex items-start gap-4 lg:flex-col lg:items-center text-left lg:text-center group">
+          <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#FD5528] font-semibold transition group-hover:bg-[#FD5528] group-hover:text-white">
+            06
+          </div>
+          <div>
+            <h3 class="font-semibold text-gray-900 group-hover:text-[#FD5528]">
+              Support
+            </h3>
+            <p class="text-sm text-gray-500 mt-1">
+              Continuous improvements
+            </p>
+          </div>
         </div>
-        <h3 class="mt-4 font-semibold text-gray-900 group-hover:text-[#FD5528]">
-          Support
-        </h3>
-        <p class="text-sm text-gray-500 mt-1">
-          Continuous improvements
-        </p>
+
       </div>
 
     </div>
@@ -605,6 +751,8 @@
   </div>
 
 </section>
+
+
 
 <!-- pr -->
 
@@ -739,7 +887,7 @@
       Industries We Serve
     </h2>
 
-    <div class="mt-16 grid gap-6 sm:grid-cols-2 md:grid-cols-4">
+    <div class="mt-16 grid gap-6 grid-cols-2 sm:grid-cols-2 md:grid-cols-4">
 
       <div data-aos="zoom-in"
       class="rounded-xl border border-gray-200 bg-gray-50 py-8 font-medium text-gray-700 transition hover:border-[#FD5528]  hover:text-[#FD5528]  hover:shadow-md">
@@ -1044,19 +1192,23 @@
 
   <div class="max-w-7xl mx-auto">
 
+       <!-- Heading -->
+       <div class="text-center max-w-2xl mx-auto mb-16">
+          <p class="text-xs font-semibold uppercase tracking-[0.35em] p-2 text-[#f06735]">
+          Contact
+        </p>
+
     <!-- Heading -->
-    <div class="text-center max-w-2xl mx-auto mb-16">
-      <p class="text-xs font-semibold uppercase tracking-[0.35em] text-[#FD5528]">
-        Contact
-      </p>
+    <h1 class="text-4xl text-[#000000] md:text-5xl font-bold mb-4" text-black data-aos="fade-up">
+      Get in Touch
+    </h1>
 
-      <h2 class="mt-4 text-3xl md:text-4xl font-bold text-gray-900">
-        Get In Touch
-      </h2>
+       <!-- Subheading -->
+    <p class="text-lg text-black max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+      Have a project in mind or need backend solutions?  
+      Our team at <span class="text-[#FC5124] font-semibold">Backend Coders</span> is here to help you build scalable systems.
+    </p>
 
-      <p class="mt-4 text-gray-500">
-        Have a project in mind? Let's discuss how we can help you achieve your goals.
-      </p>
     </div>
 
     <!-- Main Layout -->
@@ -1103,7 +1255,7 @@
       <div>
         <h3 class="font-semibold text-gray-900">Email</h3>
         <p class="text-sm text-gray-500 mt-1">
-         info@backendcoderindia.com
+         info@backendcodersindia.com
         </p>
       </div>
     </div>
@@ -1115,19 +1267,19 @@
 
       <div class="flex gap-3">
 
-        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-xl bg-[#FFF1EC] hover:bg-[#FD5528] transition group">
+        <a href="https://www.facebook.com/backendcoders/" target="_blank" class="w-10 h-10 flex items-center justify-center rounded-xl bg-[#FFF1EC] hover:bg-[#FD5528] transition group">
           <img src="https://img.icons8.com/?size=100&id=118468&format=png&color=f44918" class="w-5 h-5 group-hover:brightness-0 group-hover:invert">
         </a>
 
-        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-xl bg-[#FFF1EC] hover:bg-[#FD5528] transition group">
+        <a href="https://www.instagram.com/backendcoders?igsh=YWd0ZHJmMjJ5cjZr" class="w-10 h-10 flex items-center justify-center rounded-xl bg-[#FFF1EC] hover:bg-[#FD5528] transition group">
           <img src="https://img.icons8.com/?size=100&id=32292&format=png&color=f44918" class="w-5 h-5 group-hover:brightness-0 group-hover:invert">
         </a>
 
-        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-xl bg-[#FFF1EC] hover:bg-[#FD5528] transition group">
-          <img src="https://img.icons8.com/?size=100&id=6Fsj3rv2DCmG&format=png&color=f44918" class="w-5 h-5 group-hover:brightness-0 group-hover:invert">
+        <a href="https://www.linkedin.com/company/backendcodersindia/" class="w-10 h-10 flex items-center justify-center rounded-xl bg-[#FFF1EC] hover:bg-[#FD5528] transition group">
+          <img src="https://img.icons8.com/?size=100&id=447&format=png&color=f44918" class="w-5 h-5 group-hover:brightness-0 group-hover:invert">
         </a>
 
-        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-xl bg-[#FFF1EC] hover:bg-[#FD5528] transition group">
+        <a href="https://wa.me/919140092133?text=Hi%20I%20want%20to%20discuss%20a%20project" class="w-10 h-10 flex items-center justify-center rounded-xl bg-[#FFF1EC] hover:bg-[#FD5528] transition group">
           <img src="https://img.icons8.com/?size=100&id=16712&format=png&color=f44918" class="w-5 h-5 group-hover:brightness-0 group-hover:invert">
         </a>
 

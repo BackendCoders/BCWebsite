@@ -17,19 +17,19 @@
       <div class="flex gap-4 mt-6">
 
 
-        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-xl bg-[#111] hover:bg-[#FD5528] transition group">
+        <a href="https://www.facebook.com/backendcoders/" target="_blank" class="w-10 h-10 flex items-center justify-center rounded-xl bg-[#111] hover:bg-[#FD5528] transition group">
           <img src="https://img.icons8.com/?size=100&id=118468&format=png&color=f44918" class="w-5 h-5 group-hover:brightness-0 group-hover:invert">
         </a>
 
-        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-xl bg-[#111] hover:bg-[#FD5528] transition group">
+        <a href="https://www.instagram.com/backendcoders?igsh=YWd0ZHJmMjJ5cjZr" class="w-10 h-10 flex items-center justify-center rounded-xl bg-[#111] hover:bg-[#FD5528] transition group">
           <img src="https://img.icons8.com/?size=100&id=32292&format=png&color=f44918" class="w-5 h-5 group-hover:brightness-0 group-hover:invert">
         </a>
 
-        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-xl bg-[#111] hover:bg-[#FD5528] transition group">
-          <img src="https://img.icons8.com/?size=100&id=6Fsj3rv2DCmG&format=png&color=f44918" class="w-5 h-5 group-hover:brightness-0 group-hover:invert">
+        <a href="https://www.linkedin.com/company/backendcodersindia/" class="w-10 h-10 flex items-center justify-center rounded-xl bg-[#111] hover:bg-[#FD5528] transition group">
+          <img src="https://img.icons8.com/?size=100&id=447&format=png&color=f44918" class="w-5 h-5 group-hover:brightness-0 group-hover:invert">
         </a>
 
-        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-xl bg-[#111] hover:bg-[#FD5528] transition group">
+        <a href="https://wa.me/919140092133?text=Hi%20I%20want%20to%20discuss%20a%20project" class="w-10 h-10 flex items-center justify-center rounded-xl bg-[#111] hover:bg-[#FD5528] transition group">
           <img src="https://img.icons8.com/?size=100&id=16712&format=png&color=f44918" class="w-5 h-5 group-hover:brightness-0 group-hover:invert">
         </a>
 
@@ -64,57 +64,82 @@
     <div>
       <h4 class="text-white font-semibold mb-4">Contact</h4>
 
-      <ul class="space-y-3 text-sm">
-    <li class="flex items-start gap-2">
-                 <!-- ITEM -->
-    <div class="flex items-start gap-4 group">
-      <div class="w-12 h-12 flex items-center justify-center rounded-xl  group-hover:scale-110 transition">
-        <img src="https://img.icons8.com/?size=100&id=3723&format=png&color=ea580c" class="w-6 h-6">
-      </div>
-     
-      <div>
-        <h3 class="font-semibold text-white">Office Address</h3>
-        <p class="text-sm text-gray-500 mt-1">
-          11/42, Krishna Nagar, Kanpur, UP 208007
-        </p>
-      </div>
-    </div>
+  <ul class="space-y-5 text-sm">
 
-  
-        </li>
+    <!-- ADDRESS -->
+    <li>
+      <div class="flex items-start gap-4 group">
 
-        <li class="flex items-center gap-2">
-         <!-- ITEM -->
-    <div class="flex items-start gap-4 group">
-      <div class="w-12 h-12 flex items-center justify-center rounded-xl  group-hover:scale-110 transition">
-        <img src="https://img.icons8.com/?size=100&id=9659&format=png&color=ea580c" class="w-6 h-6">
-      </div>
-      <div>
-        <h3 class="font-semibold text-white">Phone</h3>
-        <p class="text-sm text-gray-500 mt-1">
-          +91 914 0092 133
-        </p>
-      </div>
-    </div>
+        <!-- ICON -->
+        <div class="w-11 h-11 flex items-center justify-center rounded-xl 
+                    bg-white/5 group-hover:scale-110 transition duration-300">
+          <img src="https://img.icons8.com/?size=100&id=3723&format=png&color=ea580c" 
+               class="w-5 h-5">
+        </div>
 
- 
-        </li>
+        <!-- TEXT -->
+        <div class="flex-1">
+          <h3 class="font-semibold text-white leading-none">
+            Office Address
+          </h3>
+          <p class="text-gray-400 mt-2 leading-relaxed">
+            11/42, Krishna Nagar, Kanpur, UP 208007
+          </p>
+        </div>
 
-        <li class="flex items-center gap-2">
-       <!-- ITEM -->
-    <div class="flex items-start gap-4 group">
-      <div class="w-12 h-12 flex items-center justify-center rounded-xl  group-hover:scale-110 transition">
-        <img src="https://img.icons8.com/?size=100&id=53388&format=png&color=ea580c" class="w-6 h-6">
       </div>
-      <div>
-        <h3 class="font-semibold text-white">Email</h3>
-        <p class="text-sm text-gray-500 mt-1">
-         info@backendcoderindia.com
-        </p>
+    </li>
+
+    <!-- PHONE -->
+    <li>
+      <div class="flex items-start gap-4 group">
+
+        <div class="w-11 h-11 flex items-center justify-center rounded-xl 
+                    bg-white/5 group-hover:scale-110 transition duration-300">
+          <img src="https://img.icons8.com/?size=100&id=9659&format=png&color=ea580c" 
+               class="w-5 h-5">
+        </div>
+
+        <div class="flex-1">
+          <h3 class="font-semibold text-white leading-none">
+            Phone
+          </h3>
+          <p class="text-gray-400 mt-2">
+            +91 914 0092 133
+          </p>
+        </div>
+
       </div>
-    </div>
-        </li>
-      </ul>
+    </li>
+
+    <!-- EMAIL -->
+    <li>
+      <div class="flex items-start gap-4 group">
+
+        <div class="w-11 h-11 flex items-center justify-center rounded-xl 
+                    bg-white/5 group-hover:scale-110 transition duration-300">
+          <img src="https://img.icons8.com/?size=100&id=53388&format=png&color=ea580c" 
+               class="w-5 h-5">
+        </div>
+
+        <div class="flex-1">
+          <h3 class="font-semibold text-white leading-none">
+            Email
+          </h3>
+          <p class="text-gray-400 mt-2 break-all">
+            info@backendcodersindia.com
+          </p>
+        </div>
+
+      </div>
+    </li>
+
+  </ul>
+
+
+
+
+    
     </div>
 
   </div>

@@ -8,54 +8,81 @@
 <!-- topbar -->
 
 
+
 <!-- TOP BAR -->
-<div class="bg-[#f3edea] text-black text-sm">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 py-2 flex flex-col sm:flex-row items-center justify-between gap-2">
+<div class="bg-[#FD5528] text-white text-sm">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 py-2 
+              flex flex-col sm:flex-row items-center justify-between gap-3">
 
     <!-- LEFT: CONTACT INFO -->
-    <div class="flex flex-wrap items-center gap-4 text-xs sm:text-sm">
+    <div class="flex flex-col sm:flex-row items-start gap-3 sm:gap-6 text-xs sm:text-sm">
 
       <!-- PHONE -->
-      <a href="tel:+919140092133" class="flex items-center gap-2 hover:text-[#FD5528] transition">
-        <img src="https://img.icons8.com/?size=100&id=9659&format=png&color=111111" class="w-4 h-4">
+      <a href="tel:+919140092133" 
+         class="flex items-center gap-2 hover:text-[#111] transition">
+
+        <div class="w-7 h-7 flex items-center justify-center rounded-full bg-white/10 
+                    hover:bg-[#111] transition">
+          <img src="https://img.icons8.com/?size=100&id=9659&format=png&color=ffffff" 
+               class="w-4 h-4">
+        </div>
+
         <span>+91 914 0092 133</span>
       </a>
 
       <!-- EMAIL -->
-      <a href="mailto:info@backendcoderindia.com" class="flex items-center gap-2 hover:text-[#FD5528] transition">
-        <img src="https://img.icons8.com/?size=100&id=53388&format=png&color=111111" class="w-4 h-4">
-        <span>info@backendcoderindia.com</span>
+      <a href="mailto:info@backendcodersindia.com" 
+         class="flex items-center gap-2 hover:text-[#111] transition">
+
+        <div class="w-7 h-7 flex items-center justify-center rounded-full bg-white/10 
+                    hover:bg-[#111] transition">
+          <img src="https://img.icons8.com/?size=100&id=53388&format=png&color=ffffff" 
+               class="w-4 h-4">
+        </div>
+
+        <span class="break-all sm:break-normal">
+          info@backendcodersindia.com
+        </span>
       </a>
 
     </div>
 
     <!-- RIGHT: SOCIAL ICONS -->
-    <div class="flex items-center gap-3">
+    <div class="flex items-center gap-2 sm:gap-3">
 
-      <a href="#" target="_blank"
-         class="w-8 h-8 flex items-center justify-center rounded-full bg-white/60 hover:text-white hover:bg-[#ecd1ca] transition">
-        <img src="https://img.icons8.com/?size=100&id=118468&format=png&color=111111" class="w-4 h-4">
+      <a href="https://www.facebook.com/backendcoders/" target="_blank"
+         class="w-8 h-8 flex items-center justify-center rounded-full bg-white/10 
+                hover:bg-[#111] transition">
+        <img src="https://img.icons8.com/?size=100&id=118468&format=png&color=ffffff" 
+             class="w-4 h-4">
       </a>
 
-      <a href="#" target="_blank"
-         class="w-8 h-8 flex items-center justify-center rounded-full bg-white/60 hover:text-white hover:bg-[#ecd1ca] transition">
-        <img src="https://img.icons8.com/?size=100&id=32292&format=png&color=111111" class="w-4 h-4">
+      <a href="https://www.instagram.com/backendcoders?igsh=YWd0ZHJmMjJ5cjZr" target="_blank"
+         class="w-8 h-8 flex items-center justify-center rounded-full bg-white/10 
+                hover:bg-[#111] transition">
+        <img src="https://img.icons8.com/?size=100&id=32292&format=png&color=ffffff" 
+             class="w-4 h-4">
       </a>
 
-      <a href="#" target="_blank"
-         class="w-8 h-8 flex items-center justify-center rounded-full bg-white/60 hover:text-white hover:bg-[#ecd1ca] transition">
-        <img src="https://img.icons8.com/?size=100&id=62856&format=png&color=111111" class="w-4 h-4">
+      <a href="https://www.linkedin.com/company/backendcodersindia/" target="_blank"
+         class="w-8 h-8 flex items-center justify-center rounded-full bg-white/10 
+                hover:bg-[#111] transition">
+        <img src="https://img.icons8.com/?size=100&id=447&format=png&color=ffffff" 
+             class="w-4 h-4">
       </a>
 
-      <a href="#" target="_blank"
-         class="w-8 h-8 flex items-center justify-center rounded-full bg-white/60 hover:text-white hover:bg-[#ecd1ca] transition">
-        <img src="https://img.icons8.com/?size=100&id=447&format=png&color=111111" class="w-4 h-4">
+      <a href="https://wa.me/919140092133?text=Hi%20I%20want%20to%20discuss%20a%20project" target="_blank"
+         class="w-8 h-8 flex items-center justify-center rounded-full bg-white/10 
+                hover:bg-[#111] transition">
+        <img src="https://img.icons8.com/?size=100&id=16712&format=png&color=ffffff" 
+             class="w-4 h-4">
       </a>
 
     </div>
 
   </div>
 </div>
+
 
 
 
