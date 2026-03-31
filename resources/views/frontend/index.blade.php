@@ -162,7 +162,7 @@
 <!-- END HERO SECTIOPN -->
 
 <!-- WHO WE ARE-->
-<section id="who-we-are" class="bg-[#F9FAFB] px-6 py-24">
+<section id="who-we-are" class="bg-[#F9FAFB] px-6 py-16 sm:py-20 lg:py-24">
 
     <div class="max-w-6xl mx-auto text-center">
 
@@ -245,7 +245,7 @@
 <!-- END WHO WE ARE -->
 
 <!-- SERVICE -->
-<section id="services" class="bg-white px-6 py-24">
+<section id="services" class="bg-white px-6 py-16 sm:py-20 lg:py-24">
 
     <div class="max-w-7xl mx-auto">
 
@@ -454,7 +454,7 @@
 <!-- END SERVICE SECTION -->
 
 <!-- TECHNOLOGIES -->
-<section id="technologies" class="bg-[#F9FAFB] px-6 py-24">
+<section id="technologies" class="bg-[#F9FAFB] px-6 py-16 sm:py-20 lg:py-24">
 
   <div class="max-w-7xl mx-auto">
 
@@ -672,7 +672,7 @@
 
 
 
-<section class="relative overflow-hidden md:py-20 bg-[#F9FAFB]">
+<section class="relative overflow-hidden py-16 sm:py-20 lg:py-24 bg-[#F9FAFB]">
 
   <div class="max-w-7xl mx-auto px-6">
 
@@ -820,7 +820,7 @@
 <!-- pr -->
 
 
-<section class="bg-[#F9FAFB] md:py-24 px-6">
+<section class="bg-[#F9FAFB] py-16 sm:py-20 lg:py-24 px-6">
   <div class="max-w-7xl mx-auto text-center mb-16 items-center">
         <!-- Heading -->
             <p 
@@ -950,7 +950,7 @@
 
 
 <!-- serve industry -->
-<section id="industries" class="bg-white px-6 md:py-24">
+<section id="industries" class="bg-white px-6 py-16 sm:py-20 lg:py-24">
 
   <div class="max-w-6xl mx-auto text-center">
        <p 
@@ -1303,7 +1303,7 @@
 
 
 <!-- contact section -->
-<section id="contact" class="bg-[#F9FAFB] py-24 px-6 relative overflow-hidden">
+<section id="contact" class="bg-[#F9FAFB] py-16 sm:py-20 lg:py-24 px-6 relative overflow-hidden">
 
   <div class="max-w-7xl mx-auto">
 
