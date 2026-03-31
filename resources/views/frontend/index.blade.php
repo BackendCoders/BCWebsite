@@ -1235,10 +1235,10 @@
 
         <!-- TEXT -->
         <div class="flex-1">
-          <h3 class="font-semibold text-white leading-none">
+          <h3 class="font-semibold text-black leading-none">
             Office Address
           </h3>
-          <p blackext-gray-400 mt-2 leading-relaxed">
+          <p class="text-black mt-2 leading-relaxed">
             11/42, Krishna Nagar, Kanpur, UP 208007
           </p>
         </div>
@@ -1256,7 +1256,7 @@
         </div>
 
         <div class="flex-1">
-          <h3 class="font-semibold text-white leading-none">
+          <h3 class="font-semibold text-black leading-none">
             Phone
           </h3>
           <p class="text-black mt-2">
@@ -1277,7 +1277,7 @@
         </div>
 
          <div class="flex-1">
-            <h3 class="font-semibold text-white leading-none">
+            <h3 class="font-semibold text-black leading-none">
             Email
           </h3>
           <p class="text-black mt-2 break-all">
