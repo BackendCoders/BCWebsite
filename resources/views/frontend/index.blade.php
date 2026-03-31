@@ -447,7 +447,7 @@
        <!-- ORIGINAL -->
        
 
-<div class="marquee-content my-12">
+<div class="marquee-content md:my-12">
 
   <!-- .NET -->
   <div class="tech-card">
@@ -527,7 +527,7 @@
 
           <!-- DUPLICATE -->
     
-<div class="marquee-content py-12 pl-6">
+<div class="marquee-content md:py-12 pl-6">
 
   <!-- .NET -->
   <div class="tech-card">
@@ -1221,44 +1221,75 @@
       <!-- CONTENT -->
       <div class="relative space-y-8">
 
-       <!-- ITEM -->
-    <div class="flex items-start gap-4 group">
-      <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-[#FFF1EC] group-hover:scale-110 transition">
-        <img src="https://img.icons8.com/?size=100&id=53430&format=png&color=ea580c" class="w-6 h-6">
-      </div>
-      <div>
-        <h3 class="font-semibold text-gray-900">Office Address</h3>
-        <p class="text-sm text-gray-500 mt-1">
-          11/42, Krishna Nagar, Kanpur, UP 208007
-        </p>
-      </div>
-    </div>
+      <ul class="space-y-5 text-sm">
 
-    <!-- ITEM -->
-    <div class="flex items-start gap-4 group">
-      <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-[#FFF1EC] group-hover:scale-110 transition">
-        <img src="https://img.icons8.com/?size=100&id=9659&format=png&color=ea580c" class="w-6 h-6">
-      </div>
-      <div>
-        <h3 class="font-semibold text-gray-900">Phone</h3>
-        <p class="text-sm text-gray-500 mt-1">
-          +91 914 0092 133
-        </p>
-      </div>
-    </div>
+    <!-- ADDRESS -->
+    <li>
+      <div class="flex items-start gap-4 group">
 
-    <!-- ITEM -->
-    <div class="flex items-start gap-4 group">
-      <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-[#FFF1EC] group-hover:scale-110 transition">
-        <img src="https://img.icons8.com/?size=100&id=53388&format=png&color=ea580c" class="w-6 h-6">
+        <!-- ICON -->
+        <div class="w-11 h-11 flex items-center justify-center rounded-xl bg-[#FFF1EC]   group-hover:scale-110 transition duration-300">
+          <img src="https://img.icons8.com/?size=100&id=3723&format=png&color=ea580c" 
+               class="w-5 h-5">
+        </div>
+
+        <!-- TEXT -->
+        <div class="flex-1">
+          <h3 class="font-semibold text-white leading-none">
+            Office Address
+          </h3>
+          <p blackext-gray-400 mt-2 leading-relaxed">
+            11/42, Krishna Nagar, Kanpur, UP 208007
+          </p>
+        </div>
+
       </div>
-      <div>
-        <h3 class="font-semibold text-gray-900">Email</h3>
-        <p class="text-sm text-gray-500 mt-1">
-         info@backendcodersindia.com
-        </p>
+    </li>
+
+    <!-- PHONE -->
+    <li>
+      <div class="flex items-start gap-4 group">
+
+        <div class="w-11 h-11 flex items-center justify-center rounded-xl bg-[#FFF1EC]   group-hover:scale-110 transition duration-300">
+          <img src="https://img.icons8.com/?size=100&id=9659&format=png&color=ea580c" 
+               class="w-5 h-5">
+        </div>
+
+        <div class="flex-1">
+          <h3 class="font-semibold text-white leading-none">
+            Phone
+          </h3>
+          <p class="text-black mt-2">
+            +91 914 0092 133
+          </p>
+        </div>
+
       </div>
-    </div>
+    </li>
+
+        <!-- EMAIL -->
+          <li>
+          <div class="flex items-start gap-4 group">
+
+        <div class="w-11 h-11 flex items-center justify-center rounded-xl bg-[#FFF1EC]   group-hover:scale-110 transition duration-300">
+          <img src="https://img.icons8.com/?size=100&id=53388&format=png&color=ea580c" 
+               class="w-5 h-5">
+        </div>
+
+         <div class="flex-1">
+            <h3 class="font-semibold text-white leading-none">
+            Email
+          </h3>
+          <p class="text-black mt-2 break-all">
+            info@backendcodersindia.com
+          </p>
+          </div>
+
+        </div>
+       </li>
+
+      </ul>
+
 
     <!-- SOCIAL -->
   <div class="pt-4 border-t border-gray-100">

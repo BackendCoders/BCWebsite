@@ -92,7 +92,7 @@
     <div class="max-w-7xl mx-auto flex h-16 items-center justify-between px-6">
 
     <!-- logo -->
-        <a href="#hero" class="flex items-center gap-3">
+        <a href="{{ route('frontend.index') }}" class="flex items-center gap-3">
              <img src="{{ asset('assets/images/bc_bg.png') }}" class="h-10 w-auto" />
         </a>
 

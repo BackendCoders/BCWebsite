@@ -328,7 +328,7 @@
 
     <!-- PHONE -->
     <a href="tel:+919140092133"
-      class="flex items-center gap-3 p-3 rounded-xl hover:bg-gray-100 transition">
+      class="flex items-center gap-3 p-3 rounded-xl bg-gray-100 transition">
       
       <img src="https://img.icons8.com/?size=100&id=9659&format=png&color=FD5528" class="w-5 h-5">
       <span class="text-sm font-medium text-gray-700">Call Us</span>
@@ -337,7 +337,7 @@
     <!-- WHATSAPP -->
     <a href="https://wa.me/919140092133"
       target="_blank"
-      class="flex items-center gap-3 p-3 rounded-xl hover:bg-gray-100 transition">
+      class="flex items-center gap-3 p-3 rounded-xl bg-gray-100 transition">
       
       <img src="https://img.icons8.com/?size=100&id=16713&format=png&color=FD5528" class="w-5 h-5">
       <span class="text-sm font-medium text-gray-700">WhatsApp</span>
