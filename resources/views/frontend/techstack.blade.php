@@ -32,7 +32,7 @@
         <!-- Tech Grid -->
         <div class="mt-14 grid gap-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
 
-           <span data-aos="zoom-in"
+    <span data-aos="zoom-in"
       class="flex flex-col items-center justify-center text-center rounded-2xl border border-gray-200 bg-white px-6 py-5 text-sm font-semibold text-gray-700 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-[#FD5528] hover:text-[#FD5528] hover:shadow-lg group">
 
     <!-- Icon Circle -->

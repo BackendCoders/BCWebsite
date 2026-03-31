@@ -421,26 +421,30 @@
 
   <div class="max-w-7xl mx-auto">
 
-   <div class="text-center max-w-3xl mx-auto mb-12">
-         <!-- Heading -->
-        <p class="text-xs font-semibold uppercase tracking-[0.35em] text-[#FD5528] "
-        data-aos="fade-up">
-            Development Expertise
-        </p>
+    <!-- Heading -->
+    <div class="text-center max-w-3xl mx-auto mb-12">
+      <p class="text-xs font-semibold uppercase tracking-[0.35em] text-[#FD5528]">
+        Development Expertise
+      </p>
 
-        <h2 class="mt-4 text-3xl font-bold text-gray-900 md:text-4xl"
-        data-aos="fade-up" data-aos-delay="100">
-            Technologies We Love
-        </h2>
-   </div>
+      <h2 class="mt-4 text-3xl font-bold text-gray-900 md:text-4xl">
+        Technologies We Love
+      </h2>
+    </div>
 
+    <!-- MARQUEE -->
     <div class="overflow-hidden relative">
 
-      <div class="marquee-wrapper gap-4">
+      <!-- Track -->
+      <div 
+        class="flex w-max gap-6"
+        style="animation: marquee 25s linear infinite;"
+      >
 
-        <div class="marquee-track">
+        <!-- Content (Repeat Twice) -->
+        <div class="flex gap-6">
 
-          <!-- ORIGINAL -->
+       <!-- ORIGINAL -->
           <div class="marquee-content my-12">
             
             <!-- Cards -->
@@ -476,7 +480,7 @@
             <!-- EXACT SAME CONTENT COPY -->
           </div>
 
-        </div>
+      
 
       </div>
 
