@@ -12,14 +12,29 @@
     <div class="max-w-xl mx-auto lg:mx-0 text-center lg:text-left">
 
       <!-- BADGE -->
-      <span 
+           <!-- Heading -->
+         <span 
+      data-aos="fade-up"
+      class="inline-block text-xs sm:text-sm font-semibold uppercase tracking-[0.35em] 
+         text-[#FD5528] relative px-5 py-2 rounded-full 
+         bg-white/60 backdrop-blur-md 
+         shadow-[0_8px_20px_rgba(0,0,0,0.08)] 
+         border border-white/40
+         before:absolute before:inset-0 before:rounded-full 
+         before:bg-gradient-to-r before:from-[#FD5528]/20 before:to-orange-200/30 
+         before:-z-10">
+
+          17+ Years Building Software
+
+    </span>
+      <!-- <span 
         data-aos="fade-down"
         data-aos-delay="100"
         class="inline-flex items-center justify-center lg:justify-start 
                gap-2 rounded-full border border-[#FD5528] bg-white 
                px-4 py-1 text-[10px] sm:text-xs font-semibold tracking-wider text-[#FD5528]">
         17+ Years Building Software
-      </span>
+      </span> -->
 
       <!-- HEADING -->
       <h1 
@@ -151,11 +166,23 @@
 
     <div class="max-w-6xl mx-auto text-center">
 
-        <p 
-        class="text-sm font-semibold uppercase tracking-[0.35em] text-[#FD5528] "
-        data-aos="fade-up">
+
+    <p 
+      data-aos="fade-up"
+      class="inline-block text-xs sm:text-sm font-semibold uppercase tracking-[0.35em] 
+         text-[#FD5528] relative px-5 py-2 rounded-full 
+         bg-white/60 backdrop-blur-md 
+         shadow-[0_8px_20px_rgba(0,0,0,0.08)] 
+         border border-white/40
+         before:absolute before:inset-0 before:rounded-full 
+         before:bg-gradient-to-r before:from-[#FD5528]/20 before:to-orange-200/30 
+         before:-z-10">
+
         Who We Are
-        </p>
+
+    </p>
+
+
 
         <h2 
         class="mt-4 text-3xl font-bold text-gray-900 md:text-4xl"
@@ -225,10 +252,20 @@
         <!-- Heading -->
         <div class="text-center max-w-3xl mx-auto">
 
-            <p class="text-xs font-semibold uppercase tracking-[0.35em] text-[#FD5528] "
-            data-aos="fade-up">
-                Services
-            </p>
+            <p 
+      data-aos="fade-up"
+      class="inline-block text-xs sm:text-sm font-semibold uppercase tracking-[0.35em] 
+         text-[#FD5528] relative px-5 py-2 rounded-full 
+         bg-white/60 backdrop-blur-md 
+         shadow-[0_8px_20px_rgba(0,0,0,0.08)] 
+         border border-white/40
+         before:absolute before:inset-0 before:rounded-full 
+         before:bg-gradient-to-r before:from-[#FD5528]/20 before:to-orange-200/30 
+         before:-z-10">
+
+       Service
+
+    </p>
 
             <h2 class="mt-4 text-3xl font-bold text-gray-900 md:text-4xl"
             data-aos="fade-up" data-aos-delay="100">
@@ -423,9 +460,23 @@
 
     <!-- Heading -->
     <div class="text-center max-w-3xl mx-auto mb-12">
-      <p class="text-xs font-semibold uppercase tracking-[0.35em] text-[#FD5528]">
+       <p 
+      data-aos="fade-up"
+      class="inline-block text-xs sm:text-sm font-semibold uppercase tracking-[0.35em] 
+         text-[#FD5528] relative px-5 py-2 rounded-full 
+         bg-white/60 backdrop-blur-md 
+         shadow-[0_8px_20px_rgba(0,0,0,0.08)] 
+         border border-white/40
+         before:absolute before:inset-0 before:rounded-full 
+         before:bg-gradient-to-r before:from-[#FD5528]/20 before:to-orange-200/30 
+         before:-z-10">
+
+         Development Expertise
+
+    </p>
+      <!-- <p class="text-xs font-semibold uppercase tracking-[0.35em] text-[#FD5528]">
         Development Expertise
-      </p>
+      </p> -->
 
       <h2 class="mt-4 text-3xl font-bold text-gray-900 md:text-4xl">
         Technologies We Love
@@ -627,9 +678,21 @@
 
     <!-- Heading -->
     <div class="text-center mb-16">
-      <p class="text-sm uppercase tracking-widest text-[#FD5528] font-semibold">
-        Process
-      </p>
+         <p 
+      data-aos="fade-up"
+      class="inline-block text-xs sm:text-sm font-semibold uppercase tracking-[0.35em] 
+         text-[#FD5528] relative px-5 py-2 rounded-full 
+         bg-white/60 backdrop-blur-md 
+         shadow-[0_8px_20px_rgba(0,0,0,0.08)] 
+         border border-white/40
+         before:absolute before:inset-0 before:rounded-full 
+         before:bg-gradient-to-r before:from-[#FD5528]/20 before:to-orange-200/30 
+         before:-z-10">
+
+         Process
+
+    </p>
+    
       <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-3">
         Predictable Delivery
       </h2>
@@ -760,9 +823,23 @@
 <section class="bg-[#F9FAFB] py-24 px-6">
   <div class="max-w-7xl mx-auto text-center mb-16 items-center">
         <!-- Heading -->
-      <p class="text-sm uppercase tracking-widest text-[#FD5528] font-semibold">
+            <p 
+      data-aos="fade-up"
+      class="inline-block text-xs sm:text-sm font-semibold uppercase tracking-[0.35em] 
+         text-[#FD5528] relative px-5 py-2 rounded-full 
+         bg-white/60 backdrop-blur-md 
+         shadow-[0_8px_20px_rgba(0,0,0,0.08)] 
+         border border-white/40
+         before:absolute before:inset-0 before:rounded-full 
+         before:bg-gradient-to-r before:from-[#FD5528]/20 before:to-orange-200/30 
+         before:-z-10">
+
+          Why Choose Us
+
+    </p>
+      <!-- <p class="text-sm uppercase tracking-widest text-[#FD5528] font-semibold">
         Why Choose Us
-      </p>
+      </p> -->
 
       <h2 class="mt-4 text-3xl md:text-4xl font-bold text-gray-900">
         Built for long-term partnerships
@@ -876,11 +953,21 @@
 <section id="industries" class="bg-white px-6 py-24">
 
   <div class="max-w-6xl mx-auto text-center">
+       <p 
+      data-aos="fade-up"
+      class="inline-block text-xs sm:text-sm font-semibold uppercase tracking-[0.35em] 
+         text-[#FD5528] relative px-5 py-2 rounded-full 
+         bg-white/60 backdrop-blur-md 
+         shadow-[0_8px_20px_rgba(0,0,0,0.08)] 
+         border border-white/40
+         before:absolute before:inset-0 before:rounded-full 
+         before:bg-gradient-to-r before:from-[#FD5528]/20 before:to-orange-200/30 
+         before:-z-10">
 
-    <p class="text-xs font-semibold uppercase tracking-[0.35em] text-[#FD5528] "
-    data-aos="fade-up">
-      Industries
+          Industries
+
     </p>
+  
 
     <h2 class="mt-4 text-3xl font-bold text-gray-900 md:text-4xl"
     data-aos="fade-up" data-aos-delay="100">
@@ -970,9 +1057,23 @@
     <!-- HEADER -->
     <div class="text-center max-w-2xl mx-auto">
 
-      <p class="text-[10px] sm:text-xs font-semibold uppercase tracking-[0.35em] text-[#FD5528]">
+     <p 
+      data-aos="fade-up"
+      class="inline-block text-xs sm:text-sm font-semibold uppercase tracking-[0.35em] 
+         text-[#FD5528] relative px-5 py-2 rounded-full 
+         bg-white/60 backdrop-blur-md 
+         shadow-[0_8px_20px_rgba(0,0,0,0.08)] 
+         border border-white/40
+         before:absolute before:inset-0 before:rounded-full 
+         before:bg-gradient-to-r before:from-[#FD5528]/20 before:to-orange-200/30 
+         before:-z-10">
+
+          Blog
+
+    </p>
+      <!-- <p class="text-[10px] sm:text-xs font-semibold uppercase tracking-[0.35em] text-[#FD5528]">
         Blog
-      </p>
+      </p> -->
 
       <h2 class="mt-3 sm:mt-4 text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 leading-tight">
         Insights & Updates
@@ -1059,9 +1160,23 @@
 
     <!-- Heading -->
     <div class="text-center mb-12 sm:mb-16">
-      <p class="text-xs font-semibold uppercase tracking-[0.35em] text-[#FD5528]">
+       <p 
+      data-aos="fade-up"
+      class="inline-block text-xs sm:text-sm font-semibold uppercase tracking-[0.35em] 
+         text-[#FD5528] relative px-5 py-2 rounded-full 
+         bg-white/60 backdrop-blur-md 
+         shadow-[0_8px_20px_rgba(0,0,0,0.08)] 
+         border border-white/40
+         before:absolute before:inset-0 before:rounded-full 
+         before:bg-gradient-to-r before:from-[#FD5528]/20 before:to-orange-200/30 
+         before:-z-10">
+
+          FAQ
+
+    </p>
+      <!-- <p class="text-xs font-semibold uppercase tracking-[0.35em] text-[#FD5528]">
         FAQ
-      </p>
+      </p> -->
 
       <h2 class="mt-4 text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">
         Frequently Asked Questions
@@ -1192,11 +1307,26 @@
 
   <div class="max-w-7xl mx-auto">
 
-       <!-- Heading -->
+   
        <div class="text-center max-w-2xl mx-auto mb-16">
-          <p class="text-xs font-semibold uppercase tracking-[0.35em] p-2 text-[#f06735]">
+            <!-- Heading -->
+         <p 
+      data-aos="fade-up"
+      class="inline-block text-xs sm:text-sm font-semibold uppercase tracking-[0.35em] 
+         text-[#FD5528] relative px-5 py-2 rounded-full 
+         bg-white/60 backdrop-blur-md 
+         shadow-[0_8px_20px_rgba(0,0,0,0.08)] 
+         border border-white/40
+         before:absolute before:inset-0 before:rounded-full 
+         before:bg-gradient-to-r before:from-[#FD5528]/20 before:to-orange-200/30 
+         before:-z-10">
+
+          Contact Us
+
+    </p>
+          <!-- <p class="text-xs font-semibold uppercase tracking-[0.35em] p-2 text-[#f06735]">
           Contact
-        </p>
+        </p> -->
 
     <!-- Heading -->
     <h1 class="text-4xl text-[#000000] md:text-5xl font-bold mb-4" text-black data-aos="fade-up">
