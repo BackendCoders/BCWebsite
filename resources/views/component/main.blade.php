@@ -25,7 +25,7 @@
 
     
  
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}" />
 <style>
  
 .active-link {
@@ -183,6 +183,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 </script>
  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script src="assets/js/main.js" defer></script>
+  <script src="{{ asset('assets/js/main.js') }}" defer></script>
 </body>
 </html>
