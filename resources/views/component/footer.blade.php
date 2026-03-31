@@ -15,19 +15,26 @@
 
       <!-- Social Icons -->
       <div class="flex gap-4 mt-6">
-        <a href="#" class="w-10 h-10 flex items-center justify-center bg-[#111] rounded-lg hover:bg-[#e6d1cb]   transition">
-        <img src="https://img.icons8.com/?size=100&id=118468&format=png&color=f44918" alt="">
+
+
+        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-xl bg-[#111] hover:bg-[#FD5528] transition group">
+          <img src="https://img.icons8.com/?size=100&id=118468&format=png&color=f44918" class="w-5 h-5 group-hover:brightness-0 group-hover:invert">
         </a>
-        <a href="#" class="w-10 h-10 flex items-center justify-center bg-[#111] rounded-lg hover:bg-[#e6d1cb]   transition">
-          <img src="https://img.icons8.com/?size=100&id=32292&format=png&color=f44918" alt="">
+
+        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-xl bg-[#111] hover:bg-[#FD5528] transition group">
+          <img src="https://img.icons8.com/?size=100&id=32292&format=png&color=f44918" class="w-5 h-5 group-hover:brightness-0 group-hover:invert">
         </a>
-        <a href="#" class="w-10 h-10 flex items-center justify-center bg-[#111] rounded-lg hover:bg-[#e6d1cb]   transition">
-          <img src="https://img.icons8.com/?size=100&id=6Fsj3rv2DCmG&format=png&color=f44918" alt="">
+
+        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-xl bg-[#111] hover:bg-[#FD5528] transition group">
+          <img src="https://img.icons8.com/?size=100&id=6Fsj3rv2DCmG&format=png&color=f44918" class="w-5 h-5 group-hover:brightness-0 group-hover:invert">
         </a>
-        <a href="#" class="w-10 h-10 flex items-center justify-center bg-[#111] rounded-lg hover:bg-[#e6d1cb]   transition">
-          <img src="https://img.icons8.com/?size=100&id=16712&format=png&color=f44918" alt="">
+
+        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-xl bg-[#111] hover:bg-[#FD5528] transition group">
+          <img src="https://img.icons8.com/?size=100&id=16712&format=png&color=f44918" class="w-5 h-5 group-hover:brightness-0 group-hover:invert">
         </a>
+
       </div>
+   
     </div>
 
     <!-- Quick Links -->
@@ -58,19 +65,54 @@
       <h4 class="text-white font-semibold mb-4">Contact</h4>
 
       <ul class="space-y-3 text-sm">
-        <li class="flex items-start gap-2">
-            <img src="https://img.icons8.com/?size=100&id=59830&format=png&color=F44918" alt="" class="h-8 w-8">
-        11/42, Krishna Nagar, Kanpur, UP 208007
+    <li class="flex items-start gap-2">
+                 <!-- ITEM -->
+    <div class="flex items-start gap-4 group">
+      <div class="w-12 h-12 flex items-center justify-center rounded-xl  group-hover:scale-110 transition">
+        <img src="https://img.icons8.com/?size=100&id=3723&format=png&color=ea580c" class="w-6 h-6">
+      </div>
+     
+      <div>
+        <h3 class="font-semibold text-white">Office Address</h3>
+        <p class="text-sm text-gray-500 mt-1">
+          11/42, Krishna Nagar, Kanpur, UP 208007
+        </p>
+      </div>
+    </div>
+
+  
         </li>
 
         <li class="flex items-center gap-2">
-        <img src="https://img.icons8.com/?size=100&id=BBf95mK0q8NH&format=png&color=F44918" alt="" class="h-8 w-8">
-        +91 914 0092 133
+         <!-- ITEM -->
+    <div class="flex items-start gap-4 group">
+      <div class="w-12 h-12 flex items-center justify-center rounded-xl  group-hover:scale-110 transition">
+        <img src="https://img.icons8.com/?size=100&id=9659&format=png&color=ea580c" class="w-6 h-6">
+      </div>
+      <div>
+        <h3 class="font-semibold text-white">Phone</h3>
+        <p class="text-sm text-gray-500 mt-1">
+          +91 914 0092 133
+        </p>
+      </div>
+    </div>
+
+ 
         </li>
 
         <li class="flex items-center gap-2">
-        <img src="https://img.icons8.com/?size=100&id=6mtfF8X7F8eV&format=png&color=F44918" alt="" class=" h-8 w-8">  
-        info@backendcoderindia.com
+       <!-- ITEM -->
+    <div class="flex items-start gap-4 group">
+      <div class="w-12 h-12 flex items-center justify-center rounded-xl  group-hover:scale-110 transition">
+        <img src="https://img.icons8.com/?size=100&id=53388&format=png&color=ea580c" class="w-6 h-6">
+      </div>
+      <div>
+        <h3 class="font-semibold text-white">Email</h3>
+        <p class="text-sm text-gray-500 mt-1">
+         info@backendcoderindia.com
+        </p>
+      </div>
+    </div>
         </li>
       </ul>
     </div>

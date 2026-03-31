@@ -492,176 +492,10 @@
 <!-- END TECHNOLOGIES -->
 
 
-<!-- FEATURES PROJECTS -->
-<section id="portfolio" class="bg-white px-6 py-24">
-
-  <div class="max-w-7xl mx-auto">
-
-    <!-- Heading -->
-    <div class="text-center max-w-3xl mx-auto">
-
-      <p class="text-xs font-semibold uppercase tracking-[0.35em] text-[#FD5528] "
-      data-aos="fade-up">
-        Work
-      </p>
-
-      <h2 class="mt-4 text-3xl font-bold text-gray-900 md:text-4xl"
-      data-aos="fade-up" data-aos-delay="100">
-        Featured Projects
-      </h2>
-
-      <p class="mt-4 text-gray-600"
-      data-aos="fade-up" data-aos-delay="200">
-        Real products delivered for fast-paced teams.
-      </p>
-
-    </div>
-
-    <!-- Portfolio Grid -->
-    <div class="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-
-      <!-- Project -->
-      <article data-aos="fade-up"
-      class="group rounded-2xl border  border-gray-200 bg-white p-7 shadow-sm transition hover:-translate-y-2 hover:shadow-xl shadow-[#FD5528]  hover:shadow-[#f9b5a0] ">
-
-        <p class="text-xs text-center font-semibold uppercase tracking-[0.25em] text-[#FD5528] ">
-          ERP Systems
-        </p>
-
-        <h3 class="mt-4 text-center text-xl font-semibold text-gray-900">
-          Enterprise ERP System
-        </h3>
-
-        <p class="mt-3 text-center text-sm text-gray-600">
-          Complete business management solution for manufacturing clients.
-        </p>
-
-        <p class="mt-4 text-center text-xs font-mono text-gray-500">
-          .NET Core • SQL Server • React
-        </p>
-
-      </article>
-
-
-      <article data-aos="fade-up" data-aos-delay="100"
-      class="group rounded-2xl border border-gray-200 bg-white p-7 shadow-sm transition hover:-translate-y-2 hover:shadow-xl shadow-[#FD5528]  hover:shadow-[#f9b5a0] ">
-
-        <p class="text-xs text-center font-semibold uppercase tracking-[0.25em] text-[#FD5528] ">
-          POS Systems
-        </p>
-
-        <h3 class="mt-4 text-center text-xl font-semibold text-gray-900">
-          Multi-Store POS Platform
-        </h3>
-
-        <p class="mt-3 text-center text-sm text-gray-600">
-          Cloud-native point-of-sale system for retail and hospitality chains.
-        </p>
-
-        <p class="mt-4 text-center text-xs font-mono text-gray-500">
-          Node.js • React • Firebase
-        </p>
-
-      </article>
-
-
-      <article data-aos="fade-up" data-aos-delay="200"
-      class="group rounded-2xl border border-gray-200 bg-white p-7 shadow-sm transition hover:-translate-y-2 hover:shadow-xl shadow-[#FD5528]  hover:shadow-[#f9b5a0] ">
-
-        <p class="text-xs text-center font-semibold uppercase tracking-[0.25em] text-[#FD5528] ">
-          Web Applications
-        </p>
-
-        <h3 class="mt-4 text-center text-xl font-semibold text-gray-900">
-          SaaS Analytics Dashboard
-        </h3>
-
-        <p class="mt-3 text-center text-sm text-gray-600">
-          Real-time insights and reporting tools for data-driven product teams.
-        </p>
-
-        <p class="mt-4 text-center text-xs font-mono text-gray-500">
-          React • TypeScript • PostgreSQL
-        </p>
-
-      </article>
-
-
-      <article data-aos="fade-up" data-aos-delay="300"
-      class="group rounded-2xl border border-gray-200 bg-white p-7 shadow-sm transition hover:-translate-y-2 hover:shadow-xl shadow-[#FD5528]  hover:shadow-[#f9b5a0] ">
-
-        <p class="text-xs text-center font-semibold uppercase tracking-[0.25em] text-[#FD5528] ">
-          Ecommerce Platforms
-        </p>
-
-        <h3 class="mt-4 text-center text-xl font-semibold text-gray-900">
-          E-commerce Marketplace
-        </h3>
-
-        <p class="mt-3 text-center text-sm text-gray-600">
-          Multi-vendor marketplace with secure payments and messaging.
-        </p>
-
-        <p class="mt-4 text-center text-xs font-mono text-gray-500">
-          Next.js • Stripe • MongoDB
-        </p>
-
-      </article>
-
-
-      <article data-aos="fade-up" data-aos-delay="400"
-      class="group rounded-2xl border border-gray-200 bg-white p-7 shadow-sm transition hover:-translate-y-2 hover:shadow-xl shadow-[#FD5528]  hover:shadow-[#f9b5a0] ">
-
-        <p class="text-xs text-center font-semibold uppercase tracking-[0.25em] text-[#FD5528] ">
-          Startup MVPs
-        </p>
-
-        <h3 class="mt-4 text-center text-xl font-semibold text-gray-900">
-          HealthTech MVP
-        </h3>
-
-        <p class="mt-3 text-center text-sm text-gray-600">
-          Patient management system with telemedicine workflows.
-        </p>
-
-        <p class="mt-4 text-center text-xs font-mono text-gray-500">
-          React Native • Node.js • AWS
-        </p>
-
-      </article>
-
-
-      <article data-aos="fade-up" data-aos-delay="500"
-      class="group rounded-2xl border border-gray-200 bg-white p-7 shadow-sm transition hover:-translate-y-2 hover:shadow-xl shadow-[#FD5528]  hover:shadow-[#f9b5a0] ">
-
-        <p class="text-xs text-center font-semibold uppercase tracking-[0.25em] text-[#FD5528] ">
-          Web Applications
-        </p>
-
-        <h3 class="mt-4 text-center text-xl font-semibold text-gray-900">
-          Logistics Management Suite
-        </h3>
-
-        <p class="mt-3 text-cecnter text-sm text-gray-600">
-          Fleet tracking and route optimization platform for logistics companies.
-        </p>
-
-        <p class="mt-4 text-center text-xs font-mono text-gray-500">
-          .NET Core • React • Azure
-        </p>
-
-      </article>
-
-    </div>
-
-  </div>
-
-</section>
-
 <!-- process-directions -->
-<section class="process-section relative overflow-hidden py-20">
+<section class="relative overflow-hidden py-20 bg-[#F9FAFB]">
 
-  <div class=" max-w-7xl mx-auto px-6 relative">
+  <div class="max-w-7xl mx-auto px-6">
 
     <!-- Heading -->
     <div class="text-center mb-16">
@@ -676,47 +510,97 @@
       </p>
     </div>
 
+    <!-- Steps -->
+    <div class="relative grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-y-16 text-center">
 
-    <!-- STEPS -->
-  <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-y-16 text-center relative items-start">
+      <!-- LINE (Desktop) -->
+      <div class="hidden lg:block absolute top-6 left-0 w-full border-t-2 border-dashed border-[#FD5528]/40"></div>
 
-  <div class="process-step group">
-    <div class="step-circle">01</div>
-    <h3 class="step-title">Discovery</h3>
-    <p class="step-desc">Understanding goals & defining scope</p>
-  </div>
+      <!-- STEP -->
+      <div class="relative group flex flex-col items-center">
 
-  <div class="process-step group">
-    <div class="step-circle">02</div>
-    <h3 class="step-title">UI / UX</h3>
-    <p class="step-desc">Designing intuitive experiences</p>
-  </div>
+        <!-- Circle -->
+        <div class="w-12 h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#FD5528] font-semibold z-10 transition group-hover:bg-[#FD5528] group-hover:text-white">
+          01
+        </div>
 
-  <div class="process-step group">
-    <div class="step-circle">03</div>
-    <h3 class="step-title">Development</h3>
-    <p class="step-desc">Building scalable applications</p>
-  </div>
+        <!-- Title -->
+        <h3 class="mt-4 font-semibold text-gray-900 group-hover:text-[#FD5528]">
+          Discovery
+        </h3>
 
-  <div class="process-step group">
-    <div class="step-circle">04</div>
-    <h3 class="step-title">Testing</h3>
-    <p class="step-desc">Ensuring quality & performance</p>
-  </div>
+        <p class="text-sm text-gray-500 mt-1">
+          Understanding goals & defining scope
+        </p>
 
-  <div class="process-step group">
-    <div class="step-circle">05</div>
-    <h3 class="step-title">Deployment</h3>
-    <p class="step-desc">Launching production-ready apps</p>
-  </div>
+      </div>
 
-  <div class="process-step group">
-    <div class="step-circle">06</div>
-    <h3 class="step-title">Support</h3>
-    <p class="step-desc">Continuous improvements</p>
-  </div>
+      <!-- STEP -->
+      <div class="relative group flex flex-col items-center">
+        <div class="w-12 h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#FD5528] font-semibold z-10 transition group-hover:bg-[#FD5528] group-hover:text-white">
+          02
+        </div>
+        <h3 class="mt-4 font-semibold text-gray-900 group-hover:text-[#FD5528]">
+          UI / UX
+        </h3>
+        <p class="text-sm text-gray-500 mt-1">
+          Designing intuitive experiences
+        </p>
+      </div>
 
-</div>
+      <!-- STEP -->
+      <div class="relative group flex flex-col items-center">
+        <div class="w-12 h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#FD5528] font-semibold z-10 transition group-hover:bg-[#FD5528] group-hover:text-white">
+          03
+        </div>
+        <h3 class="mt-4 font-semibold text-gray-900 group-hover:text-[#FD5528]">
+          Development
+        </h3>
+        <p class="text-sm text-gray-500 mt-1">
+          Building scalable applications
+        </p>
+      </div>
+
+      <!-- STEP -->
+      <div class="relative group flex flex-col items-center">
+        <div class="w-12 h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#FD5528] font-semibold z-10 transition group-hover:bg-[#FD5528] group-hover:text-white">
+          04
+        </div>
+        <h3 class="mt-4 font-semibold text-gray-900 group-hover:text-[#FD5528]">
+          Testing
+        </h3>
+        <p class="text-sm text-gray-500 mt-1">
+          Ensuring quality & performance
+        </p>
+      </div>
+
+      <!-- STEP -->
+      <div class="relative group flex flex-col items-center">
+        <div class="w-12 h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#FD5528] font-semibold z-10 transition group-hover:bg-[#FD5528] group-hover:text-white">
+          05
+        </div>
+        <h3 class="mt-4 font-semibold text-gray-900 group-hover:text-[#FD5528]">
+          Deployment
+        </h3>
+        <p class="text-sm text-gray-500 mt-1">
+          Launching production-ready apps
+        </p>
+      </div>
+
+      <!-- STEP -->
+      <div class="relative group flex flex-col items-center">
+        <div class="w-12 h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#FD5528] font-semibold z-10 transition group-hover:bg-[#FD5528] group-hover:text-white">
+          06
+        </div>
+        <h3 class="mt-4 font-semibold text-gray-900 group-hover:text-[#FD5528]">
+          Support
+        </h3>
+        <p class="text-sm text-gray-500 mt-1">
+          Continuous improvements
+        </p>
+      </div>
+
+    </div>
 
   </div>
 
@@ -1017,30 +901,303 @@
 </section>
 
 
+
 <!-- END BLOG -->
 
-<!-- CTA BTN -->
-<section class="bg-[#F44918] px-6 py-20 text-center">
 
-    <div class="max-w-3xl mx-auto">
+<section class="bg-[#F9FAFB] py-16 sm:py-20 lg:py-24 px-4 sm:px-6">
 
-      <h2 class="text-3xl md:text-4xl font-bold text-white">
-        Let’s Build Your Next Digital Product
-      </h2>
+  <div class="max-w-7xl mx-auto">
 
-      <p class="mt-4 text-blue-200">
-        Ready to transform your ideas into powerful software? Let's talk.
+    <!-- Heading -->
+    <div class="text-center mb-12 sm:mb-16">
+      <p class="text-xs font-semibold uppercase tracking-[0.35em] text-[#FD5528]">
+        FAQ
       </p>
 
-      <a href="#contact"
-        class="inline-flex items-center gap-2 mt-8 bg-white   text-[#FD5528] px-8 py-3 rounded-md font-semibold transition">
+      <h2 class="mt-4 text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">
+        Frequently Asked Questions
+      </h2>
 
-        Start Your Project →
-      </a>
+      <p class="mt-4 text-gray-500 max-w-2xl mx-auto text-sm sm:text-base">
+        Everything you need to know about working with Backend Coders.
+      </p>
+    </div>
+
+    <!-- GRID -->
+    <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+
+      <!-- LEFT IMAGE (TOP ON MOBILE) -->
+      <div class="order-1 lg:order-2 relative">
+        <img 
+          src="{{asset('assets/images/faq.png')}}"
+          alt="FAQ Illustration"
+          class="rounded-2xl shadow-xl w-full h-full object-cover"
+        >
+      </div>
+
+      <!-- FAQ LIST -->
+      <div class="order-2 lg:order-1 space-y-4">
+
+        <!-- ITEM -->
+        <details class="group bg-white border border-gray-200 rounded-xl p-5 shadow-sm open:shadow-md transition duration-300">
+          <summary class="flex justify-between items-center cursor-pointer list-none">
+            <span class="font-medium text-gray-900 text-sm sm:text-base">
+              What services do you offer?
+            </span>
+            <span class="text-[#FD5528] text-xl transition-transform duration-300 group-open:rotate-45">
+              +
+            </span>
+          </summary>
+          <p class="mt-3 text-sm text-gray-500 leading-relaxed">
+            We specialize in backend development, API design, cloud infrastructure, database architecture, and scalable enterprise applications.
+          </p>
+        </details>
+
+        <!-- ITEM -->
+        <details class="group bg-white border border-gray-200 rounded-xl p-5 shadow-sm open:shadow-md transition duration-300">
+          <summary class="flex justify-between items-center cursor-pointer list-none">
+            <span class="font-medium text-gray-900 text-sm sm:text-base">
+              Which technologies do you work with?
+            </span>
+            <span class="text-[#FD5528] text-xl transition-transform duration-300 group-open:rotate-45">
+              +
+            </span>
+          </summary>
+          <p class="mt-3 text-sm text-gray-500 leading-relaxed">
+            We work with .NET Core, Node.js, Laravel, SQL Server, Redis, Azure, AWS, and modern DevOps tools.
+          </p>
+        </details>
+
+        <!-- ITEM -->
+        <details class="group bg-white border border-gray-200 rounded-xl p-5 shadow-sm open:shadow-md transition duration-300">
+          <summary class="flex justify-between items-center cursor-pointer list-none">
+            <span class="font-medium text-gray-900 text-sm sm:text-base">
+              Do you provide dedicated development teams?
+            </span>
+            <span class="text-[#FD5528] text-xl transition-transform duration-300 group-open:rotate-45">
+              +
+            </span>
+          </summary>
+          <p class="mt-3 text-sm text-gray-500 leading-relaxed">
+            Yes, we offer dedicated developers and full teams who work exclusively on your project.
+          </p>
+        </details>
+
+        <!-- ITEM -->
+        <details class="group bg-white border border-gray-200 rounded-xl p-5 shadow-sm open:shadow-md transition duration-300">
+          <summary class="flex justify-between items-center cursor-pointer list-none">
+            <span class="font-medium text-gray-900 text-sm sm:text-base">
+              How do you ensure scalability and performance?
+            </span>
+            <span class="text-[#FD5528] text-xl transition-transform duration-300 group-open:rotate-45">
+              +
+            </span>
+          </summary>
+          <p class="mt-3 text-sm text-gray-500 leading-relaxed">
+            We design systems with microservices, caching, load balancing, and optimized database structures.
+          </p>
+        </details>
+
+        <!-- ITEM -->
+        <details class="group bg-white border border-gray-200 rounded-xl p-5 shadow-sm open:shadow-md transition duration-300">
+          <summary class="flex justify-between items-center cursor-pointer list-none">
+            <span class="font-medium text-gray-900 text-sm sm:text-base">
+              What is your development process?
+            </span>
+            <span class="text-[#FD5528] text-xl transition-transform duration-300 group-open:rotate-45">
+              +
+            </span>
+          </summary>
+          <p class="mt-3 text-sm text-gray-500 leading-relaxed">
+            We follow an agile process including planning, design, development, testing, deployment, and continuous support.
+          </p>
+        </details>
+
+        <!-- ITEM -->
+        <details class="group bg-white border border-gray-200 rounded-xl p-5 shadow-sm open:shadow-md transition duration-300">
+          <summary class="flex justify-between items-center cursor-pointer list-none">
+            <span class="font-medium text-gray-900 text-sm sm:text-base">
+              Do you provide post-launch support?
+            </span>
+            <span class="text-[#FD5528] text-xl transition-transform duration-300 group-open:rotate-45">
+              +
+            </span>
+          </summary>
+          <p class="mt-3 text-sm text-gray-500 leading-relaxed">
+            Yes, we provide long-term maintenance, monitoring, updates, and scaling support.
+          </p>
+        </details>
+
+      </div>
 
     </div>
 
+  </div>
+
 </section>
+
+
+
+<!-- contact section -->
+<section id="contact" class="bg-[#F9FAFB] py-24 px-6 relative overflow-hidden">
+
+  <div class="max-w-7xl mx-auto">
+
+    <!-- Heading -->
+    <div class="text-center max-w-2xl mx-auto mb-16">
+      <p class="text-xs font-semibold uppercase tracking-[0.35em] text-[#FD5528]">
+        Contact
+      </p>
+
+      <h2 class="mt-4 text-3xl md:text-4xl font-bold text-gray-900">
+        Get In Touch
+      </h2>
+
+      <p class="mt-4 text-gray-500">
+        Have a project in mind? Let's discuss how we can help you achieve your goals.
+      </p>
+    </div>
+
+    <!-- Main Layout -->
+    <div class="grid lg:grid-cols-2 gap-12 items-stretch">
+
+      <!-- LEFT SIDE -->
+  <div class="relative bg-white rounded-3xl shadow-xl border border-gray-200 p-8 overflow-hidden">
+
+
+      <!-- CONTENT -->
+      <div class="relative space-y-8">
+
+       <!-- ITEM -->
+    <div class="flex items-start gap-4 group">
+      <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-[#FFF1EC] group-hover:scale-110 transition">
+        <img src="https://img.icons8.com/?size=100&id=53430&format=png&color=ea580c" class="w-6 h-6">
+      </div>
+      <div>
+        <h3 class="font-semibold text-gray-900">Office Address</h3>
+        <p class="text-sm text-gray-500 mt-1">
+          11/42, Krishna Nagar, Kanpur, UP 208007
+        </p>
+      </div>
+    </div>
+
+    <!-- ITEM -->
+    <div class="flex items-start gap-4 group">
+      <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-[#FFF1EC] group-hover:scale-110 transition">
+        <img src="https://img.icons8.com/?size=100&id=9659&format=png&color=ea580c" class="w-6 h-6">
+      </div>
+      <div>
+        <h3 class="font-semibold text-gray-900">Phone</h3>
+        <p class="text-sm text-gray-500 mt-1">
+          +91 914 0092 133
+        </p>
+      </div>
+    </div>
+
+    <!-- ITEM -->
+    <div class="flex items-start gap-4 group">
+      <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-[#FFF1EC] group-hover:scale-110 transition">
+        <img src="https://img.icons8.com/?size=100&id=53388&format=png&color=ea580c" class="w-6 h-6">
+      </div>
+      <div>
+        <h3 class="font-semibold text-gray-900">Email</h3>
+        <p class="text-sm text-gray-500 mt-1">
+         info@backendcoderindia.com
+        </p>
+      </div>
+    </div>
+
+    <!-- SOCIAL -->
+  <div class="pt-4 border-t border-gray-100">
+
+      <p class="text-sm text-gray-600 mb-3">Follow us</p>
+
+      <div class="flex gap-3">
+
+        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-xl bg-[#FFF1EC] hover:bg-[#FD5528] transition group">
+          <img src="https://img.icons8.com/?size=100&id=118468&format=png&color=f44918" class="w-5 h-5 group-hover:brightness-0 group-hover:invert">
+        </a>
+
+        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-xl bg-[#FFF1EC] hover:bg-[#FD5528] transition group">
+          <img src="https://img.icons8.com/?size=100&id=32292&format=png&color=f44918" class="w-5 h-5 group-hover:brightness-0 group-hover:invert">
+        </a>
+
+        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-xl bg-[#FFF1EC] hover:bg-[#FD5528] transition group">
+          <img src="https://img.icons8.com/?size=100&id=6Fsj3rv2DCmG&format=png&color=f44918" class="w-5 h-5 group-hover:brightness-0 group-hover:invert">
+        </a>
+
+        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-xl bg-[#FFF1EC] hover:bg-[#FD5528] transition group">
+          <img src="https://img.icons8.com/?size=100&id=16712&format=png&color=f44918" class="w-5 h-5 group-hover:brightness-0 group-hover:invert">
+        </a>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- MAP -->
+  <div class="mt-8 rounded-2xl overflow-hidden border border-gray-200 shadow-sm group">
+
+  <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d7146.187936818438!2d80.372306!3d26.420444!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1774945612057!5m2!1sen!2sin" width="600" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade  class="w-full h-[150px] border-0 transition duration-500 group-hover:scale-105"
+      loading="lazy"></iframe>
+ 
+
+  </div>
+
+</div>
+
+      <!-- RIGHT SIDE FORM -->
+      <div class="relative bg-white p-8 rounded-3xl shadow-xl border border-gray-200 overflow-hidden">
+
+  <!-- Decorative Curve -->
+  <div class="absolute -bottom-20 -right-20 w-72 h-72 bg-[#FD5528]/10 rounded-full blur-3xl"></div>
+
+  <!-- HEADING -->
+  <div class="relative mb-6">
+    <h2 class="text-2xl font-semibold text-gray-900">
+      Contact Us
+    </h2>
+    <p class="text-sm text-gray-500 mt-1">
+      Fill out the form and we’ll get back to you shortly.
+    </p>
+  </div>
+
+  <!-- FORM -->
+  <form class="relative space-y-6">
+
+    <div class="grid sm:grid-cols-2 gap-4">
+      <input type="text" placeholder="First Name"
+        class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FD5528]/30">
+
+      <input type="text" placeholder="Last Name"
+        class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FD5528]/30">
+    </div>
+
+    <input type="email" placeholder="Email Address"
+      class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FD5528]/30">
+
+    <input type="text" placeholder="Subject"
+      class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FD5528]/30">
+
+    <textarea rows="4" placeholder="Your Message"
+      class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FD5528]/30"></textarea>
+
+    <button type="submit"
+      class="w-full bg-[#FD5528] text-white py-3 rounded-lg font-medium hover:bg-[#e04a22] transition shadow-md hover:shadow-lg">
+      Send Message
+    </button>
+
+  </form>
+
+</div>
+
+    </div>
+
+  </div>
+
+</section>
+<!-- END contact section -->
 
 </main>
 

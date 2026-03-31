@@ -322,6 +322,173 @@
   
 </section>
 
+<!-- FEATURES PROJECTS -->
+<section id="portfolio" class="bg-white px-6 py-24">
+
+  <div class="max-w-7xl mx-auto">
+
+    <!-- Heading -->
+    <div class="text-center max-w-3xl mx-auto">
+
+      <p class="text-xs font-semibold uppercase tracking-[0.35em] text-[#FD5528] "
+      data-aos="fade-up">
+        Work
+      </p>
+
+      <h2 class="mt-4 text-3xl font-bold text-gray-900 md:text-4xl"
+      data-aos="fade-up" data-aos-delay="100">
+        Featured Projects
+      </h2>
+
+      <p class="mt-4 text-gray-600"
+      data-aos="fade-up" data-aos-delay="200">
+        Real products delivered for fast-paced teams.
+      </p>
+
+    </div>
+
+    <!-- Portfolio Grid -->
+    <div class="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+
+      <!-- Project -->
+      <article data-aos="fade-up"
+      class="group rounded-2xl border  border-gray-200 bg-white p-7 shadow-sm transition hover:-translate-y-2 hover:shadow-xl shadow-[#FD5528]  hover:shadow-[#f9b5a0] ">
+
+        <p class="text-xs text-center font-semibold uppercase tracking-[0.25em] text-[#FD5528] ">
+          ERP Systems
+        </p>
+
+        <h3 class="mt-4 text-center text-xl font-semibold text-gray-900">
+          Enterprise ERP System
+        </h3>
+
+        <p class="mt-3 text-center text-sm text-gray-600">
+          Complete business management solution for manufacturing clients.
+        </p>
+
+        <p class="mt-4 text-center text-xs font-mono text-gray-500">
+          .NET Core • SQL Server • React
+        </p>
+
+      </article>
+
+
+      <article data-aos="fade-up" data-aos-delay="100"
+      class="group rounded-2xl border border-gray-200 bg-white p-7 shadow-sm transition hover:-translate-y-2 hover:shadow-xl shadow-[#FD5528]  hover:shadow-[#f9b5a0] ">
+
+        <p class="text-xs text-center font-semibold uppercase tracking-[0.25em] text-[#FD5528] ">
+          POS Systems
+        </p>
+
+        <h3 class="mt-4 text-center text-xl font-semibold text-gray-900">
+          Multi-Store POS Platform
+        </h3>
+
+        <p class="mt-3 text-center text-sm text-gray-600">
+          Cloud-native point-of-sale system for retail and hospitality chains.
+        </p>
+
+        <p class="mt-4 text-center text-xs font-mono text-gray-500">
+          Node.js • React • Firebase
+        </p>
+
+      </article>
+
+
+      <article data-aos="fade-up" data-aos-delay="200"
+      class="group rounded-2xl border border-gray-200 bg-white p-7 shadow-sm transition hover:-translate-y-2 hover:shadow-xl shadow-[#FD5528]  hover:shadow-[#f9b5a0] ">
+
+        <p class="text-xs text-center font-semibold uppercase tracking-[0.25em] text-[#FD5528] ">
+          Web Applications
+        </p>
+
+        <h3 class="mt-4 text-center text-xl font-semibold text-gray-900">
+          SaaS Analytics Dashboard
+        </h3>
+
+        <p class="mt-3 text-center text-sm text-gray-600">
+          Real-time insights and reporting tools for data-driven product teams.
+        </p>
+
+        <p class="mt-4 text-center text-xs font-mono text-gray-500">
+          React • TypeScript • PostgreSQL
+        </p>
+
+      </article>
+
+
+      <article data-aos="fade-up" data-aos-delay="300"
+      class="group rounded-2xl border border-gray-200 bg-white p-7 shadow-sm transition hover:-translate-y-2 hover:shadow-xl shadow-[#FD5528]  hover:shadow-[#f9b5a0] ">
+
+        <p class="text-xs text-center font-semibold uppercase tracking-[0.25em] text-[#FD5528] ">
+          Ecommerce Platforms
+        </p>
+
+        <h3 class="mt-4 text-center text-xl font-semibold text-gray-900">
+          E-commerce Marketplace
+        </h3>
+
+        <p class="mt-3 text-center text-sm text-gray-600">
+          Multi-vendor marketplace with secure payments and messaging.
+        </p>
+
+        <p class="mt-4 text-center text-xs font-mono text-gray-500">
+          Next.js • Stripe • MongoDB
+        </p>
+
+      </article>
+
+
+      <article data-aos="fade-up" data-aos-delay="400"
+      class="group rounded-2xl border border-gray-200 bg-white p-7 shadow-sm transition hover:-translate-y-2 hover:shadow-xl shadow-[#FD5528]  hover:shadow-[#f9b5a0] ">
+
+        <p class="text-xs text-center font-semibold uppercase tracking-[0.25em] text-[#FD5528] ">
+          Startup MVPs
+        </p>
+
+        <h3 class="mt-4 text-center text-xl font-semibold text-gray-900">
+          HealthTech MVP
+        </h3>
+
+        <p class="mt-3 text-center text-sm text-gray-600">
+          Patient management system with telemedicine workflows.
+        </p>
+
+        <p class="mt-4 text-center text-xs font-mono text-gray-500">
+          React Native • Node.js • AWS
+        </p>
+
+      </article>
+
+
+      <article data-aos="fade-up" data-aos-delay="500"
+      class="group rounded-2xl border border-gray-200 bg-white p-7 shadow-sm transition hover:-translate-y-2 hover:shadow-xl shadow-[#FD5528]  hover:shadow-[#f9b5a0] ">
+
+        <p class="text-xs text-center font-semibold uppercase tracking-[0.25em] text-[#FD5528] ">
+          Web Applications
+        </p>
+
+        <h3 class="mt-4 text-center text-xl font-semibold text-gray-900">
+          Logistics Management Suite
+        </h3>
+
+        <p class="mt-3 text-cecnter text-sm text-gray-600">
+          Fleet tracking and route optimization platform for logistics companies.
+        </p>
+
+        <p class="mt-4 text-center text-xs font-mono text-gray-500">
+          .NET Core • React • Azure
+        </p>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
 <!-- CTA SECTION -->
 <section class="bg-[#FC5124] text-white py-16 text-center">
   <h2 class="text-3xl font-bold mb-4">
