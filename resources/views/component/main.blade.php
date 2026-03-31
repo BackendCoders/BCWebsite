@@ -304,6 +304,82 @@
   }
 }
 
+
+.service-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 14px 10px;
+  border-radius: 16px;
+
+  background: white;
+  border: 1px solid #e5e7eb;
+
+  transition: all 0.3s ease;
+}
+
+.service-card img {
+  width: 26px;
+  height: 26px;
+  margin-bottom: 8px;
+}
+
+.service-card p {
+  font-size: 11px;
+  font-weight: 600;
+  color: #374151;
+  text-align: center;
+}
+
+/* HOVER */
+.service-card:hover {
+  transform: translateY(-6px);
+  border-color: #FD5528;
+  box-shadow: 0 12px 30px rgba(253,85,40,0.25);
+  color: #FD5528;
+}
+
+/* SM */
+@media (min-width: 640px) {
+  .service-card {
+    padding: 16px 12px;
+  }
+  .service-card img {
+    width: 30px;
+    height: 30px;
+  }
+  .service-card p {
+    font-size: 12px;
+  }
+}
+
+/* MD */
+@media (min-width: 768px) {
+  .service-card {
+    padding: 18px;
+  }
+  .service-card img {
+    width: 34px;
+    height: 34px;
+  }
+  .service-card p {
+    font-size: 13px;
+  }
+}
+
+/* LG+ */
+@media (min-width: 1024px) {
+  .service-card img {
+    width: 38px;
+    height: 38px;
+  }
+  .service-card p {
+    font-size: 14px;
+  }
+}
+
 </style>
     @include('component.header')
 

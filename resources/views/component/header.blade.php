@@ -11,7 +11,7 @@
 
 <!-- TOP BAR -->
 <div class="bg-[#FD5528] text-white text-sm">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 py-2 
+  <div class="max-w-9xl lg:mx-24 mx-auto px-4 sm:px-6 py-2 
               flex flex-col sm:flex-row items-center justify-between gap-3">
 
     <!-- LEFT: CONTACT INFO -->
@@ -89,7 +89,7 @@
 <!-- navbar -->
    <header class="sticky top-0 z-40 border-b border-gray-200 bg-black/95 backdrop-blur">
     
-    <div class="max-w-7xl mx-auto flex h-16 items-center justify-between px-6">
+    <div class="max-w-9xl lg:mx-24 mx-auto flex h-16 items-center justify-between px-6">
 
     <!-- logo -->
         <a href="{{ route('frontend.index') }}" class="flex items-center gap-3">

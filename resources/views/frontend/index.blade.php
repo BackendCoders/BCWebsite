@@ -4,16 +4,18 @@
 <main class="flex-1">
       <!-- HERO SECTION -->
 
-<section id="hero" class="relative overflow-hidden bg-white px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
 
-  <div class="max-w-7xl mx-auto grid items-center gap-12 lg:gap-16 lg:grid-cols-2">
+
+<section id="hero" class="relative overflow-hidden bg-white px-4 sm:px-6 lg:px-8 py-14 sm:py-16 md:py-20 lg:py-24">
+
+  <div class="max-w-[1400px] mx-auto grid items-center gap-10 md:gap-14 lg:gap-16 lg:grid-cols-2">
 
     <!-- LEFT CONTENT -->
-    <div class="max-w-xl mx-auto lg:mx-0 text-center lg:text-left">
+    <div class="w-full max-w-xl mx-auto lg:mx-0 text-center lg:text-left">
 
       <!-- BADGE -->
-           <!-- Heading -->
-         <span 
+      <span 
+    
       data-aos="fade-up"
       class="inline-block text-xs sm:text-sm font-semibold uppercase tracking-[0.35em] 
          text-[#FD5528] relative px-5 py-2 rounded-full 
@@ -24,26 +26,18 @@
          before:bg-gradient-to-r before:from-[#FD5528]/20 before:to-orange-200/30 
          before:-z-10">
 
-          17+ Years Building Software
-
-    </span>
-      <!-- <span 
-        data-aos="fade-down"
-        data-aos-delay="100"
-        class="inline-flex items-center justify-center lg:justify-start 
-               gap-2 rounded-full border border-[#FD5528] bg-white 
-               px-4 py-1 text-[10px] sm:text-xs font-semibold tracking-wider text-[#FD5528]">
         17+ Years Building Software
-      </span> -->
+      </span>
 
       <!-- HEADING -->
       <h1 
         data-aos="fade-up"
         data-aos-delay="200"
-        class="mt-5 sm:mt-6 text-3xl sm:text-4xl md:text-5xl lg:text-6xl 
-               font-bold leading-tight text-gray-900">
+        class="mt-4 sm:mt-5 text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[3.5rem] 
+        font-bold leading-tight text-gray-900">
 
-        Building Powerful <br class="hidden sm:block">
+        Building Powerful 
+        <br class="hidden sm:block">
 
         <span class="text-[#FD5528]">
           Software & Digital Platforms
@@ -54,7 +48,8 @@
       <p 
         data-aos="fade-up"
         data-aos-delay="300"
-        class="mt-4 sm:mt-6 text-sm sm:text-base md:text-lg leading-relaxed text-gray-600">
+        class="mt-4 sm:mt-5 text-xs xs:text-sm sm:text-base md:text-lg 
+        leading-relaxed text-gray-600">
 
         We are a multidisciplinary team of developers, designers, and strategists 
         crafting scalable technology solutions for startups and enterprises worldwide.
@@ -64,20 +59,22 @@
       <div 
         data-aos="fade-up"
         data-aos-delay="400"
-        class="mt-6 sm:mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4 
-               justify-center lg:justify-start">
+        class="mt-6 sm:mt-7 flex flex-col sm:flex-row gap-3 sm:gap-4 
+        justify-center lg:justify-start">
 
         <a href="#contact"
-           class="inline-flex items-center justify-center gap-2 
-                  rounded-lg bg-[#FD5528] px-6 py-3 text-sm font-semibold text-white 
-                  shadow-md transition hover:bg-orange-600 hover:shadow-lg">
+          class="w-full sm:w-auto inline-flex items-center justify-center 
+          rounded-lg bg-[#FD5528] px-5 sm:px-6 py-2.5 sm:py-3 text-xs sm:text-sm font-semibold text-white 
+          shadow-md transition hover:bg-orange-600 hover:shadow-lg">
+
           Start Your Project
         </a>
 
         <a href="#portfolio"
-           class="inline-flex items-center justify-center gap-2 
-                  rounded-lg border border-gray-300 px-6 py-3 text-sm font-semibold text-gray-700 
-                  transition hover:border-[#FD5528] hover:text-[#FD5528]">
+          class="w-full sm:w-auto inline-flex items-center justify-center 
+          rounded-lg border border-gray-300 px-5 sm:px-6 py-2.5 sm:py-3 text-xs sm:text-sm font-semibold text-gray-700 
+          transition hover:border-[#FD5528] hover:text-[#FD5528]">
+
           View Our Work
         </a>
 
@@ -85,89 +82,94 @@
 
     </div>
 
-    <!-- RIGHT IMAGE -->
+    <!-- RIGHT IMAGE GRID -->
     <div 
-  data-aos="zoom-in"
-  data-aos-delay="300"
-  class="relative mx-auto w-full max-w-md sm:max-w-lg lg:max-w-full">
+      data-aos="zoom-in"
+      data-aos-delay="300"
+      class="relative w-full max-w-md sm:max-w-lg md:max-w-xl lg:max-w-full mx-auto">
 
- <div class="grid grid-cols-2 gap-4">
+      <div class="grid grid-cols-2 gap-3 sm:gap-4 md:gap-5">
 
-  <!-- Top Left -->
-  <div class="relative overflow-hidden rounded-xl group translate-y-6">
-    
-    <!-- IMAGE -->
-    <img src="{{asset('assets/images/backend_coders_split_1.png')}}"
-      class="w-full h-full object-cover transition duration-500 group-hover:opacity-0 group-hover:scale-105"
-      alt="">
+        <!-- CARD -->
+        <div class="relative overflow-hidden rounded-xl group translate-y-4 sm:translate-y-6">
 
-    <!-- VIDEO -->
-    <video autoplay muted loop playsinline
-      class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition duration-500">
-      <source src="{{asset('assets/images/1.mp4')}}" type="video/mp4">
-    </video>
+          <img src="{{asset('assets/images/backend_coders_split_1.png')}}"
+            class="w-full h-full object-cover transition duration-500 group-hover:opacity-0 group-hover:scale-105">
 
-  </div>
+          <video autoplay muted loop playsinline
+            class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition duration-500">
+            <source src="{{asset('assets/images/1.mp4')}}" type="video/mp4">
+          </video>
 
-  <!-- Top Right -->
-  <div class="relative overflow-hidden rounded-xl group -translate-y-6">
+        </div>
 
-    <img src="{{asset('assets/images/backend_coders_split_2.png')}}"
-      class="w-full h-full object-cover transition duration-500 group-hover:opacity-0 group-hover:scale-105"
-      alt="">
+        <!-- CARD -->
+        <div class="relative overflow-hidden rounded-xl group -translate-y-4 sm:-translate-y-6">
 
-    <video autoplay muted loop playsinline
-      class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition duration-500">
-      <source src="{{asset('assets/images/2.mp4')}}" type="video/mp4">
-    </video>
+          <img src="{{asset('assets/images/backend_coders_split_2.png')}}"
+            class="w-full h-full object-cover transition duration-500 group-hover:opacity-0 group-hover:scale-105">
 
-  </div>
+          <video autoplay muted loop playsinline
+            class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition duration-500">
+            <source src="{{asset('assets/images/2.mp4')}}" type="video/mp4">
+          </video>
 
-  <!-- Bottom Left -->
-  <div class="relative overflow-hidden rounded-xl group translate-y-6">
+        </div>
 
-    <img src="{{asset('assets/images/backend_coders_split_3.png')}}"
-      class="w-full h-full object-cover transition duration-500 group-hover:opacity-0 group-hover:scale-105"
-      alt="">
+        <!-- CARD -->
+        <div class="relative overflow-hidden rounded-xl group translate-y-4 sm:translate-y-6">
 
-    <video autoplay muted loop playsinline
-      class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition duration-500">
-      <source src="{{asset('assets/images/3.mp4')}}" type="video/mp4">
-    </video>
+          <img src="{{asset('assets/images/backend_coders_split_3.png')}}"
+            class="w-full h-full object-cover transition duration-500 group-hover:opacity-0 group-hover:scale-105">
 
-  </div>
+          <video autoplay muted loop playsinline
+            class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition duration-500">
+            <source src="{{asset('assets/images/3.mp4')}}" type="video/mp4">
+          </video>
 
-  <!-- Bottom Right -->
-  <div class="relative overflow-hidden rounded-xl group -translate-y-6">
+        </div>
 
-    <img src="{{asset('assets/images/backend_coders_split_4.png')}}"
-      class="w-full h-full object-cover transition duration-500 group-hover:opacity-0 group-hover:scale-105"
-      alt="">
+        <!-- CARD -->
+        <div class="relative overflow-hidden rounded-xl group -translate-y-4 sm:-translate-y-6">
 
-    <video autoplay muted loop playsinline
-      class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition duration-500">
-      <source src="{{asset('assets/images/4.mp4')}}" type="video/mp4">
-    </video>
+          <img src="{{asset('assets/images/backend_coders_split_4.png')}}"
+            class="w-full h-full object-cover transition duration-500 group-hover:opacity-0 group-hover:scale-105">
 
-  </div>
+          <video autoplay muted loop playsinline
+            class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition duration-500">
+            <source src="{{asset('assets/images/4.mp4')}}" type="video/mp4">
+          </video>
 
-</div>
-</div>
+        </div>
+
+      </div>
+
+    </div>
 
   </div>
 
 </section>
 
 
+
+
 <!-- END HERO SECTIOPN -->
 
 <!-- WHO WE ARE-->
-<section id="who-we-are" class="bg-[#F9FAFB] px-6 py-16 sm:py-20 lg:py-24">
-
-    <div class="max-w-6xl mx-auto text-center">
 
 
-    <p 
+
+<section id="who-we-are" class="bg-[#F9FAFB] px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 py-14 sm:py-16 md:py-20 lg:py-24 relative overflow-hidden">
+
+  <!-- GLOW -->
+  <div class="absolute top-0 left-0 w-48 sm:w-72 h-48 sm:h-72 bg-[#FD5528]/10 blur-[100px] rounded-full"></div>
+  <div class="absolute bottom-0 right-0 w-48 sm:w-72 h-48 sm:h-72 bg-orange-200/30 blur-[100px] rounded-full"></div>
+
+  <div class="max-w-[1400px] mx-auto text-center relative z-10">
+
+      <!-- BADGE -->
+      <span 
+    
       data-aos="fade-up"
       class="inline-block text-xs sm:text-sm font-semibold uppercase tracking-[0.35em] 
          text-[#FD5528] relative px-5 py-2 rounded-full 
@@ -178,76 +180,78 @@
          before:bg-gradient-to-r before:from-[#FD5528]/20 before:to-orange-200/30 
          before:-z-10">
 
-        Who We Are
+      Who We Are
+    </span>
 
+    <!-- HEADING -->
+    <h2 
+      class="mt-5 text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl 
+      font-bold text-gray-900 leading-tight"
+      data-aos="fade-up"
+      data-aos-delay="100">
+
+      Backend 
+      <span class="text-[#FD5528]">Coders</span> 
+      India
+    </h2>
+
+    <!-- DESCRIPTION -->
+    <p 
+      class="mx-auto mt-4 sm:mt-6 max-w-3xl 
+      text-xs xs:text-sm sm:text-base md:text-lg 
+      leading-relaxed text-gray-600"
+      data-aos="fade-up"
+      data-aos-delay="200">
+
+      Backend Coders India is a boutique technology studio crafting high-performance
+      web, mobile, and SaaS platforms for startups and enterprises that demand
+      scalability, security, and modern digital experiences.
     </p>
 
+    <!-- SERVICES -->
+    <div class="mt-10 sm:mt-12 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4 md:gap-5">
 
+      <!-- CARD -->
+      <div class="service-card" data-aos="zoom-in">
+        <img src="https://img.icons8.com/?size=100&id=2169&format=png&color=fd5528">
+        <p>SaaS Platforms</p>
+      </div>
 
-        <h2 
-        class="mt-4 text-3xl font-bold text-gray-900 md:text-4xl"
-        data-aos="fade-up"
-        data-aos-delay="100">
-        Backend Coders India
-        </h2>
+      <div class="service-card" data-aos="zoom-in" data-aos-delay="100">
+        <img src="https://img.icons8.com/?size=100&id=XZzsxYpJLV3S&format=png&color=fd5528">
+        <p>ERP Systems</p>
+      </div>
 
-        <p 
-        class="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-gray-600"
-        data-aos="fade-up"
-        data-aos-delay="200">
-        Backend Coders India is a boutique technology studio crafting high-performance
-        web, mobile, and SaaS platforms for startups and enterprises that demand
-        scalability, security, and modern digital experiences.
-        </p>
+      <div class="service-card" data-aos="zoom-in" data-aos-delay="200">
+        <img src="https://img.icons8.com/?size=100&id=3578&format=png&color=fd5528">
+        <p>POS Systems</p>
+      </div>
 
-        <!-- Services -->
-        <div class="mt-12 grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-5">
+      <div class="service-card" data-aos="zoom-in" data-aos-delay="300">
+        <img src="https://img.icons8.com/?size=100&id=XkroSDpLASWA&format=png&color=fd5528">
+        <p>E-commerce</p>
+      </div>
 
-            <span 
-            data-aos="zoom-in"
-            class="rounded-xl border border-gray-200 bg-[#ffe6d7] px-5 py-4 text-sm font-medium text-gray-700 transition hover:border-[#FD5528]  hover:text-[#FD5528]  hover:shadow-md">
-            SaaS Platforms
-            </span>
-
-            <span 
-            data-aos="zoom-in"
-            data-aos-delay="100"
-            class="rounded-xl border border-gray-200 bg-[#ffe6d7] px-5 py-4 text-sm font-medium text-gray-700 transition hover:border-[#FD5528]  hover:text-[#FD5528]  hover:shadow-md">
-            ERP Systems
-            </span>
-
-            <span 
-            data-aos="zoom-in"
-            data-aos-delay="200"
-            class="rounded-xl border border-gray-200 bg-[#ffe6d7] px-5 py-4 text-sm font-medium text-gray-700 transition hover:border-[#FD5528]  hover:text-[#FD5528]  hover:shadow-md">
-            POS Systems
-            </span>
-
-            <span 
-            data-aos="zoom-in"
-            data-aos-delay="300"
-            class="rounded-xl border border-gray-200 bg-[#ffe6d7] px-5 py-4 text-sm font-medium text-gray-700 transition hover:border-[#FD5528]  hover:text-[#FD5528]  hover:shadow-md">
-            E-commerce
-            </span>
-
-            <span 
-            data-aos="zoom-in"
-            data-aos-delay="400"
-            class="rounded-xl border border-gray-200 bg-[#ffe6d7] px-5 py-4 text-sm font-medium text-gray-700 transition hover:border-[#FD5528]  hover:text-[#FD5528]  hover:shadow-md">
-            Custom Web Apps
-            </span>
-
-        </div>
+      <div class="service-card" data-aos="zoom-in" data-aos-delay="400">
+        <img src="https://img.icons8.com/?size=100&id=vJuSkDSbjZgp&format=png&color=fd5528">
+        <p>Custom Web Apps</p>
+      </div>
 
     </div>
 
+  </div>
+
 </section>
+
+
+
+
 <!-- END WHO WE ARE -->
 
 <!-- SERVICE -->
 <section id="services" class="bg-white px-6 py-16 sm:py-20 lg:py-24">
 
-    <div class="max-w-7xl mx-auto">
+    <div class="max-w-7xl lg mx-auto">
 
         <!-- Heading -->
         <div class="text-center max-w-3xl mx-auto">
@@ -284,22 +288,48 @@
         <div class="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
 
             <!-- Card 1 -->
-            <article data-aos="fade-up"
-            class="group rounded-2xl border border-gray-200 bg-white p-7 shadow-sm transition hover:shadow-xl shadow-[#FD5528]  hover:shadow-[#f9b5a0]  hover:-translate-y-2">
+      
+<article data-aos="fade-up"
+  class="group relative rounded-2xl p-7 
+         bg-gradient-to-br from-black to-[#FD5528] 
+         border border-gray-200 
+         shadow-sm transition duration-300 
+         hover:shadow-[0_15px_40px_rgba(253,85,40,0.25)] 
+         hover:-translate-y-2 overflow-hidden">
 
-                <div class="mb-4 text-[#FD5528]  text-2xl flex justify-center">
-                  <img src="https://img.icons8.com/?size=100&id=DCkAZ79sIYhT&format=png&color=FD5528" alt="" class="h-16 w-16">
-                </div>
+  <!-- ORANGE GLOW EFFECT -->
+  <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 
+              bg-gradient-to-br from-[#FD5528]/10 via-transparent to-black/5 rounded-2xl"></div>
 
-                <h3 class="text-lg font-semibold text-center text-gray-900">
-                    Custom Web Applications
-                </h3>
+  <!-- CONTENT -->
+  <div class="relative z-10">
 
-                <p class="mt-2 text-sm text-center text-gray-600">
-                    Scalable web applications built with modern technologies and performance in mind.
-                </p>
+    <!-- ICON -->
+    <div class="mb-4 flex justify-center">
+      <div class="w-16 h-16 flex items-center justify-center rounded-full 
+                  bg-white
+                  shadow-md group-hover:scale-110 transition">
+        <img src="https://img.icons8.com/?size=100&id=DCkAZ79sIYhT&format=png&color=#FD5528"
+             class="w-8 h-8">
+      </div>
+    </div>
 
-            </article>
+    <!-- TITLE -->
+    <h3 class="text-base sm:text-lg md:text-xl font-semibold text-center text-white 
+               group-hover:text-[#FD5528] transition">
+      Custom Web Applications
+    </h3>
+
+    <!-- DESCRIPTION -->
+    <p class="mt-2 text-xs sm:text-sm md:text-base text-center text-white">
+      Scalable web applications built with modern technologies and performance in mind.
+    </p>
+
+  </div>
+
+</article>
+
+
 
             <!-- card 2 -->
             <article data-aos="fade-up" data-aos-delay="100"
@@ -456,7 +486,7 @@
 <!-- TECHNOLOGIES -->
 <section id="technologies" class="bg-[#F9FAFB] px-6 py-16 sm:py-20 lg:py-24">
 
-  <div class="max-w-7xl mx-auto">
+  <div class="max-w-9xl lg:mx-24 mx-auto">
 
     <!-- Heading -->
     <div class="text-center max-w-3xl mx-auto mb-12">
@@ -674,7 +704,7 @@
 
 <section class="relative overflow-hidden py-16 sm:py-20 lg:py-24 bg-[#F9FAFB]">
 
-  <div class="max-w-7xl mx-auto px-6">
+  <div class="max-w-9xl lg:mx-24 mx-auto px-6">
 
     <!-- Heading -->
     <div class="text-center md:mb-16">
@@ -821,7 +851,7 @@
 
 
 <section class="bg-[#F9FAFB] py-16 sm:py-20 lg:py-24 px-6">
-  <div class="max-w-7xl mx-auto text-center mb-16 items-center">
+  <div class="max-w-9xl lg:mx-24 mx-auto text-center mb-16 items-center">
         <!-- Heading -->
             <p 
       data-aos="fade-up"
@@ -851,7 +881,7 @@
 
 
     </div>
-  <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+  <div class="max-w-9xl lg:mx-24 mx-auto grid lg:grid-cols-2 gap-16 items-center">
   
  <!-- LEFT CONTENT -->
     <div class="relative">
@@ -952,7 +982,7 @@
 <!-- serve industry -->
 <section id="industries" class="bg-white px-6 py-16 sm:py-20 lg:py-24">
 
-  <div class="max-w-6xl mx-auto text-center">
+  <div class="max-w-9xl lg:mx-24 mx-auto text-center">
        <p 
       data-aos="fade-up"
       class="inline-block text-xs sm:text-sm font-semibold uppercase tracking-[0.35em] 
@@ -1052,7 +1082,7 @@
 
 <section id="blog" class="bg-white px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
 
-  <div class="max-w-7xl mx-auto">
+  <div class="max-w-9xl lg:mx-24 mx-auto">
 
     <!-- HEADER -->
     <div class="text-center max-w-2xl mx-auto">
@@ -1156,7 +1186,7 @@
 
 <section class="bg-[#F9FAFB] py-16 sm:py-20 lg:py-24 px-4 sm:px-6">
 
-  <div class="max-w-7xl mx-auto">
+  <div class="max-w-9xl lg:mx-24 mx-auto">
 
     <!-- Heading -->
     <div class="text-center mb-12 sm:mb-16">
@@ -1305,7 +1335,7 @@
 <!-- contact section -->
 <section id="contact" class="bg-[#F9FAFB] py-16 sm:py-20 lg:py-24 px-6 relative overflow-hidden">
 
-  <div class="max-w-7xl mx-auto">
+  <div class="max-w-9xl lg:mx-24 mx-auto">
 
    
        <div class="text-center max-w-2xl mx-auto mb-16">
@@ -1342,123 +1372,9 @@
     </div>
 
     <!-- Main Layout -->
-    <div class="grid lg:grid-cols-2 gap-12 items-stretch">
-
-      <!-- LEFT SIDE -->
-  <div class="relative bg-white rounded-3xl shadow-xl border border-gray-200 p-8 overflow-hidden">
+    <div class=" flex justify-center items-center gap-10 lg:gap-16 flex-col lg:flex-row">
 
 
-      <!-- CONTENT -->
-      <div class="relative space-y-8">
-
-      <ul class="space-y-5 text-sm">
-
-    <!-- ADDRESS -->
-    <li>
-      <div class="flex items-start gap-4 group">
-
-        <!-- ICON -->
-        <div class="w-11 h-11 flex items-center justify-center rounded-xl bg-[#FFF1EC]   group-hover:scale-110 transition duration-300">
-          <img src="https://img.icons8.com/?size=100&id=3723&format=png&color=ea580c" 
-               class="w-5 h-5">
-        </div>
-
-        <!-- TEXT -->
-        <div class="flex-1">
-          <h3 class="font-semibold text-black leading-none">
-            Office Address
-          </h3>
-          <p class="text-black mt-2 leading-relaxed">
-            11/42, Krishna Nagar, Kanpur, UP 208007
-          </p>
-        </div>
-
-      </div>
-    </li>
-
-    <!-- PHONE -->
-    <li>
-      <div class="flex items-start gap-4 group">
-
-        <div class="w-11 h-11 flex items-center justify-center rounded-xl bg-[#FFF1EC]   group-hover:scale-110 transition duration-300">
-          <img src="https://img.icons8.com/?size=100&id=9659&format=png&color=ea580c" 
-               class="w-5 h-5">
-        </div>
-
-        <div class="flex-1">
-          <h3 class="font-semibold text-black leading-none">
-            Phone
-          </h3>
-          <p class="text-black mt-2">
-            +91 914 0092 133
-          </p>
-        </div>
-
-      </div>
-    </li>
-
-        <!-- EMAIL -->
-          <li>
-          <div class="flex items-start gap-4 group">
-
-        <div class="w-11 h-11 flex items-center justify-center rounded-xl bg-[#FFF1EC]   group-hover:scale-110 transition duration-300">
-          <img src="https://img.icons8.com/?size=100&id=53388&format=png&color=ea580c" 
-               class="w-5 h-5">
-        </div>
-
-         <div class="flex-1">
-            <h3 class="font-semibold text-black leading-none">
-            Email
-          </h3>
-          <p class="text-black mt-2 break-all">
-            info@backendcodersindia.com
-          </p>
-          </div>
-
-        </div>
-       </li>
-
-      </ul>
-
-
-    <!-- SOCIAL -->
-  <div class="pt-4 border-t border-gray-100">
-
-      <p class="text-sm text-gray-600 mb-3">Follow us</p>
-
-      <div class="flex gap-3">
-
-        <a href="https://www.facebook.com/backendcoders/" target="_blank" class="w-10 h-10 flex items-center justify-center rounded-xl bg-[#FFF1EC] hover:bg-[#FD5528] transition group">
-          <img src="https://img.icons8.com/?size=100&id=118468&format=png&color=f44918" class="w-5 h-5 group-hover:brightness-0 group-hover:invert">
-        </a>
-
-        <a href="https://www.instagram.com/backendcoders?igsh=YWd0ZHJmMjJ5cjZr" class="w-10 h-10 flex items-center justify-center rounded-xl bg-[#FFF1EC] hover:bg-[#FD5528] transition group">
-          <img src="https://img.icons8.com/?size=100&id=32292&format=png&color=f44918" class="w-5 h-5 group-hover:brightness-0 group-hover:invert">
-        </a>
-
-        <a href="https://www.linkedin.com/company/backendcodersindia/" class="w-10 h-10 flex items-center justify-center rounded-xl bg-[#FFF1EC] hover:bg-[#FD5528] transition group">
-          <img src="https://img.icons8.com/?size=100&id=447&format=png&color=f44918" class="w-5 h-5 group-hover:brightness-0 group-hover:invert">
-        </a>
-
-        <a href="https://wa.me/919140092133?text=Hi%20I%20want%20to%20discuss%20a%20project" class="w-10 h-10 flex items-center justify-center rounded-xl bg-[#FFF1EC] hover:bg-[#FD5528] transition group">
-          <img src="https://img.icons8.com/?size=100&id=16712&format=png&color=f44918" class="w-5 h-5 group-hover:brightness-0 group-hover:invert">
-        </a>
-
-      </div>
-    </div>
-
-  </div>
-
-  <!-- MAP -->
-  <div class="mt-8 rounded-2xl overflow-hidden border border-gray-200 shadow-sm group">
-
-  <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d7146.187936818438!2d80.372306!3d26.420444!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1774945612057!5m2!1sen!2sin" width="600" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade  class="w-full h-[150px] border-0 transition duration-500 group-hover:scale-105"
-      loading="lazy"></iframe>
- 
-
-  </div>
-
-</div>
 
       <!-- RIGHT SIDE FORM -->
       <div class="relative bg-white p-8 rounded-3xl shadow-xl border border-gray-200 overflow-hidden">
