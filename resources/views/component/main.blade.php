@@ -79,123 +79,6 @@
   }
 }
 
-/* Card */
-.tech-card {
-  min-width: 140px;
-  flex-shrink: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border-radius: 14px;
-  border: 1px solid #e5e7eb;
-  background: white;
-  padding: 20px;
-  font-weight: 600;
-  color: #FD5528;
-  transition: 0.3s;
-}
-/* Card Base */
-.tech-card {
-  min-width: 140px;
-  flex-shrink: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border-radius: 16px;
-  border: 1px solid #e5e7eb;
-  background: #ffffff;
-  padding: 18px;
-  transition: all 0.4s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-/* Subtle gradient border glow */
-.tech-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 16px;
-  padding: 1px;
-  background: linear-gradient(120deg, #FD5528, transparent, #FD5528);
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  opacity: 0;
-  transition: 0.4s;
-}
-.tech-card {
-  position: relative;
-  z-index: 1;
-}
-
-.tech-card:hover {
-  z-index: 10; 
-}
-/* Icon */
-.tech-card img {
-  width: 40px;
-  margin-bottom: 10px;
-  border-radius: 50%;
-  background: #fff7f3;
-  padding: 8px;
-  transition: all 0.4s ease;
-}
-
-/* Text */
-.tech-card span {
-  font-size: 14px;
-  font-weight: 600;
-  color: #FD5528;
-  transition: 0.3s;
-}
-
-/* HOVER EFFECT (FIXED) */
-.tech-card:hover {
-  transform: translateY(-8px) scale(1.05);
-  box-shadow: 0 15px 30px rgba(253, 85, 40, 0.15);
-}
-
-/* Glow border on hover */
-.tech-card:hover::before {
-  opacity: 1;
-}
-
-/* Icon animation */
-.tech-card:hover img {
-  transform: rotate(8deg) scale(1.1);
-}
-
-/* Text animation */
-.tech-card:hover span {
-  letter-spacing: 0.5px;
-}
-
-.marquee-wrapper::before,
-.marquee-wrapper::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  width: 80px;
-  height: 100%;
-  z-index: 2;
-  pointer-events: none; 
-}
-.marquee-wrapper::before {
-  left: 0;
-  background: linear-gradient(to right, #f9fafb00, transparent);
-}
-
-.marquee-wrapper::after {
-  right: 0;
-  background: linear-gradient(to left, #f9fafb00, transparent);
-}
-
-/* Pause marquee on hover */
-.marquee-wrapper:hover .marquee-track {
-  animation-play-state: paused;
-}
 
 
 /* HORIZONTAL DIRECTION */
@@ -379,7 +262,18 @@
     font-size: 14px;
   }
 }
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
 
+.animate-marquee {
+    animation: marquee 20s linear infinite;
+}
+
+.animate-marquee-reverse {
+    animation: marquee 20s linear infinite reverse;
+}
 </style>
     @include('component.header')
 
