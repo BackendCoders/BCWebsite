@@ -319,7 +319,142 @@
 
         </div>
     </div>
-  
+
+</section>
+
+<!-- CLIENTS SHOWCASE -->
+<section class="relative overflow-hidden bg-white py-20 text-[#0D0D0D]">
+  <div class="pointer-events-none absolute inset-0 opacity-70">
+    <div class="absolute -top-12 -left-6 h-40 w-40 rounded-full bg-[#FD5528]/20 blur-3xl"></div>
+    <div class="absolute bottom-10 right-10 h-56 w-56 rounded-full bg-[#0D0D0D]/10 blur-[140px]"></div>
+    <div class="absolute top-12 right-2 h-32 w-32 rounded-full bg-[#FD5528]/10 blur-2xl"></div>
+  </div>
+
+  <div class="relative max-w-7xl mx-auto px-6 space-y-10">
+    <div class="flex flex-col gap-3 text-center md:text-left md:flex-row md:items-end md:justify-between">
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-[0.4em] text-[#FD5528]">
+          Our Clients
+        </p>
+        <h2 class="mt-2 text-3xl md:text-4xl font-bold text-[#0D0D0D]">
+          Partners who trust Backend Coders India for bold product builds
+        </h2>
+      </div>
+      <div class="text-xs uppercase text-gray-500 tracking-[0.4em]">
+        Since 2007 &middot; Global HQ in India
+      </div>
+    </div>
+
+    <div class="grid gap-8 lg:grid-cols-3">
+      <article class="relative overflow-hidden rounded-3xl border border-[#e5e5e5] bg-white p-6 shadow-[0_20px_70px_rgba(15,23,42,0.12)] transition duration-500 hover:-translate-y-1">
+        <div class="absolute inset-0 opacity-0 transition duration-500 hover:opacity-60">
+          <div class="absolute -top-6 -right-10 h-32 w-32 rounded-full bg-gradient-to-br from-[#FD5528]/40 to-transparent blur-3xl"></div>
+        </div>
+        <div class="flex items-center gap-3">
+          <div class="h-12 w-12 rounded-2xl bg-gradient-to-br from-[#FD5528] to-[#fbbc04] flex items-center justify-center text-lg text-black shadow-lg animate-pulse">
+            ★
+          </div>
+          <div>
+            <p class="text-sm uppercase tracking-[0.4em] text-gray-400">Impact</p>
+            <p class="text-3xl font-bold text-[#0D0D0D]">96%</p>
+          </div>
+        </div>
+        <p class="mt-4 text-sm text-gray-600">
+          Satisfaction measured across responsiveness, delivery quality, and proactive post-launch care over the last 12 months.
+        </p>
+        <div class="mt-6 flex flex-wrap gap-2 text-[0.65rem] font-semibold uppercase tracking-[0.35em] text-[#FD5528]">
+          <span class="rounded-full border border-[#FD5528]/30 px-3 py-1 bg-white">Dedicated teams</span>
+          <span class="rounded-full border border-[#FD5528]/30 px-3 py-1 bg-white">SLA-driven</span>
+          <span class="rounded-full border border-[#FD5528]/30 px-3 py-1 bg-white">Cohesive squads</span>
+        </div>
+        <div class="mt-6 space-y-2">
+          <div class="h-2 rounded-full bg-[#f2f2f2]">
+            <div class="h-full w-3/4 rounded-full bg-gradient-to-r from-[#FD5528] to-[#fbbc04]"></div>
+          </div>
+          <p class="text-xs text-gray-400">Delivery health score</p>
+        </div>
+      </article>
+
+      <article class="rounded-3xl border border-[#e5e5e5] bg-white p-6 shadow-[0_20px_70px_rgba(15,23,42,0.12)] relative">
+        <div class="flex flex-wrap items-center gap-4">
+          <span class="text-xs font-semibold tracking-[0.4em] text-gray-500">Logos</span>
+          <span class="flex-1 border-t border-gray-200"></span>
+        </div>
+        <div class="mt-6 overflow-hidden rounded-2xl border border-[#f2f2f2] bg-[#fafafa]">
+          <div class="animate-logoribbon flex min-w-full gap-8 px-6 py-6">
+            <div class="flex flex-col items-center gap-2 text-[#0D0D0D]">
+              <img src="https://backendcodersindia.com/assets/images/company-icons/page1.png" alt="Ace Taxis" class="h-10">
+              <span class="text-[0.65rem] uppercase tracking-[0.35em]">Ace Taxis</span>
+            </div>
+            <div class="flex flex-col items-center gap-2 text-[#0D0D0D]">
+              <img src="https://backendcodersindia.com/assets/images/company-icons/demo.png" alt="Demo Cycle" class="h-10">
+              <span class="text-[0.65rem] uppercase tracking-[0.35em]">Demo Cycle</span>
+            </div>
+            <div class="flex flex-col items-center gap-2 text-[#0D0D0D]">
+              <img src="https://backendcodersindia.com/assets/images/testemonials/marley.png" alt="Marley Moves" class="h-10">
+              <span class="text-[0.65rem] uppercase tracking-[0.35em]">Marley Moves</span>
+            </div>
+            <div class="flex flex-col items-center gap-2 text-[#0D0D0D]">
+              <img src="https://backendcodersindia.com/assets/images/testemonials/skydatech.png" alt="Skydatech" class="h-10">
+              <span class="text-[0.65rem] uppercase tracking-[0.35em]">Skydatech</span>
+            </div>
+            <div class="flex flex-col items-center gap-2 text-[#0D0D0D]">
+              <img src="https://backendcodersindia.com/assets/images/company-icons/childcare.png" alt="Alberta" class="h-10">
+              <span class="text-[0.65rem] uppercase tracking-[0.35em]">Alberta</span>
+            </div>
+            <div class="flex flex-col items-center gap-2 text-[#0D0D0D]">
+              <img src="https://backendcodersindia.com/assets/images/testemonials/er.png" alt="ER Data" class="h-10">
+              <span class="text-[0.65rem] uppercase tracking-[0.35em]">ER Data</span>
+            </div>
+            <div class="flex flex-col items-center gap-2 text-[#0D0D0D]">
+              <img src="https://backendcodersindia.com/assets/images/company-icons/page1.png" alt="Ace Taxis" class="h-10">
+              <span class="text-[0.65rem] uppercase tracking-[0.35em]">Ace Taxis</span>
+            </div>
+          </div>
+        </div>
+        <p class="mt-4 text-sm text-gray-600">
+          The ribbon keeps scrolling to build motion while spotlighting live partners relying on Backend Coders India squads.
+        </p>
+      </article>
+
+      <article class="rounded-3xl border border-[#e5e5e5] bg-white p-6 shadow-[0_20px_70px_rgba(15,23,42,0.12)]">
+        <div class="flex items-center gap-3">
+          <div class="text-3xl font-bold text-[#0D0D0D]">12+</div>
+          <div>
+            <p class="text-xs uppercase tracking-[0.4em] text-gray-400">Markets</p>
+            <p class="text-sm text-gray-500">United States, UK, Canada, and UAE</p>
+          </div>
+        </div>
+        <p class="mt-4 text-sm text-gray-600">
+          From compliance-heavy finance teams to hyper-growth ecommerce squads, we deliver backend pods that plug straight into your roadmap.
+        </p>
+        <div class="mt-6 grid grid-cols-2 gap-4">
+          <div class="rounded-2xl border border-[#f2f2f2] bg-gradient-to-br from-white to-[#fff3f0] p-4 text-center shadow-inner">
+            <p class="text-xs uppercase tracking-[0.35em] text-gray-400">On-demand squads</p>
+            <p class="mt-1 text-lg font-semibold text-[#0D0D0D]">3 active</p>
+          </div>
+          <div class="rounded-2xl border border-[#f2f2f2] bg-gradient-to-br from-white to-[#fff3f0] p-4 text-center shadow-inner">
+            <p class="text-xs uppercase tracking-[0.35em] text-gray-400">Average RTT</p>
+            <p class="mt-1 text-lg font-semibold text-[#0D0D0D]">2h</p>
+          </div>
+        </div>
+        <div class="mt-6 flex items-center justify-between text-sm font-semibold uppercase tracking-[0.35em] text-[#FD5528]">
+          <span>Book a partnership call</span>
+          <span aria-hidden="true" class="text-lg">→</span>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <style>
+    @keyframes ribbon-scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .animate-logoribbon {
+      animation: ribbon-scroll 28s linear infinite;
+    }
+  </style>
 </section>
 
 <!-- FEATURES PROJECTS -->

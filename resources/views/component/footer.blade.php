@@ -17,21 +17,42 @@
       <div class="flex gap-4 mt-6">
 
 
-        <a href="https://www.facebook.com/backendcoders/" target="_blank" class="w-10 h-10 flex items-center justify-center rounded-xl bg-[#111] hover:bg-[#FD5528] transition group">
-          <img src="https://img.icons8.com/?size=100&id=118468&format=png&color=f44918" class="w-5 h-5 group-hover:brightness-0 group-hover:invert">
-        </a>
+      <a href="https://www.facebook.com/backendcoders/" target="_blank"
+         class="w-10 h-10 flex items-center justify-center rounded-full 
+         bg-gradient-to-r from-[#b00000] to-[#fb813b] 
+         hover:from-[#fb813b] hover:to-[#b00000] 
+         hover:scale-110 transition-all duration-300">
+        <img src="https://img.icons8.com/?size=100&id=118468&format=png&color=ffffff" 
+             class="w-6 h-6">
+      </a>
 
-        <a href="https://www.instagram.com/backendcoders?igsh=YWd0ZHJmMjJ5cjZr" class="w-10 h-10 flex items-center justify-center rounded-xl bg-[#111] hover:bg-[#FD5528] transition group">
-          <img src="https://img.icons8.com/?size=100&id=32292&format=png&color=f44918" class="w-5 h-5 group-hover:brightness-0 group-hover:invert">
-        </a>
+      <a href="https://www.instagram.com/backendcoders" target="_blank"
+         class="w-10 h-10 flex items-center justify-center rounded-full 
+         bg-gradient-to-r from-[#b00000] to-[#fb813b] 
+         hover:from-[#fb813b] hover:to-[#b00000] 
+         hover:scale-110 transition-all duration-300">
+        <img src="https://img.icons8.com/?size=100&id=32292&format=png&color=ffffff" 
+             class="w-6 h-6">
+      </a>
 
-        <a href="https://www.linkedin.com/company/backendcodersindia/" class="w-10 h-10 flex items-center justify-center rounded-xl bg-[#111] hover:bg-[#FD5528] transition group">
-          <img src="https://img.icons8.com/?size=100&id=447&format=png&color=f44918" class="w-5 h-5 group-hover:brightness-0 group-hover:invert">
-        </a>
+      <a href="https://www.linkedin.com/company/backendcodersindia/" target="_blank"
+         class="w-10 h-10 flex items-center justify-center rounded-full 
+         bg-gradient-to-r from-[#b00000] to-[#fb813b] 
+         hover:from-[#fb813b] hover:to-[#b00000] 
+         hover:scale-110 transition-all duration-300">
+        <img src="https://img.icons8.com/?size=100&id=447&format=png&color=ffffff" 
+             class="w-6 h-6">
+      </a>
 
-        <a href="https://wa.me/919140092133?text=Hi%20I%20want%20to%20discuss%20a%20project" class="w-10 h-10 flex items-center justify-center rounded-xl bg-[#111] hover:bg-[#FD5528] transition group">
-          <img src="https://img.icons8.com/?size=100&id=16712&format=png&color=f44918" class="w-5 h-5 group-hover:brightness-0 group-hover:invert">
-        </a>
+      <a href="https://wa.me/919140092133" target="_blank"
+         class="w-10 h-10 flex items-center justify-center rounded-full 
+         bg-gradient-to-r from-[#b00000] to-[#fb813b] 
+         hover:from-[#fb813b] hover:to-[#b00000] 
+         hover:scale-110 transition-all duration-300">
+        <img src="https://img.icons8.com/?size=100&id=16712&format=png&color=ffffff" 
+             class="w-6 h-6">
+      </a>
+
 
       </div>
    

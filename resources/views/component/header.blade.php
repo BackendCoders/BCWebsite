@@ -11,18 +11,20 @@
 
 <!-- TOP BAR -->
 <div class="bg-[#FD5528] text-white text-sm">
-  <div class="max-w-9xl lg:mx-24 mx-auto px-4 sm:px-6 py-2 
-              flex flex-col sm:flex-row items-center justify-between gap-3">
+  <div class="max-w-9xl lg:mx-24 mx-auto px-4 sm:px-6 py-3 
+              flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-3">
 
     <!-- LEFT: CONTACT INFO -->
-    <div class="flex flex-col sm:flex-row items-start gap-3 sm:gap-6 text-xs sm:text-sm">
+    <div class="flex flex-col sm:flex-row items-center sm:items-start 
+                gap-3 sm:gap-6 text-xs sm:text-sm text-center sm:text-left">
 
       <!-- PHONE -->
       <a href="tel:+919140092133" 
-         class="flex items-center gap-2 hover:text-[#111] transition">
+         class="flex items-center justify-center sm:justify-start gap-2 hover:text-black transition">
 
-        <div class="w-7 h-7 flex items-center justify-center rounded-full bg-white/10 
-                    hover:bg-[#111] transition">
+        <div class="w-7 h-7 flex items-center justify-center rounded-full 
+        bg-gradient-to-r from-[#b00000] to-[#fb813b] 
+        hover:from-[#fb813b] hover:to-[#b00000] transition-all duration-300">
           <img src="https://img.icons8.com/?size=100&id=9659&format=png&color=ffffff" 
                class="w-4 h-4">
         </div>
@@ -32,10 +34,11 @@
 
       <!-- EMAIL -->
       <a href="mailto:info@backendcodersindia.com" 
-         class="flex items-center gap-2 hover:text-[#111] transition">
+         class="flex items-center justify-center sm:justify-start gap-2 hover:text-black transition">
 
-        <div class="w-7 h-7 flex items-center justify-center rounded-full bg-white/10 
-                    hover:bg-[#111] transition">
+        <div class="w-7 h-7 flex items-center justify-center rounded-full 
+        bg-gradient-to-r from-[#b00000] to-[#fb813b] 
+        hover:from-[#fb813b] hover:to-[#b00000] transition-all duration-300">
           <img src="https://img.icons8.com/?size=100&id=53388&format=png&color=ffffff" 
                class="w-4 h-4">
         </div>
@@ -48,32 +51,40 @@
     </div>
 
     <!-- RIGHT: SOCIAL ICONS -->
-    <div class="flex items-center gap-2 sm:gap-3">
+    <div class="flex items-center justify-center gap-3">
 
       <a href="https://www.facebook.com/backendcoders/" target="_blank"
-         class="w-8 h-8 flex items-center justify-center rounded-full bg-white/10 
-                hover:bg-[#111] transition">
+         class="w-8 h-8 flex items-center justify-center rounded-full 
+         bg-gradient-to-r from-[#b00000] to-[#fb813b] 
+         hover:from-[#fb813b] hover:to-[#b00000] 
+         hover:scale-110 transition-all duration-300">
         <img src="https://img.icons8.com/?size=100&id=118468&format=png&color=ffffff" 
              class="w-4 h-4">
       </a>
 
-      <a href="https://www.instagram.com/backendcoders?igsh=YWd0ZHJmMjJ5cjZr" target="_blank"
-         class="w-8 h-8 flex items-center justify-center rounded-full bg-white/10 
-                hover:bg-[#111] transition">
+      <a href="https://www.instagram.com/backendcoders" target="_blank"
+         class="w-8 h-8 flex items-center justify-center rounded-full 
+         bg-gradient-to-r from-[#b00000] to-[#fb813b] 
+         hover:from-[#fb813b] hover:to-[#b00000] 
+         hover:scale-110 transition-all duration-300">
         <img src="https://img.icons8.com/?size=100&id=32292&format=png&color=ffffff" 
              class="w-4 h-4">
       </a>
 
       <a href="https://www.linkedin.com/company/backendcodersindia/" target="_blank"
-         class="w-8 h-8 flex items-center justify-center rounded-full bg-white/10 
-                hover:bg-[#111] transition">
+         class="w-8 h-8 flex items-center justify-center rounded-full 
+         bg-gradient-to-r from-[#b00000] to-[#fb813b] 
+         hover:from-[#fb813b] hover:to-[#b00000] 
+         hover:scale-110 transition-all duration-300">
         <img src="https://img.icons8.com/?size=100&id=447&format=png&color=ffffff" 
              class="w-4 h-4">
       </a>
 
-      <a href="https://wa.me/919140092133?text=Hi%20I%20want%20to%20discuss%20a%20project" target="_blank"
-         class="w-8 h-8 flex items-center justify-center rounded-full bg-white/10 
-                hover:bg-[#111] transition">
+      <a href="https://wa.me/919140092133" target="_blank"
+         class="w-8 h-8 flex items-center justify-center rounded-full 
+         bg-gradient-to-r from-[#b00000] to-[#fb813b] 
+         hover:from-[#fb813b] hover:to-[#b00000] 
+         hover:scale-110 transition-all duration-300">
         <img src="https://img.icons8.com/?size=100&id=16712&format=png&color=ffffff" 
              class="w-4 h-4">
       </a>
@@ -151,10 +162,14 @@
 
         <!-- CTA Button -->
         <div class="hidden lg:flex">
-            <a href="{{ route('frontend.contact') }}"
+              <button type="submit"
+            class="w-full bg-gradient-to-r from-[#FD5528] to-[#fbb03b] text-white px-5 py-2 rounded-2xl font-semibold transition duration-200 ">
+               <Initialize href="{{ route('frontend.contact') }}">Initialize </a>
+          </button>
+            <!-- <a href="{{ route('frontend.contact') }}"
                class="rounded-lg bg-[#FD5528] px-5 py-2 text-sm font-semibold text-white shadow-md transition hover:bg-orange-600">
                 Initialize 
-            </a>
+            </a> -->
         </div>
 
         <!-- Mobile Button -->

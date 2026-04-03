@@ -3,9 +3,6 @@
 
 <main class="flex-1">
       <!-- HERO SECTION -->
-
-
-
 <section id="hero" class="relative overflow-hidden bg-white px-4 sm:px-6 lg:px-8 py-14 sm:py-16 md:py-20 lg:py-24">
 
   <div class="max-w-[1400px] mx-auto grid items-center gap-10 md:gap-14 lg:gap-16 lg:grid-cols-2">
@@ -64,7 +61,7 @@
 
         <a href="#contact"
           class="w-full sm:w-auto inline-flex items-center justify-center 
-          rounded-lg bg-[#FD5528] px-5 sm:px-6 py-2.5 sm:py-3 text-xs sm:text-sm font-semibold text-white 
+          rounded-lg bg-gradient-to-r from-[#FD5528] to-[#fbb03b] px-5 sm:px-6 py-2.5 sm:py-3 text-xs sm:text-sm font-semibold text-white 
           shadow-md transition hover:bg-orange-600 hover:shadow-lg">
 
           Start Your Project
@@ -150,15 +147,9 @@
 
 </section>
 
-
-
-
 <!-- END HERO SECTIOPN -->
 
 <!-- WHO WE ARE-->
-
-
-
 <section id="who-we-are" class="bg-[#F9FAFB] px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 py-14 sm:py-16 md:py-20 lg:py-24 relative overflow-hidden">
 
   <!-- GLOW -->
@@ -212,40 +203,38 @@
     <div class="mt-10 sm:mt-12 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4 md:gap-5">
 
       <!-- CARD -->
-      <div class="service-card" data-aos="zoom-in">
-        <img src="https://img.icons8.com/?size=100&id=2169&format=png&color=fd5528">
-        <p>SaaS Platforms</p>
+      <div class="service-card transition duration-300 transform hover:-translate-y-1 hover:shadow-[0_15px_35px_rgba(253,85,40,0.15)]" data-aos="zoom-in">
+        <img src="https://img.icons8.com/?size=100&id=2169&format=png&color=fd5528" class="mx-auto mb-2">
+        <p class="text-sm font-semibold text-gray-900 tracking-tight">SaaS Platforms</p>
       </div>
 
-      <div class="service-card" data-aos="zoom-in" data-aos-delay="100">
-        <img src="https://img.icons8.com/?size=100&id=XZzsxYpJLV3S&format=png&color=fd5528">
-        <p>ERP Systems</p>
+      <div class="service-card transition duration-300 transform hover:-translate-y-1 hover:shadow-[0_15px_35px_rgba(253,85,40,0.15)]" data-aos="zoom-in" data-aos-delay="100">
+        <img src="https://img.icons8.com/?size=100&id=XZzsxYpJLV3S&format=png&color=fd5528" class="mx-auto mb-2">
+        <p class="text-sm font-semibold text-gray-900 tracking-tight">ERP Systems</p>
       </div>
 
-      <div class="service-card" data-aos="zoom-in" data-aos-delay="200">
-        <img src="https://img.icons8.com/?size=100&id=3578&format=png&color=fd5528">
-        <p>POS Systems</p>
+      <div class="service-card transition duration-300 transform hover:-translate-y-1 hover:shadow-[0_15px_35px_rgba(253,85,40,0.15)]" data-aos="zoom-in" data-aos-delay="200">
+        <img src="https://img.icons8.com/?size=100&id=3578&format=png&color=fd5528" class="mx-auto mb-2">
+        <p class="text-sm font-semibold text-gray-900 tracking-tight">POS Systems</p>
       </div>
 
-      <div class="service-card" data-aos="zoom-in" data-aos-delay="300">
-        <img src="https://img.icons8.com/?size=100&id=XkroSDpLASWA&format=png&color=fd5528">
-        <p>E-commerce</p>
+      <div class="service-card transition duration-300 transform hover:-translate-y-1 hover:shadow-[0_15px_35px_rgba(253,85,40,0.15)]" data-aos="zoom-in" data-aos-delay="300">
+        <img src="https://img.icons8.com/?size=100&id=XkroSDpLASWA&format=png&color=fd5528" class="mx-auto mb-2">
+        <p class="text-sm font-semibold text-gray-900 tracking-tight">E-commerce</p>
       </div>
 
-      <div class="service-card" data-aos="zoom-in" data-aos-delay="400">
-        <img src="https://img.icons8.com/?size=100&id=vJuSkDSbjZgp&format=png&color=fd5528">
-        <p>Custom Web Apps</p>
+      <div class="service-card transition duration-300 transform hover:-translate-y-1 hover:shadow-[0_15px_35px_rgba(253,85,40,0.15)]" data-aos="zoom-in" data-aos-delay="400">
+        <img src="https://img.icons8.com/?size=100&id=vJuSkDSbjZgp&format=png&color=fd5528" class="mx-auto mb-2">
+        <p class="text-sm font-semibold text-gray-900 tracking-tight">Custom Web Apps</p>
       </div>
 
     </div>
 
+
+
   </div>
 
 </section>
-
-
-
-
 <!-- END WHO WE ARE -->
 
 <!-- SERVICE -->
@@ -295,8 +284,9 @@
                     <div class="pointer-events-none absolute inset-0 rounded-[1.75rem] bg-gradient-to-br from-[#FD5528]/15 via-white/40 to-white/10 opacity-0 transition duration-500 group-hover:opacity-80 backdrop-blur-[0px] group-hover:backdrop-blur-[24px]"></div>
                     <div class="relative z-10 flex flex-col items-center text-center space-y-4">
                         <span class="text-[0.6rem] font-semibold uppercase tracking-[0.4em] text-[#FD5528]">Bespoke Web</span>
-                        <div class="flex h-20 w-20 items-center justify-center rounded-full bg-[#FD5528]/10 shadow-inner">
-                            <img src="https://img.icons8.com/?size=100&id=DCkAZ79sIYhT&format=png&color=FD5528" alt="Custom web app" class="h-16 w-16" />
+                        <div class="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] 
+hover:from-[#fb813b] hover:to-[#b00000]  shadow-inner">
+                            <img src="https://img.icons8.com/?size=100&id=DCkAZ79sIYhT&format=png&color=ffffff" alt="Custom web app" class="h-16 w-16" />
                         </div>
                         <h3 class="text-xl font-semibold transition duration-500 group-hover:text-black">Custom Web Applications</h3>
                         <p class="text-sm text-gray-600 group-hover:text-gray-900">Scalable platforms with modern stacks, measurable KPIs, and performance-first code.</p>
@@ -312,8 +302,9 @@
                     <div class="pointer-events-none absolute inset-0 rounded-[1.75rem] bg-gradient-to-br from-[#FD5528]/15 via-white/40 to-white/10 opacity-0 transition duration-500 group-hover:opacity-80 backdrop-blur-[0px] group-hover:backdrop-blur-[24px]"></div>
                     <div class="relative z-10 flex flex-col items-center text-center space-y-4">
                         <span class="text-[0.6rem] font-semibold uppercase tracking-[0.4em] text-[#FD5528]">Design & Build</span>
-                        <div class="flex h-20 w-20 items-center justify-center rounded-full bg-[#FD5528]/10 shadow-inner">
-                            <img src="https://img.icons8.com/?size=100&id=8Y6ohiJ337rc&format=png&color=FD5528" alt="Design icon" class="h-16 w-16" />
+                        <div class="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] 
+hover:from-[#fb813b] hover:to-[#b00000] shadow-inner">
+                            <img src="https://img.icons8.com/?size=100&id=8Y6ohiJ337rc&format=png&color=ffffff" alt="Design icon" class="h-16 w-16" />
                         </div>
                         <h3 class="text-xl font-semibold transition duration-500 group-hover:text-black">Website Design & Development</h3>
                         <p class="text-sm text-gray-600 group-hover:text-gray-900">Responsive, brand-complete websites that load fast and stay SEO-friendly.</p>
@@ -329,8 +320,9 @@
                     <div class="pointer-events-none absolute inset-0 rounded-[1.75rem] bg-gradient-to-br from-[#FD5528]/15 via-white/40 to-white/10 opacity-0 transition duration-500 group-hover:opacity-80 backdrop-blur-[0px] group-hover:backdrop-blur-[24px]"></div>
                     <div class="relative z-10 flex flex-col items-center text-center space-y-4">
                         <span class="text-[0.6rem] font-semibold uppercase tracking-[0.4em] text-[#FD5528]">SaaS Forces</span>
-                        <div class="flex h-20 w-20 items-center justify-center rounded-full bg-[#FD5528]/10 shadow-inner">
-                            <img src="https://img.icons8.com/?size=100&id=k8TSihyFk2cJ&format=png&color=FD5528" alt="SaaS icon" class="h-16 w-16" />
+                        <div class="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] 
+hover:from-[#fb813b] hover:to-[#b00000] shadow-inner">
+                            <img src="https://img.icons8.com/?size=100&id=k8TSihyFk2cJ&format=png&color=ffffff" alt="SaaS icon" class="h-16 w-16" />
                         </div>
                         <h3 class="text-xl font-semibold transition duration-500 group-hover:text-black">SaaS Development</h3>
                         <p class="text-sm text-gray-600 group-hover:text-gray-900">Multi-tenant platforms engineered for reliability, governance, and scale.</p>
@@ -346,8 +338,9 @@
                     <div class="pointer-events-none absolute inset-0 rounded-[1.75rem] bg-gradient-to-br from-[#FD5528]/15 via-white/40 to-white/10 opacity-0 transition duration-500 group-hover:opacity-80 backdrop-blur-[0px] group-hover:backdrop-blur-[24px]"></div>
                     <div class="relative z-10 flex flex-col items-center text-center space-y-4">
                         <span class="text-[0.6rem] font-semibold uppercase tracking-[0.4em] text-[#FD5528]">Enterprise Core</span>
-                        <div class="flex h-20 w-20 items-center justify-center rounded-full bg-[#FD5528]/10 shadow-inner">
-                            <img src="https://img.icons8.com/?size=100&id=Rk5rrSlqrNZO&format=png&color=FD5528" alt="ERP icon" class="h-16 w-16" />
+                        <div class="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] 
+hover:from-[#fb813b] hover:to-[#b00000] shadow-inner">
+                            <img src="https://img.icons8.com/?size=100&id=Rk5rrSlqrNZO&format=png&color=ffffff" alt="ERP icon" class="h-16 w-16" />
                         </div>
                         <h3 class="text-xl font-semibold transition duration-500 group-hover:text-black">ERP & POS Software</h3>
                         <p class="text-sm text-gray-600 group-hover:text-gray-900">Operational grade systems that align inventory, payments, and teams.</p>
@@ -363,8 +356,9 @@
                     <div class="pointer-events-none absolute inset-0 rounded-[1.75rem] bg-gradient-to-br from-[#FD5528]/15 via-white/40 to-white/10 opacity-0 transition duration-500 group-hover:opacity-80 backdrop-blur-[0px] group-hover:backdrop-blur-[24px]"></div>
                     <div class="relative z-10 flex flex-col items-center text-center space-y-4">
                         <span class="text-[0.6rem] font-semibold uppercase tracking-[0.4em] text-[#FD5528]">Commerce Pulse</span>
-                        <div class="flex h-20 w-20 items-center justify-center rounded-full bg-[#FD5528]/10 shadow-inner">
-                            <img src="https://img.icons8.com/?size=100&id=8OxFnElAJgpE&format=png&color=FD5528" alt="Commerce icon" class="h-16 w-16" />
+                        <div class="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] 
+hover:from-[#fb813b] hover:to-[#b00000] shadow-inner">
+                            <img src="https://img.icons8.com/?size=100&id=8OxFnElAJgpE&format=png&color=ffffff" alt="Commerce icon" class="h-16 w-16" />
                         </div>
                         <h3 class="text-xl font-semibold transition duration-500 group-hover:text-black">E-commerce Development</h3>
                         <p class="text-sm text-gray-600 group-hover:text-gray-900">Conversion-led storefronts with secure payments and real-time analytics.</p>
@@ -380,8 +374,9 @@
                     <div class="pointer-events-none absolute inset-0 rounded-[1.75rem] bg-gradient-to-br from-[#FD5528]/15 via-white/40 to-white/10 opacity-0 transition duration-500 group-hover:opacity-80 backdrop-blur-[0px] group-hover:backdrop-blur-[24px]"></div>
                     <div class="relative z-10 flex flex-col items-center text-center space-y-4">
                         <span class="text-[0.6rem] font-semibold uppercase tracking-[0.4em] text-[#FD5528]">Mobile Pulse</span>
-                        <div class="flex h-20 w-20 items-center justify-center rounded-full bg-[#FD5528]/10 shadow-inner">
-                            <img src="https://img.icons8.com/?size=100&id=67475&format=png&color=FD5528" alt="Mobile icon" class="h-16 w-16" />
+                        <div class="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] 
+hover:from-[#fb813b] hover:to-[#b00000] shadow-inner">
+                            <img src="https://img.icons8.com/?size=100&id=67475&format=png&color=ffffff" alt="Mobile icon" class="h-16 w-16" />
                         </div>
                         <h3 class="text-xl font-semibold transition duration-500 group-hover:text-black">Mobile App Development</h3>
                         <p class="text-sm text-gray-600 group-hover:text-gray-900">Cross-platform experiences with native polish, motion, and accessible flows.</p>
@@ -397,8 +392,9 @@
                     <div class="pointer-events-none absolute inset-0 rounded-[1.75rem] bg-gradient-to-br from-[#FD5528]/15 via-white/40 to-white/10 opacity-0 transition duration-500 group-hover:opacity-80 backdrop-blur-[0px] group-hover:backdrop-blur-[24px]"></div>
                     <div class="relative z-10 flex flex-col items-center text-center space-y-4">
                         <span class="text-[0.6rem] font-semibold uppercase tracking-[0.4em] text-[#FD5528]">API Layer</span>
-                        <div class="flex h-20 w-20 items-center justify-center rounded-full bg-[#FD5528]/10 shadow-inner">
-                            <img src="https://img.icons8.com/?size=100&id=6kPR2dlup5KK&format=png&color=FD5528" alt="API icon" class="h-16 w-16" />
+                        <div class="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] 
+hover:from-[#fb813b] hover:to-[#b00000] shadow-inner">
+                            <img src="https://img.icons8.com/?size=100&id=6kPR2dlup5KK&format=png&color=ffffff" alt="API icon" class="h-16 w-16" />
                         </div>
                         <h3 class="text-xl font-semibold transition duration-500 group-hover:text-black">API Development</h3>
                         <p class="text-sm text-gray-600 group-hover:text-gray-900">Secure REST endpoints, clean contracts, and integration-ready tooling.</p>
@@ -414,8 +410,9 @@
                     <div class="pointer-events-none absolute inset-0 rounded-[1.75rem] bg-gradient-to-br from-[#FD5528]/15 via-white/40 to-white/10 opacity-0 transition duration-500 group-hover:opacity-80 backdrop-blur-[0px] group-hover:backdrop-blur-[24px]"></div>
                     <div class="relative z-10 flex flex-col items-center text-center space-y-4">
                         <span class="text-[0.6rem] font-semibold uppercase tracking-[0.4em] text-[#FD5528]">Growth Duo</span>
-                        <div class="flex h-20 w-20 items-center justify-center rounded-full bg-[#FD5528]/10 shadow-inner">
-                            <img src="https://img.icons8.com/?size=100&id=103102&format=png&color=FD5528" alt="Marketing icon" class="h-16 w-16" />
+                        <div class="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] 
+hover:from-[#fb813b] hover:to-[#b00000] shadow-inner">
+                            <img src="https://img.icons8.com/?size=100&id=103102&format=png&color=ffffff" alt="Marketing icon" class="h-16 w-16" />
                         </div>
                         <h3 class="text-xl font-semibold transition duration-500 group-hover:text-black">Digital Marketing & SEO</h3>
                         <p class="text-sm text-gray-600 group-hover:text-gray-900">Data-backed marketing that grows traffic, leads, and conversions.</p>
@@ -431,8 +428,9 @@
                     <div class="pointer-events-none absolute inset-0 rounded-[1.75rem] bg-gradient-to-br from-[#FD5528]/15 via-white/40 to-white/10 opacity-0 transition duration-500 group-hover:opacity-80 backdrop-blur-[0px] group-hover:backdrop-blur-[24px]"></div>
                     <div class="relative z-10 flex flex-col items-center text-center space-y-4">
                         <span class="text-[0.6rem] font-semibold uppercase tracking-[0.4em] text-[#FD5528]">Startup Sprint</span>
-                        <div class="flex h-20 w-20 items-center justify-center rounded-full bg-[#FD5528]/10 shadow-inner">
-                            <img src="https://img.icons8.com/?size=100&id=KR7IxBJfODTv&format=png&color=FD5528" alt="MVP icon" class="h-16 w-16" />
+                        <div class="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] 
+hover:from-[#fb813b] hover:to-[#b00000] shadow-inner">
+                            <img src="https://img.icons8.com/?size=100&id=KR7IxBJfODTv&format=png&color=ffffff" alt="MVP icon" class="h-16 w-16" />
                         </div>
                         <h3 class="text-xl font-semibold transition duration-500 group-hover:text-black">Startup MVP Development</h3>
                         <p class="text-sm text-gray-600 group-hover:text-gray-900">Rapid prototyping with user testing, guided learnings, and clear success metrics.</p>
@@ -475,11 +473,18 @@
     <div class="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] items-stretch">
 
       <div class="rounded-[2rem] border border-white/80 bg-white/95 p-8 shadow-[0_30px_80px_rgba(253,85,40,0.12)]" data-aos="fade-right" data-aos-delay="300">
-        <span class="inline-flex items-center rounded-full bg-[#FD5528]/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.35em] text-[#FD5528]">
+        <span class="inline-block text-xs sm:text-sm font-semibold uppercase tracking-[0.35em] 
+         text-[#FD5528] relative px-5 py-2 rounded-full 
+         bg-white/60 backdrop-blur-md 
+         shadow-[0_8px_20px_rgba(0,0,0,0.08)] 
+         border border-white/40
+         before:absolute before:inset-0 before:rounded-full 
+         before:bg-gradient-to-r before:from-[#FD5528]/20 before:to-orange-200/30 
+         before:-z-10">
           Core expertise
         </span>
 
-        <h3 class="mt-6 text-2xl sm:text-3xl font-bold text-gray-900">
+        <h3 class="mt-6 text-2xl sm:text-3xl fontffffffbold text-gray-900">
           Build faster with proven tools
         </h3>
 
@@ -627,11 +632,7 @@
 </section>
 <!-- END TECHNOLOGIES -->
 
-
 <!-- process-directions -->
-
-
-
 <section class="relative overflow-hidden py-16 sm:py-20 lg:py-24 bg-[#F9FAFB]">
 
   <div class="max-w-9xl lg:mx-24 mx-auto px-6">
@@ -676,7 +677,8 @@
         <div class="flex items-start gap-4 lg:flex-col lg:items-center text-left lg:text-center group">
 
           <!-- CIRCLE -->
-          <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#FD5528] font-semibold transition group-hover:bg-[#FD5528] group-hover:text-white">
+          <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#FD5528] font-semibold transition bg-gradient-to-r 
+hover:from-[#fb813b] hover:to-[#b00000] group-hover:text-white">
             01
           </div>
 
@@ -694,7 +696,8 @@
 
         <!-- STEP -->
         <div class="flex items-start gap-4 lg:flex-col lg:items-center text-left lg:text-center group">
-          <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#FD5528] font-semibold transition group-hover:bg-[#FD5528] group-hover:text-white">
+          <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#FD5528] font-semibold transition group-hover:bg-gradient-to-r 
+hover:from-[#fb813b] hover:to-[#b00000] group-hover:text-white">
             02
           </div>
           <div>
@@ -709,7 +712,8 @@
 
         <!-- STEP -->
         <div class="flex items-start gap-4 lg:flex-col lg:items-center text-left lg:text-center group">
-          <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#FD5528] font-semibold transition group-hover:bg-[#FD5528] group-hover:text-white">
+          <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#FD5528] font-semibold transition group-hover:bg-gradient-to-r 
+hover:from-[#fb813b] hover:to-[#b00000] group-hover:text-white">
             03
           </div>
           <div>
@@ -724,7 +728,8 @@
 
         <!-- STEP -->
         <div class="flex items-start gap-4 lg:flex-col lg:items-center text-left lg:text-center group">
-          <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#FD5528] font-semibold transition group-hover:bg-[#FD5528] group-hover:text-white">
+          <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#FD5528] font-semibold transition group-hover:bg-gradient-to-r 
+hover:from-[#fb813b] hover:to-[#b00000] group-hover:text-white">
             04
           </div>
           <div>
@@ -739,7 +744,8 @@
 
         <!-- STEP -->
         <div class="flex items-start gap-4 lg:flex-col lg:items-center text-left lg:text-center group">
-          <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#FD5528] font-semibold transition group-hover:bg-[#FD5528] group-hover:text-white">
+          <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#FD5528] font-semibold transition group-hover:bg-gradient-to-r 
+hover:from-[#fb813b] hover:to-[#b00000] group-hover:text-white">
             05
           </div>
           <div>
@@ -754,7 +760,8 @@
 
         <!-- STEP -->
         <div class="flex items-start gap-4 lg:flex-col lg:items-center text-left lg:text-center group">
-          <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#FD5528] font-semibold transition group-hover:bg-[#FD5528] group-hover:text-white">
+          <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#FD5528] font-semibold transition group-hover:bg-gradient-to-r 
+hover:from-[#fb813b] hover:to-[#b00000] group-hover:text-white">
             06
           </div>
           <div>
@@ -774,9 +781,6 @@
   </div>
 
 </section>
-
-
-
 <!-- pr -->
 
 
@@ -906,9 +910,6 @@
 
 </section>
 
-
-
-
 <!-- serve industry -->
 <section id="industries" class="bg-white px-6 py-16 sm:py-20 lg:py-24">
 
@@ -1007,9 +1008,7 @@
 </section>
 <!-- END SERVE INDUSTRY -->
 
-
 <!-- BLOG -->
-
 <section id="blog" class="bg-white px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
 
   <div class="max-w-9xl lg:mx-24 mx-auto">
@@ -1108,11 +1107,51 @@
   </div>
 
 </section>
-
-
-
 <!-- END BLOG -->
 
+<!-- clients -->
+ <section class="relative py-32 px-6 overflow-hidden">
+
+  <!-- BACKGROUND -->
+  <div class="absolute inset-0 bg-gray-100"></div>
+
+  <div class="relative max-w-7xl mx-auto text-center">
+
+    <!-- HEADER -->
+    <p class="inline-block text-xs font-semibold uppercase tracking-[0.35em] text-[#FD5528] px-5 py-2 rounded-full 
+      bg-white/5 backdrop-blur-md border border-white/10">
+      Trusted Clients
+    </p>
+
+    <h2 class="mt-6 text-3xl md:text-5xl font-bold text-black">
+      Brands That Trust Us
+    </h2>
+
+    <!-- MARQUEE WRAPPER -->
+    <div class="mt-14 overflow-hidden group">
+
+      <div class="flex w-max animate-marquee gap-12 flex-nowrap group-hover:[animation-play-state:paused]">
+
+        <!-- ORIGINAL SET -->
+        <div class="logo"> <img src="{{asset('assets/logos/ifnoss.jpeg')}}"> </div>
+        <div class="logo"> <img src="{{asset('assets/logos/ace.jpeg')}}"> </div>
+        <div class="logo"> <img src="{{asset('assets/logos/arrive.jpeg')}}"> </div>
+        <div class="logo"> <img src="{{asset('assets/logos/ladigue.jpeg')}}"> </div>
+        <div class="logo"> <img src="{{asset('assets/logos/marley.jpeg')}}"> </div>
+
+        <!-- DUPLICATE SET (IMPORTANT) -->
+        <div class="logo"> <img src="{{asset('assets/logos/matchbly.jpeg')}}"> </div>
+        <div class="logo"> <img src="{{asset('assets/logos/praslin.jpg')}}"> </div>
+        <div class="logo"> <img src="{{asset('assets/logos/pulse-event.jpeg')}}"> </div>
+        <div class="logo"> <img src="{{asset('assets/logos/skyda.jpeg')}}"> </div>
+        <div class="logo"> <img src="{{asset('assets/logos/ifnoss.jpeg')}}"> </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
 
 <section class="bg-[#F9FAFB] py-16 sm:py-20 lg:py-24 px-4 sm:px-6">
 
@@ -1259,44 +1298,41 @@
   </div>
 
 </section>
-
-
-
 <!-- contact section -->
-<section id="contact" class="bg-[#F9FAFB] py-16 sm:py-20 lg:py-24 px-6 relative overflow-hidden">
+<section id="contact" class="relative overflow-hidden bg-white py-16 sm:py-20 lg:py-24 px-6">
 
-  <div class="max-w-9xl lg:mx-24 mx-auto">
+  <div class="pointer-events-none absolute inset-0 opacity-60">
+    <div class="absolute -top-20 left-8 h-44 w-44 rounded-full bg-[#FD5528]/20 blur-3xl animate-pulse-slow"></div>
+    <div class="absolute bottom-8 right-10 h-60 w-60 rounded-full bg-[#0D0D0D]/10 blur-[140px]"></div>
+    <div class="absolute top-1/2 left-0 h-32 w-32 -translate-y-1/2 rounded-full bg-[#FD5528]/10 blur-2xl"></div>
+  </div>
 
-   
-       <div class="text-center max-w-2xl mx-auto mb-16">
-            <!-- Heading -->
-         <p 
+  <div class="relative max-w-9xl lg:mx-24 mx-auto">
+
+    <!-- Heading -->
+    <div class="text-center mb-12 sm:mb-16">
+       <p 
       data-aos="fade-up"
-      class="inline-block text-xs sm:text-sm font-semibold uppercase tracking-[0.35em] 
+      class="inline-flex items-center justify-center text-xs sm:text-sm font-semibold uppercase tracking-[0.35em] 
          text-[#FD5528] relative px-5 py-2 rounded-full 
-         bg-white/60 backdrop-blur-md 
-         shadow-[0_8px_20px_rgba(0,0,0,0.08)] 
-         border border-white/40
+         bg-white/70 backdrop-blur-lg 
+         shadow-[0_8px_30px_rgba(253,85,40,0.18)]
+         border border-[#FD5528]/20
          before:absolute before:inset-0 before:rounded-full 
-         before:bg-gradient-to-r before:from-[#FD5528]/20 before:to-orange-200/30 
+         before:bg-gradient-to-r before:from-[#FD5528]/40 before:to-orange-200/30 
          before:-z-10">
 
           Contact Us
 
     </p>
-          <!-- <p class="text-xs font-semibold uppercase tracking-[0.35em] p-2 text-[#f06735]">
-          Contact
-        </p> -->
 
-    <!-- Heading -->
-    <h1 class="text-4xl text-[#000000] md:text-5xl font-bold mb-4" text-black data-aos="fade-up">
+    <h1 class="text-4xl text-[#0D0D0D] md:text-5xl font-bold mb-4 mt-4" data-aos="fade-up">
       Get in Touch
     </h1>
 
-       <!-- Subheading -->
-    <p class="text-lg text-black max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+    <p class="text-lg text-gray-600 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
       Have a project in mind or need backend solutions?  
-      Our team at <span class="text-[#FC5124] font-semibold">Backend Coders</span> is here to help you build scalable systems.
+      Our team at <span class="text-[#FC5124] font-semibold">Backend Coders</span> builds scalable systems with transparency and velocity.
     </p>
 
     </div>
@@ -1304,52 +1340,50 @@
     <!-- Main Layout -->
     <div class=" flex justify-center items-center gap-10 lg:gap-16 flex-col lg:flex-row">
 
-
+  
 
       <!-- RIGHT SIDE FORM -->
-      <div class="relative bg-white p-8 rounded-3xl shadow-xl border border-gray-200 overflow-hidden">
+      <div class="order-1 lg:order-2 relative bg-white p-8 rounded-[36px] shadow-[0_40px_90px_rgba(15,23,42,0.18)] border border-[#f1f1f1] overflow-hidden">
 
-  <!-- Decorative Curve -->
-  <div class="absolute -bottom-20 -right-20 w-72 h-72 bg-[#FD5528]/10 rounded-full blur-3xl"></div>
+        <div class="absolute -top-10 -right-10 h-32 w-32 bg-gradient-to-br from-[#FD5528]/20 to-transparent blur-3xl opacity-80"></div>
+        <div class="absolute bottom-6 left-6 h-20 w-20 bg-gradient-to-br from-[#0D0D0D]/10 to-transparent blur-3xl"></div>
 
-  <!-- HEADING -->
-  <div class="relative mb-6">
-    <h2 class="text-2xl font-semibold text-gray-900">
-      Contact Us
-    </h2>
-    <p class="text-sm text-gray-500 mt-1">
-      Fill out the form and we’ll get back to you shortly.
-    </p>
-  </div>
+        <div class="relative mb-6">
+          <h2 class="text-2xl font-semibold text-gray-900">
+            Contact Us
+          </h2>
+          <p class="text-sm text-gray-500 mt-1">
+            Fill out the form and we’ll get back to you shortly.
+          </p>
+        </div>
 
-  <!-- FORM -->
-  <form class="relative space-y-6">
+        <form class="relative space-y-6">
 
-    <div class="grid sm:grid-cols-2 gap-4">
-      <input type="text" placeholder="First Name"
-        class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FD5528]/30">
+          <div class="grid sm:grid-cols-2 gap-4">
+            <input type="text" placeholder="First Name"
+              class="w-full px-4 py-3 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#FD5528]/40 transition duration-200">
 
-      <input type="text" placeholder="Last Name"
-        class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FD5528]/30">
-    </div>
+            <input type="text" placeholder="Last Name"
+              class="w-full px-4 py-3 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#FD5528]/40 transition duration-200">
+          </div>
 
-    <input type="email" placeholder="Email Address"
-      class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FD5528]/30">
+          <input type="email" placeholder="Email Address"
+            class="w-full px-4 py-3 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#FD5528]/40 transition duration-200">
 
-    <input type="text" placeholder="Subject"
-      class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FD5528]/30">
+          <input type="text" placeholder="Subject"
+            class="w-full px-4 py-3 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#FD5528]/40 transition duration-200">
 
-    <textarea rows="4" placeholder="Your Message"
-      class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FD5528]/30"></textarea>
+          <textarea rows="4" placeholder="Your Message"
+            class="w-full px-4 py-3 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#FD5528]/40 transition duration-200"></textarea>
 
-    <button type="submit"
-      class="w-full bg-[#FD5528] text-white py-3 rounded-lg font-medium hover:bg-[#e04a22] transition shadow-md hover:shadow-lg">
-      Send Message
-    </button>
+          <button type="submit"
+            class="w-full bg-gradient-to-r from-[#FD5528] to-[#fbb03b] text-white py-3 rounded-2xl font-semibold shadow-[0_20px_45px_rgba(253,85,40,0.4)] transition duration-200 hover:shadow-[0_25px_60px_rgba(253,85,40,0.5)]">
+            Send Message
+          </button>
 
-  </form>
+        </form>
 
-</div>
+      </div>
 
     </div>
 

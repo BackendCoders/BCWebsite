@@ -274,6 +274,28 @@
 .animate-marquee-reverse {
     animation: marquee 20s linear infinite reverse;
 }
+
+/* client */
+.logo {
+  min-width: 160px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+
+  transition: all 0.3s ease;
+}
+
+.logo img {
+  height: 200px;
+ 
+ 
+  transition: all 0.3s ease;
+}
 </style>
     @include('component.header')
 
