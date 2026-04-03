@@ -75,10 +75,96 @@
   </div>
 </section>
 
+<!-- WHO WE ARE-->
+<section id="who-we-are" class="bg-[#F9FAFB] px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 py-14 sm:py-16 md:py-20 lg:py-24 relative overflow-hidden">
 
+  <!-- GLOW -->
+  <div class="absolute top-0 left-0 w-48 sm:w-72 h-48 sm:h-72 bg-[#FD5528]/10 blur-[100px] rounded-full"></div>
+  <div class="absolute bottom-0 right-0 w-48 sm:w-72 h-48 sm:h-72 bg-orange-200/30 blur-[100px] rounded-full"></div>
+
+  <div class="max-w-[1400px] mx-auto text-center relative z-10">
+
+      <!-- BADGE -->
+      <span 
+    
+      data-aos="fade-up"
+      class="inline-block text-xs sm:text-sm font-semibold uppercase tracking-[0.35em] 
+         text-[#FD5528] relative px-5 py-2 rounded-full 
+         bg-white/60 backdrop-blur-md 
+         shadow-[0_8px_20px_rgba(0,0,0,0.08)] 
+         border border-white/40
+         before:absolute before:inset-0 before:rounded-full 
+         before:bg-gradient-to-r before:from-[#FD5528]/20 before:to-orange-200/30 
+         before:-z-10">
+
+      Who We Are
+    </span>
+
+    <!-- HEADING -->
+    <h2 
+      class="mt-5 text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl 
+      font-bold text-gray-900 leading-tight"
+      data-aos="fade-up"
+      data-aos-delay="100">
+
+      Backend 
+      <span class="text-[#FD5528]">Coders</span> 
+      India
+    </h2>
+
+    <!-- DESCRIPTION -->
+    <p 
+      class="mx-auto mt-4 sm:mt-6 max-w-3xl 
+      text-xs xs:text-sm sm:text-base md:text-lg 
+      leading-relaxed text-gray-600"
+      data-aos="fade-up"
+      data-aos-delay="200">
+
+      Backend Coders India is a boutique technology studio crafting high-performance
+      web, mobile, and SaaS platforms for startups and enterprises that demand
+      scalability, security, and modern digital experiences.
+    </p>
+
+    <!-- SERVICES -->
+    <div class="mt-10 sm:mt-12 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4 md:gap-5">
+
+      <!-- CARD -->
+      <div class="service-card transition duration-300 transform hover:-translate-y-1 hover:shadow-[0_15px_35px_rgba(253,85,40,0.15)]" data-aos="zoom-in">
+        <img src="https://img.icons8.com/?size=100&id=2169&format=png&color=fd5528" class="mx-auto mb-2">
+        <p class="text-sm font-semibold text-gray-900 tracking-tight">SaaS Platforms</p>
+      </div>
+
+      <div class="service-card transition duration-300 transform hover:-translate-y-1 hover:shadow-[0_15px_35px_rgba(253,85,40,0.15)]" data-aos="zoom-in" data-aos-delay="100">
+        <img src="https://img.icons8.com/?size=100&id=XZzsxYpJLV3S&format=png&color=fd5528" class="mx-auto mb-2">
+        <p class="text-sm font-semibold text-gray-900 tracking-tight">ERP Systems</p>
+      </div>
+
+      <div class="service-card transition duration-300 transform hover:-translate-y-1 hover:shadow-[0_15px_35px_rgba(253,85,40,0.15)]" data-aos="zoom-in" data-aos-delay="200">
+        <img src="https://img.icons8.com/?size=100&id=3578&format=png&color=fd5528" class="mx-auto mb-2">
+        <p class="text-sm font-semibold text-gray-900 tracking-tight">POS Systems</p>
+      </div>
+
+      <div class="service-card transition duration-300 transform hover:-translate-y-1 hover:shadow-[0_15px_35px_rgba(253,85,40,0.15)]" data-aos="zoom-in" data-aos-delay="300">
+        <img src="https://img.icons8.com/?size=100&id=XkroSDpLASWA&format=png&color=fd5528" class="mx-auto mb-2">
+        <p class="text-sm font-semibold text-gray-900 tracking-tight">E-commerce</p>
+      </div>
+
+      <div class="service-card transition duration-300 transform hover:-translate-y-1 hover:shadow-[0_15px_35px_rgba(253,85,40,0.15)]" data-aos="zoom-in" data-aos-delay="400">
+        <img src="https://img.icons8.com/?size=100&id=vJuSkDSbjZgp&format=png&color=fd5528" class="mx-auto mb-2">
+        <p class="text-sm font-semibold text-gray-900 tracking-tight">Custom Web Apps</p>
+      </div>
+
+    </div>
+
+
+
+  </div>
+
+</section>
+<!-- END WHO WE ARE -->
 
 <!-- WHO WE ARE-->
-<section id="who-we-are" class="bg-[#F9FAFB] px-6 py-24">
+{{-- <section id="who-we-are" class="bg-[#F9FAFB] px-6 py-24">
 
     <div class="max-w-6xl mx-auto text-center">
 
@@ -145,7 +231,7 @@
 
     </div>
 
-</section>
+</section> --}}
 <!-- END WHO WE ARE -->
 
 <!-- why choose us -->

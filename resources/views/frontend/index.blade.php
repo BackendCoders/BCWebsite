@@ -149,96 +149,191 @@
 
 <!-- END HERO SECTIOPN -->
 
-<!-- WHO WE ARE-->
-<section id="who-we-are" class="bg-[#F9FAFB] px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 py-14 sm:py-16 md:py-20 lg:py-24 relative overflow-hidden">
+<!-- clients -->
+ <section class="relative py-32 px-6 overflow-hidden">
 
-  <!-- GLOW -->
-  <div class="absolute top-0 left-0 w-48 sm:w-72 h-48 sm:h-72 bg-[#FD5528]/10 blur-[100px] rounded-full"></div>
-  <div class="absolute bottom-0 right-0 w-48 sm:w-72 h-48 sm:h-72 bg-orange-200/30 blur-[100px] rounded-full"></div>
+  <!-- BACKGROUND -->
+  <div class="absolute inset-0 bg-gray-100"></div>
 
-  <div class="max-w-[1400px] mx-auto text-center relative z-10">
+  <div class="relative max-w-7xl mx-auto text-center">
 
-      <!-- BADGE -->
-      <span 
-    
-      data-aos="fade-up"
-      class="inline-block text-xs sm:text-sm font-semibold uppercase tracking-[0.35em] 
-         text-[#FD5528] relative px-5 py-2 rounded-full 
-         bg-white/60 backdrop-blur-md 
-         shadow-[0_8px_20px_rgba(0,0,0,0.08)] 
-         border border-white/40
-         before:absolute before:inset-0 before:rounded-full 
-         before:bg-gradient-to-r before:from-[#FD5528]/20 before:to-orange-200/30 
-         before:-z-10">
-
-      Who We Are
-    </span>
-
-    <!-- HEADING -->
-    <h2 
-      class="mt-5 text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl 
-      font-bold text-gray-900 leading-tight"
-      data-aos="fade-up"
-      data-aos-delay="100">
-
-      Backend 
-      <span class="text-[#FD5528]">Coders</span> 
-      India
-    </h2>
-
-    <!-- DESCRIPTION -->
-    <p 
-      class="mx-auto mt-4 sm:mt-6 max-w-3xl 
-      text-xs xs:text-sm sm:text-base md:text-lg 
-      leading-relaxed text-gray-600"
-      data-aos="fade-up"
-      data-aos-delay="200">
-
-      Backend Coders India is a boutique technology studio crafting high-performance
-      web, mobile, and SaaS platforms for startups and enterprises that demand
-      scalability, security, and modern digital experiences.
+    <!-- HEADER -->
+    <p class="inline-block text-xs font-semibold uppercase tracking-[0.35em] text-[#FD5528] px-5 py-2 rounded-full 
+      bg-white/5 backdrop-blur-md border border-white/10">
+      Trusted Clients
     </p>
 
-    <!-- SERVICES -->
-    <div class="mt-10 sm:mt-12 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4 md:gap-5">
+    <h2 class="mt-6 text-3xl md:text-5xl font-bold text-black">
+      Brands That Trust Us
+    </h2>
 
-      <!-- CARD -->
-      <div class="service-card transition duration-300 transform hover:-translate-y-1 hover:shadow-[0_15px_35px_rgba(253,85,40,0.15)]" data-aos="zoom-in">
-        <img src="https://img.icons8.com/?size=100&id=2169&format=png&color=fd5528" class="mx-auto mb-2">
-        <p class="text-sm font-semibold text-gray-900 tracking-tight">SaaS Platforms</p>
-      </div>
+    <!-- MARQUEE WRAPPER -->
+    <div class="mt-14 overflow-hidden group">
 
-      <div class="service-card transition duration-300 transform hover:-translate-y-1 hover:shadow-[0_15px_35px_rgba(253,85,40,0.15)]" data-aos="zoom-in" data-aos-delay="100">
-        <img src="https://img.icons8.com/?size=100&id=XZzsxYpJLV3S&format=png&color=fd5528" class="mx-auto mb-2">
-        <p class="text-sm font-semibold text-gray-900 tracking-tight">ERP Systems</p>
-      </div>
+      <div class="flex w-max animate-marquee gap-12 flex-nowrap group-hover:[animation-play-state:paused]">
 
-      <div class="service-card transition duration-300 transform hover:-translate-y-1 hover:shadow-[0_15px_35px_rgba(253,85,40,0.15)]" data-aos="zoom-in" data-aos-delay="200">
-        <img src="https://img.icons8.com/?size=100&id=3578&format=png&color=fd5528" class="mx-auto mb-2">
-        <p class="text-sm font-semibold text-gray-900 tracking-tight">POS Systems</p>
-      </div>
+        <!-- ORIGINAL SET -->
+        <div class="logo"> <img src="{{asset('assets/logos/ifnoss.jpeg')}}"> </div>
+        <div class="logo"> <img src="{{asset('assets/logos/ace.jpeg')}}"> </div>
+        <div class="logo"> <img src="{{asset('assets/logos/arrive.jpeg')}}"> </div>
+        <div class="logo"> <img src="{{asset('assets/logos/ladigue.jpeg')}}"> </div>
+        <div class="logo"> <img src="{{asset('assets/logos/marley.jpeg')}}"> </div>
 
-      <div class="service-card transition duration-300 transform hover:-translate-y-1 hover:shadow-[0_15px_35px_rgba(253,85,40,0.15)]" data-aos="zoom-in" data-aos-delay="300">
-        <img src="https://img.icons8.com/?size=100&id=XkroSDpLASWA&format=png&color=fd5528" class="mx-auto mb-2">
-        <p class="text-sm font-semibold text-gray-900 tracking-tight">E-commerce</p>
-      </div>
+        <!-- DUPLICATE SET (IMPORTANT) -->
+        <div class="logo"> <img src="{{asset('assets/logos/matchbly.jpeg')}}"> </div>
+        <div class="logo"> <img src="{{asset('assets/logos/praslin.jpg')}}"> </div>
+        <div class="logo"> <img src="{{asset('assets/logos/pulse-event.jpeg')}}"> </div>
+        <div class="logo"> <img src="{{asset('assets/logos/skyda.jpeg')}}"> </div>
+        <div class="logo"> <img src="{{asset('assets/logos/ifnoss.jpeg')}}"> </div>
 
-      <div class="service-card transition duration-300 transform hover:-translate-y-1 hover:shadow-[0_15px_35px_rgba(253,85,40,0.15)]" data-aos="zoom-in" data-aos-delay="400">
-        <img src="https://img.icons8.com/?size=100&id=vJuSkDSbjZgp&format=png&color=fd5528" class="mx-auto mb-2">
-        <p class="text-sm font-semibold text-gray-900 tracking-tight">Custom Web Apps</p>
       </div>
 
     </div>
 
+  </div>
+</section>
+{{-- end cient sectin --}}
 
+{{-- prjects --}}
+<section class="py-16 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-6">
+
+    <div class="text-center mb-12 space-y-3">
+      <p class="text-[11px] uppercase tracking-[0.5em] text-[#FD5528]">Recently Completed Projects</p>
+      <h2 class="text-4xl sm:text-5xl font-bold text-gray-900">
+         Completed<span class="text-[#F44918]"> Projects</span>
+      </h2>
+      <p class="text-sm text-gray-500 max-w-3xl mx-auto">
+        Live deployments that blend backend reliability, thoughtful UI, and measurable outcomes for our partners.
+      </p>
+    </div>
+
+    <div class="flex flex-wrap justify-center gap-3 mb-10">
+      <button class="tab active" data-tab="all" type="button">All</button>
+      <button class="tab" data-tab="web" type="button">Web Apps</button>
+      <button class="tab" data-tab="saas" type="button">SaaS</button>
+      <button class="tab" data-tab="ecommerce" type="button">E-commerce</button>
+      <button class="tab" data-tab="crm" type="button">CRM</button>
+    </div>
+
+    @php
+      $projects = [
+        [
+          'title' => 'Ace Taxis UK',
+          'desc' => 'Cab booking & dispatch system serving hundreds of drivers with live tracking and automated payroll.',
+          'image' => 'https://backendcodersindia.com/assets/images/company-icons/page1.png',
+          'type' => 'web',
+          'tags' => ['Node.js', 'MongoDB', 'REST API'],
+          'date' => 'Jan 2025',
+          'metric' => '+650 drivers onboarded',
+        ],
+        [
+          'title' => 'Tanning Salon System',
+          'desc' => 'Full salon management stack that syncs booking, memberships, and service automation for a UK beauty studio.',
+          'image' => 'https://backendcodersindia.com/assets/images/company-icons/1.png',
+          'type' => 'saas',
+          'tags' => ['Node.js', 'MongoDB', 'REST API'],
+          'date' => 'Jan 2025',
+          'metric' => '+28% bookings',
+        ],
+        [
+          'title' => 'Skydatech Technology',
+          'desc' => 'IT consulting hub with enterprise project tracking, analytics, and partner collaboration workflows.',
+          'image' => 'https://backendcodersindia.com/assets/images/testemonials/skydatech.png',
+          'type' => 'web',
+          'tags' => ['Node.js', 'MongoDB', 'REST API'],
+          'date' => 'Jan 2025',
+          'metric' => '47ms avg response time',
+        ],
+        [
+          'title' => 'Alberta ChildCare',
+          'desc' => 'Education portal coordinating schedules, parent updates, and classroom intelligence.',
+          'image' => 'https://backendcodersindia.com/assets/images/company-icons/childcare.png',
+          'type' => 'web',
+          'tags' => ['Node.js', 'MongoDB', 'REST API'],
+          'date' => 'Jan 2025',
+          'metric' => '24x7 monitoring',
+        ],
+        [
+          'title' => 'Marley Moves',
+          'desc' => 'Logistics control center for international relocations with live tracking and concierge reporting.',
+          'image' => 'https://backendcodersindia.com/assets/images/testemonials/marley.png',
+          'type' => 'web',
+          'tags' => ['Node.js', 'MongoDB', 'REST API'],
+          'date' => 'Jan 2025',
+          'metric' => '+41% throughput',
+        ],
+        [
+          'title' => 'ER Data Solutions',
+          'desc' => 'CRM workspace featuring Power BI dashboards, forecasting, and stakeholder collaboration.',
+          'image' => 'https://backendcodersindia.com/assets/images/testemonials/er.png',
+          'type' => 'crm',
+          'tags' => ['Node.js', 'MongoDB', 'REST API'],
+          'date' => 'Jan 2025',
+          'metric' => '+31% forecast accuracy',
+        ],
+        [
+          'title' => 'Demo Cycle',
+          'desc' => 'E-commerce sample site tied to an E-POS initiative with inventory and fulfillment automation.',
+          'image' => 'https://backendcodersindia.com/assets/images/company-icons/demo.png',
+          'type' => 'ecommerce',
+          'tags' => ['Node.js', 'MongoDB', 'REST API'],
+          'date' => 'Jan 2025',
+          'metric' => '+34% average order value',
+        ],
+      ];
+    @endphp
+
+    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+
+      @foreach($projects as $project)
+        <article class="project {{ $project['type'] }} relative overflow-hidden rounded-[32px] border border-white/70 bg-white shadow-[0_25px_60px_rgba(15,23,42,0.08)] transition duration-500 hover:-translate-y-1 hover:shadow-[0_35px_80px_rgba(253,85,40,0.2)] group" data-aos="fade-up">
+          <div class="relative overflow-hidden rounded-[28px] h-52">
+            <img src="{{ asset($project['image']) }}" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
+            <span class="absolute top-4 left-4 rounded-full bg-[#0F8C4A] px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.3em] text-white shadow-lg">
+              Live
+            </span>
+          </div>
+          <div class="p-6 space-y-3">
+            <div class="flex items-center justify-between text-[11px] uppercase tracking-[0.35em] text-gray-500">
+              <span>{{ ucfirst($project['type']) }}</span>
+              <span class="text-[#FC5124] font-semibold">{{ $project['date'] }}</span>
+            </div>
+            <h3 class="text-2xl font-semibold text-gray-900">
+              {{ $project['title'] }}
+            </h3>
+            <p class="text-sm text-gray-600 leading-relaxed">
+              {{ $project['desc'] }}
+            </p>
+            <div class="flex flex-wrap gap-2">
+              @foreach($project['tags'] as $tag)
+                <span class="rounded-full bg-orange-100 px-3 py-1 text-[11px] font-semibold text-[#FC5124] shadow-sm">
+                  {{ $tag }}
+                </span>
+              @endforeach
+            </div>
+            <div class="flex items-center justify-between text-xs text-gray-500">
+              <span>{{ $project['metric'] }}</span>
+              <a href="#" class="text-[#FC5124] font-semibold hover:underline">
+                View
+              </a>
+            </div>
+          </div>
+        </article>
+      @endforeach
+
+    </div>
 
   </div>
-
 </section>
-<!-- END WHO WE ARE -->
+{{-- prjects --}}
+
+
+
+
 
 <!-- SERVICE -->
-<section id="services" class="relative overflow-hidden bg-white px-6 py-16 sm:py-20 lg:py-24">
+<section id="services" class="relative overflow-hidden bg-white   px-6 py-16 sm:py-20 lg:py-24">
 
     <div class="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-[#FD5528]/10 to-transparent pointer-events-none"></div>
     <div class="absolute right-0 top-1/4 hidden w-64 h-64 rounded-full bg-[#FD5528]/10 blur-3xl lg:block"></div>
@@ -248,7 +343,7 @@
 
         <!-- Heading -->
         <div class="text-center max-w-3xl mx-auto">
-  <!-- BADGE -->
+    <!-- BADGE -->
       <span 
     
       data-aos="fade-up"
@@ -285,7 +380,7 @@
                     <div class="relative z-10 flex flex-col items-center text-center space-y-4">
                         <span class="text-[0.6rem] font-semibold uppercase tracking-[0.4em] text-[#FD5528]">Bespoke Web</span>
                         <div class="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] 
-hover:from-[#fb813b] hover:to-[#b00000]  shadow-inner">
+        hover:from-[#fb813b] hover:to-[#b00000]  shadow-inner">
                             <img src="https://img.icons8.com/?size=100&id=DCkAZ79sIYhT&format=png&color=ffffff" alt="Custom web app" class="h-16 w-16" />
                         </div>
                         <h3 class="text-xl font-semibold transition duration-500 group-hover:text-black">Custom Web Applications</h3>
@@ -303,7 +398,7 @@ hover:from-[#fb813b] hover:to-[#b00000]  shadow-inner">
                     <div class="relative z-10 flex flex-col items-center text-center space-y-4">
                         <span class="text-[0.6rem] font-semibold uppercase tracking-[0.4em] text-[#FD5528]">Design & Build</span>
                         <div class="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] 
-hover:from-[#fb813b] hover:to-[#b00000] shadow-inner">
+      hover:from-[#fb813b] hover:to-[#b00000] shadow-inner">
                             <img src="https://img.icons8.com/?size=100&id=8Y6ohiJ337rc&format=png&color=ffffff" alt="Design icon" class="h-16 w-16" />
                         </div>
                         <h3 class="text-xl font-semibold transition duration-500 group-hover:text-black">Website Design & Development</h3>
@@ -321,7 +416,7 @@ hover:from-[#fb813b] hover:to-[#b00000] shadow-inner">
                     <div class="relative z-10 flex flex-col items-center text-center space-y-4">
                         <span class="text-[0.6rem] font-semibold uppercase tracking-[0.4em] text-[#FD5528]">SaaS Forces</span>
                         <div class="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] 
-hover:from-[#fb813b] hover:to-[#b00000] shadow-inner">
+      hover:from-[#fb813b] hover:to-[#b00000] shadow-inner">
                             <img src="https://img.icons8.com/?size=100&id=k8TSihyFk2cJ&format=png&color=ffffff" alt="SaaS icon" class="h-16 w-16" />
                         </div>
                         <h3 class="text-xl font-semibold transition duration-500 group-hover:text-black">SaaS Development</h3>
@@ -339,7 +434,7 @@ hover:from-[#fb813b] hover:to-[#b00000] shadow-inner">
                     <div class="relative z-10 flex flex-col items-center text-center space-y-4">
                         <span class="text-[0.6rem] font-semibold uppercase tracking-[0.4em] text-[#FD5528]">Enterprise Core</span>
                         <div class="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] 
-hover:from-[#fb813b] hover:to-[#b00000] shadow-inner">
+    hover:from-[#fb813b] hover:to-[#b00000] shadow-inner">
                             <img src="https://img.icons8.com/?size=100&id=Rk5rrSlqrNZO&format=png&color=ffffff" alt="ERP icon" class="h-16 w-16" />
                         </div>
                         <h3 class="text-xl font-semibold transition duration-500 group-hover:text-black">ERP & POS Software</h3>
@@ -357,7 +452,7 @@ hover:from-[#fb813b] hover:to-[#b00000] shadow-inner">
                     <div class="relative z-10 flex flex-col items-center text-center space-y-4">
                         <span class="text-[0.6rem] font-semibold uppercase tracking-[0.4em] text-[#FD5528]">Commerce Pulse</span>
                         <div class="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] 
-hover:from-[#fb813b] hover:to-[#b00000] shadow-inner">
+    hover:from-[#fb813b] hover:to-[#b00000] shadow-inner">
                             <img src="https://img.icons8.com/?size=100&id=8OxFnElAJgpE&format=png&color=ffffff" alt="Commerce icon" class="h-16 w-16" />
                         </div>
                         <h3 class="text-xl font-semibold transition duration-500 group-hover:text-black">E-commerce Development</h3>
@@ -375,7 +470,7 @@ hover:from-[#fb813b] hover:to-[#b00000] shadow-inner">
                     <div class="relative z-10 flex flex-col items-center text-center space-y-4">
                         <span class="text-[0.6rem] font-semibold uppercase tracking-[0.4em] text-[#FD5528]">Mobile Pulse</span>
                         <div class="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] 
-hover:from-[#fb813b] hover:to-[#b00000] shadow-inner">
+      hover:from-[#fb813b] hover:to-[#b00000] shadow-inner">
                             <img src="https://img.icons8.com/?size=100&id=67475&format=png&color=ffffff" alt="Mobile icon" class="h-16 w-16" />
                         </div>
                         <h3 class="text-xl font-semibold transition duration-500 group-hover:text-black">Mobile App Development</h3>
@@ -393,7 +488,7 @@ hover:from-[#fb813b] hover:to-[#b00000] shadow-inner">
                     <div class="relative z-10 flex flex-col items-center text-center space-y-4">
                         <span class="text-[0.6rem] font-semibold uppercase tracking-[0.4em] text-[#FD5528]">API Layer</span>
                         <div class="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] 
-hover:from-[#fb813b] hover:to-[#b00000] shadow-inner">
+      hover:from-[#fb813b] hover:to-[#b00000] shadow-inner">
                             <img src="https://img.icons8.com/?size=100&id=6kPR2dlup5KK&format=png&color=ffffff" alt="API icon" class="h-16 w-16" />
                         </div>
                         <h3 class="text-xl font-semibold transition duration-500 group-hover:text-black">API Development</h3>
@@ -411,7 +506,7 @@ hover:from-[#fb813b] hover:to-[#b00000] shadow-inner">
                     <div class="relative z-10 flex flex-col items-center text-center space-y-4">
                         <span class="text-[0.6rem] font-semibold uppercase tracking-[0.4em] text-[#FD5528]">Growth Duo</span>
                         <div class="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] 
-hover:from-[#fb813b] hover:to-[#b00000] shadow-inner">
+        hover:from-[#fb813b] hover:to-[#b00000] shadow-inner">
                             <img src="https://img.icons8.com/?size=100&id=103102&format=png&color=ffffff" alt="Marketing icon" class="h-16 w-16" />
                         </div>
                         <h3 class="text-xl font-semibold transition duration-500 group-hover:text-black">Digital Marketing & SEO</h3>
@@ -429,7 +524,7 @@ hover:from-[#fb813b] hover:to-[#b00000] shadow-inner">
                     <div class="relative z-10 flex flex-col items-center text-center space-y-4">
                         <span class="text-[0.6rem] font-semibold uppercase tracking-[0.4em] text-[#FD5528]">Startup Sprint</span>
                         <div class="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] 
-hover:from-[#fb813b] hover:to-[#b00000] shadow-inner">
+        hover:from-[#fb813b] hover:to-[#b00000] shadow-inner">
                             <img src="https://img.icons8.com/?size=100&id=KR7IxBJfODTv&format=png&color=ffffff" alt="MVP icon" class="h-16 w-16" />
                         </div>
                         <h3 class="text-xl font-semibold transition duration-500 group-hover:text-black">Startup MVP Development</h3>
@@ -447,190 +542,7 @@ hover:from-[#fb813b] hover:to-[#b00000] shadow-inner">
 </section>
 <!-- END SERVICE SECTION -->
 
-<!-- TECHNOLOGIES -->
-<section id="technologies" class="bg-[#F9FAFB] px-6 py-16 sm:py-20 lg:py-24">
 
-  <div class="max-w-7xl mx-auto">
-
-    <!-- Heading -->
-    <div class="text-center max-w-3xl mx-auto mb-12">
-      <p
-        data-aos="fade-up"
-        class="inline-block text-xs sm:text-sm font-semibold uppercase tracking-[0.35em] text-[#FD5528] relative px-5 py-2 rounded-full bg-white/70 backdrop-blur-md shadow-[0_8px_20px_rgba(0,0,0,0.08)] border border-white/40 before:absolute before:inset-0 before:rounded-full before:bg-gradient-to-r before:from-[#FD5528]/20 before:to-orange-200/30 before:-z-10"
-      >
-        Development Expertise
-      </p>
-
-      <h2 class="mt-4 text-3xl font-bold text-gray-900 md:text-4xl" data-aos="fade-up" data-aos-delay="100">
-        Technologies We Love
-      </h2>
-
-      <p class="mt-4 text-sm sm:text-base text-gray-600" data-aos="fade-up" data-aos-delay="200">
-        A modern stack for scalable apps, polished interfaces, and reliable cloud delivery.
-      </p>
-    </div>
-
-    <div class="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] items-stretch">
-
-      <div class="rounded-[2rem] border border-white/80 bg-white/95 p-8 shadow-[0_30px_80px_rgba(253,85,40,0.12)]" data-aos="fade-right" data-aos-delay="300">
-        <span class="inline-block text-xs sm:text-sm font-semibold uppercase tracking-[0.35em] 
-         text-[#FD5528] relative px-5 py-2 rounded-full 
-         bg-white/60 backdrop-blur-md 
-         shadow-[0_8px_20px_rgba(0,0,0,0.08)] 
-         border border-white/40
-         before:absolute before:inset-0 before:rounded-full 
-         before:bg-gradient-to-r before:from-[#FD5528]/20 before:to-orange-200/30 
-         before:-z-10">
-          Core expertise
-        </span>
-
-        <h3 class="mt-6 text-2xl sm:text-3xl fontffffffbold text-gray-900">
-          Build faster with proven tools
-        </h3>
-
-        <p class="mt-4 text-gray-600 leading-relaxed">
-          We combine backend power, frontend polish, and cloud infrastructure to deliver fast, secure, and scalable digital products.
-        </p>
-
-        <div class="mt-10 grid gap-4 sm:grid-cols-2">
-          <div class="rounded-3xl border border-gray-200 bg-[#FFF7F0] p-5">
-            <p class="font-semibold text-gray-900">Backend & APIs</p>
-            <p class="mt-2 text-sm text-gray-600">.NET Core, Node.js, Laravel</p>
-          </div>
-          <div class="rounded-3xl border border-gray-200 bg-[#EFF7FF] p-5">
-            <p class="font-semibold text-gray-900">Frontend</p>
-            <p class="mt-2 text-sm text-gray-600">React, Next.js, TypeScript</p>
-          </div>
-          <div class="rounded-3xl border border-gray-200 bg-[#EFFCF5] p-5">
-            <p class="font-semibold text-gray-900">Cloud & Data</p>
-            <p class="mt-2 text-sm text-gray-600">AWS, Firebase, MongoDB, SQL Server</p>
-          </div>
-          <div class="rounded-3xl border border-gray-200 bg-[#FFF5F7] p-5">
-            <p class="font-semibold text-gray-900">Delivery</p>
-            <p class="mt-2 text-sm text-gray-600">SaaS, eCommerce, enterprise-grade products</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="rounded-[2rem] bg-white border border-gray-200 shadow-xl overflow-hidden" data-aos="fade-left" data-aos-delay="400">
-        <div class="p-6 sm:p-8 bg-gradient-to-br from-white via-[#FFF6F0] to-[#FFF2ED]">
-          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-            <div>
-              <span class="text-xs font-semibold uppercase tracking-[0.35em] text-[#FD5528]">Tech gallery</span>
-              <h3 class="mt-3 text-2xl font-bold text-gray-900">Loved by product teams</h3>
-            </div>
-            <span class="inline-flex items-center rounded-full bg-[#FD5528]/10 px-3 py-1 text-xs font-semibold text-[#FD5528]">
-              Responsive layout
-            </span>
-          </div>
-
-          <!-- <div class="mt-8 grid gap-4 grid-cols-2 sm:grid-cols-3 xl:grid-cols-4">
-            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition  hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg" class="w-12 h-12" alt="Dotnet Core">
-              <span class="text-sm font-semibold text-gray-900">.NET Core</span>
-            </div>
-            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" class="w-12 h-12" alt="React">
-              <span class="text-sm font-semibold text-gray-900">React</span>
-            </div>
-            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" class="w-12 h-12" alt="Node.js">
-              <span class="text-sm font-semibold text-gray-900">Node.js</span>
-            </div>
-            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" class="w-12 h-12" alt="MongoDB">
-              <span class="text-sm font-semibold text-gray-900">MERN</span>
-            </div>
-            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-original.svg" class="w-12 h-12" alt="WordPress">
-              <span class="text-sm font-semibold text-gray-900">WordPress</span>
-            </div>
-            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
-              <img src="https://cdn.simpleicons.org/spotify/1DB954" class="w-12 h-12" alt="Shopify">
-              <span class="text-sm font-semibold text-gray-900">Shopify</span>
-            </div>
-            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" class="w-12 h-12" alt="Laravel">
-              <span class="text-sm font-semibold text-gray-900">Laravel</span>
-            </div>
-            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" class="w-12 h-12" alt="SQL Server">
-              <span class="text-sm font-semibold text-gray-900">SQL Server</span>
-            </div>
-            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" class="w-12 h-12" alt="Firebase">
-              <span class="text-sm font-semibold text-gray-900">Firebase</span>
-            </div>
-            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" class="w-12 h-12" alt="AWS">
-              <span class="text-sm font-semibold text-gray-900">AWS</span>
-            </div>
-            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" class="w-12 h-12" alt="TypeScript">
-              <span class="text-sm font-semibold text-gray-900">TypeScript</span>
-            </div>
-            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" class="w-12 h-12 bg-white p-1 rounded" alt="Next.js">
-              <span class="text-sm font-semibold text-gray-900">Next.js</span>
-            </div>
-          </div> -->
-           <div class="mt-8 grid gap-4 grid-cols-3 sm:grid-cols-3 xl:grid-cols-4">
-            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition  hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg" class="w-12 h-12" alt="Dotnet Core">
-              <span class="text-sm font-semibold text-gray-900">.NET Core</span>
-            </div>
-            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" class="w-12 h-12" alt="React">
-              <span class="text-sm font-semibold text-gray-900">React</span>
-            </div>
-            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" class="w-12 h-12" alt="Node.js">
-              <span class="text-sm font-semibold text-gray-900">Node.js</span>
-            </div>
-            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" class="w-12 h-12" alt="MongoDB">
-              <span class="text-sm font-semibold text-gray-900">MERN</span>
-            </div>
-            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-original.svg" class="w-12 h-12" alt="WordPress">
-              <span class="text-sm font-semibold text-gray-900">WordPress</span>
-            </div>
-            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
-              <img src="https://cdn.simpleicons.org/spotify/1DB954" class="w-12 h-12" alt="Shopify">
-              <span class="text-sm font-semibold text-gray-900">Shopify</span>
-            </div>
-            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" class="w-12 h-12" alt="Laravel">
-              <span class="text-sm font-semibold text-gray-900">Laravel</span>
-            </div>
-            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" class="w-12 h-12" alt="SQL Server">
-              <span class="text-sm font-semibold text-gray-900">SQL Server</span>
-            </div>
-            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" class="w-12 h-12" alt="Firebase">
-              <span class="text-sm font-semibold text-gray-900">Firebase</span>
-            </div>
-            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" class="w-12 h-12" alt="AWS">
-              <span class="text-sm font-semibold text-gray-900">AWS</span>
-            </div>
-            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" class="w-12 h-12" alt="TypeScript">
-              <span class="text-sm font-semibold text-gray-900">TypeScript</span>
-            </div>
-            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" class="w-12 h-12 bg-white p-1 rounded" alt="Next.js">
-              <span class="text-sm font-semibold text-gray-900">Next.js</span>
-            </div>
-          </div>
-          
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- END TECHNOLOGIES -->
 
 <!-- process-directions -->
 <section class="relative overflow-hidden py-16 sm:py-20 lg:py-24 bg-[#F9FAFB]">
@@ -678,7 +590,7 @@ hover:from-[#fb813b] hover:to-[#b00000] shadow-inner">
 
           <!-- CIRCLE -->
           <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#FD5528] font-semibold transition bg-gradient-to-r 
-hover:from-[#fb813b] hover:to-[#b00000] group-hover:text-white">
+          hover:from-[#fb813b] hover:to-[#b00000]     group-hover:text-white">
             01
           </div>
 
@@ -697,7 +609,7 @@ hover:from-[#fb813b] hover:to-[#b00000] group-hover:text-white">
         <!-- STEP -->
         <div class="flex items-start gap-4 lg:flex-col lg:items-center text-left lg:text-center group">
           <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#FD5528] font-semibold transition group-hover:bg-gradient-to-r 
-hover:from-[#fb813b] hover:to-[#b00000] group-hover:text-white">
+          hover:from-[#fb813b] hover:to-[#b00000] group-hover:text-white">
             02
           </div>
           <div>
@@ -713,7 +625,7 @@ hover:from-[#fb813b] hover:to-[#b00000] group-hover:text-white">
         <!-- STEP -->
         <div class="flex items-start gap-4 lg:flex-col lg:items-center text-left lg:text-center group">
           <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#FD5528] font-semibold transition group-hover:bg-gradient-to-r 
-hover:from-[#fb813b] hover:to-[#b00000] group-hover:text-white">
+          hover:from-[#fb813b] hover:to-[#b00000] group-hover:text-white">
             03
           </div>
           <div>
@@ -729,7 +641,7 @@ hover:from-[#fb813b] hover:to-[#b00000] group-hover:text-white">
         <!-- STEP -->
         <div class="flex items-start gap-4 lg:flex-col lg:items-center text-left lg:text-center group">
           <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#FD5528] font-semibold transition group-hover:bg-gradient-to-r 
-hover:from-[#fb813b] hover:to-[#b00000] group-hover:text-white">
+          hover:from-[#fb813b] hover:to-[#b00000] group-hover:text-white">
             04
           </div>
           <div>
@@ -745,7 +657,7 @@ hover:from-[#fb813b] hover:to-[#b00000] group-hover:text-white">
         <!-- STEP -->
         <div class="flex items-start gap-4 lg:flex-col lg:items-center text-left lg:text-center group">
           <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#FD5528] font-semibold transition group-hover:bg-gradient-to-r 
-hover:from-[#fb813b] hover:to-[#b00000] group-hover:text-white">
+            hover:from-[#fb813b] hover:to-[#b00000] group-hover:text-white">
             05
           </div>
           <div>
@@ -761,7 +673,7 @@ hover:from-[#fb813b] hover:to-[#b00000] group-hover:text-white">
         <!-- STEP -->
         <div class="flex items-start gap-4 lg:flex-col lg:items-center text-left lg:text-center group">
           <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#FD5528] font-semibold transition group-hover:bg-gradient-to-r 
-hover:from-[#fb813b] hover:to-[#b00000] group-hover:text-white">
+            hover:from-[#fb813b] hover:to-[#b00000] group-hover:text-white">
             06
           </div>
           <div>
@@ -784,134 +696,9 @@ hover:from-[#fb813b] hover:to-[#b00000] group-hover:text-white">
 <!-- pr -->
 
 
-<section class="bg-[#F9FAFB] py-16 sm:py-20 lg:py-24 px-6">
-  <div class="max-w-9xl lg:mx-24 mx-auto text-center mb-16 items-center">
-        <!-- Heading -->
-            <p 
-      data-aos="fade-up"
-      class="inline-block text-xs sm:text-sm font-semibold uppercase tracking-[0.35em] 
-         text-[#FD5528] relative px-5 py-2 rounded-full 
-         bg-white/60 backdrop-blur-md 
-         shadow-[0_8px_20px_rgba(0,0,0,0.08)] 
-         border border-white/40
-         before:absolute before:inset-0 before:rounded-full 
-         before:bg-gradient-to-r before:from-[#FD5528]/20 before:to-orange-200/30 
-         before:-z-10">
-
-          Why Choose Us
-
-    </p>
-      <!-- <p class="text-sm uppercase tracking-widest text-[#FD5528] font-semibold">
-        Why Choose Us
-      </p> -->
-
-      <h2 class="mt-4 text-3xl md:text-4xl font-bold text-gray-900">
-        Built for long-term partnerships
-      </h2>
-      
-      <span class="mt-4 my-2 text-gray-600 max-w-lg text-center">
-        We deliver scalable, reliable, and future-ready solutions tailored to your business growth.
-      </span>
-
-
-    </div>
-  <div class="max-w-9xl lg:mx-24 mx-auto grid lg:grid-cols-2 gap-16 items-center">
-  
- <!-- LEFT CONTENT -->
-    <div class="relative">
-
-      <img 
-        src="{{asset('assets/images/choose-us.png')}}"
-        alt="Team working"
-        class="rounded-2xl shadow-xl w-full h-full object-cover"
-      >
-
-   
-    </div>
-
-       <!-- RIGHT IMAGE -->
-    <div>
-
-    
-
-      <!-- FEATURES GRID -->
-      <div class="mt-10 grid sm:grid-cols-2 gap-6">
-
-    
-        <!-- ITEM -->
-        <div class="flex gap-3 p-4 bg-white border border-gray-200 rounded-xl transition duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-[#FD5528]/20">
-          <div class="w-14 h-14 flex items-center justify-center rounded-lg bg-[#FFF1EC] text-[#FD5528] text-lg">
-                  <img src="https://img.icons8.com/?size=100&id=DCkAZ79sIYhT&format=png&color=FD5528" class="w-12 h-12">
-          </div>
-          <div>
-            <h3 class="text-sm font-semibold text-gray-900">17+ Years Experience</h3>
-            <p class="text-xs text-gray-600 mt-1">Reliable, high-quality solutions across industries.</p>
-          </div>
-        </div>
-
-        <div class="flex gap-3 p-4 bg-white border border-gray-200 rounded-xl transition duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-[#FD5528]/20">
-          <div class="w-14 h-14 flex items-center justify-center rounded-lg bg-[#FFF1EC] text-[#FD5528] text-lg">
-             <img src="https://img.icons8.com/?size=100&id=124222&format=png&color=FD5528" class="w-12 h-12">
-          </div>
-          <div>
-            <h3 class="text-sm font-semibold text-gray-900">Dedicated Teams</h3>
-            <p class="text-xs text-gray-600 mt-1">Experts focused exclusively on your project.</p>
-          </div>
-        </div>
-
-        <div class="flex gap-3 p-4 bg-white border border-gray-200 rounded-xl transition duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-[#FD5528]/20">
-          <div class="w-14 h-14 flex items-center justify-center rounded-lg bg-[#FFF1EC] text-[#FD5528] text-lg">
-             <img src="https://img.icons8.com/?size=100&id=5TJlel7-79RU&format=png&color=FD5528" class="w-12 h-12">
-          </div>
-          <div>
-            <h3 class="text-sm font-semibold text-gray-900">Scalable Architecture</h3>
-            <p class="text-xs text-gray-600 mt-1">Systems built to grow with your business.</p>
-          </div>
-        </div>
-
-        <div class="flex gap-3 p-4 bg-white border border-gray-200 rounded-xl transition duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-[#FD5528]/20">
-          <div class="w-14 h-14 flex items-center justify-center rounded-lg bg-[#FFF1EC] text-[#FD5528] text-lg">
-            <img src="https://img.icons8.com/?size=100&id=68443&format=png&color=FD5528" class="w-12 h-12">
-          </div>
-          <div>
-            <h3 class="text-sm font-semibold text-gray-900">Agile & Transparent</h3>
-            <p class="text-xs text-gray-600 mt-1">Clear communication and faster delivery.</p>
-          </div>
-        </div>
-
-        <div class="flex gap-3 p-4 bg-white border border-gray-200 rounded-xl transition duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-[#FD5528]/20">
-          <div class="w-14 h-14 flex items-center justify-center rounded-lg bg-[#FFF1EC] text-[#FD5528] text-lg">
-               <img src="https://img.icons8.com/?size=100&id=117533&format=png&color=FD5528" class="w-12 h-12">
-          </div>
-          <div>
-            <h3 class="text-sm font-semibold text-gray-900">Startup-Friendly Pricing</h3>
-            <p class="text-xs text-gray-600 mt-1">Flexible pricing for growing businesses.</p>
-          </div>
-        </div>
-
-        <div class="flex gap-3 p-4 bg-white border border-gray-200 rounded-xl transition duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-[#FD5528]/20">
-          <div class="w-14 h-14 flex items-center justify-center rounded-lg bg-[#FFF1EC] text-[#FD5528] text-lg">
-             <img src="https://img.icons8.com/?size=100&id=neBRkBaejCVJ&format=png&color=FD5528" class="w-12 h-12">
-          </div>
-          <div>
-            <h3 class="text-sm font-semibold text-gray-900">Long-Term Support</h3>
-            <p class="text-xs text-gray-600 mt-1">Continuous maintenance and updates.</p>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-
-
-   
-
-  </div>
-
-</section>
 
 <!-- serve industry -->
-<section id="industries" class="bg-white px-6 py-16 sm:py-20 lg:py-24">
+{{-- <section id="industries" class="bg-white px-6 py-16 sm:py-20 lg:py-24">
 
   <div class="max-w-9xl lg:mx-24 mx-auto text-center">
        <p 
@@ -1005,7 +792,7 @@ hover:from-[#fb813b] hover:to-[#b00000] group-hover:text-white">
 
   </div>
 
-</section>
+</section> --}}
 <!-- END SERVE INDUSTRY -->
 
 <!-- BLOG -->
@@ -1109,50 +896,8 @@ hover:from-[#fb813b] hover:to-[#b00000] group-hover:text-white">
 </section>
 <!-- END BLOG -->
 
-<!-- clients -->
- <section class="relative py-32 px-6 overflow-hidden">
 
-  <!-- BACKGROUND -->
-  <div class="absolute inset-0 bg-gray-100"></div>
-
-  <div class="relative max-w-7xl mx-auto text-center">
-
-    <!-- HEADER -->
-    <p class="inline-block text-xs font-semibold uppercase tracking-[0.35em] text-[#FD5528] px-5 py-2 rounded-full 
-      bg-white/5 backdrop-blur-md border border-white/10">
-      Trusted Clients
-    </p>
-
-    <h2 class="mt-6 text-3xl md:text-5xl font-bold text-black">
-      Brands That Trust Us
-    </h2>
-
-    <!-- MARQUEE WRAPPER -->
-    <div class="mt-14 overflow-hidden group">
-
-      <div class="flex w-max animate-marquee gap-12 flex-nowrap group-hover:[animation-play-state:paused]">
-
-        <!-- ORIGINAL SET -->
-        <div class="logo"> <img src="{{asset('assets/logos/ifnoss.jpeg')}}"> </div>
-        <div class="logo"> <img src="{{asset('assets/logos/ace.jpeg')}}"> </div>
-        <div class="logo"> <img src="{{asset('assets/logos/arrive.jpeg')}}"> </div>
-        <div class="logo"> <img src="{{asset('assets/logos/ladigue.jpeg')}}"> </div>
-        <div class="logo"> <img src="{{asset('assets/logos/marley.jpeg')}}"> </div>
-
-        <!-- DUPLICATE SET (IMPORTANT) -->
-        <div class="logo"> <img src="{{asset('assets/logos/matchbly.jpeg')}}"> </div>
-        <div class="logo"> <img src="{{asset('assets/logos/praslin.jpg')}}"> </div>
-        <div class="logo"> <img src="{{asset('assets/logos/pulse-event.jpeg')}}"> </div>
-        <div class="logo"> <img src="{{asset('assets/logos/skyda.jpeg')}}"> </div>
-        <div class="logo"> <img src="{{asset('assets/logos/ifnoss.jpeg')}}"> </div>
-
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
+{{-- faq --}}
 <section class="bg-[#F9FAFB] py-16 sm:py-20 lg:py-24 px-4 sm:px-6">
 
   <div class="max-w-9xl lg:mx-24 mx-auto">
@@ -1392,9 +1137,29 @@ hover:from-[#fb813b] hover:to-[#b00000] group-hover:text-white">
 </section>
 <!-- END contact section -->
 
+<!-- CTA SECTION -->
+<section class="bg-[#FC5124] text-white py-16 text-center">
+  <h2 class="text-3xl font-bold mb-4">
+    Have a Project in Mind?
+  </h2>
+  <p class="text-gray-300 mb-6">
+    Let’s build, discuss your project idea in detail. What’s next?
+  </p>
+
+  <div class="flex justify-center gap-4">
+    <a href="#contact"
+     class="bg-white text-[#FC5124] px-6 py-3 rounded-lg font-semibold ">
+    Contact Us
+  </a>
+    <a href="#contact"
+     class="bg-white text-[#FC5124] px-6 py-3 rounded-lg font-semibold ">
+     Let's chat on Whatsapp
+  </a>
+  </div>
+</section>
+
 </main>
 
 
 
 @endsection
-

@@ -490,6 +490,29 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+const tabs = document.querySelectorAll('.tab');
+const projects = document.querySelectorAll('.project');
+
+tabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+
+    // active state
+    tabs.forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+
+    const category = tab.getAttribute('data-tab');
+
+    projects.forEach(project => {
+      if (category === 'all' || project.classList.contains(category)) {
+        project.style.display = 'block';
+      } else {
+        project.style.display = 'none';
+      }
+    });
+
+  });
+});
+
 
 
 </script>

@@ -23,8 +23,8 @@
          class="flex items-center justify-center sm:justify-start gap-2 hover:text-black transition">
 
         <div class="w-7 h-7 flex items-center justify-center rounded-full 
-        bg-gradient-to-r from-[#b00000] to-[#fb813b] 
-        hover:from-[#fb813b] hover:to-[#b00000] transition-all duration-300">
+        bg-gradient-to-r from-[#060000] to-[#b00000] 
+        hover:from-[#b00000] hover:to-[#060000] hover:scale-110 transition-all duration-300">
           <img src="https://img.icons8.com/?size=100&id=9659&format=png&color=ffffff" 
                class="w-4 h-4">
         </div>
@@ -37,8 +37,8 @@
          class="flex items-center justify-center sm:justify-start gap-2 hover:text-black transition">
 
         <div class="w-7 h-7 flex items-center justify-center rounded-full 
-        bg-gradient-to-r from-[#b00000] to-[#fb813b] 
-        hover:from-[#fb813b] hover:to-[#b00000] transition-all duration-300">
+         bg-gradient-to-r from-[#060000] to-[#b00000] 
+        hover:from-[#b00000] hover:to-[#060000] hover:scale-110 transition-all duration-300">
           <img src="https://img.icons8.com/?size=100&id=53388&format=png&color=ffffff" 
                class="w-4 h-4">
         </div>
@@ -55,8 +55,8 @@
 
       <a href="https://www.facebook.com/backendcoders/" target="_blank"
          class="w-8 h-8 flex items-center justify-center rounded-full 
-         bg-gradient-to-r from-[#b00000] to-[#fb813b] 
-         hover:from-[#fb813b] hover:to-[#b00000] 
+        bg-gradient-to-r from-[#060000] to-[#b00000] 
+        hover:from-[#b00000] hover:to-[#060000]
          hover:scale-110 transition-all duration-300">
         <img src="https://img.icons8.com/?size=100&id=118468&format=png&color=ffffff" 
              class="w-4 h-4">
@@ -64,8 +64,8 @@
 
       <a href="https://www.instagram.com/backendcoders" target="_blank"
          class="w-8 h-8 flex items-center justify-center rounded-full 
-         bg-gradient-to-r from-[#b00000] to-[#fb813b] 
-         hover:from-[#fb813b] hover:to-[#b00000] 
+        bg-gradient-to-r from-[#060000] to-[#b00000] 
+        hover:from-[#b00000] hover:to-[#060000]
          hover:scale-110 transition-all duration-300">
         <img src="https://img.icons8.com/?size=100&id=32292&format=png&color=ffffff" 
              class="w-4 h-4">
@@ -73,8 +73,8 @@
 
       <a href="https://www.linkedin.com/company/backendcodersindia/" target="_blank"
          class="w-8 h-8 flex items-center justify-center rounded-full 
-         bg-gradient-to-r from-[#b00000] to-[#fb813b] 
-         hover:from-[#fb813b] hover:to-[#b00000] 
+        bg-gradient-to-r from-[#060000] to-[#b00000] 
+        hover:from-[#b00000] hover:to-[#060000]
          hover:scale-110 transition-all duration-300">
         <img src="https://img.icons8.com/?size=100&id=447&format=png&color=ffffff" 
              class="w-4 h-4">
@@ -82,8 +82,8 @@
 
       <a href="https://wa.me/919140092133" target="_blank"
          class="w-8 h-8 flex items-center justify-center rounded-full 
-         bg-gradient-to-r from-[#b00000] to-[#fb813b] 
-         hover:from-[#fb813b] hover:to-[#b00000] 
+        bg-gradient-to-r from-[#060000] to-[#b00000] 
+        hover:from-[#b00000] hover:to-[#060000]
          hover:scale-110 transition-all duration-300">
         <img src="https://img.icons8.com/?size=100&id=16712&format=png&color=ffffff" 
              class="w-4 h-4">

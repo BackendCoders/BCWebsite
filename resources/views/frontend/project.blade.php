@@ -623,6 +623,132 @@
 
 </section>
 
+<section class="bg-[#F9FAFB] py-16 sm:py-20 lg:py-24 px-6">
+  <div class="max-w-9xl lg:mx-24 mx-auto text-center mb-16 items-center">
+        <!-- Heading -->
+            <p 
+      data-aos="fade-up"
+      class="inline-block text-xs sm:text-sm font-semibold uppercase tracking-[0.35em] 
+         text-[#FD5528] relative px-5 py-2 rounded-full 
+         bg-white/60 backdrop-blur-md 
+         shadow-[0_8px_20px_rgba(0,0,0,0.08)] 
+         border border-white/40
+         before:absolute before:inset-0 before:rounded-full 
+         before:bg-gradient-to-r before:from-[#FD5528]/20 before:to-orange-200/30 
+         before:-z-10">
+
+          Why Choose Us
+
+    </p>
+      <!-- <p class="text-sm uppercase tracking-widest text-[#FD5528] font-semibold">
+        Why Choose Us
+      </p> -->
+
+      <h2 class="mt-4 text-3xl md:text-4xl font-bold text-gray-900">
+        Built for long-term partnerships
+      </h2>
+      
+      <span class="mt-4 my-2 text-gray-600 max-w-lg text-center">
+        We deliver scalable, reliable, and future-ready solutions tailored to your business growth.
+      </span>
+
+
+    </div>
+  <div class="max-w-9xl lg:mx-24 mx-auto grid lg:grid-cols-2 gap-16 items-center">
+  
+ <!-- LEFT CONTENT -->
+    <div class="relative">
+
+      <img 
+        src="{{asset('assets/images/choose-us.png')}}"
+        alt="Team working"
+        class="rounded-2xl shadow-xl w-full h-full object-cover"
+      >
+
+   
+    </div>
+
+       <!-- RIGHT IMAGE -->
+    <div>
+
+    
+
+      <!-- FEATURES GRID -->
+      <div class="mt-10 grid sm:grid-cols-2 gap-6">
+
+    
+        <!-- ITEM -->
+        <div class="flex gap-3 p-4 bg-white border border-gray-200 rounded-xl transition duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-[#FD5528]/20">
+          <div class="w-14 h-14 flex items-center justify-center rounded-lg bg-[#FFF1EC] text-[#FD5528] text-lg">
+                  <img src="https://img.icons8.com/?size=100&id=DCkAZ79sIYhT&format=png&color=FD5528" class="w-12 h-12">
+          </div>
+          <div>
+            <h3 class="text-sm font-semibold text-gray-900">17+ Years Experience</h3>
+            <p class="text-xs text-gray-600 mt-1">Reliable, high-quality solutions across industries.</p>
+          </div>
+        </div>
+
+        <div class="flex gap-3 p-4 bg-white border border-gray-200 rounded-xl transition duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-[#FD5528]/20">
+          <div class="w-14 h-14 flex items-center justify-center rounded-lg bg-[#FFF1EC] text-[#FD5528] text-lg">
+             <img src="https://img.icons8.com/?size=100&id=124222&format=png&color=FD5528" class="w-12 h-12">
+          </div>
+          <div>
+            <h3 class="text-sm font-semibold text-gray-900">Dedicated Teams</h3>
+            <p class="text-xs text-gray-600 mt-1">Experts focused exclusively on your project.</p>
+          </div>
+        </div>
+
+        <div class="flex gap-3 p-4 bg-white border border-gray-200 rounded-xl transition duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-[#FD5528]/20">
+          <div class="w-14 h-14 flex items-center justify-center rounded-lg bg-[#FFF1EC] text-[#FD5528] text-lg">
+             <img src="https://img.icons8.com/?size=100&id=5TJlel7-79RU&format=png&color=FD5528" class="w-12 h-12">
+          </div>
+          <div>
+            <h3 class="text-sm font-semibold text-gray-900">Scalable Architecture</h3>
+            <p class="text-xs text-gray-600 mt-1">Systems built to grow with your business.</p>
+          </div>
+        </div>
+
+        <div class="flex gap-3 p-4 bg-white border border-gray-200 rounded-xl transition duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-[#FD5528]/20">
+          <div class="w-14 h-14 flex items-center justify-center rounded-lg bg-[#FFF1EC] text-[#FD5528] text-lg">
+            <img src="https://img.icons8.com/?size=100&id=68443&format=png&color=FD5528" class="w-12 h-12">
+          </div>
+          <div>
+            <h3 class="text-sm font-semibold text-gray-900">Agile & Transparent</h3>
+            <p class="text-xs text-gray-600 mt-1">Clear communication and faster delivery.</p>
+          </div>
+        </div>
+
+        <div class="flex gap-3 p-4 bg-white border border-gray-200 rounded-xl transition duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-[#FD5528]/20">
+          <div class="w-14 h-14 flex items-center justify-center rounded-lg bg-[#FFF1EC] text-[#FD5528] text-lg">
+               <img src="https://img.icons8.com/?size=100&id=117533&format=png&color=FD5528" class="w-12 h-12">
+          </div>
+          <div>
+            <h3 class="text-sm font-semibold text-gray-900">Startup-Friendly Pricing</h3>
+            <p class="text-xs text-gray-600 mt-1">Flexible pricing for growing businesses.</p>
+          </div>
+        </div>
+
+        <div class="flex gap-3 p-4 bg-white border border-gray-200 rounded-xl transition duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-[#FD5528]/20">
+          <div class="w-14 h-14 flex items-center justify-center rounded-lg bg-[#FFF1EC] text-[#FD5528] text-lg">
+             <img src="https://img.icons8.com/?size=100&id=neBRkBaejCVJ&format=png&color=FD5528" class="w-12 h-12">
+          </div>
+          <div>
+            <h3 class="text-sm font-semibold text-gray-900">Long-Term Support</h3>
+            <p class="text-xs text-gray-600 mt-1">Continuous maintenance and updates.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+
+   
+
+  </div>
+
+</section>
+
 
 <!-- CTA SECTION -->
 <section class="bg-[#FC5124] text-white py-16 text-center">
@@ -636,6 +762,10 @@
   <a href="#contact"
      class="bg-white text-[#FC5124] px-6 py-3 rounded-lg font-semibold hover:bg-orange-600">
     Contact Us
+  </a>
+    <a href="#contact"
+     class="bg-white text-[#FC5124] px-6 py-3 rounded-lg font-semibold hover:bg-orange-600">
+     Let's chat on Whatsapp
   </a>
 </section>
 
