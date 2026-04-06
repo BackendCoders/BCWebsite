@@ -430,12 +430,7 @@
 </div>
 </section>
 
-
-
 <!-- {{-- prjects --}} -->
-
-
-
 
 
 <!-- SERVICE -->

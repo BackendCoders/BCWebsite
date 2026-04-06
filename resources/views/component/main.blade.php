@@ -381,6 +381,38 @@ AOS.init({
 </script>
 </script>
 <script>
+// tabs
+const tabs = document.querySelectorAll(".tab");
+const projects = document.querySelectorAll(".project");
+
+tabs.forEach(tab => {
+  tab.addEventListener("click", () => {
+
+    // RESET ALL TABS
+    tabs.forEach(t => {
+      t.classList.remove("bg-orange-500", "text-white");
+      t.classList.add("text-orange-600"); // default state
+    });
+
+    // ACTIVE TAB
+    tab.classList.remove("text-orange-600"); // remove default
+    tab.classList.add("bg-orange-500", "text-white");
+
+    // FILTER PROJECTS
+    const type = tab.dataset.tab;
+
+    projects.forEach(p => {
+      if (type === "all" || p.classList.contains(type)) {
+        p.style.display = "block";
+      } else {
+        p.style.display = "none";
+      }
+    });
+
+  });
+});
+
+
   // timeline////
 document.addEventListener("DOMContentLoaded", () => {
   const items = document.querySelectorAll(".timeline-item");
