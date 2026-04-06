@@ -24,12 +24,12 @@
 
       <!-- PHONE -->
       <a href="tel:+919140092133" 
-         class="flex items-center justify-center sm:justify-start gap-2 hover:text-black transition">
+         class="flex items-center justify-center sm:justify-start gap-2 transition">
 
         <div class="w-7 h-7 flex items-center justify-center rounded-full 
-        bg-gradient-to-r from-[#060000] to-[#b00000] 
-        hover:from-[#b00000] hover:to-[#060000] hover:scale-110 transition-all duration-300">
-          <img src="https://img.icons8.com/?size=100&id=9659&format=png&color=ffffff" 
+        bg-gradient-to-r from-[#f1e9e9] to-[#f5f1f1] 
+        hover:scale-110 transition-all duration-300">
+          <img src="https://img.icons8.com/?size=100&id=9730&format=png&color=fd5528" 
                class="w-4 h-4">
         </div>
 
@@ -38,12 +38,11 @@
 
       <!-- EMAIL -->
       <a href="mailto:info@backendcodersindia.com" 
-         class="flex items-center justify-center sm:justify-start gap-2 hover:text-black transition">
+         class="flex items-center justify-center sm:justify-start gap-2 transition">
 
         <div class="w-7 h-7 flex items-center justify-center rounded-full 
-         bg-gradient-to-r from-[#060000] to-[#b00000] 
-        hover:from-[#b00000] hover:to-[#060000] hover:scale-110 transition-all duration-300">
-          <img src="https://img.icons8.com/?size=100&id=53388&format=png&color=ffffff" 
+        bg-gradient-to-r from-[#f1e9e9] to-[#f5f1f1]  hover:scale-110 transition-all duration-300">
+          <img src="https://img.icons8.com/?size=100&id=2848&format=png&color=fd5528" 
                class="w-4 h-4">
         </div>
 
@@ -59,37 +58,33 @@
 
       <a href="https://www.facebook.com/backendcoders/" target="_blank"
          class="w-8 h-8 flex items-center justify-center rounded-full 
-        bg-gradient-to-r from-[#060000] to-[#b00000] 
-        hover:from-[#b00000] hover:to-[#060000]
+       bg-gradient-to-r from-[#f1e9e9] to-[#f5f1f1]
          hover:scale-110 transition-all duration-300">
-        <img src="https://img.icons8.com/?size=100&id=118468&format=png&color=ffffff" 
+        <img src="https://img.icons8.com/?size=100&id=106163&format=png&color=fd5528" 
              class="w-4 h-4">
       </a>
 
       <a href="https://www.instagram.com/backendcoders/" target="_blank"
          class="w-8 h-8 flex items-center justify-center rounded-full 
-        bg-gradient-to-r from-[#060000] to-[#b00000] 
-        hover:from-[#b00000] hover:to-[#060000]
+       bg-gradient-to-r from-[#f1e9e9] to-[#f5f1f1]
          hover:scale-110 transition-all duration-300">
-        <img src="https://img.icons8.com/?size=100&id=32292&format=png&color=ffffff" 
+        <img src="https://img.icons8.com/?size=100&id=32309&format=png&color=fd5528" 
              class="w-4 h-4">
       </a>
 
       <a href="https://www.linkedin.com/company/103738896/admin/dashboard/" target="_blank"
          class="w-8 h-8 flex items-center justify-center rounded-full 
-        bg-gradient-to-r from-[#060000] to-[#b00000] 
-        hover:from-[#b00000] hover:to-[#060000]
+       bg-gradient-to-r from-[#f1e9e9] to-[#f5f1f1]
          hover:scale-110 transition-all duration-300">
-        <img src="https://img.icons8.com/?size=100&id=447&format=png&color=ffffff" 
+        <img src="https://img.icons8.com/?size=100&id=34349&format=png&color=fd5528" 
              class="w-4 h-4">
       </a>
 
       <a href="https://wa.me/919140092133" target="_blank"
          class="w-8 h-8 flex items-center justify-center rounded-full 
-        bg-gradient-to-r from-[#060000] to-[#b00000] 
-        hover:from-[#b00000] hover:to-[#060000]
+       bg-gradient-to-r from-[#f1e9e9] to-[#f5f1f1]
          hover:scale-110 transition-all duration-300">
-        <img src="https://img.icons8.com/?size=100&id=16712&format=png&color=ffffff" 
+        <img src="https://img.icons8.com/?size=100&id=16733&format=png&color=fd5528" 
              class="w-4 h-4">
       </a>
 
@@ -115,7 +110,7 @@
         <nav class="hidden lg:flex items-center gap-2 text-sm font-medium">
 
             <a href="{{ route('frontend.index') }}"
-               class="nav-link px-3 py-2 rounded-md text-white hover:bg-orange-500 hover:text-[#FD5528] transition {{ $activeNavClass('frontend.index') }}"
+               class="nav-link px-3 py-2 rounded-md text-white hover:bg-orange-50 hover:text-[#FD5528] transition {{ $activeNavClass('frontend.index') }}"
                aria-current="{{ request()->routeIs('frontend.index') ? 'page' : '' }}">
                 Overview
             </a>
@@ -168,7 +163,7 @@
         <div class="hidden lg:flex">
               <button type="submit"
             class="w-full bg-gradient-to-r from-[#FD5528] to-[#fbb03b] hover:from-[#fbb03b] hover:to-[#FD5528] hover:scale-110 transition-all text-white px-5 py-2 rounded-2xl font-semibold transition duration-200 ">
-               <Initialize href="{{ route('frontend.contact') }}">Initialize </a>
+               <a href="{{ route('frontend.contact') }}">Initialize </a>
           </button>
             <!-- <a href="{{ route('frontend.contact') }}"
                class="rounded-lg bg-[#FD5528] px-5 py-2 text-sm font-semibold text-white shadow-md transition hover:bg-orange-600">

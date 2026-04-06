@@ -33,3 +33,8 @@ Route::get('/process', [HomeController::class, 'process'])->name('frontend.proce
 Route::get('/packages', [HomeController::class, 'packages'])->name('frontend.packages');
 Route::get('/career', [HomeController::class, 'career'])->name('frontend.career');
 Route::get('/blog', [HomeController::class, 'blog'])->name('frontend.blog');
+Route::get('/blog/{id}', [HomeController::class, 'blogDetail'])->name('frontend.blog.detail');
+Route::get('/terms', [HomeController::class, 'terms'])->name('frontend.terms');
+Route::get('/privacy_policy', [HomeController::class, 'privacy_policy'])->name('frontend.privacy_policy');
+Route::get('/faq', [HomeController::class, 'faq'])->name('frontend.faq');
+Route::get('/help', [HomeController::class, 'help'])->name('frontend.help');

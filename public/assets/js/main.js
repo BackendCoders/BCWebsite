@@ -41,16 +41,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 // Counter Animation
-const counters = document.querySelectorAll('.counter');
-let started = false;
 
-function runCounter() {
-  if (started) return;
+document.addEventListener("DOMContentLoaded", () => {
 
+  const counters = document.querySelectorAll('.counter');
   const section = document.getElementById('stats-section-pro');
-  const sectionTop = section.getBoundingClientRect().top;
 
-  if (sectionTop < window.innerHeight - 100) {
+  if (!section) return;
+
+  let started = false;
+
+  const runCounter = () => {
+    if (started) return;
+
     counters.forEach(counter => {
       const target = +counter.getAttribute('data-target');
       let count = 0;
@@ -71,12 +74,21 @@ function runCounter() {
     });
 
     started = true;
-  }
-}
+  };
 
-window.addEventListener('scroll', runCounter);
+  // ✅ INTERSECTION OBSERVER (BEST)
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        runCounter();
+        observer.unobserve(section); // run once only
+      }
+    });
+  }, { threshold: 0.3 });
 
+  observer.observe(section);
 
+});
 
 // testimonial slider
 
@@ -107,8 +119,208 @@ const swiper = new Swiper('.swiper', {
   }
 });
 
+
+// our journey slider
+
+
+
+
 // Pause on hover (premium feel)
 const swiperEl = document.querySelector('.swiper');
 
 swiperEl.addEventListener('mouseenter', () => swiper.autoplay.stop());
 swiperEl.addEventListener('mouseleave', () => swiper.autoplay.start());
+
+
+// 
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  const code = `// Backend Coders India - Project Config
+
+{
+  "project": "enterprise-erp-v3",
+  "stack": {
+    "backend": ".NET Core 8.0",
+    "frontend": "React 18 + TypeScript",
+    "database": "SQL Server + Redis",
+    "cloud": "Azure App Services",
+    "ci_cd": "GitHub Actions"
+  },
+  "features": [
+    "multi-tenant-auth",
+    "real-time-sync",
+    "role-based-access",
+    "automated-reporting"
+  ],
+  "status": "production ✓"
+}`;
+
+  let i = 0;
+  const speed = 30;
+  const element = document.getElementById("typing-code");
+
+  function typeWriter() {
+    if (i < code.length) {
+      element.innerHTML += code.charAt(i);
+      i++;
+      setTimeout(typeWriter, speed);
+    }
+  }
+
+  typeWriter();
+});
+
+
+const navLinks = document.querySelectorAll(".nav-link");
+
+navLinks.forEach(link => {
+    link.addEventListener("click", function () {
+
+        // Remove Tailwind active styles from all
+        navLinks.forEach(l => {
+            l.classList.remove(
+                "text-orange-600",
+                "bg-orange-50",
+                "font-semibold"
+            );
+        });
+
+        // Add Tailwind active styles to clicked one
+        this.classList.add(
+            "text-orange-600",
+            "bg-orange-50",
+            "font-semibold"
+        );
+    });
+});
+
+// timeline///
+// (function () {
+//   "use strict";
+
+//   // define variables
+//   var items = document.querySelectorAll(".timeline li");
+
+//   // check if an element is in viewport
+//   // http://stackoverflow.com/questions/123999/how-to-tell-if-a-dom-element-is-visible-in-the-current-viewport
+//   function isElementInViewport(el) {
+//     var rect = el.getBoundingClientRect();
+//     return (
+//       rect.top >= 0 &&
+//       rect.left >= 0 &&
+//       rect.bottom <=
+//         (window.innerHeight || document.documentElement.clientHeight) &&
+//       rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+//     );
+//   }
+
+//   function callbackFunc() {
+//     for (var i = 0; i < items.length; i++) {
+//       if (isElementInViewport(items[i])) {
+//         items[i].classList.add("in-view");
+//       }
+//     }
+//   }
+
+//   // listen for events
+//   window.addEventListener("load", callbackFunc);
+//   window.addEventListener("resize", callbackFunc);
+//   window.addEventListener("scroll", callbackFunc);
+// })();
+
+// timeline////
+document.addEventListener("DOMContentLoaded", () => {
+  const items = document.querySelectorAll(".timeline-item");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.remove("opacity-0", "translate-y-10");
+        entry.target.classList.add("opacity-100", "translate-y-0");
+      }
+    });
+  }, { threshold: 0.2 });
+
+  items.forEach(item => observer.observe(item));
+});
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const items = document.querySelectorAll(".timeline-item");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.remove("opacity-0", "translate-y-10");
+        entry.target.classList.add("opacity-100", "translate-y-0");
+      }
+    });
+  }, { threshold: 0.2 });
+
+  items.forEach(item => observer.observe(item));
+});
+
+
+const tabs = document.querySelectorAll(".tab");
+const projects = document.querySelectorAll(".project");
+
+tabs.forEach(tab => {
+  tab.addEventListener("click", () => {
+
+    // RESET ALL TABS
+    tabs.forEach(t => {
+      t.classList.remove("bg-orange-500", "text-white");
+      t.classList.add("text-orange-600"); // default state
+    });
+
+    // ACTIVE TAB
+    tab.classList.remove("text-orange-600"); // remove default
+    tab.classList.add("bg-orange-500", "text-white");
+
+    // FILTER PROJECTS
+    const type = tab.dataset.tab;
+
+    projects.forEach(p => {
+      if (type === "all" || p.classList.contains(type)) {
+        p.style.display = "block";
+      } else {
+        p.style.display = "none";
+      }
+    });
+
+  });
+});
+
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const items = document.querySelectorAll(".faq-item");
+
+  items.forEach(item => {
+    item.addEventListener("click", () => {
+
+      const answer = item.querySelector(".faq-answer");
+      const icon = item.querySelector(".faq-icon");
+
+      const isOpen = answer.classList.contains("max-h-40");
+
+      // CLOSE ALL
+      items.forEach(i => {
+        i.querySelector(".faq-answer").classList.remove("max-h-40");
+        i.querySelector(".faq-icon").classList.remove("rotate-45");
+      });
+
+      // OPEN CURRENT
+      if (!isOpen) {
+        answer.classList.add("max-h-40");
+        icon.classList.add("rotate-45");
+      }
+
+    });
+  });
+
+});
+
+

@@ -62,11 +62,11 @@
     <div>
       <h4 class="text-white font-semibold mb-4">Quick Links</h4>
       <ul class="space-y-2 text-sm">
-        <li><a href="#" class="hover:text-[#FD5528]">About Us</a></li>
-        <li><a href="#" class="hover:text-[#FD5528]">Contact Us</a></li>
-        <li><a href="#" class="hover:text-[#FD5528]">Our Services</a></li>
-        <li><a href="#" class="hover:text-[#FD5528]">Our Projects</a></li>
-        <li><a href="#" class="hover:text-[#FD5528]">Latest Blog</a></li>
+        <li><a href="{{route('frontend.about')}}" class="hover:text-[#FD5528]">Company</a></li>
+        <li><a href="{{route('frontend.contact')}}" class="hover:text-[#FD5528]">Ping Us</a></li>
+        <li><a href="{{route('frontend.service')}}" class="hover:text-[#FD5528]">Solutions</a></li>
+        <li><a href="{{route('frontend.project')}}" class="hover:text-[#FD5528]">Architecture</a></li>
+        <li><a href="{{route('frontend.blog')}}" class="hover:text-[#FD5528]">Latest Blog</a></li>
       </ul>
     </div>
 
@@ -74,10 +74,11 @@
     <div>
       <h4 class="text-white font-semibold mb-4">Help</h4>
       <ul class="space-y-2 text-sm">
-        <li><a href="#" class="hover:text-[#FD5528]">Terms of Use</a></li>
-        <li><a href="#" class="hover:text-[#FD5528]">Privacy Policy</a></li>
-        <li><a href="#" class="hover:text-[#FD5528]">FAQs</a></li>
-        <li><a href="#" class="hover:text-[#FD5528]">Support</a></li>
+        <li><a href="{{route('frontend.terms')}}" class="hover:text-[#FD5528]">Terms of Use</a></li>
+        <li><a href="{{route('frontend.privacy_policy')}}" class="hover:text-[#FD5528]">Privacy Policy</a></li>
+        <li><a href="{{route('frontend.faq')}}" class="hover:text-[#FD5528]">FAQs</a></li>
+        <li><a href="{{route('frontend.help')}}" class="hover:text-[#FD5528]">Help</a></li>
+        <li><a href="{{route('frontend.contact')}}" class="hover:text-[#FD5528]">Support</a></li>
       </ul>
     </div>
 

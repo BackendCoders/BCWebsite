@@ -67,7 +67,7 @@
           Start Your Project
         </a>
 
-        <a href="#portfolio"
+        <a href="{{ route('frontend.project') }}"
           class="w-full sm:w-auto inline-flex items-center justify-center 
           rounded-lg border border-gray-300 px-5 sm:px-6 py-2.5 sm:py-3 text-xs sm:text-sm font-semibold text-gray-700 
           transition hover:border-[#FD5528] hover:text-[#FD5528]">
@@ -248,28 +248,29 @@
 
 <!-- TABS -->
 <div class="flex flex-wrap justify-center gap-2 sm:gap-3 mb-10">
-  <button class="tab active bg-orange-500 text-white border border-orange-500 px-4 py-2 rounded-full" data-tab="all">All</button>
+  <button class="tab border border-orange-500 text-orange-600 px-4 py-2 rounded-full" data-tab="all">All</button>
   <button class="tab border border-orange-500 text-orange-600 px-4 py-2 rounded-full" data-tab="web">Web Apps</button>
   <button class="tab border border-orange-500 text-orange-600 px-4 py-2 rounded-full" data-tab="saas">SaaS</button>
   <button class="tab border border-orange-500 text-orange-600 px-4 py-2 rounded-full" data-tab="ecommerce">E-commerce</button>
   <button class="tab border border-orange-500 text-orange-600 px-4 py-2 rounded-full" data-tab="crm">CRM</button>
+    <button class="tab border border-orange-500 text-orange-600 px-4 py-2 rounded-full" data-tab="others">Others</button>
 </div>
 
 <!-- GRID -->
 <div id="projects" class="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
 
-  <!-- CARD 1 -->
+<!-- CARD 1 -->
 <div class="project web bg-white rounded-3xl shadow-lg overflow-hidden p-5 group hover:-translate-y-1 hover:shadow-2xl transition">
   <div class="relative h-44 overflow-hidden mb-4">
-    <img src="{{asset('assets/ai_demo/dental_clinic/1.png')}}" class="w-full h-full object-cover group-hover:scale-105 transition">
+    <img src="https://backendcodersindia.com/assets/images/company-icons/page1.png" class="w-full h-full object-cover group-hover:scale-105 transition">
     <span class="absolute top-3 left-3 bg-green-600 text-white text-xs px-3 py-1 rounded-full">LIVE</span>
   </div>
   <div class="p-5 space-y-3">
     <div class="flex justify-between text-xs text-gray-500 uppercase">
       <span>Web</span><span class="text-orange-500 font-semibold">Jan 2025</span>
     </div>
-    <h3 class="text-xl font-semibold">Bright Smile</h3>
-    <p class="text-sm text-gray-600">Dental clinic management system.</p>
+    <h3 class="text-xl font-semibold">Ace Taxis UK</h3>
+    <p class="text-sm text-gray-600">Cab booking & dispatch system.</p>
     <div class="flex gap-2 flex-wrap">
       <span class="bg-orange-100 text-orange-500 text-xs px-3 py-1 rounded-full">Node</span>
       <span class="bg-orange-100 text-orange-500 text-xs px-3 py-1 rounded-full">Mongo</span>
@@ -285,7 +286,7 @@
 <!-- CARD 2 -->
 <div class="project saas bg-white rounded-3xl shadow-lg overflow-hidden p-5 group hover:-translate-y-1 hover:shadow-2xl transition">
   <div class="relative h-44 overflow-hidden mb-4">
-    <img src="{{asset('assets/ai_demo/gym/1.png')}}" class="w-full h-full object-cover">
+    <img src="https://backendcodersindia.com/assets/images/company-icons/1.png" class="w-full h-full object-cover">
     <span class="absolute top-3 left-3 bg-green-600 text-white text-xs px-3 py-1 rounded-full">LIVE</span>
   </div>
    <div class="flex justify-between text-[10px] text-gray-400 mb-2">
@@ -293,8 +294,8 @@
     <span class="text-orange-500">JAN 2025</span>
   </div>
 
-  <h3 class="text-lg font-semibold mb-2">Fitness Club</h3>
-  <p class="text-sm text-gray-500 mb-4">Gym management & fitness tracking system.</p>
+  <h3 class="text-lg font-semibold mb-2">Tanning Salon System</h3>
+  <p class="text-sm text-gray-500 mb-4">Salon booking & automation system.</p>
 
   <div class="flex gap-2 flex-wrap mb-4">
     <span class="bg-orange-100 text-orange-500 text-xs px-3 py-1 rounded-full">Node.js</span>
@@ -312,7 +313,7 @@
 <!-- CARD 3 -->
 <div class="project web bg-white rounded-3xl shadow-lg overflow-hidden p-5 group hover:-translate-y-1 hover:shadow-2xl transition">
   <div class="relative h-44 overflow-hidden mb-4">
-    <img src="{{asset('assets/ai_demo/incredible_india/1.png')}}" class="w-full h-full object-cover">
+    <img src="https://backendcodersindia.com/assets/images/testemonials/skydatech.png" class="w-full h-full object-cover">
     <span class="absolute top-3 left-3 bg-green-600 text-white text-xs px-3 py-1 rounded-full">LIVE</span>
   </div>
   <div class="flex justify-between text-[10px] text-gray-400 mb-2">
@@ -320,8 +321,8 @@
     <span class="text-orange-500">JAN 2025</span>
   </div>
 
-  <h3 class="text-lg font-semibold mb-2">Incredible India</h3>
-  <p class="text-sm text-gray-500 mb-4">Tourism & travel platform.</p>
+  <h3 class="text-lg font-semibold mb-2">Skydatech Technology</h3>
+  <p class="text-sm text-gray-500 mb-4">IT consulting & tracking platform.</p>
 
   <div class="flex gap-2 flex-wrap mb-4">
     <span class="bg-orange-100 text-orange-500 text-xs px-3 py-1 rounded-full">Node.js</span>
@@ -339,7 +340,7 @@
 <!-- CARD 4 -->
 <div class="project ecommerce bg-white rounded-3xl shadow-lg overflow-hidden p-5 group hover:-translate-y-1 hover:shadow-2xl transition">
   <div class="relative h-44 overflow-hidden mb-4">
-    <img src="{{asset('assets/ai_demo/plumber/1.png')}}" class="w-full h-full object-cover">
+    <img src="https://backendcodersindia.com/assets/images/company-icons/childcare.png" class="w-full h-full object-cover">
     <span class="absolute top-3 left-3 bg-green-600 text-white text-xs px-3 py-1 rounded-full">LIVE</span>
   </div>
   <div class="flex justify-between text-[10px] text-gray-400 mb-2">
@@ -347,8 +348,8 @@
     <span class="text-orange-500">JAN 2025</span>
   </div>
 
-  <h3 class="text-lg font-semibold mb-2">Quick Fix</h3>
-  <p class="text-sm text-gray-500 mb-4">Plumbing service booking system.</p>
+  <h3 class="text-lg font-semibold mb-2">Alberta ChildCare</h3>
+  <p class="text-sm text-gray-500 mb-4">Education portal system.</p>
 
   <div class="flex gap-2 flex-wrap mb-4">
     <span class="bg-orange-100 text-orange-500 text-xs px-3 py-1 rounded-full">Node.js</span>
@@ -366,7 +367,7 @@
 <!-- CARD 5 -->
 <div class="project web bg-white rounded-3xl shadow-lg overflow-hidden p-5 group hover:-translate-y-1 hover:shadow-2xl transition">
   <div class="relative h-44 overflow-hidden mb-4">
-    <img src="{{asset('assets/ai_demo/restaurant/1.png')}}" class="w-full h-full object-cover">
+    <img src="https://backendcodersindia.com/assets/images/testemonials/marley.png" class="w-full h-full object-cover">
     <span class="absolute top-3 left-3 bg-green-600 text-white text-xs px-3 py-1 rounded-full">LIVE</span>
   </div>
    <div class="flex justify-between text-[10px] text-gray-400 mb-2">
@@ -374,8 +375,8 @@
     <span class="text-orange-500">JAN 2025</span>
   </div>
 
-  <h3 class="text-lg font-semibold mb-2">Savory Bites</h3>
-  <p class="text-sm text-gray-500 mb-4">Restaurant management & ordering system.</p>
+  <h3 class="text-lg font-semibold mb-2">Marley Moves</h3>
+  <p class="text-sm text-gray-500 mb-4">Logistics control system.</p>
 
   <div class="flex gap-2 flex-wrap mb-4">
     <span class="bg-orange-100 text-orange-500 text-xs px-3 py-1 rounded-full">Node.js</span>
@@ -389,7 +390,6 @@
   </div>
 
 </div>
-
 
 <!-- CARD 6 -->
 <div class="project crm bg-white rounded-3xl shadow-lg overflow-hidden p-5 group hover:-translate-y-1 hover:shadow-2xl transition">
@@ -1003,8 +1003,8 @@
 <!-- END BLOG -->
 
 
-
-{{-- faq --}}
+<!-- 
+{{-- faq --}} -->
 <section class="relative overflow-hidden bg-gradient-to-br from-white via-slate-50 to-slate-100 py-16 sm:py-20 lg:py-24 px-4 sm:px-6">
 
   <div class="max-w-6xl lg:max-w-7xl mx-auto relative z-10">
@@ -1068,32 +1068,87 @@
       <!-- FAQ LIST -->
       <div class="order-2 lg:order-1 space-y-4">
 
-        @php
-          $faqs = [
-            ['title' => 'What services do you offer?', 'description' => 'Backend engineering, API design, cloud architecture, automation, and enterprise-grade solutions that keep scaling teams aligned.'],
-            ['title' => 'Which technologies do you work with?', 'description' => '.NET Core, Node.js, Laravel, Go, SQL Server, PostgreSQL, Redis, Kafka, Azure, AWS, and modern DevOps pipelines.'],
-            ['title' => 'Do you provide dedicated development teams?', 'description' => 'Yes, our specialists embed within your product organization with dedicated project leads and sprint reporting.'],
-            ['title' => 'How do you ensure scalability and performance?', 'description' => 'We architect microservices, apply caching strategies, optimize storage, and add observability to catch regressions early.'],
-            ['title' => 'What is your development process?', 'description' => 'We follow a structured agile cadence: discovery, roadmap, sprint-based delivery, QA, deployment, and post-launch retrospectives.'],
-            ['title' => 'Do you provide post-launch support?', 'description' => 'Long-term maintenance, 24/7 monitoring, release planning, and scaling support are included in every retainer plan.'],
-          ];
-        @endphp
+        <div class="max-w-6xl mx-auto px-4 grid gap-6 lg:grid-cols-1">
 
-        @foreach ($faqs as $faq)
-          <details class="group bg-white border border-gray-200 rounded-2xl p-5 shadow-sm open:shadow-md transition duration-300">
-            <summary class="flex justify-between items-center cursor-pointer list-none">
-              <span class="font-medium text-slate-900 text-base md:text-lg">
-                {{ $faq['title'] }}
-              </span>
-              <span class="text-[#FD5528] text-2xl transition-transform duration-300 group-open:rotate-45">
-                +
-              </span>
-            </summary>
-            <p class="mt-3 text-sm text-slate-500 leading-relaxed">
-              {{ $faq['description'] }}
-            </p>
-          </details>
-        @endforeach
+    <!-- COLUMN -->
+    <div class="space-y-4">
+
+      <!-- ITEM -->
+      <div class="faq-item bg-gray-50 p-5 rounded-2xl cursor-pointer transition shadow-md hover:shadow-lg">
+        <div class="flex justify-between items-center">
+          <h3 class="font-medium">  What services do you offer?</h3>
+          <span class="faq-icon text-[#FD5528] text-xl transition-transform duration-300">+</span>
+        </div>
+        <p class="faq-answer max-h-0 overflow-hidden transition-all duration-500 text-sm text-gray-600 mt-3">
+        
+          Backend engineering, API design, cloud architecture, automation, and enterprise-grade solutions that keep scaling teams aligned.
+        </p>
+      </div>
+
+      <!-- ITEM -->
+      <div class="faq-item bg-gray-50 p-5 rounded-2xl cursor-pointer transition shadow-md hover:shadow-lg">
+        <div class="flex justify-between items-center">
+          <h3 class="font-medium">Which technologies do you work with?</h3>
+          <span class="faq-icon text-[#FD5528] text-xl transition-transform duration-300">+</span>
+        </div>
+        <p class="faq-answer max-h-0 overflow-hidden transition-all duration-500 text-sm text-gray-600 mt-3">
+            .NET Core, Node.js, Laravel, Go, SQL Server, PostgreSQL, Redis, Kafka, Azure, AWS, and modern DevOps pipelines.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- COLUMN -->
+    <div class="space-y-4">
+
+      <div class="faq-item bg-gray-50 p-5 rounded-2xl cursor-pointer transition shadow-md hover:shadow-lg">
+        <div class="flex justify-between items-center">
+          <h3 class="font-medium">   Do you provide dedicated development teams?</h3>
+          <span class="faq-icon text-[#FD5528] text-xl transition-transform duration-300">+</span>
+        </div>
+        <p class="faq-answer max-h-0 overflow-hidden transition-all duration-500 text-sm text-gray-600 mt-3">
+          Yes, our specialists embed within your product organization with dedicated project leads and sprint reporting.
+        </p>
+      </div>
+
+      <div class="faq-item bg-gray-50 p-5 rounded-2xl cursor-pointer transition shadow-md hover:shadow-lg">
+        <div class="flex justify-between items-center">
+          <h3 class="font-medium">How do you ensure scalability and performance?</h3>
+          <span class="faq-icon text-[#FD5528] text-xl transition-transform duration-300">+</span>
+        </div>
+        <p class="faq-answer max-h-0 overflow-hidden transition-all duration-500 text-sm text-gray-600 mt-3">
+        We architect microservices, apply caching strategies, optimize storage, and add observability to catch regressions early.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- COLUMN -->
+    <div class="space-y-4">
+
+      <div class="faq-item bg-gray-50 p-5 rounded-2xl cursor-pointer transition shadow-md hover:shadow-lg">
+        <div class="flex justify-between items-center">
+          <h3 class="font-medium"> What is your development process?</h3>
+          <span class="faq-icon text-[#FD5528] text-xl transition-transform duration-300">+</span>
+        </div>
+        <p class="faq-answer max-h-0 overflow-hidden transition-all duration-500 text-sm text-gray-600 mt-3">
+      We follow a structured agile cadence: discovery, roadmap, sprint-based delivery, QA, deployment, and post-launch retrospectives.
+        </p>
+      </div>
+
+      <div class="faq-item bg-gray-50 p-5 rounded-2xl cursor-pointer transition shadow-md hover:shadow-lg">
+        <div class="flex justify-between items-center">
+          <h3 class="font-medium">Do you provide post-launch support?</h3>
+          <span class="faq-icon text-[#FD5528] text-xl transition-transform duration-300">+</span>
+        </div>
+        <p class="faq-answer max-h-0 overflow-hidden transition-all duration-500 text-sm text-gray-600 mt-3">
+          Long-term maintenance, 24/7 monitoring, release planning, and scaling support are included in every retainer plan.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
 
        
 
@@ -1458,7 +1513,7 @@
     <div class="flex flex-col sm:flex-row justify-center gap-4">
 
       <!-- PRIMARY BUTTON -->
-      <a href="#contact"
+      <a href="{{ route('frontend.contact') }}"
          class="group inline-flex items-center justify-center bg-white text-[#FC5124] px-6 py-3 rounded-xl font-semibold shadow-lg hover:shadow-2xl hover:scale-105 transition duration-300">
 
         Contact Us
@@ -1468,7 +1523,7 @@
       </a>
 
       <!-- WHATSAPP BUTTON -->
-      <a href="#contact"
+      <a href="https://wa.me/+919140092133" target="_blank"
          class="group inline-flex items-center justify-center border border-white/40 px-6 py-3 rounded-xl font-semibold backdrop-blur-md hover:bg-white/10 hover:scale-105 transition duration-300">
 
        

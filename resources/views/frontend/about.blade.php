@@ -705,6 +705,7 @@
 
 <!-- OUR JOURNEY SECTION -->
 
+
 <section class="bg-white text-black py-16 sm:py-20">
   <div class="max-w-5xl mx-auto px-4 text-center mb-10 sm:mb-16">
     <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold text-[#FD5528]">
@@ -839,7 +840,7 @@
     <div class="flex flex-col sm:flex-row justify-center gap-4">
 
       <!-- PRIMARY BUTTON -->
-      <a href="#contact"
+      <a href="{{ route('frontend.contact') }}"
          class="group inline-flex items-center justify-center bg-white text-[#FC5124] px-6 py-3 rounded-xl font-semibold shadow-lg hover:shadow-2xl hover:scale-105 transition duration-300">
 
         Contact Us
@@ -849,7 +850,7 @@
       </a>
 
       <!-- WHATSAPP BUTTON -->
-      <a href="#contact"
+      <a href="https://wa.me/+919140092133" target="_blank"
          class="group inline-flex items-center justify-center border border-white/40 px-6 py-3 rounded-xl font-semibold backdrop-blur-md hover:bg-white/10 hover:scale-105 transition duration-300">
 
        
