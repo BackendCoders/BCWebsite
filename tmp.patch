@@ -1,0 +1,26 @@
+*** Begin Patch
+*** Update File: resources/views/component/header.blade.php
+@@
+-  <div class=max-w-9xl lg:mx-24 mx-auto px-4 sm:px-6 py-3 
+- flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-3>
++  <div class=max-w-9xl lg:mx-24 mx-auto px-4 sm:px-6 py-3 
++ flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between>
+@@
+-    <div class=flex flex-col sm:flex-row items-center sm:items-start 
+- gap-3 sm:gap-6 text-xs sm:text-sm text-center sm:text-left>
++    <div class=w-full flex flex-col sm:flex-row items-center sm:items-start 
++ gap-3 sm:gap-6 text-xs sm:text-sm text-center sm:text-left>
+@@
+-      <a href=tel:+919140092133 
+-         class=flex items-center justify-center sm:justify-start gap-2 hover:text-black transition>
++      <a href=tel:+919140092133 
++         class=flex items-center justify-center flex-1 min-w-[170px] sm:flex-auto sm:justify-start gap-2 hover:text-black transition>
+@@
+-      <a href=mailto:info@backendcodersindia.com 
+-         class=flex items-center justify-center sm:justify-start gap-2 hover:text-black transition>
++      <a href=mailto:info@backendcodersindia.com 
++         class=flex items-center justify-center flex-1 min-w-[200px] sm:flex-auto sm:justify-start gap-2 hover:text-black transition>
+@@
+-    <div class=flex items-center justify-center gap-3>
++    <div class=w-full flex flex-wrap items-center justify-center gap-3 sm:w-auto sm:justify-end>
+*** End Patch

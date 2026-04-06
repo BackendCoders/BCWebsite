@@ -61,8 +61,8 @@
 
         <a href="#contact"
           class="w-full sm:w-auto inline-flex items-center justify-center 
-          rounded-lg bg-gradient-to-r from-[#FD5528] to-[#fbb03b] px-5 sm:px-6 py-2.5 sm:py-3 text-xs sm:text-sm font-semibold text-white 
-          shadow-md transition hover:bg-orange-600 hover:shadow-lg">
+          rounded-lg bg-gradient-to-r from-[#FD5528] to-[#fbb03b] hover:from-[#fbb03b] hover:to-[#FD5528] hover:scale-110 transition-all duration-300 px-5 sm:px-6 py-2.5 sm:py-3 text-xs sm:text-sm font-semibold text-white 
+          shadow-md  hover:bg-orange-600 hover:shadow-lg">
 
           Start Your Project
         </a>
@@ -158,13 +158,28 @@
   <div class="relative max-w-7xl mx-auto text-center">
 
     <!-- HEADER -->
-    <p class="inline-block text-xs font-semibold uppercase tracking-[0.35em] text-[#FD5528] px-5 py-2 rounded-full 
+       <!-- BADGE -->
+      <span 
+    
+      data-aos="fade-up"
+      class="inline-block text-xs sm:text-sm font-semibold uppercase tracking-[0.35em] 
+         text-[#FD5528] relative px-5 py-2 rounded-full 
+         bg-white/60 backdrop-blur-md 
+         shadow-[0_8px_20px_rgba(0,0,0,0.08)] 
+         border border-white/40
+         before:absolute before:inset-0 before:rounded-full 
+         before:bg-gradient-to-r before:from-[#FD5528]/20 before:to-orange-200/30 
+         before:-z-10">
+
+         Trusted Clients
+      </span>
+    <!-- <p class="inline-block text-xs font-semibold uppercase tracking-[0.35em] text-[#FD5528] px-5 py-2 rounded-full 
       bg-white/5 backdrop-blur-md border border-white/10">
       Trusted Clients
-    </p>
+    </p> -->
 
     <h2 class="mt-6 text-3xl md:text-5xl font-bold text-black">
-      Brands That Trust Us
+      Brands That <span class="text-[#FD5528]">Trust Us</span>
     </h2>
 
     <!-- MARQUEE WRAPPER -->
@@ -192,141 +207,258 @@
 
   </div>
 </section>
-{{-- end cient sectin --}}
+<!-- {{-- end cient sectin --}} -->
 
-{{-- prjects --}}
-<section class="py-16 bg-gray-50">
-  <div class="max-w-7xl mx-auto px-6">
+<!-- {{-- prjects --}} -->
+<section class="py-16">
+<div class="max-w-7xl mx-auto px-6">
 
-    <div class="text-center mb-12 space-y-3">
-      <p class="text-[11px] uppercase tracking-[0.5em] text-[#FD5528]">Recently Completed Projects</p>
-      <h2 class="text-4xl sm:text-5xl font-bold text-gray-900">
-         Completed<span class="text-[#F44918]"> Projects</span>
-      </h2>
-      <p class="text-sm text-gray-500 max-w-3xl mx-auto">
-        Live deployments that blend backend reliability, thoughtful UI, and measurable outcomes for our partners.
-      </p>
-    </div>
+<!-- HEADER -->
 
-    <div class="flex flex-wrap justify-center gap-3 mb-10">
-      <button class="tab active" data-tab="all" type="button">All</button>
-      <button class="tab" data-tab="web" type="button">Web Apps</button>
-      <button class="tab" data-tab="saas" type="button">SaaS</button>
-      <button class="tab" data-tab="ecommerce" type="button">E-commerce</button>
-      <button class="tab" data-tab="crm" type="button">CRM</button>
-    </div>
+ 
 
-    @php
-      $projects = [
-        [
-          'title' => 'Ace Taxis UK',
-          'desc' => 'Cab booking & dispatch system serving hundreds of drivers with live tracking and automated payroll.',
-          'image' => 'https://backendcodersindia.com/assets/images/company-icons/page1.png',
-          'type' => 'web',
-          'tags' => ['Node.js', 'MongoDB', 'REST API'],
-          'date' => 'Jan 2025',
-          'metric' => '+650 drivers onboarded',
-        ],
-        [
-          'title' => 'Tanning Salon System',
-          'desc' => 'Full salon management stack that syncs booking, memberships, and service automation for a UK beauty studio.',
-          'image' => 'https://backendcodersindia.com/assets/images/company-icons/1.png',
-          'type' => 'saas',
-          'tags' => ['Node.js', 'MongoDB', 'REST API'],
-          'date' => 'Jan 2025',
-          'metric' => '+28% bookings',
-        ],
-        [
-          'title' => 'Skydatech Technology',
-          'desc' => 'IT consulting hub with enterprise project tracking, analytics, and partner collaboration workflows.',
-          'image' => 'https://backendcodersindia.com/assets/images/testemonials/skydatech.png',
-          'type' => 'web',
-          'tags' => ['Node.js', 'MongoDB', 'REST API'],
-          'date' => 'Jan 2025',
-          'metric' => '47ms avg response time',
-        ],
-        [
-          'title' => 'Alberta ChildCare',
-          'desc' => 'Education portal coordinating schedules, parent updates, and classroom intelligence.',
-          'image' => 'https://backendcodersindia.com/assets/images/company-icons/childcare.png',
-          'type' => 'web',
-          'tags' => ['Node.js', 'MongoDB', 'REST API'],
-          'date' => 'Jan 2025',
-          'metric' => '24x7 monitoring',
-        ],
-        [
-          'title' => 'Marley Moves',
-          'desc' => 'Logistics control center for international relocations with live tracking and concierge reporting.',
-          'image' => 'https://backendcodersindia.com/assets/images/testemonials/marley.png',
-          'type' => 'web',
-          'tags' => ['Node.js', 'MongoDB', 'REST API'],
-          'date' => 'Jan 2025',
-          'metric' => '+41% throughput',
-        ],
-        [
-          'title' => 'ER Data Solutions',
-          'desc' => 'CRM workspace featuring Power BI dashboards, forecasting, and stakeholder collaboration.',
-          'image' => 'https://backendcodersindia.com/assets/images/testemonials/er.png',
-          'type' => 'crm',
-          'tags' => ['Node.js', 'MongoDB', 'REST API'],
-          'date' => 'Jan 2025',
-          'metric' => '+31% forecast accuracy',
-        ],
-        
-      ];
-    @endphp
+<div class="text-center mb-12 space-y-3">
+   <!-- BADGE -->
+      <span 
+    
+      data-aos="fade-up"
+      class="inline-block text-xs sm:text-sm font-semibold uppercase tracking-[0.35em] 
+         text-[#FD5528] relative px-5 py-2 rounded-full 
+         bg-white/60 backdrop-blur-md 
+         shadow-[0_8px_20px_rgba(0,0,0,0.08)] 
+         border border-white/40
+         before:absolute before:inset-0 before:rounded-full 
+         before:bg-gradient-to-r before:from-[#FD5528]/20 before:to-orange-200/30 
+         before:-z-10">
 
-    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        Recently Completed Projects
+      </span>
+  <!-- <span class="inline-block text-xs font-semibold uppercase tracking-widest text-orange-500 px-5 py-2 rounded-full bg-white shadow">
+    Recently Completed Projects
+  </span> -->
 
-      @foreach($projects as $project)
-        <article class="project {{ $project['type'] }} relative overflow-hidden rounded-[32px] border border-white/70 bg-white shadow-[0_25px_60px_rgba(15,23,42,0.08)] transition duration-500 hover:-translate-y-1 hover:shadow-[0_35px_80px_rgba(253,85,40,0.2)] group" data-aos="fade-up">
-          <div class="relative overflow-hidden rounded-[28px] h-52">
-            <img src="{{ asset($project['image']) }}" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
-            <span class="absolute top-4 left-4 rounded-full bg-[#0F8C4A] px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.3em] text-white shadow-lg">
-              Live
-            </span>
-          </div>
-          <div class="p-6 space-y-3">
-            <div class="flex items-center justify-between text-[11px] uppercase tracking-[0.35em] text-gray-500">
-              <span>{{ ucfirst($project['type']) }}</span>
-              <span class="text-[#FC5124] font-semibold">{{ $project['date'] }}</span>
-            </div>
-            <h3 class="text-2xl font-semibold text-gray-900">
-              {{ $project['title'] }}
-            </h3>
-            <p class="text-sm text-gray-600 leading-relaxed">
-              {{ $project['desc'] }}
-            </p>
-            <div class="flex flex-wrap gap-2">
-              @foreach($project['tags'] as $tag)
-                <span class="rounded-full bg-orange-100 px-3 py-1 text-[11px] font-semibold text-[#FC5124] shadow-sm">
-                  {{ $tag }}
-                </span>
-              @endforeach
-            </div>
-            <div class="flex items-center justify-between text-xs text-gray-500">
-              <span>{{ $project['metric'] }}</span>
-              <a href="#" class="text-[#FC5124] font-semibold hover:underline">
-                View
-              </a>
-            </div>
-          </div>
-        </article>
-      @endforeach
+  <h2 class="text-4xl sm:text-5xl font-bold text-gray-900">
+    Completed <span class="text-orange-500">Projects</span>
+  </h2>
 
-    </div>
+  <p class="text-sm text-gray-500 max-w-2xl mx-auto">
+    Live deployments that blend backend reliability and modern UI.
+  </p>
+</div>
 
-      <!-- Bottom Button -->
-    <div class="text-center mt-12">
-      <a href="#"
-         class="inline-block bg-gradient-to-r from-[#FD5528] to-[#fbb03b] text-white px-6 py-3 rounded-full font-semibold shadow hover:bg-orange-600 transition">
-        View All Projects
-      </a>
-    </div>
+<!-- TABS -->
+<div class="flex flex-wrap justify-center gap-2 sm:gap-3 mb-10">
+  <button class="tab active bg-orange-500 text-white border border-orange-500 px-4 py-2 rounded-full" data-tab="all">All</button>
+  <button class="tab border border-orange-500 text-orange-600 px-4 py-2 rounded-full" data-tab="web">Web Apps</button>
+  <button class="tab border border-orange-500 text-orange-600 px-4 py-2 rounded-full" data-tab="saas">SaaS</button>
+  <button class="tab border border-orange-500 text-orange-600 px-4 py-2 rounded-full" data-tab="ecommerce">E-commerce</button>
+  <button class="tab border border-orange-500 text-orange-600 px-4 py-2 rounded-full" data-tab="crm">CRM</button>
+</div>
 
+<!-- GRID -->
+<div id="projects" class="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
+
+<!-- CARD 1 -->
+<div class="project web bg-white rounded-3xl shadow-lg overflow-hidden p-5 group hover:-translate-y-1 hover:shadow-2xl transition">
+  <div class="relative h-44 overflow-hidden mb-4">
+    <img src="https://backendcodersindia.com/assets/images/company-icons/page1.png" class="w-full h-full object-cover group-hover:scale-105 transition">
+    <span class="absolute top-3 left-3 bg-green-600 text-white text-xs px-3 py-1 rounded-full">LIVE</span>
   </div>
+  <div class="p-5 space-y-3">
+    <div class="flex justify-between text-xs text-gray-500 uppercase">
+      <span>Web</span><span class="text-orange-500 font-semibold">Jan 2025</span>
+    </div>
+    <h3 class="text-xl font-semibold">Ace Taxis UK</h3>
+    <p class="text-sm text-gray-600">Cab booking & dispatch system.</p>
+    <div class="flex gap-2 flex-wrap">
+      <span class="bg-orange-100 text-orange-500 text-xs px-3 py-1 rounded-full">Node</span>
+      <span class="bg-orange-100 text-orange-500 text-xs px-3 py-1 rounded-full">Mongo</span>
+    </div>
+    <div class="flex justify-between text-xs text-gray-500">
+      <span>+650 drivers</span>
+      <a href="#" class="text-orange-500 font-semibold">View</a>
+    </div>
+  </div>
+
+</div>
+
+<!-- CARD 2 -->
+<div class="project saas bg-white rounded-3xl shadow-lg overflow-hidden p-5 group hover:-translate-y-1 hover:shadow-2xl transition">
+  <div class="relative h-44 overflow-hidden mb-4">
+    <img src="https://backendcodersindia.com/assets/images/company-icons/1.png" class="w-full h-full object-cover">
+    <span class="absolute top-3 left-3 bg-green-600 text-white text-xs px-3 py-1 rounded-full">LIVE</span>
+  </div>
+   <div class="flex justify-between text-[10px] text-gray-400 mb-2">
+    <span>SAAS</span>
+    <span class="text-orange-500">JAN 2025</span>
+  </div>
+
+  <h3 class="text-lg font-semibold mb-2">Tanning Salon System</h3>
+  <p class="text-sm text-gray-500 mb-4">Salon booking & automation system.</p>
+
+  <div class="flex gap-2 flex-wrap mb-4">
+    <span class="bg-orange-100 text-orange-500 text-xs px-3 py-1 rounded-full">Node.js</span>
+    <span class="bg-orange-100 text-orange-500 text-xs px-3 py-1 rounded-full">MongoDB</span>
+    <span class="bg-orange-100 text-orange-500 text-xs px-3 py-1 rounded-full">REST API</span>
+  </div>
+
+  <div class="flex justify-between text-xs text-gray-400">
+    <span>+28% bookings</span>
+    <a href="#" class="text-orange-500">View</a>
+  </div>
+
+</div>
+
+<!-- CARD 3 -->
+<div class="project web bg-white rounded-3xl shadow-lg overflow-hidden p-5 group hover:-translate-y-1 hover:shadow-2xl transition">
+  <div class="relative h-44 overflow-hidden mb-4">
+    <img src="https://backendcodersindia.com/assets/images/testemonials/skydatech.png" class="w-full h-full object-cover">
+    <span class="absolute top-3 left-3 bg-green-600 text-white text-xs px-3 py-1 rounded-full">LIVE</span>
+  </div>
+  <div class="flex justify-between text-[10px] text-gray-400 mb-2">
+    <span>WEB</span>
+    <span class="text-orange-500">JAN 2025</span>
+  </div>
+
+  <h3 class="text-lg font-semibold mb-2">Skydatech Technology</h3>
+  <p class="text-sm text-gray-500 mb-4">IT consulting & tracking platform.</p>
+
+  <div class="flex gap-2 flex-wrap mb-4">
+    <span class="bg-orange-100 text-orange-500 text-xs px-3 py-1 rounded-full">Node.js</span>
+    <span class="bg-orange-100 text-orange-500 text-xs px-3 py-1 rounded-full">MongoDB</span>
+    <span class="bg-orange-100 text-orange-500 text-xs px-3 py-1 rounded-full">REST API</span>
+  </div>
+
+  <div class="flex justify-between text-xs text-gray-400">
+    <span>47ms response</span>
+    <a href="#" class="text-orange-500">View</a>
+  </div>
+
+</div>
+
+<!-- CARD 4 -->
+<div class="project ecommerce bg-white rounded-3xl shadow-lg overflow-hidden p-5 group hover:-translate-y-1 hover:shadow-2xl transition">
+  <div class="relative h-44 overflow-hidden mb-4">
+    <img src="https://backendcodersindia.com/assets/images/company-icons/childcare.png" class="w-full h-full object-cover">
+    <span class="absolute top-3 left-3 bg-green-600 text-white text-xs px-3 py-1 rounded-full">LIVE</span>
+  </div>
+  <div class="flex justify-between text-[10px] text-gray-400 mb-2">
+    <span>WEB</span>
+    <span class="text-orange-500">JAN 2025</span>
+  </div>
+
+  <h3 class="text-lg font-semibold mb-2">Alberta ChildCare</h3>
+  <p class="text-sm text-gray-500 mb-4">Education portal system.</p>
+
+  <div class="flex gap-2 flex-wrap mb-4">
+    <span class="bg-orange-100 text-orange-500 text-xs px-3 py-1 rounded-full">Node.js</span>
+    <span class="bg-orange-100 text-orange-500 text-xs px-3 py-1 rounded-full">MongoDB</span>
+    <span class="bg-orange-100 text-orange-500 text-xs px-3 py-1 rounded-full">REST API</span>
+  </div>
+
+  <div class="flex justify-between text-xs text-gray-400">
+    <span>24x7 monitoring</span>
+    <a href="#" class="text-orange-500">View</a>
+  </div>
+
+</div>
+
+<!-- CARD 5 -->
+<div class="project web bg-white rounded-3xl shadow-lg overflow-hidden p-5 group hover:-translate-y-1 hover:shadow-2xl transition">
+  <div class="relative h-44 overflow-hidden mb-4">
+    <img src="https://backendcodersindia.com/assets/images/testemonials/marley.png" class="w-full h-full object-cover">
+    <span class="absolute top-3 left-3 bg-green-600 text-white text-xs px-3 py-1 rounded-full">LIVE</span>
+  </div>
+   <div class="flex justify-between text-[10px] text-gray-400 mb-2">
+    <span>WEB</span>
+    <span class="text-orange-500">JAN 2025</span>
+  </div>
+
+  <h3 class="text-lg font-semibold mb-2">Marley Moves</h3>
+  <p class="text-sm text-gray-500 mb-4">Logistics control system.</p>
+
+  <div class="flex gap-2 flex-wrap mb-4">
+    <span class="bg-orange-100 text-orange-500 text-xs px-3 py-1 rounded-full">Node.js</span>
+    <span class="bg-orange-100 text-orange-500 text-xs px-3 py-1 rounded-full">MongoDB</span>
+    <span class="bg-orange-100 text-orange-500 text-xs px-3 py-1 rounded-full">REST API</span>
+  </div>
+
+  <div class="flex justify-between text-xs text-gray-400">
+    <span>+41% throughput</span>
+    <a href="#" class="text-orange-500">View</a>
+  </div>
+
+</div>
+
+<!-- CARD 6 -->
+<div class="project crm bg-white rounded-3xl shadow-lg overflow-hidden p-5 group hover:-translate-y-1 hover:shadow-2xl transition">
+  <div class="relative h-44 overflow-hidden mb-4">
+    <img src="https://backendcodersindia.com/assets/images/testemonials/er.png" class="w-full h-full object-cover">
+    <span class="absolute top-3 left-3 bg-green-600 text-white text-xs px-3 py-1 rounded-full">LIVE</span>
+  </div>
+  <div class="flex justify-between text-[10px] text-gray-400 mb-2">
+    <span>CRM</span>
+    <span class="text-orange-500">JAN 2025</span>
+  </div>
+
+  <h3 class="text-lg font-semibold mb-2">ER Data Solutions</h3>
+  <p class="text-sm text-gray-500 mb-4">CRM dashboard & analytics.</p>
+
+  <div class="flex gap-2 flex-wrap mb-4">
+    <span class="bg-orange-100 text-orange-500 text-xs px-3 py-1 rounded-full">Node.js</span>
+    <span class="bg-orange-100 text-orange-500 text-xs px-3 py-1 rounded-full">MongoDB</span>
+    <span class="bg-orange-100 text-orange-500 text-xs px-3 py-1 rounded-full">REST API</span>
+  </div>
+
+  <div class="flex justify-between text-xs text-gray-400">
+    <span>+31% accuracy</span>
+    <a href="#" class="text-orange-500">View</a>
+  </div>
+</div>
+</div>
+
+</div>
+
+<!-- BUTTON -->
+<div class="text-center mt-12">
+  <button class="bg-gradient-to-r from-orange-500 to-orange-400 hover:from-[#fbb03b] hover:to-[#FD5528] hover:scale-110 transition-all text-white px-8 py-3 rounded-full shadow-lg">
+    View All Projects
+  </button>
+</div>
+
+</div>
 </section>
-{{-- prjects --}}
+
+<!-- JS FILTER -->
+<script>
+const tabs = document.querySelectorAll(".tab");
+const projects = document.querySelectorAll(".project");
+
+tabs.forEach(tab => {
+  tab.addEventListener("click", () => {
+
+    tabs.forEach(t => {
+      t.classList.remove("bg-orange-500","text-white");
+      t.classList.add("text-orange-600");
+    });
+
+    tab.classList.add("bg-orange-500","text-white");
+
+    const type = tab.dataset.tab;
+
+    projects.forEach(p => {
+      if(type === "all" || p.classList.contains(type)){
+        p.style.display = "block";
+      } else {
+        p.style.display = "none";
+      }
+    });
+
+  });
+});
+</script>
+
+<!-- {{-- prjects --}} -->
 
 
 
@@ -547,7 +679,7 @@
 <!-- process-directions -->
 <section class="relative overflow-hidden py-16 sm:py-20 lg:py-24 bg-[#F9FAFB]">
 
-  <div class="max-w-9xl lg:mx-24 mx-auto px-6">
+  <div class="max-w-7xl mx-auto px-6">
 
     <!-- Heading -->
     <div class="text-center md:mb-16">
@@ -897,6 +1029,7 @@
 <!-- END BLOG -->
 
 
+
 {{-- faq --}}
 <section class="relative overflow-hidden bg-gradient-to-br from-white via-slate-50 to-slate-100 py-16 sm:py-20 lg:py-24 px-4 sm:px-6">
 
@@ -1002,6 +1135,275 @@
   </div>
 
 </section>
+
+
+
+<!-- Swiper CSS -->
+
+<!-- Swiper CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+
+
+<section class="relative py-28 px-6 overflow-hidden">
+
+  <!-- BACKGROUND GLOW -->
+  <div class="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_top,_#FD5528,_transparent_60%)]"></div>
+
+  <div class="relative max-w-6xl mx-auto text-center">
+
+
+     <span 
+    
+      data-aos="fade-up"
+      class="inline-block text-xs sm:text-sm font-semibold uppercase tracking-[0.35em] 
+         text-[#FD5528] relative px-5 py-2 rounded-full 
+         bg-white/60 backdrop-blur-md 
+         shadow-[0_8px_20px_rgba(0,0,0,0.08)] 
+         border border-white/40
+         before:absolute before:inset-0 before:rounded-full 
+         before:bg-gradient-to-r before:from-[#FD5528]/20 before:to-orange-200/30 
+         before:-z-10">
+
+         Testimonials
+      </span>
+    <!-- BADGE -->
+    <!-- <span class="inline-block text-xs font-semibold uppercase tracking-[0.35em] text-[#FD5528] px-5 py-2 rounded-full bg-white shadow">
+      Testimonials
+    </span> -->
+
+    <!-- TITLE -->
+    <h2 class="mt-6 text-3xl md:text-5xl font-bold text-black">
+      What Our <span class="text-[#FD5528]">Clients Say</span>
+    </h2>
+
+    <!-- SWIPER -->
+    <div class="swiper mt-16">
+
+      <div class="swiper-wrapper">
+
+        <!-- SLIDE -->
+        <div class="swiper-slide">
+<div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition duration-300 p-6 max-w-md border border-gray-100">
+
+  <!-- HEADER -->
+  <div class="flex items-center justify-between mb-4">
+
+    <!-- USER -->
+    <div class="flex items-center gap-3">
+      <div class="relative">
+        <img src="https://randomuser.me/api/portraits/women/68.jpg"
+             class="w-12 h-12 rounded-full object-cover">
+
+        <!-- VERIFIED BADGE -->
+        <span class="absolute -bottom-1 -right-1 bg-green-500 text-white text-[10px] px-1 rounded-full">✔</span>
+      </div>
+
+      <div>
+        <h4 class="font-semibold text-gray-900 text-sm">Aimee H</h4>
+        <p class="text-xs text-gray-500">1 January 2026</p>
+      </div>
+    </div>
+
+    <!-- GOOGLE LOGO -->
+    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"
+         class="w-12 opacity-80">
+  </div>
+
+  <!-- STARS -->
+  <div class="flex items-center gap-1 mb-3">
+    <span class="text-yellow-400 text-lg">★★★★★</span>
+  </div>
+
+  <!-- REVIEW TEXT -->
+  <p class="text-gray-700 text-start text-sm leading-relaxed mb-4">
+    This is a really wonderful experience on all counts. The food was lovely, traditional, and of excellent quality with very polite and attentive service.
+  </p>
+
+  <!-- FOOTER -->
+  <div class="flex items-center justify-between text-xs text-gray-400">
+
+    <!-- CATEGORY -->
+    <span class="bg-gray-100 px-2 py-1 rounded-full text-gray-500">
+      Verified Review
+    </span>
+
+    <!-- ACTION -->
+    <button class="flex items-center gap-1 hover:text-[#FD5528] transition">
+      Director
+    </button>
+
+  </div>
+
+</div>
+        </div>
+
+        <!-- SLIDE -->
+        <div class="swiper-slide">
+<div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition duration-300 p-6 max-w-md border border-gray-100">
+
+  <!-- HEADER -->
+  <div class="flex items-center justify-between mb-4">
+
+    <!-- USER -->
+    <div class="flex items-center gap-3">
+      <div class="relative">
+        <img src="https://randomuser.me/api/portraits/women/44.jpg"
+             class="w-12 h-12 rounded-full object-cover">
+
+        <!-- VERIFIED BADGE -->
+        <span class="absolute -bottom-1 -right-1 bg-green-500 text-white text-[10px] px-1 rounded-full">✔</span>
+      </div>
+
+      <div>
+        <h4 class="font-semibold text-gray-900 text-sm">Sophia Green</h4>
+        <p class="text-xs text-gray-500">1 January 2026</p>
+      </div>
+    </div>
+
+    <!-- GOOGLE LOGO -->
+    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"
+         class="w-12 opacity-80">
+  </div>
+
+  <!-- STARS -->
+  <div class="flex items-center gap-1 mb-3">
+    <span class="text-yellow-400 text-lg">★★★★★</span>
+  </div>
+
+  <!-- REVIEW TEXT -->
+  <p class="text-gray-700 text-start text-sm leading-relaxed mb-4">
+    This is a really wonderful experience on all counts.  Outstanding UI and backend performance. Our bookings increased significantly.
+  </p>
+
+  <!-- FOOTER -->
+  <div class="flex items-center justify-between text-xs text-gray-400">
+
+    <!-- CATEGORY -->
+    <span class="bg-gray-100 px-2 py-1 rounded-full text-gray-500">
+      Verified Review
+    </span>
+
+    <!-- ACTION -->
+    <button class="flex items-center gap-1 hover:text-[#FD5528] transition">
+      Director
+    </button>
+
+  </div>
+
+</div>
+         
+        </div>
+
+        <!-- SLIDE -->
+        <div class="swiper-slide">
+<div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition duration-300 p-6 max-w-md border border-gray-100">
+
+  <!-- HEADER -->
+  <div class="flex items-center justify-between mb-4">
+
+    <!-- USER -->
+    <div class="flex items-center gap-3">
+      <div class="relative">
+        <img src="https://randomuser.me/api/portraits/women/44.jpg"
+             class="w-12 h-12 rounded-full object-cover">
+
+        <!-- VERIFIED BADGE -->
+        <span class="absolute -bottom-1 -right-1 bg-green-500 text-white text-[10px] px-1 rounded-full">✔</span>
+      </div>
+
+      <div>
+        <h4 class="font-semibold text-gray-900 text-sm">Daniel Smith</h4>
+        <p class="text-xs text-gray-500">1 January 2026</p>
+      </div>
+    </div>
+
+    <!-- GOOGLE LOGO -->
+    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"
+         class="w-12 opacity-80">
+  </div>
+
+  <!-- STARS -->
+  <div class="flex items-center gap-1 mb-3">
+    <span class="text-yellow-400 text-lg">★★★★★</span>
+  </div>
+
+  <!-- REVIEW TEXT -->
+  <p class="text-gray-700 text-start text-sm leading-relaxed mb-4">
+    This is a really wonderful experience on all counts.   Professional team with strong technical expertise. They understand business needs..
+  </p>
+
+  <!-- FOOTER -->
+  <div class="flex items-center justify-between text-xs text-gray-400">
+
+    <!-- CATEGORY -->
+    <span class="bg-gray-100 px-2 py-1 rounded-full text-gray-500">
+      Verified Review
+    </span>
+
+    <!-- ACTION -->
+    <button class="flex items-center gap-1 hover:text-[#FD5528] transition">
+      Director
+    </button>
+
+  </div>
+
+</div>
+
+
+         
+        </div>
+
+      </div>
+
+      <!-- NAV BUTTONS -->
+      <!-- <div class="swiper-button-prev !bg-white !text-[#FD5528] !w-12 !h-12 rounded-full shadow"></div>
+      <div class="swiper-button-next !bg-white !text-[#FD5528] !w-12 !h-12 rounded-full shadow"></div> -->
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+const swiper = new Swiper('.swiper', {
+  loop: true,
+  spaceBetween: 14,
+
+  slidesPerView: 2, // 👈 EXACTLY 2 CARDS
+
+  speed: 4000, // smooth continuous
+
+  autoplay: {
+    delay: 30,
+    disableOnInteraction: false,
+  },
+
+  freeMode: true,
+  freeModeMomentum: false,
+
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+  breakpoints: {
+    0: { slidesPerView: 1 },
+    768: { slidesPerView: 2 }, // 👈 2 on tablet+
+  }
+});
+
+// Pause on hover (premium feel)
+const swiperEl = document.querySelector('.swiper');
+
+swiperEl.addEventListener('mouseenter', () => swiper.autoplay.stop());
+swiperEl.addEventListener('mouseleave', () => swiper.autoplay.start());
+</script>
+
 <!-- contact section -->
 <section id="contact" class="relative overflow-hidden bg-white py-16 sm:py-20 lg:py-24 px-6">
 
@@ -1074,16 +1476,18 @@
           <input type="email" placeholder="Email Address"
             class="w-full px-4 py-3 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#FD5528]/40 transition duration-200">
 
-          <input type="text" placeholder="Subject"
+          <input type="text" placeholder="Phone"
             class="w-full px-4 py-3 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#FD5528]/40 transition duration-200">
 
           <textarea rows="4" placeholder="Your Message"
             class="w-full px-4 py-3 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#FD5528]/40 transition duration-200"></textarea>
 
-          <button type="submit"
-            class="w-full bg-gradient-to-r from-[#FD5528] to-[#fbb03b] text-white py-3 rounded-2xl font-semibold shadow-[0_20px_45px_rgba(253,85,40,0.4)] transition duration-200 hover:shadow-[0_25px_60px_rgba(253,85,40,0.5)]">
+        <div class="relative flex justify-center">
+            <button type="submit"
+            class="max-w-md bg-gradient-to-r from-[#FD5528] to-[#fbb03b] hover:from-[#fbb03b] hover:to-[#FD5528] hover:scale-110  text-white py-3 px-4 rounded-2xl font-semibold shadow-[0_20px_45px_rgba(253,85,40,0.4)] transition duration-200 hover:shadow-[0_25px_60px_rgba(253,85,40,0.5)]">
             Send Message
           </button>
+        </div>
 
         </form>
 
@@ -1096,25 +1500,50 @@
 </section>
 <!-- END contact section -->
 
-<!-- CTA SECTION -->
-<section class="bg-[#FC5124] text-white py-16 text-center">
-  <h2 class="text-3xl font-bold mb-4">
-    Have a Project in Mind?
-  </h2>
-  <p class="text-gray-300 mb-6">
-    Let’s build, discuss your project idea in detail. What’s next?
-  </p>
 
-  <div class="flex justify-center gap-4">
-    <a href="#contact"
-     class="bg-white text-[#FC5124] px-6 py-3 rounded-lg font-semibold ">
-    Contact Us
-  </a>
-    <a href="#contact"
-     class="bg-white text-[#FC5124] px-6 py-3 rounded-lg font-semibold ">
-     Let's chat on Whatsapp
-  </a>
+<!-- CTA SECTION -->
+<section class="relative overflow-hidden py-20 bg-gradient-to-r from-[#FC5124] via-orange-500 to-orange-400 text-white">
+
+  <!-- BACKGROUND GLOW -->
+  <div class="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_top_left,_white,_transparent_50%)]"></div>
+
+  <div class="relative max-w-5xl mx-auto px-6 text-center">
+
+    <!-- HEADING -->
+    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 leading-tight">
+      Have a Project in Mind?
+    </h2>
+
+    <!-- SUBTEXT -->
+    <p class="text-white/80 text-sm sm:text-base md:text-lg max-w-2xl mx-auto mb-10">
+      Let’s build something amazing together. Share your idea and we’ll turn it into a powerful digital product.
+    </p>
+
+    <!-- BUTTONS -->
+    <div class="flex flex-col sm:flex-row justify-center gap-4">
+
+      <!-- PRIMARY BUTTON -->
+      <a href="#contact"
+         class="group inline-flex items-center justify-center bg-white text-[#FC5124] px-6 py-3 rounded-xl font-semibold shadow-lg hover:shadow-2xl hover:scale-105 transition duration-300">
+
+        Contact Us
+
+        <!-- ARROW -->
+        <span class="ml-2 transition group-hover:translate-x-1">→</span>
+      </a>
+
+      <!-- WHATSAPP BUTTON -->
+      <a href="#contact"
+         class="group inline-flex items-center justify-center border border-white/40 px-6 py-3 rounded-xl font-semibold backdrop-blur-md hover:bg-white/10 hover:scale-105 transition duration-300">
+
+       
+        Let's Chat on WhatsApp
+      </a>
+
+    </div>
+
   </div>
+
 </section>
 
 </main>

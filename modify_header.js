@@ -1,0 +1,10 @@
+﻿const fs = require('fs');
+const path = 'resources/views/component/header.blade.php';
+let text = fs.readFileSync(path, 'utf8');
+text = text.replace(  <div class= max-w-9xl lg:mx-24 mx-auto px-4 sm:px-6 py-3\r\n flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-3>,   <div class=max-w-9xl lg:mx-24 mx-auto px-4 sm:px-6 py-3\r\n flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between>);
+if (!text.includes('flex-col gap-4')) throw new Error('main container not replaced');
+text = text.replace(    <div class=flex flex-col sm:flex-row items-center sm:items-start\r\n gap-3 sm:gap-6 text-xs sm:text-sm text-center sm:text-left>,     <div class=w-full flex flex-col sm:flex-row items-center sm:items-start\r\n gap-3 sm:gap-6 text-xs sm:text-sm text-center sm:text-left>);
+text = text.replace(         class=flex items-center justify-center sm:justify-start gap-2 hover:text-black transition>,          class=flex items-center justify-center flex-1 min-w-[170px] sm:flex-auto sm:justify-start gap-2 hover:text-black transition>);
+text = text.replace(      <a href=mailto:info@backendcodersindia.com\r\n         class=flex items-center justify-center flex-1 min-w-[170px] sm:flex-auto sm:justify-start gap-2 hover:text-black transition>,       <a href=mailto:info@backendcodersindia.com\r\n         class=flex items-center justify-center flex-1 min-w-[200px] sm:flex-auto sm:justify-start gap-2 hover:text-black transition>);
+text = text.replace(    <div class=flex items-center justify-center gap-3>,     <div class=w-full flex flex-wrap items-center justify-center gap-3 sm:w-auto sm:justify-end>);
+fs.writeFileSync(path, text, 'utf8');

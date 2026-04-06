@@ -10,12 +10,16 @@
 
 
 <!-- TOP BAR -->
-<div class="bg-[#FD5528] text-white text-sm">
+<div class="bg-[#FD5528] text-white text-sm hidden md:block lg:block">
+   <!-- <div class="max-w-9xl lg:mx-24 mx-auto px-4 sm:px-6 py-2 flex items-center justify-center gap-2">
+      <span>We are hiring! </span>
+      <a href="{{ route('frontend.career') }}" class="underline font-medium hover:text-white/80 transition">Explore Careers</a>
+   </div> -->
   <div class="max-w-9xl lg:mx-24 mx-auto px-4 sm:px-6 py-3 
-              flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-3">
+              flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
 
     <!-- LEFT: CONTACT INFO -->
-    <div class="flex flex-col sm:flex-row items-center sm:items-start 
+    <div class="w-full flex flex-col sm:flex-row items-center sm:items-start 
                 gap-3 sm:gap-6 text-xs sm:text-sm text-center sm:text-left">
 
       <!-- PHONE -->
@@ -163,7 +167,7 @@
         <!-- CTA Button -->
         <div class="hidden lg:flex">
               <button type="submit"
-            class="w-full bg-gradient-to-r from-[#FD5528] to-[#fbb03b] text-white px-5 py-2 rounded-2xl font-semibold transition duration-200 ">
+            class="w-full bg-gradient-to-r from-[#FD5528] to-[#fbb03b] hover:from-[#fbb03b] hover:to-[#FD5528] hover:scale-110 transition-all text-white px-5 py-2 rounded-2xl font-semibold transition duration-200 ">
                <Initialize href="{{ route('frontend.contact') }}">Initialize </a>
           </button>
             <!-- <a href="{{ route('frontend.contact') }}"
@@ -252,3 +256,17 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
