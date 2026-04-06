@@ -144,7 +144,7 @@
         <h3 class="text-xl font-semibold">Backend Developer</h3>
         <p class="text-sm text-gray-600">Full Time • Remote • 2+ Years Experience</p>
       </div>
-      <a href="#" class="bg-[#FC5124] text-white px-5 py-2 rounded-lg hover:bg-orange-600">
+      <a href="#" class="bg-gradient-to-r from-[#FD5528] to-[#fbb03b] hover:from-[#fbb03b] hover:to-[#FD5528] text-white px-5 py-2 rounded-lg ">
         opening soon
       </a>
     </div>
@@ -154,7 +154,7 @@
         <h3 class="text-xl font-semibold">Frontend Developer</h3>
         <p class="text-sm text-gray-600">Full Time • Onsite • 1+ Years Experience</p>
       </div>
-      <a href="#" class="bg-[#FC5124] text-white px-5 py-2 rounded-lg hover:bg-orange-600">
+      <a href="#" class="bg-gradient-to-r from-[#FD5528] to-[#fbb03b] hover:from-[#fbb03b] hover:to-[#FD5528] text-white px-5 py-2 rounded-lg ">
         opening soon
       </a>
     </div>
@@ -164,7 +164,7 @@
         <h3 class="text-xl font-semibold">UI/UX Designer</h3>
         <p class="text-sm text-gray-600">Internship • Remote • Freshers Welcome</p>
       </div>
-      <a href="#" class="bg-[#FC5124] text-white px-5 py-2 rounded-lg hover:bg-orange-600">
+      <a href="#" class="bg-gradient-to-r from-[#FD5528] to-[#fbb03b] hover:from-[#fbb03b] hover:to-[#FD5528] text-white px-5 py-2 rounded-lg">
         opening soon
       </a>
     </div>
@@ -194,7 +194,7 @@
       <textarea placeholder="Tell us about yourself"
         class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FC5124]"></textarea>
 
-      <button class="w-full bg-[#FC5124] text-white py-3 rounded-lg font-semibold hover:bg-orange-600">
+      <button class="w-full bg-gradient-to-r from-[#FD5528] to-[#fbb03b] hover:from-[#fbb03b] hover:to-[#FD5528] text-white py-3 rounded-lg font-semibold ">
         Submit Application
       </button>
 

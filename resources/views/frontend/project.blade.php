@@ -49,6 +49,7 @@
   <button class="tab border border-orange-500 text-orange-600 px-4 py-2 rounded-full" data-tab="saas">SaaS</button>
   <button class="tab border border-orange-500 text-orange-600 px-4 py-2 rounded-full" data-tab="ecommerce">E-commerce</button>
   <button class="tab border border-orange-500 text-orange-600 px-4 py-2 rounded-full" data-tab="crm">CRM</button>
+   <button class="tab border border-orange-500 text-orange-600 px-4 py-2 rounded-full" data-tab="others">Others</button>
 </div>
 
 <!-- GRID -->
@@ -412,7 +413,7 @@
 
       <!-- CTA -->
       <div class="mt-8 flex gap-4 flex-wrap">
-        <a href="#" class="bg-[#FD5528] text-white px-6 py-3 rounded-xl font-semibold shadow hover:scale-105 transition">
+        <a href="#" class="bg-gradient-to-r from-[#FD5528] to-[#fbb03b] hover:from-[#fbb03b] hover:to-[#FD5528] text-white px-6 py-3 rounded-xl font-semibold shadow hover:scale-105 transition">
           View Full Case Study
         </a>
 
