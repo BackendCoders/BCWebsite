@@ -3,619 +3,661 @@
 
 @section('content')
 
-<!-- HERO BANNER -->
-<section class="bg-gradient-to-r from-[#FC5124] to-orange-600 text-white py-20">
-  <div class="max-w-7xl mx-auto px-6 text-center">
-    <h1 class="text-4xl md:text-5xl font-bold mb-4">
-      Our Projects
+<!-- hero section  -->
+ <section class="relative h-[30vh] flex items-center justify-center text-center text-white overflow-hidden">
+
+  <!-- BACKGROUND IMAGE -->
+  <img 
+    src="{{asset('assets/images/banner.png')}}"
+    class="absolute inset-0 w-full h-full object-cover"
+  />
+
+  <!-- DARK OVERLAY -->
+  <div class="absolute inset-0 bg-black/60"></div>
+
+  <!-- CONTENT -->
+  <div class="relative z-10 max-w-4xl px-6">
+
+  
+
+    <!-- HEADING -->
+    <h1 class="mt-6 text-4xl sm:text-5xl md:text-6xl font-bold leading-tight">
+        Our Projects at <span class="text-orange-600">Backend</span><span class="text-[#FC5124] font-semibold">
+     
     </h1>
-    <p class="text-lg text-white/90 max-w-2xl mx-auto">
-      Delivering scalable, high-performance backend solutions for real-world applications.
+
+    <!-- SUBTEXT -->
+    <p class="mt-6 text-gray-300 text-sm sm:text-base md:text-lg max-w-2xl mx-auto">
+      We are a passionate team of developers and designers helping businesses 
+      transform ideas into scalable, high-performance digital products.
     </p>
+
+ 
+
   </div>
-</section>
-
-<!-- FILTER BAR -->
-<!-- <section class="bg-white py-6 shadow-sm sticky top-0 z-20">
-  <div class="max-w-7xl mx-auto px-6 flex flex-wrap gap-3 justify-center">
-    <button class="px-5 py-2 rounded-full bg-[#FC5124] text-white text-sm">All</button>
-    <button class="px-5 py-2 rounded-full bg-gray-100 text-gray-700 text-sm hover:bg-[#FC5124] hover:text-white">Web Apps</button>
-    <button class="px-5 py-2 rounded-full bg-gray-100 text-gray-700 text-sm hover:bg-[#FC5124] hover:text-white">API</button>
-    <button class="px-5 py-2 rounded-full bg-gray-100 text-gray-700 text-sm hover:bg-[#FC5124] hover:text-white">Mobile</button>
-  </div>
-</section> -->
-
-<!-- PROJECT GRID -->
-<section class="py-16 bg-gray-50">
-  <div class="max-w-7xl mx-auto px-6">
-
-    <h2 class="text-4xl font-bold text-center mb-12 py-4">
-      Featured <span class="text-[#F44918]"> Work</span>
-    </h2>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-      <!-- CARD -->
-
-      <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition duration-300 overflow-hidden group">
-
-        <!-- IMAGE -->
-        <div class="relative overflow-hidden">
-          <img src="https://backendcodersindia.com/assets/images/company-icons/page1.png"
-               class="w-full h-52 object-cover group-hover:scale-110 transition duration-500">
-
-          <span class="absolute top-3 left-3 bg-green-500 text-white text-xs px-3 py-1 rounded-full">
-            Live
-          </span>
-        </div>
-
-        <!-- CONTENT -->
-        <div class="p-5">
-
-          <h3 class="text-lg font-bold mb-2 text-gray-800">
-           Ace Taxis UK
-          </h3>
-
-          <p class="text-gray-600 text-sm mb-4">
-            Ace Taxis is U.K based cab booking and dispatch system. Performming for multiple drivers and users.
-          </p>
-
-          <!-- TECH -->
-          <div class="flex flex-wrap gap-2 mb-4">
-            <span class="bg-orange-100 text-[#FC5124] text-xs px-3 py-1 rounded-full">Node.js</span>
-            <span class="bg-orange-100 text-[#FC5124] text-xs px-3 py-1 rounded-full">MongoDB</span>
-            <span class="bg-orange-100 text-[#FC5124] text-xs px-3 py-1 rounded-full">REST API</span>
-          </div>
-
-          <!-- FOOTER -->
-          <div class="flex justify-between items-center">
-            <span class="text-xs text-gray-400">Jan 2025</span>
-            <a href="#" class="text-[#FC5124] font-semibold text-sm hover:underline">
-              View
-            </a>
-          </div>
-
-        </div>
-      </div>
-       <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition duration-300 overflow-hidden group">
-
-        <!-- IMAGE -->
-        <div class="relative overflow-hidden">
-          <img src="https://backendcodersindia.com/assets/images/company-icons/1.png"
-               class="w-full h-52 object-cover group-hover:scale-110 transition duration-500">
-
-          <span class="absolute top-3 left-3 bg-green-500 text-white text-xs px-3 py-1 rounded-full">
-            Live
-          </span>
-        </div>
-
-        <!-- CONTENT -->
-        <div class="p-5">
-
-          <h3 class="text-lg font-bold mb-2 text-gray-800">
-           Tanning Salon Management System
-          </h3>
-
-          <p class="text-gray-600 text-sm mb-4">
-           Sunkissed Tanning Salon is a UK-based tanning salon that offers both tanning bed and spray tan services. Known for providing a safe and effective way to achieve a sun-kissed glow, the salon uses top-of-the-line equipment and premium tanning products to deliver a natural-looking tan.
-          </p>
-
-          <!-- TECH -->
-          <div class="flex flex-wrap gap-2 mb-4">
-            <span class="bg-orange-100 text-[#FC5124] text-xs px-3 py-1 rounded-full">Node.js</span>
-            <span class="bg-orange-100 text-[#FC5124] text-xs px-3 py-1 rounded-full">MongoDB</span>
-            <span class="bg-orange-100 text-[#FC5124] text-xs px-3 py-1 rounded-full">REST API</span>
-          </div>
-
-          <!-- FOOTER -->
-          <div class="flex justify-between items-center">
-            <span class="text-xs text-gray-400">Jan 2025</span>
-            <a href="#" class="text-[#FC5124] font-semibold text-sm hover:underline">
-              View
-            </a>
-          </div>
-
-        </div>
-      </div>
-    <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition duration-300 overflow-hidden group">
-
-        <!-- IMAGE -->
-        <div class="relative overflow-hidden">
-          <img src="https://backendcodersindia.com/assets/images/testemonials/skydatech.png"
-               class="w-full h-52 object-cover group-hover:scale-110 transition duration-500">
-
-          <span class="absolute top-3 left-3 bg-green-500 text-white text-xs px-3 py-1 rounded-full">
-            Live
-          </span>
-        </div>
-
-        <!-- CONTENT -->
-        <div class="p-5">
-
-          <h3 class="text-lg font-bold mb-2 text-gray-800">
-          Skydatech Technology
-          </h3>
-
-          <p class="text-gray-600 text-sm mb-4">
-            Skydatech is a customer-focused and technology-driven consulting firm providing IT Consulting, staffing, product engineering, and enterprise application development services that help our customers craft value for their software development results.
-          </p>
-
-          <!-- TECH -->
-          <div class="flex flex-wrap gap-2 mb-4">
-            <span class="bg-orange-100 text-[#FC5124] text-xs px-3 py-1 rounded-full">Node.js</span>
-            <span class="bg-orange-100 text-[#FC5124] text-xs px-3 py-1 rounded-full">MongoDB</span>
-            <span class="bg-orange-100 text-[#FC5124] text-xs px-3 py-1 rounded-full">REST API</span>
-          </div>
-
-          <!-- FOOTER -->
-          <div class="flex justify-between items-center">
-            <span class="text-xs text-gray-400">Jan 2025</span>
-            <a href="#" class="text-[#FC5124] font-semibold text-sm hover:underline">
-              View
-            </a>
-          </div>
-
-        </div>
-      </div>
-    <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition duration-300 overflow-hidden group">
-
-        <!-- IMAGE -->
-        <div class="relative overflow-hidden">
-          <img src="https://backendcodersindia.com/assets/images/company-icons/childcare.png"
-               class="w-full h-52 object-cover group-hover:scale-110 transition duration-500">
-
-          <span class="absolute top-3 left-3 bg-green-500 text-white text-xs px-3 py-1 rounded-full">
-            Live
-          </span>
-        </div>
-
-        <!-- CONTENT -->
-        <div class="p-5">
-
-          <h3 class="text-lg font-bold mb-2 text-gray-800">
-           Alberta ChildCare
-          </h3>
-
-          <p class="text-gray-600 text-sm mb-4">
-            Alberta ChildCare Venture providing a nurturing environment where children can learn, play, and grow. We are committed to fostering the intellectual, social, emotional, and physical development of each child in our care.
-          </p>
-
-          <!-- TECH -->
-          <div class="flex flex-wrap gap-2 mb-4">
-            <span class="bg-orange-100 text-[#FC5124] text-xs px-3 py-1 rounded-full">Node.js</span>
-            <span class="bg-orange-100 text-[#FC5124] text-xs px-3 py-1 rounded-full">MongoDB</span>
-            <span class="bg-orange-100 text-[#FC5124] text-xs px-3 py-1 rounded-full">REST API</span>
-          </div>
-
-          <!-- FOOTER -->
-          <div class="flex justify-between items-center">
-            <span class="text-xs text-gray-400">Jan 2025</span>
-            <a href="#" class="text-[#FC5124] font-semibold text-sm hover:underline">
-              View
-            </a>
-          </div>
-
-        </div>
-      </div>
-    <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition duration-300 overflow-hidden group">
-
-        <!-- IMAGE -->
-        <div class="relative overflow-hidden">
-          <img src="https://backendcodersindia.com/assets/images/testemonials/marley.png"
-               class="w-full h-52 object-cover group-hover:scale-110 transition duration-500">
-
-          <span class="absolute top-3 left-3 bg-green-500 text-white text-xs px-3 py-1 rounded-full">
-            Live
-          </span>
-        </div>
-
-        <!-- CONTENT -->
-        <div class="p-5">
-
-          <h3 class="text-lg font-bold mb-2 text-gray-800">
-            Marley Moves
-          </h3>
-
-          <p class="text-gray-600 text-sm mb-4">
-            At Marley Moves, they are providing seamless, reliable, and stress-free relocation services for families, businesses, and individuals.
-          </p>
-
-          <!-- TECH -->
-          <div class="flex flex-wrap gap-2 mb-4">
-            <span class="bg-orange-100 text-[#FC5124] text-xs px-3 py-1 rounded-full">Node.js</span>
-            <span class="bg-orange-100 text-[#FC5124] text-xs px-3 py-1 rounded-full">MongoDB</span>
-            <span class="bg-orange-100 text-[#FC5124] text-xs px-3 py-1 rounded-full">REST API</span>
-          </div>
-
-          <!-- FOOTER -->
-          <div class="flex justify-between items-center">
-            <span class="text-xs text-gray-400">Jan 2025</span>
-            <a href="#" class="text-[#FC5124] font-semibold text-sm hover:underline">
-              View
-            </a>
-          </div>
-
-        </div>
-      </div>
-
-    <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition duration-300 overflow-hidden group">
-
-        <!-- IMAGE -->
-        <div class="relative overflow-hidden">
-          <img src="https://backendcodersindia.com/assets/images/testemonials/er.png"
-               class="w-full h-52 object-cover group-hover:scale-110 transition duration-500">
-
-          <span class="absolute top-3 left-3 bg-green-500 text-white text-xs px-3 py-1 rounded-full">
-            Live
-          </span>
-        </div>
-
-        <!-- CONTENT -->
-        <div class="p-5">
-
-          <h3 class="text-lg font-bold mb-2 text-gray-800">
-          ER Data Solutionsm
-          </h3>
-
-          <p class="text-gray-600 text-sm mb-4">
-         This is a small CRM system where user maintaining his profile with multiple Power BI dashboards and creating query system for end users.
-          </p>
-
-          <!-- TECH -->
-          <div class="flex flex-wrap gap-2 mb-4">
-            <span class="bg-orange-100 text-[#FC5124] text-xs px-3 py-1 rounded-full">Node.js</span>
-            <span class="bg-orange-100 text-[#FC5124] text-xs px-3 py-1 rounded-full">MongoDB</span>
-            <span class="bg-orange-100 text-[#FC5124] text-xs px-3 py-1 rounded-full">REST API</span>
-          </div>
-
-          <!-- FOOTER -->
-          <div class="flex justify-between items-center">
-            <span class="text-xs text-gray-400">Jan 2025</span>
-            <a href="#" class="text-[#FC5124] font-semibold text-sm hover:underline">
-              View
-            </a>
-          </div>
-
-        </div>
-    </div>
-
-    <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition duration-300 overflow-hidden group">
-
-        <!-- IMAGE -->
-        <div class="relative overflow-hidden">
-          <img src="https://backendcodersindia.com/assets/images/company-icons/demo.png"
-               class="w-full h-52 object-cover group-hover:scale-110 transition duration-500">
-
-          <span class="absolute top-3 left-3 bg-green-500 text-white text-xs px-3 py-1 rounded-full">
-            Live
-          </span>
-        </div>
-
-        <!-- CONTENT -->
-        <div class="p-5">
-
-          <h3 class="text-lg font-bold mb-2 text-gray-800">
-          Demo Cycle
-          </h3>
-
-          <p class="text-gray-600 text-sm mb-4">
-     This is E-Commerce Sample website for our U.K based client for their undergoing E-POS project.
-          </p>
-
-          <!-- TECH -->
-          <div class="flex flex-wrap gap-2 mb-4">
-            <span class="bg-orange-100 text-[#FC5124] text-xs px-3 py-1 rounded-full">Node.js</span>
-            <span class="bg-orange-100 text-[#FC5124] text-xs px-3 py-1 rounded-full">MongoDB</span>
-            <span class="bg-orange-100 text-[#FC5124] text-xs px-3 py-1 rounded-full">REST API</span>
-          </div>
-
-          <!-- FOOTER -->
-          <div class="flex justify-between items-center">
-            <span class="text-xs text-gray-400">Jan 2025</span>
-            <a href="#" class="text-[#FC5124] font-semibold text-sm hover:underline">
-              View
-            </a>
-          </div>
-
-        </div>
-    </div>
 
 </section>
+<!-- end hero section  -->
 
-<!-- CLIENTS SHOWCASE -->
-<section class="relative overflow-hidden bg-white py-20 text-[#0D0D0D]">
-  <div class="pointer-events-none absolute inset-0 opacity-70">
-    <div class="absolute -top-12 -left-6 h-40 w-40 rounded-full bg-[#FD5528]/20 blur-3xl"></div>
-    <div class="absolute bottom-10 right-10 h-56 w-56 rounded-full bg-[#0D0D0D]/10 blur-[140px]"></div>
-    <div class="absolute top-12 right-2 h-32 w-32 rounded-full bg-[#FD5528]/10 blur-2xl"></div>
+<section class="py-16">
+<div class="max-w-7xl mx-auto px-6">
+
+<!-- TABS -->
+<div class="flex flex-wrap justify-center gap-2 sm:gap-3 mb-10">
+  <button class="tab active bg-orange-500 text-white border border-orange-500 px-4 py-2 rounded-full" data-tab="all">All</button>
+  <button class="tab border border-orange-500 text-orange-600 px-4 py-2 rounded-full" data-tab="web">Web Apps</button>
+  <button class="tab border border-orange-500 text-orange-600 px-4 py-2 rounded-full" data-tab="saas">SaaS</button>
+  <button class="tab border border-orange-500 text-orange-600 px-4 py-2 rounded-full" data-tab="ecommerce">E-commerce</button>
+  <button class="tab border border-orange-500 text-orange-600 px-4 py-2 rounded-full" data-tab="crm">CRM</button>
+</div>
+
+<!-- GRID -->
+<div id="projects" class="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
+
+<!-- CARD 1 -->
+<div class="project web bg-white rounded-3xl shadow-lg overflow-hidden p-5 group hover:-translate-y-1 hover:shadow-2xl transition">
+  <div class="relative h-44 overflow-hidden mb-4">
+    <img src="https://backendcodersindia.com/assets/images/company-icons/page1.png" class="w-full h-full object-cover group-hover:scale-105 transition">
+    <span class="absolute top-3 left-3 bg-green-600 text-white text-xs px-3 py-1 rounded-full">LIVE</span>
   </div>
-
-  <div class="relative max-w-7xl mx-auto px-6 space-y-10">
-    <div class="flex flex-col gap-3 text-center md:text-left md:flex-row md:items-end md:justify-between">
-      <div>
-        <p class="text-xs font-semibold uppercase tracking-[0.4em] text-[#FD5528]">
-          Our Clients
-        </p>
-        <h2 class="mt-2 text-3xl md:text-4xl font-bold text-[#0D0D0D]">
-          Partners who trust Backend Coders India for bold product builds
-        </h2>
-      </div>
-      <div class="text-xs uppercase text-gray-500 tracking-[0.4em]">
-        Since 2007 &middot; Global HQ in India
-      </div>
+  <div class="p-5 space-y-3">
+    <div class="flex justify-between text-xs text-gray-500 uppercase">
+      <span>Web</span><span class="text-orange-500 font-semibold">Jan 2025</span>
     </div>
-
-    <div class="grid gap-8 lg:grid-cols-3">
-      <article class="relative overflow-hidden rounded-3xl border border-[#e5e5e5] bg-white p-6 shadow-[0_20px_70px_rgba(15,23,42,0.12)] transition duration-500 hover:-translate-y-1">
-        <div class="absolute inset-0 opacity-0 transition duration-500 hover:opacity-60">
-          <div class="absolute -top-6 -right-10 h-32 w-32 rounded-full bg-gradient-to-br from-[#FD5528]/40 to-transparent blur-3xl"></div>
-        </div>
-        <div class="flex items-center gap-3">
-          <div class="h-12 w-12 rounded-2xl bg-gradient-to-br from-[#FD5528] to-[#fbbc04] flex items-center justify-center text-lg text-black shadow-lg animate-pulse">
-            ★
-          </div>
-          <div>
-            <p class="text-sm uppercase tracking-[0.4em] text-gray-400">Impact</p>
-            <p class="text-3xl font-bold text-[#0D0D0D]">96%</p>
-          </div>
-        </div>
-        <p class="mt-4 text-sm text-gray-600">
-          Satisfaction measured across responsiveness, delivery quality, and proactive post-launch care over the last 12 months.
-        </p>
-        <div class="mt-6 flex flex-wrap gap-2 text-[0.65rem] font-semibold uppercase tracking-[0.35em] text-[#FD5528]">
-          <span class="rounded-full border border-[#FD5528]/30 px-3 py-1 bg-white">Dedicated teams</span>
-          <span class="rounded-full border border-[#FD5528]/30 px-3 py-1 bg-white">SLA-driven</span>
-          <span class="rounded-full border border-[#FD5528]/30 px-3 py-1 bg-white">Cohesive squads</span>
-        </div>
-        <div class="mt-6 space-y-2">
-          <div class="h-2 rounded-full bg-[#f2f2f2]">
-            <div class="h-full w-3/4 rounded-full bg-gradient-to-r from-[#FD5528] to-[#fbbc04]"></div>
-          </div>
-          <p class="text-xs text-gray-400">Delivery health score</p>
-        </div>
-      </article>
-
-      <article class="rounded-3xl border border-[#e5e5e5] bg-white p-6 shadow-[0_20px_70px_rgba(15,23,42,0.12)] relative">
-        <div class="flex flex-wrap items-center gap-4">
-          <span class="text-xs font-semibold tracking-[0.4em] text-gray-500">Logos</span>
-          <span class="flex-1 border-t border-gray-200"></span>
-        </div>
-        <div class="mt-6 overflow-hidden rounded-2xl border border-[#f2f2f2] bg-[#fafafa]">
-          <div class="animate-logoribbon flex min-w-full gap-8 px-6 py-6">
-            <div class="flex flex-col items-center gap-2 text-[#0D0D0D]">
-              <img src="https://backendcodersindia.com/assets/images/company-icons/page1.png" alt="Ace Taxis" class="h-10">
-              <span class="text-[0.65rem] uppercase tracking-[0.35em]">Ace Taxis</span>
-            </div>
-            <div class="flex flex-col items-center gap-2 text-[#0D0D0D]">
-              <img src="https://backendcodersindia.com/assets/images/company-icons/demo.png" alt="Demo Cycle" class="h-10">
-              <span class="text-[0.65rem] uppercase tracking-[0.35em]">Demo Cycle</span>
-            </div>
-            <div class="flex flex-col items-center gap-2 text-[#0D0D0D]">
-              <img src="https://backendcodersindia.com/assets/images/testemonials/marley.png" alt="Marley Moves" class="h-10">
-              <span class="text-[0.65rem] uppercase tracking-[0.35em]">Marley Moves</span>
-            </div>
-            <div class="flex flex-col items-center gap-2 text-[#0D0D0D]">
-              <img src="https://backendcodersindia.com/assets/images/testemonials/skydatech.png" alt="Skydatech" class="h-10">
-              <span class="text-[0.65rem] uppercase tracking-[0.35em]">Skydatech</span>
-            </div>
-            <div class="flex flex-col items-center gap-2 text-[#0D0D0D]">
-              <img src="https://backendcodersindia.com/assets/images/company-icons/childcare.png" alt="Alberta" class="h-10">
-              <span class="text-[0.65rem] uppercase tracking-[0.35em]">Alberta</span>
-            </div>
-            <div class="flex flex-col items-center gap-2 text-[#0D0D0D]">
-              <img src="https://backendcodersindia.com/assets/images/testemonials/er.png" alt="ER Data" class="h-10">
-              <span class="text-[0.65rem] uppercase tracking-[0.35em]">ER Data</span>
-            </div>
-            <div class="flex flex-col items-center gap-2 text-[#0D0D0D]">
-              <img src="https://backendcodersindia.com/assets/images/company-icons/page1.png" alt="Ace Taxis" class="h-10">
-              <span class="text-[0.65rem] uppercase tracking-[0.35em]">Ace Taxis</span>
-            </div>
-          </div>
-        </div>
-        <p class="mt-4 text-sm text-gray-600">
-          The ribbon keeps scrolling to build motion while spotlighting live partners relying on Backend Coders India squads.
-        </p>
-      </article>
-
-      <article class="rounded-3xl border border-[#e5e5e5] bg-white p-6 shadow-[0_20px_70px_rgba(15,23,42,0.12)]">
-        <div class="flex items-center gap-3">
-          <div class="text-3xl font-bold text-[#0D0D0D]">12+</div>
-          <div>
-            <p class="text-xs uppercase tracking-[0.4em] text-gray-400">Markets</p>
-            <p class="text-sm text-gray-500">United States, UK, Canada, and UAE</p>
-          </div>
-        </div>
-        <p class="mt-4 text-sm text-gray-600">
-          From compliance-heavy finance teams to hyper-growth ecommerce squads, we deliver backend pods that plug straight into your roadmap.
-        </p>
-        <div class="mt-6 grid grid-cols-2 gap-4">
-          <div class="rounded-2xl border border-[#f2f2f2] bg-gradient-to-br from-white to-[#fff3f0] p-4 text-center shadow-inner">
-            <p class="text-xs uppercase tracking-[0.35em] text-gray-400">On-demand squads</p>
-            <p class="mt-1 text-lg font-semibold text-[#0D0D0D]">3 active</p>
-          </div>
-          <div class="rounded-2xl border border-[#f2f2f2] bg-gradient-to-br from-white to-[#fff3f0] p-4 text-center shadow-inner">
-            <p class="text-xs uppercase tracking-[0.35em] text-gray-400">Average RTT</p>
-            <p class="mt-1 text-lg font-semibold text-[#0D0D0D]">2h</p>
-          </div>
-        </div>
-        <div class="mt-6 flex items-center justify-between text-sm font-semibold uppercase tracking-[0.35em] text-[#FD5528]">
-          <span>Book a partnership call</span>
-          <span aria-hidden="true" class="text-lg">→</span>
-        </div>
-      </article>
+    <h3 class="text-xl font-semibold">Ace Taxis UK</h3>
+    <p class="text-sm text-gray-600">Cab booking & dispatch system.</p>
+    <div class="flex gap-2 flex-wrap">
+      <span class="bg-orange-100 text-orange-500 text-xs px-3 py-1 rounded-full">Node</span>
+      <span class="bg-orange-100 text-orange-500 text-xs px-3 py-1 rounded-full">Mongo</span>
+    </div>
+    <div class="flex justify-between text-xs text-gray-500">
+      <span>+650 drivers</span>
+      <a href="#" class="text-orange-500 font-semibold">View</a>
     </div>
   </div>
 
-  <style>
-    @keyframes ribbon-scroll {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-    .animate-logoribbon {
-      animation: ribbon-scroll 28s linear infinite;
-    }
-  </style>
+</div>
+
+<!-- CARD 2 -->
+<div class="project saas bg-white rounded-3xl shadow-lg overflow-hidden p-5 group hover:-translate-y-1 hover:shadow-2xl transition">
+  <div class="relative h-44 overflow-hidden mb-4">
+    <img src="https://backendcodersindia.com/assets/images/company-icons/1.png" class="w-full h-full object-cover">
+    <span class="absolute top-3 left-3 bg-green-600 text-white text-xs px-3 py-1 rounded-full">LIVE</span>
+  </div>
+   <div class="flex justify-between text-[10px] text-gray-400 mb-2">
+    <span>SAAS</span>
+    <span class="text-orange-500">JAN 2025</span>
+  </div>
+
+  <h3 class="text-lg font-semibold mb-2">Tanning Salon System</h3>
+  <p class="text-sm text-gray-500 mb-4">Salon booking & automation system.</p>
+
+  <div class="flex gap-2 flex-wrap mb-4">
+    <span class="bg-orange-100 text-orange-500 text-xs px-3 py-1 rounded-full">Node.js</span>
+    <span class="bg-orange-100 text-orange-500 text-xs px-3 py-1 rounded-full">MongoDB</span>
+    <span class="bg-orange-100 text-orange-500 text-xs px-3 py-1 rounded-full">REST API</span>
+  </div>
+
+  <div class="flex justify-between text-xs text-gray-400">
+    <span>+28% bookings</span>
+    <a href="#" class="text-orange-500">View</a>
+  </div>
+
+</div>
+
+<!-- CARD 3 -->
+<div class="project web bg-white rounded-3xl shadow-lg overflow-hidden p-5 group hover:-translate-y-1 hover:shadow-2xl transition">
+  <div class="relative h-44 overflow-hidden mb-4">
+    <img src="https://backendcodersindia.com/assets/images/testemonials/skydatech.png" class="w-full h-full object-cover">
+    <span class="absolute top-3 left-3 bg-green-600 text-white text-xs px-3 py-1 rounded-full">LIVE</span>
+  </div>
+  <div class="flex justify-between text-[10px] text-gray-400 mb-2">
+    <span>WEB</span>
+    <span class="text-orange-500">JAN 2025</span>
+  </div>
+
+  <h3 class="text-lg font-semibold mb-2">Skydatech Technology</h3>
+  <p class="text-sm text-gray-500 mb-4">IT consulting & tracking platform.</p>
+
+  <div class="flex gap-2 flex-wrap mb-4">
+    <span class="bg-orange-100 text-orange-500 text-xs px-3 py-1 rounded-full">Node.js</span>
+    <span class="bg-orange-100 text-orange-500 text-xs px-3 py-1 rounded-full">MongoDB</span>
+    <span class="bg-orange-100 text-orange-500 text-xs px-3 py-1 rounded-full">REST API</span>
+  </div>
+
+  <div class="flex justify-between text-xs text-gray-400">
+    <span>47ms response</span>
+    <a href="#" class="text-orange-500">View</a>
+  </div>
+
+</div>
+
+<!-- CARD 4 -->
+<div class="project ecommerce bg-white rounded-3xl shadow-lg overflow-hidden p-5 group hover:-translate-y-1 hover:shadow-2xl transition">
+  <div class="relative h-44 overflow-hidden mb-4">
+    <img src="https://backendcodersindia.com/assets/images/company-icons/childcare.png" class="w-full h-full object-cover">
+    <span class="absolute top-3 left-3 bg-green-600 text-white text-xs px-3 py-1 rounded-full">LIVE</span>
+  </div>
+  <div class="flex justify-between text-[10px] text-gray-400 mb-2">
+    <span>WEB</span>
+    <span class="text-orange-500">JAN 2025</span>
+  </div>
+
+  <h3 class="text-lg font-semibold mb-2">Alberta ChildCare</h3>
+  <p class="text-sm text-gray-500 mb-4">Education portal system.</p>
+
+  <div class="flex gap-2 flex-wrap mb-4">
+    <span class="bg-orange-100 text-orange-500 text-xs px-3 py-1 rounded-full">Node.js</span>
+    <span class="bg-orange-100 text-orange-500 text-xs px-3 py-1 rounded-full">MongoDB</span>
+    <span class="bg-orange-100 text-orange-500 text-xs px-3 py-1 rounded-full">REST API</span>
+  </div>
+
+  <div class="flex justify-between text-xs text-gray-400">
+    <span>24x7 monitoring</span>
+    <a href="#" class="text-orange-500">View</a>
+  </div>
+
+</div>
+
+<!-- CARD 5 -->
+<div class="project web bg-white rounded-3xl shadow-lg overflow-hidden p-5 group hover:-translate-y-1 hover:shadow-2xl transition">
+  <div class="relative h-44 overflow-hidden mb-4">
+    <img src="https://backendcodersindia.com/assets/images/testemonials/marley.png" class="w-full h-full object-cover">
+    <span class="absolute top-3 left-3 bg-green-600 text-white text-xs px-3 py-1 rounded-full">LIVE</span>
+  </div>
+   <div class="flex justify-between text-[10px] text-gray-400 mb-2">
+    <span>WEB</span>
+    <span class="text-orange-500">JAN 2025</span>
+  </div>
+
+  <h3 class="text-lg font-semibold mb-2">Marley Moves</h3>
+  <p class="text-sm text-gray-500 mb-4">Logistics control system.</p>
+
+  <div class="flex gap-2 flex-wrap mb-4">
+    <span class="bg-orange-100 text-orange-500 text-xs px-3 py-1 rounded-full">Node.js</span>
+    <span class="bg-orange-100 text-orange-500 text-xs px-3 py-1 rounded-full">MongoDB</span>
+    <span class="bg-orange-100 text-orange-500 text-xs px-3 py-1 rounded-full">REST API</span>
+  </div>
+
+  <div class="flex justify-between text-xs text-gray-400">
+    <span>+41% throughput</span>
+    <a href="#" class="text-orange-500">View</a>
+  </div>
+
+</div>
+
+<!-- CARD 6 -->
+<div class="project crm bg-white rounded-3xl shadow-lg overflow-hidden p-5 group hover:-translate-y-1 hover:shadow-2xl transition">
+  <div class="relative h-44 overflow-hidden mb-4">
+    <img src="https://backendcodersindia.com/assets/images/testemonials/er.png" class="w-full h-full object-cover">
+    <span class="absolute top-3 left-3 bg-green-600 text-white text-xs px-3 py-1 rounded-full">LIVE</span>
+  </div>
+  <div class="flex justify-between text-[10px] text-gray-400 mb-2">
+    <span>CRM</span>
+    <span class="text-orange-500">JAN 2025</span>
+  </div>
+
+  <h3 class="text-lg font-semibold mb-2">ER Data Solutions</h3>
+  <p class="text-sm text-gray-500 mb-4">CRM dashboard & analytics.</p>
+
+  <div class="flex gap-2 flex-wrap mb-4">
+    <span class="bg-orange-100 text-orange-500 text-xs px-3 py-1 rounded-full">Node.js</span>
+    <span class="bg-orange-100 text-orange-500 text-xs px-3 py-1 rounded-full">MongoDB</span>
+    <span class="bg-orange-100 text-orange-500 text-xs px-3 py-1 rounded-full">REST API</span>
+  </div>
+
+  <div class="flex justify-between text-xs text-gray-400">
+    <span>+31% accuracy</span>
+    <a href="#" class="text-orange-500">View</a>
+  </div>
+</div>
+
+<!-- more -->
+  <!-- CARD 1 -->
+<div class="project web bg-white rounded-3xl shadow-lg overflow-hidden p-5 group hover:-translate-y-1 hover:shadow-2xl transition">
+  <div class="relative h-44 overflow-hidden mb-4">
+    <img src="{{asset('assets/ai_demo/dental_clinic/1.png')}}" class="w-full h-full object-cover group-hover:scale-105 transition">
+    <span class="absolute top-3 left-3 bg-green-600 text-white text-xs px-3 py-1 rounded-full">LIVE</span>
+  </div>
+  <div class="p-5 space-y-3">
+    <div class="flex justify-between text-xs text-gray-500 uppercase">
+      <span>Web</span><span class="text-orange-500 font-semibold">Jan 2025</span>
+    </div>
+    <h3 class="text-xl font-semibold">Bright Smile</h3>
+    <p class="text-sm text-gray-600">Dental clinic management system.</p>
+    <div class="flex gap-2 flex-wrap">
+      <span class="bg-orange-100 text-orange-500 text-xs px-3 py-1 rounded-full">Node</span>
+      <span class="bg-orange-100 text-orange-500 text-xs px-3 py-1 rounded-full">Mongo</span>
+    </div>
+    <div class="flex justify-between text-xs text-gray-500">
+      <span>+650 drivers</span>
+      <a href="#" class="text-orange-500 font-semibold">View</a>
+    </div>
+  </div>
+
+</div>
+
+<!-- CARD 2 -->
+<div class="project saas bg-white rounded-3xl shadow-lg overflow-hidden p-5 group hover:-translate-y-1 hover:shadow-2xl transition">
+  <div class="relative h-44 overflow-hidden mb-4">
+    <img src="{{asset('assets/ai_demo/gym/1.png')}}" class="w-full h-full object-cover">
+    <span class="absolute top-3 left-3 bg-green-600 text-white text-xs px-3 py-1 rounded-full">LIVE</span>
+  </div>
+   <div class="flex justify-between text-[10px] text-gray-400 mb-2">
+    <span>SAAS</span>
+    <span class="text-orange-500">JAN 2025</span>
+  </div>
+
+  <h3 class="text-lg font-semibold mb-2">Fitness Club</h3>
+  <p class="text-sm text-gray-500 mb-4">Gym management & fitness tracking system.</p>
+
+  <div class="flex gap-2 flex-wrap mb-4">
+    <span class="bg-orange-100 text-orange-500 text-xs px-3 py-1 rounded-full">Node.js</span>
+    <span class="bg-orange-100 text-orange-500 text-xs px-3 py-1 rounded-full">MongoDB</span>
+    <span class="bg-orange-100 text-orange-500 text-xs px-3 py-1 rounded-full">REST API</span>
+  </div>
+
+  <div class="flex justify-between text-xs text-gray-400">
+    <span>+28% bookings</span>
+    <a href="#" class="text-orange-500">View</a>
+  </div>
+
+</div>
+
+<!-- CARD 3 -->
+<div class="project web bg-white rounded-3xl shadow-lg overflow-hidden p-5 group hover:-translate-y-1 hover:shadow-2xl transition">
+  <div class="relative h-44 overflow-hidden mb-4">
+    <img src="{{asset('assets/ai_demo/incredible_india/1.png')}}" class="w-full h-full object-cover">
+    <span class="absolute top-3 left-3 bg-green-600 text-white text-xs px-3 py-1 rounded-full">LIVE</span>
+  </div>
+  <div class="flex justify-between text-[10px] text-gray-400 mb-2">
+    <span>WEB</span>
+    <span class="text-orange-500">JAN 2025</span>
+  </div>
+
+  <h3 class="text-lg font-semibold mb-2">Incredible India</h3>
+  <p class="text-sm text-gray-500 mb-4">Tourism & travel platform.</p>
+
+  <div class="flex gap-2 flex-wrap mb-4">
+    <span class="bg-orange-100 text-orange-500 text-xs px-3 py-1 rounded-full">Node.js</span>
+    <span class="bg-orange-100 text-orange-500 text-xs px-3 py-1 rounded-full">MongoDB</span>
+    <span class="bg-orange-100 text-orange-500 text-xs px-3 py-1 rounded-full">REST API</span>
+  </div>
+
+  <div class="flex justify-between text-xs text-gray-400">
+    <span>47ms response</span>
+    <a href="#" class="text-orange-500">View</a>
+  </div>
+
+</div>
+
+<!-- CARD 4 -->
+<div class="project ecommerce bg-white rounded-3xl shadow-lg overflow-hidden p-5 group hover:-translate-y-1 hover:shadow-2xl transition">
+  <div class="relative h-44 overflow-hidden mb-4">
+    <img src="{{asset('assets/ai_demo/plumber/1.png')}}" class="w-full h-full object-cover">
+    <span class="absolute top-3 left-3 bg-green-600 text-white text-xs px-3 py-1 rounded-full">LIVE</span>
+  </div>
+  <div class="flex justify-between text-[10px] text-gray-400 mb-2">
+    <span>WEB</span>
+    <span class="text-orange-500">JAN 2025</span>
+  </div>
+
+  <h3 class="text-lg font-semibold mb-2">Quick Fix</h3>
+  <p class="text-sm text-gray-500 mb-4">Plumbing service booking system.</p>
+
+  <div class="flex gap-2 flex-wrap mb-4">
+    <span class="bg-orange-100 text-orange-500 text-xs px-3 py-1 rounded-full">Node.js</span>
+    <span class="bg-orange-100 text-orange-500 text-xs px-3 py-1 rounded-full">MongoDB</span>
+    <span class="bg-orange-100 text-orange-500 text-xs px-3 py-1 rounded-full">REST API</span>
+  </div>
+
+  <div class="flex justify-between text-xs text-gray-400">
+    <span>24x7 monitoring</span>
+    <a href="#" class="text-orange-500">View</a>
+  </div>
+
+</div>
+
+<!-- CARD 5 -->
+<div class="project web bg-white rounded-3xl shadow-lg overflow-hidden p-5 group hover:-translate-y-1 hover:shadow-2xl transition">
+  <div class="relative h-44 overflow-hidden mb-4">
+    <img src="{{asset('assets/ai_demo/restaurant/1.png')}}" class="w-full h-full object-cover">
+    <span class="absolute top-3 left-3 bg-green-600 text-white text-xs px-3 py-1 rounded-full">LIVE</span>
+  </div>
+   <div class="flex justify-between text-[10px] text-gray-400 mb-2">
+    <span>WEB</span>
+    <span class="text-orange-500">JAN 2025</span>
+  </div>
+
+  <h3 class="text-lg font-semibold mb-2">Savory Bites</h3>
+  <p class="text-sm text-gray-500 mb-4">Restaurant management & ordering system.</p>
+
+  <div class="flex gap-2 flex-wrap mb-4">
+    <span class="bg-orange-100 text-orange-500 text-xs px-3 py-1 rounded-full">Node.js</span>
+    <span class="bg-orange-100 text-orange-500 text-xs px-3 py-1 rounded-full">MongoDB</span>
+    <span class="bg-orange-100 text-orange-500 text-xs px-3 py-1 rounded-full">REST API</span>
+  </div>
+
+  <div class="flex justify-between text-xs text-gray-400">
+    <span>+41% throughput</span>
+    <a href="#" class="text-orange-500">View</a>
+  </div>
+
+</div>
+
+
+
+</div>
+
+</div>
+
+
+</div>
 </section>
 
-<!-- FEATURES PROJECTS -->
-<section id="portfolio" class="bg-white px-6 py-24">
+
+<!-- CASE STUDY -->
+<section class="py-24 bg-white">
+
+  <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+
+    <!-- IMAGE -->
+    <div class="relative group">
+      <img 
+        src="{{asset('assets/images/backend_coders_split_1.png')}}"
+        class="rounded-2xl shadow-xl w-full object-cover transition duration-500 group-hover:scale-105"
+      />
+
+      <!-- OVERLAY BADGE -->
+      <div class="absolute top-4 left-4 bg-[#FD5528] text-white text-xs px-4 py-2 rounded-full shadow">
+        Case Study
+      </div>
+    </div>
+
+    <!-- CONTENT -->
+    <div>
+
+      <!-- TITLE -->
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 leading-snug">
+        Scaling a SaaS Platform for  
+        <span class="text-[#FD5528]">High Performance</span>
+      </h2>
+
+      <!-- DESCRIPTION -->
+      <p class="mt-6 text-gray-600 leading-relaxed">
+        We helped a growing startup transform their SaaS platform into a high-performance, 
+        scalable solution. By optimizing architecture and improving UI/UX, we delivered 
+        faster load times and better user engagement.
+      </p>
+
+      <!-- RESULTS -->
+      <div class="mt-8 grid grid-cols-2 gap-6">
+
+        <div class="bg-orange-50 p-4 rounded-xl text-center">
+          <h3 class="text-2xl font-bold text-[#FD5528]">40%</h3>
+          <p class="text-sm text-gray-600 mt-1">Faster Load Time</p>
+        </div>
+
+        <div class="bg-orange-50 p-4 rounded-xl text-center">
+          <h3 class="text-2xl font-bold text-[#FD5528]">2x</h3>
+          <p class="text-sm text-gray-600 mt-1">User Engagement</p>
+        </div>
+
+        <div class="bg-orange-50 p-4 rounded-xl text-center col-span-2">
+          <h3 class="text-2xl font-bold text-[#FD5528]">Scalable</h3>
+          <p class="text-sm text-gray-600 mt-1">Architecture Built for Growth</p>
+        </div>
+
+      </div>
+
+      <!-- CTA -->
+      <div class="mt-8 flex gap-4 flex-wrap">
+        <a href="#" class="bg-[#FD5528] text-white px-6 py-3 rounded-xl font-semibold shadow hover:scale-105 transition">
+          View Full Case Study
+        </a>
+
+        <a href="#" class="border border-[#FD5528] text-[#FD5528] px-6 py-3 rounded-xl font-semibold hover:bg-orange-50 transition">
+          Start Your Project
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- TECHNOLOGIES -->
+
+<!-- TECHNOLOGIES -->
+<section id="technologies" class="bg-[#F9FAFB] px-6 py-16 sm:py-20 lg:py-24">
 
   <div class="max-w-7xl mx-auto">
 
     <!-- Heading -->
-    <div class="text-center max-w-3xl mx-auto">
-
-      <p class="text-xs font-semibold uppercase tracking-[0.35em] text-[#FD5528] "
-      data-aos="fade-up">
-        Work
+    <div class="text-center max-w-3xl mx-auto mb-12">
+      <p
+        data-aos="fade-up"
+        class="inline-block text-xs sm:text-sm font-semibold uppercase tracking-[0.35em] text-[#FD5528] relative px-5 py-2 rounded-full bg-white/70 backdrop-blur-md shadow-[0_8px_20px_rgba(0,0,0,0.08)] border border-white/40 before:absolute before:inset-0 before:rounded-full before:bg-gradient-to-r before:from-[#FD5528]/20 before:to-orange-200/30 before:-z-10"
+      >
+        Development Expertise
       </p>
 
-      <h2 class="mt-4 text-3xl font-bold text-gray-900 md:text-4xl"
-      data-aos="fade-up" data-aos-delay="100">
-        Featured Projects
+      <h2 class="mt-4 text-3xl font-bold text-gray-900 md:text-4xl" data-aos="fade-up" data-aos-delay="100">
+        Technologies We Love
       </h2>
 
-      <p class="mt-4 text-gray-600"
-      data-aos="fade-up" data-aos-delay="200">
-        Real products delivered for fast-paced teams.
+      <p class="mt-4 text-sm sm:text-base text-gray-600" data-aos="fade-up" data-aos-delay="200">
+        A modern stack for scalable apps, polished interfaces, and reliable cloud delivery.
       </p>
-
     </div>
 
-    <!-- Portfolio Grid -->
-    <div class="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+    <div class="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] items-stretch">
 
-      <!-- Project -->
-      <article data-aos="fade-up"
-      class="group rounded-2xl border  border-gray-200 bg-white p-7 shadow-sm transition hover:-translate-y-2 hover:shadow-xl shadow-[#FD5528]  hover:shadow-[#f9b5a0] ">
+      <div class="rounded-[2rem] border border-white/80 bg-white/95 p-8 shadow-[0_30px_80px_rgba(253,85,40,0.12)]" data-aos="fade-right" data-aos-delay="300">
+        <span class="inline-block text-xs sm:text-sm font-semibold uppercase tracking-[0.35em] 
+         text-[#FD5528] relative px-5 py-2 rounded-full 
+         bg-white/60 backdrop-blur-md 
+         shadow-[0_8px_20px_rgba(0,0,0,0.08)] 
+         border border-white/40
+         before:absolute before:inset-0 before:rounded-full 
+         before:bg-gradient-to-r before:from-[#FD5528]/20 before:to-orange-200/30 
+         before:-z-10">
+          Core expertise
+        </span>
 
-        <p class="text-xs text-center font-semibold uppercase tracking-[0.25em] text-[#FD5528] ">
-          ERP Systems
-        </p>
-
-        <h3 class="mt-4 text-center text-xl font-semibold text-gray-900">
-          Enterprise ERP System
+        <h3 class="mt-6 text-2xl sm:text-3xl fontffffffbold text-gray-900">
+          Build faster with proven tools
         </h3>
 
-        <p class="mt-3 text-center text-sm text-gray-600">
-          Complete business management solution for manufacturing clients.
+        <p class="mt-4 text-gray-600 leading-relaxed">
+          We combine backend power, frontend polish, and cloud infrastructure to deliver fast, secure, and scalable digital products.
         </p>
 
-        <p class="mt-4 text-center text-xs font-mono text-gray-500">
-          .NET Core • SQL Server • React
-        </p>
+        <div class="mt-10 grid gap-4 sm:grid-cols-2">
+          <div class="rounded-3xl border border-gray-200 bg-[#FFF7F0] p-5">
+            <p class="font-semibold text-gray-900">Backend & APIs</p>
+            <p class="mt-2 text-sm text-gray-600">.NET Core, Node.js, Laravel</p>
+          </div>
+          <div class="rounded-3xl border border-gray-200 bg-[#EFF7FF] p-5">
+            <p class="font-semibold text-gray-900">Frontend</p>
+            <p class="mt-2 text-sm text-gray-600">React, Next.js, TypeScript</p>
+          </div>
+          <div class="rounded-3xl border border-gray-200 bg-[#EFFCF5] p-5">
+            <p class="font-semibold text-gray-900">Cloud & Data</p>
+            <p class="mt-2 text-sm text-gray-600">AWS, Firebase, MongoDB, SQL Server</p>
+          </div>
+          <div class="rounded-3xl border border-gray-200 bg-[#FFF5F7] p-5">
+            <p class="font-semibold text-gray-900">Delivery</p>
+            <p class="mt-2 text-sm text-gray-600">SaaS, eCommerce, enterprise-grade products</p>
+          </div>
+        </div>
+      </div>
 
-      </article>
+      <div class="rounded-[2rem] bg-white border border-gray-200 shadow-xl overflow-hidden" data-aos="fade-left" data-aos-delay="400">
+        <div class="p-6 sm:p-8 bg-gradient-to-br from-white via-[#FFF6F0] to-[#FFF2ED]">
+          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+            <div>
+              <span class="text-xs font-semibold uppercase tracking-[0.35em] text-[#FD5528]">Tech gallery</span>
+              <h3 class="mt-3 text-2xl font-bold text-gray-900">Loved by product teams</h3>
+            </div>
+            <span class="inline-flex items-center rounded-full bg-[#FD5528]/10 px-3 py-1 text-xs font-semibold text-[#FD5528]">
+              Responsive layout
+            </span>
+          </div>
 
+          <!-- <div class="mt-8 grid gap-4 grid-cols-2 sm:grid-cols-3 xl:grid-cols-4">
+            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition  hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg" class="w-12 h-12" alt="Dotnet Core">
+              <span class="text-sm font-semibold text-gray-900">.NET Core</span>
+            </div>
+            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" class="w-12 h-12" alt="React">
+              <span class="text-sm font-semibold text-gray-900">React</span>
+            </div>
+            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" class="w-12 h-12" alt="Node.js">
+              <span class="text-sm font-semibold text-gray-900">Node.js</span>
+            </div>
+            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" class="w-12 h-12" alt="MongoDB">
+              <span class="text-sm font-semibold text-gray-900">MERN</span>
+            </div>
+            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-original.svg" class="w-12 h-12" alt="WordPress">
+              <span class="text-sm font-semibold text-gray-900">WordPress</span>
+            </div>
+            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
+              <img src="https://cdn.simpleicons.org/spotify/1DB954" class="w-12 h-12" alt="Shopify">
+              <span class="text-sm font-semibold text-gray-900">Shopify</span>
+            </div>
+            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" class="w-12 h-12" alt="Laravel">
+              <span class="text-sm font-semibold text-gray-900">Laravel</span>
+            </div>
+            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" class="w-12 h-12" alt="SQL Server">
+              <span class="text-sm font-semibold text-gray-900">SQL Server</span>
+            </div>
+            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" class="w-12 h-12" alt="Firebase">
+              <span class="text-sm font-semibold text-gray-900">Firebase</span>
+            </div>
+            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" class="w-12 h-12" alt="AWS">
+              <span class="text-sm font-semibold text-gray-900">AWS</span>
+            </div>
+            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" class="w-12 h-12" alt="TypeScript">
+              <span class="text-sm font-semibold text-gray-900">TypeScript</span>
+            </div>
+            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" class="w-12 h-12 bg-white p-1 rounded" alt="Next.js">
+              <span class="text-sm font-semibold text-gray-900">Next.js</span>
+            </div>
+          </div> -->
+           <div class="mt-8 grid gap-4 grid-cols-3 sm:grid-cols-3 xl:grid-cols-4">
+            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition  hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg" class="w-12 h-12" alt="Dotnet Core">
+              <span class="text-sm font-semibold text-gray-900">.NET Core</span>
+            </div>
+            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" class="w-12 h-12" alt="React">
+              <span class="text-sm font-semibold text-gray-900">React</span>
+            </div>
+            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" class="w-12 h-12" alt="Node.js">
+              <span class="text-sm font-semibold text-gray-900">Node.js</span>
+            </div>
+            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" class="w-12 h-12" alt="MongoDB">
+              <span class="text-sm font-semibold text-gray-900">MERN</span>
+            </div>
+            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-original.svg" class="w-12 h-12" alt="WordPress">
+              <span class="text-sm font-semibold text-gray-900">WordPress</span>
+            </div>
+            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
+              <img src="https://cdn.simpleicons.org/spotify/1DB954" class="w-12 h-12" alt="Shopify">
+              <span class="text-sm font-semibold text-gray-900">Shopify</span>
+            </div>
+            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" class="w-12 h-12" alt="Laravel">
+              <span class="text-sm font-semibold text-gray-900">Laravel</span>
+            </div>
+            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" class="w-12 h-12" alt="SQL Server">
+              <span class="text-sm font-semibold text-gray-900">SQL Server</span>
+            </div>
+            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" class="w-12 h-12" alt="Firebase">
+              <span class="text-sm font-semibold text-gray-900">Firebase</span>
+            </div>
+            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" class="w-12 h-12" alt="AWS">
+              <span class="text-sm font-semibold text-gray-900">AWS</span>
+            </div>
+            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" class="w-12 h-12" alt="TypeScript">
+              <span class="text-sm font-semibold text-gray-900">TypeScript</span>
+            </div>
+            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" class="w-12 h-12 bg-white p-1 rounded" alt="Next.js">
+              <span class="text-sm font-semibold text-gray-900">Next.js</span>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- END TECHNOLOGIES -->
 
-      <article data-aos="fade-up" data-aos-delay="100"
-      class="group rounded-2xl border border-gray-200 bg-white p-7 shadow-sm transition hover:-translate-y-2 hover:shadow-xl shadow-[#FD5528]  hover:shadow-[#f9b5a0] ">
+<!-- RESULTS -->
+   <!-- STATS SECTION -->
+<section id="stats-section-pro" class="relative py-12 bg-gradient-to-br from-[#FD5528] to-orange-500 text-white overflow-hidden">
 
-        <p class="text-xs text-center font-semibold uppercase tracking-[0.25em] text-[#FD5528] ">
-          POS Systems
-        </p>
+  <!-- BACKGROUND EFFECT -->
+  <div class="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_white,_transparent_70%)]"></div>
 
-        <h3 class="mt-4 text-center text-xl font-semibold text-gray-900">
-          Multi-Store POS Platform
-        </h3>
+  <div class="relative max-w-7xl mx-auto px-6 text-center">
 
-        <p class="mt-3 text-center text-sm text-gray-600">
-          Cloud-native point-of-sale system for retail and hospitality chains.
-        </p>
+    <!-- HEADER -->
+    <h2 class="text-3xl md:text-5xl font-bold tracking-tight">
+      Our Impact 
+    </h2>
 
-        <p class="mt-4 text-center text-xs font-mono text-gray-500">
-          Node.js • React • Firebase
-        </p>
+    <p class="mt-4 text-white/80 max-w-2xl mx-auto text-sm md:text-base">
+      We deliver scalable solutions and build long-term partnerships across industries worldwide.
+    </p>
 
-      </article>
+    <!-- STATS GRID -->
+    <div class="mt-6 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10">
 
+      <!-- CARD -->
+      <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 hover:scale-105 transition duration-300 shadow-lg">
+        <h3 class="counter text-4xl md:text-5xl font-bold" data-target="50">0</h3>
+        <p class="mt-2 text-white/80 text-sm">Projects Delivered</p>
+      </div>
 
-      <article data-aos="fade-up" data-aos-delay="200"
-      class="group rounded-2xl border border-gray-200 bg-white p-7 shadow-sm transition hover:-translate-y-2 hover:shadow-xl shadow-[#FD5528]  hover:shadow-[#f9b5a0] ">
+      <!-- CARD -->
+      <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 hover:scale-105 transition duration-300 shadow-lg">
+        <h3 class="counter text-4xl md:text-5xl font-bold" data-target="40">0</h3>
+        <p class="mt-2 text-white/80 text-sm">Happy Clients</p>
+      </div>
 
-        <p class="text-xs text-center font-semibold uppercase tracking-[0.25em] text-[#FD5528] ">
-          Web Applications
-        </p>
+      <!-- CARD -->
+      <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 hover:scale-105 transition duration-300 shadow-lg">
+        <h3 class="counter text-4xl md:text-5xl font-bold" data-target="15">0</h3>
+        <p class="mt-2 text-white/80 text-sm">Countries Served</p>
+      </div>
 
-        <h3 class="mt-4 text-center text-xl font-semibold text-gray-900">
-          SaaS Analytics Dashboard
-        </h3>
-
-        <p class="mt-3 text-center text-sm text-gray-600">
-          Real-time insights and reporting tools for data-driven product teams.
-        </p>
-
-        <p class="mt-4 text-center text-xs font-mono text-gray-500">
-          React • TypeScript • PostgreSQL
-        </p>
-
-      </article>
-
-
-      <article data-aos="fade-up" data-aos-delay="300"
-      class="group rounded-2xl border border-gray-200 bg-white p-7 shadow-sm transition hover:-translate-y-2 hover:shadow-xl shadow-[#FD5528]  hover:shadow-[#f9b5a0] ">
-
-        <p class="text-xs text-center font-semibold uppercase tracking-[0.25em] text-[#FD5528] ">
-          Ecommerce Platforms
-        </p>
-
-        <h3 class="mt-4 text-center text-xl font-semibold text-gray-900">
-          E-commerce Marketplace
-        </h3>
-
-        <p class="mt-3 text-center text-sm text-gray-600">
-          Multi-vendor marketplace with secure payments and messaging.
-        </p>
-
-        <p class="mt-4 text-center text-xs font-mono text-gray-500">
-          Next.js • Stripe • MongoDB
-        </p>
-
-      </article>
-
-
-      <article data-aos="fade-up" data-aos-delay="400"
-      class="group rounded-2xl border border-gray-200 bg-white p-7 shadow-sm transition hover:-translate-y-2 hover:shadow-xl shadow-[#FD5528]  hover:shadow-[#f9b5a0] ">
-
-        <p class="text-xs text-center font-semibold uppercase tracking-[0.25em] text-[#FD5528] ">
-          Startup MVPs
-        </p>
-
-        <h3 class="mt-4 text-center text-xl font-semibold text-gray-900">
-          HealthTech MVP
-        </h3>
-
-        <p class="mt-3 text-center text-sm text-gray-600">
-          Patient management system with telemedicine workflows.
-        </p>
-
-        <p class="mt-4 text-center text-xs font-mono text-gray-500">
-          React Native • Node.js • AWS
-        </p>
-
-      </article>
-
-
-      <article data-aos="fade-up" data-aos-delay="500"
-      class="group rounded-2xl border border-gray-200 bg-white p-7 shadow-sm transition hover:-translate-y-2 hover:shadow-xl shadow-[#FD5528]  hover:shadow-[#f9b5a0] ">
-
-        <p class="text-xs text-center font-semibold uppercase tracking-[0.25em] text-[#FD5528] ">
-          Web Applications
-        </p>
-
-        <h3 class="mt-4 text-center text-xl font-semibold text-gray-900">
-          Logistics Management Suite
-        </h3>
-
-        <p class="mt-3 text-cecnter text-sm text-gray-600">
-          Fleet tracking and route optimization platform for logistics companies.
-        </p>
-
-        <p class="mt-4 text-center text-xs font-mono text-gray-500">
-          .NET Core • React • Azure
-        </p>
-
-      </article>
+      <!-- CARD -->
+      <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 hover:scale-105 transition duration-300 shadow-lg">
+        <h3 class="counter text-4xl md:text-5xl font-bold" data-target="100">0</h3>
+        <p class="mt-2 text-white/80 text-sm">Client Satisfaction %</p>
+      </div>
 
     </div>
 
@@ -623,10 +665,22 @@
 
 </section>
 
-<section class="bg-[#F9FAFB] py-16 sm:py-20 lg:py-24 px-6">
-  <div class="max-w-9xl lg:mx-24 mx-auto text-center mb-16 items-center">
-        <!-- Heading -->
-            <p 
+
+<!-- TESTIMONIAL -->
+<!-- Swiper CSS -->
+
+
+
+<section class="relative py-28 px-6 overflow-hidden">
+
+  <!-- BACKGROUND GLOW -->
+  <div class="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_top,_#FD5528,_transparent_60%)]"></div>
+
+  <div class="relative max-w-6xl mx-auto text-center">
+
+
+     <span 
+    
       data-aos="fade-up"
       class="inline-block text-xs sm:text-sm font-semibold uppercase tracking-[0.35em] 
          text-[#FD5528] relative px-5 py-2 rounded-full 
@@ -637,137 +691,249 @@
          before:bg-gradient-to-r before:from-[#FD5528]/20 before:to-orange-200/30 
          before:-z-10">
 
-          Why Choose Us
-
-    </p>
-      <!-- <p class="text-sm uppercase tracking-widest text-[#FD5528] font-semibold">
-        Why Choose Us
-      </p> -->
-
-      <h2 class="mt-4 text-3xl md:text-4xl font-bold text-gray-900">
-        Built for long-term partnerships
-      </h2>
-      
-      <span class="mt-4 my-2 text-gray-600 max-w-lg text-center">
-        We deliver scalable, reliable, and future-ready solutions tailored to your business growth.
+         Testimonials
       </span>
-
-
-    </div>
-  <div class="max-w-9xl lg:mx-24 mx-auto grid lg:grid-cols-2 gap-16 items-center">
-  
- <!-- LEFT CONTENT -->
-    <div class="relative">
-
-      <img 
-        src="{{asset('assets/images/choose-us.png')}}"
-        alt="Team working"
-        class="rounded-2xl shadow-xl w-full h-full object-cover"
-      >
-
+    <!-- BADGE -->
    
+
+    <!-- TITLE -->
+    <h2 class="mt-6 text-3xl md:text-5xl font-bold text-black">
+      What Our <span class="text-[#FD5528]">Clients Say</span>
+    </h2>
+
+    <!-- SWIPER -->
+<div class="swiper mt-16">
+
+      <div class="swiper-wrapper">
+
+        <!-- SLIDE -->
+        <div class="swiper-slide">
+<div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition duration-300 p-6 max-w-md border border-gray-100">
+
+  <!-- HEADER -->
+  <div class="flex items-center justify-between mb-4">
+
+    <!-- USER -->
+    <div class="flex items-center gap-3">
+      <div class="relative">
+        <img src="https://randomuser.me/api/portraits/women/68.jpg"
+             class="w-12 h-12 rounded-full object-cover">
+
+        <!-- VERIFIED BADGE -->
+        <span class="absolute -bottom-1 -right-1 bg-green-500 text-white text-[10px] px-1 rounded-full">✔</span>
+      </div>
+
+      <div>
+        <h4 class="font-semibold text-gray-900 text-sm">Aimee H</h4>
+        <p class="text-xs text-gray-500">1 January 2026</p>
+      </div>
     </div>
 
-       <!-- RIGHT IMAGE -->
-    <div>
+    <!-- GOOGLE LOGO -->
+    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"
+         class="w-12 opacity-80">
+  </div>
 
-    
+  <!-- STARS -->
+  <div class="flex items-center gap-1 mb-3">
+    <span class="text-yellow-400 text-lg">★★★★★</span>
+  </div>
 
-      <!-- FEATURES GRID -->
-      <div class="mt-10 grid sm:grid-cols-2 gap-6">
+  <!-- REVIEW TEXT -->
+  <p class="text-gray-700 text-start text-sm leading-relaxed mb-4">
+    This is a really wonderful experience on all counts. The food was lovely, traditional, and of excellent quality with very polite and attentive service.
+  </p>
 
-    
-        <!-- ITEM -->
-        <div class="flex gap-3 p-4 bg-white border border-gray-200 rounded-xl transition duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-[#FD5528]/20">
-          <div class="w-14 h-14 flex items-center justify-center rounded-lg bg-[#FFF1EC] text-[#FD5528] text-lg">
-                  <img src="https://img.icons8.com/?size=100&id=DCkAZ79sIYhT&format=png&color=FD5528" class="w-12 h-12">
-          </div>
-          <div>
-            <h3 class="text-sm font-semibold text-gray-900">17+ Years Experience</h3>
-            <p class="text-xs text-gray-600 mt-1">Reliable, high-quality solutions across industries.</p>
-          </div>
+  <!-- FOOTER -->
+  <div class="flex items-center justify-between text-xs text-gray-400">
+
+    <!-- CATEGORY -->
+    <span class="bg-gray-100 px-2 py-1 rounded-full text-gray-500">
+      Verified Review
+    </span>
+
+    <!-- ACTION -->
+    <button class="flex items-center gap-1 hover:text-[#FD5528] transition">
+      Director
+    </button>
+
+  </div>
+
+</div>
         </div>
 
-        <div class="flex gap-3 p-4 bg-white border border-gray-200 rounded-xl transition duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-[#FD5528]/20">
-          <div class="w-14 h-14 flex items-center justify-center rounded-lg bg-[#FFF1EC] text-[#FD5528] text-lg">
-             <img src="https://img.icons8.com/?size=100&id=124222&format=png&color=FD5528" class="w-12 h-12">
-          </div>
-          <div>
-            <h3 class="text-sm font-semibold text-gray-900">Dedicated Teams</h3>
-            <p class="text-xs text-gray-600 mt-1">Experts focused exclusively on your project.</p>
-          </div>
+        <!-- SLIDE -->
+        <div class="swiper-slide">
+<div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition duration-300 p-6 max-w-md border border-gray-100">
+
+  <!-- HEADER -->
+  <div class="flex items-center justify-between mb-4">
+
+    <!-- USER -->
+    <div class="flex items-center gap-3">
+      <div class="relative">
+        <img src="https://randomuser.me/api/portraits/women/44.jpg"
+             class="w-12 h-12 rounded-full object-cover">
+
+        <!-- VERIFIED BADGE -->
+        <span class="absolute -bottom-1 -right-1 bg-green-500 text-white text-[10px] px-1 rounded-full">✔</span>
+      </div>
+
+      <div>
+        <h4 class="font-semibold text-gray-900 text-sm">Sophia Green</h4>
+        <p class="text-xs text-gray-500">1 January 2026</p>
+      </div>
+    </div>
+
+    <!-- GOOGLE LOGO -->
+    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"
+         class="w-12 opacity-80">
+  </div>
+
+  <!-- STARS -->
+  <div class="flex items-center gap-1 mb-3">
+    <span class="text-yellow-400 text-lg">★★★★★</span>
+  </div>
+
+  <!-- REVIEW TEXT -->
+  <p class="text-gray-700 text-start text-sm leading-relaxed mb-4">
+    This is a really wonderful experience on all counts.  Outstanding UI and backend performance. Our bookings increased significantly.
+  </p>
+
+  <!-- FOOTER -->
+  <div class="flex items-center justify-between text-xs text-gray-400">
+
+    <!-- CATEGORY -->
+    <span class="bg-gray-100 px-2 py-1 rounded-full text-gray-500">
+      Verified Review
+    </span>
+
+    <!-- ACTION -->
+    <button class="flex items-center gap-1 hover:text-[#FD5528] transition">
+      Director
+    </button>
+
+  </div>
+
+</div>
+         
         </div>
 
-        <div class="flex gap-3 p-4 bg-white border border-gray-200 rounded-xl transition duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-[#FD5528]/20">
-          <div class="w-14 h-14 flex items-center justify-center rounded-lg bg-[#FFF1EC] text-[#FD5528] text-lg">
-             <img src="https://img.icons8.com/?size=100&id=5TJlel7-79RU&format=png&color=FD5528" class="w-12 h-12">
-          </div>
-          <div>
-            <h3 class="text-sm font-semibold text-gray-900">Scalable Architecture</h3>
-            <p class="text-xs text-gray-600 mt-1">Systems built to grow with your business.</p>
-          </div>
-        </div>
+        <!-- SLIDE -->
+        <div class="swiper-slide">
+<div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition duration-300 p-6 max-w-md border border-gray-100">
 
-        <div class="flex gap-3 p-4 bg-white border border-gray-200 rounded-xl transition duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-[#FD5528]/20">
-          <div class="w-14 h-14 flex items-center justify-center rounded-lg bg-[#FFF1EC] text-[#FD5528] text-lg">
-            <img src="https://img.icons8.com/?size=100&id=68443&format=png&color=FD5528" class="w-12 h-12">
-          </div>
-          <div>
-            <h3 class="text-sm font-semibold text-gray-900">Agile & Transparent</h3>
-            <p class="text-xs text-gray-600 mt-1">Clear communication and faster delivery.</p>
-          </div>
-        </div>
+  <!-- HEADER -->
+  <div class="flex items-center justify-between mb-4">
 
-        <div class="flex gap-3 p-4 bg-white border border-gray-200 rounded-xl transition duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-[#FD5528]/20">
-          <div class="w-14 h-14 flex items-center justify-center rounded-lg bg-[#FFF1EC] text-[#FD5528] text-lg">
-               <img src="https://img.icons8.com/?size=100&id=117533&format=png&color=FD5528" class="w-12 h-12">
-          </div>
-          <div>
-            <h3 class="text-sm font-semibold text-gray-900">Startup-Friendly Pricing</h3>
-            <p class="text-xs text-gray-600 mt-1">Flexible pricing for growing businesses.</p>
-          </div>
-        </div>
+    <!-- USER -->
+    <div class="flex items-center gap-3">
+      <div class="relative">
+        <img src="https://randomuser.me/api/portraits/women/44.jpg"
+             class="w-12 h-12 rounded-full object-cover">
 
-        <div class="flex gap-3 p-4 bg-white border border-gray-200 rounded-xl transition duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-[#FD5528]/20">
-          <div class="w-14 h-14 flex items-center justify-center rounded-lg bg-[#FFF1EC] text-[#FD5528] text-lg">
-             <img src="https://img.icons8.com/?size=100&id=neBRkBaejCVJ&format=png&color=FD5528" class="w-12 h-12">
-          </div>
-          <div>
-            <h3 class="text-sm font-semibold text-gray-900">Long-Term Support</h3>
-            <p class="text-xs text-gray-600 mt-1">Continuous maintenance and updates.</p>
-          </div>
+        <!-- VERIFIED BADGE -->
+        <span class="absolute -bottom-1 -right-1 bg-green-500 text-white text-[10px] px-1 rounded-full">✔</span>
+      </div>
+
+      <div>
+        <h4 class="font-semibold text-gray-900 text-sm">Daniel Smith</h4>
+        <p class="text-xs text-gray-500">1 January 2026</p>
+      </div>
+    </div>
+
+    <!-- GOOGLE LOGO -->
+    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"
+         class="w-12 opacity-80">
+  </div>
+
+  <!-- STARS -->
+  <div class="flex items-center gap-1 mb-3">
+    <span class="text-yellow-400 text-lg">★★★★★</span>
+  </div>
+
+  <!-- REVIEW TEXT -->
+  <p class="text-gray-700 text-start text-sm leading-relaxed mb-4">
+    This is a really wonderful experience on all counts.   Professional team with strong technical expertise. They understand business needs..
+  </p>
+
+  <!-- FOOTER -->
+  <div class="flex items-center justify-between text-xs text-gray-400">
+
+    <!-- CATEGORY -->
+    <span class="bg-gray-100 px-2 py-1 rounded-full text-gray-500">
+      Verified Review
+    </span>
+
+    <!-- ACTION -->
+    <button class="flex items-center gap-1 hover:text-[#FD5528] transition">
+      Director
+    </button>
+
+  </div>
+
+</div>
+
+
+         
         </div>
 
       </div>
 
+    
     </div>
 
+  </div>
 
-   
+</section>
+
+<!-- CTA -->
+<!-- CTA SECTION -->
+<section class="relative overflow-hidden py-20 bg-gradient-to-r from-[#FC5124] via-orange-500 to-orange-400 text-white">
+
+  <!-- BACKGROUND GLOW -->
+  <div class="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_top_left,_white,_transparent_50%)]"></div>
+
+  <div class="relative max-w-5xl mx-auto px-6 text-center">
+
+    <!-- HEADING -->
+    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 leading-tight">
+      Have a Project in Mind?
+    </h2>
+
+    <!-- SUBTEXT -->
+    <p class="text-white/80 text-sm sm:text-base md:text-lg max-w-2xl mx-auto mb-10">
+      Let’s build something amazing together. Share your idea and we’ll turn it into a powerful digital product.
+    </p>
+
+    <!-- BUTTONS -->
+    <div class="flex flex-col sm:flex-row justify-center gap-4">
+
+      <!-- PRIMARY BUTTON -->
+      <a href="#contact"
+         class="group inline-flex items-center justify-center bg-white text-[#FC5124] px-6 py-3 rounded-xl font-semibold shadow-lg hover:shadow-2xl hover:scale-105 transition duration-300">
+
+        Contact Us
+
+        <!-- ARROW -->
+        <span class="ml-2 transition group-hover:translate-x-1">→</span>
+      </a>
+
+      <!-- WHATSAPP BUTTON -->
+      <a href="#contact"
+         class="group inline-flex items-center justify-center border border-white/40 px-6 py-3 rounded-xl font-semibold backdrop-blur-md hover:bg-white/10 hover:scale-105 transition duration-300">
+
+       
+        Let's Chat on WhatsApp
+      </a>
+
+    </div>
 
   </div>
 
 </section>
 
 
-<!-- CTA SECTION -->
-<section class="bg-[#FC5124] text-white py-16 text-center">
-  <h2 class="text-3xl font-bold mb-4">
-    Have a Project in Mind?
-  </h2>
-  <p class="text-gray-300 mb-6">
-    Let’s build scalable and powerful backend systems together.
-  </p>
-
-  <a href="#contact"
-     class="bg-white text-[#FC5124] px-6 py-3 rounded-lg font-semibold hover:bg-orange-600">
-    Contact Us
-  </a>
-    <a href="#contact"
-     class="bg-white text-[#FC5124] px-6 py-3 rounded-lg font-semibold hover:bg-orange-600">
-     Let's chat on Whatsapp
-  </a>
-</section>
 
 @endsection
 

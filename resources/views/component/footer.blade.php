@@ -26,7 +26,7 @@
              class="w-6 h-6">
       </a>
 
-      <a href="https://www.instagram.com/backendcoders" target="_blank"
+      <a href="https://www.instagram.com/backendcoders/" target="_blank"
          class="w-10 h-10 flex items-center justify-center rounded-full 
          bg-gradient-to-r from-[#b00000] to-[#fb813b] 
          hover:from-[#fb813b] hover:to-[#b00000] 
@@ -35,7 +35,7 @@
              class="w-6 h-6">
       </a>
 
-      <a href="https://www.linkedin.com/company/backendcodersindia/" target="_blank"
+      <a href="https://www.linkedin.com/company/103738896/admin/dashboard/" target="_blank"
          class="w-10 h-10 flex items-center justify-center rounded-full 
          bg-gradient-to-r from-[#b00000] to-[#fb813b] 
          hover:from-[#fb813b] hover:to-[#b00000] 

@@ -1,79 +1,43 @@
 @extends('component.main')
 @section('content')
+<!-- hero section  -->
+<section class="relative h-[30vh] flex items-center justify-center text-center text-white overflow-hidden">
 
-<section class="py-20 bg-gradient-to-b from-gray-50 to-white">
-  <div class="max-w-7xl mx-auto px-6">
+  <!-- BACKGROUND IMAGE -->
+  <img 
+    src="{{asset('assets/images/banner.png')}}"
+    class="absolute inset-0 w-full h-full object-cover"
+  />
 
-    <div class="grid lg:grid-cols-2 gap-14 items-center">
+  <!-- DARK OVERLAY -->
+  <div class="absolute inset-0 bg-black/60"></div>
 
-      <!-- LEFT CONTENT -->
-      <div data-aos="fade-right">
+  <!-- CONTENT -->
+  <div class="relative z-10 max-w-4xl px-6">
 
-        <h2 class="text-3xl md:text-5xl font-extrabold text-gray-900 mb-6 leading-tight">
-          About <span class="text-[#EA580C]">Backend Coders India</span>
-        </h2>
+  
 
-        <p class="text-gray-600 mb-4 leading-relaxed">
-          Backend Coders India started as a small development team in 2008 with a simple mission: help businesses leverage technology to grow.
-        </p>
+    <!-- HEADING -->
+    <h1 class="mt-6 text-4xl sm:text-5xl md:text-6xl font-bold leading-tight">
+     About Backend 
+      <span class="text-orange-600">Coders India</span>
+    </h1>
 
-        <p class="text-gray-600 mb-4 leading-relaxed">
-          Over 17+ years, we've evolved into a full-service software development company serving clients globally.
-        </p>
+    <!-- SUBTEXT -->
+    <p class="mt-6 text-gray-300 text-sm sm:text-base md:text-lg max-w-2xl mx-auto">
+      We are a passionate team of developers and designers helping businesses 
+      transform ideas into scalable, high-performance digital products.
+    </p>
 
-        <p class="text-gray-600 mb-8 leading-relaxed">
-          From enterprise ERP systems to startup MVPs, we empower businesses with scalable and reliable digital solutions.
-        </p>
-
-        <!-- Highlights -->
-        <div class="grid grid-cols-2 gap-6 mb-8">
-
-          <div data-aos="zoom-in" data-aos-delay="100"
-               class="bg-white p-6 rounded-2xl shadow-md text-center hover:shadow-xl hover:-translate-y-1 transition duration-300">
-            <h5 class="text-3xl font-bold text-[#EA580C]">17+</h5>
-            <p class="text-sm text-gray-500 mt-1">Years Experience</p>
-          </div>
-
-          <div data-aos="zoom-in" data-aos-delay="200"
-               class="bg-white p-6 rounded-2xl shadow-md text-center hover:shadow-xl hover:-translate-y-1 transition duration-300">
-            <h5 class="text-3xl font-bold text-[#EA580C]">500+</h5>
-            <p class="text-sm text-gray-500 mt-1">Projects Delivered</p>
-          </div>
-
-        </div>
-
-        <!-- Button -->
-        <a href="#"
-           data-aos="fade-up"
-           class="inline-flex items-center gap-2 bg-[#EA580C] text-white px-7 py-3 rounded-xl font-semibold shadow-lg hover:bg-[#D97706] hover:scale-105 transition duration-300">
-
-          Learn More
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
-               fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M17 8l4 4m0 0l-4 4m4-4H3" />
-          </svg>
-
-        </a>
-
-      </div>
-
-      <!-- RIGHT IMAGE -->
-      <div class="relative" data-aos="fade-left">
-
-        <!-- Decorative background -->
-        <div class="absolute -top-6 -left-6 w-72 h-72 rounded-full blur-3xl opacity-40"></div>
-
-        <img src="{{asset('assets/images/about.png')}}"
-             alt="Development Workspace"
-             class="relative w-full  hover:scale-105 transition duration-500">
-
-      </div>
-
-    </div>
+ 
 
   </div>
+
 </section>
+<!-- end hero section  -->
+
+
+
 
 <!-- WHO WE ARE-->
 <section id="who-we-are" class="bg-[#F9FAFB] px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 py-14 sm:py-16 md:py-20 lg:py-24 relative overflow-hidden">
@@ -163,184 +127,119 @@
 </section>
 <!-- END WHO WE ARE -->
 
-<!-- WHO WE ARE-->
-{{-- <section id="who-we-are" class="bg-[#F9FAFB] px-6 py-24">
+<!-- our story -->
+<section class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
 
-    <div class="max-w-6xl mx-auto text-center">
+    <!-- IMAGE -->
+    <div class="relative">
+      <img 
+        src="{{asset('assets/images/about.png')}}"
+        class="rounded-2xl  w-full h-full object-cover"
+      />
 
-        <p 
-        class="text-sm font-semibold uppercase tracking-[0.35em] text-[#FD5528] "
-        data-aos="fade-up">
-        Who We Are
-        </p>
-
-        <h2 
-        class="mt-4 text-3xl font-bold text-gray-900 md:text-4xl"
-        data-aos="fade-up"
-        data-aos-delay="100">
-        Backend Coders India
-        </h2>
-
-        <p 
-        class="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-gray-600"
-        data-aos="fade-up"
-        data-aos-delay="200">
-        Backend Coders India is a boutique technology studio crafting high-performance
-        web, mobile, and SaaS platforms for startups and enterprises that demand
-        scalability, security, and modern digital experiences.
-        </p>
-
-        <!-- Services -->
-        <div class="mt-12 grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-5">
-
-            <span 
-            data-aos="zoom-in"
-            class="rounded-xl border border-gray-200 bg-[#ffe6d7] px-5 py-4 text-sm font-medium text-gray-700 transition hover:border-[#FD5528]  hover:text-[#FD5528]  hover:shadow-md">
-            SaaS Platforms
-            </span>
-
-            <span 
-            data-aos="zoom-in"
-            data-aos-delay="100"
-            class="rounded-xl border border-gray-200 bg-[#ffe6d7] px-5 py-4 text-sm font-medium text-gray-700 transition hover:border-[#FD5528]  hover:text-[#FD5528]  hover:shadow-md">
-            ERP Systems
-            </span>
-
-            <span 
-            data-aos="zoom-in"
-            data-aos-delay="200"
-            class="rounded-xl border border-gray-200 bg-[#ffe6d7] px-5 py-4 text-sm font-medium text-gray-700 transition hover:border-[#FD5528]  hover:text-[#FD5528]  hover:shadow-md">
-            POS Systems
-            </span>
-
-            <span 
-            data-aos="zoom-in"
-            data-aos-delay="300"
-            class="rounded-xl border border-gray-200 bg-[#ffe6d7] px-5 py-4 text-sm font-medium text-gray-700 transition hover:border-[#FD5528]  hover:text-[#FD5528]  hover:shadow-md">
-            E-commerce
-            </span>
-
-            <span 
-            data-aos="zoom-in"
-            data-aos-delay="400"
-            class="rounded-xl border border-gray-200 bg-[#ffe6d7] px-5 py-4 text-sm font-medium text-gray-700 transition hover:border-[#FD5528]  hover:text-[#FD5528]  hover:shadow-md">
-            Custom Web Apps
-            </span>
-
-        </div>
-
+      <!-- FLOATING CARD -->
+      <!-- <div class="absolute bottom-6 left-6 bg-white p-4 rounded-xl shadow-lg">
+        <p class="text-sm text-gray-500">Since</p>
+        <h4 class="text-xl font-bold text-[#FD5528]">2023</h4>
+      </div> -->
     </div>
 
-</section> --}}
-<!-- END WHO WE ARE -->
+    <!-- CONTENT -->
+    <div>
 
-<!-- why choose us -->
-<section class="bg-[#F9FAFB] text-black py-20">
-  <div class="max-w-6xl mx-auto px-6 text-center">
-
-    <!-- Heading -->
-    <h2 
+         <!-- BADGE -->
+      <span 
+    
       data-aos="fade-up"
-      class="text-4xl md:text-5xl font-heading text-[#FD5528] mb-4">
-      Why Choose Us
-    </h2>
+      class="inline-block text-xs sm:text-sm font-semibold uppercase tracking-[0.35em] 
+         text-[#FD5528] relative px-5 py-2 rounded-full 
+         bg-white/60 backdrop-blur-md 
+         shadow-[0_8px_20px_rgba(0,0,0,0.08)] 
+         border border-white/40
+         before:absolute before:inset-0 before:rounded-full 
+         before:bg-gradient-to-r before:from-[#FD5528]/20 before:to-orange-200/30 
+         before:-z-10">
 
-    <p 
-      data-aos="fade-up"
-      data-aos-delay="100"
-      class="text-gray-400 max-w-2xl mx-auto mb-12">
-      Built for long-term partnerships, we deliver scalable, reliable, and future-ready solutions.
-    </p>
+         Our Story
+    </span>
+      <!-- BADGE -->
+      <!-- <span class="inline-block text-xs font-semibold uppercase tracking-[0.35em] 
+        text-[#FD5528] px-5 py-2 rounded-full bg-orange-50">
+        Our Story
+      </span> -->
 
-    <!-- Grid -->
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- HEADING -->
+      <h2 class="mt-6 text-3xl md:text-4xl font-bold text-gray-900 leading-snug">
+        From Idea to Innovation —  
+        <span class="text-[#FD5528]">Our Journey</span>
+      </h2>
 
-      <!-- Card 1 -->
-      <div data-aos="fade-up" data-aos-delay="100"
-        class="group bg-white border border-gray-300 p-6 rounded-2xl hover:border-[#FD5528] hover:-translate-y-2 transition duration-300">
-        <div class="flex justify-center mb-4">
-          <img src="https://img.icons8.com/?size=100&id=DCkAZ79sIYhT&format=png&color=FD5528" class="w-12 h-12">
+      <!-- TEXT -->
+      <p class="mt-6 text-gray-600 leading-relaxed">
+        We started with a simple goal — to help businesses turn their ideas into powerful digital solutions. 
+        What began as a small team of passionate developers has grown into a full-scale software development company 
+        delivering high-performance web applications and SaaS platforms.
+      </p>
+
+      <p class="mt-4 text-gray-600 leading-relaxed">
+        Over the years, we’ve worked with startups and enterprises across industries, building scalable, reliable, 
+        and user-focused products. Our commitment to quality, innovation, and client success continues to drive everything we do.
+      </p>
+
+      <!-- HIGHLIGHTS -->
+      <div class="mt-8 grid grid-cols-2 gap-6">
+
+        <div class="bg-[#F9FAFB] p-6 rounded-xl text-center">
+          <h3 class="text-2xl font-bold text-[#FD5528]">50+</h3>
+          <p class="text-sm text-gray-500">Projects Delivered</p>
         </div>
-        <h3 class="font-heading text-xl mb-2">17+ Years Experience</h3>
-        <p class="text-gray-400 text-sm">
-          Delivering reliable and high-quality software solutions across industries.
-        </p>
-      </div>
 
-      <!-- Card 2 -->
-      <div data-aos="fade-up" data-aos-delay="200"
-        class="group bg-white border border-gray-300 p-6 rounded-2xl hover:border-[#FD5528] hover:-translate-y-2 transition duration-300">
-        <div class="flex justify-center mb-4">
-          <img src="https://img.icons8.com/?size=100&id=124222&format=png&color=FD5528" class="w-12 h-12">
+        <div class="bg-[#F9FAFB] p-6 rounded-xl text-center">
+          <h3 class="text-2xl font-bold text-[#FD5528]">20+</h3>
+          <p class="text-sm text-gray-500">Happy Clients</p>
         </div>
-        <h3 class="font-heading text-xl mb-2">Dedicated Teams</h3>
-        <p class="text-gray-400 text-sm">
-          Expert developers assigned exclusively to your project for focused execution.
-        </p>
-      </div>
 
-      <!-- Card 3 -->
-      <div data-aos="fade-up" data-aos-delay="300"
-        class="group bg-white border border-gray-300 p-6 rounded-2xl hover:border-[#FD5528] hover:-translate-y-2 transition duration-300">
-        <div class="flex justify-center mb-4">
-          <img src="https://img.icons8.com/?size=100&id=5TJlel7-79RU&format=png&color=FD5528" class="w-12 h-12">
+        <div class="bg-[#F9FAFB] p-6 rounded-xl text-center">
+          <h3 class="text-2xl font-bold text-[#FD5528]">5+</h3>
+          <p class="text-sm text-gray-500">Countries Served</p>
         </div>
-        <h3 class="font-heading text-xl mb-2">Scalable Architecture</h3>
-        <p class="text-gray-400 text-sm">
-          Future-ready systems designed to grow seamlessly with your business.
-        </p>
-      </div>
 
-      <!-- Card 4 -->
-      <div data-aos="fade-up" data-aos-delay="400"
-        class="group bg-white border border-gray-300 p-6 rounded-2xl hover:border-[#FD5528] hover:-translate-y-2 transition duration-300">
-        <div class="flex justify-center mb-4">
-          <img src="https://img.icons8.com/?size=100&id=68443&format=png&color=FD5528" class="w-12 h-12">
+        <div class="bg-[#F9FAFB] p-6 rounded-xl text-center">
+          <h3 class="text-2xl font-bold text-[#FD5528]">100%</h3>
+          <p class="text-sm text-gray-500">Client Satisfaction</p>
         </div>
-        <h3 class="font-heading text-xl mb-2">Agile & Transparent</h3>
-        <p class="text-gray-400 text-sm">
-          Clear communication and agile workflows ensure faster and better results.
-        </p>
-      </div>
 
-      <!-- Card 5 -->
-      <div data-aos="fade-up" data-aos-delay="500"
-        class="group bg-white border border-gray-300 p-6 rounded-2xl hover:border-[#FD5528] hover:-translate-y-2 transition duration-300">
-        <div class="flex justify-center mb-4">
-          <img src="https://img.icons8.com/?size=100&id=117533&format=png&color=FD5528" class="w-12 h-12">
-        </div>
-        <h3 class="font-heading text-xl mb-2">Startup-Friendly Pricing</h3>
-        <p class="text-gray-400 text-sm">
-          Flexible and affordable pricing models tailored for growing startups.
-        </p>
-      </div>
-
-      <!-- Card 6 -->
-      <div data-aos="fade-up" data-aos-delay="600"
-        class="group bg-white border border-gray-300 p-6 rounded-2xl hover:border-[#FD5528] hover:-translate-y-2 transition duration-300">
-        <div class="flex justify-center mb-4">
-          <img src="https://img.icons8.com/?size=100&id=neBRkBaejCVJ&format=png&color=FD5528" class="w-12 h-12">
-        </div>
-        <h3 class="font-heading text-xl mb-2">Long-Term Support</h3>
-        <p class="text-gray-400 text-sm">
-          Continuous maintenance and technical support to keep your systems running smoothly.
-        </p>
       </div>
 
     </div>
 
   </div>
 </section>
-<!-- END WHY CHOOSE US -->
+<!-- end our story -->
 
 
-
+<!-- mission & vision -->
 <section class="py-20 bg-gradient-to-b from-gray-50 to-white">
   <div class="max-w-7xl mx-auto px-6">
 
     <!-- Heading -->
     <div class="text-center mb-16" data-aos="fade-up">
-      <h2 class="text-3xl md:text-5xl font-extrabold text-gray-900">
+          <p 
+      data-aos="fade-up"
+      class="inline-block text-xs sm:text-sm font-semibold uppercase tracking-[0.35em] 
+         text-[#FD5528] relative px-5 py-2 rounded-full 
+         bg-white/60 backdrop-blur-md 
+         shadow-[0_8px_20px_rgba(0,0,0,0.08)] 
+         border border-white/40
+         before:absolute before:inset-0 before:rounded-full 
+         before:bg-gradient-to-r before:from-[#FD5528]/20 before:to-orange-200/30 
+         before:-z-10">
+
+         Mission & Vision
+
+    </p>
+      <h2 class="text-3xl md:text-5xl font-extrabold text-gray-900 py-4">
         Our <span class="text-[#EA580C]">Mission & Vision</span>
       </h2>
       <p class="text-gray-500 mt-4 max-w-2xl mx-auto">
@@ -407,202 +306,402 @@
 
   </div>
 </section>
+<!-- end mission & vision -->
 
 
+<!-- process-directions -->
+<section class="relative overflow-hidden py-16 sm:py-20 lg:py-24 bg-[#F9FAFB]">
 
-     <section class="py-20 bg-gradient-to-b from-gray-50 to-white">
   <div class="max-w-7xl mx-auto px-6">
 
     <!-- Heading -->
-    <div class="text-center mb-16" data-aos="fade-up">
-      <h2 class="text-3xl md:text-5xl font-extrabold text-gray-900">
-        Our <span class="text-[#F44918]">Values</span>
+    <div class="text-center md:mb-16">
+         <p 
+      data-aos="fade-up"
+      class="inline-block text-xs sm:text-sm font-semibold uppercase tracking-[0.35em] 
+         text-[#FD5528] relative px-5 py-2 rounded-full 
+         bg-white/60 backdrop-blur-md 
+         shadow-[0_8px_20px_rgba(0,0,0,0.08)] 
+         border border-white/40
+         before:absolute before:inset-0 before:rounded-full 
+         before:bg-gradient-to-r before:from-[#FD5528]/20 before:to-orange-200/30 
+         before:-z-10">
+
+         Process
+
+    </p>
+    
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-3">
+        Predictable <span class="text-[#FD5528]">Delivery</span>
       </h2>
-      <p class="text-gray-500 mt-4 max-w-2xl mx-auto">
-        The principles that drive everything we do and shape how we build impactful technology.
+      <p class="text-gray-500 mt-3 max-w-xl mx-auto">
+        Structured milestones that keep your project moving forward.
       </p>
     </div>
 
-    <!-- Cards -->
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div class="relative">
 
-      <!-- Card 1 -->
-      <div data-aos="fade-up" data-aos-delay="0"
-           class="relative bg-white p-8 rounded-3xl shadow-md hover:shadow-2xl hover:-translate-y-1 transition duration-300 group overflow-hidden">
+      <!-- 🔴 MOBILE LINE (BEHIND CONTENT) -->
+      <div class="absolute left-6 top-0 h-full border-l-2 border-dashed border-[#FD5528]/30 z-0 lg:hidden"></div>
 
-        <div class="absolute -top-6 -right-6 w-40 h-40 bg-orange-100 rounded-full blur-3xl opacity-40 group-hover:scale-110 transition"></div>
+      <!-- 🔴 DESKTOP LINE -->
+      <div class="hidden lg:block absolute top-6 left-0 w-full border-t-2 border-dashed border-[#FD5528]/40"></div>
 
-        <div class="w-12 h-12 flex items-center justify-center bg-white text-[#F44918] p-2 rounded-xl mb-5 shadow">
-          <img src="https://img.icons8.com/?size=100&id=7761&format=png&color=f44918" alt="">
+      <!-- STEPS -->
+      <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-y-12 relative z-10">
+
+        <!-- STEP -->
+        <div class="flex items-start gap-4 lg:flex-col lg:items-center text-left lg:text-center group">
+
+          <!-- CIRCLE -->
+          <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#FD5528] font-semibold transition bg-gradient-to-r 
+          hover:from-[#fb813b] hover:to-[#b00000]     group-hover:text-white">
+            01
+          </div>
+
+          <!-- TEXT -->
+          <div>
+            <h3 class="font-semibold text-gray-900 group-hover:text-[#FD5528]">
+              Discovery
+            </h3>
+            <p class="text-sm text-gray-500 mt-1">
+              Understanding goals & defining scope
+            </p>
+          </div>
+
         </div>
 
-        <h3 class="text-xl font-bold text-gray-900 group-hover:text-[#F44918] transition">
-          Collaboration
-        </h3>
-
-        <p class="mt-3 text-gray-600 text-sm leading-relaxed">
-          We work as one team with our clients, building and growing together through transparency.
-        </p>
-      </div>
-
-      <!-- Card 2 -->
-      <div data-aos="fade-up" data-aos-delay="100"
-           class="relative bg-white p-8 rounded-3xl shadow-md hover:shadow-2xl hover:-translate-y-1 transition duration-300 group overflow-hidden">
-
-        <div class="absolute -bottom-6 -left-6 w-40 h-40 bg-orange-100 rounded-full blur-3xl opacity-40 group-hover:scale-110 transition"></div>
-
-        <div class="w-12 h-12 flex items-center justify-center bg-white text-[#F44918] p-2 rounded-xl mb-5 shadow">
-          <img src="https://img.icons8.com/?size=100&id=7254&format=png&color=f44918" alt="">
+        <!-- STEP -->
+        <div class="flex items-start gap-4 lg:flex-col lg:items-center text-left lg:text-center group">
+          <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#FD5528] font-semibold transition group-hover:bg-gradient-to-r 
+          hover:from-[#fb813b] hover:to-[#b00000] group-hover:text-white">
+            02
+          </div>
+          <div>
+            <h3 class="font-semibold text-gray-900 group-hover:text-[#FD5528]">
+              UI / UX
+            </h3>
+            <p class="text-sm text-gray-500 mt-1">
+              Designing intuitive experiences
+            </p>
+          </div>
         </div>
 
-        <h3 class="text-xl font-bold text-gray-900 group-hover:text-[#F44918] transition">
-          Innovation
-        </h3>
-
-        <p class="mt-3 text-gray-600 text-sm leading-relaxed">
-          We constantly explore new technologies and creative approaches to stay ahead.
-        </p>
-      </div>
-
-      <!-- Card 3 -->
-      <div data-aos="fade-up" data-aos-delay="200"
-           class="relative bg-white p-8 rounded-3xl shadow-md hover:shadow-2xl hover:-translate-y-1 transition duration-300 group overflow-hidden">
-
-        <div class="absolute -top-6 -left-6 w-40 h-40 bg-orange-100 rounded-full blur-3xl opacity-40 group-hover:scale-110 transition"></div>
-
-        <div class="w-12 h-12 flex items-center justify-center bg-white text-[#F44918] p-2 rounded-xl mb-5 shadow">
-          <img src="https://img.icons8.com/?size=100&id=F3LB4iv8tzA5&format=png&color=f44918" alt="">
+        <!-- STEP -->
+        <div class="flex items-start gap-4 lg:flex-col lg:items-center text-left lg:text-center group">
+          <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#FD5528] font-semibold transition group-hover:bg-gradient-to-r 
+          hover:from-[#fb813b] hover:to-[#b00000] group-hover:text-white">
+            03
+          </div>
+          <div>
+            <h3 class="font-semibold text-gray-900 group-hover:text-[#FD5528]">
+              Development
+            </h3>
+            <p class="text-sm text-gray-500 mt-1">
+              Building scalable applications
+            </p>
+          </div>
         </div>
 
-        <h3 class="text-xl font-bold text-gray-900 group-hover:text-[#F44918] transition">
-          Engineering Mindset
-        </h3>
-
-        <p class="mt-3 text-gray-600 text-sm leading-relaxed">
-          Clean code, scalable architecture, and best practices are at our core.
-        </p>
-      </div>
-
-      <!-- Card 4 -->
-      <div data-aos="fade-up" data-aos-delay="300"
-           class="relative bg-white p-8 rounded-3xl shadow-md hover:shadow-2xl hover:-translate-y-1 transition duration-300 group overflow-hidden">
-
-        <div class="absolute -bottom-6 -right-6 w-40 h-40 bg-orange-100 rounded-full blur-3xl opacity-40 group-hover:scale-110 transition"></div>
-
-        <div class="w-12 h-12 flex items-center justify-center bg-white text-[#F44918] p-2 rounded-xl mb-5 shadow">
-          <img src="https://img.icons8.com/?size=100&id=58586&format=png&color=f44918" alt="">
+        <!-- STEP -->
+        <div class="flex items-start gap-4 lg:flex-col lg:items-center text-left lg:text-center group">
+          <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#FD5528] font-semibold transition group-hover:bg-gradient-to-r 
+          hover:from-[#fb813b] hover:to-[#b00000] group-hover:text-white">
+            04
+          </div>
+          <div>
+            <h3 class="font-semibold text-gray-900 group-hover:text-[#FD5528]">
+              Testing
+            </h3>
+            <p class="text-sm text-gray-500 mt-1">
+              Ensuring quality & performance
+            </p>
+          </div>
         </div>
 
-        <h3 class="text-xl font-bold text-gray-900 group-hover:text-[#F44918] transition">
-          Continuous Learning
-        </h3>
-
-        <p class="mt-3 text-gray-600 text-sm leading-relaxed">
-          Our team constantly upgrades skills and stays aligned with the latest tech trends.
-        </p>
-      </div>
-
-      <!-- Card 5 -->
-      <div data-aos="fade-up" data-aos-delay="400"
-           class="relative bg-white p-8 rounded-3xl shadow-md hover:shadow-2xl hover:-translate-y-1 transition duration-300 group overflow-hidden">
-
-        <div class="absolute -top-6 -right-6 w-40 h-40 bg-orange-100 rounded-full blur-3xl opacity-40 group-hover:scale-110 transition"></div>
-
-        <div class="w-12 h-12 flex items-center justify-center bg-white text-[#F44918] p-2 rounded-xl mb-5 shadow">
-          <img src="https://img.icons8.com/?size=100&id=48420&format=png&color=f44918" alt="">
+        <!-- STEP -->
+        <div class="flex items-start gap-4 lg:flex-col lg:items-center text-left lg:text-center group">
+          <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#FD5528] font-semibold transition group-hover:bg-gradient-to-r 
+            hover:from-[#fb813b] hover:to-[#b00000] group-hover:text-white">
+            05
+          </div>
+          <div>
+            <h3 class="font-semibold text-gray-900 group-hover:text-[#FD5528]">
+              Deployment
+            </h3>
+            <p class="text-sm text-gray-500 mt-1">
+              Launching production-ready apps
+            </p>
+          </div>
         </div>
 
-        <h3 class="text-xl font-bold text-gray-900 group-hover:text-[#F44918] transition">
-          Growth Driven
-        </h3>
-
-        <p class="mt-3 text-gray-600 text-sm leading-relaxed">
-          We focus on delivering measurable growth and long-term value to businesses.
-        </p>
-      </div>
-
-      <!-- Card 6 -->
-      <div data-aos="fade-up" data-aos-delay="500"
-           class="relative bg-white p-8 rounded-3xl shadow-md hover:shadow-2xl hover:-translate-y-1 transition duration-300 group overflow-hidden">
-
-        <div class="absolute -bottom-6 -left-6 w-40 h-40 bg-orange-100 rounded-full blur-3xl opacity-40 group-hover:scale-110 transition"></div>
-
-        <div class="w-12 h-12 flex items-center justify-center bg-white text-[#F44918] p-2 rounded-xl mb-5 shadow">
-          <img src="https://img.icons8.com/?size=100&id=ILBgHeuGop5l&format=png&color=f44918" alt="">
+        <!-- STEP -->
+        <div class="flex items-start gap-4 lg:flex-col lg:items-center text-left lg:text-center group">
+          <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#FD5528] font-semibold transition group-hover:bg-gradient-to-r 
+            hover:from-[#fb813b] hover:to-[#b00000] group-hover:text-white">
+            06
+          </div>
+          <div>
+            <h3 class="font-semibold text-gray-900 group-hover:text-[#FD5528]">
+              Support
+            </h3>
+            <p class="text-sm text-gray-500 mt-1">
+              Continuous improvements
+            </p>
+          </div>
         </div>
 
-        <h3 class="text-xl font-bold text-gray-900 group-hover:text-[#F44918] transition">
-          Reliability
-        </h3>
-
-        <p class="mt-3 text-gray-600 text-sm leading-relaxed">
-          We build systems that are stable, secure, and ready for real-world challenges.
-        </p>
       </div>
 
     </div>
 
   </div>
+
 </section>
+<!-- pr -->
 
 
-   
+   <!-- STATS SECTION -->
+<section id="stats-section-pro" class="relative py-12 bg-gradient-to-br from-[#FD5528] to-orange-500 text-white overflow-hidden">
 
-<!-- Collaboration Culture -->
-<section class="py-20 bg-gradient-to-b from-gray-50 to-white">
-  <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+  <!-- BACKGROUND EFFECT -->
+  <div class="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_white,_transparent_70%)]"></div>
 
-    <!-- LEFT -->
-    <div data-aos="fade-right">
-      <p class="text-xs uppercase tracking-[0.4em] text-[#F44918]">
-        Engineering Mindset
-      </p>
+  <div class="relative max-w-7xl mx-auto px-6 text-center">
 
-      <h2 class="mt-4 text-3xl md:text-4xl font-extrabold text-gray-900">
-        Engineering culture meets <span class="text-[#F44918]">product thinking</span>
-      </h2>
+    <!-- HEADER -->
+    <h2 class="text-3xl md:text-5xl font-bold tracking-tight">
+      Our Impact 
+    </h2>
 
-      <p class="mt-4 text-gray-600 leading-relaxed">
-        Pods blend architectural rigor, experimentation, and transparent reporting.
-      </p>
+    <p class="mt-4 text-white/80 max-w-2xl mx-auto text-sm md:text-base">
+      We deliver scalable solutions and build long-term partnerships across industries worldwide.
+    </p>
 
-      <ul class="mt-6 space-y-3 text-gray-600">
-        <li class="flex items-start gap-2">✅ Daily syncs with product & QA</li>
-        <li class="flex items-start gap-2">✅ Architecture reviews</li>
-        <li class="flex items-start gap-2">✅ Cross-team learning</li>
-        <li class="flex items-start gap-2">✅ Safe experiments</li>
-      </ul>
-    </div>
+    <!-- STATS GRID -->
+    <div class="mt-6 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10">
 
-    <!-- RIGHT CARD -->
-    <div data-aos="fade-left"
-         class="relative bg-white p-8 rounded-3xl shadow-xl hover:shadow-2xl transition group overflow-hidden">
+      <!-- CARD -->
+      <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 hover:scale-105 transition duration-300 shadow-lg">
+        <h3 class="counter text-4xl md:text-5xl font-bold" data-target="50">0</h3>
+        <p class="mt-2 text-white/80 text-sm">Projects Delivered</p>
+      </div>
 
-      <!-- Glow -->
-      <div class="absolute -top-8 -right-8 w-60 h-60 bg-orange-100 blur-3xl opacity-40 group-hover:scale-110 transition"></div>
+      <!-- CARD -->
+      <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 hover:scale-105 transition duration-300 shadow-lg">
+        <h3 class="counter text-4xl md:text-5xl font-bold" data-target="40">0</h3>
+        <p class="mt-2 text-white/80 text-sm">Happy Clients</p>
+      </div>
 
-      <p class="text-xs uppercase tracking-[0.4em] text-[#F44918]">
-        Collaboration Culture
-      </p>
+      <!-- CARD -->
+      <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 hover:scale-105 transition duration-300 shadow-lg">
+        <h3 class="counter text-4xl md:text-5xl font-bold" data-target="15">0</h3>
+        <p class="mt-2 text-white/80 text-sm">Countries Served</p>
+      </div>
 
-      <h3 class="mt-3 text-2xl font-bold text-gray-900 group-hover:text-[#F44918] transition">
-        We ship in close partnership
-      </h3>
-
-      <p class="mt-4 text-gray-600 leading-relaxed">
-        Engineers and product teams work together with transparency and shared ownership.
-      </p>
-
-      <div class="mt-6 bg-gray-50 p-5 rounded-xl border border-gray-200">
-        <p class="text-sm text-gray-600">
-          Co-planning, architecture guilds, and shared accountability for metrics.
-        </p>
+      <!-- CARD -->
+      <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 hover:scale-105 transition duration-300 shadow-lg">
+        <h3 class="counter text-4xl md:text-5xl font-bold" data-target="100">0</h3>
+        <p class="mt-2 text-white/80 text-sm">Client Satisfaction %</p>
       </div>
 
     </div>
 
   </div>
+
 </section>
+
+
+
+
+
+<!-- TECHNOLOGIES -->
+<section id="technologies" class="bg-[#F9FAFB] px-6 py-16 sm:py-20 lg:py-24">
+
+  <div class="max-w-7xl mx-auto">
+
+    <!-- Heading -->
+    <div class="text-center max-w-3xl mx-auto mb-12">
+      <p
+        data-aos="fade-up"
+        class="inline-block text-xs sm:text-sm font-semibold uppercase tracking-[0.35em] text-[#FD5528] relative px-5 py-2 rounded-full bg-white/70 backdrop-blur-md shadow-[0_8px_20px_rgba(0,0,0,0.08)] border border-white/40 before:absolute before:inset-0 before:rounded-full before:bg-gradient-to-r before:from-[#FD5528]/20 before:to-orange-200/30 before:-z-10"
+      >
+        Development Expertise
+      </p>
+
+      <h2 class="mt-4 text-3xl font-bold text-gray-900 md:text-4xl" data-aos="fade-up" data-aos-delay="100">
+        Technologies We Love
+      </h2>
+
+      <p class="mt-4 text-sm sm:text-base text-gray-600" data-aos="fade-up" data-aos-delay="200">
+        A modern stack for scalable apps, polished interfaces, and reliable cloud delivery.
+      </p>
+    </div>
+
+    <div class="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] items-stretch">
+
+      <div class="rounded-[2rem] border border-white/80 bg-white/95 p-8 shadow-[0_30px_80px_rgba(253,85,40,0.12)]" data-aos="fade-right" data-aos-delay="300">
+        <span class="inline-block text-xs sm:text-sm font-semibold uppercase tracking-[0.35em] 
+         text-[#FD5528] relative px-5 py-2 rounded-full 
+         bg-white/60 backdrop-blur-md 
+         shadow-[0_8px_20px_rgba(0,0,0,0.08)] 
+         border border-white/40
+         before:absolute before:inset-0 before:rounded-full 
+         before:bg-gradient-to-r before:from-[#FD5528]/20 before:to-orange-200/30 
+         before:-z-10">
+          Core expertise
+        </span>
+
+        <h3 class="mt-6 text-2xl sm:text-3xl fontffffffbold text-gray-900">
+          Build faster with proven tools
+        </h3>
+
+        <p class="mt-4 text-gray-600 leading-relaxed">
+          We combine backend power, frontend polish, and cloud infrastructure to deliver fast, secure, and scalable digital products.
+        </p>
+
+        <div class="mt-10 grid gap-4 sm:grid-cols-2">
+          <div class="rounded-3xl border border-gray-200 bg-[#FFF7F0] p-5">
+            <p class="font-semibold text-gray-900">Backend & APIs</p>
+            <p class="mt-2 text-sm text-gray-600">.NET Core, Node.js, Laravel</p>
+          </div>
+          <div class="rounded-3xl border border-gray-200 bg-[#EFF7FF] p-5">
+            <p class="font-semibold text-gray-900">Frontend</p>
+            <p class="mt-2 text-sm text-gray-600">React, Next.js, TypeScript</p>
+          </div>
+          <div class="rounded-3xl border border-gray-200 bg-[#EFFCF5] p-5">
+            <p class="font-semibold text-gray-900">Cloud & Data</p>
+            <p class="mt-2 text-sm text-gray-600">AWS, Firebase, MongoDB, SQL Server</p>
+          </div>
+          <div class="rounded-3xl border border-gray-200 bg-[#FFF5F7] p-5">
+            <p class="font-semibold text-gray-900">Delivery</p>
+            <p class="mt-2 text-sm text-gray-600">SaaS, eCommerce, enterprise-grade products</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="rounded-[2rem] bg-white border border-gray-200 shadow-xl overflow-hidden" data-aos="fade-left" data-aos-delay="400">
+        <div class="p-6 sm:p-8 bg-gradient-to-br from-white via-[#FFF6F0] to-[#FFF2ED]">
+          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+            <div>
+              <span class="text-xs font-semibold uppercase tracking-[0.35em] text-[#FD5528]">Tech gallery</span>
+              <h3 class="mt-3 text-2xl font-bold text-gray-900">Loved by product teams</h3>
+            </div>
+            <span class="inline-flex items-center rounded-full bg-[#FD5528]/10 px-3 py-1 text-xs font-semibold text-[#FD5528]">
+              Responsive layout
+            </span>
+          </div>
+
+          <!-- <div class="mt-8 grid gap-4 grid-cols-2 sm:grid-cols-3 xl:grid-cols-4">
+            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition  hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg" class="w-12 h-12" alt="Dotnet Core">
+              <span class="text-sm font-semibold text-gray-900">.NET Core</span>
+            </div>
+            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" class="w-12 h-12" alt="React">
+              <span class="text-sm font-semibold text-gray-900">React</span>
+            </div>
+            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" class="w-12 h-12" alt="Node.js">
+              <span class="text-sm font-semibold text-gray-900">Node.js</span>
+            </div>
+            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" class="w-12 h-12" alt="MongoDB">
+              <span class="text-sm font-semibold text-gray-900">MERN</span>
+            </div>
+            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-original.svg" class="w-12 h-12" alt="WordPress">
+              <span class="text-sm font-semibold text-gray-900">WordPress</span>
+            </div>
+            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
+              <img src="https://cdn.simpleicons.org/spotify/1DB954" class="w-12 h-12" alt="Shopify">
+              <span class="text-sm font-semibold text-gray-900">Shopify</span>
+            </div>
+            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" class="w-12 h-12" alt="Laravel">
+              <span class="text-sm font-semibold text-gray-900">Laravel</span>
+            </div>
+            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" class="w-12 h-12" alt="SQL Server">
+              <span class="text-sm font-semibold text-gray-900">SQL Server</span>
+            </div>
+            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" class="w-12 h-12" alt="Firebase">
+              <span class="text-sm font-semibold text-gray-900">Firebase</span>
+            </div>
+            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" class="w-12 h-12" alt="AWS">
+              <span class="text-sm font-semibold text-gray-900">AWS</span>
+            </div>
+            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" class="w-12 h-12" alt="TypeScript">
+              <span class="text-sm font-semibold text-gray-900">TypeScript</span>
+            </div>
+            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" class="w-12 h-12 bg-white p-1 rounded" alt="Next.js">
+              <span class="text-sm font-semibold text-gray-900">Next.js</span>
+            </div>
+          </div> -->
+           <div class="mt-8 grid gap-4 grid-cols-3 sm:grid-cols-3 xl:grid-cols-4">
+            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition  hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg" class="w-12 h-12" alt="Dotnet Core">
+              <span class="text-sm font-semibold text-gray-900">.NET Core</span>
+            </div>
+            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" class="w-12 h-12" alt="React">
+              <span class="text-sm font-semibold text-gray-900">React</span>
+            </div>
+            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" class="w-12 h-12" alt="Node.js">
+              <span class="text-sm font-semibold text-gray-900">Node.js</span>
+            </div>
+            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" class="w-12 h-12" alt="MongoDB">
+              <span class="text-sm font-semibold text-gray-900">MERN</span>
+            </div>
+            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-original.svg" class="w-12 h-12" alt="WordPress">
+              <span class="text-sm font-semibold text-gray-900">WordPress</span>
+            </div>
+            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
+              <img src="https://cdn.simpleicons.org/spotify/1DB954" class="w-12 h-12" alt="Shopify">
+              <span class="text-sm font-semibold text-gray-900">Shopify</span>
+            </div>
+            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" class="w-12 h-12" alt="Laravel">
+              <span class="text-sm font-semibold text-gray-900">Laravel</span>
+            </div>
+            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" class="w-12 h-12" alt="SQL Server">
+              <span class="text-sm font-semibold text-gray-900">SQL Server</span>
+            </div>
+            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" class="w-12 h-12" alt="Firebase">
+              <span class="text-sm font-semibold text-gray-900">Firebase</span>
+            </div>
+            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" class="w-12 h-12" alt="AWS">
+              <span class="text-sm font-semibold text-gray-900">AWS</span>
+            </div>
+            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" class="w-12 h-12" alt="TypeScript">
+              <span class="text-sm font-semibold text-gray-900">TypeScript</span>
+            </div>
+            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" class="w-12 h-12 bg-white p-1 rounded" alt="Next.js">
+              <span class="text-sm font-semibold text-gray-900">Next.js</span>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- END TECHNOLOGIES -->
+
+
+
 
 <!-- OUR JOURNEY SECTION -->
 
@@ -718,38 +817,51 @@
 
 
 <!-- END OUR JOURNEY SECTION -->
-<section class="py-20 bg-[#F44918] text-white relative overflow-hidden">
+<!-- CTA SECTION -->
+<section class="relative overflow-hidden py-20 bg-gradient-to-r from-[#FC5124] via-orange-500 to-orange-400 text-white">
 
-  <!-- Glow -->
-  <div class="absolute -top-20 -left-20 w-96 h-96 bg-white/20 rounded-full blur-3xl"></div>
+  <!-- BACKGROUND GLOW -->
+  <div class="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_top_left,_white,_transparent_50%)]"></div>
 
-  <div class="max-w-7xl mx-auto px-6 text-center relative">
+  <div class="relative max-w-5xl mx-auto px-6 text-center">
 
-    <h2 class="text-3xl md:text-5xl font-extrabold mb-4">
-      Let’s Build Something Amazing
+    <!-- HEADING -->
+    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 leading-tight">
+      Have a Project in Mind?
     </h2>
 
-    <p class="text-white/90 max-w-2xl mx-auto mb-8">
-      Share your idea, architecture, or roadmap — we’ll help you scale it.
+    <!-- SUBTEXT -->
+    <p class="text-white/80 text-sm sm:text-base md:text-lg max-w-2xl mx-auto mb-10">
+      Let’s build something amazing together. Share your idea and we’ll turn it into a powerful digital product.
     </p>
 
-    <div class="flex flex-wrap justify-center gap-4">
+    <!-- BUTTONS -->
+    <div class="flex flex-col sm:flex-row justify-center gap-4">
 
-      <a href="#"
-         class="bg-white text-[#F44918] px-6 py-3 rounded-xl font-semibold shadow-lg hover:scale-105 transition">
-        Schedule a Call
+      <!-- PRIMARY BUTTON -->
+      <a href="#contact"
+         class="group inline-flex items-center justify-center bg-white text-[#FC5124] px-6 py-3 rounded-xl font-semibold shadow-lg hover:shadow-2xl hover:scale-105 transition duration-300">
+
+        Contact Us
+
+        <!-- ARROW -->
+        <span class="ml-2 transition group-hover:translate-x-1">→</span>
       </a>
 
-      <a href="#"
-         class="border border-white px-6 py-3 rounded-xl font-semibold hover:bg-white/10 transition">
-        View Services
+      <!-- WHATSAPP BUTTON -->
+      <a href="#contact"
+         class="group inline-flex items-center justify-center border border-white/40 px-6 py-3 rounded-xl font-semibold backdrop-blur-md hover:bg-white/10 hover:scale-105 transition duration-300">
+
+       
+        Let's Chat on WhatsApp
       </a>
 
     </div>
 
   </div>
+
 </section>
-{{--  --}}
+
 
 
 

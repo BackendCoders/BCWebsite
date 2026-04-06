@@ -24,6 +24,9 @@
     />
 
     
+<!-- Swiper CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
  
   <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}" />
 <style>
@@ -516,6 +519,75 @@ tabs.forEach(tab => {
 
 
 </script>
+<script>
+const tabs = document.querySelectorAll(".tab");
+const projects = document.querySelectorAll(".project");
+
+tabs.forEach(tab => {
+  tab.addEventListener("click", () => {
+
+    tabs.forEach(t => {
+      t.classList.remove("bg-orange-500","text-white");
+      t.classList.add("text-orange-600");
+    });
+
+    tab.classList.add("bg-orange-500","text-white");
+
+    const type = tab.dataset.tab;
+
+    projects.forEach(p => {
+      if(type === "all" || p.classList.contains(type)){
+        p.style.display = "block";
+      } else {
+        p.style.display = "none";
+      }
+    });
+
+  });
+});
+
+<!-- JS -->
+<script>
+const counters = document.querySelectorAll('.counter');
+let started = false;
+
+function runCounter() {
+  if (started) return;
+
+  const section = document.getElementById('stats-section-pro');
+  const sectionTop = section.getBoundingClientRect().top;
+
+  if (sectionTop < window.innerHeight - 100) {
+    counters.forEach(counter => {
+      const target = +counter.getAttribute('data-target');
+      let count = 0;
+
+      const update = () => {
+        const increment = target / 80;
+
+        if (count < target) {
+          count += increment;
+          counter.innerText = Math.ceil(count) + (target !== 100 ? '+' : '%');
+          requestAnimationFrame(update);
+        } else {
+          counter.innerText = target + (target !== 100 ? '+' : '%');
+        }
+      };
+
+      update();
+    });
+
+    started = true;
+  }
+}
+
+window.addEventListener('scroll', runCounter);
+</script>
+</script>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script src="{{ asset('assets/js/main.js') }}" defer></script>
 </body>

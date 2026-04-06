@@ -66,7 +66,7 @@
              class="w-4 h-4">
       </a>
 
-      <a href="https://www.instagram.com/backendcoders" target="_blank"
+      <a href="https://www.instagram.com/backendcoders/" target="_blank"
          class="w-8 h-8 flex items-center justify-center rounded-full 
         bg-gradient-to-r from-[#060000] to-[#b00000] 
         hover:from-[#b00000] hover:to-[#060000]
@@ -75,7 +75,7 @@
              class="w-4 h-4">
       </a>
 
-      <a href="https://www.linkedin.com/company/backendcodersindia/" target="_blank"
+      <a href="https://www.linkedin.com/company/103738896/admin/dashboard/" target="_blank"
          class="w-8 h-8 flex items-center justify-center rounded-full 
         bg-gradient-to-r from-[#060000] to-[#b00000] 
         hover:from-[#b00000] hover:to-[#060000]
@@ -144,10 +144,10 @@
                 Case Studies
             </a>
 
-            <a href="{{route('frontend.techstack')}}"
-               class="nav-link px-3 py-2 rounded-md text-white hover:bg-orange-50 hover:text-[#FD5528] transition {{ $activeNavClass('frontend.techstack') }}"
-               aria-current="{{ request()->routeIs('frontend.techstack') ? 'page' : '' }}">
-                Tech Stack
+            <a href="{{route('frontend.packages')}}"
+               class="nav-link px-3 py-2 rounded-md text-white hover:bg-orange-50 hover:text-[#FD5528] transition {{ $activeNavClass('frontend.packages') }}"
+               aria-current="{{ request()->routeIs('frontend.packages') ? 'page' : '' }}">
+                Packages
             </a>
 
             <a href="{{ route('frontend.career') }}"
@@ -215,10 +215,10 @@
                aria-current="{{ request()->routeIs('frontend.process') ? 'page' : '' }}">
                 Case Studies
             </a>
-            <a href="{{ route('frontend.techstack') }}"
-               class="nav-link rounded-md px-3 py-2 text-black hover:bg-orange-50 {{ $activeMobileNavClass('frontend.techstack') }}"
-               aria-current="{{ request()->routeIs('frontend.techstack') ? 'page' : '' }}">
-                Tech Stack
+            <a href="{{ route('frontend.packages') }}"
+               class="nav-link rounded-md px-3 py-2 text-black hover:bg-orange-50 {{ $activeMobileNavClass('frontend.packages') }}"
+               aria-current="{{ request()->routeIs('frontend.packages') ? 'page' : '' }}">
+                Packages
             </a>
             <a href="{{ route('frontend.career') }}"
                class="nav-link rounded-md px-3 py-2 text-black hover:bg-orange-50 {{ $activeMobileNavClass('frontend.career') }}"

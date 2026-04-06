@@ -1,15 +1,40 @@
 @extends('component.main')
 @section('content')
+<!-- hero section  -->
+<section class="relative h-[30vh] flex items-center justify-center text-center text-white overflow-hidden">
 
-<!-- HERO -->
-<section class="bg-gradient-to-r from-[#FC5124] to-orange-600 text-white py-24 text-center">
-  <h1 class="text-4xl md:text-5xl font-bold mb-4" data-aos="fade-up">
-    Join Our Team
-  </h1>
-  <p class="text-lg text-white/90 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
-    Build your future with us. Work on exciting projects, grow your skills, and make an impact.
-  </p>
+  <!-- BACKGROUND IMAGE -->
+  <img 
+    src="{{asset('assets/images/banner.png')}}"
+    class="absolute inset-0 w-full h-full object-cover"
+  />
+
+  <!-- DARK OVERLAY -->
+  <div class="absolute inset-0 bg-black/60"></div>
+
+  <!-- CONTENT -->
+  <div class="relative z-10 max-w-4xl px-6">
+
+  
+
+    <!-- HEADING -->
+    <h1 class="mt-6 text-4xl sm:text-5xl md:text-6xl font-bold leading-tight">
+    Join <span class="text-[#FD5528]">Our Team</span>
+    </h1>
+
+    <!-- SUBTEXT -->
+    <p class="mt-6 text-gray-300 text-sm sm:text-base md:text-lg max-w-2xl mx-auto">
+      Build your future with us. Work on exciting projects, grow your skills, and make an impact.
+    </p>
+
+ 
+
+  </div>
+
 </section>
+<!-- end hero section  -->
+
+
 
 <!-- WHY JOIN US -->
 <section class="py-16">
@@ -120,7 +145,7 @@
         <p class="text-sm text-gray-600">Full Time • Remote • 2+ Years Experience</p>
       </div>
       <a href="#" class="bg-[#FC5124] text-white px-5 py-2 rounded-lg hover:bg-orange-600">
-        Apply Now
+        opening soon
       </a>
     </div>
 
@@ -130,7 +155,7 @@
         <p class="text-sm text-gray-600">Full Time • Onsite • 1+ Years Experience</p>
       </div>
       <a href="#" class="bg-[#FC5124] text-white px-5 py-2 rounded-lg hover:bg-orange-600">
-        Apply Now
+        opening soon
       </a>
     </div>
 
@@ -140,7 +165,7 @@
         <p class="text-sm text-gray-600">Internship • Remote • Freshers Welcome</p>
       </div>
       <a href="#" class="bg-[#FC5124] text-white px-5 py-2 rounded-lg hover:bg-orange-600">
-        Apply Now
+        opening soon
       </a>
     </div>
 
@@ -179,14 +204,48 @@
 </section>
 
 <!-- CTA -->
-<section class="bg-[#FC5124] text-white py-16 text-center">
-  <h2 class="text-3xl font-bold mb-4">Don’t See a Role That Fits?</h2>
-  <p class="text-gray-100 mb-6">Send us your resume — we’d love to hear from you.</p>
-  <button class="bg-white text-[#FC5124] px-6 py-3 rounded-lg font-semibold hover:bg-gray-200">
-    Contact HR
-  </button>
-</section>
+<!-- CTA SECTION -->
+<section class="relative overflow-hidden py-20 bg-gradient-to-r from-[#FC5124] via-orange-500 to-orange-400 text-white">
 
+  <!-- BACKGROUND GLOW -->
+  <div class="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_top_left,_white,_transparent_50%)]"></div>
+
+  <div class="relative max-w-5xl mx-auto px-6 text-center">
+
+    <!-- HEADING -->
+    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 leading-tight">
+      Don’t See a Role That Fits?
+    </h2>
+
+    <!-- SUBTEXT -->
+    <p class="text-white/80 text-sm sm:text-base md:text-lg max-w-2xl mx-auto mb-10">
+      Send us your resume — we’d love to hear from you.
+    </p>
+
+    <!-- BUTTONS -->
+    <div class="flex flex-col sm:flex-row justify-center gap-4">
+
+      <!-- PRIMARY BUTTON -->
+      <a href="#contact"
+         class="group inline-flex items-center justify-center bg-white text-[#FC5124] px-6 py-3 rounded-xl font-semibold shadow-lg hover:shadow-2xl hover:scale-105 transition duration-300">
+
+        Contact Hr
+
+        <!-- ARROW -->
+        <span class="ml-2 transition group-hover:translate-x-1">→</span>
+      </a>
+
+      <!-- WHATSAPP BUTTON -->
+      <a href="#contact"
+         class="group inline-flex items-center justify-center border border-white/40 px-6 py-3 rounded-xl font-semibold backdrop-blur-md hover:bg-white/10 hover:scale-105 transition duration-300">
+        Chat with Us
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
 
 
 

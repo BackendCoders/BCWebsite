@@ -30,12 +30,16 @@ class HomeController extends Controller
             return view('frontend.process');
     }
 
-    public function techstack(){
-            return view('frontend.techstack');
+    public function packages(){
+            return view('frontend.packages');
     }
 
     public function career(){
             return view('frontend.career');
+    }
+
+    public function blog(){
+            return view('frontend.blog');
     }
 
 }

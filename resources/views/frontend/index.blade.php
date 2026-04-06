@@ -231,14 +231,14 @@
          before:bg-gradient-to-r before:from-[#FD5528]/20 before:to-orange-200/30 
          before:-z-10">
 
-        Recently Completed Projects
+        Projects We’ve Delivered
       </span>
   <!-- <span class="inline-block text-xs font-semibold uppercase tracking-widest text-orange-500 px-5 py-2 rounded-full bg-white shadow">
     Recently Completed Projects
   </span> -->
 
-  <h2 class="text-4xl sm:text-5xl font-bold text-gray-900">
-    Completed <span class="text-orange-500">Projects</span>
+  <h2 class="text-4xl py-4 sm:text-5xl font-bold text-gray-900">
+    Our Latest <span class="text-orange-500">Projects</span>
   </h2>
 
   <p class="text-sm text-gray-500 max-w-2xl mx-auto">
@@ -258,18 +258,18 @@
 <!-- GRID -->
 <div id="projects" class="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
 
-<!-- CARD 1 -->
+  <!-- CARD 1 -->
 <div class="project web bg-white rounded-3xl shadow-lg overflow-hidden p-5 group hover:-translate-y-1 hover:shadow-2xl transition">
   <div class="relative h-44 overflow-hidden mb-4">
-    <img src="https://backendcodersindia.com/assets/images/company-icons/page1.png" class="w-full h-full object-cover group-hover:scale-105 transition">
+    <img src="{{asset('assets/ai_demo/dental_clinic/1.png')}}" class="w-full h-full object-cover group-hover:scale-105 transition">
     <span class="absolute top-3 left-3 bg-green-600 text-white text-xs px-3 py-1 rounded-full">LIVE</span>
   </div>
   <div class="p-5 space-y-3">
     <div class="flex justify-between text-xs text-gray-500 uppercase">
       <span>Web</span><span class="text-orange-500 font-semibold">Jan 2025</span>
     </div>
-    <h3 class="text-xl font-semibold">Ace Taxis UK</h3>
-    <p class="text-sm text-gray-600">Cab booking & dispatch system.</p>
+    <h3 class="text-xl font-semibold">Bright Smile</h3>
+    <p class="text-sm text-gray-600">Dental clinic management system.</p>
     <div class="flex gap-2 flex-wrap">
       <span class="bg-orange-100 text-orange-500 text-xs px-3 py-1 rounded-full">Node</span>
       <span class="bg-orange-100 text-orange-500 text-xs px-3 py-1 rounded-full">Mongo</span>
@@ -285,7 +285,7 @@
 <!-- CARD 2 -->
 <div class="project saas bg-white rounded-3xl shadow-lg overflow-hidden p-5 group hover:-translate-y-1 hover:shadow-2xl transition">
   <div class="relative h-44 overflow-hidden mb-4">
-    <img src="https://backendcodersindia.com/assets/images/company-icons/1.png" class="w-full h-full object-cover">
+    <img src="{{asset('assets/ai_demo/gym/1.png')}}" class="w-full h-full object-cover">
     <span class="absolute top-3 left-3 bg-green-600 text-white text-xs px-3 py-1 rounded-full">LIVE</span>
   </div>
    <div class="flex justify-between text-[10px] text-gray-400 mb-2">
@@ -293,8 +293,8 @@
     <span class="text-orange-500">JAN 2025</span>
   </div>
 
-  <h3 class="text-lg font-semibold mb-2">Tanning Salon System</h3>
-  <p class="text-sm text-gray-500 mb-4">Salon booking & automation system.</p>
+  <h3 class="text-lg font-semibold mb-2">Fitness Club</h3>
+  <p class="text-sm text-gray-500 mb-4">Gym management & fitness tracking system.</p>
 
   <div class="flex gap-2 flex-wrap mb-4">
     <span class="bg-orange-100 text-orange-500 text-xs px-3 py-1 rounded-full">Node.js</span>
@@ -312,7 +312,7 @@
 <!-- CARD 3 -->
 <div class="project web bg-white rounded-3xl shadow-lg overflow-hidden p-5 group hover:-translate-y-1 hover:shadow-2xl transition">
   <div class="relative h-44 overflow-hidden mb-4">
-    <img src="https://backendcodersindia.com/assets/images/testemonials/skydatech.png" class="w-full h-full object-cover">
+    <img src="{{asset('assets/ai_demo/incredible_india/1.png')}}" class="w-full h-full object-cover">
     <span class="absolute top-3 left-3 bg-green-600 text-white text-xs px-3 py-1 rounded-full">LIVE</span>
   </div>
   <div class="flex justify-between text-[10px] text-gray-400 mb-2">
@@ -320,8 +320,8 @@
     <span class="text-orange-500">JAN 2025</span>
   </div>
 
-  <h3 class="text-lg font-semibold mb-2">Skydatech Technology</h3>
-  <p class="text-sm text-gray-500 mb-4">IT consulting & tracking platform.</p>
+  <h3 class="text-lg font-semibold mb-2">Incredible India</h3>
+  <p class="text-sm text-gray-500 mb-4">Tourism & travel platform.</p>
 
   <div class="flex gap-2 flex-wrap mb-4">
     <span class="bg-orange-100 text-orange-500 text-xs px-3 py-1 rounded-full">Node.js</span>
@@ -339,7 +339,7 @@
 <!-- CARD 4 -->
 <div class="project ecommerce bg-white rounded-3xl shadow-lg overflow-hidden p-5 group hover:-translate-y-1 hover:shadow-2xl transition">
   <div class="relative h-44 overflow-hidden mb-4">
-    <img src="https://backendcodersindia.com/assets/images/company-icons/childcare.png" class="w-full h-full object-cover">
+    <img src="{{asset('assets/ai_demo/plumber/1.png')}}" class="w-full h-full object-cover">
     <span class="absolute top-3 left-3 bg-green-600 text-white text-xs px-3 py-1 rounded-full">LIVE</span>
   </div>
   <div class="flex justify-between text-[10px] text-gray-400 mb-2">
@@ -347,8 +347,8 @@
     <span class="text-orange-500">JAN 2025</span>
   </div>
 
-  <h3 class="text-lg font-semibold mb-2">Alberta ChildCare</h3>
-  <p class="text-sm text-gray-500 mb-4">Education portal system.</p>
+  <h3 class="text-lg font-semibold mb-2">Quick Fix</h3>
+  <p class="text-sm text-gray-500 mb-4">Plumbing service booking system.</p>
 
   <div class="flex gap-2 flex-wrap mb-4">
     <span class="bg-orange-100 text-orange-500 text-xs px-3 py-1 rounded-full">Node.js</span>
@@ -366,7 +366,7 @@
 <!-- CARD 5 -->
 <div class="project web bg-white rounded-3xl shadow-lg overflow-hidden p-5 group hover:-translate-y-1 hover:shadow-2xl transition">
   <div class="relative h-44 overflow-hidden mb-4">
-    <img src="https://backendcodersindia.com/assets/images/testemonials/marley.png" class="w-full h-full object-cover">
+    <img src="{{asset('assets/ai_demo/restaurant/1.png')}}" class="w-full h-full object-cover">
     <span class="absolute top-3 left-3 bg-green-600 text-white text-xs px-3 py-1 rounded-full">LIVE</span>
   </div>
    <div class="flex justify-between text-[10px] text-gray-400 mb-2">
@@ -374,8 +374,8 @@
     <span class="text-orange-500">JAN 2025</span>
   </div>
 
-  <h3 class="text-lg font-semibold mb-2">Marley Moves</h3>
-  <p class="text-sm text-gray-500 mb-4">Logistics control system.</p>
+  <h3 class="text-lg font-semibold mb-2">Savory Bites</h3>
+  <p class="text-sm text-gray-500 mb-4">Restaurant management & ordering system.</p>
 
   <div class="flex gap-2 flex-wrap mb-4">
     <span class="bg-orange-100 text-orange-500 text-xs px-3 py-1 rounded-full">Node.js</span>
@@ -389,6 +389,7 @@
   </div>
 
 </div>
+
 
 <!-- CARD 6 -->
 <div class="project crm bg-white rounded-3xl shadow-lg overflow-hidden p-5 group hover:-translate-y-1 hover:shadow-2xl transition">
@@ -429,34 +430,7 @@
 </div>
 </section>
 
-<!-- JS FILTER -->
-<script>
-const tabs = document.querySelectorAll(".tab");
-const projects = document.querySelectorAll(".project");
 
-tabs.forEach(tab => {
-  tab.addEventListener("click", () => {
-
-    tabs.forEach(t => {
-      t.classList.remove("bg-orange-500","text-white");
-      t.classList.add("text-orange-600");
-    });
-
-    tab.classList.add("bg-orange-500","text-white");
-
-    const type = tab.dataset.tab;
-
-    projects.forEach(p => {
-      if(type === "all" || p.classList.contains(type)){
-        p.style.display = "block";
-      } else {
-        p.style.display = "none";
-      }
-    });
-
-  });
-});
-</script>
 
 <!-- {{-- prjects --}} -->
 
@@ -1140,9 +1114,6 @@ tabs.forEach(tab => {
 
 <!-- Swiper CSS -->
 
-<!-- Swiper CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-
 
 
 <section class="relative py-28 px-6 overflow-hidden">
@@ -1366,43 +1337,7 @@ tabs.forEach(tab => {
 
 </section>
 
-<!-- Swiper JS -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-<script>
-const swiper = new Swiper('.swiper', {
-  loop: true,
-  spaceBetween: 14,
-
-  slidesPerView: 2, // 👈 EXACTLY 2 CARDS
-
-  speed: 4000, // smooth continuous
-
-  autoplay: {
-    delay: 30,
-    disableOnInteraction: false,
-  },
-
-  freeMode: true,
-  freeModeMomentum: false,
-
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-
-  breakpoints: {
-    0: { slidesPerView: 1 },
-    768: { slidesPerView: 2 }, // 👈 2 on tablet+
-  }
-});
-
-// Pause on hover (premium feel)
-const swiperEl = document.querySelector('.swiper');
-
-swiperEl.addEventListener('mouseenter', () => swiper.autoplay.stop());
-swiperEl.addEventListener('mouseleave', () => swiper.autoplay.start());
-</script>
 
 <!-- contact section -->
 <section id="contact" class="relative overflow-hidden bg-white py-16 sm:py-20 lg:py-24 px-6">

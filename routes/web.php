@@ -30,6 +30,6 @@ Route::get('/service', [HomeController::class, 'service'])->name('frontend.servi
 Route::get('/project', [HomeController::class, 'project'])->name('frontend.project');
 Route::get('/contact', [HomeController::class, 'contact'])->name('frontend.contact');
 Route::get('/process', [HomeController::class, 'process'])->name('frontend.process');
-Route::get('/techstack', [HomeController::class, 'techstack'])->name('frontend.techstack');
+Route::get('/packages', [HomeController::class, 'packages'])->name('frontend.packages');
 Route::get('/career', [HomeController::class, 'career'])->name('frontend.career');
-
+Route::get('/blog', [HomeController::class, 'blog'])->name('frontend.blog');

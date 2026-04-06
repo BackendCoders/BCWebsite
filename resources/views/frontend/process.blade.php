@@ -2,17 +2,194 @@
 @extends('component.main')
 
 @section('content')
-<!-- HERO BANNER -->
-<section class="bg-gradient-to-r from-[#FC5124] to-orange-600 text-white py-20">
-  <div class="max-w-7xl mx-auto px-6 text-center">
-    <h1 class="text-4xl md:text-5xl font-bold mb-4">
-      Our Process
+<!-- hero section  -->
+<section class="relative h-[30vh] flex items-center justify-center text-center text-white overflow-hidden">
+
+  <!-- BACKGROUND IMAGE -->
+  <img 
+    src="{{asset('assets/images/banner.png')}}"
+    class="absolute inset-0 w-full h-full object-cover"
+  />
+
+  <!-- DARK OVERLAY -->
+  <div class="absolute inset-0 bg-black/60"></div>
+
+  <!-- CONTENT -->
+  <div class="relative z-10 max-w-4xl px-6">
+
+  
+
+    <!-- HEADING -->
+    <h1 class="mt-6 text-4xl sm:text-5xl md:text-6xl font-bold leading-tight">
+     Processes & Technologies at <span class="text-[#FC5124] font-semibold">Backend</span> <span class="text-[#FD5528] font-semibold">
+     
     </h1>
-    <p class="text-lg text-white/90 max-w-4xl mx-auto">
-        At Backend Coders, we follow a proven process to deliver robust backend solutions. From understanding your unique requirements to deploying scalable systems, our approach ensures your project’s success at every stage.
+
+    <!-- SUBTEXT -->
+    <p class="mt-6 text-gray-300 text-sm sm:text-base md:text-lg max-w-2xl mx-auto">
+      We are a passionate team of developers and designers helping businesses 
+      transform ideas into scalable, high-performance digital products.
     </p>
+
+ 
+
   </div>
+
 </section>
+<!-- end hero section  -->
+
+
+
+<!-- process-directions -->
+<section class="relative overflow-hidden py-16 sm:py-20 lg:py-24 bg-[#F9FAFB]">
+
+  <div class="max-w-7xl mx-auto px-6">
+
+    <!-- Heading -->
+    <div class="text-center md:mb-16">
+         <p 
+      data-aos="fade-up"
+      class="inline-block text-xs sm:text-sm font-semibold uppercase tracking-[0.35em] 
+         text-[#FD5528] relative px-5 py-2 rounded-full 
+         bg-white/60 backdrop-blur-md 
+         shadow-[0_8px_20px_rgba(0,0,0,0.08)] 
+         border border-white/40
+         before:absolute before:inset-0 before:rounded-full 
+         before:bg-gradient-to-r before:from-[#FD5528]/20 before:to-orange-200/30 
+         before:-z-10">
+
+         Process
+
+    </p>
+    
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-3">
+        Predictable Delivery
+      </h2>
+      <p class="text-gray-500 mt-3 max-w-xl mx-auto">
+        Structured milestones that keep your project moving forward.
+      </p>
+    </div>
+
+    <div class="relative">
+
+      <!-- 🔴 MOBILE LINE (BEHIND CONTENT) -->
+      <div class="absolute left-6 top-0 h-full border-l-2 border-dashed border-[#FD5528]/30 z-0 lg:hidden"></div>
+
+      <!-- 🔴 DESKTOP LINE -->
+      <div class="hidden lg:block absolute top-6 left-0 w-full border-t-2 border-dashed border-[#FD5528]/40"></div>
+
+      <!-- STEPS -->
+      <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-y-12 relative z-10">
+
+        <!-- STEP -->
+        <div class="flex items-start gap-4 lg:flex-col lg:items-center text-left lg:text-center group">
+
+          <!-- CIRCLE -->
+          <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#FD5528] font-semibold transition bg-gradient-to-r 
+          hover:from-[#fb813b] hover:to-[#b00000]     group-hover:text-white">
+            01
+          </div>
+
+          <!-- TEXT -->
+          <div>
+            <h3 class="font-semibold text-gray-900 group-hover:text-[#FD5528]">
+              Discovery
+            </h3>
+            <p class="text-sm text-gray-500 mt-1">
+              Understanding goals & defining scope
+            </p>
+          </div>
+
+        </div>
+
+        <!-- STEP -->
+        <div class="flex items-start gap-4 lg:flex-col lg:items-center text-left lg:text-center group">
+          <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#FD5528] font-semibold transition group-hover:bg-gradient-to-r 
+          hover:from-[#fb813b] hover:to-[#b00000] group-hover:text-white">
+            02
+          </div>
+          <div>
+            <h3 class="font-semibold text-gray-900 group-hover:text-[#FD5528]">
+              UI / UX
+            </h3>
+            <p class="text-sm text-gray-500 mt-1">
+              Designing intuitive experiences
+            </p>
+          </div>
+        </div>
+
+        <!-- STEP -->
+        <div class="flex items-start gap-4 lg:flex-col lg:items-center text-left lg:text-center group">
+          <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#FD5528] font-semibold transition group-hover:bg-gradient-to-r 
+          hover:from-[#fb813b] hover:to-[#b00000] group-hover:text-white">
+            03
+          </div>
+          <div>
+            <h3 class="font-semibold text-gray-900 group-hover:text-[#FD5528]">
+              Development
+            </h3>
+            <p class="text-sm text-gray-500 mt-1">
+              Building scalable applications
+            </p>
+          </div>
+        </div>
+
+        <!-- STEP -->
+        <div class="flex items-start gap-4 lg:flex-col lg:items-center text-left lg:text-center group">
+          <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#FD5528] font-semibold transition group-hover:bg-gradient-to-r 
+          hover:from-[#fb813b] hover:to-[#b00000] group-hover:text-white">
+            04
+          </div>
+          <div>
+            <h3 class="font-semibold text-gray-900 group-hover:text-[#FD5528]">
+              Testing
+            </h3>
+            <p class="text-sm text-gray-500 mt-1">
+              Ensuring quality & performance
+            </p>
+          </div>
+        </div>
+
+        <!-- STEP -->
+        <div class="flex items-start gap-4 lg:flex-col lg:items-center text-left lg:text-center group">
+          <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#FD5528] font-semibold transition group-hover:bg-gradient-to-r 
+            hover:from-[#fb813b] hover:to-[#b00000] group-hover:text-white">
+            05
+          </div>
+          <div>
+            <h3 class="font-semibold text-gray-900 group-hover:text-[#FD5528]">
+              Deployment
+            </h3>
+            <p class="text-sm text-gray-500 mt-1">
+              Launching production-ready apps
+            </p>
+          </div>
+        </div>
+
+        <!-- STEP -->
+        <div class="flex items-start gap-4 lg:flex-col lg:items-center text-left lg:text-center group">
+          <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#FD5528] font-semibold transition group-hover:bg-gradient-to-r 
+            hover:from-[#fb813b] hover:to-[#b00000] group-hover:text-white">
+            06
+          </div>
+          <div>
+            <h3 class="font-semibold text-gray-900 group-hover:text-[#FD5528]">
+              Support
+            </h3>
+            <p class="text-sm text-gray-500 mt-1">
+              Continuous improvements
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+<!-- pr -->
 
 <!-- TECHNOLOGIES -->
 <section id="technologies" class="bg-[#F9FAFB] px-6 py-16 sm:py-20 lg:py-24">
@@ -199,13 +376,11 @@
 </section>
 <!-- END TECHNOLOGIES -->
 
-<!-- process-directions -->
-<section class="relative overflow-hidden py-16 sm:py-20 lg:py-24 bg-[#F9FAFB]">
 
-  <div class="max-w-9xl lg:mx-24 mx-auto px-6">
+<section class="bg-gray-50 py-16">
 
-    <!-- Heading -->
-    <div class="text-center md:mb-16">
+  <div class="max-w-7xl mx-auto px-6">
+   <div class="text-center md:mb-16">
          <p 
       data-aos="fade-up"
       class="inline-block text-xs sm:text-sm font-semibold uppercase tracking-[0.35em] 
@@ -217,183 +392,17 @@
          before:bg-gradient-to-r before:from-[#FD5528]/20 before:to-orange-200/30 
          before:-z-10">
 
-         Process
+         Service we offer
 
     </p>
     
       <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-3">
-        Predictable Delivery
+          What We Do
       </h2>
       <p class="text-gray-500 mt-3 max-w-xl mx-auto">
-        Structured milestones that keep your project moving forward.
+          From custom backend development to full-stack solutions, we offer a range of services to bring your digital vision to life.
       </p>
     </div>
-
-    <div class="relative">
-
-      <!-- 🔴 MOBILE LINE (BEHIND CONTENT) -->
-      <div class="absolute left-6 top-0 h-full border-l-2 border-dashed border-[#FD5528]/30 z-0 lg:hidden"></div>
-
-      <!-- 🔴 DESKTOP LINE -->
-      <div class="hidden lg:block absolute top-6 left-0 w-full border-t-2 border-dashed border-[#FD5528]/40"></div>
-
-      <!-- STEPS -->
-      <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-y-12 relative z-10">
-
-        <!-- STEP -->
-        <div class="flex items-start gap-4 lg:flex-col lg:items-center text-left lg:text-center group">
-
-          <!-- CIRCLE -->
-          <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#FD5528] font-semibold transition bg-gradient-to-r 
-          hover:from-[#fb813b] hover:to-[#b00000]     group-hover:text-white">
-            01
-          </div>
-
-          <!-- TEXT -->
-          <div>
-            <h3 class="font-semibold text-gray-900 group-hover:text-[#FD5528]">
-              Discovery
-            </h3>
-            <p class="text-sm text-gray-500 mt-1">
-              Understanding goals & defining scope
-            </p>
-          </div>
-
-        </div>
-
-        <!-- STEP -->
-        <div class="flex items-start gap-4 lg:flex-col lg:items-center text-left lg:text-center group">
-          <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#FD5528] font-semibold transition group-hover:bg-gradient-to-r 
-          hover:from-[#fb813b] hover:to-[#b00000] group-hover:text-white">
-            02
-          </div>
-          <div>
-            <h3 class="font-semibold text-gray-900 group-hover:text-[#FD5528]">
-              UI / UX
-            </h3>
-            <p class="text-sm text-gray-500 mt-1">
-              Designing intuitive experiences
-            </p>
-          </div>
-        </div>
-
-        <!-- STEP -->
-        <div class="flex items-start gap-4 lg:flex-col lg:items-center text-left lg:text-center group">
-          <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#FD5528] font-semibold transition group-hover:bg-gradient-to-r 
-          hover:from-[#fb813b] hover:to-[#b00000] group-hover:text-white">
-            03
-          </div>
-          <div>
-            <h3 class="font-semibold text-gray-900 group-hover:text-[#FD5528]">
-              Development
-            </h3>
-            <p class="text-sm text-gray-500 mt-1">
-              Building scalable applications
-            </p>
-          </div>
-        </div>
-
-        <!-- STEP -->
-        <div class="flex items-start gap-4 lg:flex-col lg:items-center text-left lg:text-center group">
-          <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#FD5528] font-semibold transition group-hover:bg-gradient-to-r 
-          hover:from-[#fb813b] hover:to-[#b00000] group-hover:text-white">
-            04
-          </div>
-          <div>
-            <h3 class="font-semibold text-gray-900 group-hover:text-[#FD5528]">
-              Testing
-            </h3>
-            <p class="text-sm text-gray-500 mt-1">
-              Ensuring quality & performance
-            </p>
-          </div>
-        </div>
-
-        <!-- STEP -->
-        <div class="flex items-start gap-4 lg:flex-col lg:items-center text-left lg:text-center group">
-          <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#FD5528] font-semibold transition group-hover:bg-gradient-to-r 
-            hover:from-[#fb813b] hover:to-[#b00000] group-hover:text-white">
-            05
-          </div>
-          <div>
-            <h3 class="font-semibold text-gray-900 group-hover:text-[#FD5528]">
-              Deployment
-            </h3>
-            <p class="text-sm text-gray-500 mt-1">
-              Launching production-ready apps
-            </p>
-          </div>
-        </div>
-
-        <!-- STEP -->
-        <div class="flex items-start gap-4 lg:flex-col lg:items-center text-left lg:text-center group">
-          <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#FD5528] font-semibold transition group-hover:bg-gradient-to-r 
-            hover:from-[#fb813b] hover:to-[#b00000] group-hover:text-white">
-            06
-          </div>
-          <div>
-            <h3 class="font-semibold text-gray-900 group-hover:text-[#FD5528]">
-              Support
-            </h3>
-            <p class="text-sm text-gray-500 mt-1">
-              Continuous improvements
-            </p>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-<!-- pr -->
-
-
-<section class="bg-gray-50 py-16">
-
-  <div class="max-w-7xl mx-auto px-6">
-
-<section class="py-20">
-  <div class="max-w-7xl mx-auto px-6">
-
-
-    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-
-      <!-- STEP -->
-      <div class="bg-white p-6 rounded-xl shadow hover:shadow-xl transition" data-aos="fade-up">
-        <h3 class="font-bold text-lg mb-3 text-[#FC5124]">Discovery & Planning</h3>
-        <p class="text-sm text-gray-600">
-          We analyze your goals, challenges, and vision to define a clear roadmap for success.
-        </p>
-      </div>
-
-      <div class="bg-white p-6 rounded-xl shadow hover:shadow-xl transition" data-aos="fade-up">
-        <h3 class="font-bold text-lg mb-3 text-[#FC5124]">Design & Architecture</h3>
-        <p class="text-sm text-gray-600">
-          We build scalable, secure, and efficient backend architectures tailored to your needs.
-        </p>
-      </div>
-
-      <div class="bg-white p-6 rounded-xl shadow hover:shadow-xl transition" data-aos="fade-up">
-        <h3 class="font-bold text-lg mb-3 text-[#FC5124]">Development</h3>
-        <p class="text-sm text-gray-600">
-          Clean, optimized, and maintainable code ensures high performance and reliability.
-        </p>
-      </div>
-
-      <div class="bg-white p-6 rounded-xl shadow hover:shadow-xl transition" data-aos="fade-up">
-        <h3 class="font-bold text-lg mb-3 text-[#FC5124]">Testing & Quality</h3>
-        <p class="text-sm text-gray-600">
-          Rigorous testing guarantees performance, security, and seamless functionality.
-        </p>
-      </div>
-
-    </div>
-
-  </div>
-</section>
 
     <!-- GRID -->
     <div class=" grid md:grid-cols-2 lg:grid-cols-3 gap-10">
@@ -443,130 +452,7 @@
     </div>
 
 
-<!-- PROCESS SECTION -->
-<section id="process" class="bg-[#F9FAFB] px-6 py-24">
 
-
-  <div class="max-w-7xl mx-auto">
-
-    <!-- Heading -->
-    <div class="text-center max-w-3xl mx-auto">
-
-      <p class="text-xs font-semibold uppercase tracking-[0.35em] text-[#FD5528]">
-        Process
-      </p>
-
-      <h2 class="mt-4 text-3xl font-bold text-gray-900 md:text-4xl">
-        Predictable Delivery
-      </h2>
-
-      <p class="mt-4 text-gray-600">
-        Structured milestones that keep your project moving forward.
-      </p>
-
-    </div>
-
-    <!-- Grid -->
-    <div class="mt-16 grid gap-10 sm:grid-cols-2 lg:grid-cols-3 relative">
-
-      <!-- STEP 1 -->
-      <article class="process-card group rounded-2xl border border-gray-200 bg-white p-7 shadow-sm transition hover:-translate-y-2 hover:shadow-xl">
-
-        <span class="text-3xl font-bold text-[#FD5528]">01</span>
-
-        <h3 class="mt-4 text-xl font-semibold text-gray-900">
-          Discovery & Planning
-        </h3>
-
-        <p class="mt-2 text-sm text-gray-600">
-          Understanding your goals and defining a clear, pragmatic project scope.
-        </p>
-
-      </article>
-
-      <!-- STEP 2 -->
-      <article class="process-card group rounded-2xl border border-gray-200 bg-white p-7 shadow-sm transition hover:-translate-y-2 hover:shadow-xl">
-
-        <span class="text-3xl font-bold text-[#FD5528]">02</span>
-
-        <h3 class="mt-4 text-xl font-semibold text-gray-900">
-          UI / UX Design
-        </h3>
-
-        <p class="mt-2 text-sm text-gray-600">
-          Crafting intuitive interfaces that enhance user engagement.
-        </p>
-
-      </article>
-
-      <!-- STEP 3 -->
-      <article class="process-card group rounded-2xl border border-gray-200 bg-white p-7 shadow-sm transition hover:-translate-y-2 hover:shadow-xl">
-
-        <span class="text-3xl font-bold text-[#FD5528]">03</span>
-
-        <h3 class="mt-4 text-xl font-semibold text-gray-900">
-          Development
-        </h3>
-
-        <p class="mt-2 text-sm text-gray-600">
-          Clean, scalable code built with modern frameworks.
-        </p>
-
-      </article>
-
-      <!-- STEP 4 -->
-      <article class="process-card group rounded-2xl border border-gray-200 bg-white p-7 shadow-sm transition hover:-translate-y-2 hover:shadow-xl">
-
-        <span class="text-3xl font-bold text-[#FD5528]">04</span>
-
-        <h3 class="mt-4 text-xl font-semibold text-gray-900">
-          Testing & QA
-        </h3>
-
-        <p class="mt-2 text-sm text-gray-600">
-          Ensuring reliability, performance, and security.
-        </p>
-
-      </article>
-
-      <!-- STEP 5 -->
-      <article class="process-card group rounded-2xl border border-gray-200 bg-white p-7 shadow-sm transition hover:-translate-y-2 hover:shadow-xl">
-
-        <span class="text-3xl font-bold text-[#FD5528]">05</span>
-
-        <h3 class="mt-4 text-xl font-semibold text-gray-900">
-          Deployment
-        </h3>
-
-        <p class="mt-2 text-sm text-gray-600">
-          Production-ready deployment with monitoring.
-        </p>
-
-      </article>
-
-      <!-- STEP 6 -->
-      <article class="process-card group rounded-2xl border border-gray-200 bg-white p-7 shadow-sm transition hover:-translate-y-2 hover:shadow-xl">
-
-        <span class="text-3xl font-bold text-[#FD5528]">06</span>
-
-        <h3 class="mt-4 text-xl font-semibold text-gray-900">
-          Continuous Support
-        </h3>
-
-        <p class="mt-2 text-sm text-gray-600">
-          Ongoing improvements and feature enhancements.
-        </p>
-
-      </article>
-
-    </div>
-
-  </div>
-
-
-</section>
-
-<!-- END PROCESS SECTION -->
 
       <!-- CARD -->
 

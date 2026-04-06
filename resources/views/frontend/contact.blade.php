@@ -2,6 +2,40 @@
 @section('content')
 
 
+<!-- hero section  -->
+<section class="relative h-[30vh] flex items-center justify-center text-center text-white overflow-hidden">
+
+  <!-- BACKGROUND IMAGE -->
+  <img 
+    src="{{asset('assets/images/banner.png')}}"
+    class="absolute inset-0 w-full h-full object-cover"
+  />
+
+  <!-- DARK OVERLAY -->
+  <div class="absolute inset-0 bg-black/60"></div>
+
+  <!-- CONTENT -->
+  <div class="relative z-10 max-w-4xl px-6">
+
+  
+
+    <!-- HEADING -->
+    <h1 class="mt-6 text-4xl sm:text-5xl md:text-6xl font-bold leading-tight">
+     Contact<span class="text-[#FD5528]"> Us</span>
+    </h1>
+
+    <!-- SUBTEXT -->
+    <p class="mt-6 text-gray-300 text-sm sm:text-base md:text-lg max-w-2xl mx-auto">
+      Build your future with us. Work on exciting projects, grow your skills, and make an impact.
+    </p>
+
+ 
+
+  </div>
+
+</section>
+<!-- end hero section  -->
+
 
 
 
@@ -12,11 +46,25 @@
 
        <!-- Heading -->
        <div class="text-center max-w-2xl mx-auto mb-16">
-          <p class="text-xs font-semibold uppercase tracking-[0.35em] p-2 text-[#0e0301]">
-          Contact
-        </p>
+           <!-- BADGE -->
+      <span 
+    
+      data-aos="fade-up"
+      class="inline-block text-xs sm:text-sm font-semibold uppercase tracking-[0.35em] 
+         text-[#FD5528] relative px-5 py-2 rounded-full 
+         bg-white/60 backdrop-blur-md 
+         shadow-[0_8px_20px_rgba(0,0,0,0.08)] 
+         border border-white/40
+         before:absolute before:inset-0 before:rounded-full 
+         before:bg-gradient-to-r before:from-[#FD5528]/20 before:to-orange-200/30 
+         before:-z-10">
+
+        Contact us
+      </span>
+
+       
  <!-- Heading -->
-    <h1 class="text-4xl text-[#FD5528] md:text-5xl font-bold mb-4" text-black data-aos="fade-up">
+    <h1 class="text-4xl py-2 text-[#FD5528] md:text-5xl font-bold mb-4" text-black data-aos="fade-up">
       Get in Touch
     </h1>
 
@@ -119,11 +167,11 @@
           <img src="https://img.icons8.com/?size=100&id=118468&format=png&color=f44918" class="w-5 h-5 group-hover:brightness-0 group-hover:invert">
         </a>
 
-        <a href="https://www.instagram.com/backendcoders?igsh=YWd0ZHJmMjJ5cjZr" class="w-10 h-10 flex items-center justify-center rounded-xl bg-[#FFF1EC] hover:bg-[#FD5528] transition group">
+        <a href="https://www.instagram.com/backendcoders/" class="w-10 h-10 flex items-center justify-center rounded-xl bg-[#FFF1EC] hover:bg-[#FD5528] transition group">
           <img src="https://img.icons8.com/?size=100&id=32292&format=png&color=f44918" class="w-5 h-5 group-hover:brightness-0 group-hover:invert">
         </a>
 
-        <a href="https://www.linkedin.com/company/backendcodersindia/" class="w-10 h-10 flex items-center justify-center rounded-xl bg-[#FFF1EC] hover:bg-[#FD5528] transition group">
+        <a href="https://www.linkedin.com/company/103738896/admin/dashboard/" class="w-10 h-10 flex items-center justify-center rounded-xl bg-[#FFF1EC] hover:bg-[#FD5528] transition group">
           <img src="https://img.icons8.com/?size=100&id=447&format=png&color=f44918" class="w-5 h-5 group-hover:brightness-0 group-hover:invert">
         </a>
 
@@ -183,10 +231,12 @@
     <textarea rows="4" placeholder="Your Message"
       class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FD5528]/30"></textarea>
 
-    <button type="submit"
-      class="w-full bg-[#FD5528] text-white py-3 rounded-lg font-medium hover:bg-[#e04a22] transition shadow-md hover:shadow-lg">
+   <div class="flex justify-center">
+     <button type="submit"
+      class="max-w-md px-4 py-2 bg-gradient-to-r from-[#FD5528] to-[#fbb03b] hover:from-[#fbb03b] hover:to-[#FD5528] hover:scale-110 transition-all text-white py-3 rounded-lg font-medium hover:bg-[#e04a22] shadow-md hover:shadow-lg">
       Send Message
     </button>
+   </div>
 
   </form>
 
