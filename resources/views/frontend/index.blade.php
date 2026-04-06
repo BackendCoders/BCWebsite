@@ -272,15 +272,7 @@
           'date' => 'Jan 2025',
           'metric' => '+31% forecast accuracy',
         ],
-        [
-          'title' => 'Demo Cycle',
-          'desc' => 'E-commerce sample site tied to an E-POS initiative with inventory and fulfillment automation.',
-          'image' => 'https://backendcodersindia.com/assets/images/company-icons/demo.png',
-          'type' => 'ecommerce',
-          'tags' => ['Node.js', 'MongoDB', 'REST API'],
-          'date' => 'Jan 2025',
-          'metric' => '+34% average order value',
-        ],
+        
       ];
     @endphp
 
@@ -322,6 +314,14 @@
         </article>
       @endforeach
 
+    </div>
+
+      <!-- Bottom Button -->
+    <div class="text-center mt-12">
+      <a href="#"
+         class="inline-block bg-gradient-to-r from-[#FD5528] to-[#fbb03b] text-white px-6 py-3 rounded-full font-semibold shadow hover:bg-orange-600 transition">
+        View All Projects
+      </a>
     </div>
 
   </div>
@@ -898,148 +898,107 @@
 
 
 {{-- faq --}}
-<section class="bg-[#F9FAFB] py-16 sm:py-20 lg:py-24 px-4 sm:px-6">
+<section class="relative overflow-hidden bg-gradient-to-br from-white via-slate-50 to-slate-100 py-16 sm:py-20 lg:py-24 px-4 sm:px-6">
 
-  <div class="max-w-9xl lg:mx-24 mx-auto">
+  <div class="max-w-6xl lg:max-w-7xl mx-auto relative z-10">
 
     <!-- Heading -->
-    <div class="text-center mb-12 sm:mb-16">
-       <p 
-      data-aos="fade-up"
-      class="inline-block text-xs sm:text-sm font-semibold uppercase tracking-[0.35em] 
-         text-[#FD5528] relative px-5 py-2 rounded-full 
-         bg-white/60 backdrop-blur-md 
-         shadow-[0_8px_20px_rgba(0,0,0,0.08)] 
-         border border-white/40
-         before:absolute before:inset-0 before:rounded-full 
-         before:bg-gradient-to-r before:from-[#FD5528]/20 before:to-orange-200/30 
-         before:-z-10">
-
-          FAQ
-
-    </p>
-      <!-- <p class="text-xs font-semibold uppercase tracking-[0.35em] text-[#FD5528]">
+    <div class="text-center mb-10 sm:mb-14">
+      <p 
+        data-aos="fade-up"
+        class="inline-block text-xs sm:text-sm font-semibold uppercase tracking-[0.35em] 
+          text-[#FD5528] relative px-5 py-2 rounded-full 
+          bg-white/70 backdrop-blur-md 
+          shadow-[0_15px_35px_rgba(253,85,40,0.25)] 
+          border border-white/60
+          before:absolute before:inset-0 before:rounded-full 
+          before:bg-gradient-to-r before:from-[#FD5528]/20 before:to-orange-200/30 
+          before:-z-10">
         FAQ
-      </p> -->
+      </p>
 
-      <h2 class="mt-4 text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">
+      <h2 class="mt-5 text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900">
         Frequently Asked Questions
       </h2>
 
-      <p class="mt-4 text-gray-500 max-w-2xl mx-auto text-sm sm:text-base">
-        Everything you need to know about working with Backend Coders.
+      <p class="mt-4 text-slate-500 max-w-3xl mx-auto text-base sm:text-lg">
+        Everything you need to know about partnering with Backend Coders — transparency, headcount, and support wrapped in a confident delivery process.
       </p>
     </div>
 
-    <!-- GRID -->
-    <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+    <!-- Stats -->
+    {{-- <div class="mb-10 grid sm:grid-cols-3 gap-4">
+      <div class="bg-white/90 border border-white shadow-lg rounded-2xl px-6 py-4 text-center backdrop-blur">
+        <p class="text-sm uppercase tracking-[0.3em] text-slate-400">Teams</p>
+        <p class="mt-2 text-2xl font-semibold text-slate-900">40+</p>
+        <p class="text-xs text-slate-500">Dedicated squads on standby</p>
+      </div>
+      <div class="bg-white/90 border border-white shadow-lg rounded-2xl px-6 py-4 text-center backdrop-blur">
+        <p class="text-sm uppercase tracking-[0.3em] text-slate-400">Projects</p>
+        <p class="mt-2 text-2xl font-semibold text-slate-900">200+</p>
+        <p class="text-xs text-slate-500">Enterprise-grade rollouts</p>
+      </div>
+      <div class="bg-white/90 border border-white shadow-lg rounded-2xl px-6 py-4 text-center backdrop-blur">
+        <p class="text-sm uppercase tracking-[0.3em] text-slate-400">Coverage</p>
+        <p class="mt-2 text-2xl font-semibold text-slate-900">24/7</p>
+        <p class="text-xs text-slate-500">Monitoring + support windows</p>
+      </div>
+    </div> --}}
 
-      <!-- LEFT IMAGE (TOP ON MOBILE) -->
-      <div class="order-1 lg:order-2 relative">
+    <!-- GRID -->
+    <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
+
+      <!-- LEFT IMAGE -->
+      <div class="order-1 lg:order-2 relative rounded-[32px] bg-gradient-to-br from-[#FFEDD5] via-white to-[#FEE2E2] p-6 shadow-[0_25px_60px_rgba(253,85,40,0.25)]">
+        <div class="absolute inset-x-4 top-4 h-2 rounded-full bg-gradient-to-r from-[#FD5528]/60 to-orange-200/70 blur-3xl opacity-70"></div>
         <img 
           src="{{asset('assets/images/faq.png')}}"
           alt="FAQ Illustration"
-          class="rounded-2xl shadow-xl w-full h-full object-cover"
+          class="rounded-2xl shadow-2xl w-full h-[360px] object-cover relative z-10"
         >
       </div>
 
       <!-- FAQ LIST -->
       <div class="order-2 lg:order-1 space-y-4">
 
-        <!-- ITEM -->
-        <details class="group bg-white border border-gray-200 rounded-xl p-5 shadow-sm open:shadow-md transition duration-300">
-          <summary class="flex justify-between items-center cursor-pointer list-none">
-            <span class="font-medium text-gray-900 text-sm sm:text-base">
-              What services do you offer?
-            </span>
-            <span class="text-[#FD5528] text-xl transition-transform duration-300 group-open:rotate-45">
-              +
-            </span>
-          </summary>
-          <p class="mt-3 text-sm text-gray-500 leading-relaxed">
-            We specialize in backend development, API design, cloud infrastructure, database architecture, and scalable enterprise applications.
-          </p>
-        </details>
+        @php
+          $faqs = [
+            ['title' => 'What services do you offer?', 'description' => 'Backend engineering, API design, cloud architecture, automation, and enterprise-grade solutions that keep scaling teams aligned.'],
+            ['title' => 'Which technologies do you work with?', 'description' => '.NET Core, Node.js, Laravel, Go, SQL Server, PostgreSQL, Redis, Kafka, Azure, AWS, and modern DevOps pipelines.'],
+            ['title' => 'Do you provide dedicated development teams?', 'description' => 'Yes, our specialists embed within your product organization with dedicated project leads and sprint reporting.'],
+            ['title' => 'How do you ensure scalability and performance?', 'description' => 'We architect microservices, apply caching strategies, optimize storage, and add observability to catch regressions early.'],
+            ['title' => 'What is your development process?', 'description' => 'We follow a structured agile cadence: discovery, roadmap, sprint-based delivery, QA, deployment, and post-launch retrospectives.'],
+            ['title' => 'Do you provide post-launch support?', 'description' => 'Long-term maintenance, 24/7 monitoring, release planning, and scaling support are included in every retainer plan.'],
+          ];
+        @endphp
 
-        <!-- ITEM -->
-        <details class="group bg-white border border-gray-200 rounded-xl p-5 shadow-sm open:shadow-md transition duration-300">
-          <summary class="flex justify-between items-center cursor-pointer list-none">
-            <span class="font-medium text-gray-900 text-sm sm:text-base">
-              Which technologies do you work with?
-            </span>
-            <span class="text-[#FD5528] text-xl transition-transform duration-300 group-open:rotate-45">
-              +
-            </span>
-          </summary>
-          <p class="mt-3 text-sm text-gray-500 leading-relaxed">
-            We work with .NET Core, Node.js, Laravel, SQL Server, Redis, Azure, AWS, and modern DevOps tools.
-          </p>
-        </details>
+        @foreach ($faqs as $faq)
+          <details class="group bg-white border border-gray-200 rounded-2xl p-5 shadow-sm open:shadow-md transition duration-300">
+            <summary class="flex justify-between items-center cursor-pointer list-none">
+              <span class="font-medium text-slate-900 text-base md:text-lg">
+                {{ $faq['title'] }}
+              </span>
+              <span class="text-[#FD5528] text-2xl transition-transform duration-300 group-open:rotate-45">
+                +
+              </span>
+            </summary>
+            <p class="mt-3 text-sm text-slate-500 leading-relaxed">
+              {{ $faq['description'] }}
+            </p>
+          </details>
+        @endforeach
 
-        <!-- ITEM -->
-        <details class="group bg-white border border-gray-200 rounded-xl p-5 shadow-sm open:shadow-md transition duration-300">
-          <summary class="flex justify-between items-center cursor-pointer list-none">
-            <span class="font-medium text-gray-900 text-sm sm:text-base">
-              Do you provide dedicated development teams?
-            </span>
-            <span class="text-[#FD5528] text-xl transition-transform duration-300 group-open:rotate-45">
-              +
-            </span>
-          </summary>
-          <p class="mt-3 text-sm text-gray-500 leading-relaxed">
-            Yes, we offer dedicated developers and full teams who work exclusively on your project.
-          </p>
-        </details>
-
-        <!-- ITEM -->
-        <details class="group bg-white border border-gray-200 rounded-xl p-5 shadow-sm open:shadow-md transition duration-300">
-          <summary class="flex justify-between items-center cursor-pointer list-none">
-            <span class="font-medium text-gray-900 text-sm sm:text-base">
-              How do you ensure scalability and performance?
-            </span>
-            <span class="text-[#FD5528] text-xl transition-transform duration-300 group-open:rotate-45">
-              +
-            </span>
-          </summary>
-          <p class="mt-3 text-sm text-gray-500 leading-relaxed">
-            We design systems with microservices, caching, load balancing, and optimized database structures.
-          </p>
-        </details>
-
-        <!-- ITEM -->
-        <details class="group bg-white border border-gray-200 rounded-xl p-5 shadow-sm open:shadow-md transition duration-300">
-          <summary class="flex justify-between items-center cursor-pointer list-none">
-            <span class="font-medium text-gray-900 text-sm sm:text-base">
-              What is your development process?
-            </span>
-            <span class="text-[#FD5528] text-xl transition-transform duration-300 group-open:rotate-45">
-              +
-            </span>
-          </summary>
-          <p class="mt-3 text-sm text-gray-500 leading-relaxed">
-            We follow an agile process including planning, design, development, testing, deployment, and continuous support.
-          </p>
-        </details>
-
-        <!-- ITEM -->
-        <details class="group bg-white border border-gray-200 rounded-xl p-5 shadow-sm open:shadow-md transition duration-300">
-          <summary class="flex justify-between items-center cursor-pointer list-none">
-            <span class="font-medium text-gray-900 text-sm sm:text-base">
-              Do you provide post-launch support?
-            </span>
-            <span class="text-[#FD5528] text-xl transition-transform duration-300 group-open:rotate-45">
-              +
-            </span>
-          </summary>
-          <p class="mt-3 text-sm text-gray-500 leading-relaxed">
-            Yes, we provide long-term maintenance, monitoring, updates, and scaling support.
-          </p>
-        </details>
+       
 
       </div>
 
     </div>
 
+  </div>
+
+  <div class="pointer-events-none absolute inset-0 opacity-50">
+    <div class="absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r from-[#FD5528]/5 to-transparent"></div>
+    <div class="absolute inset-y-0 right-0 w-1/2 bg-gradient-to-l from-[#0F172A]/5 to-transparent"></div>
   </div>
 
 </section>
