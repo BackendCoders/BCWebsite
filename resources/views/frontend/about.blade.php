@@ -332,7 +332,7 @@
     </p>
     
       <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-3">
-        Predictable <span class="text-[#FD5528]">Delivery</span>
+        Predictable Delivery
       </h2>
       <p class="text-gray-500 mt-3 max-w-xl mx-auto">
         Structured milestones that keep your project moving forward.
@@ -354,8 +354,7 @@
         <div class="flex items-start gap-4 lg:flex-col lg:items-center text-left lg:text-center group">
 
           <!-- CIRCLE -->
-          <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#FD5528] font-semibold transition bg-gradient-to-r 
-          hover:from-[#fb813b] hover:to-[#b00000]     ">
+          <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#FD5528] font-semibold transition     ">
             01
           </div>
 
@@ -373,8 +372,7 @@
 
         <!-- STEP -->
         <div class="flex items-start gap-4 lg:flex-col lg:items-center text-left lg:text-center group">
-          <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#FD5528] font-semibold transition group-hover:bg-gradient-to-r 
-          hover:from-[#fb813b] hover:to-[#b00000] ">
+          <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#FD5528] font-semibold transition ] ">
             02
           </div>
           <div>
@@ -389,8 +387,7 @@
 
         <!-- STEP -->
         <div class="flex items-start gap-4 lg:flex-col lg:items-center text-left lg:text-center group">
-          <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#FD5528] font-semibold transition group-hover:bg-gradient-to-r 
-          hover:from-[#fb813b] hover:to-[#b00000] ">
+          <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#FD5528] font-semibold transition ] ">
             03
           </div>
           <div>
@@ -405,8 +402,7 @@
 
         <!-- STEP -->
         <div class="flex items-start gap-4 lg:flex-col lg:items-center text-left lg:text-center group">
-          <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#FD5528] font-semibold transition group-hover:bg-gradient-to-r 
-          hover:from-[#fb813b] hover:to-[#b00000] ">
+          <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#FD5528] font-semibold transition ] ">
             04
           </div>
           <div>

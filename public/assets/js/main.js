@@ -323,4 +323,31 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
+document.addEventListener("DOMContentLoaded", () => {
 
+  const items = document.querySelectorAll(".faq-item");
+
+  items.forEach(item => {
+    item.addEventListener("click", () => {
+
+      const answer = item.querySelector(".faq-answer");
+      const icon = item.querySelector(".faq-icon");
+
+      const isOpen = answer.classList.contains("max-h-40");
+
+      // CLOSE ALL
+      items.forEach(i => {
+        i.querySelector(".faq-answer").classList.remove("max-h-40");
+        i.querySelector(".faq-icon").classList.remove("rotate-45");
+      });
+
+      // OPEN CURRENT
+      if (!isOpen) {
+        answer.classList.add("max-h-40");
+        icon.classList.add("rotate-45");
+      }
+
+    });
+  });
+
+});
