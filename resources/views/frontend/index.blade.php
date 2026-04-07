@@ -434,7 +434,7 @@
 
 
 <!-- SERVICE -->
-<section id="services" class="relative overflow-hidden bg-white   px-6 py-16 sm:py-20 lg:py-24">
+<section id="services" class="relative overflow-hidden bg-white px-6 py-16 sm:py-20 lg:py-24">
 
     <div class="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-[#FD5528]/10 to-transparent pointer-events-none"></div>
     <div class="absolute right-0 top-1/4 hidden w-64 h-64 rounded-full bg-[#FD5528]/10 blur-3xl lg:block"></div>
@@ -481,7 +481,7 @@
                     <div class="relative z-10 flex flex-col items-center text-center space-y-4">
                         <span class="text-[0.6rem] font-semibold uppercase tracking-[0.4em] text-[#FD5528]">Bespoke Web</span>
                         <div class="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] 
-        hover:from-[#fb813b] hover:to-[#b00000]  shadow-inner">
+                    hover:from-[#fb813b] hover:to-[#b00000]  shadow-inner">
                             <img src="https://img.icons8.com/?size=100&id=DCkAZ79sIYhT&format=png&color=ffffff" alt="Custom web app" class="h-16 w-16" />
                         </div>
                         <h3 class="text-xl font-semibold transition duration-500 group-hover:text-black">Custom Web Applications</h3>
@@ -499,7 +499,7 @@
                     <div class="relative z-10 flex flex-col items-center text-center space-y-4">
                         <span class="text-[0.6rem] font-semibold uppercase tracking-[0.4em] text-[#FD5528]">Design & Build</span>
                         <div class="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] 
-      hover:from-[#fb813b] hover:to-[#b00000] shadow-inner">
+                    hover:from-[#fb813b] hover:to-[#b00000] shadow-inner">
                             <img src="https://img.icons8.com/?size=100&id=8Y6ohiJ337rc&format=png&color=ffffff" alt="Design icon" class="h-16 w-16" />
                         </div>
                         <h3 class="text-xl font-semibold transition duration-500 group-hover:text-black">Website Design & Development</h3>
@@ -517,7 +517,7 @@
                     <div class="relative z-10 flex flex-col items-center text-center space-y-4">
                         <span class="text-[0.6rem] font-semibold uppercase tracking-[0.4em] text-[#FD5528]">SaaS Forces</span>
                         <div class="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] 
-      hover:from-[#fb813b] hover:to-[#b00000] shadow-inner">
+                    hover:from-[#fb813b] hover:to-[#b00000] shadow-inner">
                             <img src="https://img.icons8.com/?size=100&id=k8TSihyFk2cJ&format=png&color=ffffff" alt="SaaS icon" class="h-16 w-16" />
                         </div>
                         <h3 class="text-xl font-semibold transition duration-500 group-hover:text-black">SaaS Development</h3>
@@ -535,7 +535,7 @@
                     <div class="relative z-10 flex flex-col items-center text-center space-y-4">
                         <span class="text-[0.6rem] font-semibold uppercase tracking-[0.4em] text-[#FD5528]">Enterprise Core</span>
                         <div class="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] 
-    hover:from-[#fb813b] hover:to-[#b00000] shadow-inner">
+                    hover:from-[#fb813b] hover:to-[#b00000] shadow-inner">
                             <img src="https://img.icons8.com/?size=100&id=Rk5rrSlqrNZO&format=png&color=ffffff" alt="ERP icon" class="h-16 w-16" />
                         </div>
                         <h3 class="text-xl font-semibold transition duration-500 group-hover:text-black">ERP & POS Software</h3>
@@ -553,7 +553,7 @@
                     <div class="relative z-10 flex flex-col items-center text-center space-y-4">
                         <span class="text-[0.6rem] font-semibold uppercase tracking-[0.4em] text-[#FD5528]">Commerce Pulse</span>
                         <div class="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] 
-    hover:from-[#fb813b] hover:to-[#b00000] shadow-inner">
+                    hover:from-[#fb813b] hover:to-[#b00000] shadow-inner">
                             <img src="https://img.icons8.com/?size=100&id=8OxFnElAJgpE&format=png&color=ffffff" alt="Commerce icon" class="h-16 w-16" />
                         </div>
                         <h3 class="text-xl font-semibold transition duration-500 group-hover:text-black">E-commerce Development</h3>
@@ -571,7 +571,7 @@
                     <div class="relative z-10 flex flex-col items-center text-center space-y-4">
                         <span class="text-[0.6rem] font-semibold uppercase tracking-[0.4em] text-[#FD5528]">Mobile Pulse</span>
                         <div class="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] 
-      hover:from-[#fb813b] hover:to-[#b00000] shadow-inner">
+                    hover:from-[#fb813b] hover:to-[#b00000] shadow-inner">
                             <img src="https://img.icons8.com/?size=100&id=67475&format=png&color=ffffff" alt="Mobile icon" class="h-16 w-16" />
                         </div>
                         <h3 class="text-xl font-semibold transition duration-500 group-hover:text-black">Mobile App Development</h3>
@@ -589,7 +589,7 @@
                     <div class="relative z-10 flex flex-col items-center text-center space-y-4">
                         <span class="text-[0.6rem] font-semibold uppercase tracking-[0.4em] text-[#FD5528]">API Layer</span>
                         <div class="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] 
-      hover:from-[#fb813b] hover:to-[#b00000] shadow-inner">
+                    hover:from-[#fb813b] hover:to-[#b00000] shadow-inner">
                             <img src="https://img.icons8.com/?size=100&id=6kPR2dlup5KK&format=png&color=ffffff" alt="API icon" class="h-16 w-16" />
                         </div>
                         <h3 class="text-xl font-semibold transition duration-500 group-hover:text-black">API Development</h3>
@@ -607,7 +607,7 @@
                     <div class="relative z-10 flex flex-col items-center text-center space-y-4">
                         <span class="text-[0.6rem] font-semibold uppercase tracking-[0.4em] text-[#FD5528]">Growth Duo</span>
                         <div class="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] 
-        hover:from-[#fb813b] hover:to-[#b00000] shadow-inner">
+                    hover:from-[#fb813b] hover:to-[#b00000] shadow-inner">
                             <img src="https://img.icons8.com/?size=100&id=103102&format=png&color=ffffff" alt="Marketing icon" class="h-16 w-16" />
                         </div>
                         <h3 class="text-xl font-semibold transition duration-500 group-hover:text-black">Digital Marketing & SEO</h3>
@@ -625,7 +625,7 @@
                     <div class="relative z-10 flex flex-col items-center text-center space-y-4">
                         <span class="text-[0.6rem] font-semibold uppercase tracking-[0.4em] text-[#FD5528]">Startup Sprint</span>
                         <div class="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] 
-        hover:from-[#fb813b] hover:to-[#b00000] shadow-inner">
+                    hover:from-[#fb813b] hover:to-[#b00000] shadow-inner">
                             <img src="https://img.icons8.com/?size=100&id=KR7IxBJfODTv&format=png&color=ffffff" alt="MVP icon" class="h-16 w-16" />
                         </div>
                         <h3 class="text-xl font-semibold transition duration-500 group-hover:text-black">Startup MVP Development</h3>
