@@ -88,7 +88,7 @@
       <div class="flex items-start gap-4 group">
 
         <!-- ICON -->
-        <div class="w-11 h-11 flex items-center justify-center rounded-xl 
+        <div class="w-11 h-11 flex items-center justify-center rounded-full 
                     bg-white group-hover:scale-110 transition duration-300">
           <img src="https://img.icons8.com/?size=100&id=7880&format=png&color=fd5528" 
                class="w-5 h-5">
@@ -111,7 +111,7 @@
     <li>
       <div class="flex items-start gap-4 group">
 
-        <div class="w-11 h-11 flex items-center justify-center rounded-xl 
+        <div class="w-11 h-11 flex items-center justify-center rounded-full 
                     bg-white group-hover:scale-110 transition duration-300">
           <img src="https://img.icons8.com/?size=100&id=9730&format=png&color=fd5528" 
                class="w-5 h-5">
@@ -133,7 +133,7 @@
     <li>
       <div class="flex items-start gap-4 group">
 
-        <div class="w-11 h-11 flex items-center justify-center rounded-xl 
+        <div class="w-11 h-11 flex items-center justify-center rounded-full 
                     bg-white group-hover:scale-110 transition duration-300">
           <img src="https://img.icons8.com/?size=100&id=2848&format=png&color=fd5528" 
                class="w-5 h-5">
