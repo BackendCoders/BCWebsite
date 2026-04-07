@@ -753,8 +753,7 @@
 
         <!-- STEP -->
         <div class="flex items-start gap-4 lg:flex-col lg:items-center text-left lg:text-center group">
-          <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#FD5528] font-semibold transition group-hover:bg-gradient-to-r 
-            hover:from-[#fb813b] hover:to-[#b00000] ">
+          <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#FD5528] font-semibold transition ">
             05
           </div>
           <div>
@@ -769,8 +768,7 @@
 
         <!-- STEP -->
         <div class="flex items-start gap-4 lg:flex-col lg:items-center text-left lg:text-center group">
-          <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#FD5528] font-semibold transition group-hover:bg-gradient-to-r 
-            hover:from-[#fb813b] hover:to-[#b00000] ">
+          <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#FD5528] font-semibold transition ">
             06
           </div>
           <div>
@@ -1024,25 +1022,7 @@
       </p>
     </div>
 
-    <!-- Stats -->
-    {{-- <div class="mb-10 grid sm:grid-cols-3 gap-4">
-      <div class="bg-white/90 border border-white shadow-lg rounded-2xl px-6 py-4 text-center backdrop-blur">
-        <p class="text-sm uppercase tracking-[0.3em] text-slate-400">Teams</p>
-        <p class="mt-2 text-2xl font-semibold text-slate-900">40+</p>
-        <p class="text-xs text-slate-500">Dedicated squads on standby</p>
-      </div>
-      <div class="bg-white/90 border border-white shadow-lg rounded-2xl px-6 py-4 text-center backdrop-blur">
-        <p class="text-sm uppercase tracking-[0.3em] text-slate-400">Projects</p>
-        <p class="mt-2 text-2xl font-semibold text-slate-900">200+</p>
-        <p class="text-xs text-slate-500">Enterprise-grade rollouts</p>
-      </div>
-      <div class="bg-white/90 border border-white shadow-lg rounded-2xl px-6 py-4 text-center backdrop-blur">
-        <p class="text-sm uppercase tracking-[0.3em] text-slate-400">Coverage</p>
-        <p class="mt-2 text-2xl font-semibold text-slate-900">24/7</p>
-        <p class="text-xs text-slate-500">Monitoring + support windows</p>
-      </div>
-    </div> --}}
-
+   
     <!-- GRID -->
     <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
 

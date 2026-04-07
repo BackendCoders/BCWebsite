@@ -399,6 +399,43 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 </script>
+
+<script>
+  document.querySelectorAll('.faq-item').forEach(item => {
+    item.addEventListener('click', () => {
+      
+      const answer = item.querySelector('.faq-answer');
+      const icon = item.querySelector('.faq-icon');
+
+      // Close all other FAQs (optional - accordion behavior)
+      document.querySelectorAll('.faq-answer').forEach(el => {
+        if (el !== answer) {
+          el.style.maxHeight = null;
+        }
+      });
+
+      document.querySelectorAll('.faq-icon').forEach(i => {
+        if (i !== icon) {
+          i.innerText = '+';
+          i.classList.remove('rotate-45');
+        }
+      });
+
+      // Toggle current
+      if (answer.style.maxHeight) {
+        answer.style.maxHeight = null;
+        icon.innerText = '+';
+        icon.classList.remove('rotate-45');
+      } else {
+        answer.style.maxHeight = answer.scrollHeight + "px";
+        icon.innerText = '−';
+        icon.classList.add('rotate-45');
+      }
+
+    });
+  });
+</script>
+
 <!-- Swiper JS -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
