@@ -246,23 +246,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-
-document.addEventListener("DOMContentLoaded", () => {
-  const items = document.querySelectorAll(".timeline-item");
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.remove("opacity-0", "translate-y-10");
-        entry.target.classList.add("opacity-100", "translate-y-0");
-      }
-    });
-  }, { threshold: 0.2 });
-
-  items.forEach(item => observer.observe(item));
-});
-
-
 const tabs = document.querySelectorAll(".tab");
 const projects = document.querySelectorAll(".project");
 
@@ -294,34 +277,7 @@ tabs.forEach(tab => {
 });
 
 
-document.addEventListener("DOMContentLoaded", () => {
 
-  const items = document.querySelectorAll(".faq-item");
-
-  items.forEach(item => {
-    item.addEventListener("click", () => {
-
-      const answer = item.querySelector(".faq-answer");
-      const icon = item.querySelector(".faq-icon");
-
-      const isOpen = answer.classList.contains("max-h-40");
-
-      // CLOSE ALL
-      items.forEach(i => {
-        i.querySelector(".faq-answer").classList.remove("max-h-40");
-        i.querySelector(".faq-icon").classList.remove("rotate-45");
-      });
-
-      // OPEN CURRENT
-      if (!isOpen) {
-        answer.classList.add("max-h-40");
-        icon.classList.add("rotate-45");
-      }
-
-    });
-  });
-
-});
 
 document.addEventListener("DOMContentLoaded", () => {
 

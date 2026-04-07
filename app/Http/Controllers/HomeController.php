@@ -42,8 +42,8 @@ class HomeController extends Controller
             return view('frontend.blog');
     }
 
-    public function blogDetail($id){
-       return view('frontend.blog-detail', compact('id'));
+    public function blog_detail(){
+       return view('frontend.blog-detail');
      }
 
         public function terms(){

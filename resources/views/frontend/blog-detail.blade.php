@@ -1,72 +1,92 @@
-@extends("component.main")
-@section("content")
+@extends('component.main')
+@section('content')
 
-<main class="flex-1 bg-[#f5f5f5]">
-  <section class="relative bg-gradient-to-br from-[#0F172A] to-[#0F172A]/90 text-white px-4 sm:px-6 lg:px-8 py-16">
-    <div class="max-w-5xl mx-auto text-center space-y-6">
-      <p class="text-xs uppercase tracking-[0.4em] text-[#FDBA74]">Project Journal</p>
-      <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold">How we rebuilt an enterprise SaaS platform for frictionless scale</h1>
-      <p class="text-gray-200 max-w-3xl mx-auto">A detailed look at the architecture, creative systems, and go-to-market rituals we used to relaunch the product with 99.99% uptime.</p>
+<!-- HERO -->
+<section class="max-w-6xl mx-auto px-6 py-16 space-y-6">
+  <p class="text-xs uppercase tracking-[0.5em] text-[#FD5528]">In-depth story</p>
+  <h1 class="text-4xl md:text-5xl font-bold text-gray-900">How we built a resilient platform for a global retail SaaS</h1>
+  <div class="w-full h-64 relative rounded-3xl overflow-hidden shadow-lg">
+    <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=2000&q=80" class="w-full h-full object-cover">
+    <div class="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent"></div>
+    <div class="absolute bottom-5 left-6 text-white">
+      <p class="text-xs uppercase tracking-[0.4em]">Case Study</p>
+      <p class="text-sm">March 22, 2026 · 8 min read</p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid gap-10 lg:grid-cols-[minmax(0,1fr)_300px]">
-    <article class="space-y-8">
-      <div class="rounded-3xl bg-white shadow-lg border border-white overflow-hidden">
-        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80" alt="" class="w-full h-72 object-cover">
-      </div>
-      <div class="space-y-4 text-gray-700">
-        <p class="text-sm uppercase tracking-[0.4em] text-gray-400">April 1, 2026 · Case Study</p>
-        <p class="leading-relaxed text-lg">We replaced the monolithic backend with a modular API layer, paired design systems with experimentation hooks, and rewired observability so each release could be shipped with confidence.</p>
-        <h2 class="text-2xl font-semibold text-gray-900">The engineering foundation</h2>
-        <ul class="space-y-2 text-sm text-gray-600">
-          <li>• Domain-driven event sourcing surfaced product boundaries and made teams autonomous.</li>
-          <li>• A service mesh layer kept traffic healthy while we migrated from combinatorial feature flags.</li>
-          <li>• Daily incident reviews tightened the feedback loop between engineering and operations.</li>
-        </ul>
-        <h2 class="text-2xl font-semibold text-gray-900">Creative + marketing sync</h2>
-        <p class="text-sm text-gray-600 leading-relaxed">Marketing creatives reused the new design tokens to publish coherent landing pages while we instrumented the entire buyer journey—not just the UI.</p>
-        <div class="flex flex-wrap gap-3">
-          <span class="rounded-full border border-gray-200 px-3 py-1 text-xs font-semibold text-gray-500">Engineering</span>
-          <span class="rounded-full border border-gray-200 px-3 py-1 text-xs font-semibold text-gray-500">Design Systems</span>
-          <span class="rounded-full border border-gray-200 px-3 py-1 text-xs font-semibold text-gray-500">Data</span>
+<!-- ARTICLE -->
+<section class="max-w-7xl mx-auto px-6 pb-20 grid gap-10 lg:grid-cols-[1fr_320px]">
+  <article class="space-y-8">
+    <div class="bg-white rounded-3xl shadow-lg p-8 space-y-6">
+      <p class="text-sm text-gray-500 uppercase tracking-[0.4em]">IT Transformation · SaaS</p>
+      <p class="text-lg text-gray-700 leading-relaxed">
+        The client needed a global booking platform that could handle spikes without breaking SLA and still allow product teams to ship quickly.
+        We orchestrated a phased delivery that combined multi-region infrastructure, event-driven APIs, and automated testing to keep the pipeline fast.
+      </p>
+
+      <div class="grid gap-6 md:grid-cols-3">
+        <div class="space-y-2">
+          <p class="text-xs uppercase tracking-[0.4em] text-gray-500">Outcome</p>
+          <p class="text-2xl font-semibold text-gray-900">99.99% uptime</p>
+        </div>
+        <div class="space-y-2">
+          <p class="text-xs uppercase tracking-[0.4em] text-gray-500">Scale</p>
+          <p class="text-2xl font-semibold text-gray-900">350K daily bookings</p>
+        </div>
+        <div class="space-y-2">
+          <p class="text-xs uppercase tracking-[0.4em] text-gray-500">Velocity</p>
+          <p class="text-2xl font-semibold text-gray-900">4 weekly releases</p>
         </div>
       </div>
-      <div class="rounded-3xl bg-white border border-gray-100 p-6 shadow-sm space-y-4">
-        <h3 class="text-lg font-semibold text-gray-900">Showcase metrics</h3>
-        <div class="grid gap-6 md:grid-cols-3 text-center">
-          <div>
-            <p class="text-3xl font-bold text-[#FD5528]">12x</p>
-            <p class="text-xs uppercase tracking-[0.4em] text-gray-400">deployments/mo</p>
-          </div>
-          <div>
-            <p class="text-3xl font-bold text-[#FD5528]">99.99%</p>
-            <p class="text-xs uppercase tracking-[0.4em] text-gray-400">uptime</p>
-          </div>
-          <div>
-            <p class="text-3xl font-bold text-[#FD5528]">3h</p>
-            <p class="text-xs uppercase tracking-[0.4em] text-gray-400">mean recovery</p>
-          </div>
-        </div>
-      </div>
-    </article>
 
-    <aside class="space-y-6">
-      <div class="rounded-3xl bg-white border border-gray-100 shadow-sm p-6 space-y-4">
-        <h3 class="text-lg font-semibold text-gray-900">Project quick stats</h3>
-        <p class="text-sm text-gray-600">Stack: Laravel + Tailwind + React · Cloud: Azure + GCP · Analytics: Datadog + Looker</p>
-        <button class="w-full rounded-2xl bg-[#FD5528] px-4 py-3 text-sm font-semibold text-white transition hover:bg-[#f0622d]">Schedule a walkthrough</button>
+      <div class="space-y-4 text-gray-600 leading-relaxed">
+        <p>
+          We started with a discovery sprint to map dependencies and failure points. That informed a multi-cloud architecture built around managed services,
+          resilient queues, and service mesh hooks that let the operations team catch anomalies before customers saw them.
+        </p>
+        <p>
+          Each microservice deployed to a regional cluster with automated health checks. We streamed events into a central data lake so analytics could
+          surface loyalty opportunities within minutes instead of hours.
+        </p>
       </div>
-      <div class="rounded-3xl bg-white border border-gray-100 shadow-sm p-6 space-y-3">
-        <h3 class="text-lg font-semibold text-gray-900">Related entries</h3>
-        <ul class="space-y-2 text-sm text-gray-600">
-          <li class="hover:text-[#FD5528] cursor-pointer">Designing resilient APIs for unpredictable loads</li>
-          <li class="hover:text-[#FD5528] cursor-pointer">Zero-trust logging for remote-first squads</li>
-          <li class="hover:text-[#FD5528] cursor-pointer">Feature flag riot recovery</li>
-        </ul>
+    </div>
+
+    <div class="bg-white rounded-3xl shadow-lg overflow-hidden">
+      <div class="p-8 space-y-4">
+        <h3 class="text-xl font-semibold text-gray-900">Key pillars</h3>
+        <div class="space-y-3 text-sm text-gray-600">
+          <p><strong class="text-gray-900">Automation-first delivery</strong> removed manual approvals from the release path, enabling the team to ship daily if needed.</p>
+          <p><strong class="text-gray-900">Observability</strong> with open telemetry gave the service desk real-time dashboards while AI guards flagged anomalies immediately.</p>
+          <p><strong class="text-gray-900">Customer experience</strong> redesigned the booking flow with empathy testing, reducing drop-offs by 18%.</p>
+        </div>
+        <a href="/blog" class="inline-flex items-center gap-2 text-sm font-semibold text-[#FD5528]">
+          ← Back to insights
+        </a>
       </div>
-    </aside>
-  </section>
-</main>
+    </div>
+  </article>
+
+  <aside class="space-y-6">
+    <div class="bg-white rounded-3xl shadow-lg p-6 space-y-4">
+      <h4 class="text-lg font-semibold text-gray-900">Additional resources</h4>
+      <ul class="space-y-3 text-sm text-gray-600">
+        <li>Downloadable architecture blueprint</li>
+        <li>Regional readiness checklist</li>
+        <li>Executive summary PDF</li>
+      </ul>
+      <button class="w-full rounded-full bg-[#FD5528] text-white py-2 text-sm font-semibold">Request consultation</button>
+    </div>
+
+    <div class="bg-white rounded-3xl shadow-lg p-6 space-y-4">
+      <h4 class="text-lg font-semibold text-gray-900">Follow-up stories</h4>
+      <div class="space-y-3 text-sm text-gray-600">
+        <a href="/blog_detail" class="font-semibold text-gray-900 block">Accelerating compliance for health tech</a>
+        <a href="/blog_detail" class="font-semibold text-gray-900 block">Design thinking with engineering rigor</a>
+        <a href="/blog_detail" class="font-semibold text-gray-900 block">Global launch playbook for SaaS</a>
+      </div>
+    </div>
+  </aside>
+</section>
 
 @endsection
