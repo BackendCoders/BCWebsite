@@ -245,35 +245,40 @@ document.addEventListener("DOMContentLoaded", () => {
   items.forEach(item => observer.observe(item));
 });
 
+document.addEventListener("DOMContentLoaded", () => {
 
-const tabs = document.querySelectorAll(".tab");
-const projects = document.querySelectorAll(".project");
+  const tabs = document.querySelectorAll(".tab");
+  const projects = document.querySelectorAll(".project");
 
-tabs.forEach(tab => {
-  tab.addEventListener("click", () => {
+  if (!tabs.length || !projects.length) return; // safety check
 
-    // RESET ALL TABS
-    tabs.forEach(t => {
-      t.classList.remove("bg-orange-500", "text-white");
-      t.classList.add("text-orange-600"); // default state
+  tabs.forEach(tab => {
+    tab.addEventListener("click", () => {
+
+      // RESET ALL TABS
+      tabs.forEach(t => {
+        t.classList.remove("bg-orange-500", "text-white");
+        t.classList.add("text-orange-600");
+      });
+
+      // ACTIVE TAB
+      tab.classList.remove("text-orange-600");
+      tab.classList.add("bg-orange-500", "text-white");
+
+      // FILTER PROJECTS
+      const type = tab.dataset.tab;
+
+      projects.forEach(p => {
+        if (type === "all" || p.classList.contains(type)) {
+          p.style.display = "";
+        } else {
+          p.style.display = "none";
+        }
+      });
+
     });
-
-    // ACTIVE TAB
-    tab.classList.remove("text-orange-600"); // remove default
-    tab.classList.add("bg-orange-500", "text-white");
-
-    // FILTER PROJECTS
-    const type = tab.dataset.tab;
-
-    projects.forEach(p => {
-      if (type === "all" || p.classList.contains(type)) {
-        p.style.display = "block";
-      } else {
-        p.style.display = "none";
-      }
-    });
-
   });
+
 });
 
 
