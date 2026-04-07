@@ -325,7 +325,7 @@
     <a href="tel:+919140092133"
       class="flex items-center gap-3 p-3 rounded-xl bg-gray-100 transition">
       
-      <img src="https://img.icons8.com/?size=100&id=9659&format=png&color=FD5528" class="w-5 h-5">
+      <img src="https://img.icons8.com/?size=100&id=9730&format=png&color=fd5528" class="w-5 h-5">
       <span class="text-sm font-medium text-gray-700">Call Us</span>
     </a>
 
