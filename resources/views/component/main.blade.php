@@ -392,7 +392,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // RESET ALL TABS
       tabs.forEach(t => {
         t.classList.remove("bg-orange-500", "text-white");
-        t.classList.add("text-orange-600");
+      
       });
 
       // ACTIVE TAB
