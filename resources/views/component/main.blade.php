@@ -378,6 +378,44 @@ AOS.init({
 });
 
 
+// tabs
+document.addEventListener("DOMContentLoaded", () => {
+
+  const tabs = document.querySelectorAll(".tab");
+  const projects = document.querySelectorAll(".project");
+
+  if (!tabs.length || !projects.length) return; // safety check
+
+  tabs.forEach(tab => {
+    tab.addEventListener("click", () => {
+
+      // RESET ALL TABS
+      tabs.forEach(t => {
+        t.classList.remove("bg-orange-500", "text-white");
+        t.classList.add("text-orange-600");
+      });
+
+      // ACTIVE TAB
+      tab.classList.remove("text-orange-600");
+      tab.classList.add("bg-orange-500", "text-white");
+
+      // FILTER PROJECTS
+      const type = tab.dataset.tab;
+
+      projects.forEach(p => {
+        if (type === "all" || p.classList.contains(type)) {
+          p.style.display = "";
+        } else {
+          p.style.display = "none";
+        }
+      });
+
+    });
+  });
+
+});
+
+
 </script>
 </script>
 <script>
