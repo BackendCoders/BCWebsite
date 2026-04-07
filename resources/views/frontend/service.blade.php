@@ -579,6 +579,176 @@
 </section>
 <!-- pr -->
 
+<!-- SECTION -->
+<section class="bg-gray-50 py-16">
+  <div class="max-w-7xl mx-auto px-4">
+
+    <!-- HEADER -->
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-800">
+        Scalable <span class="text-orange-600">Technology</span> Solutions
+      </h2>
+      <p class="text-gray-500 mt-3 max-w-2xl mx-auto">
+        Powerful backend, cloud, and API solutions designed for performance, scalability, and seamless integration.
+      </p>
+    </div>
+
+    <!-- TABS -->
+    <div class="flex justify-center mb-10 space-x-4">
+      <button class="tab-btn px-6 py-2 rounded-full bg-orange-600 text-white" data-tab="backend">Backend</button>
+      <button class="tab-btn px-6 py-2 rounded-full bg-gray-200 text-gray-700" data-tab="cloud">Cloud</button>
+      <button class="tab-btn px-6 py-2 rounded-full bg-gray-200 text-gray-700" data-tab="api">API</button>
+    </div>
+
+    <!-- CONTENT -->
+    <div id="tab-content">
+
+      <!-- BACKEND -->
+      <div class="tab-panel" data-content="backend">
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+
+          <div>
+            <h3 class="text-2xl font-semibold text-gray-800 mb-3">
+              Robust Backend Solutions for Scalable Growth
+            </h3>
+            <p class="text-gray-600 mb-5">
+              Our backend development services ensure a solid foundation for your applications, enabling scalability, performance, and security. We specialize in building high-performance backends using technologies like Node.js, Python, and Java.
+            </p>
+
+            <ul class="space-y-3 text-gray-700">
+              <li>Database Management & Optimization</li>
+              <li> Microservices & Serverless Architectures</li>
+              <li> Security and Compliance</li>
+            </ul>
+          </div>
+
+          <div class="bg-white p-6 rounded-2xl shadow-md">
+            <h4 class="font-semibold mb-4 text-gray-800">Technologies</h4>
+            <div class="flex flex-wrap gap-3">
+              <span class="tag">Node.js</span>
+              <span class="tag">Python</span>
+              <span class="tag">Java</span>
+              <span class="tag">PostgreSQL</span>
+              <span class="tag">MongoDB</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- CLOUD -->
+      <div class="tab-panel hidden" data-content="cloud">
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+
+          <div>
+            <h3 class="text-2xl font-semibold text-gray-800 mb-3">
+              Leverage the Power of the Cloud
+            </h3>
+            <p class="text-gray-600 mb-5">
+              Our cloud solutions help you modernize your IT infrastructure by migrating to AWS, Google Cloud, or Azure. We provide tailored cloud strategies to improve reliability and scalability while reducing costs.
+            </p>
+
+            <ul class="space-y-3 text-gray-700">
+              <li>Cloud Infrastructure Setup</li>
+              <li>Migration & Deployment</li>
+              <li>Cloud Security & Compliance</li>
+            </ul>
+          </div>
+
+          <div class="bg-white p-6 rounded-2xl shadow-md">
+            <h4 class="font-semibold mb-4 text-gray-800">Platforms</h4>
+            <div class="flex flex-wrap gap-3">
+              <span class="tag">AWS</span>
+              <span class="tag">Azure</span>
+              <span class="tag">Google Cloud</span>
+              <span class="tag">Docker</span>
+              <span class="tag">Kubernetes</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- API -->
+      <div class="tab-panel hidden" data-content="api">
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+
+          <div>
+            <h3 class="text-2xl font-semibold text-gray-800 mb-3">
+              Seamless API Integration for Enhanced Connectivity
+            </h3>
+            <p class="text-gray-600 mb-5">
+              Our API integration services enable smooth communication between your applications and external services, enhancing functionality and user experience.
+            </p>
+
+            <ul class="space-y-3 text-gray-700">
+              <li>Third-Party Service Integration</li>
+              <li>Custom API Development</li>
+              <li>API Security & Rate Limiting</li>
+            </ul>
+          </div>
+
+          <div class="bg-white p-6 rounded-2xl shadow-md">
+            <h4 class="font-semibold mb-4 text-gray-800">Standards</h4>
+            <div class="flex flex-wrap gap-3">
+              <span class="tag">REST</span>
+              <span class="tag">GraphQL</span>
+              <span class="tag">OAuth</span>
+              <span class="tag">JWT</span>
+              <span class="tag">Webhooks</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TAG STYLE -->
+<style>
+.tag {
+  background: #FFF7ED;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+}
+</style>
+
+<!-- JS -->
+<script>
+const tabs = document.querySelectorAll(".tab-btn");
+const panels = document.querySelectorAll(".tab-panel");
+
+tabs.forEach(tab => {
+  tab.addEventListener("click", () => {
+
+    // reset tabs
+    tabs.forEach(t => {
+      t.classList.remove("bg-orange-600","text-white");
+      t.classList.add("bg-orange-50","text-gray-700");
+    });
+
+    // active tab
+    tab.classList.add("bg-orange-600","text-white");
+    tab.classList.remove("bg-orange-50","text-gray-700");
+
+    const target = tab.dataset.tab;
+
+    // switch panels
+    panels.forEach(panel => {
+      if (panel.dataset.content === target) {
+        panel.classList.remove("hidden");
+      } else {
+        panel.classList.add("hidden");
+      }
+    });
+
+  });
+});
+</script>
+
 <!-- CTA SECTION -->
 <section class="relative overflow-hidden py-20 bg-gradient-to-r from-[#FC5124] via-orange-500 to-orange-400 text-white">
 

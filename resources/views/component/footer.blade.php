@@ -19,40 +19,35 @@
 
       <a href="https://www.facebook.com/backendcoders/" target="_blank"
          class="w-10 h-10 flex items-center justify-center rounded-full 
-         bg-gradient-to-r from-[#b00000] to-[#fb813b] 
-         hover:from-[#fb813b] hover:to-[#b00000] 
+       bg-gradient-to-r from-[#f1e9e9] to-[#f5f1f1]
          hover:scale-110 transition-all duration-300">
-        <img src="https://img.icons8.com/?size=100&id=118468&format=png&color=ffffff" 
-             class="w-6 h-6">
+        <img src="https://img.icons8.com/?size=100&id=106163&format=png&color=fd5528" 
+             class="w-5 h-5">
       </a>
 
       <a href="https://www.instagram.com/backendcoders/" target="_blank"
          class="w-10 h-10 flex items-center justify-center rounded-full 
-         bg-gradient-to-r from-[#b00000] to-[#fb813b] 
-         hover:from-[#fb813b] hover:to-[#b00000] 
+       bg-gradient-to-r from-[#f1e9e9] to-[#f5f1f1]
          hover:scale-110 transition-all duration-300">
-        <img src="https://img.icons8.com/?size=100&id=32292&format=png&color=ffffff" 
-             class="w-6 h-6">
+        <img src="https://img.icons8.com/?size=100&id=32309&format=png&color=fd5528" 
+             class="w-5 h-5">
       </a>
 
       <a href="https://www.linkedin.com/company/103738896/admin/dashboard/" target="_blank"
          class="w-10 h-10 flex items-center justify-center rounded-full 
-         bg-gradient-to-r from-[#b00000] to-[#fb813b] 
-         hover:from-[#fb813b] hover:to-[#b00000] 
+       bg-gradient-to-r from-[#f1e9e9] to-[#f5f1f1]
          hover:scale-110 transition-all duration-300">
-        <img src="https://img.icons8.com/?size=100&id=447&format=png&color=ffffff" 
-             class="w-6 h-6">
+        <img src="https://img.icons8.com/?size=100&id=34349&format=png&color=fd5528" 
+             class="w-5 h-5">
       </a>
 
       <a href="https://wa.me/919140092133" target="_blank"
          class="w-10 h-10 flex items-center justify-center rounded-full 
-         bg-gradient-to-r from-[#b00000] to-[#fb813b] 
-         hover:from-[#fb813b] hover:to-[#b00000] 
+       bg-gradient-to-r from-[#f1e9e9] to-[#f5f1f1]
          hover:scale-110 transition-all duration-300">
-        <img src="https://img.icons8.com/?size=100&id=16712&format=png&color=ffffff" 
-             class="w-6 h-6">
+        <img src="https://img.icons8.com/?size=100&id=16733&format=png&color=fd5528" 
+             class="w-5 h-5">
       </a>
-
 
       </div>
    
@@ -94,8 +89,8 @@
 
         <!-- ICON -->
         <div class="w-11 h-11 flex items-center justify-center rounded-xl 
-                    bg-white/5 group-hover:scale-110 transition duration-300">
-          <img src="https://img.icons8.com/?size=100&id=3723&format=png&color=ea580c" 
+                    bg-white group-hover:scale-110 transition duration-300">
+          <img src="https://img.icons8.com/?size=100&id=7880&format=png&color=fd5528" 
                class="w-5 h-5">
         </div>
 
@@ -117,8 +112,8 @@
       <div class="flex items-start gap-4 group">
 
         <div class="w-11 h-11 flex items-center justify-center rounded-xl 
-                    bg-white/5 group-hover:scale-110 transition duration-300">
-          <img src="https://img.icons8.com/?size=100&id=9659&format=png&color=ea580c" 
+                    bg-white group-hover:scale-110 transition duration-300">
+          <img src="https://img.icons8.com/?size=100&id=9730&format=png&color=fd5528" 
                class="w-5 h-5">
         </div>
 
@@ -139,8 +134,8 @@
       <div class="flex items-start gap-4 group">
 
         <div class="w-11 h-11 flex items-center justify-center rounded-xl 
-                    bg-white/5 group-hover:scale-110 transition duration-300">
-          <img src="https://img.icons8.com/?size=100&id=53388&format=png&color=ea580c" 
+                    bg-white group-hover:scale-110 transition duration-300">
+          <img src="https://img.icons8.com/?size=100&id=2848&format=png&color=fd5528" 
                class="w-5 h-5">
         </div>
 

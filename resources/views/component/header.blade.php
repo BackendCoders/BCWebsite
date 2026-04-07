@@ -139,6 +139,12 @@
                 Case Studies
             </a>
 
+              <a href="{{ route('frontend.blog') }}"
+               class="nav-link px-3 py-2 rounded-md text-white hover:bg-orange-50 hover:text-[#FD5528] transition {{ $activeNavClass('frontend.blog') }}"
+               aria-current="{{ request()->routeIs('frontend.blog') ? 'page' : '' }}">
+                BLog
+            </a>
+
             <a href="{{route('frontend.packages')}}"
                class="nav-link px-3 py-2 rounded-md text-white hover:bg-orange-50 hover:text-[#FD5528] transition {{ $activeNavClass('frontend.packages') }}"
                aria-current="{{ request()->routeIs('frontend.packages') ? 'page' : '' }}">
@@ -210,6 +216,11 @@
                aria-current="{{ request()->routeIs('frontend.process') ? 'page' : '' }}">
                 Case Studies
             </a>
+              <a href="{{ route('frontend.blog') }}"
+                class="nav-link rounded-md px-3 py-2 text-black hover:bg-orange-50 {{ $activeMobileNavClass('frontend.blog') }}"
+                aria-current="{{ request()->routeIs('frontend.blog') ? 'page' : '' }}">
+                  BLog
+              </a>
             <a href="{{ route('frontend.packages') }}"
                class="nav-link rounded-md px-3 py-2 text-black hover:bg-orange-50 {{ $activeMobileNavClass('frontend.packages') }}"
                aria-current="{{ request()->routeIs('frontend.packages') ? 'page' : '' }}">

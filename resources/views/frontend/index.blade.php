@@ -1424,7 +1424,8 @@
           </p>
         </div>
 
-        <form class="relative space-y-6">
+        @include('frontend.form')
+        <!-- <form class="relative space-y-6">
 
           <div class="grid sm:grid-cols-2 gap-4">
             <input type="text" placeholder="First Name"
@@ -1450,7 +1451,7 @@
           </button>
         </div>
 
-        </form>
+        </form> -->
 
       </div>
 
