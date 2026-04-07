@@ -317,7 +317,7 @@
 
   <!-- MENU -->
   <div id="contactMenu"
-    class="absolute bottom-16 right-0 w-64 rounded-2xl shadow-xl 
+    class="absolute bottom-16 right-0 w-64
            p-4 space-y-3 opacity-0 pointer-events-none translate-y-5 
            transition-all duration-300">
 
