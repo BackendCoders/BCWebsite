@@ -456,7 +456,7 @@
 
 
    <!-- STATS SECTION -->
-<section id="stats-section-pro" class="relative py-12 bg-gradient-to-br from-[#FD5528] to-orange-500 text-white overflow-hidden">
+<section id="stats-section-pro" class="relative py-12 bg-gradient-to-br from-[#FD5528] to-[#FD5528] text-white overflow-hidden">
 
   <!-- BACKGROUND EFFECT -->
   <div class="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_white,_transparent_70%)]"></div>

@@ -70,192 +70,491 @@
         <!-- CARDS -->
     <div class="tab-content active mt-16 grid md:grid-cols-3 gap-8" data-content="it">
 
-      <!-- STARTER -->
-      <div class="relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 hover:scale-105 transition duration-500 shadow-xl">
+      <!-- BASIC PLAN -->
+      <div class="border border-gray-700 rounded-3xl p-8 text-black">
+        <h3 class="text-xl font-semibold mb-4">Basic Website Plan</h3>
 
-        <h3 class="text-xl font-semibold text-orange-400">Starter</h3>
-        <p class="text-4xl font-bold mt-4">₹9,999<span class="text-sm text-gray-400">+</span></p>
+        <h2 class="text-4xl font-bold mb-6">
+          ₹ 7,999/- <span class="text-base font-normal">Monthly</span>
+        </h2>
 
-        <ul class="mt-6 space-y-3 text-sm text-black">
-          <li>✔ Web Design (UI/UX)</li>
-          <li>✔ Basic Website Development</li>
-          <li>✔ SEO Setup</li>
-          <li>✔ Responsive Design</li>
+        <ul class="space-y-4 mb-8">
+          <li class="flex items-center gap-3 border-b border-orange-500 pb-3">
+            <span class="text-orange-500">✔</span> Landing Page
+          </li>
+          <li class="flex items-center gap-3 border-b border-orange-500 pb-3">
+            <span class="text-orange-500">✔</span> Mobile Freindly
+          </li>
+          <li class="flex items-center gap-3 border-b border-orange-500 pb-3">
+            <span class="text-orange-500">✔</span> 1 Year Free Domain / Hosting / SSL
+          </li>
+          <li class="flex items-center gap-3 border-b border-orange-500 pb-3">
+            <span class="text-orange-500">✔</span> Social Media Integration
+          </li>
+          <li class="flex items-center gap-3 border-b border-orange-500 pb-3">
+            <span class="text-orange-500">✔</span> Renewal Yearly
+          </li>
         </ul>
 
-        <a href="#" class="mt-8 block text-center border border-orange-400 text-orange-400 py-3 rounded-xl font-semibold hover:bg-orange-500 hover:text-white transition">
-          Get Started →
-        </a>
-
+        <button class="w-full  bg-gradient-to-r from-[#FD5528] to-[#fbb03b] hover:from-[#fbb03b] hover:to-[#FD5528] hover:scale-110 text-white py-3 rounded-full font-medium">
+          Choose Plan
+        </button>
       </div>
 
-      <!-- GROWTH (HIGHLIGHTED) -->
-      <div class="relative bg-gradient-to-b from-[#FD5528] to-orange-600 rounded-3xl p-8 scale-105 shadow-2xl">
+      <!-- STANDARD PLAN (CENTER) -->
+      <div class="bg-gradient-to-r from-[#FD5528] to-[#fbb03b] rounded-3xl p-10 text-white text-center scale-105 shadow-xl">
+        <h3 class="text-xl font-semibold mb-4">Standard Digital Marketing Plan</h3>
 
-        <!-- BADGE -->
-        <span class="absolute top-4 right-4 bg-white text-[#FD5528] text-xs px-3 py-1 rounded-full font-semibold">
-          Most Popular
-        </span>
+        <h2 class="text-4xl font-bold mb-6">
+          ₹ 15,999/- <span class="text-base font-normal">Monthly</span>
+        </h2>
 
-        <h3 class="text-xl text-white font-semibold">Growth</h3>
-        <p class="text-4xl font-bold mt-4">₹24,999<span class="text-sm opacity-80">+</span></p>
-
-        <ul class="mt-6 space-y-3 text-sm text-white/90">
-          <li>✔ Full Web Development</li>
-          <li>✔ SEO Optimization</li>
-          <li>✔ API Integration</li>
-          <li>✔ Performance Optimization</li>
-          <li>✔ Digital Marketing</li>
+        <ul class="space-y-4 mb-8 text-left">
+          <li class="flex items-center gap-3 border-b pb-3">
+            <span class="text-orange-50">✔</span> 1 Year Free Domain / Hosting
+          </li>
+          <li class="flex items-center gap-3 border-b pb-3">
+            <span class="text-orange-50">✔</span> SSL Free
+          </li>
+          <li class="flex items-center gap-3 border-b pb-3">
+            <span class="text-orange-50">✔</span> 15 Page site
+          </li>
+          <li class="flex items-center gap-3 border-b pb-3">
+            <span class="text-orange-50">✔</span> Free Support
+          </li>
+          <li class="flex items-center gap-3 border-b pb-3">
+            <span class="text-orange-50">✔</span> Social Media Integration
+          </li>
+          <li class="flex items-center gap-3 border-b pb-3">
+            <span class="text-orange-50">✔</span> Basic SEO Integration
+          </li>
+          <li class="flex items-center gap-3 border-b pb-3">
+            <span class="text-orange-50">✔</span> Mobile Freindly
+          </li>
+          <li class="flex items-center gap-3 border-b pb-3">
+            <span class="text-orange-50">✔</span> Renewal Yearly
+          </li>
         </ul>
 
-        <a href="#" class="mt-8 block text-center bg-white text-[#FD5528] py-3 rounded-xl font-semibold hover:scale-105 transition">
-          Get Started →
-        </a>
-
+        <button class="bg-black hover:bg-[#FD5528] text-white px-6 py-3 rounded-full font-medium">
+          Choose Plan
+        </button>
       </div>
 
-      <!-- ENTERPRISE -->
-      <div class="relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 hover:scale-105 transition duration-500 shadow-xl">
+      <!-- PREMIUM PLAN -->
+      <div class="border border-gray-700 rounded-3xl p-8 text-black">
+        <h3 class="text-xl font-semibold mb-4">Premium Digital Marketing Plan</h3>
 
-        <h3 class="text-xl font-semibold text-orange-400">Enterprise</h3>
-        <p class="text-4xl font-bold mt-4">Custom</p>
+        <h2 class="text-4xl font-bold mb-6">
+          ₹ 24,999/- <span class="text-base font-normal">Monthly</span>
+        </h2>
 
-        <ul class="mt-6 space-y-3 text-sm text-black">
-          <li>✔ Custom Software Development</li>
-          <li>✔ SaaS / App Development</li>
-          <li>✔ Advanced Marketing</li>
-          <li>✔ Dedicated Team</li>
-          <li>✔ Priority Support</li>
+        <ul class="space-y-4 mb-8">
+          <li class="flex items-center gap-3 border-b border-orange-500 pb-3">
+            <span class="text-orange-500">✔</span> Customize Website
+          </li>
+          <li class="flex items-center gap-3 border-b border-orange-500 pb-3">
+            <span class="text-orange-500">✔</span> 1 year Free Domain / Hosting / SSL
+          </li>
+          <li class="flex items-center gap-3 border-b border-orange-500 pb-3">
+            <span class="text-orange-500">✔</span>Social Media / SEO Integration
+          </li>
+          <li class="flex items-center gap-3 border-b border-orange-500 pb-3">
+            <span class="text-orange-500">✔</span> 25 + Pages
+          </li>
+          <li class="flex items-center gap-3 border-b border-orange-500 pb-3">
+            <span class="text-orange-500">✔</span> Renewal Yearly
+          </li>
+          <li class="flex items-center gap-3 border-b border-orange-500 pb-3">
+            <span class="text-orange-500">✔</span> Free Support
+          </li>
+          <li class="flex items-center gap-3 border-b border-orange-500 pb-3">
+            <span class="text-orange-500">✔</span> Mobile Freindly
+          </li>
         </ul>
 
-        <a href="#" class="mt-8 block text-center border border-orange-400 text-orange-400 py-3 rounded-xl font-semibold hover:bg-orange-500 hover:text-white transition">
-          Contact Us →
-        </a>
-
+        <button class="w-full  bg-gradient-to-r from-[#FD5528] to-[#fbb03b] hover:from-[#fbb03b] hover:to-[#FD5528] hover:scale-110 text-white py-3 rounded-full font-medium">
+          Choose Plan
+        </button>
       </div>
+
 
     </div>
 
 
       <!-- SEO -->
-      <div class="tab-content hidden grid md:grid-cols-3 gap-8" data-content="seo">
+      <div class="tab-content hidden grid md:grid-cols-3 gap-8" data-content="marketing">
+      
 
-      <div class="relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 hover:scale-105 transition duration-500 shadow-xl">
+      <!-- BASIC PLAN -->
+      <div class="border border-gray-600 rounded-3xl p-8 text-black relative">
 
-        <h3 class="text-xl font-semibold text-orange-400">Starter SEO</h3>
-        <p class="text-4xl font-bold mt-4">₹9,999<span class="text-sm text-gray-400">+</span></p>
+        <h3 class="text-xl font-semibold mb-4">
+          Basic Digital Marketing Plan
+        </h3>
 
-        <ul class="mt-6 space-y-3 text-sm text-black">
-          <li>✔ Keyword Research</li>
-          <li>✔ On-page SEO</li>
-          <li>✔ SEO Setup</li>
-          <li>✔ Responsive Design</li>
+        <h2 class="text-4xl font-bold mb-6">
+          ₹ 6,999/- <span class="text-base font-normal text-black">Monthly</span>
+        </h2>
+
+        <ul class="space-y-4 mb-8">
+          <li class="flex items-center gap-3 border-b border-orange-500 pb-3">
+            <span class="text-orange-500">✔</span> 1 Landing Page
+          </li>
+          <li class="flex items-center gap-3 border-b border-orange-500 pb-3">
+            <span class="text-orange-500">✔</span> 2 Smm Account Manage
+          </li>
+          <li class="flex items-center gap-3 border-b border-orange-500 pb-3">
+            <span class="text-orange-500">✔</span> 5 Graphical Post / 1 Reel
+          </li>
+          <li class="flex items-center gap-3 border-b border-orange-500 pb-3">
+            <span class="text-orange-500">✔</span> Basic Lead Setup - Meta Ads Setup
+          </li>
+          <li class="flex items-center gap-3 border-b border-orange-500 pb-3">
+            <span class="text-orange-500">✔</span> Basic SEO ( 5 Keywords )
+          </li>
+          <li class="flex items-center gap-3 border-b border-orange-500 pb-3">
+            <span class="text-orange-500">✔</span> Monthly Performance Report
+          </li>
         </ul>
 
-        <a href="#" class="mt-8 block text-center border border-orange-400 text-orange-400 py-3 rounded-xl font-semibold hover:bg-orange-500 hover:text-white transition">
-          Get Started →
-        </a>
-
+        <button class="w-full bg-gradient-to-r from-[#FD5528] to-[#fbb03b] text-black py-3 rounded-full font-medium">
+          Choose Plan
+        </button>
       </div>
-       
 
-        <div class="bg-[#FD5528] rounded-3xl p-8 shadow border-2 border-[#FD5528] scale-105">
-          <!-- BADGE -->
-        <span class="absolute top-4 right-4 bg-white text-[#FD5528] text-xs px-3 py-1 rounded-full font-semibold">
-          Most Popular
-        </span>
+      <!-- STANDARD PLAN (CENTER HIGHLIGHT) -->
+      <div class="bg-gradient-to-r from-[#FD5528] to-[#fbb03b] rounded-[30px] p-10 text-white text-center scale-105 shadow-2xl">
 
-        <h3 class="text-xl text-white font-semibold">Growth SEO</h3>
-        <p class="text-4xl font-bold mt-4">₹12,000/mo<span class="text-sm opacity-80">+</span></p>
+        <h3 class="text-xl font-semibold mb-4">
+          Standard Digital Marketing Plan
+        </h3>
 
-        <ul class="mt-6 space-y-3 text-sm text-white/90">
-          <li>✔ Technical SEO</li>
-          <li>✔ Backlinks</li>
-          <li>✔ Reporting & Analytics</li>
-          <li>✔ Performance Optimization</li>
-          <li>✔ Digital Marketing</li>
+        <h2 class="text-5xl font-bold mb-6">
+          ₹ 11,999/- <span class="text-base font-normal text-white">Monthly</span>
+        </h2>
+
+        <ul class="space-y-4 mb-8 text-left">
+          <li class="flex items-center gap-3 border-b pb-3">
+            <span class="text-orange-50">✔</span> 5 Page Website
+          </li>
+          <li class="flex items-center gap-3 border-b pb-3">
+            <span class="text-orange-50">✔</span> 4 Smm Account Manage
+          </li>
+          <li class="flex items-center gap-3 border-b pb-3">
+            <span class="text-orange-50">✔</span> 8 Graphical Posts / 2 Reels
+          </li>
+          <li class="flex items-center gap-3 border-b pb-3">
+            <span class="text-orange-50">✔</span> Meta Ads Account Setup
+          </li>
+          <li class="flex items-center gap-3 border-b pb-3">
+            <span class="text-orange-50">✔</span> Basic SEO ( 10 Keywords )
+          </li>
+          <li class="flex items-center gap-3 border-b pb-3">
+            <span class="text-orange-50">✔</span> Monthly Performance Report
+          </li>
+          <li class="flex items-center gap-3 border-b pb-3">
+            <span class="text-orange-50">✔</span> 2 Blog Post / Per Month
+          </li>
+          <li class="flex items-center gap-3 border-b pb-3">
+            <span class="text-orange-50">✔</span> Gmb
+          </li>
         </ul>
 
-        <a href="#" class="mt-8 block text-center bg-white text-[#FD5528] py-3 rounded-xl font-semibold hover:scale-105 transition">
-          Get Started →
-        </a>
-         
-        </div>
+        <button class="bg-black hover:bg-gradient-to-r hover:from-[#FD5528] hover:to-[#fbb03b] text-white px-6 py-3 rounded-full font-medium">
+          Choose Plan
+        </button>
+      </div>
 
-        <div class="bg-white rounded-3xl p-8 shadow">
-          <h3 class="text-xl font-semibold text-orange-400">Advanced SEO</h3>
-        <p class="text-4xl font-bold mt-4">Custom</p>
+      <!-- PREMIUM PLAN -->
+      <div class="border border-gray-600 rounded-3xl p-8 text-black">
 
-        <ul class="mt-6 space-y-3 text-sm text-black">
-          <li>✔ Custom Software Development</li>
-          <li>✔ SaaS / App Development</li>
-          <li>✔ Advanced Marketing</li>
-          <li>✔ Dedicated Team</li>
-          <li>✔ Priority Support</li>
+        <h3 class="text-xl font-semibold mb-4">
+          Premium Digital Marketing Plan
+        </h3>
+
+        <h2 class="text-4xl font-bold mb-6">
+          ₹ 15,999/- <span class="text-base font-normal text-gray-300">Monthly</span>
+        </h2>
+
+        <ul class="space-y-4 mb-8">
+          <li class="flex items-center gap-3 border-b border-orange-500 pb-3">
+            <span class="text-orange-500">✔</span> 7-10 Website Page
+          </li>
+          <li class="flex items-center gap-3 border-b border-orange-500 pb-3">
+            <span class="text-orange-500">✔</span> Ads Account Management
+          </li>
+          <li class="flex items-center gap-3 border-b border-orange-500 pb-3">
+            <span class="text-orange-500">✔</span> 12 Graphical Post / 4 Reel
+          </li>
+          <li class="flex items-center gap-3 border-b border-orange-500 pb-3">
+            <span class="text-orange-500">✔</span> Ads Account Setup ( Google, Meta )
+          </li>
+          <li class="flex items-center gap-3 border-b border-orange-500 pb-3">
+            <span class="text-orange-500">✔</span> Basic SEO ( 15 Keywords )
+          </li>
+          <li class="flex items-center gap-3 border-b border-orange-500 pb-3">
+            <span class="text-orange-500">✔</span> Monthly Performance Report
+          </li>
+          <li class="flex items-center gap-3 border-b border-orange-500 pb-3">
+            <span class="text-orange-500">✔</span> 4 Blog Post / Per Month
+          </li>
+          <li class="flex items-center gap-3 border-b border-orange-500 pb-3">
+            <span class="text-orange-500">✔</span> GMB
+          </li>
         </ul>
 
-        <a href="#" class="mt-8 block text-center border border-orange-400 text-orange-400 py-3 rounded-xl font-semibold hover:bg-orange-500 hover:text-white transition">
-          Contact Us →
-        </a>
+        <button class="w-full bg-gradient-to-r from-[#FD5528] to-[#fbb03b] text-black py-3 rounded-full font-medium">
+          Choose Plan
+        </button>
+      </div>
 
-        </div>
-
+ 
       </div>
 
       <!-- MARKETING -->
-      <div class="tab-content hidden grid md:grid-cols-3 gap-8" data-content="marketing">
+      <div class="tab-content hidden grid md:grid-cols-3 gap-8" data-content="seo">
 
-        <div class="bg-white rounded-3xl p-8 shadow">
-          <h3>Basic Marketing</h3>
-          <p class="text-3xl font-bold mt-4">₹8,000/mo</p>
-        
-        <ul class="mt-6 space-y-3 text-sm text-black">
-          <li>✔ Keyword Research</li>
-          <li>✔ On-page SEO</li>
-          <li>✔ SEO Setup</li>
-          <li>✔ Responsive Design</li>
+  
+      <!-- SEO BASIC PLAN -->
+      <div class="border border-gray-600 rounded-3xl p-8 text-black">
+
+        <h3 class="text-xl font-semibold mb-4">
+          SEO Basic Plan
+        </h3>
+
+        <h2 class="text-4xl font-bold mb-6">
+          ₹ 7,999/- <span class="text-base font-normal text-gray-900">Monthly</span>
+        </h2>
+
+        <ul class="space-y-4 mb-8">
+          <li class="flex items-center gap-3 border-b border-orange-500 pb-3">
+            <span class="text-orange-500">✔</span> SEO ( 5 Main Keywords)
+          </li>
+          <li class="flex items-center gap-3 border-b border-orange-500 pb-3">
+            <span class="text-orange-500">✔</span> 25+ Backlinks
+          </li>
+          <li class="flex items-center gap-3 border-b border-orange-500 pb-3">
+            <span class="text-orange-500">✔</span> Website & Competitor Analysis
+          </li>
+          <li class="flex items-center gap-3 border-b border-orange-500 pb-3">
+            <span class="text-orange-500">✔</span> On Page & Technical SEO
+          </li>
+          <li class="flex items-center gap-3 border-b border-orange-500 pb-3">
+            <span class="text-orange-500">✔</span> Meta Data Creation
+          </li>
+          <li class="flex items-center gap-3 border-b border-orange-500 pb-3">
+            <span class="text-orange-500">✔</span> Content Marketing
+          </li>
+          <li class="flex items-center gap-3 border-b border-orange-500 pb-3">
+            <span class="text-orange-500">✔</span> Weekly & Monthly Reporting
+          </li>
         </ul>
 
-        <a href="#" class="mt-8 block text-center border border-orange-400 text-orange-400 py-3 rounded-xl font-semibold hover:bg-orange-500 hover:text-white transition">
-          Get Started →
-        </a>
-        </div>
+        <button class="w-full  bg-gradient-to-r from-[#FD5528] to-[#fbb03b] text-black py-3 rounded-full font-medium">
+          Choose Plan
+        </button>
+      </div>
 
-        <div class="bg-[#FD5528] rounded-3xl p-8 shadow border-2 border-[#FD5528] scale-105">
-          <h3>Pro Marketing</h3>
-          <p class="text-3xl font-bold mt-4">₹18,000/mo</p>
-          <ul class="mt-6 space-y-3 text-sm text-white/90">
-          <li>✔ Technical SEO</li>
-          <li>✔ Backlinks</li>
-          <li>✔ Reporting & Analytics</li>
-          <li>✔ Performance Optimization</li>
-          <li>✔ Digital Marketing</li>
+      <!-- STANDARD SEO PLAN (CENTER) -->
+      <div class=" bg-gradient-to-r from-[#FD5528] to-[#fbb03b] rounded-[30px] p-10 text-white text-center scale-105 shadow-2xl">
+
+        <h3 class="text-xl font-semibold mb-4">
+          Standard SEO Plan
+        </h3>
+
+        <h2 class="text-5xl font-bold mb-6">
+          ₹ 11,999/- <span class="text-base font-normal text-gray-600">Monthly</span>
+        </h2>
+
+        <ul class="space-y-4 mb-8 text-left">
+          <li class="flex items-center gap-3 border-b pb-3">
+            <span class="text-orange-500">✔</span> SEO (10-15 Main Keywords )
+          </li>
+          <li class="flex items-center gap-3 border-b pb-3">
+            <span class="text-orange-500">✔</span> 50 + Backlinks
+          </li>
+          <li class="flex items-center gap-3 border-b pb-3">
+            <span class="text-orange-500">✔</span> 6 Blog Creation
+          </li>
+          <li class="flex items-center gap-3 border-b pb-3">
+            <span class="text-orange-500">✔</span> Website and Competitor Analysis
+          </li>
+          <li class="flex items-center gap-3 border-b pb-3">
+            <span class="text-orange-500">✔</span> On Page & Technical SEO
+          </li>
+          <li class="flex items-center gap-3 border-b pb-3">
+            <span class="text-orange-500">✔</span> Meta Data Creation
+          </li>
+          <li class="flex items-center gap-3 border-b pb-3">
+            <span class="text-orange-500">✔</span> Content Marketing
+          </li>
+          <li class="flex items-center gap-3 border-b pb-3">
+            <span class="text-orange-500">✔</span> Weekly & Monthly Reporting
+          </li>
         </ul>
 
-        <a href="#" class="mt-8 block text-center bg-white text-[#FD5528] py-3 rounded-xl font-semibold hover:scale-105 transition">
-          Get Started →
-        </a>
-        </div>
+        <button class="bg-black  hover:bg-gradient-to-r hover:from-[#FD5528] hover:to-[#fbb03b] text-white px-6 py-3 rounded-full font-medium">
+          Choose Plan
+        </button>
+      </div>
 
-        <div class="bg-white rounded-3xl p-8 shadow">
-          <h3>Advanced Marketing</h3>
-          <p class="text-3xl font-bold mt-4">₹35,000/mo</p>
-          <p class="text-4xl font-bold mt-4">Custom</p>
+      <!-- PREMIUM PLAN -->
+      <div class="border border-gray-600 rounded-3xl p-8 text-black">
 
-        <ul class="mt-6 space-y-3 text-sm text-black">
-          <li>✔ Custom Software Development</li>
-          <li>✔ SaaS / App Development</li>
-          <li>✔ Advanced Marketing</li>
-          <li>✔ Dedicated Team</li>
-          <li>✔ Priority Support</li>
+        <h3 class="text-xl font-semibold mb-4">
+          Premium Digital Marketing Plan
+        </h3>
+
+        <h2 class="text-4xl font-bold mb-6">
+          ₹ 15,999/- <span class="text-base font-normal text-gray-300">Monthly</span>
+        </h2>
+
+        <ul class="space-y-4 mb-8">
+          <li class="flex items-center gap-3 border-b border-orange-500 pb-3">
+            <span class="text-orange-500">✔</span> SEO ( 20-25 + Main Keywords )
+          </li>
+          <li class="flex items-center gap-3 border-b border-orange-500 pb-3">
+            <span class="text-orange-500">✔</span> 100 + Backlinks
+          </li>
+          <li class="flex items-center gap-3 border-b border-orange-500 pb-3">
+            <span class="text-orange-500">✔</span> 10 Blog
+          </li>
+          <li class="flex items-center gap-3 border-b border-orange-500 pb-3">
+            <span class="text-orange-500">✔</span> Website and Competitor Analysis
+          </li>
+          <li class="flex items-center gap-3 border-b border-orange-500 pb-3">
+            <span class="text-orange-500">✔</span> On Page & Technical SEO
+          </li>
+          <li class="flex items-center gap-3 border-b border-orange-500 pb-3">
+            <span class="text-orange-500">✔</span> Meta Data Creation
+          </li>
+          <li class="flex items-center gap-3 border-b border-orange-500 pb-3">
+            <span class="text-orange-500">✔</span> Content Marketing
+          </li>
+          <li class="flex items-center gap-3 border-b border-orange-500 pb-3">
+            <span class="text-orange-500">✔</span> Weekly & Monthly Reporting
+          </li>
         </ul>
 
-        <a href="#" class="mt-8 block text-center border border-orange-400 text-orange-400 py-3 rounded-xl font-semibold hover:bg-orange-500 hover:text-white transition">
-          Contact Us →
-        </a>
+        <button class="w-full  bg-gradient-to-r from-[#FD5528] to-[#fbb03b] text-black py-3 rounded-full font-medium">
+          Choose Plan
+        </button>
+      </div>
 
-        </div>
 
+      <div class="tab-content hidden grid md:grid-cols-3 gap-8" data-content="saas">
+
+  
+      <!-- BASIC PLAN -->
+      <div class="border border-gray-600 rounded-3xl p-8 text-white">
+
+        <h3 class="text-xl font-semibold mb-4">
+          Basic Social Media Plan
+        </h3>
+
+        <h2 class="text-4xl font-bold mb-6">
+          ₹ 4,999/- <span class="text-base font-normal text-gray-300">Monthly</span>
+        </h2>
+
+        <ul class="space-y-4 mb-8">
+          <li class="flex items-center gap-3 border-b border-orange-500 pb-3">
+            <span class="text-orange-500">✔</span> SMM Handling
+          </li>
+          <li class="flex items-center gap-3 border-b border-orange-500 pb-3">
+            <span class="text-orange-500">✔</span> Page Creation - 2 Platform
+          </li>
+          <li class="flex items-center gap-3 border-b border-orange-500 pb-3">
+            <span class="text-orange-500">✔</span> 8 Graphical Posts/ 2 Reel
+          </li>
+          <li class="flex items-center gap-3 border-b border-orange-500 pb-3">
+            <span class="text-orange-500">✔</span> Weekly Performance Report
+          </li>
+        </ul>
+
+        <button class="w-full bg-gray-200 text-black py-3 rounded-full font-medium">
+          Choose Plan
+        </button>
+      </div>
+
+      <!-- STANDARD PLAN (CENTER) -->
+      <div class="bg-gray-200 rounded-[30px] p-10 text-black text-center scale-105 shadow-2xl">
+
+        <h3 class="text-xl font-semibold mb-4">
+          Standard Social Media Plan
+        </h3>
+
+        <h2 class="text-5xl font-bold mb-6">
+          ₹ 7,999/- <span class="text-base font-normal text-gray-600">Monthly</span>
+        </h2>
+
+        <ul class="space-y-4 mb-8 text-left">
+          <li class="flex items-center gap-3 border-b pb-3">
+            <span class="text-orange-500">✔</span> SMM Handling
+          </li>
+          <li class="flex items-center gap-3 border-b pb-3">
+            <span class="text-orange-500">✔</span> Page Creation - 4 Platforms
+          </li>
+          <li class="flex items-center gap-3 border-b pb-3">
+            <span class="text-orange-500">✔</span> 12 Graphical Post - 4 Reels
+          </li>
+          <li class="flex items-center gap-3 border-b pb-3">
+            <span class="text-orange-500">✔</span> Performance Report
+          </li>
+          <li class="flex items-center gap-3 border-b pb-3">
+            <span class="text-orange-500">✔</span> Account Manager
+          </li>
+          <li class="flex items-center gap-3 border-b pb-3">
+            <span class="text-orange-500">✔</span> Ads account setup
+          </li>
+          <li class="flex items-center gap-3 border-b pb-3">
+            <span class="text-orange-500">✔</span> Ads spend by your side
+          </li>
+        </ul>
+
+        <button class="bg-black text-white px-6 py-3 rounded-full font-medium">
+          Choose Plan
+        </button>
+      </div>
+
+      <!-- PREMIUM PLAN -->
+      <div class="border border-gray-600 rounded-3xl p-8 text-white">
+
+        <h3 class="text-xl font-semibold mb-4">
+          Premium Social Media Plan
+        </h3>
+
+        <h2 class="text-4xl font-bold mb-6">
+          ₹ 13,999/- <span class="text-base font-normal text-gray-300">Monthly</span>
+        </h2>
+
+        <ul class="space-y-4 mb-8">
+          <li class="flex items-center gap-3 border-b border-orange-500 pb-3">
+            <span class="text-orange-500">✔</span> All Platform Handling
+          </li>
+          <li class="flex items-center gap-3 border-b border-orange-500 pb-3">
+            <span class="text-orange-500">✔</span> 16 Graphical Post - 6 Reels
+          </li>
+          <li class="flex items-center gap-3 border-b border-orange-500 pb-3">
+            <span class="text-orange-500">✔</span> Performance Report
+          </li>
+          <li class="flex items-center gap-3 border-b border-orange-500 pb-3">
+            <span class="text-orange-500">✔</span> Account Manager
+          </li>
+          <li class="flex items-center gap-3 border-b border-orange-500 pb-3">
+            <span class="text-orange-500">✔</span> Ads Setup all types
+          </li>
+          <li class="flex items-center gap-3 border-b border-orange-500 pb-3">
+            <span class="text-orange-500">✔</span> Ads spend by your side
+          </li>
+        </ul>
+
+        <button class="w-full bg-gray-200 text-black py-3 rounded-full font-medium">
+          Choose Plan
+        </button>
+      </div>
+
+    </div>
       </div>
 
     </div>

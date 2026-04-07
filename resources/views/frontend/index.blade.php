@@ -233,12 +233,12 @@
 
         Projects We’ve Delivered
       </span>
-  <!-- <span class="inline-block text-xs font-semibold uppercase tracking-widest text-orange-500 px-5 py-2 rounded-full bg-white shadow">
+  <!-- <span class="inline-block text-xs font-semibold uppercase tracking-widest text-[#FD5528] px-5 py-2 rounded-full bg-white shadow">
     Recently Completed Projects
   </span> -->
 
   <h2 class="text-4xl py-4 sm:text-5xl font-bold text-gray-900">
-    Our Latest <span class="text-orange-500">Projects</span>
+    Our Latest <span class="text-[#FD5528]">Projects</span>
   </h2>
 
   <p class="text-sm text-gray-500 max-w-2xl mx-auto">
@@ -248,12 +248,12 @@
 
 <!-- TABS -->
 <div class="flex flex-wrap justify-center gap-2 sm:gap-3 mb-10">
-  <button class="tab border border-orange-500 text-orange-600 px-4 py-2 rounded-full" data-tab="all">All</button>
-  <button class="tab border border-orange-500 text-orange-600 px-4 py-2 rounded-full" data-tab="web">Web Apps</button>
-  <button class="tab border border-orange-500 text-orange-600 px-4 py-2 rounded-full" data-tab="saas">SaaS</button>
-  <button class="tab border border-orange-500 text-orange-600 px-4 py-2 rounded-full" data-tab="ecommerce">E-commerce</button>
-  <button class="tab border border-orange-500 text-orange-600 px-4 py-2 rounded-full" data-tab="crm">CRM</button>
-    <button class="tab border border-orange-500 text-orange-600 px-4 py-2 rounded-full" data-tab="others">Others</button>
+  <button class="tab border border-[#FD5528] text-[#FD5528] px-4 py-2 rounded-full" data-tab="all">All</button>
+  <button class="tab border border-[#FD5528] text-[#FD5528] px-4 py-2 rounded-full" data-tab="web">Web Apps</button>
+  <button class="tab border border-[#FD5528] text-[#FD5528] px-4 py-2 rounded-full" data-tab="saas">SaaS</button>
+  <button class="tab border border-[#FD5528] text-[#FD5528] px-4 py-2 rounded-full" data-tab="ecommerce">E-commerce</button>
+  <button class="tab border border-[#FD5528] text-[#FD5528] px-4 py-2 rounded-full" data-tab="crm">CRM</button>
+    <button class="tab border border-[#FD5528] text-[#FD5528] px-4 py-2 rounded-full" data-tab="others">Others</button>
 </div>
 
 <!-- GRID -->
@@ -267,17 +267,17 @@
   </div>
   <div class="p-5 space-y-3">
     <div class="flex justify-between text-xs text-gray-500 uppercase">
-      <span>Web</span><span class="text-orange-500 font-semibold">Jan 2025</span>
+      <span>Web</span><span class="text-[#FD5528] font-semibold">Jan 2025</span>
     </div>
     <h3 class="text-xl font-semibold">Ace Taxis UK</h3>
     <p class="text-sm text-gray-600">Cab booking & dispatch system.</p>
     <div class="flex gap-2 flex-wrap">
-      <span class="bg-orange-100 text-orange-500 text-xs px-3 py-1 rounded-full">Node</span>
-      <span class="bg-orange-100 text-orange-500 text-xs px-3 py-1 rounded-full">Mongo</span>
+      <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">Node</span>
+      <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">Mongo</span>
     </div>
     <div class="flex justify-between text-xs text-gray-500">
       <span>+650 drivers</span>
-      <a href="#" class="text-orange-500 font-semibold">View</a>
+      <a href="#" class="text-[#FD5528] font-semibold">View</a>
     </div>
   </div>
 
@@ -291,21 +291,21 @@
   </div>
    <div class="flex justify-between text-[10px] text-gray-400 mb-2">
     <span>SAAS</span>
-    <span class="text-orange-500">JAN 2025</span>
+    <span class="text-[#FD5528]">JAN 2025</span>
   </div>
 
   <h3 class="text-lg font-semibold mb-2">Tanning Salon System</h3>
   <p class="text-sm text-gray-500 mb-4">Salon booking & automation system.</p>
 
   <div class="flex gap-2 flex-wrap mb-4">
-    <span class="bg-orange-100 text-orange-500 text-xs px-3 py-1 rounded-full">Node.js</span>
-    <span class="bg-orange-100 text-orange-500 text-xs px-3 py-1 rounded-full">MongoDB</span>
-    <span class="bg-orange-100 text-orange-500 text-xs px-3 py-1 rounded-full">REST API</span>
+    <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">Node.js</span>
+    <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">MongoDB</span>
+    <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">REST API</span>
   </div>
 
   <div class="flex justify-between text-xs text-gray-400">
     <span>+28% bookings</span>
-    <a href="#" class="text-orange-500">View</a>
+    <a href="#" class="text-[#FD5528]">View</a>
   </div>
 
 </div>
@@ -318,21 +318,21 @@
   </div>
   <div class="flex justify-between text-[10px] text-gray-400 mb-2">
     <span>WEB</span>
-    <span class="text-orange-500">JAN 2025</span>
+    <span class="text-[#FD5528]">JAN 2025</span>
   </div>
 
   <h3 class="text-lg font-semibold mb-2">Skydatech Technology</h3>
   <p class="text-sm text-gray-500 mb-4">IT consulting & tracking platform.</p>
 
   <div class="flex gap-2 flex-wrap mb-4">
-    <span class="bg-orange-100 text-orange-500 text-xs px-3 py-1 rounded-full">Node.js</span>
-    <span class="bg-orange-100 text-orange-500 text-xs px-3 py-1 rounded-full">MongoDB</span>
-    <span class="bg-orange-100 text-orange-500 text-xs px-3 py-1 rounded-full">REST API</span>
+    <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">Node.js</span>
+    <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">MongoDB</span>
+    <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">REST API</span>
   </div>
 
   <div class="flex justify-between text-xs text-gray-400">
     <span>47ms response</span>
-    <a href="#" class="text-orange-500">View</a>
+    <a href="#" class="text-[#FD5528]">View</a>
   </div>
 
 </div>
@@ -345,21 +345,21 @@
   </div>
   <div class="flex justify-between text-[10px] text-gray-400 mb-2">
     <span>WEB</span>
-    <span class="text-orange-500">JAN 2025</span>
+    <span class="text-[#FD5528]">JAN 2025</span>
   </div>
 
   <h3 class="text-lg font-semibold mb-2">Alberta ChildCare</h3>
   <p class="text-sm text-gray-500 mb-4">Education portal system.</p>
 
   <div class="flex gap-2 flex-wrap mb-4">
-    <span class="bg-orange-100 text-orange-500 text-xs px-3 py-1 rounded-full">Node.js</span>
-    <span class="bg-orange-100 text-orange-500 text-xs px-3 py-1 rounded-full">MongoDB</span>
-    <span class="bg-orange-100 text-orange-500 text-xs px-3 py-1 rounded-full">REST API</span>
+    <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">Node.js</span>
+    <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">MongoDB</span>
+    <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">REST API</span>
   </div>
 
   <div class="flex justify-between text-xs text-gray-400">
     <span>24x7 monitoring</span>
-    <a href="#" class="text-orange-500">View</a>
+    <a href="#" class="text-[#FD5528]">View</a>
   </div>
 
 </div>
@@ -372,21 +372,21 @@
   </div>
    <div class="flex justify-between text-[10px] text-gray-400 mb-2">
     <span>WEB</span>
-    <span class="text-orange-500">JAN 2025</span>
+    <span class="text-[#FD5528]">JAN 2025</span>
   </div>
 
   <h3 class="text-lg font-semibold mb-2">Marley Moves</h3>
   <p class="text-sm text-gray-500 mb-4">Logistics control system.</p>
 
   <div class="flex gap-2 flex-wrap mb-4">
-    <span class="bg-orange-100 text-orange-500 text-xs px-3 py-1 rounded-full">Node.js</span>
-    <span class="bg-orange-100 text-orange-500 text-xs px-3 py-1 rounded-full">MongoDB</span>
-    <span class="bg-orange-100 text-orange-500 text-xs px-3 py-1 rounded-full">REST API</span>
+    <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">Node.js</span>
+    <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">MongoDB</span>
+    <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">REST API</span>
   </div>
 
   <div class="flex justify-between text-xs text-gray-400">
     <span>+41% throughput</span>
-    <a href="#" class="text-orange-500">View</a>
+    <a href="#" class="text-[#FD5528]">View</a>
   </div>
 
 </div>
@@ -399,21 +399,21 @@
   </div>
   <div class="flex justify-between text-[10px] text-gray-400 mb-2">
     <span>CRM</span>
-    <span class="text-orange-500">JAN 2025</span>
+    <span class="text-[#FD5528]">JAN 2025</span>
   </div>
 
   <h3 class="text-lg font-semibold mb-2">ER Data Solutions</h3>
   <p class="text-sm text-gray-500 mb-4">CRM dashboard & analytics.</p>
 
   <div class="flex gap-2 flex-wrap mb-4">
-    <span class="bg-orange-100 text-orange-500 text-xs px-3 py-1 rounded-full">Node.js</span>
-    <span class="bg-orange-100 text-orange-500 text-xs px-3 py-1 rounded-full">MongoDB</span>
-    <span class="bg-orange-100 text-orange-500 text-xs px-3 py-1 rounded-full">REST API</span>
+    <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">Node.js</span>
+    <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">MongoDB</span>
+    <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">REST API</span>
   </div>
 
   <div class="flex justify-between text-xs text-gray-400">
     <span>+31% accuracy</span>
-    <a href="#" class="text-orange-500">View</a>
+    <a href="#" class="text-[#FD5528]">View</a>
   </div>
 </div>
 </div>
@@ -422,7 +422,7 @@
 
 <!-- BUTTON -->
 <div class="text-center mt-12">
-  <button class="bg-gradient-to-r from-orange-500 to-orange-400 hover:from-[#fbb03b] hover:to-[#FD5528] hover:scale-110 transition-all text-white px-8 py-3 rounded-full shadow-lg">
+  <button class="bg-gradient-to-r from-[#FD5528] to-orange-400 hover:from-[#fbb03b] hover:to-[#FD5528] hover:scale-110 transition-all text-white px-8 py-3 rounded-full shadow-lg">
     View All Projects
   </button>
 </div>
@@ -1464,7 +1464,7 @@
 
 
 <!-- CTA SECTION -->
-<section class="relative overflow-hidden py-20 bg-gradient-to-r from-[#FC5124] via-orange-500 to-orange-400 text-white">
+<section class="relative overflow-hidden py-20 bg-gradient-to-r from-[#FC5124] via-[#FD5528] to-orange-400 text-white">
 
   <!-- BACKGROUND GLOW -->
   <div class="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_top_left,_white,_transparent_50%)]"></div>

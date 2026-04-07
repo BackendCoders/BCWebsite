@@ -1,8 +1,8 @@
 
 
 @php
-    $activeNavClass = fn ($route) => request()->routeIs($route) ? 'text-[#FD5528]' : '';
-    $activeMobileNavClass = fn ($route) => request()->routeIs($route) ? 'text-[#FD5528]' : '';
+    $activeNavClass = fn ($route) => request()->routeIs($route) ? 'bg-white text-[#FD5528]' : 'text-white';
+    $activeMobileNavClass = fn ($route) => request()->routeIs($route) ? 'bg-[#FD5528] text-white' : 'text-black';
 @endphp
 
 <!-- topbar -->
@@ -110,55 +110,55 @@
         <nav class="hidden lg:flex items-center gap-2 text-sm font-medium">
 
             <a href="{{ route('frontend.index') }}"
-               class="nav-link px-3 py-2 rounded-md text-white hover:bg-orange-50 hover:text-[#FD5528] transition {{ $activeNavClass('frontend.index') }}"
+               class="nav-link px-3 py-2 rounded-md hover:bg-orange-50 hover:text-[#FD5528] transition {{ $activeNavClass('frontend.index') }}"
                aria-current="{{ request()->routeIs('frontend.index') ? 'page' : '' }}">
                 Overview
             </a>
 
             <a href="{{ route('frontend.about') }}"
-               class="nav-link px-3 py-2 rounded-md text-white hover:bg-orange-50 hover:text-[#FD5528] transition {{ $activeNavClass('frontend.about') }}"
+               class="nav-link px-3 py-2 rounded-md hover:bg-orange-50 hover:text-[#FD5528] transition {{ $activeNavClass('frontend.about') }}"
                aria-current="{{ request()->routeIs('frontend.about') ? 'page' : '' }}">
                 Company
             </a>
 
             <a href="{{ route('frontend.service') }}"
-               class="nav-link px-3 py-2 rounded-md text-white hover:bg-orange-50 hover:text-[#FD5528] transition {{ $activeNavClass('frontend.service') }}"
+               class="nav-link px-3 py-2 rounded-md hover:bg-orange-50 hover:text-[#FD5528] transition {{ $activeNavClass('frontend.service') }}"
                aria-current="{{ request()->routeIs('frontend.service') ? 'page' : '' }}">
                 Solutions
             </a>
 
             <a href="{{ route('frontend.project') }}"
-               class="nav-link px-3 py-2 rounded-md text-white hover:bg-orange-50 hover:text-[#FD5528] transition {{ $activeNavClass('frontend.project') }}"
+               class="nav-link px-3 py-2 rounded-md hover:bg-orange-50 hover:text-[#FD5528] transition {{ $activeNavClass('frontend.project') }}"
                aria-current="{{ request()->routeIs('frontend.project') ? 'page' : '' }}">
                 Architecture
             </a>
 
             <a href="{{ route('frontend.process') }}"
-               class="nav-link px-3 py-2 rounded-md text-white hover:bg-orange-50 hover:text-[#FD5528] transition {{ $activeNavClass('frontend.process') }}"
+               class="nav-link px-3 py-2 rounded-md hover:bg-orange-50 hover:text-[#FD5528] transition {{ $activeNavClass('frontend.process') }}"
                aria-current="{{ request()->routeIs('frontend.process') ? 'page' : '' }}">
                 Case Studies
             </a>
 
               <a href="{{ route('frontend.blog') }}"
-               class="nav-link px-3 py-2 rounded-md text-white hover:bg-orange-50 hover:text-[#FD5528] transition {{ $activeNavClass('frontend.blog') }}"
+               class="nav-link px-3 py-2 rounded-md hover:bg-orange-50 hover:text-[#FD5528] transition {{ $activeNavClass('frontend.blog') }}"
                aria-current="{{ request()->routeIs('frontend.blog') ? 'page' : '' }}">
                 BLog
             </a>
 
             <a href="{{route('frontend.packages')}}"
-               class="nav-link px-3 py-2 rounded-md text-white hover:bg-orange-50 hover:text-[#FD5528] transition {{ $activeNavClass('frontend.packages') }}"
+               class="nav-link px-3 py-2 rounded-md hover:bg-orange-50 hover:text-[#FD5528] transition {{ $activeNavClass('frontend.packages') }}"
                aria-current="{{ request()->routeIs('frontend.packages') ? 'page' : '' }}">
                 Packages
             </a>
 
             <a href="{{ route('frontend.career') }}"
-               class="nav-link px-3 py-2 rounded-md text-white hover:bg-orange-50 hover:text-[#FD5528] transition {{ $activeNavClass('frontend.career') }}"
+               class="nav-link px-3 py-2 rounded-md hover:bg-orange-50 hover:text-[#FD5528] transition {{ $activeNavClass('frontend.career') }}"
                aria-current="{{ request()->routeIs('frontend.career') ? 'page' : '' }}">
                 Insights
             </a>
 
             <a href="{{ route('frontend.contact') }}"
-               class="nav-link px-3 py-2 rounded-md text-white hover:bg-orange-50 hover:text-[#FD5528] transition {{ $activeNavClass('frontend.contact') }}"
+               class="nav-link px-3 py-2 rounded-md hover:bg-orange-50 hover:text-[#FD5528] transition {{ $activeNavClass('frontend.contact') }}"
                aria-current="{{ request()->routeIs('frontend.contact') ? 'page' : '' }}">
                 Ping Us
             </a>
@@ -192,47 +192,47 @@
         <div class="flex flex-col gap-1 px-6 py-4 text-sm">
 
             <a href="{{ route('frontend.index') }}"
-               class="nav-link rounded-md px-3 py-2 text-black hover:bg-orange-50 {{ $activeMobileNavClass('frontend.index') }}"
+               class="nav-link rounded-md px-3 py-2 hover:bg-orange-50 {{ $activeMobileNavClass('frontend.index') }}"
                aria-current="{{ request()->routeIs('frontend.index') ? 'page' : '' }}">
                 Overview
             </a>
             <a href="{{ route('frontend.about') }}"
-               class="nav-link rounded-md px-3 py-2 text-black hover:bg-orange-50 {{ $activeMobileNavClass('frontend.about') }}"
+               class="nav-link rounded-md px-3 py-2 hover:bg-orange-50 {{ $activeMobileNavClass('frontend.about') }}"
                aria-current="{{ request()->routeIs('frontend.about') ? 'page' : '' }}">
                 Company
             </a>
             <a href="{{ route('frontend.service') }}"
-               class="nav-link rounded-md px-3 py-2 text-black hover:bg-orange-50 {{ $activeMobileNavClass('frontend.service') }}"
+               class="nav-link rounded-md px-3 py-2 hover:bg-orange-50 {{ $activeMobileNavClass('frontend.service') }}"
                aria-current="{{ request()->routeIs('frontend.service') ? 'page' : '' }}">
                 Solutions
             </a>
             <a href="{{ route('frontend.project') }}"
-               class="nav-link rounded-md px-3 py-2 text-black hover:bg-orange-50 {{ $activeMobileNavClass('frontend.project') }}"
+               class="nav-link rounded-md px-3 py-2 hover:bg-orange-50 {{ $activeMobileNavClass('frontend.project') }}"
                aria-current="{{ request()->routeIs('frontend.project') ? 'page' : '' }}">
                 Architecture
             </a>
             <a href="{{ route('frontend.process') }}"
-               class="nav-link rounded-md px-3 py-2 text-black hover:bg-orange-50 {{ $activeMobileNavClass('frontend.process') }}"
+               class="nav-link rounded-md px-3 py-2 hover:bg-orange-50 {{ $activeMobileNavClass('frontend.process') }}"
                aria-current="{{ request()->routeIs('frontend.process') ? 'page' : '' }}">
                 Case Studies
             </a>
               <a href="{{ route('frontend.blog') }}"
-                class="nav-link rounded-md px-3 py-2 text-black hover:bg-orange-50 {{ $activeMobileNavClass('frontend.blog') }}"
+                class="nav-link rounded-md px-3 py-2 hover:bg-orange-50 {{ $activeMobileNavClass('frontend.blog') }}"
                 aria-current="{{ request()->routeIs('frontend.blog') ? 'page' : '' }}">
                   BLog
               </a>
             <a href="{{ route('frontend.packages') }}"
-               class="nav-link rounded-md px-3 py-2 text-black hover:bg-orange-50 {{ $activeMobileNavClass('frontend.packages') }}"
+               class="nav-link rounded-md px-3 py-2 hover:bg-orange-50 {{ $activeMobileNavClass('frontend.packages') }}"
                aria-current="{{ request()->routeIs('frontend.packages') ? 'page' : '' }}">
                 Packages
             </a>
             <a href="{{ route('frontend.career') }}"
-               class="nav-link rounded-md px-3 py-2 text-black hover:bg-orange-50 {{ $activeMobileNavClass('frontend.career') }}"
+               class="nav-link rounded-md px-3 py-2 hover:bg-orange-50 {{ $activeMobileNavClass('frontend.career') }}"
                aria-current="{{ request()->routeIs('frontend.career') ? 'page' : '' }}">
                 Insights
             </a>
             <a href="{{ route('frontend.contact') }}"
-               class="nav-link rounded-md px-3 py-2 text-black hover:bg-orange-50 {{ $activeMobileNavClass('frontend.contact') }}"
+               class="nav-link rounded-md px-3 py-2 hover:bg-orange-50 {{ $activeMobileNavClass('frontend.contact') }}"
                aria-current="{{ request()->routeIs('frontend.contact') ? 'page' : '' }}">
                 Ping us
             </a>
@@ -262,9 +262,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 </script>
-
-
-
 
 
 
