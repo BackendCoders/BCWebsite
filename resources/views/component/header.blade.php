@@ -15,7 +15,7 @@
       <span>We are hiring! </span>
       <a href="{{ route('frontend.career') }}" class="underline font-medium hover:text-white/80 transition">Explore Careers</a>
    </div> -->
-  <div class="max-w-9xl lg:mx-24 mx-auto px-4 sm:px-6 py-3 
+  <div class="max-w-9xl mx-auto px-4 sm:px-6 py-3 
               flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
 
     <!-- LEFT: CONTACT INFO -->
@@ -99,7 +99,7 @@
 <!-- navbar -->
    <header class="sticky top-0 z-40 border-b border-gray-200 bg-black/95 backdrop-blur">
     
-    <div class="max-w-9xl lg:mx-24 mx-auto flex h-16 items-center justify-between px-6">
+    <div class="max-w-9xl mx-auto flex h-16 items-center justify-between px-6">
 
     <!-- logo -->
         <a href="{{ route('frontend.index') }}" class="flex items-center gap-3">
