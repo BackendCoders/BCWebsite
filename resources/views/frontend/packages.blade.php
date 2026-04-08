@@ -945,7 +945,7 @@
 </section>
 
 <!-- TESTIMONIAL -->
- 
+
 <!-- FAQ -->
 <section class="relative overflow-hidden bg-gradient-to-br from-white via-slate-50 to-slate-100 py-16 sm:py-20 lg:py-24 px-4 sm:px-6">
 
@@ -1003,7 +1003,7 @@
           <span class="text-left text-base font-medium tracking-tight text-slate-900">
             What services do you offer?
           </span>
-          <span class="faq-icon inline-flex h-10 w-10 items-center justify-center rounded-full border-2 border-[#FD5528] bg-white/80 text-[#FD5528] shadow-md transition duration-300">
+          <span class="faq-icon inline-flex h-10 w-10 items-center justify-center  text-[#FD5528]  transition duration-300">
             <span class="faq-icon-text text-3xl leading-none">+</span>
           </span>
         </button>
@@ -1018,7 +1018,7 @@
           <span class="text-left text-base font-medium tracking-tight text-slate-900">
             Which technologies do you work with?
           </span>
-          <span class="faq-icon inline-flex h-10 w-10 items-center justify-center rounded-full border-2 border-[#FD5528] bg-white/80 text-[#FD5528] shadow-md transition duration-300">
+          <span class="faq-icon inline-flex h-10 w-10 items-center justify-center  text-[#FD5528]  transition duration-300">
             <span class="faq-icon-text text-3xl leading-none">+</span>
           </span>
         </button>
@@ -1037,7 +1037,7 @@
           <span class="text-left text-base font-medium tracking-tight text-slate-900">
             Do you provide dedicated development teams?
           </span>
-          <span class="faq-icon inline-flex h-10 w-10 items-center justify-center rounded-full border-2 border-[#FD5528] bg-white/80 text-[#FD5528] shadow-md transition duration-300">
+          <span class="faq-icon inline-flex h-10 w-10 items-center justify-center  text-[#FD5528]  transition duration-300">
             <span class="faq-icon-text text-3xl leading-none">+</span>
           </span>
         </button>
@@ -1051,7 +1051,7 @@
           <span class="text-left text-base font-medium tracking-tight text-slate-900">
             How do you ensure scalability and performance?
           </span>
-          <span class="faq-icon inline-flex h-10 w-10 items-center justify-center rounded-full border-2 border-[#FD5528] bg-white/80 text-[#FD5528] shadow-md transition duration-300">
+          <span class="faq-icon inline-flex h-10 w-10 items-center justify-center  text-[#FD5528]  transition duration-300">
             <span class="faq-icon-text text-3xl leading-none">+</span>
           </span>
         </button>
@@ -1070,7 +1070,7 @@
           <span class="text-left text-base font-medium tracking-tight text-slate-900">
             What is your development process?
           </span>
-          <span class="faq-icon inline-flex h-10 w-10 items-center justify-center rounded-full border-2 border-[#FD5528] bg-white/80 text-[#FD5528] shadow-md transition duration-300">
+          <span class="faq-icon inline-flex h-10 w-10 items-center justify-center  text-[#FD5528]  transition duration-300">
             <span class="faq-icon-text text-3xl leading-none">+</span>
           </span>
         </button>
@@ -1084,7 +1084,7 @@
           <span class="text-left text-base font-medium tracking-tight text-slate-900">
             Do you provide post-launch support?
           </span>
-          <span class="faq-icon inline-flex h-10 w-10 items-center justify-center rounded-full border-2 border-[#FD5528] bg-white/80 text-[#FD5528] shadow-md transition duration-300">
+          <span class="faq-icon inline-flex h-10 w-10 items-center justify-center  text-[#FD5528]  transition duration-300">
             <span class="faq-icon-text text-3xl leading-none">+</span>
           </span>
         </button>

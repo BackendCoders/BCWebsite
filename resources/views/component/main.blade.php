@@ -301,16 +301,6 @@
 }
 
 
-.faq-answer {
-  transition: max-height 0.4s ease, opacity 0.3s ease;
-  opacity: 0;
-}
-
-.faq-open .faq-answer {
-  opacity: 1;
-}
-
-
 </style>
     @include('component.header')
 
