@@ -44,7 +44,7 @@
 
 <!-- TABS -->
 <div class="flex flex-wrap justify-center gap-2 sm:gap-3 mb-10">
-  <button class="tab active bg-[#FD5528] text-white border border-[#FD5528] px-4 py-2 rounded-full" data-tab="all">All</button>
+  <button class="tab active border border-[#FD5528] text-orange-600 px-4 py-2 rounded-full" data-tab="all">All</button>
   <button class="tab border border-[#FD5528] text-orange-600 px-4 py-2 rounded-full" data-tab="web">Web Apps</button>
   <button class="tab border border-[#FD5528] text-orange-600 px-4 py-2 rounded-full" data-tab="saas">SaaS</button>
   <button class="tab border border-[#FD5528] text-orange-600 px-4 py-2 rounded-full" data-tab="ecommerce">E-commerce</button>
@@ -215,7 +215,7 @@
 
 <!-- more -->
   <!-- CARD 1 -->
-<div class="project web bg-white rounded-3xl shadow-lg overflow-hidden p-5 group hover:-translate-y-1 hover:shadow-2xl transition">
+<div class="project others bg-white rounded-3xl shadow-lg overflow-hidden p-5 group hover:-translate-y-1 hover:shadow-2xl transition">
   <div class="relative h-44 overflow-hidden mb-4">
     <img src="{{asset('assets/ai_demo/dental_clinic/1.png')}}" class="w-full h-full object-cover group-hover:scale-105 transition">
     <span class="absolute top-3 left-3 bg-green-600 text-white text-xs px-3 py-1 rounded-full">LIVE</span>
@@ -239,7 +239,7 @@
 </div>
 
 <!-- CARD 2 -->
-<div class="project saas bg-white rounded-3xl shadow-lg overflow-hidden p-5 group hover:-translate-y-1 hover:shadow-2xl transition">
+<div class="project others bg-white rounded-3xl shadow-lg overflow-hidden p-5 group hover:-translate-y-1 hover:shadow-2xl transition">
   <div class="relative h-44 overflow-hidden mb-4">
     <img src="{{asset('assets/ai_demo/gym/1.png')}}" class="w-full h-full object-cover">
     <span class="absolute top-3 left-3 bg-green-600 text-white text-xs px-3 py-1 rounded-full">LIVE</span>
@@ -266,7 +266,7 @@
 </div>
 
 <!-- CARD 3 -->
-<div class="project web bg-white rounded-3xl shadow-lg overflow-hidden p-5 group hover:-translate-y-1 hover:shadow-2xl transition">
+<div class="project others bg-white rounded-3xl shadow-lg overflow-hidden p-5 group hover:-translate-y-1 hover:shadow-2xl transition">
   <div class="relative h-44 overflow-hidden mb-4">
     <img src="{{asset('assets/ai_demo/incredible_india/1.png')}}" class="w-full h-full object-cover">
     <span class="absolute top-3 left-3 bg-green-600 text-white text-xs px-3 py-1 rounded-full">LIVE</span>
@@ -293,7 +293,7 @@
 </div>
 
 <!-- CARD 4 -->
-<div class="project ecommerce bg-white rounded-3xl shadow-lg overflow-hidden p-5 group hover:-translate-y-1 hover:shadow-2xl transition">
+<div class="project others bg-white rounded-3xl shadow-lg overflow-hidden p-5 group hover:-translate-y-1 hover:shadow-2xl transition">
   <div class="relative h-44 overflow-hidden mb-4">
     <img src="{{asset('assets/ai_demo/plumber/1.png')}}" class="w-full h-full object-cover">
     <span class="absolute top-3 left-3 bg-green-600 text-white text-xs px-3 py-1 rounded-full">LIVE</span>
@@ -320,7 +320,7 @@
 </div>
 
 <!-- CARD 5 -->
-<div class="project web bg-white rounded-3xl shadow-lg overflow-hidden p-5 group hover:-translate-y-1 hover:shadow-2xl transition">
+<div class="project others bg-white rounded-3xl shadow-lg overflow-hidden p-5 group hover:-translate-y-1 hover:shadow-2xl transition">
   <div class="relative h-44 overflow-hidden mb-4">
     <img src="{{asset('assets/ai_demo/restaurant/1.png')}}" class="w-full h-full object-cover">
     <span class="absolute top-3 left-3 bg-green-600 text-white text-xs px-3 py-1 rounded-full">LIVE</span>
@@ -346,12 +346,9 @@
 
 </div>
 
-
-
 </div>
 
 </div>
-
 
 </div>
 </section>

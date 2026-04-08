@@ -247,13 +247,14 @@
 </div>
 
 <!-- TABS -->
+<!-- TABS -->
 <div class="flex flex-wrap justify-center gap-2 sm:gap-3 mb-10">
-  <button class="tab border border-[#FD5528] text-[#FD5528] px-4 py-2 rounded-full" data-tab="all">All</button>
-  <button class="tab border border-[#FD5528] text-[#FD5528] px-4 py-2 rounded-full" data-tab="web">Web Apps</button>
-  <button class="tab border border-[#FD5528] text-[#FD5528] px-4 py-2 rounded-full" data-tab="saas">SaaS</button>
-  <button class="tab border border-[#FD5528] text-[#FD5528] px-4 py-2 rounded-full" data-tab="ecommerce">E-commerce</button>
-  <button class="tab border border-[#FD5528] text-[#FD5528] px-4 py-2 rounded-full" data-tab="crm">CRM</button>
-    <button class="tab border border-[#FD5528] text-[#FD5528] px-4 py-2 rounded-full" data-tab="others">Others</button>
+  <button class="tab active border border-[#FD5528] text-orange-600 px-4 py-2 rounded-full" data-tab="all">All</button>
+  <button class="tab border border-[#FD5528] text-orange-600 px-4 py-2 rounded-full" data-tab="web">Web Apps</button>
+  <button class="tab border border-[#FD5528] text-orange-600 px-4 py-2 rounded-full" data-tab="saas">SaaS</button>
+  <button class="tab border border-[#FD5528] text-orange-600 px-4 py-2 rounded-full" data-tab="ecommerce">E-commerce</button>
+  <button class="tab border border-[#FD5528] text-orange-600 px-4 py-2 rounded-full" data-tab="crm">CRM</button>
+   <button class="tab border border-[#FD5528] text-orange-600 px-4 py-2 rounded-full" data-tab="others">Others</button>
 </div>
 
 <!-- GRID -->
@@ -415,6 +416,60 @@
     <span>+31% accuracy</span>
     <a href="#" class="text-[#FD5528]">View</a>
   </div>
+</div>
+<!-- others -->
+ <!-- CARD 3 -->
+<div class="project others bg-white rounded-3xl shadow-lg overflow-hidden p-5 group hover:-translate-y-1 hover:shadow-2xl transition">
+  <div class="relative h-44 overflow-hidden mb-4">
+    <img src="{{asset('assets/ai_demo/incredible_india/1.png')}}" class="w-full h-full object-cover">
+    <span class="absolute top-3 left-3 bg-green-600 text-white text-xs px-3 py-1 rounded-full">LIVE</span>
+  </div>
+  <div class="flex justify-between text-[10px] text-gray-400 mb-2">
+    <span>WEB</span>
+    <span class="text-[#FD5528]">JAN 2025</span>
+  </div>
+
+  <h3 class="text-lg font-semibold mb-2">Incredible India</h3>
+  <p class="text-sm text-gray-500 mb-4">Tourism & travel platform.</p>
+
+  <div class="flex gap-2 flex-wrap mb-4">
+    <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">Node.js</span>
+    <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">MongoDB</span>
+    <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">REST API</span>
+  </div>
+
+  <div class="flex justify-between text-xs text-gray-400">
+    <span>47ms response</span>
+    <a href="#" class="text-[#FD5528]">View</a>
+  </div>
+
+</div>
+
+<!-- CARD 4 -->
+<div class="project others bg-white rounded-3xl shadow-lg overflow-hidden p-5 group hover:-translate-y-1 hover:shadow-2xl transition">
+  <div class="relative h-44 overflow-hidden mb-4">
+    <img src="{{asset('assets/ai_demo/plumber/1.png')}}" class="w-full h-full object-cover">
+    <span class="absolute top-3 left-3 bg-green-600 text-white text-xs px-3 py-1 rounded-full">LIVE</span>
+  </div>
+  <div class="flex justify-between text-[10px] text-gray-400 mb-2">
+    <span>WEB</span>
+    <span class="text-[#FD5528]">JAN 2025</span>
+  </div>
+
+  <h3 class="text-lg font-semibold mb-2">Quick Fix</h3>
+  <p class="text-sm text-gray-500 mb-4">Plumbing service booking system.</p>
+
+  <div class="flex gap-2 flex-wrap mb-4">
+    <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">Node.js</span>
+    <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">MongoDB</span>
+    <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">REST API</span>
+  </div>
+
+  <div class="flex justify-between text-xs text-gray-400">
+    <span>24x7 monitoring</span>
+    <a href="#" class="text-[#FD5528]">View</a>
+  </div>
+
 </div>
 </div>
 
