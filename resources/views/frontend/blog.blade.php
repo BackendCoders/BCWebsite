@@ -1,204 +1,306 @@
-@extends('component.main')
-@section('content')
+@extends("component.main")
+@section("content")
+<!-- hero section  -->
+<section class="relative h-[30vh] flex items-center justify-center text-center text-white overflow-hidden">
 
-<!-- HERO -->
-<section class="max-w-6xl mx-auto px-6 py-16 text-center space-y-6">
-  <p class="text-xs uppercase tracking-[0.5em] text-[#FD5528]">Blog Showcase</p>
-  <h1 class="text-4xl md:text-5xl font-bold text-gray-900">Intelligent stories from a trusted IT partner</h1>
-  <p class="text-gray-600 max-w-3xl mx-auto text-lg">
-    Insights, playbooks, and case highlights that show how our team builds resilient platforms for ambitious businesses.
-  </p>
-</section>
+  <!-- BACKGROUND IMAGE -->
+  <img 
+    src="{{asset('assets/images/banner.png')}}"
+    class="absolute inset-0 w-full h-full object-cover"
+  />
 
-<!-- MAIN -->
-<section class="max-w-7xl mx-auto px-6 pb-20 grid gap-10 lg:grid-cols-[1fr_320px]">
+  <!-- DARK OVERLAY -->
+  <div class="absolute inset-0 bg-black/60"></div>
+
   <!-- CONTENT -->
-  <div class="space-y-8">
-    <!-- FILTER & CTA -->
-    <div class="bg-white rounded-3xl p-6 shadow">
-      <div class="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
-        <div>
-          <h3 class="text-lg font-semibold">Latest insights</h3>
-          <p class="text-sm text-gray-500">Tap a view to narrow the showcased stories.</p>
-        </div>
-        <div class="flex flex-wrap gap-2">
-          <button class="tab active px-4 py-1 border rounded-full text-sm font-semibold text-[#FD5528]" data-tab="all">All</button>
-          <button class="tab px-4 py-1 border rounded-full text-sm font-semibold" data-tab="IT">IT</button>
-          <button class="tab px-4 py-1 border rounded-full text-sm font-semibold" data-tab="cloud">Cloud</button>
-          <button class="tab px-4 py-1 border rounded-full text-sm font-semibold" data-tab="marketing">Marketing</button>
-        </div>
+  <div class="relative z-10 max-w-4xl px-6">
+
+  
+
+    <!-- HEADING -->
+    <h1 class="mt-6 text-4xl sm:text-5xl md:text-6xl font-bold leading-tight">
+    Blog &
+      <span class="text-orange-600"> Insights</span>
+    </h1>
+
+    <!-- SUBTEXT -->
+    <p class="mt-6 text-gray-300 text-sm sm:text-base md:text-lg max-w-2xl mx-auto">
+      Project-driven stories on engineering, marketing, and design. Discover how Backend Coders align cloud, product, and go-to-market teams through practical playbooks, metrics, and hard-won lessons.
+    </p>
+
+ 
+
+  </div>
+
+</section>
+<!-- end hero section  -->
+
+
+
+<section class="bg-white text-black relative overflow-hidden">
+  <div class="absolute inset-0 bg-gradient-to-r from-[#FD5528]/10 via-transparent to-[#FD5528]/10 pointer-events-none"></div>
+  <div class="max-w-7xl mx-auto px-4 py-16 relative">
+    <div class="grid lg:grid-cols-2 gap-12">
+      <div class="space-y-6">
+        <p class="text-sm uppercase tracking-[0.4em] text-black">Insights Studio</p>
+        <h1 class="text-3xl md:text-5xl font-bold leading-tight">
+          Project-driven stories on engineering, marketing, and design.
+        </h1>
+        <p class="text-black text-base md:text-lg max-w-2xl">
+          Discover how Backend Coders align cloud, product, and go-to-market teams through practical playbooks, metrics, and hard-won lessons.
+        </p>
+ 
       </div>
-    </div>
-
-    <!-- GRID -->
-    <div class="grid gap-6 lg:grid-cols-2" id="project-grid">
-      <!-- CARD -->
-      <a href="/blog_detail" class="project IT bg-white rounded-3xl shadow-lg overflow-hidden hover:shadow-2xl transition hover:-translate-y-1 block">
-        <div class="relative h-60">
-          <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1600&q=80" class="w-full h-full object-cover">
-          <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/70"></div>
-          <div class="absolute bottom-5 left-6 text-white">
-            <p class="text-xs uppercase tracking-[0.4em]">IT Services</p>
-            <h2 class="text-xl font-semibold">Travel SaaS Platform</h2>
-          </div>
+      <div class="rounded-[32px] border border-black/10 bg-white p-6 backdrop-blur-md shadow-xl space-y-6">
+        <div class="space-y-3">
+          <p class="text-xs uppercase tracking-[0.4em] text-black/60">Search the lab</p>
+          <input id="blogSearch" type="text" placeholder="Search posts, tags, and experiments"
+            class="w-full px-5 py-3 rounded-3xl border border-black/20 bg-black/10 placeholder:text-black/60 focus:outline-none focus:border-[#FD5528] focus:bg-black transition" />
+          <p class="text-xs text-black">
+            <span id="postCount">0 stories</span> displayed · <span id="activeCategory">All Categories</span>
+          </p>
         </div>
-        <div class="p-6 space-y-3">
-          <p class="text-sm text-gray-600">Modern booking infrastructure with scalable APIs.</p>
-          <div class="flex items-center justify-between text-xs uppercase tracking-[0.3em] text-gray-500">
-            <span>March 22, 2026</span>
-            <span>4 min read</span>
-          </div>
+        <div class="space-y-2">
+          <p class="text-xs uppercase tracking-[0.4em] text-black/60">Filter by category</p>
+          <div id="categoryFilters" class="flex flex-wrap gap-2"></div>
         </div>
-      </a>
-
-      <!-- CARD -->
-      <a href="/_detail" class="project marketing bg-white rounded-3xl shadow-lg overflow-hidden hover:shadow-2xl transition hover:-translate-y-1 block">
-        <div class="relative h-60">
-          <img src="https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=1600&q=80" class="w-full h-full object-cover">
-          <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/70"></div>
-          <div class="absolute bottom-5 left-6 text-white">
-            <p class="text-xs uppercase tracking-[0.4em]">Marketing</p>
-            <h2 class="text-xl font-semibold">FinTech Campaign</h2>
-          </div>
-        </div>
-        <div class="p-6 space-y-3">
-          <p class="text-sm text-gray-600">SEO + paid ads that unlocked 3x the conversion goal.</p>
-          <div class="flex items-center justify-between text-xs uppercase tracking-[0.3em] text-gray-500">
-            <span>February 07, 2026</span>
-            <span>5 min read</span>
-          </div>
-        </div>
-      </a>
-
-      <!-- CARD -->
-      <a href="/blog_detail" class="project cloud bg-white rounded-3xl shadow-lg overflow-hidden hover:shadow-2xl transition hover:-translate-y-1 block">
-        <div class="relative h-60">
-          <img src="https://images.unsplash.com/photo-1487014679447-9f8336841d58?auto=format&fit=crop&w=1600&q=80" class="w-full h-full object-cover">
-          <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/70"></div>
-          <div class="absolute bottom-5 left-6 text-white">
-            <p class="text-xs uppercase tracking-[0.4em]">Cloud</p>
-            <h2 class="text-xl font-semibold">Zero-downtime Migration</h2>
-          </div>
-        </div>
-        <div class="p-6 space-y-3">
-          <p class="text-sm text-gray-600">Lift-and-shift, refactor, and automation for a legacy ERP.</p>
-          <div class="flex items-center justify-between text-xs uppercase tracking-[0.3em] text-gray-500">
-            <span>January 14, 2026</span>
-            <span>6 min read</span>
-          </div>
-        </div>
-      </a>
-
-      <!-- CARD -->
-      <a href="/blog_detail" class="project IT bg-white rounded-3xl shadow-lg overflow-hidden hover:shadow-2xl transition hover:-translate-y-1 block">
-        <div class="relative h-60">
-          <img src="https://images.unsplash.com/photo-1664355680555-12687f77e0d3?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="w-full h-full object-cover">
-          <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/70"></div>
-          <div class="absolute bottom-5 left-6 text-white">
-            <p class="text-xs uppercase tracking-[0.4em]">IT Services</p>
-            <h2 class="text-xl font-semibold">Digital Workplace</h2>
-          </div>
-        </div>
-        <div class="p-6 space-y-3">
-          <p class="text-sm text-gray-600">Hybrid work stack with unified collaboration and governance.</p>
-          <div class="flex items-center justify-between text-xs uppercase tracking-[0.3em] text-gray-500">
-            <span>December 09, 2025</span>
-            <span>4 min read</span>
-          </div>
-        </div>
-      </a>
-    </div>
-
-    <!-- LATEST STORIES -->
-    <div class="bg-white rounded-3xl p-6 shadow space-y-5">
-      <div class="flex items-center justify-between">
-        <div>
-          <h3 class="text-lg font-semibold">Latest posts</h3>
-          <p class="text-sm text-gray-500">Fresh briefs from the leadership desk.</p>
-        </div>
-        <a href="/blog_detail" class="text-sm font-semibold text-[#FD5528]">View all →</a>
-      </div>
-      <div class="space-y-4">
-        <article class="border-b border-gray-100 pb-4">
-          <a href="/blog_detail" class="text-base font-semibold text-gray-900 block mb-1">Securing DevOps pipelines for a global retailer</a>
-          <p class="text-sm text-gray-500">Security-first automation that let the engineering team ship twice a week.</p>
-        </article>
-        <article class="border-b border-gray-100 pb-4">
-          <a href="/blog_detail" class="text-base font-semibold text-gray-900 block mb-1">AI copilots in customer success</a>
-          <p class="text-sm text-gray-500">We paired LLMs with structured data to trim response time by 60%.</p>
-        </article>
-        <article>
-          <a href="/blog_detail" class="text-base font-semibold text-gray-900 block mb-1">Greenfield data platform for finance</a>
-          <p class="text-sm text-gray-500">Batch and real-time feeds centralized in a single analytics fabric.</p>
-        </article>
+   
       </div>
     </div>
   </div>
+</section>
 
-  <!-- SIDEBAR -->
-  <aside class="space-y-6">
-    <div class="bg-white p-6 rounded-3xl shadow space-y-4">
-      <input type="search" placeholder="Search insights" class="w-full border border-gray-200 p-3 rounded-full focus:outline-none focus:border-[#FD5528]">
-      <button class="w-full rounded-full bg-[#FD5528] text-white py-2 text-sm font-semibold">Search</button>
-    </div>
+<section class="bg-slate-50 py-12">
+  
+  <div class="max-w-7xl mx-auto px-4 grid lg:grid-cols-3 gap-8">
 
-    <div class="bg-white p-6 rounded-3xl shadow">
-      <h4 class="font-semibold text-lg mb-4">Categories</h4>
-      <div class="flex flex-wrap gap-3">
-        <span class="px-3 py-1 rounded-full border text-xs font-semibold text-gray-600">IT Services</span>
-        <span class="px-3 py-1 rounded-full border text-xs font-semibold text-gray-600">Digital Transformation</span>
-        <span class="px-3 py-1 rounded-full border text-xs font-semibold text-gray-600">Industry Intelligence</span>
-        <span class="px-3 py-1 rounded-full border text-xs font-semibold text-gray-600">Cloud Ops</span>
-        <span class="px-3 py-1 rounded-full border text-xs font-semibold text-gray-600">Marketing</span>
-        <span class="px-3 py-1 rounded-full border text-xs font-semibold text-gray-600">Culture &amp; Talent</span>
+    <div class="lg:col-span-2 space-y-8">
+      <div class="grid sm:grid-cols-2 gap-6" id="blogGrid"></div>
+      <div class="flex justify-between items-center px-4 py-3 rounded-2xl border border-dashed border-slate-300 bg-white shadow-sm">
+        <div>
+          <p class="text-xs uppercase tracking-[0.4em] text-slate-400">Ready for more</p>
+          <p class="text-lg font-semibold text-slate-900">Build your next engagement</p>
+        </div>
+        <button class="text-sm font-bold text-[#FD5528] hover:text-[#fbb03b] transition">
+          View all stories →
+        </button>
       </div>
     </div>
 
-    <div class="bg-gradient-to-b from-[#FD5528] to-[#f97316] text-white p-6 rounded-3xl shadow space-y-4">
-      <h4 class="text-lg font-semibold">Featured story</h4>
-      <p class="text-sm">Download the executive summary on our AI-driven modernization journey.</p>
-      <a href="/blog_detail" class="text-sm font-semibold underline">Read the playbook →</a>
-    </div>
+    <div class="space-y-6">
+      <div class="bg-white rounded-3xl p-6 shadow-lg border border-slate-100">
+        <p class="text-xs uppercase tracking-[0.35em] text-slate-400 mb-3">Spotlight</p>
+        <div id="featuredCard" class="space-y-2"></div>
+      </div>
 
-    <div class="bg-white p-6 rounded-3xl shadow space-y-4">
-      <h4 class="font-semibold text-lg">Newsletter</h4>
-      <p class="text-sm text-gray-500">Monthly briefs on how we deliver predictable results.</p>
-      <input type="email" placeholder="you@company.com" class="w-full border border-gray-200 p-3 rounded-full focus:outline-none focus:border-[#FD5528]">
-      <button class="w-full rounded-full bg-gray-900 text-white py-2 text-sm font-semibold">Subscribe</button>
+      <div class="bg-white rounded-3xl p-6 shadow-lg border border-slate-100">
+        <p class="text-xs uppercase tracking-[0.35em] text-slate-400 mb-4">Recommended</p>
+        <div id="recommendedList" class="space-y-4"></div>
+      </div>
+
+      <div class="bg-gradient-to-br from-[#FD5528]/10 via-white to-[#fbb03b]/10 rounded-3xl p-6 shadow-lg border border-[#FD5528]/20">
+        <p class="text-sm uppercase tracking-[0.4em] text-[#FD5528] mb-3">Need support?</p>
+        <p class="text-base text-slate-900">
+          Talk to the insight team for custom briefings, dedicated retro sessions, or engineering deep dives.
+        </p>
+        <button class="mt-6 w-full bg-[#FD5528] text-white rounded-2xl py-3 font-semibold shadow-lg hover:bg-[#fbb03b] transition">
+          Book a briefing
+        </button>
+      </div>
     </div>
-  </aside>
+  </div>
 </section>
 
-<!-- JS -->
 <script>
-  const tabs = document.querySelectorAll(".tab");
-  const projects = document.querySelectorAll(".project");
+(() => {
+  const posts = [
+    {
+      id: 1,
+      title: "How AI is Changing Digital Marketing",
+      category: "Marketing",
+      summary: "AI-powered experimentation is slashing campaign setup time by 60%.",
+      minutes: 2,
+      date: "01 Apr 2026",
+      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
+      recommended: true
+    },
+    {
+      id: 2,
+      title: "Top SEO Strategies for 2026",
+      category: "SEO",
+      summary: "We rebuilt our SEO stack and doubled organic traffic in six months.",
+      minutes: 3,
+      date: "25 Mar 2026",
+      image: "https://images.unsplash.com/photo-1518770660439-4636190af475",
+      recommended: true
+    },
+    {
+      id: 3,
+      title: "Website Speed Optimization Tips",
+      category: "Development",
+      summary: "Practical fixes for Time to First Byte, caching, and continuous deployments.",
+      minutes: 4,
+      date: "18 Mar 2026",
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f",
+      recommended: false
+    },
+    {
+      id: 4,
+      title: "Social Media Growth Hacks",
+      category: "Marketing",
+      summary: "Creative-led stories that generated a 3x lift in shareable content.",
+      minutes: 2,
+      date: "12 Mar 2026",
+      image: "https://images.unsplash.com/photo-1553877522-43269d4ea984",
+      recommended: false
+    },
+    {
+      id: 5,
+      title: "Reactive Monitoring for Product Teams",
+      category: "Development",
+      summary: "Engineering teams use observability to stay ahead of release-day pressure.",
+      minutes: 5,
+      date: "03 Mar 2026",
+      image: "https://images.unsplash.com/photo-1517430816045-df4b7de11d1d",
+      recommended: true
+    },
+    {
+      id: 6,
+      title: "Design Systems That Scale Teams",
+      category: "Design",
+      summary: "Component libraries with modular docs keep cross-functional squads in sync.",
+      minutes: 3,
+      date: "27 Feb 2026",
+      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70",
+      recommended: false
+    }
+  ];
 
-  tabs.forEach(tab => {
-    tab.addEventListener("click", () => {
-      tabs.forEach(t => {
-        t.classList.remove("bg-[#FD5528]", "text-white");
-        t.classList.add("text-[#FD5528]");
-      });
+  const categoryList = ["All Categories", "SEO", "Marketing", "Development", "Business"];
+  let activeCategory = "All Categories";
+  const searchInput = document.querySelector("#blogSearch");
+  const blogGrid = document.querySelector("#blogGrid");
+  const postCount = document.querySelector("#postCount");
+  const activeCategoryLabel = document.querySelector("#activeCategory");
+  const categoryFilters = document.querySelector("#categoryFilters");
+  const recommendedList = document.querySelector("#recommendedList");
+  const featuredCard = document.querySelector("#featuredCard");
 
-      tab.classList.remove("text-[#FD5528]");
-      tab.classList.add("bg-[#FD5528]", "text-white");
-
-      const type = tab.dataset.tab;
-
-      projects.forEach(p => {
-        if (type === "all" || p.classList.contains(type)) {
-          p.classList.remove("hidden");
-        } else {
-          p.classList.add("hidden");
-        }
-      });
-    });
-  });
-
-  if (tabs.length) {
-    tabs[0].click();
+  if (!searchInput || !blogGrid || !categoryFilters || !postCount || !activeCategoryLabel || !recommendedList || !featuredCard) {
+    return;
   }
+
+  const projectedFeatured = posts[0];
+
+  const renderFeatured = () => {
+    featuredCard.innerHTML = `
+      <div class="rounded-2xl overflow-hidden border border-slate-200">
+        <img src="${projectedFeatured.image}" class="w-full h-40 object-cover" loading="lazy" />
+      </div>
+      <div class="space-y-2">
+        <p class="text-xs uppercase tracking-[0.4em] text-slate-900">Featured</p>
+        <h3 class="text-lg font-bold text-slate-900">${projectedFeatured.title}</h3>
+        <p class="text-sm text-slate-500">${projectedFeatured.summary}</p>
+        <p class="text-xs text-slate-400">${projectedFeatured.date} • ${projectedFeatured.minutes} min read</p>
+      </div>
+    `;
+  };
+
+  const renderCategories = () => {
+    categoryFilters.innerHTML = categoryList
+      .map(
+        (category) => `
+        <button type="button"
+          class="category-pill rounded-full px-4 py-2 text-xs font-semibold tracking-[0.3em] uppercase transition border border-black/20 bg-black/10 hover:bg-black/20 ${
+            category === activeCategory ? "bg-white text-slate-900" : "text-black"
+          }"
+          data-category="${category}"
+        >
+          ${category === "All Categories" ? "All" : category}
+        </button>
+      `
+      )
+      .join("");
+  };
+
+  const getFilteredPosts = () => {
+    const query = searchInput.value.trim().toLowerCase();
+    return posts.filter((post) => {
+      const matchesCategory =
+        activeCategory === "All Categories" || post.category === activeCategory || activeCategory === "Business" && !["Marketing", "SEO", "Development"].includes(post.category);
+      const matchesSearch =
+        post.title.toLowerCase().includes(query) || post.summary.toLowerCase().includes(query);
+      return matchesCategory && matchesSearch;
+    });
+  };
+
+  const renderPosts = () => {
+    const filteredPosts = getFilteredPosts();
+    postCount.textContent = `${filteredPosts.length} stories`;
+    activeCategoryLabel.textContent = activeCategory;
+
+    blogGrid.innerHTML = filteredPosts
+      .map(
+        (post) => `
+        <article class="group bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden transform transition hover:-translate-y-1 hover:shadow-2xl">
+          <div class="relative">
+            <img src="${post.image}" class="h-48 w-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
+            <span class="absolute top-3 left-3 bg-gradient-to-r from-[#FD5528] to-[#fbb03b] text-white text-xs font-semibold px-3 py-1 rounded-full shadow-lg">
+              ${post.category}
+            </span>
+          </div>
+          <div class="p-5 space-y-3">
+            <p class="text-xs uppercase tracking-[0.35em] text-slate-400">${post.date}</p>
+            <h3 class="text-lg font-semibold text-slate-900">${post.title}</h3>
+            <p class="text-sm text-slate-500">${post.summary}</p>
+            <div class="flex items-center justify-between text-xs text-slate-400">
+              <span>${post.minutes} min read</span>
+              <span class="text-[#FD5528] font-semibold">Read story →</span>
+            </div>
+          </div>
+        </article>
+      `
+      )
+      .join("");
+
+    renderRecommended(filteredPosts);
+  };
+
+  const recommendedPosts = () => posts.filter((post) => post.recommended);
+
+  const renderRecommended = (filteredPosts) => {
+    const baseList = filteredPosts.filter((post) => post.recommended);
+    const listToRender = baseList.length ? baseList : recommendedPosts();
+    recommendedList.innerHTML = listToRender
+      .map(
+        (post) => `
+        <div class="flex gap-3 rounded-xl border border-slate-200/60 p-3 transition hover:-translate-y-1 hover:shadow-lg bg-white">
+          <img src="${post.image}" class="w-20 h-16 object-cover rounded-lg" loading="lazy" />
+          <div>
+            <p class="text-xs uppercase tracking-[0.3em] text-slate-400">${post.category}</p>
+            <h4 class="text-sm font-semibold text-slate-900">${post.title}</h4>
+            <p class="text-xs text-slate-500">${post.minutes} min read</p>
+          </div>
+        </div>
+      `
+      )
+      .join("");
+  };
+
+  const handleCategoryClick = (event) => {
+    if (!event.target.closest(".category-pill")) return;
+    activeCategory = event.target.closest(".category-pill").dataset.category;
+    renderCategories();
+    renderPosts();
+  };
+
+  searchInput.addEventListener("input", renderPosts);
+  categoryFilters.addEventListener("click", handleCategoryClick);
+
+  renderCategories();
+  renderFeatured();
+  renderPosts();
+})();
 </script>
 
 @endsection
