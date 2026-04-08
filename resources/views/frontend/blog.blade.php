@@ -42,7 +42,7 @@
   <div class="max-w-7xl mx-auto px-4 py-16 relative">
     <div class="grid lg:grid-cols-2 gap-12">
       <div class="space-y-6">
-        <p class="text-sm uppercase tracking-[0.4em] text-black">Insights Studio</p>
+        <p class="text-sm uppercase tracking-[0.4em] text-[#FD5528]">Insights Studio</p>
         <h1 class="text-3xl md:text-5xl font-bold leading-tight">
           Project-driven stories on engineering, marketing, and design.
         </h1>
@@ -53,15 +53,15 @@
       </div>
       <div class="rounded-[32px] border border-black/10 bg-white p-6 backdrop-blur-md shadow-xl space-y-6">
         <div class="space-y-3">
-          <p class="text-xs uppercase tracking-[0.4em] text-black/60">Search the lab</p>
+          <p class="text-xs uppercase tracking-[0.4em] text-[#FD5528]">Search the lab</p>
           <input id="blogSearch" type="text" placeholder="Search posts, tags, and experiments"
-            class="w-full px-5 py-3 rounded-3xl border border-black/20 bg-black/10 placeholder:text-black/60 focus:outline-none focus:border-[#FD5528] focus:bg-black transition" />
+            class="w-full px-5 py-3 rounded-3xl border border-black/20 bg-black/10 placeholder:text-black/60 focus:outline-none focus:border-[#FD5528] focus:bg-black/10 transition" />
           <p class="text-xs text-black">
             <span id="postCount">0 stories</span> displayed · <span id="activeCategory">All Categories</span>
           </p>
         </div>
         <div class="space-y-2">
-          <p class="text-xs uppercase tracking-[0.4em] text-black/60">Filter by category</p>
+          <p class="text-xs uppercase tracking-[0.4em] text-[#FD5528]">Filter by category</p>
           <div id="categoryFilters" class="flex flex-wrap gap-2"></div>
         </div>
    
@@ -103,7 +103,7 @@
         <p class="text-base text-slate-900">
           Talk to the insight team for custom briefings, dedicated retro sessions, or engineering deep dives.
         </p>
-        <button class="mt-6 w-full bg-[#FD5528] text-white rounded-2xl py-3 font-semibold shadow-lg hover:bg-[#fbb03b] transition">
+        <button class="mt-6 w-full  bg-gradient-to-r from-[#FD5528] to-[#fbb03b] hover:bg-gradient-to-r hover:from-[#FD5528] hover:to-[#fbb03b] text-white rounded-2xl py-3 font-semibold shadow-lg transition">
           Book a briefing
         </button>
       </div>
