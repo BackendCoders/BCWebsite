@@ -446,7 +446,7 @@
 </div>
 
 <!-- CARD 4 -->
-<div class="project others bg-white rounded-3xl shadow-lg overflow-hidden p-5 group hover:-translate-y-1 hover:shadow-2xl transition">
+<div class="project others bg-white rounded-3xl shadow-lg overflow-hidden p-5 group hover:-translate-y-1 hover:shadow-2xl     transition">
   <div class="relative h-44 overflow-hidden mb-4">
     <img src="{{asset('assets/ai_demo/plumber/1.png')}}" class="w-full h-full object-cover">
     <span class="absolute top-3 left-3 bg-green-600 text-white text-xs px-3 py-1 rounded-full">LIVE</span>
@@ -456,7 +456,7 @@
     <span class="text-[#FD5528]">JAN 2025</span>
   </div>
 
-  <h3 class="text-lg font-semibold mb-2">Quick Fix</h3>
+  <h3 class="text-lg font-semibold mb-2">PlumbEase</h3>
   <p class="text-sm text-gray-500 mb-4">Plumbing service booking system.</p>
 
   <div class="flex gap-2 flex-wrap mb-4">
@@ -471,8 +471,64 @@
   </div>
 
 </div>
+
+<!-- marketing -->
+<div class="project others bg-white rounded-3xl shadow-lg overflow-hidden p-5 group hover:-translate-y-1 hover:shadow-2xl transition">
+  <div class="relative h-44 overflow-hidden mb-4">
+    <img src="{{asset('assets/images/marley.jpeg')}}" class="w-full h-full object-cover">
+    <span class="absolute top-3 left-3 bg-green-600 text-white text-xs px-3 py-1 rounded-full">LIVE</span>
+  </div>
+  <div class="flex justify-between text-[10px] text-gray-400 mb-2">
+    <span>WEB</span>
+    <span class="text-[#FD5528]">JAN 2025</span>
+  </div>
+
+  <h3 class="text-lg font-semibold mb-2">Marley Moves</h3>
+  <p class="text-sm text-gray-500 mb-4">Social media handling & digital marketing for a UK removals company.</p>
+
+  <div class="flex gap-2 flex-wrap mb-4">
+    <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">Social Media</span>
+    <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">Meta Ads</span>
+    <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">SEO</span>
+  </div>
+
+  <div class="flex justify-between text-xs text-gray-400">
+    <span>3x engagement growth</span>
+    <a href="#" class="text-[#FD5528]">View</a>
+  </div>
+
 </div>
 
+<!-- CARD 4 -->
+<div class="project others bg-white rounded-3xl shadow-lg overflow-hidden p-5 group hover:-translate-y-1 hover:shadow-2xl transition">
+    <div class="relative h-44 overflow-hidden mb-4">
+    <img src="{{asset('assets/images/pulse.jpeg')}}" class="w-full h-full object-cover">
+    <span class="absolute top-3 left-3 bg-green-600 text-white text-xs px-3 py-1 rounded-full">LIVE</span>
+    </div>
+    <div class="flex justify-between text-[10px] text-gray-400 mb-2">
+    <span>WEB</span>
+    <span class="text-[#FD5528]">JAN 2025</span>
+  </div>
+
+  <h3 class="text-lg font-semibold mb-2">Pulse Event</h3>
+  <p class="text-sm text-gray-500 mb-4">Social media marketing & event promotion strategy for high-energy event branding.</p>
+
+  <div class="flex gap-2 flex-wrap mb-4">
+    <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">Social Media</span>
+    <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">Event Promotion</span>
+    <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">Meta Ads</span>
+  </div>
+
+  <div class="flex justify-between text-xs text-gray-400">
+    <span>2.5x ticket sales growth</span>
+    <a href="#" class="text-[#FD5528]">View</a>
+  </div>
+
+</div>
+
+</div>
+
+</div>
 </div>
 
 <!-- BUTTON -->
