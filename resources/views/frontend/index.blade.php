@@ -146,7 +146,6 @@
   </div>
 
 </section>
-
 <!-- END HERO SECTIOPN -->
 
 <!-- clients -->
@@ -1156,26 +1155,33 @@
     <div class="space-y-4">
 
       <!-- ITEM -->
-      <div class="faq-item bg-gray-50 p-5 rounded-2xl cursor-pointer transition shadow-md hover:shadow-lg">
-        <div class="flex justify-between items-center">
-          <h3 class="font-medium">  What services do you offer?</h3>
-          <span class="faq-icon text-[#FD5528] text-xl transition-transform duration-300">+</span>
-        </div>
-        <p class="faq-answer max-h-0 overflow-hidden transition-all duration-500 text-sm text-gray-600 mt-3">
-        
+      <div class="faq-item bg-gray-50 p-5 rounded-2xl transition shadow-md hover:shadow-lg">
+        <button data-faq-trigger type="button" aria-expanded="false" aria-controls="faq-answer-1" class="flex w-full items-center justify-between gap-4 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FD5528]/60 focus-visible:ring-offset-2 focus-visible:ring-offset-white">
+          <span class="text-left text-base font-medium tracking-tight text-slate-900">
+            What services do you offer?
+          </span>
+          <span class="faq-icon inline-flex h-10 w-10 items-center justify-center rounded-full border-2 border-[#FD5528] bg-white/80 text-[#FD5528] shadow-md transition duration-300">
+            <span class="faq-icon-text text-3xl leading-none">+</span>
+          </span>
+        </button>
+        <div id="faq-answer-1" class="faq-answer max-h-0 overflow-hidden transition-all duration-500 text-sm text-gray-600 mt-3" aria-hidden="true">
           Backend engineering, API design, cloud architecture, automation, and enterprise-grade solutions that keep scaling teams aligned.
-        </p>
+        </div>
       </div>
 
       <!-- ITEM -->
-      <div class="faq-item bg-gray-50 p-5 rounded-2xl cursor-pointer transition shadow-md hover:shadow-lg">
-        <div class="flex justify-between items-center">
-          <h3 class="font-medium">Which technologies do you work with?</h3>
-          <span class="faq-icon text-[#FD5528] text-xl transition-transform duration-300">+</span>
-        </div>
-        <p class="faq-answer max-h-0 overflow-hidden transition-all duration-500 text-sm text-gray-600 mt-3">
+      <div class="faq-item bg-gray-50 p-5 rounded-2xl transition shadow-md hover:shadow-lg">
+        <button data-faq-trigger type="button" aria-expanded="false" aria-controls="faq-answer-2" class="flex w-full items-center justify-between gap-4 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FD5528]/60 focus-visible:ring-offset-2 focus-visible:ring-offset-white">
+          <span class="text-left text-base font-medium tracking-tight text-slate-900">
+            Which technologies do you work with?
+          </span>
+          <span class="faq-icon inline-flex h-10 w-10 items-center justify-center rounded-full border-2 border-[#FD5528] bg-white/80 text-[#FD5528] shadow-md transition duration-300">
+            <span class="faq-icon-text text-3xl leading-none">+</span>
+          </span>
+        </button>
+        <div id="faq-answer-2" class="faq-answer max-h-0 overflow-hidden transition-all duration-500 text-sm text-gray-600 mt-3" aria-hidden="true">
             .NET Core, Node.js, Laravel, Go, SQL Server, PostgreSQL, Redis, Kafka, Azure, AWS, and modern DevOps pipelines.
-        </p>
+        </div>
       </div>
 
     </div>
@@ -1183,24 +1189,32 @@
     <!-- COLUMN -->
     <div class="space-y-4">
 
-      <div class="faq-item bg-gray-50 p-5 rounded-2xl cursor-pointer transition shadow-md hover:shadow-lg">
-        <div class="flex justify-between items-center">
-          <h3 class="font-medium">   Do you provide dedicated development teams?</h3>
-          <span class="faq-icon text-[#FD5528] text-xl transition-transform duration-300">+</span>
-        </div>
-        <p class="faq-answer max-h-0 overflow-hidden transition-all duration-500 text-sm text-gray-600 mt-3">
+      <div class="faq-item bg-gray-50 p-5 rounded-2xl transition shadow-md hover:shadow-lg">
+        <button data-faq-trigger type="button" aria-expanded="false" aria-controls="faq-answer-3" class="flex w-full items-center justify-between gap-4 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FD5528]/60 focus-visible:ring-offset-2 focus-visible:ring-offset-white">
+          <span class="text-left text-base font-medium tracking-tight text-slate-900">
+            Do you provide dedicated development teams?
+          </span>
+          <span class="faq-icon inline-flex h-10 w-10 items-center justify-center rounded-full border-2 border-[#FD5528] bg-white/80 text-[#FD5528] shadow-md transition duration-300">
+            <span class="faq-icon-text text-3xl leading-none">+</span>
+          </span>
+        </button>
+        <div id="faq-answer-3" class="faq-answer max-h-0 overflow-hidden transition-all duration-500 text-sm text-gray-600 mt-3" aria-hidden="true">
           Yes, our specialists embed within your product organization with dedicated project leads and sprint reporting.
-        </p>
+        </div>
       </div>
 
-      <div class="faq-item bg-gray-50 p-5 rounded-2xl cursor-pointer transition shadow-md hover:shadow-lg">
-        <div class="flex justify-between items-center">
-          <h3 class="font-medium">How do you ensure scalability and performance?</h3>
-          <span class="faq-icon text-[#FD5528] text-xl transition-transform duration-300">+</span>
-        </div>
-        <p class="faq-answer max-h-0 overflow-hidden transition-all duration-500 text-sm text-gray-600 mt-3">
+      <div class="faq-item bg-gray-50 p-5 rounded-2xl transition shadow-md hover:shadow-lg">
+        <button data-faq-trigger type="button" aria-expanded="false" aria-controls="faq-answer-4" class="flex w-full items-center justify-between gap-4 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FD5528]/60 focus-visible:ring-offset-2 focus-visible:ring-offset-white">
+          <span class="text-left text-base font-medium tracking-tight text-slate-900">
+            How do you ensure scalability and performance?
+          </span>
+          <span class="faq-icon inline-flex h-10 w-10 items-center justify-center rounded-full border-2 border-[#FD5528] bg-white/80 text-[#FD5528] shadow-md transition duration-300">
+            <span class="faq-icon-text text-3xl leading-none">+</span>
+          </span>
+        </button>
+        <div id="faq-answer-4" class="faq-answer max-h-0 overflow-hidden transition-all duration-500 text-sm text-gray-600 mt-3" aria-hidden="true">
         We architect microservices, apply caching strategies, optimize storage, and add observability to catch regressions early.
-        </p>
+        </div>
       </div>
 
     </div>
@@ -1208,24 +1222,32 @@
     <!-- COLUMN -->
     <div class="space-y-4">
 
-      <div class="faq-item bg-gray-50 p-5 rounded-2xl cursor-pointer transition shadow-md hover:shadow-lg">
-        <div class="flex justify-between items-center">
-          <h3 class="font-medium"> What is your development process?</h3>
-          <span class="faq-icon text-[#FD5528] text-xl transition-transform duration-300">+</span>
-        </div>
-        <p class="faq-answer max-h-0 overflow-hidden transition-all duration-500 text-sm text-gray-600 mt-3">
+      <div class="faq-item bg-gray-50 p-5 rounded-2xl transition shadow-md hover:shadow-lg">
+        <button data-faq-trigger type="button" aria-expanded="false" aria-controls="faq-answer-5" class="flex w-full items-center justify-between gap-4 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FD5528]/60 focus-visible:ring-offset-2 focus-visible:ring-offset-white">
+          <span class="text-left text-base font-medium tracking-tight text-slate-900">
+            What is your development process?
+          </span>
+          <span class="faq-icon inline-flex h-10 w-10 items-center justify-center rounded-full border-2 border-[#FD5528] bg-white/80 text-[#FD5528] shadow-md transition duration-300">
+            <span class="faq-icon-text text-3xl leading-none">+</span>
+          </span>
+        </button>
+        <div id="faq-answer-5" class="faq-answer max-h-0 overflow-hidden transition-all duration-500 text-sm text-gray-600 mt-3" aria-hidden="true">
       We follow a structured agile cadence: discovery, roadmap, sprint-based delivery, QA, deployment, and post-launch retrospectives.
-        </p>
+        </div>
       </div>
 
-      <div class="faq-item bg-gray-50 p-5 rounded-2xl cursor-pointer transition shadow-md hover:shadow-lg">
-        <div class="flex justify-between items-center">
-          <h3 class="font-medium">Do you provide post-launch support?</h3>
-          <span class="faq-icon text-[#FD5528] text-xl transition-transform duration-300">+</span>
-        </div>
-        <p class="faq-answer max-h-0 overflow-hidden transition-all duration-500 text-sm text-gray-600 mt-3">
+      <div class="faq-item bg-gray-50 p-5 rounded-2xl transition shadow-md hover:shadow-lg">
+        <button data-faq-trigger type="button" aria-expanded="false" aria-controls="faq-answer-6" class="flex w-full items-center justify-between gap-4 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FD5528]/60 focus-visible:ring-offset-2 focus-visible:ring-offset-white">
+          <span class="text-left text-base font-medium tracking-tight text-slate-900">
+            Do you provide post-launch support?
+          </span>
+          <span class="faq-icon inline-flex h-10 w-10 items-center justify-center rounded-full border-2 border-[#FD5528] bg-white/80 text-[#FD5528] shadow-md transition duration-300">
+            <span class="faq-icon-text text-3xl leading-none">+</span>
+          </span>
+        </button>
+        <div id="faq-answer-6" class="faq-answer max-h-0 overflow-hidden transition-all duration-500 text-sm text-gray-600 mt-3" aria-hidden="true">
           Long-term maintenance, 24/7 monitoring, release planning, and scaling support are included in every retainer plan.
-        </p>
+        </div>
       </div>
 
     </div>
@@ -1246,6 +1268,7 @@
   </div>
 
 </section>
+
 
 
 
@@ -1624,3 +1647,4 @@
 
 
 @endsection
+

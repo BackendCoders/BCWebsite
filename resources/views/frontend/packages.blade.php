@@ -944,37 +944,9 @@
   </div>
 </section>
 
-
-
-<!-- SCRIPT -->
-<script>
-const tabs = document.querySelectorAll(".tab");
-const contents = document.querySelectorAll(".tab-content");
-
-tabs.forEach(tab => {
-  tab.addEventListener("click", () => {
-
-    tabs.forEach(t => t.classList.remove("active"));
-    tab.classList.add("active");
-
-    const target = tab.getAttribute("data-tab");
-
-    contents.forEach(c => {
-      if (c.getAttribute("data-content") === target) {
-        c.classList.remove("hidden");
-      } else {
-        c.classList.add("hidden");
-      }
-    });
-
-  });
-});
-</script>
-
-
 <!-- TESTIMONIAL -->
-<!-- Swiper CSS -->
-
+ 
+<!-- FAQ -->
 <section class="relative overflow-hidden bg-gradient-to-br from-white via-slate-50 to-slate-100 py-16 sm:py-20 lg:py-24 px-4 sm:px-6">
 
   <div class="max-w-6xl lg:max-w-7xl mx-auto relative z-10">
@@ -1003,25 +975,7 @@ tabs.forEach(tab => {
       </p>
     </div>
 
-    <!-- Stats -->
-    {{-- <div class="mb-10 grid sm:grid-cols-3 gap-4">
-      <div class="bg-white/90 border border-white shadow-lg rounded-2xl px-6 py-4 text-center backdrop-blur">
-        <p class="text-sm uppercase tracking-[0.3em] text-slate-400">Teams</p>
-        <p class="mt-2 text-2xl font-semibold text-slate-900">40+</p>
-        <p class="text-xs text-slate-500">Dedicated squads on standby</p>
-      </div>
-      <div class="bg-white/90 border border-white shadow-lg rounded-2xl px-6 py-4 text-center backdrop-blur">
-        <p class="text-sm uppercase tracking-[0.3em] text-slate-400">Projects</p>
-        <p class="mt-2 text-2xl font-semibold text-slate-900">200+</p>
-        <p class="text-xs text-slate-500">Enterprise-grade rollouts</p>
-      </div>
-      <div class="bg-white/90 border border-white shadow-lg rounded-2xl px-6 py-4 text-center backdrop-blur">
-        <p class="text-sm uppercase tracking-[0.3em] text-slate-400">Coverage</p>
-        <p class="mt-2 text-2xl font-semibold text-slate-900">24/7</p>
-        <p class="text-xs text-slate-500">Monitoring + support windows</p>
-      </div>
-    </div> --}}
-
+   
     <!-- GRID -->
     <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
 
@@ -1038,32 +992,110 @@ tabs.forEach(tab => {
       <!-- FAQ LIST -->
       <div class="order-2 lg:order-1 space-y-4">
 
-        @php
-          $faqs = [
-            ['title' => 'What services do you offer?', 'description' => 'Backend engineering, API design, cloud architecture, automation, and enterprise-grade solutions that keep scaling teams aligned.'],
-            ['title' => 'Which technologies do you work with?', 'description' => '.NET Core, Node.js, Laravel, Go, SQL Server, PostgreSQL, Redis, Kafka, Azure, AWS, and modern DevOps pipelines.'],
-            ['title' => 'Do you provide dedicated development teams?', 'description' => 'Yes, our specialists embed within your product organization with dedicated project leads and sprint reporting.'],
-            ['title' => 'How do you ensure scalability and performance?', 'description' => 'We architect microservices, apply caching strategies, optimize storage, and add observability to catch regressions early.'],
-            ['title' => 'What is your development process?', 'description' => 'We follow a structured agile cadence: discovery, roadmap, sprint-based delivery, QA, deployment, and post-launch retrospectives.'],
-            ['title' => 'Do you provide post-launch support?', 'description' => 'Long-term maintenance, 24/7 monitoring, release planning, and scaling support are included in every retainer plan.'],
-          ];
-        @endphp
+        <div class="max-w-6xl mx-auto px-4 grid gap-6 lg:grid-cols-1">
 
-        @foreach ($faqs as $faq)
-          <details class="group bg-white border border-gray-200 rounded-2xl p-5 shadow-sm open:shadow-md transition duration-300">
-            <summary class="flex justify-between items-center cursor-pointer list-none">
-              <span class="font-medium text-slate-900 text-base md:text-lg">
-                {{ $faq['title'] }}
-              </span>
-              <span class="text-[#FD5528] text-2xl transition-transform duration-300 group-open:rotate-45">
-                +
-              </span>
-            </summary>
-            <p class="mt-3 text-sm text-slate-500 leading-relaxed">
-              {{ $faq['description'] }}
-            </p>
-          </details>
-        @endforeach
+    <!-- COLUMN -->
+    <div class="space-y-4">
+
+      <!-- ITEM -->
+      <div class="faq-item bg-gray-50 p-5 rounded-2xl transition shadow-md hover:shadow-lg">
+        <button data-faq-trigger type="button" aria-expanded="false" aria-controls="faq-answer-1" class="flex w-full items-center justify-between gap-4 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FD5528]/60 focus-visible:ring-offset-2 focus-visible:ring-offset-white">
+          <span class="text-left text-base font-medium tracking-tight text-slate-900">
+            What services do you offer?
+          </span>
+          <span class="faq-icon inline-flex h-10 w-10 items-center justify-center rounded-full border-2 border-[#FD5528] bg-white/80 text-[#FD5528] shadow-md transition duration-300">
+            <span class="faq-icon-text text-3xl leading-none">+</span>
+          </span>
+        </button>
+        <div id="faq-answer-1" class="faq-answer max-h-0 overflow-hidden transition-all duration-500 text-sm text-gray-600 mt-3" aria-hidden="true">
+          Backend engineering, API design, cloud architecture, automation, and enterprise-grade solutions that keep scaling teams aligned.
+        </div>
+      </div>
+
+      <!-- ITEM -->
+      <div class="faq-item bg-gray-50 p-5 rounded-2xl transition shadow-md hover:shadow-lg">
+        <button data-faq-trigger type="button" aria-expanded="false" aria-controls="faq-answer-2" class="flex w-full items-center justify-between gap-4 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FD5528]/60 focus-visible:ring-offset-2 focus-visible:ring-offset-white">
+          <span class="text-left text-base font-medium tracking-tight text-slate-900">
+            Which technologies do you work with?
+          </span>
+          <span class="faq-icon inline-flex h-10 w-10 items-center justify-center rounded-full border-2 border-[#FD5528] bg-white/80 text-[#FD5528] shadow-md transition duration-300">
+            <span class="faq-icon-text text-3xl leading-none">+</span>
+          </span>
+        </button>
+        <div id="faq-answer-2" class="faq-answer max-h-0 overflow-hidden transition-all duration-500 text-sm text-gray-600 mt-3" aria-hidden="true">
+            .NET Core, Node.js, Laravel, Go, SQL Server, PostgreSQL, Redis, Kafka, Azure, AWS, and modern DevOps pipelines.
+        </div>
+      </div>
+
+    </div>
+
+    <!-- COLUMN -->
+    <div class="space-y-4">
+
+      <div class="faq-item bg-gray-50 p-5 rounded-2xl transition shadow-md hover:shadow-lg">
+        <button data-faq-trigger type="button" aria-expanded="false" aria-controls="faq-answer-3" class="flex w-full items-center justify-between gap-4 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FD5528]/60 focus-visible:ring-offset-2 focus-visible:ring-offset-white">
+          <span class="text-left text-base font-medium tracking-tight text-slate-900">
+            Do you provide dedicated development teams?
+          </span>
+          <span class="faq-icon inline-flex h-10 w-10 items-center justify-center rounded-full border-2 border-[#FD5528] bg-white/80 text-[#FD5528] shadow-md transition duration-300">
+            <span class="faq-icon-text text-3xl leading-none">+</span>
+          </span>
+        </button>
+        <div id="faq-answer-3" class="faq-answer max-h-0 overflow-hidden transition-all duration-500 text-sm text-gray-600 mt-3" aria-hidden="true">
+          Yes, our specialists embed within your product organization with dedicated project leads and sprint reporting.
+        </div>
+      </div>
+
+      <div class="faq-item bg-gray-50 p-5 rounded-2xl transition shadow-md hover:shadow-lg">
+        <button data-faq-trigger type="button" aria-expanded="false" aria-controls="faq-answer-4" class="flex w-full items-center justify-between gap-4 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FD5528]/60 focus-visible:ring-offset-2 focus-visible:ring-offset-white">
+          <span class="text-left text-base font-medium tracking-tight text-slate-900">
+            How do you ensure scalability and performance?
+          </span>
+          <span class="faq-icon inline-flex h-10 w-10 items-center justify-center rounded-full border-2 border-[#FD5528] bg-white/80 text-[#FD5528] shadow-md transition duration-300">
+            <span class="faq-icon-text text-3xl leading-none">+</span>
+          </span>
+        </button>
+        <div id="faq-answer-4" class="faq-answer max-h-0 overflow-hidden transition-all duration-500 text-sm text-gray-600 mt-3" aria-hidden="true">
+        We architect microservices, apply caching strategies, optimize storage, and add observability to catch regressions early.
+        </div>
+      </div>
+
+    </div>
+
+    <!-- COLUMN -->
+    <div class="space-y-4">
+
+      <div class="faq-item bg-gray-50 p-5 rounded-2xl transition shadow-md hover:shadow-lg">
+        <button data-faq-trigger type="button" aria-expanded="false" aria-controls="faq-answer-5" class="flex w-full items-center justify-between gap-4 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FD5528]/60 focus-visible:ring-offset-2 focus-visible:ring-offset-white">
+          <span class="text-left text-base font-medium tracking-tight text-slate-900">
+            What is your development process?
+          </span>
+          <span class="faq-icon inline-flex h-10 w-10 items-center justify-center rounded-full border-2 border-[#FD5528] bg-white/80 text-[#FD5528] shadow-md transition duration-300">
+            <span class="faq-icon-text text-3xl leading-none">+</span>
+          </span>
+        </button>
+        <div id="faq-answer-5" class="faq-answer max-h-0 overflow-hidden transition-all duration-500 text-sm text-gray-600 mt-3" aria-hidden="true">
+      We follow a structured agile cadence: discovery, roadmap, sprint-based delivery, QA, deployment, and post-launch retrospectives.
+        </div>
+      </div>
+
+      <div class="faq-item bg-gray-50 p-5 rounded-2xl transition shadow-md hover:shadow-lg">
+        <button data-faq-trigger type="button" aria-expanded="false" aria-controls="faq-answer-6" class="flex w-full items-center justify-between gap-4 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FD5528]/60 focus-visible:ring-offset-2 focus-visible:ring-offset-white">
+          <span class="text-left text-base font-medium tracking-tight text-slate-900">
+            Do you provide post-launch support?
+          </span>
+          <span class="faq-icon inline-flex h-10 w-10 items-center justify-center rounded-full border-2 border-[#FD5528] bg-white/80 text-[#FD5528] shadow-md transition duration-300">
+            <span class="faq-icon-text text-3xl leading-none">+</span>
+          </span>
+        </button>
+        <div id="faq-answer-6" class="faq-answer max-h-0 overflow-hidden transition-all duration-500 text-sm text-gray-600 mt-3" aria-hidden="true">
+          Long-term maintenance, 24/7 monitoring, release planning, and scaling support are included in every retainer plan.
+        </div>
+      </div>
+
+    </div>
+
+  </div>
 
        
 
@@ -1125,4 +1157,30 @@ tabs.forEach(tab => {
   </div>
 
 </section>
+
+<!-- SCRIPT -->
+<script>
+const tabs = document.querySelectorAll(".tab");
+const contents = document.querySelectorAll(".tab-content");
+
+tabs.forEach(tab => {
+  tab.addEventListener("click", () => {
+
+    tabs.forEach(t => t.classList.remove("active"));
+    tab.classList.add("active");
+
+    const target = tab.getAttribute("data-tab");
+
+    contents.forEach(c => {
+      if (c.getAttribute("data-content") === target) {
+        c.classList.remove("hidden");
+      } else {
+        c.classList.add("hidden");
+      }
+    });
+
+  });
+});
+</script>
+
 @endsection

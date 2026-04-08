@@ -11,10 +11,7 @@
 
 <!-- TOP BAR -->
 <div class="bg-[#FD5528] text-white text-sm hidden md:block lg:block">
-   <!-- <div class="max-w-9xl lg:mx-24 mx-auto px-4 sm:px-6 py-2 flex items-center justify-center gap-2">
-      <span>We are hiring! </span>
-      <a href="{{ route('frontend.career') }}" class="underline font-medium hover:text-white/80 transition">Explore Careers</a>
-   </div> -->
+  
   <div class="max-w-9xl mx-auto px-4 sm:px-6 py-3 
               flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
 
@@ -23,7 +20,7 @@
                 gap-3 sm:gap-6 text-xs sm:text-sm text-center sm:text-left">
 
       <!-- PHONE -->
-      <a href="tel:+919140092133" 
+      <a href="tel:+91 9140092133" 
          class="flex items-center justify-center sm:justify-start gap-2 transition">
 
         <div class="w-7 h-7 flex items-center justify-center rounded-full 
@@ -33,7 +30,7 @@
                class="w-4 h-4">
         </div>
 
-        <span>+91 914 0092 133</span>
+        <span>+91 9140092133</span>
       </a>
 
       <!-- EMAIL -->

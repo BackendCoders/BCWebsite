@@ -299,6 +299,18 @@
  
   transition: all 0.3s ease;
 }
+
+
+.faq-answer {
+  transition: max-height 0.4s ease, opacity 0.3s ease;
+  opacity: 0;
+}
+
+.faq-open .faq-answer {
+  opacity: 1;
+}
+
+
 </style>
     @include('component.header')
 
@@ -437,41 +449,60 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 </script>
-
 <script>
-  document.querySelectorAll('.faq-item').forEach(item => {
-    item.addEventListener('click', () => {
-      
-      const answer = item.querySelector('.faq-answer');
-      const icon = item.querySelector('.faq-icon');
+document.addEventListener('DOMContentLoaded', () => {
+  const items = document.querySelectorAll('.faq-item');
 
-      // Close all other FAQs (optional - accordion behavior)
-      document.querySelectorAll('.faq-answer').forEach(el => {
-        if (el !== answer) {
-          el.style.maxHeight = null;
-        }
+  items.forEach((item) => {
+    const trigger = item.querySelector('[data-faq-trigger]');
+    const answer = item.querySelector('.faq-answer');
+    const icon = item.querySelector('.faq-icon-text');
+
+    if (!trigger || !answer || !icon) return;
+
+    const closeAll = () => {
+      items.forEach((i) => {
+        const ans = i.querySelector('.faq-answer');
+        const ic = i.querySelector('.faq-icon-text');
+        const trg = i.querySelector('[data-faq-trigger]');
+
+        i.classList.remove('faq-open');
+        ans.style.maxHeight = null;
+        ans.setAttribute('aria-hidden', 'true');
+        trg.setAttribute('aria-expanded', 'false');
+        ic.textContent = '+';
       });
+    };
 
-      document.querySelectorAll('.faq-icon').forEach(i => {
-        if (i !== icon) {
-          i.innerText = '+';
-          i.classList.remove('rotate-45');
-        }
-      });
+    const openItem = () => {
+      closeAll();
 
-      // Toggle current
-      if (answer.style.maxHeight) {
-        answer.style.maxHeight = null;
-        icon.innerText = '+';
-        icon.classList.remove('rotate-45');
+      item.classList.add('faq-open');
+      answer.style.maxHeight = answer.scrollHeight + "px";
+      answer.setAttribute('aria-hidden', 'false');
+      trigger.setAttribute('aria-expanded', 'true');
+      icon.textContent = icon.querySelector('.vertical').style.opacity = '0';
+    };
+
+    trigger.addEventListener('click', () => {
+      const isOpen = item.classList.contains('faq-open');
+
+      if (isOpen) {
+        closeAll();
       } else {
-        answer.style.maxHeight = answer.scrollHeight + "px";
-        icon.innerText = '−';
-        icon.classList.add('rotate-45');
+        openItem();
       }
+    });
 
+    // Accessibility (keyboard)
+    trigger.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        trigger.click();
+      }
     });
   });
+});
 </script>
 
 <!-- Swiper JS -->
