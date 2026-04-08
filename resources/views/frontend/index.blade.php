@@ -532,7 +532,7 @@
 </div>
 
 <!-- BUTTON -->
-<div class="text-center mt-12">
+<div class="text-center my-12">
   <button class="bg-gradient-to-r from-[#FD5528] to-orange-400 hover:from-[#fbb03b] hover:to-[#FD5528] hover:scale-110 transition-all text-white px-8 py-3 rounded-full shadow-lg">
     View All Projects
   </button>
