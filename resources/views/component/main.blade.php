@@ -4,11 +4,11 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Backend Coders India | Backend Engineering Collective</title>
-  <meta name="description" content="Backend Coders India is a collaborative team of backend engineers building scalable digital platforms, APIs, and cloud infrastructure for ambitious businesses." />
+  <title>Backend Coders India | Web Development Company in Kanpur, India | Custom Software, SaaS, SEO, Mobile App & AI Solutions</title>
+  <meta name="description" content="Backend Coders India is a trusted web development company in Kanpur, India delivering custom software development, SaaS platforms, website design, SEO, digital marketing, mobile apps, API development, and AI solutions for Indian and international clients." />
   
  <script src="https://cdn.tailwindcss.com"></script>
-<link rel="icon" type="image/svg+xml" href="{{asset('assets/images/bci_icon.png')}}" class="bg-black"/>
+<link rel="icon" type="image/svg+xml" alt="web development company in Kanpur" href="{{asset('assets/images/bci_icon.png')}}" class="bg-black"/>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -82,10 +82,7 @@
   }
 }
 
-
-
 /* HORIZONTAL DIRECTION */
-
 
 .step-circle {
   width: 60px;
@@ -189,7 +186,6 @@
     margin-top: 60px;
   }
 }
-
 
 .service-card {
   display: flex;

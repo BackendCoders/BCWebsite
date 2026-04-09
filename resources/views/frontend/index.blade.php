@@ -23,11 +23,11 @@
          before:bg-gradient-to-r before:from-[#FD5528]/20 before:to-orange-200/30 
          before:-z-10">
 
-        17+ Years Building Software
+        17+ Years Building Software Excellence
       </span>
 
       <!-- HEADING -->
-      <h1 
+      <h2 
         data-aos="fade-up"
         data-aos-delay="200"
         class="mt-4 sm:mt-5 text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[3.5rem] 
@@ -36,10 +36,17 @@
         Building Powerful 
         <br class="hidden sm:block">
 
+
         <span class="text-[#FD5528]">
           Software & Digital Platforms
         </span>
-      </h1>
+      </h2>
+      
+      <h1 data-aos="fade-up"
+        data-aos-delay="400" class="mt-4 sm:mt-5 text-xs xs:text-sm sm:text-base md:text-lg 
+        leading-relaxed text-gray-600">
+         Web Development Company in Kanpur Building Powerful Software
+    </h1>
 
       <!-- DESCRIPTION -->
       <p 
@@ -47,9 +54,7 @@
         data-aos-delay="300"
         class="mt-4 sm:mt-5 text-xs xs:text-sm sm:text-base md:text-lg 
         leading-relaxed text-gray-600">
-
-        We are a multidisciplinary team of developers, designers, and strategists 
-        crafting scalable technology solutions for startups and enterprises worldwide.
+      Backend Coders India is a trusted web development company in Kanpur, India helping startups, SMEs, enterprises, and international brands build high-performance websites, custom software, SaaS platforms, mobile apps, APIs, AI-powered solutions, and digital marketing systems. Our multidisciplinary team of developers, designers, strategists, and growth experts delivers scalable technology solutions that improve business operations, customer experience, and online growth.
       </p>
 
       <!-- BUTTONS -->
@@ -178,8 +183,13 @@
     </p> -->
 
     <h2 class="mt-6 text-3xl md:text-5xl font-bold text-black">
-      Brands That <span class="text-[#FD5528]">Trust Us</span>
+      Brands That <span class="text-[#FD5528]">Trust Backend Coders India</span>
     </h2>
+    <p class="max-w-7xl my-2 text-md font-medium text-black">
+      We work with startups, growing businesses, and established organizations looking for a dependable software company in Kanpur with the capability to serve clients across India and global markets. Our team has delivered websites, SaaS platforms, SEO and digital marketing solutions, CRM systems, and custom software products for clients in multiple industries.
+
+
+    </p>
 
     <!-- MARQUEE WRAPPER -->
     <div class="mt-14 overflow-hidden group">
@@ -236,18 +246,17 @@
     Recently Completed Projects
   </span> -->
 
-  <h2 class="text-4xl py-4 sm:text-5xl font-bold text-gray-900">
+  <h2 class="text-4xl py-2 sm:text-5xl font-bold text-gray-900">
     Our Latest <span class="text-[#FD5528]">Projects</span>
   </h2>
 
   <p class="text-sm text-gray-500 max-w-2xl mx-auto">
-    Live deployments that blend backend reliability and modern UI.
+ Our Latest Web, SaaS, Software Development & Digital Growth Projects
   </p>
 </div>
 
 <!-- TABS -->
-<!-- TABS -->
-<div class="flex flex-wrap justify-center gap-2 sm:gap-3 mb-10">
+<div class="flex flex-wrap justify-center gap-2 sm:gap-3 mb-4">
   <button class="tab active border border-[#FD5528] text-orange-600 px-4 py-2 rounded-full" data-tab="all">All</button>
   <button class="tab border border-[#FD5528] text-orange-600 px-4 py-2 rounded-full" data-tab="web">Web Apps</button>
   <button class="tab border border-[#FD5528] text-orange-600 px-4 py-2 rounded-full" data-tab="saas">SaaS</button>
@@ -572,13 +581,12 @@
 
             <h2 class="mt-6 text-3xl font-bold text-gray-900 md:text-4xl"
             data-aos="fade-up" data-aos-delay="100">
-                End-to-end Software Development
+                End-to-End Software Development, SEO & Digital Marketing Services in Kanpur
             </h2>
 
             <p class="mt-4 text-gray-600 sm:text-lg"
             data-aos="fade-up" data-aos-delay="200">
-                We take your idea from discovery through delivery with a transparent,
-                milestone-driven approach.
+                As a trusted software development company in Kanpur, Backend Coders India offers complete technology and growth solutions from idea validation to design, development, deployment, SEO, marketing, and long-term support. We help businesses in India and international markets build secure, scalable, and conversion-focused digital products.
             </p>
 
         </div>
@@ -595,9 +603,9 @@
                             <img src="https://img.icons8.com/?size=100&id=DCkAZ79sIYhT&format=png&color=ffffff" alt="Custom web app" class="h-16 w-16" />
                         </div>
                         <h3 class="text-xl font-semibold transition duration-500 group-hover:text-black">Custom Web Applications</h3>
-                        <p class="text-sm text-gray-600 group-hover:text-gray-900">Scalable platforms with modern stacks, measurable KPIs, and performance-first code.</p>
+                        <p class="text-sm text-gray-600 group-hover:text-gray-900">We build secure and scalable custom web applications tailored to your business workflows, customer journeys, and growth goals. Our solutions are performance-focused, easy to maintain, and designed for long-term value.</p>
                         <div class="flex flex-wrap items-center justify-center gap-3 text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-[#FD5528]">
-                            <span class="rounded-full border border-[#FD5528]/70 px-3 py-1">Iterative</span>
+                            <span class="rounded-full border border-[#FD5528]/70 px-3 py-1">Scalable</span>
                             <span class="rounded-full border border-[#FD5528]/70 px-3 py-1">Performance</span>
                         </div>
                     </div>
@@ -613,10 +621,10 @@
                             <img src="https://img.icons8.com/?size=100&id=8Y6ohiJ337rc&format=png&color=ffffff" alt="Design icon" class="h-16 w-16" />
                         </div>
                         <h3 class="text-xl font-semibold transition duration-500 group-hover:text-black">Website Design & Development</h3>
-                        <p class="text-sm text-gray-600 group-hover:text-gray-900">Responsive, brand-complete websites that load fast and stay SEO-friendly.</p>
+                        <p class="text-sm text-gray-600 group-hover:text-gray-900">We create responsive, modern, and SEO-friendly websites for businesses in Kanpur, across India, and for international clients. Our websites are built to load fast, look professional, and convert visitors into leads and customers.</p>
                         <div class="flex flex-wrap items-center justify-center gap-3 text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-[#FD5528]">
-                            <span class="rounded-full border border-[#FD5528]/70 px-3 py-1">Pixel Perfect</span>
-                            <span class="rounded-full border border-[#FD5528]/70 px-3 py-1">SEO Focus</span>
+                            <span class="rounded-full border border-[#FD5528]/70 px-3 py-1">Responsive</span>
+                            <span class="rounded-full border border-[#FD5528]/70 px-3 py-1">SEO Friendly</span>
                         </div>
                     </div>
                 </article>
@@ -631,9 +639,9 @@
                             <img src="https://img.icons8.com/?size=100&id=k8TSihyFk2cJ&format=png&color=ffffff" alt="SaaS icon" class="h-16 w-16" />
                         </div>
                         <h3 class="text-xl font-semibold transition duration-500 group-hover:text-black">SaaS Development</h3>
-                        <p class="text-sm text-gray-600 group-hover:text-gray-900">Multi-tenant platforms engineered for reliability, governance, and scale.</p>
+                        <p class="text-sm text-gray-600 group-hover:text-gray-900">We develop cloud-based SaaS products with secure architecture, smooth user experience, automation features, and scalable backend systems for startups and growing businesses.</p>
                         <div class="flex flex-wrap items-center justify-center gap-3 text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-[#FD5528]">
-                            <span class="rounded-full border border-[#FD5528]/70 px-3 py-1">Elastic</span>
+                            <span class="rounded-full border border-[#FD5528]/70 px-3 py-1">Cloud Ready</span>
                             <span class="rounded-full border border-[#FD5528]/70 px-3 py-1">Managed Ops</span>
                         </div>
                     </div>
@@ -649,7 +657,7 @@
                             <img src="https://img.icons8.com/?size=100&id=Rk5rrSlqrNZO&format=png&color=ffffff" alt="ERP icon" class="h-16 w-16" />
                         </div>
                         <h3 class="text-xl font-semibold transition duration-500 group-hover:text-black">ERP & POS Software</h3>
-                        <p class="text-sm text-gray-600 group-hover:text-gray-900">Operational grade systems that align inventory, payments, and teams.</p>
+                        <p class="text-sm text-gray-600 group-hover:text-gray-900">We build ERP and POS software that helps businesses manage inventory, billing, reporting, payments, and operations through one reliable digital platform.</p>
                         <div class="flex flex-wrap items-center justify-center gap-3 text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-[#FD5528]">
                             <span class="rounded-full border border-[#FD5528]/70 px-3 py-1">Real-time</span>
                             <span class="rounded-full border border-[#FD5528]/70 px-3 py-1">Proactive</span>
@@ -667,10 +675,10 @@
                             <img src="https://img.icons8.com/?size=100&id=8OxFnElAJgpE&format=png&color=ffffff" alt="Commerce icon" class="h-16 w-16" />
                         </div>
                         <h3 class="text-xl font-semibold transition duration-500 group-hover:text-black">E-commerce Development</h3>
-                        <p class="text-sm text-gray-600 group-hover:text-gray-900">Conversion-led storefronts with secure payments and real-time analytics.</p>
+                        <p class="text-sm text-gray-600 group-hover:text-gray-900">We create eCommerce websites and online store platforms with secure checkout, product management, payment integration, mobile optimization, and conversion-focused design.</p>
                         <div class="flex flex-wrap items-center justify-center gap-3 text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-[#FD5528]">
                             <span class="rounded-full border border-[#FD5528]/70 px-3 py-1">Secure</span>
-                            <span class="rounded-full border border-[#FD5528]/70 px-3 py-1">Fast</span>
+                            <span class="rounded-full border border-[#FD5528]/70 px-3 py-1">Fast Checkout</span>
                         </div>
                     </div>
                 </article>
@@ -685,10 +693,10 @@
                             <img src="https://img.icons8.com/?size=100&id=67475&format=png&color=ffffff" alt="Mobile icon" class="h-16 w-16" />
                         </div>
                         <h3 class="text-xl font-semibold transition duration-500 group-hover:text-black">Mobile App Development</h3>
-                        <p class="text-sm text-gray-600 group-hover:text-gray-900">Cross-platform experiences with native polish, motion, and accessible flows.</p>
+                        <p class="text-sm text-gray-600 group-hover:text-gray-900">We build Android and cross-platform mobile apps with intuitive design, strong API connectivity, and scalable performance for startups and businesses.</p>
                         <div class="flex flex-wrap items-center justify-center gap-3 text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-[#FD5528]">
                             <span class="rounded-full border border-[#FD5528]/70 px-3 py-1">Smooth UI</span>
-                            <span class="rounded-full border border-[#FD5528]/70 px-3 py-1">Native Feel</span>
+                            <span class="rounded-full border border-[#FD5528]/70 px-3 py-1">Cross Platform</span>
                         </div>
                     </div>
                 </article>
@@ -703,10 +711,10 @@
                             <img src="https://img.icons8.com/?size=100&id=6kPR2dlup5KK&format=png&color=ffffff" alt="API icon" class="h-16 w-16" />
                         </div>
                         <h3 class="text-xl font-semibold transition duration-500 group-hover:text-black">API Development</h3>
-                        <p class="text-sm text-gray-600 group-hover:text-gray-900">Secure REST endpoints, clean contracts, and integration-ready tooling.</p>
+                        <p class="text-sm text-gray-600 group-hover:text-gray-900">We create secure and integration-ready APIs for mobile apps, web apps, SaaS products, enterprise systems, and third-party platforms, making your software faster and more connected.</p>
                         <div class="flex flex-wrap items-center justify-center gap-3 text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-[#FD5528]">
-                            <span class="rounded-full border border-[#FD5528]/70 px-3 py-1">REST</span>
-                            <span class="rounded-full border border-[#FD5528]/70 px-3 py-1">Webhooks</span>
+                            <span class="rounded-full border border-[#FD5528]/70 px-3 py-1">REST API</span>
+                            <span class="rounded-full border border-[#FD5528]/70 px-3 py-1">Web Hooks</span>
                         </div>
                     </div>
                 </article>
@@ -721,10 +729,10 @@
                             <img src="https://img.icons8.com/?size=100&id=103102&format=png&color=ffffff" alt="Marketing icon" class="h-16 w-16" />
                         </div>
                         <h3 class="text-xl font-semibold transition duration-500 group-hover:text-black">Digital Marketing & SEO</h3>
-                        <p class="text-sm text-gray-600 group-hover:text-gray-900">Data-backed marketing that grows traffic, leads, and conversions.</p>
+                        <p class="text-sm text-gray-600 group-hover:text-gray-900">We help businesses increase visibility on Google with on-page SEO, local SEO, technical SEO, content strategy, and growth-focused digital marketing services tailored for Kanpur, India, and international markets.</p>
                         <div class="flex flex-wrap items-center justify-center gap-3 text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-[#FD5528]">
                             <span class="rounded-full border border-[#FD5528]/70 px-3 py-1">Analytics</span>
-                            <span class="rounded-full border border-[#FD5528]/70 px-3 py-1">Growth</span>
+                            <span class="rounded-full border border-[#FD5528]/70 px-3 py-1">Lead Growth</span>
                         </div>
                     </div>
                 </article>
@@ -739,9 +747,9 @@
                             <img src="https://img.icons8.com/?size=100&id=KR7IxBJfODTv&format=png&color=ffffff" alt="MVP icon" class="h-16 w-16" />
                         </div>
                         <h3 class="text-xl font-semibold transition duration-500 group-hover:text-black">Startup MVP Development</h3>
-                        <p class="text-sm text-gray-600 group-hover:text-gray-900">Rapid prototyping with user testing, guided learnings, and clear success metrics.</p>
+                        <p class="text-sm text-gray-600 group-hover:text-gray-900">We help founders validate ideas quickly through lean MVP development, rapid iteration, and scalable technical foundations that support future product growth.</p>
                         <div class="flex flex-wrap items-center justify-center gap-3 text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-[#FD5528]">
-                            <span class="rounded-full border border-[#FD5528]/70 px-3 py-1">Rapid</span>
+                            <span class="rounded-full border border-[#FD5528]/70 px-3 py-1">Rapid Launch</span>
                             <span class="rounded-full border border-[#FD5528]/70 px-3 py-1">Validated</span>
                         </div>
                     </div>
@@ -778,10 +786,10 @@
     </p>
     
       <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-3">
-        Predictable Delivery
+        Predictable Software Delivery Process
       </h2>
       <p class="text-gray-500 mt-3 max-w-xl mx-auto">
-        Structured milestones that keep your project moving forward.
+        We follow a structured and transparent delivery process that keeps every website, software product, SaaS platform, AI solution, and marketing initiative aligned with your goals, timelines, quality expectations, and business outcomes.
       </p>
     </div>
 
@@ -810,7 +818,7 @@
               Discovery
             </h3>
             <p class="text-sm text-gray-500 mt-1">
-              Understanding goals & defining scope
+              Understand business objectives, target audience, project scope, and technology requirements.
             </p>
           </div>
 
@@ -826,7 +834,7 @@
               UI / UX
             </h3>
             <p class="text-sm text-gray-500 mt-1">
-              Designing intuitive experiences
+              Design intuitive user flows and interfaces for better usability, engagement and product experience.
             </p>
           </div>
         </div>
@@ -841,7 +849,7 @@
               Development
             </h3>
             <p class="text-sm text-gray-500 mt-1">
-              Building scalable applications
+              Build scalable, secure, and high-performance software using modern technologies.
             </p>
           </div>
         </div>
@@ -856,7 +864,7 @@
               Testing
             </h3>
             <p class="text-sm text-gray-500 mt-1">
-              Ensuring quality & performance
+             Test application for performance, usability, responsiveness, and functionality before launch.
             </p>
           </div>
         </div>
@@ -871,7 +879,7 @@
               Deployment
             </h3>
             <p class="text-sm text-gray-500 mt-1">
-              Launching production-ready apps
+              Deploy production-ready websites, apps, and software platforms with proper optimization.
             </p>
           </div>
         </div>
@@ -886,7 +894,7 @@
               Support
             </h3>
             <p class="text-sm text-gray-500 mt-1">
-              Continuous improvements
+              Provide continuous maintenance, updates, improvements, and technical support.
             </p>
           </div>
         </div>
@@ -899,106 +907,6 @@
 
 </section>
 <!-- pr -->
-
-
-
-<!-- serve industry -->
-{{-- <section id="industries" class="bg-white px-6 py-16 sm:py-20 lg:py-24">
-
-  <div class="max-w-9xl lg:mx-24 mx-auto text-center">
-       <p 
-      data-aos="fade-up"
-      class="inline-block text-xs sm:text-sm font-semibold uppercase tracking-[0.35em] 
-         text-[#FD5528] relative px-5 py-2 rounded-full 
-         bg-white/60 backdrop-blur-md 
-         shadow-[0_8px_20px_rgba(0,0,0,0.08)] 
-         border border-white/40
-         before:absolute before:inset-0 before:rounded-full 
-         before:bg-gradient-to-r before:from-[#FD5528]/20 before:to-orange-200/30 
-         before:-z-10">
-
-          Industries
-
-    </p>
-  
-
-    <h2 class="mt-4 text-3xl font-bold text-gray-900 md:text-4xl"
-    data-aos="fade-up" data-aos-delay="100">
-      Industries We Serve
-    </h2>
-
-    <div class="mt-16 grid gap-6 grid-cols-2 sm:grid-cols-2 md:grid-cols-4">
-
-      <div data-aos="zoom-in"
-      class="rounded-xl border border-gray-200 bg-gray-50 py-8 font-medium text-gray-700 transition hover:border-[#FD5528]  hover:text-[#FD5528]  hover:shadow-md">
-      <div class="flex justify-center">
-        <img src="https://img.icons8.com/?size=100&id=DF91YUQKnsfO&format=png&color=FD5528" alt="">
-      </div> 
-      Retail
-      </div>
-
-      <div data-aos="zoom-in" data-aos-delay="100"
-      class="rounded-xl border border-gray-200 bg-gray-50 py-8 font-medium text-gray-700 transition hover:border-[#FD5528]  hover:text-[#FD5528]  hover:shadow-md">
-        <div class="flex justify-center">
-        <img src="https://img.icons8.com/?size=100&id=rgaIU6UFSNfF&format=png&color=FD5528" alt="">
-      </div> 
-      Healthcare
-      </div>
-
-      <div data-aos="zoom-in" data-aos-delay="200"
-      class="rounded-xl border border-gray-200 bg-gray-50 py-8 font-medium text-gray-700 transition hover:border-[#FD5528]  hover:text-[#FD5528]  hover:shadow-md">
-         <div class="flex justify-center">
-        <img src="https://img.icons8.com/?size=100&id=HjX5BJw6tvqD&format=png&color=FD5528" alt="">
-      </div> 
-      Education
-      </div>
-
-      <div data-aos="zoom-in" data-aos-delay="300"
-      class="rounded-xl border border-gray-200 bg-gray-50 py-8 font-medium text-gray-700 transition hover:border-[#FD5528]  hover:text-[#FD5528]  hover:shadow-md">
-        <div class="flex justify-center">
-        <img src="https://img.icons8.com/?size=100&id=sHsQ1Kl1HHOx&format=png&color=FD5528" alt="">
-      </div> 
-      Logistics
-      </div>
-
-      <div data-aos="zoom-in" data-aos-delay="400"
-      class="rounded-xl border border-gray-200 bg-gray-50 py-8 font-medium text-gray-700 transition hover:border-[#FD5528]  hover:text-[#FD5528]  hover:shadow-md">
-         <div class="flex justify-center">
-        <img src="https://img.icons8.com/?size=100&id=115007&format=png&color=FD5528" alt="">
-      </div> 
-      Hospitality
-      </div>
-
-      <div data-aos="zoom-in" data-aos-delay="500"
-      class="rounded-xl border border-gray-200 bg-gray-50 py-8 font-medium text-gray-700 transition hover:border-[#FD5528]  hover:text-[#FD5528]  hover:shadow-md">
-        <div class="flex justify-center">
-        <img src="https://img.icons8.com/?size=100&id=KR7IxBJfODTv&format=png&color=FD5528" alt="">
-      </div> 
-      Startups
-      </div>
-
-      <div data-aos="zoom-in" data-aos-delay="600"
-      class="rounded-xl border border-gray-200 bg-gray-50 py-8 font-medium text-gray-700 transition hover:border-[#FD5528]  hover:text-[#FD5528]  hover:shadow-md">
-        <div class="flex justify-center">
-        <img src="https://img.icons8.com/?size=100&id=8OxFnElAJgpE&format=png&color=FD5528" alt="">
-      </div> 
-      E-commerce
-      </div>
-
-      <div data-aos="zoom-in" data-aos-delay="700"
-      class="rounded-xl border border-gray-200 bg-gray-50 py-8 font-medium text-gray-700 transition hover:border-[#FD5528]  hover:text-[#FD5528]  hover:shadow-md">
-         <div class="flex justify-center">
-        <img src="https://img.icons8.com/?size=100&id=Av3axTNxQaRs&format=png&color=FD5528" alt="">
-      </div> 
-      Enterprise
-      </div>
-
-    </div>
-
-  </div>
-
-</section> --}}
-<!-- END SERVE INDUSTRY -->
 
 <!-- BLOG -->
 <section id="blog" class="bg-white px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
@@ -1027,11 +935,11 @@
       </p> -->
 
       <h2 class="mt-3 sm:mt-4 text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 leading-tight">
-        Insights & Updates
+        Insights, Updates & Technology Expertise
       </h2>
 
       <p class="mt-3 text-sm sm:text-base text-gray-500">
-        Stay updated with our latest insights on development, design, and scalable systems.
+       Stay updated with our latest insights on web development, software architecture, SaaS growth, UI/UX, mobile apps, SEO, digital marketing, AI solutions, and scalable systems for modern businesses in India and across global markets.
       </p>
 
     </div>
@@ -1052,11 +960,11 @@
         </p>
 
         <h3 class="mt-3 text-lg sm:text-xl font-semibold text-gray-900 leading-snug group-hover:text-[#FD5528] transition">
-          Navigating Multi-Tenant SaaS Architecture
+          How to Build Scalable SaaS Products for Growing Businesses
         </h3>
 
         <p class="mt-3 text-sm sm:text-base text-gray-600">
-          How we layer identity, data models, and CI/CD to launch scalable SaaS platforms.
+         Learn how architecture, user experience, pricing logic, and deployment strategy shape successful SaaS platforms.
         </p>
 
         <!-- CTA -->
@@ -1080,11 +988,11 @@
         </p>
 
         <h3 class="mt-3 text-lg sm:text-xl font-semibold text-gray-900 leading-snug group-hover:text-[#FD5528] transition">
-          Design Systems for Unpredictable Growth
+          Why Businesses in Kanpur Need SEO-Friendly Websites in 2026
         </h3>
 
         <p class="mt-3 text-sm sm:text-base text-gray-600">
-          Crafting component libraries that balance design quality with developer efficiency.
+          Discover how local SEO, mobile performance, and content structure help businesses rank better and generate more leads.
         </p>
 
         <!-- CTA -->
@@ -1128,7 +1036,7 @@
       </h2>
 
       <p class="mt-4 text-slate-500 max-w-3xl mx-auto text-base sm:text-lg">
-        Everything you need to know about partnering with Backend Coders — transparency, headcount, and support wrapped in a confident delivery process.
+       Everything you need to know about partnering with Backend Coders India for website development, custom software, SaaS, mobile apps, SEO, digital marketing, and AI-powered business solutions.
       </p>
     </div>
 
@@ -1165,7 +1073,7 @@
           </span>
         </button>
         <div id="faq-answer-1" class="faq-answer max-h-0 overflow-hidden transition-all duration-500 text-sm text-gray-600 mt-3" aria-hidden="true">
-          Backend engineering, API design, cloud architecture, automation, and enterprise-grade solutions that keep scaling teams aligned.
+          We offer website design and development, custom web applications, SaaS development, ERP and POS software, eCommerce development, mobile app development, API development, SEO services, digital marketing, startup MVP development, and AI-powered software solutions.
         </div>
       </div>
 
@@ -1180,7 +1088,7 @@
           </span>
         </button>
         <div id="faq-answer-2" class="faq-answer max-h-0 overflow-hidden transition-all duration-500 text-sm text-gray-600 mt-3" aria-hidden="true">
-            .NET Core, Node.js, Laravel, Go, SQL Server, PostgreSQL, Redis, Kafka, Azure, AWS, and modern DevOps pipelines.
+            We work with modern frontend and backend technologies, databases, APIs, cloud services, automation tools, and scalable software stacks based on your project requirements and growth goals.
         </div>
       </div>
 
@@ -1199,7 +1107,7 @@
           </span>
         </button>
         <div id="faq-answer-3" class="faq-answer max-h-0 overflow-hidden transition-all duration-500 text-sm text-gray-600 mt-3" aria-hidden="true">
-          Yes, our specialists embed within your product organization with dedicated project leads and sprint reporting.
+         Yes, we provide dedicated developers and project-focused teams for startups, agencies, enterprises, and international clients that need reliable long-term development support.
         </div>
       </div>
 
@@ -1213,7 +1121,7 @@
           </span>
         </button>
         <div id="faq-answer-4" class="faq-answer max-h-0 overflow-hidden transition-all duration-500 text-sm text-gray-600 mt-3" aria-hidden="true">
-        We architect microservices, apply caching strategies, optimize storage, and add observability to catch regressions early.
+        We use clean architecture, optimized databases, secure APIs, strong testing practices, performance monitoring, and scalable deployment strategies to ensure your software performs reliably as your business grows.
         </div>
       </div>
 
@@ -1232,21 +1140,21 @@
           </span>
         </button>
         <div id="faq-answer-5" class="faq-answer max-h-0 overflow-hidden transition-all duration-500 text-sm text-gray-600 mt-3" aria-hidden="true">
-      We follow a structured agile cadence: discovery, roadmap, sprint-based delivery, QA, deployment, and post-launch retrospectives.
+     Our process includes discovery, planning, UI/UX, development, testing, deployment, SEO refinement, and support to deliver structured and high-quality digital solutions.
         </div>
       </div>
 
       <div class="faq-item bg-gray-50 p-5 rounded-2xl transition shadow-md hover:shadow-lg">
         <button data-faq-trigger type="button" aria-expanded="false" aria-controls="faq-answer-6" class="flex w-full items-center justify-between gap-4 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FD5528]/60 focus-visible:ring-offset-2 focus-visible:ring-offset-white">
           <span class="text-left text-base font-medium tracking-tight text-slate-900">
-            Do you provide post-launch support?
+            Do you offer AI development services in Kanpur?
           </span>
           <span class="faq-icon inline-flex h-10 w-10 items-center justify-center text-[#FD5528]  transition duration-300">
             <span class="faq-icon-text text-3xl leading-none">+</span>
           </span>
         </button>
         <div id="faq-answer-6" class="faq-answer max-h-0 overflow-hidden transition-all duration-500 text-sm text-gray-600 mt-3" aria-hidden="true">
-          Long-term maintenance, 24/7 monitoring, release planning, and scaling support are included in every retainer plan.
+          Yes, Backend Coders India provides AI chatbot development, AI workflow automation, custom AI integrations, and AI-powered application development for businesses in Kanpur, across India, and for international Market.
         </div>
       </div>
 
@@ -1269,12 +1177,7 @@
 
 </section>
 
-
-
-
 <!-- Swiper CSS -->
-
-
 
 <section class="relative py-28 px-6 overflow-hidden">
 
@@ -1315,7 +1218,7 @@
 
         <!-- SLIDE -->
         <div class="swiper-slide">
-<div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition duration-300 p-6 max-w-md border border-gray-100">
+ <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition duration-300 p-6 max-w-md border border-gray-100">
 
   <!-- HEADER -->
   <div class="flex items-center justify-between mb-4">
@@ -1427,8 +1330,8 @@
         </div>
 
         <!-- SLIDE -->
-        <div class="swiper-slide">
-<div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition duration-300 p-6 max-w-md border border-gray-100">
+<div class="swiper-slide">
+  <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition duration-300 p-6 max-w-md border border-gray-100">
 
   <!-- HEADER -->
   <div class="flex items-center justify-between mb-4">
@@ -1487,14 +1390,10 @@
 
       </div>
 
-      <!-- NAV BUTTONS -->
-      <!-- <div class="swiper-button-prev !bg-white !text-[#FD5528] !w-12 !h-12 rounded-full shadow"></div>
-      <div class="swiper-button-next !bg-white !text-[#FD5528] !w-12 !h-12 rounded-full shadow"></div> -->
-
+   
     </div>
 
   </div>
-
 </section>
 
 
@@ -1532,7 +1431,7 @@
     </h1>
 
     <p class="text-lg text-gray-600 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
-      Have a project in mind or need backend solutions?  
+      Fill out the form and our team will get back to you shortly to discuss your project requirements. 
       Our team at <span class="text-[#FC5124] font-semibold">Backend Coders</span> builds scalable systems with transparency and velocity.
     </p>
 
@@ -1612,7 +1511,7 @@
 
     <!-- SUBTEXT -->
     <p class="text-white/80 text-sm sm:text-base md:text-lg max-w-2xl mx-auto mb-10">
-      Let’s build something amazing together. Share your idea and we’ll turn it into a powerful digital product.
+     Let’s build a high-performance website, scalable software product, SaaS platform, SEO growth system, or AI-powered solution tailored to your business goals.
     </p>
 
     <!-- BUTTONS -->
@@ -1643,8 +1542,5 @@
 </section>
 
 </main>
-
-
-
 @endsection
 
