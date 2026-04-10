@@ -253,6 +253,7 @@
   <p class="text-sm text-gray-500 max-w-2xl mx-auto">
  Our Latest Web, SaaS, Software Development & Digital Growth Projects
   </p>
+  <p>Explore recent projects delivered by Backend Coders India across web applications, SaaS products, CRM platforms, eCommerce systems, digital marketing solutions, and custom business software. Every project is built for usability, speed, security, conversion, and long-term scalability.</p>
 </div>
 
 <!-- TABS -->
@@ -538,7 +539,9 @@
 
 </div>
 </div>
-
+<div>
+  <p class="text-md text-gray-600 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">From Kanpur to international clients, we build modern digital products and growth systems that combine backend reliability, clean UI, and measurable business impact.</p>
+</div>
 <!-- BUTTON -->
 <div class="text-center my-12">
   <button class="bg-gradient-to-r from-[#FD5528] to-orange-400 hover:from-[#fbb03b] hover:to-[#FD5528] hover:scale-110 transition-all text-white px-8 py-3 rounded-full shadow-lg">
@@ -1210,6 +1213,7 @@
     <h2 class="mt-6 text-3xl md:text-5xl font-bold text-black">
       What Our <span class="text-[#FD5528]">Clients Say</span>
     </h2>
+    <p> Our clients trust Backend Coders India for clear communication, reliable development, scalable architecture, SEO growth, and digital solutions that create measurable business impact.</p>
 
     <!-- SWIPER -->
     <div class="swiper mt-16">
@@ -1426,13 +1430,15 @@
 
     </p>
 
-    <h1 class="text-4xl text-[#0D0D0D] md:text-5xl font-bold mb-4 mt-4" data-aos="fade-up">
+    <h3 class="text-4xl text-[#0D0D0D] md:text-5xl font-bold mb-4 mt-4" data-aos="fade-up">
       Get in Touch
-    </h1>
+    </h3>
 
+    
+    
     <p class="text-lg text-gray-600 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
-      Fill out the form and our team will get back to you shortly to discuss your project requirements. 
-      Our team at <span class="text-[#FC5124] font-semibold">Backend Coders</span> builds scalable systems with transparency and velocity.
+     
+      Have a project in mind or need backend-driven digital solutions? <span class="text-[#FC5124] font-semibold"> Backend Coders</span> India helps businesses in Kanpur, Uttar Pradesh, across India, and international markets build websites, software systems, SaaS products, eCommerce platforms, mobile apps, APIs, SEO campaigns, digital marketing systems, and AI-powered solutions.
     </p>
 
     </div>
@@ -1453,7 +1459,7 @@
             Contact Us
           </h2>
           <p class="text-sm text-gray-500 mt-1">
-            Fill out the form and we’ll get back to you shortly.
+             Fill out the form and our team will get back to you shortly to discuss your project requirements. 
           </p>
         </div>
 
