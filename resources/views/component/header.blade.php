@@ -118,11 +118,44 @@
                 Company
             </a>
 
-            <a href="{{ route('frontend.service') }}"
+            <!-- <a href="{{ route('frontend.service') }}"
                class="nav-link px-3 py-2 rounded-md hover:bg-orange-50 hover:text-[#FD5528] transition {{ $activeNavClass('frontend.service') }}"
                aria-current="{{ request()->routeIs('frontend.service') ? 'page' : '' }}">
                 Solutions
-            </a>
+            </a> -->
+           <div class="relative">
+
+    <!-- BUTTON -->
+    <button onclick="toggleDropdown()"
+        class="nav-link flex items-center gap-1 px-3 py-2 rounded-md hover:bg-orange-50 hover:text-[#FD5528] transition {{ $activeNavClass('frontend.service') }}">
+        Solutions
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M19 9l-7 7-7-7" />
+        </svg>
+    </button>
+
+    <!-- DROPDOWN -->
+    <div id="serviceDropdown"
+        class="hidden absolute left-0 mt-2 w-60 bg-white border rounded-xl shadow-lg z-50">
+
+          <a href="{{ route('frontend.service') }}"
+           class="block px-4 py-3 text-sm text-gray-700 hover:bg-orange-50 hover:text-[#FD5528]">
+            All Services
+        </a>
+        <a href="{{ route('frontend.digital_marketing') }}"
+           class="block px-4 py-3 text-sm text-gray-700 hover:bg-orange-50 hover:text-[#FD5528]">
+            Digital Marketing
+        </a>
+
+        <a href="{{ route('frontend.software_development') }}"
+           class="block px-4 py-3 text-sm text-gray-700 hover:bg-orange-50 hover:text-[#FD5528]">
+            Software Development
+        </a>
+
+    </div>
+
+</div>
 
             <a href="{{ route('frontend.project') }}"
                class="nav-link px-3 py-2 rounded-md hover:bg-orange-50 hover:text-[#FD5528] transition {{ $activeNavClass('frontend.project') }}"
@@ -198,11 +231,34 @@
                aria-current="{{ request()->routeIs('frontend.about') ? 'page' : '' }}">
                 Company
             </a>
-            <a href="{{ route('frontend.service') }}"
+            <!-- <a href="{{ route('frontend.service') }}"
                class="nav-link rounded-md px-3 py-2 hover:bg-orange-50 {{ $activeMobileNavClass('frontend.service') }}"
                aria-current="{{ request()->routeIs('frontend.service') ? 'page' : '' }}">
                 Solutions
-            </a>
+            </a> -->
+        <div class="w-full">
+
+    <button type="button" id="mobile-solution-btn"
+        class="w-full flex justify-between items-center px-3 py-2 rounded-md hover:bg-orange-50">
+        Solutions
+        <span class="transition-transform duration-300" id="mobile-arrow">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M19 9l-7 7-7-7" />
+            </svg>
+        </span>
+    </button>
+
+    <div id="mobile-service-menu" class="hidden pl-4 space-y-2">
+        <a href="{{ route('frontend.digital_marketing') }}" class="block py-2 text-sm hover:text-[#FD5528]">
+            Digital Marketing
+        </a>
+        <a href="{{ route('frontend.software_development') }}" class="block py-2 text-sm hover:text-[#FD5528]">
+            Software Development
+        </a>
+    </div>
+
+</div>
             <a href="{{ route('frontend.project') }}"
                class="nav-link rounded-md px-3 py-2 hover:bg-orange-50 {{ $activeMobileNavClass('frontend.project') }}"
                aria-current="{{ request()->routeIs('frontend.project') ? 'page' : '' }}">
@@ -260,7 +316,26 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 
+<script>
+document.addEventListener("DOMContentLoaded", function () {
 
+    const btn = document.getElementById("mobile-solution-btn");
+    const menu = document.getElementById("mobile-service-menu");
+    const arrow = document.getElementById("mobile-arrow");
+
+    if (btn && menu) {
+        btn.addEventListener("click", function (e) {
+            e.stopPropagation(); // 🔥 prevents parent conflicts
+
+            menu.classList.toggle("hidden");
+
+            // arrow rotate
+            arrow.classList.toggle("rotate-180");
+        });
+    }
+
+});
+</script>
 
 
 

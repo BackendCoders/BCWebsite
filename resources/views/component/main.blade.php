@@ -491,6 +491,21 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
+<script>
+function toggleDropdown() {
+    const dropdown = document.getElementById("serviceDropdown");
+    dropdown.classList.toggle("hidden");
+}
+
+// 🔥 CLOSE ON OUTSIDE CLICK
+document.addEventListener("click", function (e) {
+    const dropdown = document.getElementById("serviceDropdown");
+
+    if (!e.target.closest(".relative")) {
+        dropdown.classList.add("hidden");
+    }
+});
+</script>
 <!-- Swiper JS -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 

@@ -1230,7 +1230,7 @@
     <!-- USER -->
     <div class="flex items-center gap-3">
       <div class="relative">
-        <img src="https://randomuser.me/api/portraits/women/68.jpg"
+        <img src="https://randomuser.me/api/portraits/men/51.jpg"
              class="w-12 h-12 rounded-full object-cover">
 
         <!-- VERIFIED BADGE -->
@@ -1238,14 +1238,14 @@
       </div>
 
       <div>
-        <h4 class="font-semibold text-gray-900 text-sm">Aimee H</h4>
-        <p class="text-xs text-gray-500">1 January 2026</p>
+        <h4 class="font-semibold text-gray-900 text-sm">Minwoong J.</h4>
+        <p class="text-xs text-gray-500">1 May 2025 </p>
       </div>
     </div>
 
     <!-- GOOGLE LOGO -->
-    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"
-         class="w-12 opacity-80">
+<img src="https://upload.wikimedia.org/wikipedia/commons/f/f4/Upwork_Logo.svg"
+     class="w-12 opacity-80">
   </div>
 
   <!-- STARS -->
@@ -1255,20 +1255,20 @@
 
   <!-- REVIEW TEXT -->
   <p class="text-gray-700 text-start text-sm leading-relaxed mb-4">
-    This is a really wonderful experience on all counts. The food was lovely, traditional, and of excellent quality with very polite and attentive service.
+   Ravindra is outstanding—he built our website from scratch with speed, precision, and strong creative input. Communication was clear and fast, and he went above and beyond even after delivery with excellent support. If you want someone reliable who truly cares about results.
   </p>
 
   <!-- FOOTER -->
   <div class="flex items-center justify-between text-xs text-gray-400">
 
     <!-- CATEGORY -->
-    <span class="bg-gray-100 px-2 py-1 rounded-full text-gray-500">
-      Verified Review
+    <span class="bg-gray-100 px-2 py-1 rounded-full text-orange-500">
+      Verified 
     </span>
 
     <!-- ACTION -->
-    <button class="flex items-center gap-1 hover:text-[#FD5528] transition">
-      Director
+    <button class="flex items-center gap-1 text-orange-500 hover:text-[#FD5528] transition">
+      CEO
     </button>
 
   </div>
@@ -1295,7 +1295,7 @@
 
       <div>
         <h4 class="font-semibold text-gray-900 text-sm">Sophia Green</h4>
-        <p class="text-xs text-gray-500">1 January 2026</p>
+        <p class="text-xs text-gray-500">29 April 2025</p>
       </div>
     </div>
 
@@ -1311,19 +1311,21 @@
 
   <!-- REVIEW TEXT -->
   <p class="text-gray-700 text-start text-sm leading-relaxed mb-4">
-    This is a really wonderful experience on all counts.  Outstanding UI and backend performance. Our bookings increased significantly.
+Had an excellent experience working with Ravindra—he truly cares about building things the right way, not just coding.
+He strengthened our project with better security, role-based access, and a clean MVC structure.
+Clear communication and strong technical skills—highly reliable and recommended.
   </p>
 
   <!-- FOOTER -->
   <div class="flex items-center justify-between text-xs text-gray-400">
 
     <!-- CATEGORY -->
-    <span class="bg-gray-100 px-2 py-1 rounded-full text-gray-500">
-      Verified Review
+    <span class="bg-gray-100 px-2 py-1 rounded-full text-orange-500">
+      Verified 
     </span>
 
     <!-- ACTION -->
-    <button class="flex items-center gap-1 hover:text-[#FD5528] transition">
+    <button class="flex items-center gap-1 text-orange-500 hover:text-[#FD5528] transition">
       Director
     </button>
 
@@ -1352,7 +1354,7 @@
 
       <div>
         <h4 class="font-semibold text-gray-900 text-sm">Daniel Smith</h4>
-        <p class="text-xs text-gray-500">1 January 2026</p>
+        <p class="text-xs text-gray-500">1 May 2025</p>
       </div>
     </div>
 
@@ -1368,19 +1370,21 @@
 
   <!-- REVIEW TEXT -->
   <p class="text-gray-700 text-start text-sm leading-relaxed mb-4">
-    This is a really wonderful experience on all counts.   Professional team with strong technical expertise. They understand business needs..
+Ravindra went above and beyond, fixing critical issues left by a previous developer and truly saving the project.
+His communication was fast, his skills are top-notch, and his attitude is outstanding.
+Highly recommended for anyone serious about getting things done right.
   </p>
 
   <!-- FOOTER -->
   <div class="flex items-center justify-between text-xs text-gray-400">
 
     <!-- CATEGORY -->
-    <span class="bg-gray-100 px-2 py-1 rounded-full text-gray-500">
-      Verified Review
+    <span class="bg-gray-100 px-2 py-1 rounded-full text-orange-500">
+      Verified 
     </span>
 
     <!-- ACTION -->
-    <button class="flex items-center gap-1 hover:text-[#FD5528] transition">
+    <button class="flex items-center gap-1  text-orange-500 hover:text-[#FD5528] transition">
       Director
     </button>
 

@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\BlogController;
+use App\Http\Controllers\CategoryController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -38,3 +41,18 @@ Route::get('/terms', [HomeController::class, 'terms'])->name('frontend.terms');
 Route::get('/privacy_policy', [HomeController::class, 'privacy_policy'])->name('frontend.privacy_policy');
 Route::get('/faq', [HomeController::class, 'faq'])->name('frontend.faq');
 Route::get('/help', [HomeController::class, 'help'])->name('frontend.help');
+Route::get('/digital_marketing', [HomeController::class, 'digital_marketing'])->name('frontend.digital_marketing');
+Route::get('/software_development', [HomeController::class, 'software_development'])->name('frontend.software_development');
+
+
+
+
+// Dashboard:::::::::::
+Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard.dashbaord');
+
+Route::prefix('dashboard')->name('dashboard.')->group(function () {
+
+    Route::resource('category', CategoryController::class);
+    Route::resource('blog', BlogController::class);
+ 
+});

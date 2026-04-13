@@ -61,4 +61,11 @@ class HomeController extends Controller
                  return view('frontend.help');
            }
 
+        public function digital_marketing(){
+                 return view('frontend.digital_marketing');
+           }  
+            public function software_development(){
+                 return view('frontend.software_development');
+           }     
+
 }
