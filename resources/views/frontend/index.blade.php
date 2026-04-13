@@ -540,7 +540,7 @@
 </div>
 </div>
 <div>
-  <p class="text-md text-gray-600 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">From Kanpur to international clients, we build modern digital products and growth systems that combine backend reliability, clean UI, and measurable business impact.</p>
+  <p class="text-sm  text-gray-600 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">From Kanpur to international clients, we build modern digital products and growth systems that combine backend reliability, clean UI, and measurable business impact.</p>
 </div>
 <!-- BUTTON -->
 <div class="text-center my-12">

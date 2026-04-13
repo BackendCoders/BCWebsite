@@ -66,6 +66,13 @@ class HomeController extends Controller
            }  
             public function software_development(){
                  return view('frontend.software_development');
-           }     
+           }  
+            public function social_media(){
+                 return view('frontend.social_media');
+           }      
+           
+               public function seo(){
+                 return view('frontend.seo');
+           }    
 
 }

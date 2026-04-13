@@ -43,7 +43,8 @@ Route::get('/faq', [HomeController::class, 'faq'])->name('frontend.faq');
 Route::get('/help', [HomeController::class, 'help'])->name('frontend.help');
 Route::get('/digital_marketing', [HomeController::class, 'digital_marketing'])->name('frontend.digital_marketing');
 Route::get('/software_development', [HomeController::class, 'software_development'])->name('frontend.software_development');
-
+Route::get('/social_media', [HomeController::class, 'social_media'])->name('frontend.social_media');
+Route::get('/seo', [HomeController::class, 'seo'])->name('frontend.seo');
 
 
 

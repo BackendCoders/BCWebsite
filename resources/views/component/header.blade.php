@@ -118,44 +118,54 @@
                 Company
             </a>
 
-            <!-- <a href="{{ route('frontend.service') }}"
-               class="nav-link px-3 py-2 rounded-md hover:bg-orange-50 hover:text-[#FD5528] transition {{ $activeNavClass('frontend.service') }}"
-               aria-current="{{ request()->routeIs('frontend.service') ? 'page' : '' }}">
-                Solutions
-            </a> -->
-           <div class="relative">
+            <div class="relative">
 
-    <!-- BUTTON -->
-    <button onclick="toggleDropdown()"
-        class="nav-link flex items-center gap-1 px-3 py-2 rounded-md hover:bg-orange-50 hover:text-[#FD5528] transition {{ $activeNavClass('frontend.service') }}">
-        Solutions
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M19 9l-7 7-7-7" />
-        </svg>
-    </button>
+                <button id="mega-menu-toggle"
+                    type="button"
+                    class="nav-link flex items-center gap-1 px-3 py-2 rounded-md hover:bg-orange-50 hover:text-[#FD5528] transition {{ $activeNavClass('frontend.service') }}"
+                    aria-expanded="false" aria-controls="mega-menu-panel">
+                    Solutions
+                    <svg class="w-4 h-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        aria-hidden="true">
+                        <path stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
 
-    <!-- DROPDOWN -->
-    <div id="serviceDropdown"
-        class="hidden absolute left-0 mt-2 w-60 bg-white border rounded-xl shadow-lg z-50">
+                <div id="mega-menu-panel"
+                    class="hidden absolute left-1/2 top-full z-40 mt-3 max-h-[70vh] w-[min(100vw-2rem,850px)] -translate-x-1/2 overflow-hidden rounded-2xl bg-white p-6 shadow-2xl ring-1 ring-black/10 transition duration-200"
+                    role="menu" aria-hidden="true">
 
-          <a href="{{ route('frontend.service') }}"
-           class="block px-4 py-3 text-sm text-gray-700 hover:bg-orange-50 hover:text-[#FD5528]">
-            All Services
-        </a>
-        <a href="{{ route('frontend.digital_marketing') }}"
-           class="block px-4 py-3 text-sm text-gray-700 hover:bg-orange-50 hover:text-[#FD5528]">
-            Digital Marketing
-        </a>
+                    <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
 
-        <a href="{{ route('frontend.software_development') }}"
-           class="block px-4 py-3 text-sm text-gray-700 hover:bg-orange-50 hover:text-[#FD5528]">
-            Software Development
-        </a>
+                        <div class="space-y-3">
+                            <p class="text-xs font-semibold uppercase tracking-wider text-[#FD5528]">Digital Marketing</p>
+                            <ul class="space-y-2 text-sm text-slate-700">
+                                <li><a href="{{ route('frontend.social_media') }}" class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">Social Media Management</a></li>
+                                <li><a href="{{ route('frontend.seo') }}" class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">SEO Services</a></li>
+                                <li><a href="/google-ads-ppc-services" class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">PPC Ads / Google Ads</a></li>
+                                <li><a href="/meta-ads-services" class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">Meta Ads</a></li>
+                                <li><a href="/content-marketing-services" class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">Content Marketing</a></li>
+                                <li><a href="/local-seo-services" class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">Local SEO</a></li>
+                            </ul>
+                        </div>
 
-    </div>
+                        <div class="space-y-3">
+                            <p class="text-xs font-semibold uppercase tracking-wider text-[#FD5528]">Software Development</p>
+                            <ul class="space-y-2 text-sm text-slate-700">
+                                <li><a href="/custom-web-application-development" class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">Custom Web Applications</a></li>
+                                <li><a href="/website-design-development" class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">Website Design & Development</a></li>
+                                <li><a href="/saas-development" class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">SaaS Development</a></li>
+                                <li><a href="/erp-pos-software-development" class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">ERP & POS Software</a></li>
+                                <li><a href="/ecommerce-development" class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">Ecommerce Development</a></li>
+                                <li><a href="/mobile-app-development" class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">Mobile App Development</a></li>
+                                <li><a href="/api-development" class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">API Development</a></li>
+                                <li><a href="/startup-mvp-development" class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">Startup MVP Development</a></li>
+                            </ul>
+                        </div>
 
-</div>
+                    </div>
+                </div>
+            </div>
 
             <a href="{{ route('frontend.project') }}"
                class="nav-link px-3 py-2 rounded-md hover:bg-orange-50 hover:text-[#FD5528] transition {{ $activeNavClass('frontend.project') }}"
@@ -238,27 +248,51 @@
             </a> -->
         <div class="w-full">
 
-    <button type="button" id="mobile-solution-btn"
-        class="w-full flex justify-between items-center px-3 py-2 rounded-md hover:bg-orange-50">
-        Solutions
-        <span class="transition-transform duration-300" id="mobile-arrow">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M19 9l-7 7-7-7" />
-            </svg>
-        </span>
-    </button>
+            <button type="button" id="mobile-solution-btn"
+                class="w-full flex justify-between items-center px-3 py-2 rounded-md hover:bg-orange-50 transition">
+                <span>Solutions</span>
+                <span id="mobile-arrow" class="transition-transform" aria-hidden="true">
+                   <svg class="w-4 h-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        aria-hidden="true">
+                        <path stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </span>
+            </button>
 
-    <div id="mobile-service-menu" class="hidden pl-4 space-y-2">
-        <a href="{{ route('frontend.digital_marketing') }}" class="block py-2 text-sm hover:text-[#FD5528]">
-            Digital Marketing
-        </a>
-        <a href="{{ route('frontend.software_development') }}" class="block py-2 text-sm hover:text-[#FD5528]">
-            Software Development
-        </a>
-    </div>
+            <div id="mobile-service-menu" class="hidden mt-4 space-y-4 max-h-[60vh] overflow-y-auto pr-1">
+                <div class="rounded-2xl border border-[#FD5528]/30 bg-white/90 p-4 shadow-sm">
+                    <div class="flex items-center justify-between mb-2">
+                        <p class="text-sm font-semibold text-slate-800">Digital Marketing</p>
+                        <span class="text-xs text-[#FD5528]">6 services</span>
+                    </div>
+                    <div class="grid gap-2 text-sm text-slate-700">
+                        <a href="{{ route('frontend.social_media') }}" class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">Social Media Management</a>
+                        <a href="{{ route('frontend.seo') }}" class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">SEO Services</a>
+                        <a href="/google-ads-ppc-services" class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">PPC Ads / Google Ads</a>
+                        <a href="/meta-ads-services" class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">Meta Ads</a>
+                        <a href="/content-marketing-services" class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">Content Marketing</a>
+                        <a href="/local-seo-services" class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">Local SEO</a>
+                    </div>
+                </div>
 
-</div>
+                <div class="rounded-2xl border border-[#FD5528]/30 bg-white/90 p-4 shadow-sm">
+                    <div class="flex items-center justify-between mb-2">
+                        <p class="text-sm font-semibold text-slate-800">Software Development</p>
+                        <span class="text-xs text-[#FD5528]">8 services</span>
+                    </div>
+                    <div class="grid gap-2 text-sm text-slate-700">
+                        <a href="/custom-web-application-development" class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">Custom Web Applications</a>
+                        <a href="/website-design-development" class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">Website Design & Development</a>
+                        <a href="/saas-development" class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">SaaS Development</a>
+                        <a href="/erp-pos-software-development" class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">ERP & POS Software</a>
+                        <a href="/ecommerce-development" class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">Ecommerce Development</a>
+                        <a href="/mobile-app-development" class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">Mobile App Development</a>
+                        <a href="/api-development" class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">API Development</a>
+                        <a href="/startup-mvp-development" class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">Startup MVP Development</a>
+                    </div>
+                </div>
+            </div>
+        </div>
             <a href="{{ route('frontend.project') }}"
                class="nav-link rounded-md px-3 py-2 hover:bg-orange-50 {{ $activeMobileNavClass('frontend.project') }}"
                aria-current="{{ request()->routeIs('frontend.project') ? 'page' : '' }}">
@@ -304,41 +338,75 @@
 </header>
 
 <script>
-    // header
+    document.addEventListener("DOMContentLoaded", function () {
+        const mobileMenuToggle = document.getElementById("mobile-menu-toggle");
+        const menu = document.getElementById("mobile-menu");
 
-document.addEventListener("DOMContentLoaded", function () {
-  const toggle = document.getElementById("mobile-menu-toggle");
-  const menu = document.getElementById("mobile-menu");
-
-  toggle.addEventListener("click", () => {
-    menu.classList.toggle("hidden");
-  });
-});
+        mobileMenuToggle?.addEventListener("click", () => {
+            menu?.classList.toggle("hidden");
+        });
+    });
 </script>
 
 <script>
-document.addEventListener("DOMContentLoaded", function () {
+    document.addEventListener("DOMContentLoaded", function () {
+        const megaToggle = document.getElementById("mega-menu-toggle");
+        const megaPanel = document.getElementById("mega-menu-panel");
+        const megaArrow = megaToggle?.querySelector("svg");
 
-    const btn = document.getElementById("mobile-solution-btn");
-    const menu = document.getElementById("mobile-service-menu");
-    const arrow = document.getElementById("mobile-arrow");
+        const closeMega = () => {
+            if (!megaPanel?.classList.contains("hidden")) {
+                megaPanel?.classList.add("hidden");
+                megaToggle?.setAttribute("aria-expanded", "false");
+                megaToggle?.classList.remove("bg-white");
+                megaArrow?.classList.remove("rotate-180");
+                megaPanel?.setAttribute("aria-hidden", "true");
+            }
+        };
 
-    if (btn && menu) {
-        btn.addEventListener("click", function (e) {
-            e.stopPropagation(); // 🔥 prevents parent conflicts
-
-            menu.classList.toggle("hidden");
-
-            // arrow rotate
-            arrow.classList.toggle("rotate-180");
+        megaToggle?.addEventListener("click", function (e) {
+            e.preventDefault();
+            megaPanel?.classList.toggle("hidden");
+            const isOpen = !megaPanel?.classList.contains("hidden");
+            megaToggle.setAttribute("aria-expanded", String(Boolean(isOpen)));
+            megaPanel?.setAttribute("aria-hidden", String(!isOpen));
+            megaArrow?.classList.toggle("rotate-180");
         });
-    }
 
-});
+        document.addEventListener("click", function (e) {
+            if (megaPanel?.contains(e.target) || megaToggle?.contains(e.target)) {
+                return;
+            }
+            closeMega();
+        });
+    });
 </script>
 
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const btn = document.getElementById("mobile-solution-btn");
+        const menu = document.getElementById("mobile-service-menu");
+        const arrow = document.getElementById("mobile-arrow");
 
+        if (btn && menu) {
+            btn.addEventListener("click", function (e) {
+                e.stopPropagation(); // prevents parent conflicts
 
+                menu.classList.toggle("hidden");
+                arrow?.classList.toggle("rotate-180");
+            });
+
+            document.addEventListener("click", function (e) {
+                if (!menu.contains(e.target) && e.target !== btn && !btn.contains(e.target)) {
+                    if (!menu.classList.contains("hidden")) {
+                        menu.classList.add("hidden");
+                        arrow?.classList.remove("rotate-180");
+                    }
+                }
+            });
+        }
+    });
+</script>
 
 
 
