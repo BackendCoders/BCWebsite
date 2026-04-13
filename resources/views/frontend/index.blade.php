@@ -54,7 +54,7 @@
         data-aos-delay="300"
         class="mt-4 sm:mt-5 text-xs xs:text-sm sm:text-base md:text-lg 
         leading-relaxed text-gray-600">
-      Backend Coders India is a trusted web development company in Kanpur, India helping startups, SMEs, enterprises, and international brands build high-performance websites, custom software, SaaS platforms, mobile apps, APIs, AI-powered solutions, and digital marketing systems. Our multidisciplinary team of developers, designers, strategists, and growth experts delivers scalable technology solutions that improve business operations, customer experience, and online growth.
+      Backend Coders India is a trusted web development company in Kanpur, India helping startups, SMEs, enterprises, and international brands build high-performance websites, custom software, SaaS platforms, mobile apps, APIs, AI-powered solutions, and digital marketing systems.
       </p>
 
       <!-- BUTTONS -->
