@@ -13,22 +13,22 @@ class ContactMail extends Mailable
     public function __construct($data)
     {
         dd($request());
-        // $this->data = $data;
+        $this->data = $data;
     }
 
-    // // SUBJECT
-    // public function envelope(): Envelope
-    // {
-    //     return new Envelope(
-    //         // subject: 'New Contact Message',
-    //     );
-    // }
+    // SUBJECT
+    public function envelope(): Envelope
+    {
+        return new Envelope(
+            subject: 'New Contact Message',
+        );
+    }
 
-    // // VIEW FILE
-    // public function content(): Content
-    // {
-    //     return new Content(
-    //         view: 'emails.contact', // ✅ FIXED
-    //     );
-    // }
+    // VIEW FILE
+    public function content(): Content
+    {
+        return new Content(
+            view: 'emails.contact', // ✅ FIXED
+        );
+    }
 }
