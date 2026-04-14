@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Blog;
 use App\Models\Category;
-use Illuminate\Support\Str;
 use Illuminate\Http\Request;
-use  app\Http\Controllers\BlogController;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class BlogController extends Controller
 {
@@ -18,32 +18,17 @@ class BlogController extends Controller
 
     public function create()
     {
-        $categories = Category::all();
+        $categories = Category::orderBy('name')->get();
         return view('blog.create', compact('categories'));
     }
 
     public function store(Request $request)
     {
-        // VALIDATION
-        $request->validate([
-            'title' => 'required|max:255',
-            'category_id' => 'required|exists:categories,id',
-        ]);
+        $payload = $this->validatePayload($request);
+        $payload['slug'] = $this->generateSlug($request->title);
+        $payload['thumbnail'] = $this->storeThumbnail($request);
 
-        //  UNIQUE SLUG
-        $slug = Str::slug($request->title) . '-' . time();
-
-        Blog::create([
-            'category_id' => $request->category_id,
-            'title' => $request->title,
-            'slug' => $slug,
-            'excerpt' => $request->excerpt,
-            'content' => $request->content,
-            'read_time' => $request->read_time ?? 1,
-            'published_at' => $request->published_at,
-            'is_featured' => $request->has('is_featured'),
-            'status' => $request->has('status'),
-        ]);
+        Blog::create($payload);
 
         return redirect()->route('dashboard.blog.index')
             ->with('success', 'Blog created successfully');
@@ -51,32 +36,20 @@ class BlogController extends Controller
 
     public function edit(Blog $blog)
     {
-        $categories = Category::all();
+        $categories = Category::orderBy('name')->get();
         return view('blog.edit', compact('blog', 'categories'));
     }
 
     public function update(Request $request, Blog $blog)
     {
-        //  VALIDATION
-        $request->validate([
-            'title' => 'required|max:255',
-            'category_id' => 'required|exists:categories,id',
-        ]);
+        $payload = $this->validatePayload($request);
+        $payload['slug'] = $this->generateSlug($request->title);
 
-        //  UPDATE WITH UNIQUE SLUG
-        $slug = Str::slug($request->title) . '-' . time();
+        if ($thumbnail = $this->storeThumbnail($request, $blog)) {
+            $payload['thumbnail'] = $thumbnail;
+        }
 
-        $blog->update([
-            'category_id' => $request->category_id,
-            'title' => $request->title,
-            'slug' => $slug,
-            'excerpt' => $request->excerpt,
-            'content' => $request->content,
-            'read_time' => $request->read_time ?? 1,
-            'published_at' => $request->published_at,
-            'is_featured' => $request->has('is_featured'),
-            'status' => $request->has('status'),
-        ]);
+        $blog->update($payload);
 
         return redirect()->route('dashboard.blog.index')
             ->with('success', 'Blog updated successfully');
@@ -84,8 +57,52 @@ class BlogController extends Controller
 
     public function destroy(Blog $blog)
     {
+        if ($blog->thumbnail) {
+            Storage::disk('public')->delete($blog->thumbnail);
+        }
+
         $blog->delete();
 
         return back()->with('success', 'Blog deleted successfully');
+    }
+
+    private function validatePayload(Request $request): array
+    {
+        $validated = $request->validate([
+            'title' => 'required|max:255',
+            'category_id' => 'required|exists:categories,id',
+            'excerpt' => 'nullable|string',
+            'content' => 'nullable|string',
+            'read_time' => 'nullable|integer|min:1',
+            'published_at' => 'nullable|date',
+            'thumbnail' => 'nullable|image|max:2048',
+            'is_featured' => 'sometimes|boolean',
+            'status' => 'sometimes|boolean',
+        ]);
+
+        $validated['is_featured'] = $request->boolean('is_featured');
+        $validated['status'] = $request->boolean('status', true);
+        $validated['read_time'] = $validated['read_time'] ?? 1;
+
+        return $validated;
+    }
+
+    private function generateSlug(string $title): string
+    {
+        $slug = Str::slug($title);
+        return "{$slug}-" . time();
+    }
+
+    private function storeThumbnail(Request $request, ?Blog $blog = null): ?string
+    {
+        if (!$request->hasFile('thumbnail')) {
+            return null;
+        }
+
+        if ($blog && $blog->thumbnail) {
+            Storage::disk('public')->delete($blog->thumbnail);
+        }
+
+        return $request->file('thumbnail')->store('blogs', 'public');
     }
 }

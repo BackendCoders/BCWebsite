@@ -5,6 +5,13 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ServiceCategoryController;
+use App\Http\Controllers\Admin\AuthController as AdminAuthController;
+use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
+use App\Http\Controllers\Admin\ServiceCategoryController as AdminServiceCategoryController;
+use App\Http\Controllers\Admin\ServiceController as AdminServiceController;
+use App\Http\Controllers\Admin\UserController as AdminUserController;
+use App\Http\Controllers\ContactController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -31,7 +38,7 @@ Route::get('/', [HomeController::class, 'index'])->name('frontend.index');
 Route::get('/about', [HomeController::class, 'about'])->name('frontend.about');
 Route::get('/service', [HomeController::class, 'service'])->name('frontend.service');
 Route::get('/project', [HomeController::class, 'project'])->name('frontend.project');
-Route::get('/contact', [HomeController::class, 'contact'])->name('frontend.contact');
+Route::get('/contacts', [HomeController::class, 'contact'])->name('frontend.contact');
 Route::get('/process', [HomeController::class, 'process'])->name('frontend.process');
 Route::get('/packages', [HomeController::class, 'packages'])->name('frontend.packages');
 Route::get('/career', [HomeController::class, 'career'])->name('frontend.career');
@@ -46,14 +53,30 @@ Route::get('/software_development', [HomeController::class, 'software_developmen
 Route::get('/social_media', [HomeController::class, 'social_media'])->name('frontend.social_media');
 Route::get('/seo', [HomeController::class, 'seo'])->name('frontend.seo');
 
+// smtp contact
+Route::post('/contact', [ContactController::class, 'send'])->name('contact.send');
 
 
-// Dashboard:::::::::::
-Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard.dashbaord');
 
-Route::prefix('dashboard')->name('dashboard.')->group(function () {
+Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard.dashboard');
 
-    Route::resource('category', CategoryController::class);
-    Route::resource('blog', BlogController::class);
- 
+Route::prefix('admin')->name('admin.')->group(function () {
+    Route::get('/login', [AdminAuthController::class, 'loginForm'])->name('login');
+    Route::post('/login', [AdminAuthController::class, 'login']);
+
+    Route::middleware(['auth', 'admin.role'])->group(function () {
+        Route::post('/logout', [AdminAuthController::class, 'logout'])->name('logout');
+
+        Route::get('/', [AdminDashboardController::class, 'index'])->name('dashboard');
+
+        Route::resource('service-categories', AdminServiceCategoryController::class)->except(['show']);
+        Route::post('service-categories/{serviceCategory}/restore', [AdminServiceCategoryController::class, 'restore'])->name('service-categories.restore');
+        Route::patch('service-categories/{serviceCategory}/toggle-status', [AdminServiceCategoryController::class, 'toggleStatus'])->name('service-categories.toggle-status');
+
+        Route::resource('services', AdminServiceController::class)->except(['show']);
+        Route::post('services/{service}/restore', [AdminServiceController::class, 'restore'])->name('services.restore');
+
+        Route::resource('users', AdminUserController::class)->except(['show']);
+        Route::post('users/{user}/restore', [AdminUserController::class, 'restore'])->name('users.restore');
+    });
 });

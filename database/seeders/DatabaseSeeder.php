@@ -2,9 +2,12 @@
 
 namespace Database\Seeders;
 
+use App\Models\Service;
+use App\Models\ServiceCategory;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -15,11 +18,23 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
+        User::factory(8)->create();
 
         User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+            'name' => 'System Admin',
+            'email' => 'admin@example.com',
+            'role' => User::ROLE_ADMIN,
+            'password' => Hash::make('AdminPass123!'),
         ]);
+
+        ServiceCategory::factory()
+            ->count(6)
+            ->create()
+            ->each(function (ServiceCategory $category) {
+                Service::factory()
+                    ->count(fake()->numberBetween(2, 3))
+                    ->state(['service_category_id' => $category->id])
+                    ->create();
+            });
     }
 }

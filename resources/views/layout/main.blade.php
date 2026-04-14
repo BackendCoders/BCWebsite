@@ -8,7 +8,7 @@
 
 <body class="bg-gray-100">
 
-<div class="flex h-screen">
+<div class="flex h-screen flex-col lg:flex-row">
 
             @include('layout.header')
 

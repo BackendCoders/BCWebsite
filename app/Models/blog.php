@@ -2,25 +2,36 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class blog extends Model
+class Blog extends Model
 {
-protected $fillable = [
-    'category_id',
-    'title',
-    'slug',
-    'excerpt',
-    'content',
-    'thumbnail',
-    'read_time',
-    'published_at',
-    'is_featured',
-    'status'
-];
+    use HasFactory;
 
-public function category()
-{
-    return $this->belongsTo(Category::class);
-}
+    protected $fillable = [
+        'category_id',
+        'title',
+        'slug',
+        'excerpt',
+        'content',
+        'thumbnail',
+        'read_time',
+        'published_at',
+        'is_featured',
+        'status',
+    ];
+
+    protected $casts = [
+        'is_featured' => 'boolean',
+        'status' => 'boolean',
+        'read_time' => 'integer',
+        'published_at' => 'datetime',
+    ];
+
+    public function category(): BelongsTo
+    {
+        return $this->belongsTo(Category::class);
+    }
 }

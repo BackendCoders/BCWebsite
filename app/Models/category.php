@@ -2,14 +2,22 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class category extends Model
+class Category extends Model
 {
+    use HasFactory;
+
     protected $fillable = ['name', 'slug', 'color', 'status'];
 
-public function blogs()
-{
-    return $this->hasMany(Blog::class);
-}
+    protected $casts = [
+        'status' => 'boolean',
+    ];
+
+    public function blogs(): HasMany
+    {
+        return $this->hasMany(Blog::class);
+    }
 }

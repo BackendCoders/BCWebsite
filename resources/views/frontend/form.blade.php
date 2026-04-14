@@ -1,20 +1,20 @@
-<form class="relative space-y-6">
-
+<form class="relative space-y-6" method="POST" action="{{ route('contact.send') }}">
+             @csrf
           <div class="grid sm:grid-cols-2 gap-4">
-            <input type="text" placeholder="First Name"
+            <input type="text" name="first_name" placeholder="First Name"
               class="w-full px-4 py-3 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#FD5528]/40 transition duration-200">
 
-            <input type="text" placeholder="Last Name"
+            <input type="text" name="last_name" placeholder="Last Name"
               class="w-full px-4 py-3 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#FD5528]/40 transition duration-200">
           </div>
 
-          <input type="email" placeholder="Email Address"
+          <input type="email" name="email" placeholder="Email Address"
             class="w-full px-4 py-3 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#FD5528]/40 transition duration-200">
 
-          <input type="text" placeholder="Phone"
+          <input type="text" name="phone" placeholder="Phone"
             class="w-full px-4 py-3 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#FD5528]/40 transition duration-200">
 
-          <textarea rows="4" placeholder="Your Message"
+          <textarea rows="4" name="message" placeholder="Your Message"
             class="w-full px-4 py-3 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#FD5528]/40 transition duration-200"></textarea>
 
         <div class="relative flex justify-center">

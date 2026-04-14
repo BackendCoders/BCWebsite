@@ -1,0 +1,34 @@
+<?php
+
+namespace App\Mail;
+
+use Illuminate\Mail\Mailable;
+use Illuminate\Mail\Mailables\Content;
+use Illuminate\Mail\Mailables\Envelope;
+
+class ContactMail extends Mailable
+{
+    public $data;
+
+    public function __construct($data)
+    {
+        dd($request());
+        // $this->data = $data;
+    }
+
+    // // SUBJECT
+    // public function envelope(): Envelope
+    // {
+    //     return new Envelope(
+    //         // subject: 'New Contact Message',
+    //     );
+    // }
+
+    // // VIEW FILE
+    // public function content(): Content
+    // {
+    //     return new Content(
+    //         view: 'emails.contact', // ✅ FIXED
+    //     );
+    // }
+}

@@ -21,25 +21,18 @@ class CategoryController extends Controller
 
     public function store(Request $request)
     {
-        //  VALIDATION
-        $request->validate([
+        $payload = $request->validate([
             'name' => 'required|max:255',
+            'color' => 'nullable|string',
+            'status' => 'sometimes|boolean',
         ]);
 
-        //  UNIQUE SLUG
-        $slug = Str::slug($request->name);
-        if (Category::where('slug', $slug)->exists()) {
-            $slug .= '-' . time();
-        }
+        $payload['slug'] = $this->buildSlug($payload['name']);
+        $payload['status'] = $request->boolean('status', true);
 
-        Category::create([
-            'name' => $request->name,
-            'slug' => $slug,
-            'color' => $request->color,
-            'status' => $request->has('status'),
-        ]);
+        Category::create($payload);
 
-        return redirect()->route('category.index')
+        return redirect()->route('dashboard.category.index')
             ->with('success', 'Category created successfully');
     }
 
@@ -50,27 +43,18 @@ class CategoryController extends Controller
 
     public function update(Request $request, Category $category)
     {
-        // VALIDATION
-        $request->validate([
+        $payload = $request->validate([
             'name' => 'required|max:255',
+            'color' => 'nullable|string',
+            'status' => 'sometimes|boolean',
         ]);
 
-        //  UNIQUE SLUG (ignore current)
-        $slug = Str::slug($request->name);
-        if (Category::where('slug', $slug)
-            ->where('id', '!=', $category->id)
-            ->exists()) {
-            $slug .= '-' . time();
-        }
+        $payload['slug'] = $this->buildSlug($payload['name'], $category);
+        $payload['status'] = $request->boolean('status', true);
 
-        $category->update([
-            'name' => $request->name,
-            'slug' => $slug,
-            'color' => $request->color,
-            'status' => $request->has('status'),
-        ]);
+        $category->update($payload);
 
-        return redirect()->route('category.index')
+        return redirect()->route('dashboard.category.index')
             ->with('success', 'Category updated successfully');
     }
 
@@ -79,5 +63,21 @@ class CategoryController extends Controller
         $category->delete();
 
         return back()->with('success', 'Category deleted successfully');
+    }
+
+    private function buildSlug(string $name, ?Category $category = null): string
+    {
+        $slug = Str::slug($name);
+
+        $query = Category::where('slug', $slug);
+        if ($category) {
+            $query->whereKeyNot($category->getKey());
+        }
+
+        if ($query->exists()) {
+            $slug = "{$slug}-" . time();
+        }
+
+        return $slug;
     }
 }
