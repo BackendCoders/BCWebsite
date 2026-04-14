@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Mail; // ✅ FIX
 use App\Mail\ContactMail;
 use App\Models\Contact;
 use Illuminate\Support\Facades\Log;
