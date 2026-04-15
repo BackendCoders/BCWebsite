@@ -46,10 +46,20 @@ Route::get('/digital_marketing', [HomeController::class, 'digital_marketing'])->
 Route::get('/software_development', [HomeController::class, 'software_development'])->name('frontend.software_development');
 Route::get('/social_media', [HomeController::class, 'social_media'])->name('frontend.social_media');
 Route::get('/seo', [HomeController::class, 'seo'])->name('frontend.seo');
+Route::get('/google_ads', [HomeController::class, 'google_ads'])->name('frontend.ads');
+Route::get('/meta_ads', [HomeController::class, 'meta_ads'])->name('frontend.meta_ads');
+Route::get('/content_marketing', [HomeController::class, 'content_marketing'])->name('frontend.content_marketing');
+Route::get('/local_seo', [HomeController::class, 'local_seo'])->name('frontend.local_seo');
+Route::get('/custom_web', [HomeController::class, 'custom_web'])->name('frontend.custom_web');
+Route::get('/web', [HomeController::class, 'custom_web'])->name('frontend.custom_web');
+
+
+
 
 // smtp contact
 Route::post('/contact', [ContactController::class, 'send'])->name('contact.send');
 
 
 
+Route::resource('categories', CategoryController::class);
 

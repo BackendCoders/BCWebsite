@@ -1,0 +1,65 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\Category;
+use Illuminate\Http\Request;
+
+class CategoryController extends Controller
+{
+    //  1. List all categories
+    public function index()
+    {
+        $categories = Category::latest()->get();
+        return view('categories.index', compact('categories'));
+    }
+
+    //  2. Show create form
+    public function create()
+    {
+        return view('categories.create');
+    }
+
+    //  3. Store data
+    public function store(Request $request)
+    {
+        $request->validate([
+            'name' => 'required|max:255',
+            'description' => 'nullable'
+        ]);
+
+        Category::create($request->all());
+
+        return redirect()->route('categories.index')
+                         ->with('success', 'Category created successfully');
+    }
+
+    //  4. Show edit form
+    public function edit(Category $category)
+    {
+        return view('categories.edit', compact('category'));
+    }
+
+    //  5. Update data
+    public function update(Request $request, Category $category)
+    {
+        $request->validate([
+            'name' => 'required|max:255',
+            'description' => 'nullable'
+        ]);
+
+        $category->update($request->all());
+
+        return redirect()->route('categories.index')
+                         ->with('success', 'Category updated successfully');
+    }
+
+    //  6. Delete category
+    public function destroy(Category $category)
+    {
+        $category->delete();
+
+        return redirect()->route('categories.index')
+                         ->with('success', 'Category deleted successfully');
+    }
+}

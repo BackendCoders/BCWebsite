@@ -5,7 +5,7 @@
 
         <!-- LOGO -->
         <div class="px-6 py-5 border-b font-semibold text-orange-500 text-lg uppercase tracking-wide">
-            InApp Admin
+            Admin
         </div>
 
         <!-- NAV -->

@@ -142,10 +142,10 @@
                             <ul class="space-y-2 text-sm text-slate-700">
                                 <li><a href="{{ route('frontend.social_media') }}" class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">Social Media Management</a></li>
                                 <li><a href="{{ route('frontend.seo') }}" class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">SEO Services</a></li>
-                                <li><a href="/google-ads-ppc-services" class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">PPC Ads / Google Ads</a></li>
-                                <li><a href="/meta-ads-services" class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">Meta Ads</a></li>
-                                <li><a href="/content-marketing-services" class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">Content Marketing</a></li>
-                                <li><a href="/local-seo-services" class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">Local SEO</a></li>
+                                <li><a href="{{ route('frontend.ads') }}" class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">PPC Ads / Google Ads</a></li>
+                                <li><a href="{{ route('frontend.meta_ads') }}" class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">Meta Ads</a></li>
+                                <li><a href="{{ route('frontend.content_marketing') }}" class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">Content Marketing</a></li>
+                                <li><a href="{{ route('frontend.local_seo') }}" class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">Local SEO</a></li>
                             </ul>
                         </div>
 

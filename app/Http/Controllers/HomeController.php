@@ -73,6 +73,26 @@ class HomeController extends Controller
            
                public function seo(){
                  return view('frontend.seo');
+           } 
+           
+                public function google_ads(){
+                 return view('frontend.ads');
+           }   
+           
+                public function meta_ads(){
+                 return view('frontend.meta_ads');
            }    
+
+           public function content_marketing(){
+                return view('frontend.content_marketing');
+           }
+
+            public function local_seo(){
+                return view('frontend.local_seo');
+           }
+
+            public function custom_web(){
+                return view('frontend.custom_web');
+           }
 
 }
