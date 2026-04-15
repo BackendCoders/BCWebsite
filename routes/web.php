@@ -5,12 +5,6 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\ServiceCategoryController;
-use App\Http\Controllers\Admin\AuthController as AdminAuthController;
-use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
-use App\Http\Controllers\Admin\ServiceCategoryController as AdminServiceCategoryController;
-use App\Http\Controllers\Admin\ServiceController as AdminServiceController;
-use App\Http\Controllers\Admin\UserController as AdminUserController;
 use App\Http\Controllers\ContactController;
 
 // Route::get('/', function () {
@@ -58,25 +52,4 @@ Route::post('/contact', [ContactController::class, 'send'])->name('contact.send'
 
 
 
-Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard.dashboard');
 
-Route::prefix('admin')->name('admin.')->group(function () {
-    Route::get('/login', [AdminAuthController::class, 'loginForm'])->name('login');
-    Route::post('/login', [AdminAuthController::class, 'login']);
-
-    Route::middleware(['auth', 'admin.role'])->group(function () {
-        Route::post('/logout', [AdminAuthController::class, 'logout'])->name('logout');
-
-        Route::get('/', [AdminDashboardController::class, 'index'])->name('dashboard');
-
-        Route::resource('service-categories', AdminServiceCategoryController::class)->except(['show']);
-        Route::post('service-categories/{serviceCategory}/restore', [AdminServiceCategoryController::class, 'restore'])->name('service-categories.restore');
-        Route::patch('service-categories/{serviceCategory}/toggle-status', [AdminServiceCategoryController::class, 'toggleStatus'])->name('service-categories.toggle-status');
-
-        Route::resource('services', AdminServiceController::class)->except(['show']);
-        Route::post('services/{service}/restore', [AdminServiceController::class, 'restore'])->name('services.restore');
-
-        Route::resource('users', AdminUserController::class)->except(['show']);
-        Route::post('users/{user}/restore', [AdminUserController::class, 'restore'])->name('users.restore');
-    });
-});

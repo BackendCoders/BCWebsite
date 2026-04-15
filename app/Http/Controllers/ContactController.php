@@ -10,19 +10,18 @@ use Illuminate\Support\Facades\Log;
 
 class ContactController extends Controller
 {
-    public function send(Request $request)
-    {
-        // ✅ 1. VALIDATION
-        $validated = $request->validate([
-            'first_name' => 'required|string|max:100',
-            'last_name' => 'required|string|max:100',
-            'email'    => 'required|email|max:150',
-            'phone'    => 'nullable|string|max:20',
-            'message'  => 'required|string|max:1000',
-            'captcha'  => 'required'
-        ]);
-
-        // ✅ 2. CAPTCHA CHECK
+  public function send(Request $request)
+{
+    // ✅ STEP 1: VALIDATE (THIS CREATES $validated)
+    $validated = $request->validate([
+        'first_name' => 'required',
+        'last_name' => 'nullable',
+        'email' => 'required|email',
+        'phone' => 'required',
+        'message' => 'nullable',
+        'captcha' =>'required'
+    ]);
+ // ✅ 2. CAPTCHA CHECK
         if ($request->captcha != $request->captcha_correct) {
             return back()
                 ->withInput()
@@ -31,18 +30,24 @@ class ContactController extends Controller
 
         try {
             // ✅ 3. SAVE TO DATABASE
-            Contact::create([
-                'first_name' => $validated['first_name'],
-                  'last_name' => $validated['last_name'],
-                'email'    => $validated['email'],
-                'phone'    => $validated['phone'] ?? null,
-                'message'  => $validated['message'],
-            ]);
+            // Contact::create([
+            //     'name'     => $validated['name'],
+            //     'email'    => $validated['email'],
+            //     'phone'    => $validated['phone'] ?? null,
+            //     'country'  => $validated['country'] ?? null,
+            //     'product'  => $validated['product'] ?? null,
+            //     'quantity' => $validated['quantity'] ?? null,
+            //     'message'  => $validated['message'],
+            // ]);
 
             // ✅ 4. SEND EMAIL TO ADMIN
-            Mail::to(env('ADMIN_EMAIL'))
-                ->send(new ContactMail($validated));
 
+            //  dd('Email sent');
+             Mail::to(config('mail.admin_email') ?: 'enquiry@backendcodersindia.com')
+            ->send(new ContactMail($validated));
+
+                //   dd('Email sent');
+        // return back()->with('success', 'Message sent successfully!');
             // ✅ 5. SUCCESS RESPONSE
             return back()->with('success', 'Message sent successfully!');
 

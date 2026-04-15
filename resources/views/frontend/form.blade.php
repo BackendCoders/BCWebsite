@@ -80,21 +80,31 @@
 
        <div  class="flex flex-col sm:flex-row items-end gap-4">
          <!-- CAPTCHA -->
-     <div class="w-full sm:w-1/2 bg-[#FFFCED] border border-yellow-200 rounded-2xl p-4">
+<div class="w-full md:w-1/2">
+    <div class="p-4 rounded-xl shadow-sm bg-[#FFFCED] border border-[#f3e2b3]">
 
-    <div id="captchaQuestion" class="text-orange-600 font-semibold mb-2">
-        Loading... <span class="text-red-500">*</span>
+        <!-- QUESTION -->
+        <div class="mb-2 font-bold text-gray-600" id="captchaQuestion">
+            Loading...
+        </div>
+
+        <!-- INPUT -->
+        <input type="text"
+            name="captcha"
+            id="captchaInput"
+            class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
+            placeholder="Enter answer"
+            required>
+
+        <!-- HIDDEN -->
+        <input type="hidden" name="captcha_correct" id="captchaCorrect">
+
+        <!-- ERROR -->
+        <small id="captchaError" class="text-red-500 hidden">
+            Wrong answer, try again.
+        </small>
+
     </div>
-
-    <input type="text" name="captcha" id="captchaInput" required
-        placeholder="Enter answer"
-        class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-400">
-
-    <input type="hidden" id="captchaCorrect">
-
-    <p id="captchaError" class="text-red-500 text-sm mt-1 hidden">
-        Wrong answer, try again.
-    </p>
 </div>
 
         <!-- BUTTON -->
