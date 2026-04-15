@@ -1,36 +1,97 @@
 @extends('layout.main')
+
 @section('content')
 
-<h2>Category List</h2>
+<div class="p-6">
 
-<a href="{{ route('categories.create') }}">Add Category</a>
+    <!-- 🔥 Header -->
+    <div class="flex justify-between items-center mb-6">
+        <div>
+            <h2 class="text-2xl font-bold text-gray-800">Category List</h2>
+            <p class="text-gray-500 text-sm">Manage your categories</p>
+        </div>
 
-@if(session('success'))
-    <p>{{ session('success') }}</p>
-@endif
+        <a href="{{ route('categories.create') }}"
+           class="bg-[#FD5528] text-white px-4 py-2 rounded-lg shadow hover:bg-orange-600 transition">
+            + Add Category
+        </a>
+    </div>
 
-<table border="1">
-    <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Action</th>
-    </tr>
+    <!-- 🔥 Success Message -->
+    @if(session('success'))
+        <div class="mb-4 p-3 bg-green-100 text-green-700 rounded-lg">
+            {{ session('success') }}
+        </div>
+    @endif
 
-    @foreach($categories as $category)
-    <tr>
-        <td>{{ $category->id }}</td>
-        <td>{{ $category->name }}</td>
-        <td>
-            <a href="{{ route('categories.edit', $category->id) }}">Edit</a>
+    <!-- 🔥 Card Container -->
+    <div class="bg-white rounded-xl shadow overflow-hidden">
 
-            <form action="{{ route('categories.destroy', $category->id) }}" method="POST" style="display:inline;">
-                @csrf
-                @method('DELETE')
-                <button type="submit">Delete</button>
-            </form>
-        </td>
-    </tr>
-    @endforeach
-</table>
+        <!-- 🔍 Search (UI only) -->
+        <div class="p-4 border-b flex justify-between items-center">
+            <input type="text" placeholder="Search category..."
+                   class="border rounded-lg px-4 py-2 w-1/3 focus:outline-none focus:ring-2 focus:ring-[#FD5528]">
+        </div>
+
+        <!-- 📊 Table -->
+        <table class="w-full text-left">
+            <thead class="bg-gray-100 text-gray-600 text-sm uppercase">
+                <tr>
+                    <th class="p-4">ID</th>
+                    <th>Name</th>
+                    <th class="text-center">Action</th>
+                </tr>
+            </thead>
+
+            <tbody class="text-gray-700">
+
+                @foreach($categories as $category)
+                <tr class="border-t hover:bg-gray-50 transition">
+
+                    <td class="p-4 font-medium">{{ $category->id }}</td>
+
+                    <td class="font-semibold">
+                        {{ $category->name }}
+                    </td>
+
+                    <td class="text-center space-x-2">
+
+                        <!-- ✏️ Edit -->
+                        <a href="{{ route('categories.edit', $category->id) }}"
+                           class="px-3 py-1 text-sm bg-blue-100 text-blue-600 rounded-lg hover:bg-blue-200 transition">
+                            Edit
+                        </a>
+
+                        <!-- 🗑 Delete -->
+                        <form action="{{ route('categories.destroy', $category->id) }}"
+                              method="POST"
+                              class="inline">
+                            @csrf
+                            @method('DELETE')
+
+                            <button type="submit"
+                                    class="px-3 py-1 text-sm bg-red-100 text-red-600 rounded-lg hover:bg-red-200 transition">
+                                Delete
+                            </button>
+                        </form>
+
+                    </td>
+
+                </tr>
+                @endforeach
+
+            </tbody>
+        </table>
+
+        <!-- 📉 Empty State -->
+        @if($categories->isEmpty())
+            <div class="p-6 text-center text-gray-500">
+                No categories found.
+            </div>
+        @endif
+
+    </div>
+
+</div>
 
 @endsection

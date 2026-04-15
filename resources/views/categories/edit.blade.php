@@ -1,17 +1,62 @@
 @extends('layout.main')
+
 @section('content')
 
+<div class="p-6 max-w-3xl mx-auto">
 
-<h2>Edit Category</h2>
+    <!-- 🔥 Header -->
+    <div class="mb-6">
+        <h2 class="text-2xl font-bold text-gray-800">Edit Category</h2>
+        <p class="text-gray-500 text-sm">Update category details</p>
+    </div>
 
-<form action="{{ route('categories.update', $category->id) }}" method="POST">
-    @csrf
-    @method('PUT')
+    <!-- 🔥 Card -->
+    <div class="bg-white shadow rounded-xl p-6">
 
-    <input type="text" name="name" value="{{ $category->name }}">
-    <textarea name="description">{{ $category->description }}</textarea>
+        <form action="{{ route('categories.update', $category->id) }}" method="POST" class="space-y-5">
+            @csrf
+            @method('PUT')
 
-    <button type="submit">Update</button>
-</form>
+            <!-- 📌 Category Name -->
+            <div>
+                <label class="block text-gray-700 font-medium mb-1">
+                    Category Name
+                </label>
+                <input type="text"
+                       name="name"
+                       value="{{ $category->name }}"
+                       class="w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#FD5528]">
+            </div>
+
+            <!-- 📌 Description -->
+            <div>
+                <label class="block text-gray-700 font-medium mb-1">
+                    Description
+                </label>
+                <textarea name="description"
+                          rows="4"
+                          class="w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#FD5528]">{{ $category->description }}</textarea>
+            </div>
+
+            <!-- 🔥 Buttons -->
+            <div class="flex justify-end gap-3">
+
+                <a href="{{ route('categories.index') }}"
+                   class="px-4 py-2 rounded-lg border text-gray-600 hover:bg-gray-100 transition">
+                    Cancel
+                </a>
+
+                <button type="submit"
+                        class="px-5 py-2 bg-[#FD5528] text-white rounded-lg shadow hover:bg-orange-600 transition">
+                    Update Category
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
 
 @endsection

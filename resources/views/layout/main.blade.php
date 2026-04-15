@@ -3,30 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <title>Dashboard</title>
+
+    <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
+
+   
 </head>
 
-<body class="bg-gray-100">
+<body class="bg-gray-100 h-screen flex flex-col">
 
-<div class="flex h-screen flex-col lg:flex-row">
+    <!--  Header -->
+    @include('layout.header')
 
-            @include('layout.header')
+    <!--  Main Layout -->
+    <div class="flex flex-1 overflow-hidden">
 
-    <!-- 🔷 MAIN -->
-    <div class="flex-1 flex flex-col">
-
-      
-
-        <!-- CONTENT -->
-        <main class="p-6 overflow-y-auto">
+        <!-- 📦 Page Content -->
+        <main class="flex-1 p-6 overflow-y-auto">
             @yield('content')
         </main>
 
     </div>
 
+    <!--  Footer -->
     @include('layout.footer')
 
-</div>
+    <!-- Chart JS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 </body>
 </html>

@@ -1,84 +1,41 @@
-<div class="w-full lg:w-64 flex-shrink-0">
+ <!-- 🔥 Sidebar -->
+    <aside class="w-64 bg-white border-r">
 
-    <!-- DESKTOP SIDEBAR -->
-    <aside class="hidden lg:flex lg:flex-col border-r bg-white h-screen">
-
-        <!-- LOGO -->
-        <div class="px-6 py-5 border-b font-semibold text-orange-500 text-lg uppercase tracking-wide">
-            Admin
+        <div class="p-5 text-xl font-bold primary-text">
+           Admin
         </div>
 
-        <!-- NAV -->
-        <nav class="flex-1 px-4 py-6 space-y-2 text-sm">
+        <nav class="mt-4 space-y-1">
 
-            <!-- ACTIVE -->
-            <a href="#"
-               class="block px-4 py-2 rounded-lg bg-orange-100 text-orange-600 font-medium">
-                Dashboard
-            </a>
+            <a class="block px-5 py-2 bg-gray-100">Ecommerce</a>
 
-            <!-- LINKS -->
-            <a href="#"
-               class="block px-4 py-2 rounded-lg text-gray-600 hover:bg-gray-50 hover:text-orange-600 transition">
-                Service Categories
-            </a>
+            <p class="px-5 text-gray-400 text-sm mt-4">APPS</p>
 
-            <a href="#"
-               class="block px-4 py-2 rounded-lg text-gray-600 hover:bg-gray-50 hover:text-orange-600 transition">
-                Categories
-            </a>
-
-            <a href="#"
-               class="block px-4 py-2 rounded-lg text-gray-600 hover:bg-gray-50 hover:text-orange-600 transition">
-                Blog
-            </a>
-
-            <a href="#"
-               class="block px-4 py-2 rounded-lg text-gray-600 hover:bg-gray-50 hover:text-orange-600 transition">
-                Reports
-            </a>
+            <a class="block px-5 py-2 hover:bg-gray-100">CRM</a>
+            <a class="block px-5 py-2 hover:bg-gray-100">Project</a>
+            <a class="block px-5 py-2 hover:bg-gray-100">Chat</a>
+            <a class="block px-5 py-2 hover:bg-gray-100">Email</a>
 
         </nav>
     </aside>
 
-    <!-- MOBILE NAV -->
-    <div class="lg:hidden w-full border-b bg-white">
+    <!-- 🔥 Main -->
+    <div class="flex-1 flex flex-col">
 
-        <!-- HEADER -->
-        <div class="flex items-center justify-between px-4 py-4 border-b">
-            <div class="text-lg font-bold text-orange-500">InApp Admin</div>
-            <span class="text-xs uppercase tracking-wide text-gray-500">Mobile</span>
-        </div>
+        <!-- 🔝 Navbar -->
+        <header class="bg-white px-6 py-4 flex justify-between items-center border-b">
+            <div class="flex gap-6">
+                <span>Home</span>
+                <span>Apps</span>
+                <span>Pages</span>
+            </div>
 
-        <!-- NAV -->
-        <nav class="flex flex-wrap gap-2 px-4 py-3">
+            <div class="flex items-center gap-4">
+                <div class="w-8 h-8 rounded-full primary"></div>
+            </div>
+        </header>
 
-            <a href="#"
-               class="px-3 py-2 rounded-md bg-orange-100 text-orange-600 text-xs font-semibold">
-                Dashboard
-            </a>
-
-            <a href="#"
-               class="px-3 py-2 rounded-md text-xs font-medium text-gray-600 bg-gray-50 hover:bg-orange-50">
-                Service Categories
-            </a>
-
-            <a href="#"
-               class="px-3 py-2 rounded-md text-xs font-medium text-gray-600 bg-gray-50 hover:bg-orange-50">
-                Categories
-            </a>
-
-            <a href="#"
-               class="px-3 py-2 rounded-md text-xs font-medium text-gray-600 bg-gray-50 hover:bg-orange-50">
-                Blog
-            </a>
-
-            <a href="#"
-               class="px-3 py-2 rounded-md text-xs font-medium text-gray-600 bg-gray-50 hover:bg-orange-50">
-                Reports
-            </a>
-
-        </nav>
+    
     </div>
 
 </div>

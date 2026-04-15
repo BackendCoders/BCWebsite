@@ -61,5 +61,10 @@ Route::post('/contact', [ContactController::class, 'send'])->name('contact.send'
 
 
 
+// DASHBOARD::
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+});
 Route::resource('categories', CategoryController::class);
 
