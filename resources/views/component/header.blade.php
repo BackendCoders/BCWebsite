@@ -209,7 +209,7 @@
         <div class="hidden lg:flex">
               <button type="submit"
             class="w-full bg-gradient-to-r from-[#FD5528] to-[#fbb03b] hover:from-[#fbb03b] hover:to-[#FD5528] hover:scale-110 transition-all text-white px-5 py-2 rounded-2xl font-semibold transition duration-200 ">
-               <a href="{{ route('frontend.contact') }}">Initialize </a>
+               <a href="tel:+91 9140092133">Initialize </a>
           </button>
             <!-- <a href="{{ route('frontend.contact') }}"
                class="rounded-lg bg-[#FD5528] px-5 py-2 text-sm font-semibold text-white shadow-md transition hover:bg-orange-600">
@@ -325,7 +325,7 @@
             </a>
          <!-- CTA Button -->
         <div class=" lg:hidden md:hidden block:flex py-2">
-            <a href="{{ route('frontend.contact') }}"
+            <a href="tel:+91 9140092133"
                class=" bg-[#FD5528] px-4 py-2 text-xs text-white hover:bg-orange-600">
                 Initialize 
             </a>

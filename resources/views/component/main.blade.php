@@ -511,5 +511,46 @@ document.addEventListener("click", function (e) {
 
  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script src="{{ asset('assets/js/main.js') }}" defer></script>
+<script>
+function generateCaptcha() {
+    let num1 = Math.floor(Math.random() * 10);
+    let num2 = Math.floor(Math.random() * 10);
+
+    document.getElementById("captchaQuestion").innerHTML =
+        `What is ${num1} + ${num2}? <span style="color:red">*</span>`;
+
+    document.getElementById("captchaCorrect").value = num1 + num2;
+}
+
+generateCaptcha();
+
+document.querySelector("form").addEventListener("submit", function(e) {
+
+    let form = this;
+
+    // Reset error
+    document.getElementById("captchaError").classList.add("hidden");
+
+    // HTML validation
+    if (!form.checkValidity()) {
+        e.preventDefault();
+        form.reportValidity();
+        return;
+    }
+
+    // CAPTCHA validation
+    let userAnswer = document.getElementById("captchaInput").value.trim();
+    let correctAnswer = document.getElementById("captchaCorrect").value;
+
+    if (userAnswer == "" || userAnswer != correctAnswer) {
+        e.preventDefault();
+
+        document.getElementById("captchaError").classList.remove("hidden");
+
+        generateCaptcha();
+        document.getElementById("captchaInput").value = "";
+    }
+});
+</script>
 </body>
 </html>

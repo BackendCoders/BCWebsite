@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Mail; // ✅ FIX
+use Illuminate\Support\Facades\Mail;
 use App\Mail\ContactMail;
 use App\Models\Contact;
 use Illuminate\Support\Facades\Log;
@@ -15,29 +15,45 @@ class ContactController extends Controller
         // ✅ 1. VALIDATION
         $validated = $request->validate([
             'first_name' => 'required|string|max:100',
-            'last_name'  => 'nullable|string|max:100',
-            'email'     => 'required|email|max:150',
-            'phone'     => 'nullable|string|max:20',
-            'message'   => 'required|string|max:1000',
+            'last_name' => 'required|string|max:100',
+            'email'    => 'required|email|max:150',
+            'phone'    => 'nullable|string|max:20',
+            'message'  => 'required|string|max:1000',
+            'captcha'  => 'required'
         ]);
- 
-        try {
-            // ✅ 2. SAVE TO DATABASE (SAFE)
-            Contact::create($validated);
 
-            // ✅ 3. SEND EMAIL TO ADMIN
-            Mail::to(config('mail.from.address'))
+        // ✅ 2. CAPTCHA CHECK
+        if ($request->captcha != $request->captcha_correct) {
+            return back()
+                ->withInput()
+                ->with('error', 'Invalid captcha. Please try again.');
+        }
+
+        try {
+            // ✅ 3. SAVE TO DATABASE
+            Contact::create([
+                'first_name' => $validated['first_name'],
+                  'last_name' => $validated['last_name'],
+                'email'    => $validated['email'],
+                'phone'    => $validated['phone'] ?? null,
+                'message'  => $validated['message'],
+            ]);
+
+            // ✅ 4. SEND EMAIL TO ADMIN
+            Mail::to(env('ADMIN_EMAIL'))
                 ->send(new ContactMail($validated));
 
-            // ✅ 4. SUCCESS RESPONSE
+            // ✅ 5. SUCCESS RESPONSE
             return back()->with('success', 'Message sent successfully!');
 
         } catch (\Exception $e) {
 
-            // ✅ 5. LOG ERROR (IMPORTANT)
+            // ✅ 6. LOG ERROR
             Log::error('Contact Form Error: ' . $e->getMessage());
 
-            return back()->with('error', 'Something went wrong. Please try again.');
+            return back()
+                ->withInput()
+                ->with('error', 'Something went wrong. Please try again.');
         }
     }
 }
