@@ -1,41 +1,146 @@
- <!-- 🔥 Sidebar -->
-    <aside class="w-64 bg-white border-r">
+<div id="sidebarBackdrop" class="fixed inset-0 z-30 hidden bg-slate-950/50 backdrop-blur-sm lg:hidden"></div>
 
-        <div class="p-5 text-xl font-bold primary-text">
-           Admin
+<aside
+    id="sidebar"
+    class="fixed inset-y-0 left-0 z-40 flex w-72 -translate-x-full flex-col border-r border-slate-200/70 bg-white/95 px-5 py-6 shadow-2xl shadow-slate-200/50 backdrop-blur-xl transition-transform duration-300 ease-out dark:border-white/10 dark:bg-slate-950/95 dark:shadow-black/30 lg:translate-x-0"
+>
+    <div class="flex items-center gap-3">
+        <div class="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#FD5528] text-base font-black text-white shadow-lg shadow-[#FD5528]/30">
+            B
         </div>
-
-        <nav class="mt-4 space-y-1">
-
-            <a class="block px-5 py-2 bg-gray-100">Ecommerce</a>
-
-            <p class="px-5 text-gray-400 text-sm mt-4">APPS</p>
-
-            <a class="block px-5 py-2 hover:bg-gray-100">CRM</a>
-            <a class="block px-5 py-2 hover:bg-gray-100">Project</a>
-            <a class="block px-5 py-2 hover:bg-gray-100">Chat</a>
-            <a class="block px-5 py-2 hover:bg-gray-100">Email</a>
-
-        </nav>
-    </aside>
-
-    <!-- 🔥 Main -->
-    <div class="flex-1 flex flex-col">
-
-        <!-- 🔝 Navbar -->
-        <header class="bg-white px-6 py-4 flex justify-between items-center border-b">
-            <div class="flex gap-6">
-                <span>Home</span>
-                <span>Apps</span>
-                <span>Pages</span>
-            </div>
-
-            <div class="flex items-center gap-4">
-                <div class="w-8 h-8 rounded-full primary"></div>
-            </div>
-        </header>
-
-    
+        <div>
+            <p class="text-xs uppercase tracking-[0.35em] text-slate-400">Brand</p>
+            <h1 class="text-lg font-semibold text-slate-900 dark:text-white">Backend Coders</h1>
+        </div>
     </div>
 
-</div>
+    <div class="mt-8 rounded-3xl bg-slate-50 p-4 ring-1 ring-slate-200/70 dark:bg-white/5 dark:ring-white/10">
+        <p class="text-xs uppercase tracking-[0.3em] text-slate-400">Workspace</p>
+        <div class="mt-3 flex items-center justify-between">
+            <div>
+                <p class="text-sm font-medium text-slate-500 dark:text-slate-300">Project health</p>
+                <p class="text-2xl font-semibold text-slate-900 dark:text-white">96%</p>
+            </div>
+            <div class="flex h-14 w-14 items-center justify-center rounded-full border-4 border-[#FD5528]/15 text-sm font-semibold text-[#FD5528]">
+                Live
+            </div>
+        </div>
+    </div>
+
+    <nav class="mt-8 flex-1 space-y-1">
+        <p class="px-3 text-xs font-semibold uppercase tracking-[0.3em] text-slate-400">Menu</p>
+        <a href="{{ route('dashboard') }}" class="flex items-center gap-3 rounded-2xl bg-[#FD5528] px-4 py-3 text-sm font-semibold text-white shadow-lg shadow-[#FD5528]/25 transition">
+            <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-white/15">•</span>
+            Dashboard
+        </a>
+
+           <a href="#" class="flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-medium text-slate-600 transition hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-white/5">
+            <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-slate-100 text-slate-500 dark:bg-white/5 dark:text-slate-300">C</span>
+            Leads
+        </a>
+
+        <a href="{{ route('projects.index') }}" class="flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-medium text-slate-600 transition hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-white/5">
+            <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-slate-100 text-slate-500 dark:bg-white/5 dark:text-slate-300">P</span>
+            Projects
+        </a>
+        <a href="{{ route('services.index') }}" class="flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-medium text-slate-600 transition hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-white/5">
+            <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-slate-100 text-slate-500 dark:bg-white/5 dark:text-slate-300">S</span>
+            Services
+        </a>
+      
+        <a href="{{ route('categories.index') }}" class="flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-medium text-slate-600 transition hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-white/5">
+            <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-slate-100 text-slate-500 dark:bg-white/5 dark:text-slate-300">K</span>
+            Categories
+        </a>
+        <a href="{{ route('blogs.index') }}" class="flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-medium text-slate-600 transition hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-white/5">
+            <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-slate-100 text-slate-500 dark:bg-white/5 dark:text-slate-300">B</span>
+            Blogs
+        </a>
+
+        <a href="{{ route('careers.index') }}" class="flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-medium text-slate-600 transition hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-white/5">
+            <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-slate-100 text-slate-500 dark:bg-white/5 dark:text-slate-300">J</span>
+            Careers
+        </a>
+
+        <a href="{{ route('frontend.contact') }}" class="flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-medium text-slate-600 transition hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-white/5">
+            <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-slate-100 text-slate-500 dark:bg-white/5 dark:text-slate-300">C</span>
+            Applications
+        </a>
+
+        <div class="pt-4">
+            <p class="px-3 text-xs font-semibold uppercase tracking-[0.3em] text-slate-400">Shortcuts</p>
+            <div class="mt-3 grid gap-3">
+                <div class="rounded-2xl border border-slate-200/70 bg-slate-50 p-4 dark:border-white/10 dark:bg-white/5">
+                    <p class="text-xs text-slate-400">This week</p>
+                    <p class="mt-1 text-sm font-medium text-slate-900 dark:text-white">18 new leads</p>
+                </div>
+                <div class="rounded-2xl border border-slate-200/70 bg-slate-50 p-4 dark:border-white/10 dark:bg-white/5">
+                    <p class="text-xs text-slate-400">Revenue</p>
+                    <p class="mt-1 text-sm font-medium text-slate-900 dark:text-white">$24.8k collected</p>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="mt-6 rounded-3xl bg-slate-900 p-4 text-white shadow-lg shadow-slate-900/20 dark:bg-white/5">
+        <p class="text-xs uppercase tracking-[0.3em] text-white/50">Need help?</p>
+        <p class="mt-2 text-sm text-white/80">Track tasks, review progress, and stay on top of the workspace from one place.</p>
+        <button type="button" class="mt-4 w-full rounded-2xl bg-[#FD5528] px-4 py-3 text-sm font-semibold text-white transition hover:bg-[#e94c20]">
+            View insights
+        </button>
+    </div>
+</aside>
+
+<header class="fixed left-0 right-0 top-0 z-20 border-b border-slate-200/70 bg-white/80 backdrop-blur-xl dark:border-white/10 dark:bg-slate-950/80 lg:left-72">
+    <div class="flex h-20 items-center justify-between px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center gap-3">
+            <button
+                id="sidebarToggle"
+                type="button"
+                class="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-slate-200 bg-white text-slate-600 transition hover:border-[#FD5528] hover:text-[#FD5528] dark:border-white/10 dark:bg-white/5 dark:text-slate-200 lg:hidden"
+                aria-label="Toggle sidebar"
+            >
+                <span class="text-xl leading-none">≡</span>
+            </button>
+
+            <div>
+                <p class="text-xs uppercase tracking-[0.35em] text-slate-400">Dashboard</p>
+                <h2 class="text-lg font-semibold text-slate-900 dark:text-white">Welcome back, Admin</h2>
+            </div>
+        </div>
+
+        <div class="hidden max-w-xl flex-1 px-8 xl:block">
+            <label class="relative block">
+                <span class="sr-only">Search</span>
+                <span class="pointer-events-none absolute inset-y-0 left-4 flex items-center text-slate-400">⌕</span>
+                <input
+                    type="search"
+                    placeholder="Search projects, orders, or users"
+                    class="w-full rounded-2xl border border-slate-200 bg-slate-50 py-3 pl-11 pr-4 text-sm text-slate-700 outline-none transition placeholder:text-slate-400 focus:border-[#FD5528] focus:ring-4 focus:ring-[#FD5528]/10 dark:border-white/10 dark:bg-white/5 dark:text-slate-100 dark:placeholder:text-slate-500"
+                >
+            </label>
+        </div>
+
+        <div class="flex items-center gap-3">
+            <button
+                id="themeToggle"
+                type="button"
+                class="inline-flex h-11 items-center gap-2 rounded-2xl border border-slate-200 bg-white px-4 text-sm font-medium text-slate-600 transition hover:border-[#FD5528] hover:text-[#FD5528] dark:border-white/10 dark:bg-white/5 dark:text-slate-200"
+                aria-label="Toggle theme"
+            >
+                <span id="themeIcon" class="text-base">☾</span>
+                <span class="hidden sm:inline" id="themeLabel">Dark</span>
+            </button>
+
+            <div class="hidden items-center gap-3 rounded-2xl border border-slate-200 bg-white px-3 py-2 dark:border-white/10 dark:bg-white/5 sm:flex">
+                <div class="text-right">
+                    <p class="text-xs text-slate-400">Signed in as</p>
+                    <p class="text-sm font-medium text-slate-900 dark:text-white">Admin</p>
+                </div>
+                <div class="flex h-10 w-10 items-center justify-center rounded-2xl bg-[#FD5528] text-sm font-bold text-white">
+                    A
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

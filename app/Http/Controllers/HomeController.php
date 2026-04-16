@@ -2,12 +2,35 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Blog;
+use App\Models\Career;
+use App\Models\CareerApplication;
+use App\Models\Category;
+use App\Models\Project;
+use App\Models\Service;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
     public function index(){
         return view('frontend.index');
+    }
+
+    public function dashboard(){
+        return view('dashboard', [
+            'categoryCount' => Category::count(),
+            'recentCategories' => Category::latest()->take(6)->get(),
+            'blogCount' => Blog::count(),
+            'recentBlogs' => Blog::with('category')->latest()->take(5)->get(),
+            'careerCount' => Career::count(),
+            'recentCareers' => Career::latest()->take(3)->get(),
+            'applicationCount' => CareerApplication::count(),
+            'recentApplications' => CareerApplication::latest()->take(5)->get(),
+            'projectCount' => Project::count(),
+            'recentProjects' => Project::latest()->take(4)->get(),
+            'serviceCount' => Service::count(),
+            'recentServices' => Service::latest()->take(4)->get(),
+        ]);
     }
 
     public function about(){

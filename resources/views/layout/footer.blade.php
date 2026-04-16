@@ -1,19 +1,13 @@
-<footer class="bg-white border-t mt-auto">
-    
-    <div class="px-6 py-4 flex flex-col md:flex-row justify-between items-center text-sm text-gray-600">
-
-        <!-- Left -->
+<footer class="mt-8 rounded-3xl border border-slate-200/70 bg-white/80 px-5 py-4 text-sm text-slate-500 backdrop-blur-xl dark:border-white/10 dark:bg-white/5 dark:text-slate-400">
+    <div class="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
         <p>
-            © {{ date('Y') }} <span class="text-[#FD5528] font-semibold">MyDashboard</span>. All rights reserved.
+            &copy; {{ date('Y') }} <span class="font-semibold text-[#FD5528]">Backend Coders</span>. All rights reserved.
         </p>
 
-        <!-- Right -->
-        <div class="flex gap-4 mt-2 md:mt-0">
-            <a href="#" class="hover:text-[#FD5528] transition">Privacy Policy</a>
-            <a href="#" class="hover:text-[#FD5528] transition">Terms</a>
-            <a href="#" class="hover:text-[#FD5528] transition">Support</a>
+        <div class="flex flex-wrap gap-4">
+            <a href="#" class="transition hover:text-[#FD5528]">Privacy</a>
+            <a href="#" class="transition hover:text-[#FD5528]">Terms</a>
+            <a href="#" class="transition hover:text-[#FD5528]">Support</a>
         </div>
-
     </div>
-
 </footer>

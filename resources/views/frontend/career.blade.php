@@ -180,19 +180,26 @@
       Apply Now
     </h2>
 
-    <form class="bg-white p-8 rounded-xl shadow space-y-4" data-aos="fade-up">
+    <form class="bg-white p-8 rounded-xl shadow space-y-4" data-aos="fade-up" method="POST" action="{{ route('career.apply') }}" enctype="multipart/form-data">
+      @csrf
 
-      <input type="text" placeholder="Full Name"
+      <input type="text" name="full_name" placeholder="Full Name"
         class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FC5124]">
 
-      <input type="email" placeholder="Email Address"
+      <input type="text" name="phone" placeholder="Phone Number"
         class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FC5124]">
 
-      <input type="text" placeholder="Position Applying For"
+      <input type="email" name="email" placeholder="Email Address"
         class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FC5124]">
 
-      <textarea placeholder="Tell us about yourself"
+      <input type="text" name="position" placeholder="Position Applying For"
+        class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FC5124]">
+
+      <textarea name="about" placeholder="Tell us about yourself"
         class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FC5124]"></textarea>
+
+      <input type="file" name="resume" accept=".pdf,.doc,.docx"
+        class="w-full px-4 py-3 border rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-[#FC5124]">
 
       <button class="w-full bg-gradient-to-r from-[#FD5528] to-[#fbb03b] hover:from-[#fbb03b] hover:to-[#FD5528] text-white py-3 rounded-lg font-semibold ">
         Submit Application

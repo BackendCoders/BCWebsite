@@ -4,7 +4,11 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\CareerController;
+use App\Http\Controllers\CareerApplicationController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ContactController;
 
 // Route::get('/', function () {
@@ -58,13 +62,17 @@ Route::get('/web', [HomeController::class, 'custom_web'])->name('frontend.custom
 
 // smtp contact
 Route::post('/contact', [ContactController::class, 'send'])->name('contact.send');
+Route::post('/career/apply', [CareerApplicationController::class, 'store'])->name('career.apply');
+// Route::post('/inquiry/leads', [CareerApplicationController::class, 'store'])->name('contact.send');
 
 
 
 // DASHBOARD::
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-});
+Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
 Route::resource('categories', CategoryController::class);
+Route::resource('blogs', BlogController::class);
+Route::resource('careers', CareerController::class);
+Route::resource('projects', ProjectController::class);
+Route::resource('services', ServiceController::class);
 
