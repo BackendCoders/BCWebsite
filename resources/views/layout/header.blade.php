@@ -6,11 +6,11 @@
 >
     <div class="flex items-center gap-3">
         <div class="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#FD5528] text-base font-black text-white shadow-lg shadow-[#FD5528]/30">
-            B
+            <img src="{{ asset('assets/images/bci_icon.png') }}" alt="">
         </div>
         <div>
-            <p class="text-xs uppercase tracking-[0.35em] text-slate-400">Brand</p>
-            <h1 class="text-lg font-semibold text-slate-900 dark:text-white">Backend Coders</h1>
+            <p class="text-xs uppercase tracking-[0.35em] text-[#FD5528] font-bold">Backend</p>
+            <h1 class="text-lg font-semibold text-slate-900 dark:text-white">Coders India</h1>
         </div>
     </div>
 
@@ -104,7 +104,7 @@
             </button>
 
             <div>
-                <p class="text-xs uppercase tracking-[0.35em] text-slate-400">Dashboard</p>
+                <p class="text-xs uppercase tracking-[0.35em] text-[#FD5528] font-bold">Dashboard</p>
                 <h2 class="text-lg font-semibold text-slate-900 dark:text-white">Welcome back, Admin</h2>
             </div>
         </div>
@@ -122,7 +122,7 @@
         </div>
 
         <div class="flex items-center gap-3">
-            <button
+            <!-- <button
                 id="themeToggle"
                 type="button"
                 class="inline-flex h-11 items-center gap-2 rounded-2xl border border-slate-200 bg-white px-4 text-sm font-medium text-slate-600 transition hover:border-[#FD5528] hover:text-[#FD5528] dark:border-white/10 dark:bg-white/5 dark:text-slate-200"
@@ -130,11 +130,11 @@
             >
                 <span id="themeIcon" class="text-base">☾</span>
                 <span class="hidden sm:inline" id="themeLabel">Dark</span>
-            </button>
+            </button> -->
 
             <div class="hidden items-center gap-3 rounded-2xl border border-slate-200 bg-white px-3 py-2 dark:border-white/10 dark:bg-white/5 sm:flex">
                 <div class="text-right">
-                    <p class="text-xs text-slate-400">Signed in as</p>
+                    <p class="text-xs text-[#FD5528]">Signed in as</p>
                     <p class="text-sm font-medium text-slate-900 dark:text-white">Admin</p>
                 </div>
                 <div class="flex h-10 w-10 items-center justify-center rounded-2xl bg-[#FD5528] text-sm font-bold text-white">

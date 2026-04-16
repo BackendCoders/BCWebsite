@@ -20,7 +20,88 @@
     @endif
 
     <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-        @forelse($services as $service)
+
+@foreach($services as $service)
+
+<article data-aos="fade-up" data-aos-delay="100"
+  class="group relative overflow-hidden rounded-[1.75rem] border border-[#FD5528]/30 bg-gradient-to-b from-white via-white to-orange-50 p-7 shadow-[0_25px_60px_rgba(0,0,0,0.1)] transition duration-500 hover:-translate-y-2 hover:shadow-[#da8871] hover:bg-white/10 hover:backdrop-blur-[18px] text-gray-900">
+
+  <div class="pointer-events-none absolute inset-0 rounded-[1.75rem] bg-gradient-to-br from-[#FD5528]/15 via-white/40 to-white/10 opacity-0 transition duration-500 group-hover:opacity-80 backdrop-blur-[0px] group-hover:backdrop-blur-[24px]"></div>
+
+  <div class="relative z-10 flex flex-col items-center text-center space-y-4">
+
+    <!-- LABEL -->
+    <span class="text-[0.6rem] font-semibold uppercase tracking-[0.4em] text-[#FD5528]">
+      {{ $service->badge_text ?? 'Service' }}
+    </span>
+
+    <!-- ICON -->
+    <div class="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] shadow-inner">
+      @if($service->icon_image)
+        <img src="{{ asset('storage/'.$service->icon_image) }}" class="h-14 w-14" />
+      @else
+        <span class="text-white font-bold text-lg">{{ $service->icon ?? 'S' }}</span>
+      @endif
+    </div>
+
+    <!-- TITLE -->
+    <h3 class="text-xl font-semibold">
+      {{ $service->title }}
+    </h3>
+
+    <!-- DESCRIPTION -->
+    <p class="text-sm text-gray-600">
+      {{ \Illuminate\Support\Str::limit($service->summary, 120) }}
+    </p>
+
+    <!-- TAGS -->
+   <div class="flex flex-1 gap-2">
+     <div class="flex flex-wrap items-center justify-center gap-3 text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-[#FD5528]">
+      @foreach(($service->highlights ?? []) as $highlight)
+        <span class="rounded-full border border-[#FD5528]/70 px-3 py-1">
+          {{ $highlight }}
+        </span>
+      @endforeach
+    </div>
+
+    <div class="flex flex-wrap items-center justify-center gap-3 text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-[#FD5528]">
+            @foreach(($service->technologies ?? []) as $technology)
+                <span class="rounded-full border border-[#FD5528]/70 px-3 py-1">{{ $technology }}</span>
+            @endforeach
+    </div>
+   </div>
+
+
+    <!-- 🔥 ACTION BUTTONS -->
+    <div class="flex gap-3 pt-4">
+
+      <!-- EDIT -->
+      <a href="{{ route('services.edit', $service->id) }}"
+         class="px-4 py-1 text-xs font-semibold rounded-full bg-sky-500/10 text-sky-600 hover:bg-sky-500/20 transition">
+        Edit
+      </a>
+
+      <!-- DELETE -->
+      <form action="{{ route('services.destroy', $service->id) }}" method="POST"
+            onsubmit="return confirm('Delete this service?')">
+        @csrf
+        @method('DELETE')
+
+        <button type="submit"
+                class="px-4 py-1 text-xs font-semibold rounded-full bg-rose-500/10 text-rose-600 hover:bg-rose-500/20 transition">
+          Delete
+        </button>
+      </form>
+
+    </div>
+
+  </div>
+
+</article>
+
+@endforeach
+
+        <!-- @forelse($services as $service)
             <div class="rounded-[2rem] border border-slate-200/70 bg-white/80 p-6 shadow-xl shadow-slate-200/40 backdrop-blur-xl dark:border-white/10 dark:bg-white/5 dark:shadow-black/20">
                 <div class="flex items-start justify-between gap-4">
                     <div class="flex items-center gap-3">
@@ -86,6 +167,6 @@
                 No services found.
             </div>
         @endforelse
-    </div>
+    </div> -->
 </div>
 @endsection

@@ -33,6 +33,14 @@ class CategoryController extends Controller
         return redirect()->route('categories.index')
                          ->with('success', 'Category created successfully');
     }
+    
+    // show categories
+        public function show($id)
+        {
+            $category = \App\Models\Category::findOrFail($id);
+
+            return view('categories.show', compact('category'));
+        }
 
     //  4. Show edit form
     public function edit(Category $category)
@@ -53,6 +61,8 @@ class CategoryController extends Controller
         return redirect()->route('categories.index')
                          ->with('success', 'Category updated successfully');
     }
+
+
 
     //  6. Delete category
     public function destroy(Category $category)

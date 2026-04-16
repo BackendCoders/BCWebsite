@@ -1,7 +1,7 @@
 <form method="POST" action="{{ route('contact.send') }}" novalidate>
     @csrf
 
-    <div class="w-full max-w-4xl  rounded-3xl p-8 md:p-10 space-y-6">
+    <div class="w-full max-w-4xl  rounded-3xl p-2 md:p-10 space-y-6">
 
 
         <!-- NAME ROW -->

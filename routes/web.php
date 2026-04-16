@@ -10,7 +10,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ContactController;
-
+use App\Http\Controllers\SolutionController;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
@@ -71,6 +71,11 @@ Route::post('/career/apply', [CareerApplicationController::class, 'store'])->nam
 
 Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
 Route::resource('categories', CategoryController::class);
+
+Route::resource('solutions', SolutionController::class);
+Route::get('/solutions/{solution}', [SolutionController::class, 'show'])
+    ->name('solutions.show');
+
 Route::resource('blogs', BlogController::class);
 Route::resource('careers', CareerController::class);
 Route::resource('projects', ProjectController::class);

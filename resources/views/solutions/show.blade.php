@@ -58,10 +58,6 @@
 
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-    
-
-
-
 <article data-aos="fade-up" data-aos-delay="100"
   class="group relative overflow-hidden rounded-[1.75rem] border border-[#FD5528]/30 bg-gradient-to-b from-white via-white to-orange-50 p-7 shadow-[0_25px_60px_rgba(0,0,0,0.1)] transition duration-500 hover:-translate-y-2 hover:shadow-[#da8871] hover:bg-white/10 hover:backdrop-blur-[18px] text-gray-900">
 
