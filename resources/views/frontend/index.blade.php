@@ -1459,10 +1459,10 @@ Highly recommended for anyone serious about getting things done right.
         <div class="absolute bottom-6 left-6 h-20 w-20 bg-gradient-to-br from-[#0D0D0D]/10 to-transparent blur-3xl"></div>
 
         <div class="relative mb-6">
-          <h2 class="text-2xl font-semibold text-gray-900">
+          <h2 class="text-2xl text-center font-semibold text-gray-900">
             Contact Us
           </h2>
-          <p class="text-sm text-gray-500 mt-1">
+          <p class="text-sm text-gray-500 text-center mt-1">
              Fill out the form and our team will get back to you shortly to discuss your project requirements. 
           </p>
         </div>
