@@ -58,7 +58,7 @@
 <!-- CARD 1 -->
 <div class="project web bg-white rounded-3xl shadow-lg overflow-hidden p-5 group hover:-translate-y-1 hover:shadow-2xl transition">
   <div class="relative h-44 overflow-hidden mb-4">
-    <img src="https://backendcodersindia.com/assets/images/company-icons/page1.png" class="w-full h-full object-cover group-hover:scale-105 transition">
+    <img src="{{asset('assets/images/ace.png')}}" class="w-full h-full object-cover group-hover:scale-105 transition">
     <span class="absolute top-3 left-3 bg-green-600 text-white text-xs px-3 py-1 rounded-full">LIVE</span>
   </div>
   <div class="p-5 space-y-3">
@@ -82,7 +82,7 @@
 <!-- CARD 2 -->
 <div class="project saas bg-white rounded-3xl shadow-lg overflow-hidden p-5 group hover:-translate-y-1 hover:shadow-2xl transition">
   <div class="relative h-44 overflow-hidden mb-4">
-    <img src="https://backendcodersindia.com/assets/images/company-icons/1.png" class="w-full h-full object-cover">
+    <img src="{{asset('assets/images/tanning.png')}}" class="w-full h-full object-cover">
     <span class="absolute top-3 left-3 bg-green-600 text-white text-xs px-3 py-1 rounded-full">LIVE</span>
   </div>
    <div class="flex justify-between text-[10px] text-gray-400 mb-2">
@@ -109,7 +109,7 @@
 <!-- CARD 3 -->
 <div class="project web bg-white rounded-3xl shadow-lg overflow-hidden p-5 group hover:-translate-y-1 hover:shadow-2xl transition">
   <div class="relative h-44 overflow-hidden mb-4">
-    <img src="https://backendcodersindia.com/assets/images/testemonials/skydatech.png" class="w-full h-full object-cover">
+    <img src="{{asset('assets/images/skydatech.png')}}" class="w-full h-full object-cover">
     <span class="absolute top-3 left-3 bg-green-600 text-white text-xs px-3 py-1 rounded-full">LIVE</span>
   </div>
   <div class="flex justify-between text-[10px] text-gray-400 mb-2">
@@ -136,7 +136,7 @@
 <!-- CARD 4 -->
 <div class="project ecommerce bg-white rounded-3xl shadow-lg overflow-hidden p-5 group hover:-translate-y-1 hover:shadow-2xl transition">
   <div class="relative h-44 overflow-hidden mb-4">
-    <img src="https://backendcodersindia.com/assets/images/company-icons/childcare.png" class="w-full h-full object-cover">
+    <img src="{{asset('assets/images/childcare.png')}}" class="w-full h-full object-cover">
     <span class="absolute top-3 left-3 bg-green-600 text-white text-xs px-3 py-1 rounded-full">LIVE</span>
   </div>
   <div class="flex justify-between text-[10px] text-gray-400 mb-2">
@@ -163,7 +163,7 @@
 <!-- CARD 5 -->
 <div class="project web bg-white rounded-3xl shadow-lg overflow-hidden p-5 group hover:-translate-y-1 hover:shadow-2xl transition">
   <div class="relative h-44 overflow-hidden mb-4">
-    <img src="https://backendcodersindia.com/assets/images/testemonials/marley.png" class="w-full h-full object-cover">
+    <img src="{{asset('assets/images/marley.png')}}" class="w-full h-full object-cover">
     <span class="absolute top-3 left-3 bg-green-600 text-white text-xs px-3 py-1 rounded-full">LIVE</span>
   </div>
    <div class="flex justify-between text-[10px] text-gray-400 mb-2">
@@ -190,7 +190,7 @@
 <!-- CARD 6 -->
 <div class="project crm bg-white rounded-3xl shadow-lg overflow-hidden p-5 group hover:-translate-y-1 hover:shadow-2xl transition">
   <div class="relative h-44 overflow-hidden mb-4">
-    <img src="https://backendcodersindia.com/assets/images/testemonials/er.png" class="w-full h-full object-cover">
+    <img src="{{asset('assets/images/erdata.png')}}" class="w-full h-full object-cover">
     <span class="absolute top-3 left-3 bg-green-600 text-white text-xs px-3 py-1 rounded-full">LIVE</span>
   </div>
   <div class="flex justify-between text-[10px] text-gray-400 mb-2">

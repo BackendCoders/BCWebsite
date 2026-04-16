@@ -272,7 +272,7 @@
 <!-- CARD 1 -->
 <div class="project web bg-white rounded-3xl shadow-lg overflow-hidden p-5 group hover:-translate-y-1 hover:shadow-2xl transition">
   <div class="relative h-44 overflow-hidden mb-4">
-    <img src="https://backendcodersindia.com/assets/images/company-icons/page1.png" class="w-full h-full object-cover group-hover:scale-105 transition">
+    <img src="{{asset('assets/images/ace.png')}}" class="w-full h-full object-cover group-hover:scale-105 transition">
     <span class="absolute top-3 left-3 bg-green-600 text-white text-xs px-3 py-1 rounded-full">LIVE</span>
   </div>
   <div class="p-5 space-y-3">
@@ -296,7 +296,7 @@
 <!-- CARD 2 -->
 <div class="project saas bg-white rounded-3xl shadow-lg overflow-hidden p-5 group hover:-translate-y-1 hover:shadow-2xl transition">
   <div class="relative h-44 overflow-hidden mb-4">
-    <img src="https://backendcodersindia.com/assets/images/company-icons/1.png" class="w-full h-full object-cover">
+    <img src="{{asset('assets/images/tanning.png')}}" class="w-full h-full object-cover">
     <span class="absolute top-3 left-3 bg-green-600 text-white text-xs px-3 py-1 rounded-full">LIVE</span>
   </div>
    <div class="flex justify-between text-[10px] text-gray-400 mb-2">
@@ -323,7 +323,7 @@
 <!-- CARD 3 -->
 <div class="project web bg-white rounded-3xl shadow-lg overflow-hidden p-5 group hover:-translate-y-1 hover:shadow-2xl transition">
   <div class="relative h-44 overflow-hidden mb-4">
-    <img src="https://backendcodersindia.com/assets/images/testemonials/skydatech.png" class="w-full h-full object-cover">
+    <img src="{{asset('assets/images/skydatech.png')}}" class="w-full h-full object-cover">
     <span class="absolute top-3 left-3 bg-green-600 text-white text-xs px-3 py-1 rounded-full">LIVE</span>
   </div>
   <div class="flex justify-between text-[10px] text-gray-400 mb-2">
@@ -350,7 +350,7 @@
 <!-- CARD 4 -->
 <div class="project ecommerce bg-white rounded-3xl shadow-lg overflow-hidden p-5 group hover:-translate-y-1 hover:shadow-2xl transition">
   <div class="relative h-44 overflow-hidden mb-4">
-    <img src="https://backendcodersindia.com/assets/images/company-icons/childcare.png" class="w-full h-full object-cover">
+    <img src="{{asset('assets/images/childcare.png')}}" class="w-full h-full object-cover">
     <span class="absolute top-3 left-3 bg-green-600 text-white text-xs px-3 py-1 rounded-full">LIVE</span>
   </div>
   <div class="flex justify-between text-[10px] text-gray-400 mb-2">
@@ -377,7 +377,7 @@
 <!-- CARD 5 -->
 <div class="project web bg-white rounded-3xl shadow-lg overflow-hidden p-5 group hover:-translate-y-1 hover:shadow-2xl transition">
   <div class="relative h-44 overflow-hidden mb-4">
-    <img src="https://backendcodersindia.com/assets/images/testemonials/marley.png" class="w-full h-full object-cover">
+    <img src="{{asset('assets/images/marley.png')}}" class="w-full h-full object-cover">
     <span class="absolute top-3 left-3 bg-green-600 text-white text-xs px-3 py-1 rounded-full">LIVE</span>
   </div>
    <div class="flex justify-between text-[10px] text-gray-400 mb-2">
@@ -404,7 +404,7 @@
 <!-- CARD 6 -->
 <div class="project crm bg-white rounded-3xl shadow-lg overflow-hidden p-5 group hover:-translate-y-1 hover:shadow-2xl transition">
   <div class="relative h-44 overflow-hidden mb-4">
-    <img src="https://backendcodersindia.com/assets/images/testemonials/er.png" class="w-full h-full object-cover">
+    <img src="{{asset('assets/images/erdata.png')}}" class="w-full h-full object-cover">
     <span class="absolute top-3 left-3 bg-green-600 text-white text-xs px-3 py-1 rounded-full">LIVE</span>
   </div>
   <div class="flex justify-between text-[10px] text-gray-400 mb-2">
@@ -540,13 +540,13 @@
 </div>
 </div>
 <div>
-  <p class="text-sm  text-gray-600 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">From Kanpur to international clients, we build modern digital products and growth systems that combine backend reliability, clean UI, and measurable business impact.</p>
+  <p class="text-sm px-2 text-gray-600 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">From Kanpur to international clients, we build modern digital products and growth systems that combine backend reliability, clean UI, and measurable business impact.</p>
 </div>
 <!-- BUTTON -->
 <div class="text-center my-12">
-  <button class="bg-gradient-to-r from-[#FD5528] to-orange-400 hover:from-[#fbb03b] hover:to-[#FD5528] hover:scale-110 transition-all text-white px-8 py-3 rounded-full shadow-lg">
+ <a href="{{ route('frontend.project') }}"><button class="bg-gradient-to-r from-[#FD5528] to-orange-400 hover:from-[#fbb03b] hover:to-[#FD5528] hover:scale-110 transition-all text-white px-8 py-3 rounded-full shadow-lg">
     View All Projects
-  </button>
+  </button></a> 
 </div>
 
 </div>
@@ -1442,7 +1442,7 @@ Highly recommended for anyone serious about getting things done right.
     
     <p class="text-lg text-gray-600 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
      
-      Have a project in mind or need backend-driven digital solutions? <span class="text-[#FC5124] font-semibold"> Backend Coders</span> India helps businesses in Kanpur, Uttar Pradesh, across India, and international markets build websites, software systems, SaaS products, eCommerce platforms, mobile apps, APIs, SEO campaigns, digital marketing systems, and AI-powered solutions.
+      Have a project in mind or need backend-driven digital solutions? <span class="text-[#FC5124] font-semibold"> Backend Coders India </span> helps businesses in Kanpur, Uttar Pradesh, across India, and international markets build websites, software systems, SaaS products, eCommerce platforms, mobile apps, APIs, SEO campaigns, digital marketing systems, and AI-powered solutions.
     </p>
 
     </div>
