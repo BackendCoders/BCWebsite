@@ -26,6 +26,15 @@
         body {
             font-family: 'Manrope', sans-serif;
         }
+
+        ::-webkit-scrollbar {
+    width: 0px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #FD5528;
+    border-radius: 10px;
+}
     </style>
 </head>
 <body class="bg-slate-100 text-slate-900 antialiased transition-colors duration-300 dark:bg-slate-950 dark:text-slate-100">
@@ -40,72 +49,69 @@
         </main>
     </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const root = document.documentElement;
-            const sidebar = document.getElementById('sidebar');
-            const sidebarBackdrop = document.getElementById('sidebarBackdrop');
-            const sidebarToggle = document.getElementById('sidebarToggle');
-            const themeToggle = document.getElementById('themeToggle');
-            const themeIcon = document.getElementById('themeIcon');
-            const themeLabel = document.getElementById('themeLabel');
+<script>
+document.addEventListener('DOMContentLoaded', function () {
 
-            const applyTheme = (theme) => {
-                const isDark = theme === 'dark';
-                root.classList.toggle('dark', isDark);
-                localStorage.setItem('dashboard-theme', theme);
+    const root = document.documentElement;
+    const sidebar = document.getElementById('sidebar');
+    const sidebarBackdrop = document.getElementById('sidebarBackdrop');
+    const sidebarToggle = document.getElementById('sidebarToggle');
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+    const themeLabel = document.getElementById('themeLabel');
 
-                if (themeIcon) {
-                    themeIcon.textContent = isDark ? '☀' : '☾';
-                }
+    // ✅ THEME FUNCTION
+    const applyTheme = (theme) => {
+        const isDark = theme === 'dark';
+        root.classList.toggle('dark', isDark);
+        localStorage.setItem('dashboard-theme', theme);
 
-                if (themeLabel) {
-                    themeLabel.textContent = isDark ? 'Light' : 'Dark';
-                }
-            };
+        if (themeIcon) themeIcon.textContent = isDark ? '☀' : '☾';
+        if (themeLabel) themeLabel.textContent = isDark ? 'Light' : 'Dark';
+    };
 
-            const savedTheme = localStorage.getItem('dashboard-theme');
-            const preferredTheme = savedTheme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-            applyTheme(preferredTheme);
+    const savedTheme = localStorage.getItem('dashboard-theme');
+    const preferredTheme = savedTheme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    applyTheme(preferredTheme);
 
-            themeToggle?.addEventListener('click', function () {
-                applyTheme(root.classList.contains('dark') ? 'light' : 'dark');
-            });
+    themeToggle?.addEventListener('click', function () {
+        applyTheme(root.classList.contains('dark') ? 'light' : 'dark');
+    });
 
-            const openSidebar = () => {
-                sidebar?.classList.remove('-translate-x-full');
-                sidebarBackdrop?.classList.remove('hidden');
-            };
+    // ✅ SIDEBAR FUNCTIONS
+    const openSidebar = () => {
+        sidebar?.classList.remove('-translate-x-full');
+        sidebarBackdrop?.classList.remove('hidden');
+    };
 
-            const closeSidebar = () => {
-                sidebar?.classList.add('-translate-x-full');
-                sidebarBackdrop?.classList.add('hidden');
-            };
+    const closeSidebar = () => {
+        sidebar?.classList.add('-translate-x-full');
+        sidebarBackdrop?.classList.add('hidden');
+    };
 
-            sidebarToggle?.addEventListener('click', function () {
-                const isOpen = sidebar && !sidebar.classList.contains('-translate-x-full');
-                if (isOpen) {
-                    closeSidebar();
-                } else {
-                    openSidebar();
-                }
-            });
+    // ✅ TOGGLE CLICK
+    sidebarToggle?.addEventListener('click', function () {
+        const isOpen = !sidebar?.classList.contains('-translate-x-full');
+        isOpen ? closeSidebar() : openSidebar();
+    });
 
-            sidebarBackdrop?.addEventListener('click', closeSidebar);
+    // ✅ BACKDROP CLICK
+    sidebarBackdrop?.addEventListener('click', closeSidebar);
 
-            if (window.innerWidth >= 1024 && sidebar) {
-                sidebar.classList.remove('-translate-x-full');
-            }
+    // ✅ DESKTOP FIX
+    const handleResize = () => {
+        if (window.innerWidth >= 1024) {
+            sidebar?.classList.remove('-translate-x-full');
+            sidebarBackdrop?.classList.add('hidden');
+        } else {
+            sidebar?.classList.add('-translate-x-full');
+        }
+    };
 
-            window.addEventListener('resize', function () {
-                if (window.innerWidth >= 1024) {
-                    sidebar?.classList.remove('-translate-x-full');
-                    sidebarBackdrop?.classList.add('hidden');
-                } else if (!sidebar?.classList.contains('-translate-x-full')) {
-                    sidebarBackdrop?.classList.remove('hidden');
-                }
-            });
-        });
-    </script>
+    handleResize();
+    window.addEventListener('resize', handleResize);
+
+});
+</script>
 </body>
 </html>

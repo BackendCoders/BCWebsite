@@ -1,4 +1,4 @@
-<div id="sidebarBackdrop" class="fixed inset-0 z-30 hidden bg-slate-950/50 backdrop-blur-sm lg:hidden"></div>
+<div id="sidebarBackdrop" class="fixed inset-0 z-30 hidden bg-slate-950/50 backdrop-blur-sm lg:hidden "></div>
 
 <aside
     id="sidebar"
@@ -27,7 +27,7 @@
         </div>
     </div>
 
-    <nav class="mt-8 flex-1 space-y-1">
+    <nav class="mt-8 flex-1 space-y-1 overflow-y-auto no-scrollbar">
         <p class="px-3 text-xs font-semibold uppercase tracking-[0.3em] text-slate-400">Menu</p>
         <a href="{{ route('dashboard') }}" class="flex items-center gap-3 rounded-2xl bg-[#FD5528] px-4 py-3 text-sm font-semibold text-white shadow-lg shadow-[#FD5528]/25 transition">
             <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-white/15">•</span>
@@ -62,7 +62,7 @@
             Careers
         </a>
 
-        <a href="{{ route('frontend.contact') }}" class="flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-medium text-slate-600 transition hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-white/5">
+        <a href="{{ route('frontend.career') }}" class="flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-medium text-slate-600 transition hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-white/5">
             <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-slate-100 text-slate-500 dark:bg-white/5 dark:text-slate-300">C</span>
             Applications
         </a>

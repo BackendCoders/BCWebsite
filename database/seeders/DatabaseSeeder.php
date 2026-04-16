@@ -27,6 +27,8 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('AdminPass123!'),
         ]);
 
+        
+
         ServiceCategory::factory()
             ->count(6)
             ->create()
