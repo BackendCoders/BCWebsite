@@ -1462,7 +1462,7 @@ Highly recommended for anyone serious about getting things done right.
           <h2 class="text-2xl text-center font-semibold text-gray-900">
             Contact Us
           </h2>
-          <p class="text-sm text-gray-500 text-center mt-1">
+          <p class="text-sm text-gray-500 text-center mt-1 px-2">
              Fill out the form and our team will get back to you shortly to discuss your project requirements. 
           </p>
         </div>
