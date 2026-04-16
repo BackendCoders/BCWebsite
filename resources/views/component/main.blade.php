@@ -4,7 +4,18 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
   <title>Backend Coders India | Web Development Company in Kanpur, India | Custom Software, SaaS, SEO, Mobile App & AI Solutions</title>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WLWCJJ7N');</script>
+<!-- End Google Tag Manager -->
+
   <meta name="description" content="Backend Coders India is a trusted web development company in Kanpur, India delivering custom software development, SaaS platforms, website design, SEO, digital marketing, mobile apps, API development, and AI solutions for Indian and international clients." />
   
  <script src="https://cdn.tailwindcss.com"></script>
@@ -298,6 +309,12 @@
 
 
 </style>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WLWCJJ7N"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
     @include('component.header')
 
 <div class="" style="font-family:Space Grotesk, sans-serif; font-body: Inter, sans-serif;

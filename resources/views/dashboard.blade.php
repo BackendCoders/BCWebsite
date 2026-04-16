@@ -17,9 +17,8 @@
                         <p class="mt-4 max-w-xl text-sm leading-6 text-slate-500 dark:text-slate-300 sm:text-base">
                             This workspace shows live counts from your database, recent categories, and the latest blog posts while keeping the orange, white, and gray theme consistent.
                         </p>
-                    </div>
 
-                    <div class="grid min-w-[240px] gap-4 rounded-[1.75rem] bg-slate-50 p-4 ring-1 ring-slate-200/70 dark:bg-white/5 dark:ring-white/10">
+                         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 rounded-[1.75rem] bg-slate-50 p-4 ring-1 ring-slate-200/70 dark:bg-white/5 dark:ring-white/10">
                         <div class="flex items-center justify-between rounded-2xl bg-white p-4 shadow-sm dark:bg-slate-950/40">
                             <div>
                                 <p class="text-xs uppercase tracking-[0.3em] text-slate-400">Categories</p>
@@ -63,6 +62,52 @@
                             <span class="rounded-full bg-emerald-500/10 px-3 py-1 text-xs font-semibold text-emerald-600">Ready</span>
                         </div>
                     </div>
+                    </div>
+
+                    <!-- <div class="grid min-w-[240px] gap-4 rounded-[1.75rem] bg-slate-50 p-4 ring-1 ring-slate-200/70 dark:bg-white/5 dark:ring-white/10">
+                        <div class="flex items-center justify-between rounded-2xl bg-white p-4 shadow-sm dark:bg-slate-950/40">
+                            <div>
+                                <p class="text-xs uppercase tracking-[0.3em] text-slate-400">Categories</p>
+                                <p class="mt-1 text-2xl font-bold text-slate-900 dark:text-white">{{ $categoryCount }}</p>
+                            </div>
+                            <span class="rounded-full bg-[#FD5528]/10 px-3 py-1 text-xs font-semibold text-[#FD5528]">Live</span>
+                        </div>
+                        <div class="flex items-center justify-between rounded-2xl bg-white p-4 shadow-sm dark:bg-slate-950/40">
+                            <div>
+                                <p class="text-xs uppercase tracking-[0.3em] text-slate-400">Blogs</p>
+                                <p class="mt-1 text-2xl font-bold text-slate-900 dark:text-white">{{ $blogCount }}</p>
+                            </div>
+                            <span class="rounded-full bg-emerald-500/10 px-3 py-1 text-xs font-semibold text-emerald-600">Published</span>
+                        </div>
+                        <div class="flex items-center justify-between rounded-2xl bg-white p-4 shadow-sm dark:bg-slate-950/40">
+                            <div>
+                                <p class="text-xs uppercase tracking-[0.3em] text-slate-400">Careers</p>
+                                <p class="mt-1 text-2xl font-bold text-slate-900 dark:text-white">{{ $careerCount }}</p>
+                            </div>
+                            <span class="rounded-full bg-sky-500/10 px-3 py-1 text-xs font-semibold text-sky-600">Hiring</span>
+                        </div>
+                        <div class="flex items-center justify-between rounded-2xl bg-white p-4 shadow-sm dark:bg-slate-950/40">
+                            <div>
+                                <p class="text-xs uppercase tracking-[0.3em] text-slate-400">Applications</p>
+                                <p class="mt-1 text-2xl font-bold text-slate-900 dark:text-white">{{ $applicationCount }}</p>
+                            </div>
+                            <span class="rounded-full bg-amber-500/10 px-3 py-1 text-xs font-semibold text-amber-600">New</span>
+                        </div>
+                        <div class="flex items-center justify-between rounded-2xl bg-white p-4 shadow-sm dark:bg-slate-950/40">
+                            <div>
+                                <p class="text-xs uppercase tracking-[0.3em] text-slate-400">Projects</p>
+                                <p class="mt-1 text-2xl font-bold text-slate-900 dark:text-white">{{ $projectCount }}</p>
+                            </div>
+                            <span class="rounded-full bg-[#FD5528]/10 px-3 py-1 text-xs font-semibold text-[#FD5528]">Live</span>
+                        </div>
+                        <div class="flex items-center justify-between rounded-2xl bg-white p-4 shadow-sm dark:bg-slate-950/40">
+                            <div>
+                                <p class="text-xs uppercase tracking-[0.3em] text-slate-400">Services</p>
+                                <p class="mt-1 text-2xl font-bold text-slate-900 dark:text-white">{{ $serviceCount }}</p>
+                            </div>
+                            <span class="rounded-full bg-emerald-500/10 px-3 py-1 text-xs font-semibold text-emerald-600">Ready</span>
+                        </div>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -160,49 +205,7 @@
         </div>
     </section>
 
-     <section class="grid gap-6 xl:grid-cols-12">
-        <div class="xl:col-span-12">
-            <div class="rounded-[2rem] border border-slate-200/70 bg-white/80 p-6 shadow-xl shadow-slate-200/40 backdrop-blur-xl dark:border-white/10 dark:bg-white/5 dark:shadow-black/20">
-                <div class="flex items-center justify-between">
-                    <div>
-                        <p class="text-sm text-slate-500 dark:text-slate-400">Recent Leads</p>
-                        <h3 class="mt-1 text-xl font-semibold text-slate-900 dark:text-white">Latest leads form submissions</h3>
-                    </div>
-                </div>
-
-                <div class="mt-6 overflow-x-auto">
-                    <table class="min-w-full divide-y divide-slate-200/70 text-left dark:divide-white/10">
-                        <thead class="text-xs uppercase tracking-[0.3em] text-slate-400">
-                            <tr>
-                                <th class="py-3 pr-4 font-semibold"> First Name</th>
-                                 <th class="py-3 pr-4 font-semibold">Last Name</th>
-                                <th class="py-3 pr-4 font-semibold">Phone</th>
-                                <th class="py-3 pr-4 font-semibold">Email</th>                            
-                                <th class="py-3 pr-4 font-semibold">Message</th>
-                            
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-slate-200/70 text-sm dark:divide-white/10">
-                            @forelse($contacts as $contact)
-                                <tr>
-                                    <td class="py-4 pr-4 font-medium text-slate-900 dark:text-white">{{ $contact->first_name }}</td>
-                                    <td class="py-4 pr-4 font-medium text-slate-900 dark:text-white">{{ $contact->last_name }}</td>
-                                    <td class="py-4 pr-4 text-slate-500 dark:text-slate-300">{{ $contact->phone ?? '-' }}</td>
-                                    <td class="py-4 pr-4 text-slate-500 dark:text-slate-300">{{ $contact->email }}</td>
-                                    <td class="py-4 pr-4 text-slate-500 dark:text-slate-300">{{ $contact->message }}</td>
-                                 
-                                </tr>
-                            @empty
-                                <tr>
-                                    <td colspan="6" class="py-10 text-center text-slate-500 dark:text-slate-400">No applications received yet.</td>
-                                </tr>
-                            @endforelse
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-</section>
+   
 
     <section class="grid gap-6 xl:grid-cols-12">
         <div class="xl:col-span-12">
