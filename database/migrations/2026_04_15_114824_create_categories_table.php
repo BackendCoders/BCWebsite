@@ -16,9 +16,17 @@ return new class extends Migration
         $table->string('name');
         $table->string('slug')->unique(); 
         $table->text('description')->nullable();
+        // ✅ SEO
+        // $table->string('meta_title')->nullable();
+        // $table->text('meta_description')->nullable();
+        // $table->text('meta_keywords')->nullable();
+        // $table->boolean('status')->default(1);
         $table->timestamps();
     });
 }
+
+// 
+
 
     /**
      * Reverse the migrations.
