@@ -18,14 +18,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        User::factory(8)->create();
-
-        User::factory()->create([
-            'name' => 'System Admin',
-            'email' => 'admin@example.com',
-            'role' => User::ROLE_ADMIN,
-            'password' => Hash::make('AdminPass123!'),
-        ]);
+        User::updateOrCreate(
+    ['email' => 'admin@example.com'], // check condition
+    [
+        'name' => 'System Admin',
+        'role' => User::ROLE_ADMIN,
+        'password' => Hash::make('AdminPass123!'),
+    ]
+);
 
         
 
