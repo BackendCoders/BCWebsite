@@ -39,6 +39,7 @@
                 <tr>
                     <th class="p-4">ID</th>
                     <th>Name</th>
+                     <th>Slug</th>
                     <th class="text-center">Action</th>
                 </tr>
             </thead>
@@ -53,6 +54,11 @@
                     <td class="font-semibold">
                         {{ $category->name }}
                     </td>
+
+                     <td class="font-semibold">
+                        {{ $category->slug }}
+                    </td>
+
 
                     <td class="text-center space-x-2">
 

@@ -113,5 +113,43 @@ document.addEventListener('DOMContentLoaded', function () {
 
 });
 </script>
+<link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+<script src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+
+    var quill = new Quill('#editor', {
+        theme: 'snow',
+        placeholder: 'Write your blog content here...',
+        modules: {
+            toolbar: [
+                [{ 'header': [1, 2, 3, false] }],
+                ['bold', 'italic', 'underline'],
+                ['link', 'image'],
+                [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+                ['clean']
+            ]
+        }
+    });
+
+    // ✅ Load old value (create form)
+    var oldContent = `{!! old('content') !!}`;
+    if (oldContent) {
+        quill.root.innerHTML = oldContent;
+    }
+
+    // ✅ Save before submit
+    document.querySelector('form').addEventListener('submit', function () {
+        document.querySelector('#content').value = quill.root.innerHTML;
+    });
+
+});
+
+
+
+</script>
+
+
 </body>
 </html>

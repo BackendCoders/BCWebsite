@@ -55,7 +55,15 @@
 
             <div>
                 <label class="mb-2 block text-sm font-medium text-slate-700">Content</label>
-                <textarea name="content" rows="8" class="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-[#FD5528] focus:ring-4 focus:ring-[#FD5528]/10">{{ old('content', $blog->content) }}</textarea>
+                <!-- <textarea name="content"  rows="8" class="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-[#FD5528] focus:ring-4 focus:ring-[#FD5528]/10" id="editor"  style="height: 300px;">{{ old('content', $blog->content) }}</textarea> -->
+                         <!-- ✅ Quill Editor -->
+            <!-- ✅ Quill Editor -->
+    <div id="editor" style="height: 300px;"
+         class="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3"></div>
+
+    <!-- ✅ Hidden Input -->
+    <input type="hidden" name="content" id="content"
+           value="{{ old('content', $blog->content) }}">
             </div>
 
             <div class="flex flex-col-reverse gap-3 sm:flex-row sm:justify-end">
@@ -69,4 +77,28 @@
         </form>
     </div>
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+
+    var quill = new Quill('#editor', {
+        theme: 'snow',
+        placeholder: 'Write your blog content here...'
+    });
+
+    // ✅ Load existing content (EDIT PAGE FIX 🔥)
+    var oldContent = `{!! addslashes(old('content', $blog->content)) !!}`;
+    
+    if (oldContent) {
+        quill.root.innerHTML = oldContent;
+    }
+
+    // ✅ Save to hidden input on submit
+    document.querySelector('form').addEventListener('submit', function () {
+        document.querySelector('#content').value = quill.root.innerHTML;
+    });
+
+});
+</script>
+
 @endsection

@@ -27,6 +27,16 @@
                        class="w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#FD5528]">
             </div>
 
+            <div>
+                <label class="block text-gray-700 font-medium mb-1">
+                    Slug
+                </label>
+                <input type="text"
+                       name="slug"
+                       placeholder="Enter category name"
+                       class="w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#FD5528]">
+            </div>
+
             <!-- 📌 Description -->
             <div>
                 <label class="block text-gray-700 font-medium mb-1">
