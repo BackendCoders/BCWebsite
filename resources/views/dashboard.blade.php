@@ -1,6 +1,8 @@
+
 @extends('layout.main')
 
 @section('content')
+<x-app-layout>
 <div class="space-y-6">
     <section class="grid gap-6 xl:grid-cols-12">
         <div class="xl:col-span-8">
@@ -365,4 +367,5 @@
         </div>
     </section>
 </div>
+</x-app-layout>
 @endsection

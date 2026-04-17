@@ -3,25 +3,25 @@
 @section('content')
 <div class="mx-auto max-w-4xl space-y-6">
     <div>
-        <h2 class="text-3xl font-bold text-slate-900 dark:text-white">Edit blog</h2>
-        <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">Update the blog post details.</p>
+        <h2 class="text-3xl font-bold text-slate-900">Edit blog</h2>
+        <p class="mt-1 text-sm text-slate-500">Update the blog post details.</p>
     </div>
 
-    <div class="rounded-[2rem] border border-slate-200/70 bg-white/80 p-6 shadow-xl shadow-slate-200/40 backdrop-blur-xl dark:border-white/10 dark:bg-white/5 dark:shadow-black/20">
+    <div class="rounded-[2rem] border border-slate-200/70 bg-white/80 p-6 shadow-xl shadow-slate-200/40 backdrop-blur-xl">
         <form action="{{ route('blogs.update', $blog) }}" method="POST" enctype="multipart/form-data" class="grid gap-5">
             @csrf
             @method('PUT')
 
             <div class="grid gap-5 md:grid-cols-2">
                 <div>
-                    <label class="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-200">Title</label>
-                    <input type="text" name="title" value="{{ old('title', $blog->title) }}" class="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-[#FD5528] focus:ring-4 focus:ring-[#FD5528]/10 dark:border-white/10 dark:bg-slate-950/40 dark:text-white">
+                    <label class="mb-2 block text-sm font-medium text-slate-700">Title</label>
+                    <input type="text" name="title" value="{{ old('title', $blog->title) }}" class="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-[#FD5528] focus:ring-4 focus:ring-[#FD5528]/10">
                     @error('title')<p class="mt-2 text-sm text-rose-500">{{ $message }}</p>@enderror
                 </div>
 
                 <div>
-                    <label class="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-200">Category</label>
-                    <select name="category_id" class="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-slate-900 outline-none transition focus:border-[#FD5528] focus:ring-4 focus:ring-[#FD5528]/10 dark:border-white/10 dark:bg-slate-950/40 dark:text-white">
+                    <label class="mb-2 block text-sm font-medium text-slate-700">Category</label>
+                    <select name="category_id" class="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-slate-900 outline-none transition focus:border-[#FD5528] focus:ring-4 focus:ring-[#FD5528]/10">
                         <option value="">Select category</option>
                         @foreach($categories as $category)
                             <option value="{{ $category->id }}" @selected(old('category_id', $blog->category_id) == $category->id)>{{ $category->name }}</option>
@@ -32,34 +32,34 @@
 
             <div class="grid gap-5 md:grid-cols-2">
                 <div>
-                    <label class="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-200">Blog image</label>
-                    <input type="file" name="image" accept="image/*" class="w-full rounded-2xl border border-dashed border-slate-300 bg-white px-4 py-3 text-sm text-slate-600 outline-none transition file:mr-4 file:rounded-xl file:border-0 file:bg-[#FD5528] file:px-4 file:py-2 file:text-sm file:font-semibold file:text-white focus:border-[#FD5528] focus:ring-4 focus:ring-[#FD5528]/10 dark:border-white/10 dark:bg-slate-950/40 dark:text-slate-300">
+                    <label class="mb-2 block text-sm font-medium text-slate-700">Blog image</label>
+                    <input type="file" name="image" accept="image/*" class="w-full rounded-2xl border border-dashed border-slate-300 bg-white px-4 py-3 text-sm text-slate-600 outline-none transition file:mr-4 file:rounded-xl file:border-0 file:bg-[#FD5528] file:px-4 file:py-2 file:text-sm file:font-semibold file:text-white focus:border-[#FD5528] focus:ring-4 focus:ring-[#FD5528]/10">
                     @if($blog->image)
-                        <div class="mt-3 overflow-hidden rounded-2xl border border-slate-200 dark:border-white/10">
+                        <div class="mt-3 overflow-hidden rounded-2xl border border-slate-200">
                             <img src="{{ asset('storage/' . $blog->image) }}" alt="{{ $blog->title }}" class="h-44 w-full object-cover">
                         </div>
                     @endif
                     @error('image')<p class="mt-2 text-sm text-rose-500">{{ $message }}</p>@enderror
                 </div>
 
-                <div class="flex items-center gap-3 rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 dark:border-white/10 dark:bg-slate-950/40">
+                <div class="flex items-center gap-3 rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3">
                     <input id="is_published" type="checkbox" name="is_published" value="1" class="h-5 w-5 rounded border-slate-300 text-[#FD5528] focus:ring-[#FD5528]" @checked(old('is_published', $blog->is_published))>
-                    <label for="is_published" class="text-sm font-medium text-slate-700 dark:text-slate-200">Publish immediately</label>
+                    <label for="is_published" class="text-sm font-medium text-slate-700">Publish immediately</label>
                 </div>
             </div>
 
             <div>
-                <label class="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-200">Excerpt</label>
-                <textarea name="excerpt" rows="3" class="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-[#FD5528] focus:ring-4 focus:ring-[#FD5528]/10 dark:border-white/10 dark:bg-slate-950/40 dark:text-white">{{ old('excerpt', $blog->excerpt) }}</textarea>
+                <label class="mb-2 block text-sm font-medium text-slate-700">Excerpt</label>
+                <textarea name="excerpt" rows="3" class="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-[#FD5528] focus:ring-4 focus:ring-[#FD5528]/10">{{ old('excerpt', $blog->excerpt) }}</textarea>
             </div>
 
             <div>
-                <label class="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-200">Content</label>
-                <textarea name="content" rows="8" class="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-[#FD5528] focus:ring-4 focus:ring-[#FD5528]/10 dark:border-white/10 dark:bg-slate-950/40 dark:text-white">{{ old('content', $blog->content) }}</textarea>
+                <label class="mb-2 block text-sm font-medium text-slate-700">Content</label>
+                <textarea name="content" rows="8" class="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-[#FD5528] focus:ring-4 focus:ring-[#FD5528]/10">{{ old('content', $blog->content) }}</textarea>
             </div>
 
             <div class="flex flex-col-reverse gap-3 sm:flex-row sm:justify-end">
-                <a href="{{ route('blogs.index') }}" class="inline-flex items-center justify-center rounded-2xl border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-slate-700 transition hover:border-[#FD5528] hover:text-[#FD5528] dark:border-white/10 dark:bg-slate-950/40 dark:text-slate-200">
+                <a href="{{ route('blogs.index') }}" class="inline-flex items-center justify-center rounded-2xl border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-slate-700 transition hover:border-[#FD5528] hover:text-[#FD5528]">
                     Cancel
                 </a>
                 <button type="submit" class="inline-flex items-center justify-center rounded-2xl bg-[#FD5528] px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-[#FD5528]/25 transition hover:bg-[#e94c20]">

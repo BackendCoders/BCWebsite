@@ -37,8 +37,8 @@
 }
     </style>
 </head>
-<body class="bg-slate-100 text-slate-900 antialiased transition-colors duration-300 dark:bg-slate-950 dark:text-slate-100">
-    <div class="min-h-screen bg-[radial-gradient(circle_at_top_right,_rgba(253,85,40,0.16),_transparent_30%),radial-gradient(circle_at_top_left,_rgba(148,163,184,0.18),_transparent_24%)] dark:bg-[radial-gradient(circle_at_top_right,_rgba(253,85,40,0.18),_transparent_30%),radial-gradient(circle_at_top_left,_rgba(51,65,85,0.24),_transparent_24%)]">
+<body class="bg-slate-100 text-slate-900 antialiased transition-colors duration-300">
+    <div class="min-h-screen bg-[radial-gradient(circle_at_top_right,_rgba(253,85,40,0.16),_transparent_30%),radial-gradient(circle_at_top_left,_rgba(148,163,184,0.18),_transparent_24%)]">
         @include('layout.header')
 
         <main class="min-h-screen lg:pl-72">

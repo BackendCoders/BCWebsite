@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DashboardController;
@@ -11,6 +12,8 @@ use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\SolutionController;
+
+
 // Route::get('/', function () {
 //     return view('welcome');
 // });
@@ -69,8 +72,37 @@ Route::post('/career/apply', [CareerApplicationController::class, 'store'])->nam
 
 // DASHBOARD::
 
-Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
-Route::resource('categories', CategoryController::class);
+// Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
+// Route::resource('categories', CategoryController::class);
+
+// Route::resource('solutions', SolutionController::class);
+// Route::get('/solutions/{solution}', [SolutionController::class, 'show'])
+//     ->name('solutions.show');
+
+// Route::resource('blogs', BlogController::class);
+// Route::resource('careers', CareerController::class);
+// Route::resource('projects', ProjectController::class);
+// Route::resource('services', ServiceController::class);
+
+
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
+
+
+
+Route::middleware(['auth'])->group(function () {
+
+    Route::get('/dashboard', [DashboardController::class, 'index'])
+        ->name('dashboard');
+
+});
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::resource('categories', CategoryController::class);
 
 Route::resource('solutions', SolutionController::class);
 Route::get('/solutions/{solution}', [SolutionController::class, 'show'])
@@ -81,3 +113,7 @@ Route::resource('careers', CareerController::class);
 Route::resource('projects', ProjectController::class);
 Route::resource('services', ServiceController::class);
 
+
+});
+
+require __DIR__.'/auth.php';

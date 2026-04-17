@@ -34,17 +34,17 @@ class ContactController extends Controller
 
         try {
             //  3. SAVE TO DATABASE
-            Contact::create([
-                'name'     => $validated['name'],
-                'email'    => $validated['email'],
-                'phone'    => $validated['phone'] ?? null,
-                'country'  => $validated['country'] ?? null,
-                'product'  => $validated['product'] ?? null,
-                'quantity' => $validated['quantity'] ?? null,
-                'message'  => $validated['message'],
+            // Contact::create([
+            //     'name'     => $validated['name'],
+            //     'email'    => $validated['email'],
+            //     'phone'    => $validated['phone'] ?? null,
+            //     'country'  => $validated['country'] ?? null,
+            //     'product'  => $validated['product'] ?? null,
+            //     'quantity' => $validated['quantity'] ?? null,
+            //     'message'  => $validated['message'],
 
        
-            ]);
+            // ]);
 
 
             //  4. SEND EMAIL TO ADMIN
