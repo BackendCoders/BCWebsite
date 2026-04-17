@@ -12,6 +12,7 @@ use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\SolutionController;
+use App\Http\Controllers\ServiceDetailController;
 
 
 // Route::get('/', function () {
@@ -113,6 +114,7 @@ Route::resource('careers', CareerController::class);
 Route::resource('projects', ProjectController::class);
 Route::resource('services', ServiceController::class);
 
+Route::resource('service-details', ServiceDetailController::class);
 
 });
 

@@ -105,11 +105,11 @@
 
             <div>
                 <p class="text-xs uppercase tracking-[0.35em] text-[#FD5528] font-bold">Dashboard</p>
-                <h2 class="text-lg font-semibold text-slate-900">Welcome back, Admin</h2>
+                <h2 class="text-lg font-semibold text-slate-900">Welcome, Admin</h2>
             </div>
         </div>
 
-        <div class="hidden max-w-xl flex-1 px-8 xl:block">
+        <!-- <div class="hidden max-w-xl flex-1 px-8 xl:block">
             <label class="relative block">
                 <span class="sr-only">Search</span>
                 <span class="pointer-events-none absolute inset-y-0 left-4 flex items-center text-slate-400">⌕</span>
@@ -119,7 +119,7 @@
                     class="w-full rounded-2xl border border-slate-200 bg-slate-50 py-3 pl-11 pr-4 text-sm text-slate-700 outline-none transition placeholder:text-slate-400 focus:border-[#FD5528] focus:ring-4 focus:ring-[#FD5528]/10"
                 >
             </label>
-        </div>
+        </div> -->
 
         <div class="flex items-center gap-3">
             <!-- <button
