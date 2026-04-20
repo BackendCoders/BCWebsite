@@ -54,50 +54,110 @@ class HomeController extends Controller
     }
 
     public function service(){
-        return view('frontend.service');
+        // return view('frontend.service');
+          $page = Page::with('sections.items')
+        ->where('slug', 'service')
+        ->first();
+
+    return view('frontend.service', compact('page'));
     }
 
      public function project(){
-        return view('frontend.project');
+        // return view('frontend.project');
+          $page = Page::with('sections.items')
+        ->where('slug', 'project')
+        ->first();
+
+    return view('frontend.project', compact('page'));
     }
 
     public function contact(){
-            return view('frontend.contact');
+            // return view('frontend.contact');
+              $page = Page::with('sections.items')
+        ->where('slug', 'contact')
+        ->first();
+
+    return view('frontend.contact', compact('page'));
     }
 
     public function process(){
-            return view('frontend.process');
+            // return view('frontend.process');
+              $page = Page::with('sections.items')
+        ->where('slug', 'process')
+        ->first();
+
+    return view('frontend.process', compact('page'));
     }
 
     public function packages(){
-            return view('frontend.packages');
+            // return view('frontend.packages');
+              $page = Page::with('sections.items')
+        ->where('slug', 'packages')
+        ->first();
+
+    return view('frontend.packages', compact('page'));
     }
 
     public function career(){
-            return view('frontend.career');
+            // return view('frontend.career');
+              $page = Page::with('sections.items')
+        ->where('slug', 'packages')
+        ->first();
+
+    return view('frontend.packages', compact('page'));
     }
 
     public function blog(){
-            return view('frontend.blog');
+            // return view('frontend.blog');
+              $page = Page::with('sections.items')
+        ->where('slug', 'blog')
+        ->first();
+
+    return view('frontend.blog', compact('page'));
     }
 
     public function blog_detail(){
-       return view('frontend.blog-detail');
+    //    return view('frontend.blog-detail');
+      $page = Page::with('sections.items')
+        ->where('slug', 'blog-detail')
+        ->first();
+
+    return view('frontend.blog-detail', compact('page'));
      }
 
         public function terms(){
-                return view('frontend.terms');
+                // return view('frontend.terms');
+                  $page = Page::with('sections.items')
+        ->where('slug', 'terms')
+        ->first();
+
+    return view('frontend.terms', compact('page'));
         }
 
      public function privacy_policy(){
-                return view('frontend.privacy_policy');
+                // return view('frontend.privacy_policy');
+                  $page = Page::with('sections.items')
+        ->where('slug', 'privacy policy')
+        ->first();
+
+    return view('frontend.privacy_policy', compact('page'));
         }
         public function faq(){
-                 return view('frontend.faq');
+                //  return view('frontend.faq');
+                  $page = Page::with('sections.items')
+        ->where('slug', 'faq')
+        ->first();
+
+    return view('frontend.faq', compact('page'));
            } 
            
         public function help(){
-                 return view('frontend.help');
+                //  return view('frontend.help');
+                  $page = Page::with('sections.items')
+        ->where('slug', 'help')
+        ->first();
+
+    return view('frontend.help', compact('page'));
            }
 
         public function digital_marketing(){
