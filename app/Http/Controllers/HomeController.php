@@ -8,13 +8,23 @@ use App\Models\CareerApplication;
 use App\Models\Category;
 use App\Models\Project;
 use App\Models\Service;
+use App\Models\Page;
+
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
     public function index(){
-        return view('frontend.index');
-    }
+        
+        // return view('frontend.index');
+ 
+    $page = Page::with('sections.items')
+        ->where('slug', 'home')
+        ->first();
+
+    return view('frontend.index', compact('page'));
+}
+    
 
     public function dashboard(){
         return view('dashboard', [
@@ -34,7 +44,13 @@ class HomeController extends Controller
     }
 
     public function about(){
-        return view('frontend.about');
+        // return view('frontend.about');
+        $page = Page::with('sections.items')
+        ->where('slug', 'about')
+        ->first();
+
+    return view('frontend.about', compact('page'));
+
     }
 
     public function service(){

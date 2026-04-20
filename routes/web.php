@@ -13,7 +13,9 @@ use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\SolutionController;
 use App\Http\Controllers\ServiceDetailController;
+use App\Http\Controllers\PageController;
 
+use App\Models\Page;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -115,6 +117,8 @@ Route::resource('projects', ProjectController::class);
 Route::resource('services', ServiceController::class);
 
 Route::resource('service-details', ServiceDetailController::class);
+
+Route::resource('pages', PageController::class);
 
 });
 

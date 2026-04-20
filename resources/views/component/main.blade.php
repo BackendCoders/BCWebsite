@@ -6,7 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 
-  <title>Backend Coders India | Web Development Company in Kanpur, India | Custom Software, SaaS, SEO, Mobile App & AI Solutions</title>
+  <!-- <title>Backend Coders India | Web Development Company in Kanpur, India | Custom Software, SaaS, SEO, Mobile App & AI Solutions</title> -->
+<title>{{ $page->meta_title ?? $page->title ?? 'Backend Coders India | Web Development Company in Kanpur, India | Custom Software, SaaS, SEO, Mobile App & AI Solutions' }}</title>
+
+<meta name="description" content="{{ $page->meta_description ?? 'Backend Coders India is a trusted web development company in Kanpur, India delivering custom software development, SaaS platforms, website design, SEO, digital marketing, mobile apps, API development, and AI solutions for Indian and international clients.' }}">
 
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -16,8 +19,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-WLWCJJ7N');</script>
 <!-- End Google Tag Manager -->
 
-  <meta name="description" content="Backend Coders India is a trusted web development company in Kanpur, India delivering custom software development, SaaS platforms, website design, SEO, digital marketing, mobile apps, API development, and AI solutions for Indian and international clients." />
-  
+  <!-- <meta name="description" content="Backend Coders India is a trusted web development company in Kanpur, India delivering custom software development, SaaS platforms, website design, SEO, digital marketing, mobile apps, API development, and AI solutions for Indian and international clients." /> -->
+
+<link rel="canonical" href="{{ $page->canonical_url ?? url()->current() }}">
+
+  <!-- <link rel="canonical" href="{{ $page->canonical_url ?? url()->current() }}"> -->
+
+
  <script src="https://cdn.tailwindcss.com"></script>
 <link rel="icon" type="image/svg+xml" alt="web development company in Kanpur" href="{{asset('assets/images/bci_icon.png')}}" class="bg-black"/>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -40,6 +48,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
  
   <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}" />
+
+  @if(optional($page)->is_index === 0)
+    <meta name="robots" content="noindex, nofollow">
+@endif
+
 <style>
  
 .active-link {
@@ -309,6 +322,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
 </style>
+</head>
 <body>
   <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WLWCJJ7N"
