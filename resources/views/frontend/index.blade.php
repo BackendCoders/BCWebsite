@@ -1238,8 +1238,8 @@
       </div>
 
       <div>
-        <h4 class="font-semibold text-gray-900 text-sm">Minwoong J.</h4>
-        <p class="text-xs text-gray-500">1 May 2025 </p>
+        <h4 class="font-semibold text-gray-900 text-sm">Dashawn R.</h4>
+        <p class="text-xs text-gray-500">June 6, 2025</p>
       </div>
     </div>
 
@@ -1255,7 +1255,7 @@
 
   <!-- REVIEW TEXT -->
   <p class="text-gray-700 text-start text-sm leading-relaxed mb-4">
-   Ravindra is outstanding—he built our website from scratch with speed, precision, and strong creative input. Communication was clear and fast, and he went above and beyond even after delivery with excellent support. If you want someone reliable who truly cares about results.
+   Freelancer was extremely communicative, skilled, prompt and professional. Their work exceeded my expectation. I'd definitely hire them again and refer them to my colleagues
   </p>
 
   <!-- FOOTER -->
@@ -1286,7 +1286,7 @@
     <!-- USER -->
     <div class="flex items-center gap-3">
       <div class="relative">
-        <img src="https://randomuser.me/api/portraits/women/44.jpg"
+        <img src="https://randomuser.me/api/portraits/men/71.jpg"
              class="w-12 h-12 rounded-full object-cover">
 
         <!-- VERIFIED BADGE -->
@@ -1294,13 +1294,13 @@
       </div>
 
       <div>
-        <h4 class="font-semibold text-gray-900 text-sm">Sophia Green</h4>
-        <p class="text-xs text-gray-500">29 April 2025</p>
+        <h4 class="font-semibold text-gray-900 text-sm">Minwoong J.</h4>
+        <p class="text-xs text-gray-500">May 5, 2025</p>
       </div>
     </div>
 
     <!-- GOOGLE LOGO -->
-    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"
+    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f4/Upwork_Logo.svg"
          class="w-12 opacity-80">
   </div>
 
@@ -1311,9 +1311,7 @@
 
   <!-- REVIEW TEXT -->
   <p class="text-gray-700 text-start text-sm leading-relaxed mb-4">
-Had an excellent experience working with Ravindra—he truly cares about building things the right way, not just coding.
-He strengthened our project with better security, role-based access, and a clean MVC structure.
-Clear communication and strong technical skills—highly reliable and recommended.
+Ravindra didn’t just complete the assigned tasks — he went above and beyond by fixing issues left behind by a previous developer who had completely messed up my website. I can conf..
   </p>
 
   <!-- FOOTER -->
@@ -1345,7 +1343,7 @@ Clear communication and strong technical skills—highly reliable and recommende
     <!-- USER -->
     <div class="flex items-center gap-3">
       <div class="relative">
-        <img src="https://randomuser.me/api/portraits/women/44.jpg"
+        <img src="https://randomuser.me/api/portraits/men/15.jpg"
              class="w-12 h-12 rounded-full object-cover">
 
         <!-- VERIFIED BADGE -->
@@ -1353,13 +1351,13 @@ Clear communication and strong technical skills—highly reliable and recommende
       </div>
 
       <div>
-        <h4 class="font-semibold text-gray-900 text-sm">Daniel Smith</h4>
-        <p class="text-xs text-gray-500">1 May 2025</p>
+        <h4 class="font-semibold text-gray-900 text-sm">Peter Farrell, UK</h4>
+        <p class="text-xs text-gray-500">April 3, 2026</p>
       </div>
     </div>
 
     <!-- GOOGLE LOGO -->
-    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"
+    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f4/Upwork_Logo.svg"
          class="w-12 opacity-80">
   </div>
 
@@ -1370,9 +1368,7 @@ Clear communication and strong technical skills—highly reliable and recommende
 
   <!-- REVIEW TEXT -->
   <p class="text-gray-700 text-start text-sm leading-relaxed mb-4">
-Ravindra went above and beyond, fixing critical issues left by a previous developer and truly saving the project.
-His communication was fast, his skills are top-notch, and his attitude is outstanding.
-Highly recommended for anyone serious about getting things done right.
+Very pleased with the work provided, understood my requirements and delivered on time. Highly recommended
   </p>
 
   <!-- FOOTER -->

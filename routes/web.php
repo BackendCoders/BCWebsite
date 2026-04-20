@@ -14,6 +14,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\SolutionController;
 use App\Http\Controllers\ServiceDetailController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\HeroController;
 
 use App\Models\Page;
 
@@ -119,6 +120,24 @@ Route::resource('services', ServiceController::class);
 Route::resource('service-details', ServiceDetailController::class);
 
 Route::resource('pages', PageController::class);
+
+// Route::get('/page/{slug}', [HomeController::class, 'page']);
+Route::get('/page/{slug}', [HomeController::class, 'page']);
+
+
+
+
+// Route::prefix('banner')->group(function () {
+
+//     Route::get('hero', [HeroController::class, 'index'])->name('hero.index');
+//     Route::get('hero/create', [HeroController::class, 'create'])->name('hero.create');
+//     Route::post('hero/store', [HeroController::class, 'store'])->name('hero.store');
+
+//     Route::get('hero/{id}/edit', [HeroController::class, 'edit'])->name('hero.edit');
+//     Route::put('hero/{id}', [HeroController::class, 'update'])->name('hero.update');
+
+//     Route::delete('hero/{id}', [HeroController::class, 'destroy'])->name('hero.destroy');
+// });
 
 });
 

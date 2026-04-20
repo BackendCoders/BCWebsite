@@ -131,7 +131,7 @@
                     </svg>
                 </button>
 
-                <div id="mega-menu-panel"
+                <!-- <div id="mega-menu-panel"
                     class="hidden absolute left-1/2 top-full z-40 mt-3 max-h-[70vh] w-[min(100vw-2rem,850px)] -translate-x-1/2 overflow-hidden rounded-2xl bg-white p-6 shadow-2xl ring-1 ring-black/10 transition duration-200"
                     role="menu" aria-hidden="true">
 
@@ -164,7 +164,46 @@
                         </div>
 
                     </div>
+                </div> -->
+
+            <div id="mega-menu-panel"
+                class="hidden absolute left-1/2 top-full z-40 mt-3 max-h-[70vh] w-[min(100vw-2rem,850px)] -translate-x-1/2 overflow-hidden rounded-2xl bg-white p-6 shadow-2xl ring-1 ring-black/10">
+
+                <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
+
+                    @foreach($solutionsMenu->children as $group)
+
+                    <div class="space-y-3">
+
+                        {{-- GROUP TITLE --}}
+                        <p class="text-xs font-semibold uppercase tracking-wider text-[#FD5528]">
+                            {{ $group->title }}
+                        </p>
+
+                        {{-- CHILD LINKS --}}
+                        <ul class="space-y-2 text-sm text-slate-700">
+
+                            @foreach($group->children as $child)
+
+                            <li>
+                                <a href="{{ $child->page ? url('/page/'.$child->page->slug) : '#' }}"
+                                class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">
+
+                                    {{ $child->title }}
+
+                                </a>
+                            </li>
+
+                            @endforeach
+
+                        </ul>
+
+                    </div>
+
+                    @endforeach
+
                 </div>
+            </div>
             </div>
 
             <a href="{{ route('frontend.project') }}"

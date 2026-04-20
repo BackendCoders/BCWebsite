@@ -160,38 +160,47 @@ class HomeController extends Controller
     return view('frontend.help', compact('page'));
            }
 
-        public function digital_marketing(){
-                 return view('frontend.digital_marketing');
-           }  
-            public function software_development(){
-                 return view('frontend.software_development');
-           }  
-            public function social_media(){
-                 return view('frontend.social_media');
-           }      
-           
-               public function seo(){
-                 return view('frontend.seo');
-           } 
-           
-                public function google_ads(){
-                 return view('frontend.ads');
-           }   
-           
-                public function meta_ads(){
-                 return view('frontend.meta_ads');
-           }    
+           public function page($slug)
+{
+    $page = Page::with('sections.items')
+        ->where('slug', $slug)
+        ->firstOrFail();
+        // dd($page);
+    return view('frontend.page', compact('page'));
+}
 
-           public function content_marketing(){
-                return view('frontend.content_marketing');
-           }
+        // public function digital_marketing(){
+        //          return view('frontend.digital_marketing');
+        //    }  
+        //     public function software_development(){
+        //          return view('frontend.software_development');
+        //    }  
+        //     public function social_media(){
+        //          return view('frontend.social_media');
+        //    }      
+           
+        //        public function seo(){
+        //          return view('frontend.seo');
+        //    } 
+           
+        //         public function google_ads(){
+        //          return view('frontend.ads');
+        //    }   
+           
+        //         public function meta_ads(){
+        //          return view('frontend.meta_ads');
+        //    }    
 
-            public function local_seo(){
-                return view('frontend.local_seo');
-           }
+        //    public function content_marketing(){
+        //         return view('frontend.content_marketing');
+        //    }
 
-            public function custom_web(){
-                return view('frontend.custom_web');
-           }
+        //     public function local_seo(){
+        //         return view('frontend.local_seo');
+        //    }
+
+        //     public function custom_web(){
+        //         return view('frontend.custom_web');
+        //    }
 
 }
