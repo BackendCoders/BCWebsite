@@ -101,10 +101,10 @@ class HomeController extends Controller
     public function career(){
             // return view('frontend.career');
               $page = Page::with('sections.items')
-        ->where('slug', 'packages')
+        ->where('slug', 'career')
         ->first();
 
-    return view('frontend.packages', compact('page'));
+    return view('frontend.career', compact('page'));
     }
 
     public function blog(){
