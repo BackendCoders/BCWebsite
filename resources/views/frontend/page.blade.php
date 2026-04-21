@@ -36,7 +36,7 @@
 @endphp
 
 <main class="bg-white">
-    @auth
+    <!-- @auth
         <section class="border-b border-slate-200 bg-slate-50/80">
             <div class="mx-auto flex max-w-7xl flex-col gap-4 px-6 py-4 lg:flex-row lg:items-center lg:justify-between">
                 <div>
@@ -57,9 +57,9 @@
                 </div>
             </div>
         </section>
-    @endauth
+    @endauth -->
 
-    @if($sectionAnchors->isNotEmpty())
+    <!-- @if($sectionAnchors->isNotEmpty())
         <section class="border-b border-slate-200 bg-white/95">
             <div class="mx-auto max-w-7xl px-6 py-4">
                 <div class="flex flex-wrap items-center gap-3">
@@ -72,9 +72,9 @@
                 </div>
             </div>
         </section>
-    @endif
+    @endif -->
 
-    <section class="relative overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-[#FD5528] py-16 text-white sm:py-20 lg:py-24">
+    <section class="relative overflow-hidden py-16 text-white sm:py-20 lg:py-24">
         <div class="pointer-events-none absolute inset-0 opacity-50">
             <div class="absolute -top-20 right-0 h-72 w-72 rounded-full bg-white/10 blur-3xl"></div>
             <div class="absolute bottom-0 left-0 h-72 w-72 rounded-full bg-[#FD5528]/25 blur-3xl"></div>
@@ -83,16 +83,16 @@
         <div class="relative mx-auto grid max-w-7xl items-center gap-12 px-6 lg:grid-cols-2">
             <div>
                 @if($heroExtra['eyebrow'] ?? null)
-                    <span class="inline-flex rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.35em] text-white/80">
+                    <span class="inline-flex rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.35em] text-black">
                         {{ $heroExtra['eyebrow'] }}
                     </span>
                 @else
-                    <span class="inline-flex rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.35em] text-white/80">
+                    <span class="inline-flex rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.35em] text-black">
                         {{ $pageTitle }}
                     </span>
                 @endif
 
-                <h1 class="mt-5 text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl">
+                <h1 class="mt-5 text-4xl text-black font-bold leading-tight sm:text-5xl lg:text-6xl">
                     @if($heroItem && $heroItem->title)
                         {!! $heroItem->title !!}
                     @else
@@ -101,11 +101,11 @@
                 </h1>
 
                 @if($heroItem && $heroItem->description)
-                    <div class="mt-6 max-w-2xl text-base leading-8 text-white/80 sm:text-lg">
+                    <div class="mt-6 max-w-2xl text-base leading-8 text-black sm:text-lg">
                         {!! nl2br(e($heroItem->description)) !!}
                     </div>
                 @elseif($pageDescription)
-                    <p class="mt-6 max-w-2xl text-base leading-8 text-white/80 sm:text-lg">
+                    <p class="mt-6 max-w-2xl text-base leading-8 text-black sm:text-lg">
                         {{ $pageDescription }}
                     </p>
                 @endif
@@ -210,11 +210,15 @@
                         </div>
                     </div>
                 </section>
+
+                
                 @break
 
             @case('services')
             @case('cards')
             @case('features')
+
+
                 <section id="{{ $sectionId }}" class="bg-slate-50 py-16 sm:py-20">
                     <div class="mx-auto max-w-7xl px-6">
                         @if($sectionTitle)
@@ -225,51 +229,64 @@
                             </div>
                         @endif
 
-                        <div class="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-                            @foreach($items as $item)
-                                @php $itemExtra = $item->extra ?? []; @endphp
-                                <article class="group relative overflow-hidden rounded-[1.75rem] border border-[#FD5528]/20 bg-white p-7 shadow-[0_25px_60px_rgba(0,0,0,0.08)] transition duration-500 hover:-translate-y-2 hover:shadow-[#da8871]">
-                                    <div class="pointer-events-none absolute inset-0 rounded-[1.75rem] bg-gradient-to-br from-[#FD5528]/10 via-white/40 to-white/10 opacity-0 transition duration-500 group-hover:opacity-100"></div>
+                     <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
 
-                                    <div class="relative z-10 flex h-full flex-col gap-4 text-center">
-                                        @if($item->image)
-                                            <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-r from-[#b00000] to-[#fb813b] p-3 shadow-inner">
-                                                <img src="{{ $mediaUrl($item->image) }}" alt="{{ $item->title }}" class="h-full w-full object-contain">
-                                            </div>
-                                        @endif
+@foreach($items as $item)
 
-                                        @if(data_get($itemExtra, 'label'))
-                                            <p class="text-xs font-semibold uppercase tracking-[0.35em] text-[#FD5528]">
-                                                {{ data_get($itemExtra, 'label') }}
-                                            </p>
-                                        @endif
+@php
+    $extra = $item->extra ?? [];
+@endphp
 
-                                        @if($item->title)
-                                            <h3 class="text-xl font-semibold text-slate-900">
-                                                {!! $item->title !!}
-                                            </h3>
-                                        @endif
+<article data-aos="fade-up"
+  class="group relative overflow-hidden rounded-[1.75rem] border border-[#FD5528]/30 bg-gradient-to-b from-white via-white to-orange-50 p-7 shadow-[0_25px_60px_rgba(0,0,0,0.1)] transition duration-500 hover:-translate-y-2 hover:shadow-[#da8871] text-gray-900">
 
-                                        @if($item->description)
-                                            <p class="text-sm leading-7 text-slate-600">
-                                                {{ $item->description }}
-                                            </p>
-                                        @endif
+  <div class="relative z-10 flex flex-col items-center text-center space-y-4">
 
-                                        @php $tags = data_get($itemExtra, 'tags', []); @endphp
-                                        @if(is_array($tags) && count($tags))
-                                            <div class="flex flex-wrap justify-center gap-2 pt-2">
-                                                @foreach($tags as $tag)
-                                                    <span class="rounded-full border border-[#FD5528]/30 px-3 py-1 text-xs font-semibold text-[#FD5528]">
-                                                        {{ $tag }}
-                                                    </span>
-                                                @endforeach
-                                            </div>
-                                        @endif
-                                    </div>
-                                </article>
-                            @endforeach
-                        </div>
+    <!-- LABEL -->
+    <span class="text-[0.6rem] font-semibold uppercase tracking-[0.4em] text-[#FD5528]">
+      {{ data_get($extra, 'label', 'Service') }}
+    </span>
+
+    <!-- ICON -->
+    <div class="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b]">
+
+      @if($item->image)
+        <img src="{{ $mediaUrl($item->image) }}" class="h-14 w-14 object-contain" />
+      @else
+        <img src="https://img.icons8.com/fluency/48/marker.png" class="h-12 w-12" />
+      @endif
+
+    </div>
+
+    <!-- TITLE -->
+    <h3 class="text-xl font-semibold">
+      {{ $item->title }}
+    </h3>
+
+    <!-- DESCRIPTION -->
+    <p class="text-sm text-gray-600">
+      {{ $item->description }}
+    </p>
+
+    <!-- TAGS -->
+    @php $tags = data_get($extra, 'tags', []); @endphp
+    @if(is_array($tags) && count($tags))
+      <div class="flex flex-wrap justify-center gap-3 text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-[#FD5528]">
+        @foreach($tags as $tag)
+          <span class="rounded-full border px-3 py-1">
+            {{ $tag }}
+          </span>
+        @endforeach
+      </div>
+    @endif
+
+  </div>
+
+</article>
+
+@endforeach
+
+</div>
                     </div>
                 </section>
                 @break
@@ -320,7 +337,7 @@
                                 <div class="rounded-3xl border border-white/10 bg-white/10 p-6 backdrop-blur">
                                     <p class="text-4xl font-bold">{{ data_get($itemExtra, 'value', $item->title) }}</p>
                                     @if($item->description)
-                                        <p class="mt-2 text-sm text-white/80">{{ $item->description }}</p>
+                                        <p class="mt-2 text-sm text-black">{{ $item->description }}</p>
                                     @endif
                                 </div>
                             @endforeach
@@ -406,7 +423,7 @@
                             </p>
                         @endif
 
-                        @if($cta && (data_get($cta, 'extra.button_text') || data_get($cta, 'extra.button') || data_get($cta, 'extra.link_text')))
+                        <!-- @if($cta && (data_get($cta, 'extra.button_text') || data_get($cta, 'extra.button') || data_get($cta, 'extra.link_text')))
                             <div class="mt-10">
                                 <a
                                     href="{{ data_get($cta, 'extra.button_url', route('frontend.contact')) }}"
@@ -416,7 +433,13 @@
                                     {{ data_get($cta, 'extra.button_text', data_get($cta, 'extra.button', data_get($cta, 'extra.link_text', 'Contact Us'))) }}
                                 </a>
                             </div>
-                        @endif
+                        @endif -->
+
+                        
+                    <a href="{{ route('frontend.contact') }}"
+                    class="inline-block mt-6 bg-white text-[#FD5528] px-6 py-3 rounded-xl font-semibold hover:bg-gray-100 transition">
+                    Start Now
+                    </a>
                     </div>
                 </section>
                 @break

@@ -181,6 +181,11 @@
                 {{ $group->title }}
             </p>
 
+             <!-- <a  href="{{ $child->page ? url('/page/'.$child->page->slug) : '#' }}"
+                class="block rounded-lg px-3 py-2 transition hover:bg-orange-50 hover:text-[#FD5528]">
+                {{ $child->title }}
+            </a> -->
+
         </div>
 
     @endforeach

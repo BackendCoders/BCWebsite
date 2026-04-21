@@ -60,6 +60,12 @@
                             Preview
                         </a>
 
+                        <a href="{{ route('frontend.page', $page->slug) }}"
+                           target="_blank"
+                           class="bg-[#FD5528] text-white px-3 py-1 rounded hover:bg-orange-600">
+                            Live
+                        </a>
+
                         @if(auth()->user()?->isAdmin())
                             <a href="{{ route('pages.edit', $page->id) }}"
                                class="bg-yellow-400 text-white px-3 py-1 rounded hover:bg-yellow-500">

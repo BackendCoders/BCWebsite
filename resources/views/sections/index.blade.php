@@ -15,6 +15,15 @@
                     Open any section to edit its details and its nested section items.
                 </p>
             </div>
+
+            <div class="flex flex-wrap gap-3">
+                <a href="{{ route('pages.index') }}" class="inline-flex items-center rounded-xl border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-[#FD5528] hover:text-[#FD5528]">
+                    View Pages
+                </a>
+                <a href="{{ route('pages.index') }}" class="inline-flex items-center rounded-xl bg-[#FD5528] px-4 py-2 text-sm font-semibold text-white transition hover:bg-orange-600">
+                    Create Section
+                </a>
+            </div>
         </div>
     </section>
 
