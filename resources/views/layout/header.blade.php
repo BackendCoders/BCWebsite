@@ -29,6 +29,20 @@
 
     <nav class="mt-8 flex-1 space-y-1 overflow-y-auto no-scrollbar">
         <p class="px-3 text-xs font-semibold uppercase tracking-[0.3em] text-slate-400">Menu</p>
+        @if(auth()->user()?->isAdmin())
+            <a href="{{ route('pages.index') }}" class="flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-medium text-slate-600 transition hover:bg-slate-100">
+                <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-slate-100 text-slate-500">P</span>
+                Pages
+            </a>
+            <a href="{{ route('pages.create') }}" class="flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-medium text-slate-600 transition hover:bg-slate-100">
+                <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-slate-100 text-slate-500">+</span>
+                Add Page
+            </a>
+            <a href="{{ route('sections.index') }}" class="flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-medium text-slate-600 transition hover:bg-slate-100">
+                <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-slate-100 text-slate-500">S</span>
+                Sections
+            </a>
+        @endif
         <a href="{{ route('dashboard') }}" class="flex items-center gap-3 rounded-2xl bg-[#FD5528] px-4 py-3 text-sm font-semibold text-white shadow-lg shadow-[#FD5528]/25 transition">
             <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-white/15">•</span>
             Dashboard

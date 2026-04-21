@@ -1,6 +1,7 @@
 @extends('component.main')
 @section('content')
 
+
 <main class="flex-1">
       <!-- HERO SECTION -->
 <section id="hero" class="relative overflow-hidden bg-white px-4 sm:px-6 lg:px-8 py-14 sm:py-16 md:py-20 lg:py-24">
@@ -153,21 +154,21 @@
 </section>
 <!-- END HERO SECTIOPN -->
 
-<!-- clients -->
- <section class="relative py-32 px-6 overflow-hidden">
+<!-- WORLD MAP VISUAL -->
 
-  <!-- BACKGROUND -->
-  <div class="absolute inset-0 bg-gray-100"></div>
 
-  <div class="relative max-w-7xl mx-auto text-center">
 
-    <!-- HEADER -->
-       <!-- BADGE -->
+<section class="relative overflow-hidden bg-white py-12 sm:py-16 lg:py-12">
+  <!-- 🔥 Heading -->
+<div class="text-center mb-4">
+
+  <!-- Eyebrow Badge -->
+    <!-- BADGE -->
       <span 
     
       data-aos="fade-up"
       class="inline-block text-xs sm:text-sm font-semibold uppercase tracking-[0.35em] 
-         text-[#FD5528] relative px-5 py-2 rounded-full 
+         text-[#FD5528] relative px-5 py-2 my-2 rounded-full 
          bg-white/60 backdrop-blur-md 
          shadow-[0_8px_20px_rgba(0,0,0,0.08)] 
          border border-white/40
@@ -175,379 +176,177 @@
          before:bg-gradient-to-r before:from-[#FD5528]/20 before:to-orange-200/30 
          before:-z-10">
 
-         Trusted Clients
+        Global Network
       </span>
-    <!-- <p class="inline-block text-xs font-semibold uppercase tracking-[0.35em] text-[#FD5528] px-5 py-2 rounded-full 
-      bg-white/5 backdrop-blur-md border border-white/10">
-      Trusted Clients
-    </p> -->
 
-    <h2 class="mt-6 text-3xl md:text-5xl font-bold text-black">
-      Brands That <span class="text-[#FD5528]">Trust Backend Coders India</span>
-    </h2>
-    <p class="max-w-7xl my-2 text-md font-medium text-black">
-      We work with startups, growing businesses, and established organizations looking for a dependable software company in Kanpur with the capability to serve clients across India and global markets. Our team has delivered websites, SaaS platforms, SEO and digital marketing solutions, CRM systems, and custom software products for clients in multiple industries.
+  <!-- Main Heading -->
+  <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-slate-900 leading-tight">
+    Our 
+    <span class="bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent">
+      Global Presence
+    </span>
+  </h2>
 
+  <!-- Subtext -->
+  <p class="mt-4 text-slate-600 max-w-2xl mx-auto text-base sm:text-lg leading-relaxed">
+    Delivering reliable digital solutions across key global markets with 
+    <span class="font-medium text-slate-800">precision, trust, and scalability.</span>
+  </p>
 
-    </p>
-
-    <!-- MARQUEE WRAPPER -->
-    <div class="mt-14 overflow-hidden group">
-
-      <div class="flex w-max animate-marquee gap-12 flex-nowrap group-hover:[animation-play-state:paused]">
-
-        <!-- ORIGINAL SET -->
-        <div class="logo"> <img src="{{asset('assets/logos/ifnoss.jpeg')}}"> </div>
-        <div class="logo"> <img src="{{asset('assets/logos/ace.jpeg')}}"> </div>
-        <div class="logo"> <img src="{{asset('assets/logos/arrive.jpeg')}}"> </div>
-        <div class="logo"> <img src="{{asset('assets/logos/ladigue.jpeg')}}"> </div>
-        <div class="logo"> <img src="{{asset('assets/logos/marley.jpeg')}}"> </div>
-
-        <!-- DUPLICATE SET (IMPORTANT) -->
-        <div class="logo"> <img src="{{asset('assets/logos/matchbly.jpeg')}}"> </div>
-        <div class="logo"> <img src="{{asset('assets/logos/praslin.jpg')}}"> </div>
-        <div class="logo"> <img src="{{asset('assets/logos/pulse-event.jpeg')}}"> </div>
-        <div class="logo"> <img src="{{asset('assets/logos/skyda.jpeg')}}"> </div>
-        <div class="logo"> <img src="{{asset('assets/logos/ifnoss.jpeg')}}"> </div>
-
-      </div>
-
+</div>
     </div>
 
+  <div class="relative max-w-5xl mx-auto px-4">
+
+    <div class="relative rounded-xl overflow-hidden border border-slate-200 shadow-lg">
+
+      <!-- MAP -->
+      <div class="relative w-full">
+
+        <!-- MAP IMAGE -->
+        <img 
+          src="{{ asset('assets/images/map.jpeg') }}"
+          class="w-full lg:h-[500px] grayscale opacity-90 contrast-110"
+          alt="World Map"
+        />
+
+        <!-- PINS -->
+        <div class="absolute inset-0">
+
+          <!-- USA -->
+          <div class="absolute left-[22%] top-[34%] -translate-x-1/2 -translate-y-1/2">
+            <div class="flex flex-col items-center">
+              
+              <!-- ping -->
+              <span class="absolute h-6 w-6 rounded-full bg-orange-500/30 animate-ping"></span>
+
+              <!-- ICON -->
+              <img 
+                src="https://img.icons8.com/fluency/48/marker.png"
+                class="w-6 h-6 drop-shadow-lg"
+              />
+
+              <!-- LABEL -->
+              <div class="mt-1 text-[10px] bg-gray-700 text-white px-2 py-0.5 rounded">
+                USA
+              </div>
+            </div>
+          </div>
+
+          <!-- UK -->
+          <div class="absolute left-[48%] top-[28%] -translate-x-1/2 -translate-y-1/2">
+            <div class="flex flex-col items-center">
+              
+              <span class="absolute h-6 w-6 rounded-full bg-orange-500/30 animate-ping"></span>
+
+              <img 
+                src="https://img.icons8.com/fluency/48/marker.png"
+                class="w-6 h-6 drop-shadow-lg"
+              />
+
+              <div class="mt-1 text-[10px] bg-gray-700 text-white px-2 py-0.5 rounded">
+                UK
+              </div>
+            </div>
+          </div>
+
+          <!-- INDIA -->
+          <div class="absolute left-[71%] top-[46%] -translate-x-1/2 -translate-y-1/2">
+            <div class="flex flex-col items-center">
+              
+              <span class="absolute h-6 w-6 rounded-full bg-orange-500/30 animate-ping"></span>
+
+              <img 
+                src="https://img.icons8.com/fluency/48/marker.png"
+                class="w-6 h-6 drop-shadow-lg"
+              />
+
+              <div class="mt-1 text-[10px] bg-gray-700 text-white px-2 py-0.5 rounded">
+                India
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
   </div>
-</section>
-<!-- {{-- end cient sectin --}} -->
-
-<!-- {{-- prjects --}} -->
-<section class="py-16">
-<div class="max-w-7xl mx-auto px-6">
-
-<!-- HEADER -->
 
  
 
-<div class="text-center mb-12 space-y-3">
-   <!-- BADGE -->
-      <span 
-    
-      data-aos="fade-up"
-      class="inline-block text-xs sm:text-sm font-semibold uppercase tracking-[0.35em] 
-         text-[#FD5528] relative px-5 py-2 rounded-full 
-         bg-white/60 backdrop-blur-md 
-         shadow-[0_8px_20px_rgba(0,0,0,0.08)] 
-         border border-white/40
-         before:absolute before:inset-0 before:rounded-full 
-         before:bg-gradient-to-r before:from-[#FD5528]/20 before:to-orange-200/30 
-         before:-z-10">
 
-        Projects We’ve Delivered
-      </span>
-  <!-- <span class="inline-block text-xs font-semibold uppercase tracking-widest text-[#FD5528] px-5 py-2 rounded-full bg-white shadow">
-    Recently Completed Projects
-  </span> -->
 
-  <h2 class="text-4xl py-2 sm:text-5xl font-bold text-gray-900">
-    Our Latest <span class="text-[#FD5528]">Projects</span>
-  </h2>
+<!-- 📊 STATS -->
+<div class="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-6 text-center mt-14">
 
-  <p class="text-sm text-gray-500 max-w-2xl mx-auto">
- Our Latest Web, SaaS, Software Development & Digital Growth Projects
-  </p>
-  <p>Explore recent projects delivered by Backend Coders India across web applications, SaaS products, CRM platforms, eCommerce systems, digital marketing solutions, and custom business software. Every project is built for usability, speed, security, conversion, and long-term scalability.</p>
-</div>
+  <!-- CARD -->
+ <div class="stat-card group p-6 rounded-xl bg-gradient-to-br from-orange-50 to-white border border-orange-100 shadow-sm text-center">
 
-<!-- TABS -->
-<div class="flex flex-wrap justify-center gap-2 sm:gap-3 mb-4">
-  <button class="tab active border border-[#FD5528] text-orange-600 px-4 py-2 rounded-full" data-tab="all">All</button>
-  <button class="tab border border-[#FD5528] text-orange-600 px-4 py-2 rounded-full" data-tab="web">Web Apps</button>
-  <button class="tab border border-[#FD5528] text-orange-600 px-4 py-2 rounded-full" data-tab="saas">SaaS</button>
-  <button class="tab border border-[#FD5528] text-orange-600 px-4 py-2 rounded-full" data-tab="ecommerce">E-commerce</button>
-  <button class="tab border border-[#FD5528] text-orange-600 px-4 py-2 rounded-full" data-tab="crm">CRM</button>
-   <button class="tab border border-[#FD5528] text-orange-600 px-4 py-2 rounded-full" data-tab="others">Others</button>
-</div>
-
-<!-- GRID -->
-<div id="projects" class="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
-
-<!-- CARD 1 -->
-<div class="project web bg-white rounded-3xl shadow-lg overflow-hidden p-5 group hover:-translate-y-1 hover:shadow-2xl transition">
-  <div class="relative h-44 overflow-hidden mb-4">
-    <img src="{{asset('assets/images/ace.png')}}" class="w-full h-full object-cover group-hover:scale-105 transition">
-    <span class="absolute top-3 left-3 bg-green-600 text-white text-xs px-3 py-1 rounded-full">LIVE</span>
+  <!-- Number + Symbol -->
+  <div class="flex items-center justify-center gap-1">
+    <h3 class="text-3xl font-bold text-orange-500 counter" data-target="50">0</h3>
+    <span class="text-3xl font-bold text-orange-500">+</span>
   </div>
-  <div class="p-5 space-y-3">
-    <div class="flex justify-between text-xs text-gray-500 uppercase">
-      <span>Web</span><span class="text-[#FD5528] font-semibold">Jan 2025</span>
-    </div>
-    <h3 class="text-xl font-semibold">Ace Taxis UK</h3>
-    <p class="text-sm text-gray-600">Cab booking & dispatch system.</p>
-    <div class="flex gap-2 flex-wrap">
-      <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">Node</span>
-      <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">Mongo</span>
-    </div>
-    <div class="flex justify-between text-xs text-gray-500">
-      <span>+650 drivers</span>
-      <a href="#" class="text-[#FD5528] font-semibold">View</a>
-    </div>
-  </div>
+
+  <!-- Label -->
+  <p class="text-sm text-slate-600 mt-2">Projects Delivered</p>
 
 </div>
 
-<!-- CARD 2 -->
-<div class="project saas bg-white rounded-3xl shadow-lg overflow-hidden p-5 group hover:-translate-y-1 hover:shadow-2xl transition">
-  <div class="relative h-44 overflow-hidden mb-4">
-    <img src="{{asset('assets/images/tanning.png')}}" class="w-full h-full object-cover">
-    <span class="absolute top-3 left-3 bg-green-600 text-white text-xs px-3 py-1 rounded-full">LIVE</span>
-  </div>
-   <div class="flex justify-between text-[10px] text-gray-400 mb-2">
-    <span>SAAS</span>
-    <span class="text-[#FD5528]">JAN 2025</span>
+<div class="stat-card group p-6 rounded-xl bg-gradient-to-br from-orange-50 to-white border border-orange-100 shadow-sm text-center">
+
+  <!-- Number + Symbol -->
+  <div class="flex items-center justify-center gap-1">
+    <h3 class="text-3xl font-bold text-orange-500 counter" data-target="3">0</h3>
+    <span class="text-3xl font-bold text-orange-500">+</span>
   </div>
 
-  <h3 class="text-lg font-semibold mb-2">Tanning Salon System</h3>
-  <p class="text-sm text-gray-500 mb-4">Salon booking & automation system.</p>
-
-  <div class="flex gap-2 flex-wrap mb-4">
-    <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">Node.js</span>
-    <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">MongoDB</span>
-    <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">REST API</span>
-  </div>
-
-  <div class="flex justify-between text-xs text-gray-400">
-    <span>+28% bookings</span>
-    <a href="#" class="text-[#FD5528]">View</a>
-  </div>
+  <!-- Label -->
+  <p class="text-sm text-slate-600 mt-2">Countries Served</p>
 
 </div>
 
-<!-- CARD 3 -->
-<div class="project web bg-white rounded-3xl shadow-lg overflow-hidden p-5 group hover:-translate-y-1 hover:shadow-2xl transition">
-  <div class="relative h-44 overflow-hidden mb-4">
-    <img src="{{asset('assets/images/skydatech.png')}}" class="w-full h-full object-cover">
-    <span class="absolute top-3 left-3 bg-green-600 text-white text-xs px-3 py-1 rounded-full">LIVE</span>
-  </div>
-  <div class="flex justify-between text-[10px] text-gray-400 mb-2">
-    <span>WEB</span>
-    <span class="text-[#FD5528]">JAN 2025</span>
+  <!-- <div class="stat-card group p-6 rounded-xl bg-gradient-to-br from-orange-50 to-white border border-orange-100 shadow-sm">
+    <div class="text-2xl mb-2">🌍</div>
+    <h3 class="text-3xl font-bold text-orange-500 counter" data-target="3">3+</h3>
+    <p class="text-sm text-slate-600 mt-1">Countries Served</p>
+  </div> -->
+
+  <div class="stat-card group p-6 rounded-xl bg-gradient-to-br from-orange-50 to-white border border-orange-100 shadow-sm text-center">
+
+  <!-- Number + Symbol -->
+  <div class="flex items-center justify-center gap-1">
+    <h3 class="text-3xl font-bold text-orange-500 counter" data-target="100">0</h3>
+    <span class="text-3xl font-bold text-orange-500">+</span>
   </div>
 
-  <h3 class="text-lg font-semibold mb-2">Skydatech Technology</h3>
-  <p class="text-sm text-gray-500 mb-4">IT consulting & tracking platform.</p>
+  <!-- Label -->
+  <p class="text-sm text-slate-600 mt-2">Client Satisfaction</p>
 
-  <div class="flex gap-2 flex-wrap mb-4">
-    <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">Node.js</span>
-    <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">MongoDB</span>
-    <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">REST API</span>
-  </div>
-
-  <div class="flex justify-between text-xs text-gray-400">
-    <span>47ms response</span>
-    <a href="#" class="text-[#FD5528]">View</a>
-  </div>
+</div>
+  <!-- <div class="stat-card group p-6 rounded-xl bg-gradient-to-br from-orange-50 to-white border border-orange-100 shadow-sm">
+    <div class="text-2xl mb-2">⭐</div>
+    <h3 class="text-3xl font-bold text-orange-500 counter" data-target="100">100%</h3>
+    <p class="text-sm text-slate-600 mt-1">Client Satisfaction</p>
+  </div> -->
 
 </div>
 
-<!-- CARD 4 -->
-<div class="project ecommerce bg-white rounded-3xl shadow-lg overflow-hidden p-5 group hover:-translate-y-1 hover:shadow-2xl transition">
-  <div class="relative h-44 overflow-hidden mb-4">
-    <img src="{{asset('assets/images/childcare.png')}}" class="w-full h-full object-cover">
-    <span class="absolute top-3 left-3 bg-green-600 text-white text-xs px-3 py-1 rounded-full">LIVE</span>
-  </div>
-  <div class="flex justify-between text-[10px] text-gray-400 mb-2">
-    <span>WEB</span>
-    <span class="text-[#FD5528]">JAN 2025</span>
-  </div>
 
-  <h3 class="text-lg font-semibold mb-2">Alberta ChildCare</h3>
-  <p class="text-sm text-gray-500 mb-4">Education portal system.</p>
+<!-- 🚀 CTA -->
+<div class="text-center my-6">
 
-  <div class="flex gap-2 flex-wrap mb-4">
-    <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">Node.js</span>
-    <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">MongoDB</span>
-    <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">REST API</span>
-  </div>
+  <a href="/contact"
+     class="relative inline-flex items-center gap-2 px-8 py-3 font-semibold text-white rounded-xl 
+            bg-gradient-to-r from-orange-500 to-orange-600 
+            shadow-lg hover:shadow-2xl hover:scale-105 transition duration-300">
 
-  <div class="flex justify-between text-xs text-gray-400">
-    <span>24x7 monitoring</span>
-    <a href="#" class="text-[#FD5528]">View</a>
-  </div>
+    Work With Us
 
-</div>
+  </a>
 
-<!-- CARD 5 -->
-<div class="project web bg-white rounded-3xl shadow-lg overflow-hidden p-5 group hover:-translate-y-1 hover:shadow-2xl transition">
-  <div class="relative h-44 overflow-hidden mb-4">
-    <img src="{{asset('assets/images/marley.png')}}" class="w-full h-full object-cover">
-    <span class="absolute top-3 left-3 bg-green-600 text-white text-xs px-3 py-1 rounded-full">LIVE</span>
-  </div>
-   <div class="flex justify-between text-[10px] text-gray-400 mb-2">
-    <span>WEB</span>
-    <span class="text-[#FD5528]">JAN 2025</span>
-  </div>
 
-  <h3 class="text-lg font-semibold mb-2">Marley Moves</h3>
-  <p class="text-sm text-gray-500 mb-4">Logistics control system.</p>
-
-  <div class="flex gap-2 flex-wrap mb-4">
-    <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">Node.js</span>
-    <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">MongoDB</span>
-    <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">REST API</span>
-  </div>
-
-  <div class="flex justify-between text-xs text-gray-400">
-    <span>+41% throughput</span>
-    <a href="#" class="text-[#FD5528]">View</a>
-  </div>
-
-</div>
-
-<!-- CARD 6 -->
-<div class="project crm bg-white rounded-3xl shadow-lg overflow-hidden p-5 group hover:-translate-y-1 hover:shadow-2xl transition">
-  <div class="relative h-44 overflow-hidden mb-4">
-    <img src="{{asset('assets/images/erdata.png')}}" class="w-full h-full object-cover">
-    <span class="absolute top-3 left-3 bg-green-600 text-white text-xs px-3 py-1 rounded-full">LIVE</span>
-  </div>
-  <div class="flex justify-between text-[10px] text-gray-400 mb-2">
-    <span>CRM</span>
-    <span class="text-[#FD5528]">JAN 2025</span>
-  </div>
-
-  <h3 class="text-lg font-semibold mb-2">ER Data Solutions</h3>
-  <p class="text-sm text-gray-500 mb-4">CRM dashboard & analytics.</p>
-
-  <div class="flex gap-2 flex-wrap mb-4">
-    <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">Node.js</span>
-    <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">MongoDB</span>
-    <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">REST API</span>
-  </div>
-
-  <div class="flex justify-between text-xs text-gray-400">
-    <span>+31% accuracy</span>
-    <a href="#" class="text-[#FD5528]">View</a>
-  </div>
-</div>
-<!-- others -->
- <!-- CARD 3 -->
-<div class="project others bg-white rounded-3xl shadow-lg overflow-hidden p-5 group hover:-translate-y-1 hover:shadow-2xl transition">
-  <div class="relative h-44 overflow-hidden mb-4">
-    <img src="{{asset('assets/ai_demo/incredible_india/1.png')}}" class="w-full h-full object-cover">
-    <span class="absolute top-3 left-3 bg-green-600 text-white text-xs px-3 py-1 rounded-full">LIVE</span>
-  </div>
-  <div class="flex justify-between text-[10px] text-gray-400 mb-2">
-    <span>WEB</span>
-    <span class="text-[#FD5528]">JAN 2025</span>
-  </div>
-
-  <h3 class="text-lg font-semibold mb-2">Incredible India</h3>
-  <p class="text-sm text-gray-500 mb-4">Tourism & travel platform.</p>
-
-  <div class="flex gap-2 flex-wrap mb-4">
-    <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">Node.js</span>
-    <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">MongoDB</span>
-    <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">REST API</span>
-  </div>
-
-  <div class="flex justify-between text-xs text-gray-400">
-    <span>47ms response</span>
-    <a href="#" class="text-[#FD5528]">View</a>
-  </div>
-
-</div>
-
-<!-- CARD 4 -->
-<div class="project others bg-white rounded-3xl shadow-lg overflow-hidden p-5 group hover:-translate-y-1 hover:shadow-2xl     transition">
-  <div class="relative h-44 overflow-hidden mb-4">
-    <img src="{{asset('assets/ai_demo/plumber/1.png')}}" class="w-full h-full object-cover">
-    <span class="absolute top-3 left-3 bg-green-600 text-white text-xs px-3 py-1 rounded-full">LIVE</span>
-  </div>
-  <div class="flex justify-between text-[10px] text-gray-400 mb-2">
-    <span>WEB</span>
-    <span class="text-[#FD5528]">JAN 2025</span>
-  </div>
-
-  <h3 class="text-lg font-semibold mb-2">PlumbEase</h3>
-  <p class="text-sm text-gray-500 mb-4">Plumbing service booking system.</p>
-
-  <div class="flex gap-2 flex-wrap mb-4">
-    <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">Node.js</span>
-    <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">MongoDB</span>
-    <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">REST API</span>
-  </div>
-
-  <div class="flex justify-between text-xs text-gray-400">
-    <span>24x7 monitoring</span>
-    <a href="#" class="text-[#FD5528]">View</a>
-  </div>
-
-</div>
-
-<!-- marketing -->
-<div class="project others bg-white rounded-3xl shadow-lg overflow-hidden p-5 group hover:-translate-y-1 hover:shadow-2xl transition">
-  <div class="relative h-44 overflow-hidden mb-4">
-    <img src="{{asset('assets/images/marley.jpeg')}}" class="w-full h-full object-cover">
-    <span class="absolute top-3 left-3 bg-green-600 text-white text-xs px-3 py-1 rounded-full">LIVE</span>
-  </div>
-  <div class="flex justify-between text-[10px] text-gray-400 mb-2">
-    <span>WEB</span>
-    <span class="text-[#FD5528]">JAN 2025</span>
-  </div>
-
-  <h3 class="text-lg font-semibold mb-2">Marley Moves</h3>
-  <p class="text-sm text-gray-500 mb-4">Social media handling & digital marketing for a UK removals company.</p>
-
-  <div class="flex gap-2 flex-wrap mb-4">
-    <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">Social Media</span>
-    <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">Meta Ads</span>
-    <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">SEO</span>
-  </div>
-
-  <div class="flex justify-between text-xs text-gray-400">
-    <span>3x engagement growth</span>
-    <a href="#" class="text-[#FD5528]">View</a>
-  </div>
-
-</div>
-
-<!-- CARD 4 -->
-<div class="project others bg-white rounded-3xl shadow-lg overflow-hidden p-5 group hover:-translate-y-1 hover:shadow-2xl transition">
-    <div class="relative h-44 overflow-hidden mb-4">
-    <img src="{{asset('assets/images/pulse.jpeg')}}" class="w-full h-full object-cover">
-    <span class="absolute top-3 left-3 bg-green-600 text-white text-xs px-3 py-1 rounded-full">LIVE</span>
-    </div>
-    <div class="flex justify-between text-[10px] text-gray-400 mb-2">
-    <span>WEB</span>
-    <span class="text-[#FD5528]">JAN 2025</span>
-  </div>
-
-  <h3 class="text-lg font-semibold mb-2">Pulse Event</h3>
-  <p class="text-sm text-gray-500 mb-4">Social media marketing & event promotion strategy for high-energy event branding.</p>
-
-  <div class="flex gap-2 flex-wrap mb-4">
-    <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">Social Media</span>
-    <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">Event Promotion</span>
-    <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">Meta Ads</span>
-  </div>
-
-  <div class="flex justify-between text-xs text-gray-400">
-    <span>2.5x ticket sales growth</span>
-    <a href="#" class="text-[#FD5528]">View</a>
-  </div>
-
-</div>
-
-</div>
-
-</div>
-</div>
-<div>
-  <p class="text-sm px-2 text-gray-600 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">From Kanpur to international clients, we build modern digital products and growth systems that combine backend reliability, clean UI, and measurable business impact.</p>
-</div>
-<!-- BUTTON -->
-<div class="text-center my-12">
- <a href="{{ route('frontend.project') }}"><button class="bg-gradient-to-r from-[#FD5528] to-orange-400 hover:from-[#fbb03b] hover:to-[#FD5528] hover:scale-110 transition-all text-white px-8 py-3 rounded-full shadow-lg">
-    View All Projects
-  </button></a> 
-</div>
 
 </div>
 </section>
@@ -1182,6 +981,8 @@
 
 <!-- Swiper CSS -->
 
+
+<!-- testimonial -->
 <section class="relative py-28 px-6 overflow-hidden">
 
   <!-- BACKGROUND GLOW -->
@@ -1222,182 +1023,238 @@
 
         <!-- SLIDE -->
         <div class="swiper-slide">
- <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition duration-300 p-6 max-w-md border border-gray-100">
+          <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition duration-300 p-6 max-w-md border border-gray-100">
 
-  <!-- HEADER -->
-  <div class="flex items-center justify-between mb-4">
+            <!-- HEADER -->
+            <div class="flex items-center justify-between mb-4">
 
-    <!-- USER -->
-    <div class="flex items-center gap-3">
-      <div class="relative">
-        <img src="https://randomuser.me/api/portraits/men/51.jpg"
-             class="w-12 h-12 rounded-full object-cover">
+              <!-- USER -->
+              <div class="flex items-center gap-3">
+                <div class="relative">
+                  <img src="{{ asset('assets/images/client1-d') }}"
+                      class="w-12 h-12 rounded-full object-cover">
 
-        <!-- VERIFIED BADGE -->
-        <span class="absolute -bottom-1 -right-1 bg-green-500 text-white text-[10px] px-1 rounded-full">✔</span>
-      </div>
+                  <!-- VERIFIED BADGE -->
+                  <span class="absolute -bottom-1 -right-1 bg-green-500 text-white text-[10px] px-1 rounded-full">✔</span>
+                </div>
 
-      <div>
-        <h4 class="font-semibold text-gray-900 text-sm">Dashawn R.</h4>
-        <p class="text-xs text-gray-500">June 6, 2025</p>
-      </div>
-    </div>
+                <div>
+                  <h4 class="font-semibold text-gray-900 text-sm">Dashawn Robinson</h4>
+                  <p class="text-xs text-gray-500">June 6, 2025</p>
+                </div>
+              </div>
 
-    <!-- GOOGLE LOGO -->
-<img src="https://upload.wikimedia.org/wikipedia/commons/f/f4/Upwork_Logo.svg"
-     class="w-12 opacity-80">
-  </div>
+              <!-- GOOGLE LOGO -->
+          <img src="https://upload.wikimedia.org/wikipedia/commons/f/f4/Upwork_Logo.svg"
+              class="w-12 opacity-80">
+            </div>
 
-  <!-- STARS -->
-  <div class="flex items-center gap-1 mb-3">
-    <span class="text-yellow-400 text-lg">★★★★★</span>
-  </div>
+            <!-- STARS -->
+            <div class="flex items-center gap-1 mb-3">
+              <span class="text-yellow-400 text-lg">★★★★★</span>
+            </div>
 
-  <!-- REVIEW TEXT -->
-  <p class="text-gray-700 text-start text-sm leading-relaxed mb-4">
-   Freelancer was extremely communicative, skilled, prompt and professional. Their work exceeded my expectation. I'd definitely hire them again and refer them to my colleagues
-  </p>
+            <!-- REVIEW TEXT -->
+            <p class="text-gray-700 text-start text-sm leading-relaxed mb-4">
+            Freelancer was extremely communicative, skilled, prompt and professional. Their work exceeded my expectation. I'd definitely hire them again and refer them to my colleagues
+            </p>
 
-  <!-- FOOTER -->
-  <div class="flex items-center justify-between text-xs text-gray-400">
+            <!-- FOOTER -->
+            <div class="flex items-center justify-between text-xs text-gray-400">
 
-    <!-- CATEGORY -->
-    <span class="bg-gray-100 px-2 py-1 rounded-full text-orange-500">
-      Verified 
-    </span>
+              <!-- CATEGORY -->
+              <span class="bg-gray-100 px-2 py-1 rounded-full text-orange-500">
+                United States
+              </span>
 
-    <!-- ACTION -->
-    <button class="flex items-center gap-1 text-orange-500 hover:text-[#FD5528] transition">
-      CEO
-    </button>
+              <!-- ACTION -->
+              <button class="flex items-center gap-1 text-orange-500 hover:text-[#FD5528] transition">
+                CEO
+              </button>
 
-  </div>
+            </div>
 
-</div>
+          </div>
         </div>
 
         <!-- SLIDE -->
         <div class="swiper-slide">
-<div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition duration-300 p-6 max-w-md border border-gray-100">
+          <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition duration-300 p-6 max-w-md border border-gray-100">
 
-  <!-- HEADER -->
-  <div class="flex items-center justify-between mb-4">
+            <!-- HEADER -->
+            <div class="flex items-center justify-between mb-4">
 
-    <!-- USER -->
-    <div class="flex items-center gap-3">
-      <div class="relative">
-        <img src="https://randomuser.me/api/portraits/men/71.jpg"
-             class="w-12 h-12 rounded-full object-cover">
+              <!-- USER -->
+              <div class="flex items-center gap-3">
+                <div class="relative">
+                  <img src="{{ asset('assets/images/client-mj.jpg') }}"
+                      class="w-12 h-12 rounded-full object-cover">
 
-        <!-- VERIFIED BADGE -->
-        <span class="absolute -bottom-1 -right-1 bg-green-500 text-white text-[10px] px-1 rounded-full">✔</span>
-      </div>
+                  <!-- VERIFIED BADGE -->
+                  <span class="absolute -bottom-1 -right-1 bg-green-500 text-white text-[10px] px-1 rounded-full">✔</span>
+                </div>
 
-      <div>
-        <h4 class="font-semibold text-gray-900 text-sm">Minwoong J.</h4>
-        <p class="text-xs text-gray-500">May 5, 2025</p>
-      </div>
-    </div>
+                <div>
+                  <h4 class="font-semibold text-gray-900 text-sm">Minwoon Jung </h4>
+                  <p class="text-xs text-gray-500">May 5, 2025</p>
+                </div>
+              </div>
 
-    <!-- GOOGLE LOGO -->
-    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f4/Upwork_Logo.svg"
-         class="w-12 opacity-80">
-  </div>
+              <!-- GOOGLE LOGO -->
+              <img src="https://upload.wikimedia.org/wikipedia/commons/f/f4/Upwork_Logo.svg"
+                  class="w-12 opacity-80">
+            </div>
 
-  <!-- STARS -->
-  <div class="flex items-center gap-1 mb-3">
-    <span class="text-yellow-400 text-lg">★★★★★</span>
-  </div>
+            <!-- STARS -->
+            <div class="flex items-center gap-1 mb-3">
+              <span class="text-yellow-400 text-lg">★★★★★</span>
+            </div>
 
-  <!-- REVIEW TEXT -->
-  <p class="text-gray-700 text-start text-sm leading-relaxed mb-4">
-Ravindra didn’t just complete the assigned tasks — he went above and beyond by fixing issues left behind by a previous developer who had completely messed up my website. I can conf..
-  </p>
+            <!-- REVIEW TEXT -->
+            <p class="text-gray-700 text-start text-sm leading-relaxed mb-4">
+         Ravindra went above and beyond fixing major issues left by a previous developer, saving the project with top-notch skills, great attitude, and reliability.
+            </p>
 
-  <!-- FOOTER -->
-  <div class="flex items-center justify-between text-xs text-gray-400">
+            <!-- FOOTER -->
+            <div class="flex items-center justify-between text-xs text-gray-400">
 
-    <!-- CATEGORY -->
-    <span class="bg-gray-100 px-2 py-1 rounded-full text-orange-500">
-      Verified 
-    </span>
+              <!-- CATEGORY -->
+              <span class="bg-gray-100 px-2 py-1 rounded-full text-orange-500">
+                United States
+              </span>
 
-    <!-- ACTION -->
-    <button class="flex items-center gap-1 text-orange-500 hover:text-[#FD5528] transition">
-      Director
-    </button>
+              <!-- ACTION -->
+              <button class="flex items-center gap-1 text-orange-500 hover:text-[#FD5528] transition">
+               Ceo
+              </button>
 
-  </div>
+            </div>
 
-</div>
-         
+          </div>
         </div>
 
         <!-- SLIDE -->
-<div class="swiper-slide">
-  <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition duration-300 p-6 max-w-md border border-gray-100">
+      <div class="swiper-slide">
+                <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition duration-300 p-6 max-w-md border border-gray-100">
 
-  <!-- HEADER -->
-  <div class="flex items-center justify-between mb-4">
+                  <!-- HEADER -->
+                  <div class="flex items-center justify-between mb-4">
 
-    <!-- USER -->
-    <div class="flex items-center gap-3">
-      <div class="relative">
-        <img src="https://randomuser.me/api/portraits/men/15.jpg"
-             class="w-12 h-12 rounded-full object-cover">
+                    <!-- USER -->
+                    <div class="flex items-center gap-3">
+                      <div class="relative">
+                        <img src="{{ asset('assets/images/client-p.jpg') }}"
+                            class="w-12 h-12 rounded-full object-cover">
 
-        <!-- VERIFIED BADGE -->
-        <span class="absolute -bottom-1 -right-1 bg-green-500 text-white text-[10px] px-1 rounded-full">✔</span>
+                        <!-- VERIFIED BADGE -->
+                        <span class="absolute -bottom-1 -right-1 bg-green-500 text-white text-[10px] px-1 rounded-full">✔</span>
+                      </div>
+
+                      <div>
+                        <h4 class="font-semibold text-gray-900 text-sm">Peter Farrell </h4>
+                        <p class="text-xs text-gray-500">May 5, 2025</p>
+                      </div>
+                    </div>
+
+                    <!-- GOOGLE LOGO -->
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f4/Upwork_Logo.svg"
+                        class="w-12 opacity-80">
+                  </div>
+
+                  <!-- STARS -->
+                  <div class="flex items-center gap-1 mb-3">
+                    <span class="text-yellow-400 text-lg">★★★★★</span>
+                  </div>
+
+                  <!-- REVIEW TEXT -->
+                  <p class="text-gray-700 text-start text-sm leading-relaxed mb-4">
+                Very pleased with the work provided, understood my requirements and delivered on time. Highly recommended
+                  </p>
+
+                  <!-- FOOTER -->
+                  <div class="flex items-center justify-between text-xs text-gray-400">
+
+                    <!-- CATEGORY -->
+                    <span class="bg-gray-100 px-2 py-1 rounded-full text-orange-500">
+                      United States
+                    </span>
+
+                    <!-- ACTION -->
+                    <button class="flex items-center gap-1 text-orange-500 hover:text-[#FD5528] transition">
+                      Director
+                    </button>
+
+                  </div>
+
+                </div>
       </div>
 
-      <div>
-        <h4 class="font-semibold text-gray-900 text-sm">Peter Farrell, UK</h4>
-        <p class="text-xs text-gray-500">April 3, 2026</p>
+
+         <!-- SLIDE -->
+      <div class="swiper-slide">
+                <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition duration-300 p-6 max-w-md border border-gray-100">
+
+                  <!-- HEADER -->
+                  <div class="flex items-center justify-between mb-4">
+
+                    <!-- USER -->
+                    <div class="flex items-center gap-3">
+                      <div class="relative">
+                        <img src="{{ asset('assets/images/client-v.jpg') }}"
+                            class="w-12 h-12 rounded-full object-cover">
+
+                        <!-- VERIFIED BADGE -->
+                        <span class="absolute -bottom-1 -right-1 bg-green-500 text-white text-[10px] px-1 rounded-full">✔</span>
+                      </div>
+
+                      <div>
+                        <h4 class="font-semibold text-gray-900 text-sm">Veera Linga</h4>
+                        <p class="text-xs text-gray-500">May 5, 2025</p>
+                      </div>
+                    </div>
+
+                    <!-- GOOGLE LOGO -->
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f4/Upwork_Logo.svg"
+                        class="w-12 opacity-80">
+                  </div>
+
+                  <!-- STARS -->
+                  <div class="flex items-center gap-1 mb-3">
+                    <span class="text-yellow-400 text-lg">★★★★★</span>
+                  </div>
+
+                  <!-- REVIEW TEXT -->
+                  <p class="text-gray-700 text-start text-sm leading-relaxed mb-4">
+           Ravindra delivered a visually appealing, responsive, and highly functional website with top-notch skills, great communication, flexibility, and strong post-launch support, highly recommended.
+                  </p>
+
+                  <!-- FOOTER -->
+                  <div class="flex items-center justify-between text-xs text-gray-400">
+
+                    <!-- CATEGORY -->
+                    <span class="bg-gray-100 px-2 py-1 rounded-full text-orange-500">
+                      United States
+                    </span>
+
+                    <!-- ACTION -->
+                    <button class="flex items-center gap-1 text-orange-500 hover:text-[#FD5528] transition">
+                      Director
+                    </button>
+
+                  </div>
+
+                </div>
       </div>
+
+         
+       </div>
+
     </div>
-
-    <!-- GOOGLE LOGO -->
-    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f4/Upwork_Logo.svg"
-         class="w-12 opacity-80">
-  </div>
-
-  <!-- STARS -->
-  <div class="flex items-center gap-1 mb-3">
-    <span class="text-yellow-400 text-lg">★★★★★</span>
-  </div>
-
-  <!-- REVIEW TEXT -->
-  <p class="text-gray-700 text-start text-sm leading-relaxed mb-4">
-Very pleased with the work provided, understood my requirements and delivered on time. Highly recommended
-  </p>
-
-  <!-- FOOTER -->
-  <div class="flex items-center justify-between text-xs text-gray-400">
-
-    <!-- CATEGORY -->
-    <span class="bg-gray-100 px-2 py-1 rounded-full text-orange-500">
-      Verified 
-    </span>
-
-    <!-- ACTION -->
-    <button class="flex items-center gap-1  text-orange-500 hover:text-[#FD5528] transition">
-      Director
-    </button>
 
   </div>
 
 </div>
 
-
-         
-        </div>
-
-      </div>
-
-   
-    </div>
-
-  </div>
 </section>
 
 
@@ -1549,4 +1406,3 @@ Very pleased with the work provided, understood my requirements and delivered on
 
 </main>
 @endsection
-

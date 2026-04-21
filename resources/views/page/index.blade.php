@@ -26,6 +26,7 @@
                 <tr>
                     <th class="p-3">Title</th>
                     <th class="p-3">Slug</th>
+                    <th class="p-3 text-center">Sections</th>
                     <th class="p-3 text-center">Status</th>
                     <th class="p-3 text-center">Actions</th>
                 </tr>
@@ -36,6 +37,7 @@
                 <tr class="border-b hover:bg-gray-50">
                     <td class="p-3 font-medium">{{ $page->title }}</td>
                     <td class="p-3 text-gray-600">{{ $page->slug }}</td>
+                    <td class="p-3 text-center">{{ $page->sections_count ?? 0 }}</td>
 
                     <!-- Status -->
                     <td class="p-3 text-center">
@@ -53,10 +55,17 @@
                     <!-- Actions -->
                     <td class="p-3 text-center space-x-2">
 
-                        <a href="{{ route('pages.edit', $page->id) }}"
-                           class="bg-yellow-400 text-white px-3 py-1 rounded hover:bg-yellow-500">
-                            Edit
+                        <a href="{{ route('pages.show', $page->id) }}"
+                           class="bg-slate-700 text-white px-3 py-1 rounded hover:bg-slate-800">
+                            Preview
                         </a>
+
+                        @if(auth()->user()?->isAdmin())
+                            <a href="{{ route('pages.edit', $page->id) }}"
+                               class="bg-yellow-400 text-white px-3 py-1 rounded hover:bg-yellow-500">
+                                Builder
+                            </a>
+                        @endif
 
                         <form action="{{ route('pages.destroy', $page->id) }}"
                               method="POST"

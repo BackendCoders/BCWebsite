@@ -134,14 +134,55 @@ class HomeController extends Controller
     return view('frontend.terms', compact('page'));
         }
 
-     public function privacy_policy(){
+        public function privacy_policy(){
                 // return view('frontend.privacy_policy');
                   $page = Page::with('sections.items')
-        ->where('slug', 'privacy policy')
+        ->where('slug', 'privacy-policy')
         ->first();
 
     return view('frontend.privacy_policy', compact('page'));
         }
+
+        public function digital_marketing(){
+                return $this->renderDynamicPage('digital_marketing', ['digital-marketing']);
+        }
+
+        public function software_development(){
+                return $this->renderDynamicPage('software_development', ['software-development']);
+        }
+
+        public function social_media(){
+                return $this->renderDynamicPage('social_media', ['social-media']);
+        }
+
+        public function seo(){
+                $page = Page::with('sections.items')
+                        ->whereIn('slug', ['seo', 'seo-services'])
+                        ->firstOrFail();
+
+                return view('frontend.seo', compact('page'));
+        }
+
+        public function google_ads(){
+                return $this->renderDynamicPage('google_ads', ['google-ads', 'google-ads-ppc-services']);
+        }
+
+        public function meta_ads(){
+                return $this->renderDynamicPage('meta_ads', ['meta-ads', 'meta-ads-services']);
+        }
+
+        public function content_marketing(){
+                return $this->renderDynamicPage('content_marketing', ['content-marketing', 'content-marketing-services']);
+        }
+
+        public function local_seo(){
+                return $this->renderDynamicPage('local_seo', ['local-seo', 'local-seo-services']);
+        }
+
+        public function custom_web(){
+                return $this->renderDynamicPage('custom_web', ['custom-web', 'custom-web-application-development']);
+        }
+
         public function faq(){
                 //  return view('frontend.faq');
                   $page = Page::with('sections.items')
@@ -166,8 +207,17 @@ class HomeController extends Controller
         ->where('slug', $slug)
         ->firstOrFail();
         // dd($page);
-    return view('frontend.page', compact('page'));
+        return view('frontend.page', compact('page'));
 }
+
+        protected function renderDynamicPage(string $slug, array $alternateSlugs = [])
+        {
+                $page = Page::with('sections.items')
+                        ->whereIn('slug', array_values(array_unique(array_merge([$slug], $alternateSlugs))))
+                        ->firstOrFail();
+
+                return view('frontend.page', compact('page'));
+        }
 
         // public function digital_marketing(){
         //          return view('frontend.digital_marketing');

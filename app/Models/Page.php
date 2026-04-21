@@ -6,8 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Page extends Model
 {
-  
-
     protected $fillable = [
         'title',
         'slug',
@@ -15,13 +13,16 @@ class Page extends Model
         'meta_description',
         'canonical_url',
         'meta_keywords',
-        'is_index' => 'boolean'
+        'is_index',
+    ];
+
+    protected $casts = [
+        'is_index' => 'boolean',
     ];
 
     public function sections()
-{
-    return $this->hasMany(Section::class)->orderBy('order');
+    {
+        return $this->hasMany(Section::class)->orderBy('order');
+    }
 }
-}
-
 

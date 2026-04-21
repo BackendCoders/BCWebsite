@@ -374,6 +374,57 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 
 <!-- JS -->
+
+<style>
+.stat-card {
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 20px 40px rgba(253, 85, 40, 0.15);
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const counters = document.querySelectorAll('.counter');
+
+  const animate = (counter) => {
+    const target = +counter.getAttribute('data-target');
+    let count = 0;
+
+    const update = () => {
+      const increment = target / 60;
+      count += increment;
+
+      if (count < target) {
+        counter.innerText = Math.ceil(count);
+        requestAnimationFrame(update);
+      } else {
+        counter.innerText = target;
+      }
+    };
+
+    update();
+  };
+
+  // Run when visible
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animate(entry.target);
+        observer.unobserve(entry.target);
+      }
+    });
+  });
+
+  counters.forEach(counter => {
+    observer.observe(counter);
+  });
+});
+</script>
+
 <script>
   const toggleBtn = document.getElementById('contactToggle');
   const menu = document.getElementById('contactMenu');

@@ -99,6 +99,84 @@
 
     </form>
 
+    @if(auth()->user()?->isAdmin())
+    <div class="mt-8 bg-white p-6 rounded-xl shadow">
+        <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+                <h3 class="text-xl font-bold text-gray-800">Sections</h3>
+                <p class="text-sm text-gray-500">Create sections and add section items to build this page.</p>
+            </div>
+        </div>
+
+        <form method="POST" action="{{ route('pages.sections.store', $page->id) }}" enctype="multipart/form-data" class="mt-6 grid gap-4 md:grid-cols-2">
+            @csrf
+            <div>
+                <label class="block text-sm font-medium">Type</label>
+                <select name="type" class="w-full border p-2 rounded mt-1">
+                    <option value="hero">Hero</option>
+                    <option value="content">Content</option>
+                    <option value="text">Text</option>
+                    <option value="image">Image</option>
+                    <option value="gallery">Gallery</option>
+                    <option value="cards">Cards</option>
+                    <option value="faq">FAQ</option>
+                    <option value="stats">Stats</option>
+                    <option value="timeline">Timeline</option>
+                    <option value="cta">CTA</option>
+                    <option value="footer">Footer</option>
+                </select>
+            </div>
+            <div>
+                <label class="block text-sm font-medium">Title</label>
+                <input type="text" name="title" class="w-full border p-2 rounded mt-1" placeholder="Section title">
+            </div>
+            <div class="md:col-span-2">
+                <label class="block text-sm font-medium">Content JSON</label>
+                <textarea name="content" rows="6" class="w-full border p-2 rounded mt-1 font-mono text-sm" placeholder='{"headline":"Your heading","description":"Your text"}'></textarea>
+            </div>
+            <div>
+                <label class="block text-sm font-medium">Image</label>
+                <input type="file" name="image" class="w-full border p-2 rounded mt-1">
+            </div>
+            <div>
+                <label class="block text-sm font-medium">Order</label>
+                <input type="number" name="order" value="0" class="w-full border p-2 rounded mt-1">
+            </div>
+            <div class="md:col-span-2">
+                <button type="submit" class="bg-[#FD5528] text-white px-6 py-2 rounded-lg hover:bg-orange-600">
+                    Add Section
+                </button>
+            </div>
+        </form>
+
+        <div class="mt-8 space-y-4">
+            @forelse($page->sections as $section)
+                <div class="rounded-xl border border-gray-200 p-4">
+                    <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                        <div>
+                            <p class="text-xs uppercase tracking-[0.3em] text-gray-400">{{ $section->type }}</p>
+                            <h4 class="text-lg font-semibold text-gray-800">{{ $section->title ?: 'Untitled section' }}</h4>
+                            <p class="text-sm text-gray-500">Order: {{ $section->order }} | Items: {{ $section->items->count() }}</p>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            <a href="{{ route('pages.sections.edit', [$page->id, $section->id]) }}" class="bg-slate-700 text-white px-4 py-2 rounded-lg text-sm font-semibold">Edit</a>
+                            <form method="POST" action="{{ route('pages.sections.destroy', [$page->id, $section->id]) }}" onsubmit="return confirm('Delete this section?')">
+                                @csrf
+                                @method('DELETE')
+                                <button class="bg-red-500 text-white px-4 py-2 rounded-lg text-sm font-semibold">Delete</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            @empty
+                <div class="rounded-xl border border-dashed border-gray-300 p-6 text-center text-gray-500">
+                    No sections added yet.
+                </div>
+            @endforelse
+        </div>
+    </div>
+    @endif
+
 </div>
 
 <script>

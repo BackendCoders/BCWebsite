@@ -1,402 +1,467 @@
 @extends('component.main')
+
 @section('content')
-
-
-<!-- HERO -->
-<section class="bg-white py-16">
-  <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
-
-    <div>
-      <h1 class="text-4xl font-bold leading-tight text-gray-900">
-        Rank Higher with a Leading <br>
-        <span class="text-[#FD5528]">SEO Company in India</span>
-      </h1>
-
-      <p class="mt-6 text-gray-600">
-        In today’s competitive digital landscape, ranking on Google is not optional—it’s essential. As a trusted SEO company in India, we help businesses increase their online visibility, drive organic traffic, and generate consistent leads through result-driven SEO strategies.
-      </p>
-
-      <p class="mt-4 text-gray-600">
-        From startups to enterprises, our SEO experts craft customized strategies including keyword research, technical optimization, content marketing, and link building to ensure long-term growth and higher search engine rankings.
-      </p>
-
-      <a href="{{ route('frontend.contact') }}"
-        class="inline-block mt-6 bg-[#FD5528] text-white px-6 py-3 rounded-xl font-semibold shadow hover:bg-orange-600 transition">
-        Get Free SEO Consultation
-      </a>
-    </div>
-
-    <div>
-      <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71"
-        class="rounded-2xl shadow-lg w-full object-cover">
-    </div>
-
-  </div>
-</section> 
-
-@php $hero = \App\Models\Hero::latest()->first(); @endphp
-
-@if($hero)
-
-<section class="py-16">
-
-<h1>{{ $hero->title }}</h1>
-
-<p>{{ $hero->description }}</p>
-
-@if($hero->image)
-<img src="{{ asset('storage/'.$hero->image) }}" width="400">
-@endif
-
-<a href="{{ $hero->button_url }}"
-   target="{{ $hero->button_target }}">
-
-   {{ $hero->button_text }}
-
-</a>
-
-</section>
-
-@endif
-
-
-<!-- ABOUT -->
-<section class="bg-gray-50 py-16">
-  <div class="max-w-7xl mx-auto px-6 text-center">
-
-    <h2 class="text-3xl font-bold text-gray-900">
-      Data-Driven <span class="text-[#FD5528]">SEO Services in India</span>
-    </h2>
-
-    <p class="mt-4 text-gray-600 max-w-3xl mx-auto">
-      Our SEO services in India are designed to improve your website’s visibility on search engines like Google and Bing. We focus on increasing organic traffic, improving keyword rankings, and maximizing ROI through proven white-hat SEO techniques.
-
-      Whether you need local SEO, eCommerce SEO, or enterprise SEO, our strategies are tailored to meet your business goals and target audience.
-    </p>
-
-  </div>
-</section>
-
-
-<!-- SERVICES -->
-<section class="py-16 bg-white">
-  <div class="max-w-7xl mx-auto px-6">
-
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-    
-
-
-
-<article data-aos="fade-up" data-aos-delay="100"
-  class="group relative overflow-hidden rounded-[1.75rem] border border-[#FD5528]/30 bg-gradient-to-b from-white via-white to-orange-50 p-7 shadow-[0_25px_60px_rgba(0,0,0,0.1)] transition duration-500 hover:-translate-y-2 hover:shadow-[#da8871] hover:bg-white/10 hover:backdrop-blur-[18px] text-gray-900">
-
-  <div class="pointer-events-none absolute inset-0 rounded-[1.75rem] bg-gradient-to-br from-[#FD5528]/15 via-white/40 to-white/10 opacity-0 transition duration-500 group-hover:opacity-80 backdrop-blur-[0px] group-hover:backdrop-blur-[24px]"></div>
-
-  <div class="relative z-10 flex flex-col items-center text-center space-y-4">
-
-    <!-- LABEL -->
-    <span class="text-[0.6rem] font-semibold uppercase tracking-[0.4em] text-[#FD5528]">
-      On-Site Optimization
-    </span>
-
-    <!-- ICON -->
-    <div class="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] shadow-inner">
-      <img src="https://img.icons8.com/?size=100&id=11668&format=png&color=ffffff" alt="On Page SEO" class="h-14 w-14" />
-    </div>
-
-    <!-- TITLE -->
-    <h3 class="text-xl font-semibold transition duration-500 group-hover:text-black">
-      On-Page SEO
-    </h3>
-
-    <!-- DESCRIPTION -->
-    <p class="text-sm text-gray-600 group-hover:text-gray-900">
-      Improve your website’s search engine visibility by optimizing meta tags, headings, content structure, internal linking, and keyword placement for better rankings and user experience.
-    </p>
-
-    <!-- TAGS -->
-    <div class="flex flex-wrap items-center justify-center gap-3 text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-[#FD5528]">
-      <span class="rounded-full border border-[#FD5528]/70 px-3 py-1">Keywords</span>
-      <span class="rounded-full border border-[#FD5528]/70 px-3 py-1">Meta Tags</span>
-      <span class="rounded-full border border-[#FD5528]/70 px-3 py-1">Content</span>
-    </div>
-
-  </div>
-</article>
-
-
-<article data-aos="fade-up" data-aos-delay="120"
-  class="group relative overflow-hidden rounded-[1.75rem] border border-[#FD5528]/30 bg-gradient-to-b from-white via-white to-orange-50 p-7 shadow-[0_25px_60px_rgba(0,0,0,0.1)] transition duration-500 hover:-translate-y-2 hover:shadow-[#da8871] hover:bg-white/10 hover:backdrop-blur-[18px] text-gray-900">
-
-  <div class="pointer-events-none absolute inset-0 rounded-[1.75rem] bg-gradient-to-br from-[#FD5528]/15 via-white/40 to-white/10 opacity-0 transition duration-500 group-hover:opacity-80 backdrop-blur-[0px] group-hover:backdrop-blur-[24px]"></div>
-
-  <div class="relative z-10 flex flex-col items-center text-center space-y-4">
-
-    <!-- LABEL -->
-    <span class="text-[0.6rem] font-semibold uppercase tracking-[0.4em] text-[#FD5528]">
-      Authority Building
-    </span>
-
-    <!-- ICON -->
-    <div class="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] shadow-inner">
-      <img src="https://img.icons8.com/?size=100&id=86127&format=png&color=ffffff" alt="Off Page SEO" class="h-14 w-14" />
-    </div>
-
-    <!-- TITLE -->
-    <h3 class="text-xl font-semibold transition duration-500 group-hover:text-black">
-      Off-Page SEO
-    </h3>
-
-    <!-- DESCRIPTION -->
-    <p class="text-sm text-gray-600 group-hover:text-gray-900">
-      Strengthen your website’s authority with high-quality backlinks, brand mentions, and strategic link-building techniques that improve domain trust and search engine rankings.
-    </p>
-
-    <!-- TAGS -->
-    <div class="flex flex-wrap items-center justify-center gap-3 text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-[#FD5528]">
-      <span class="rounded-full border border-[#FD5528]/70 px-3 py-1">Backlinks</span>
-      <span class="rounded-full border border-[#FD5528]/70 px-3 py-1">Authority</span>
-      <span class="rounded-full border border-[#FD5528]/70 px-3 py-1">Brand Signals</span>
-    </div>
-
-  </div>
-</article>
-
-<article data-aos="fade-up" data-aos-delay="140"
-  class="group relative overflow-hidden rounded-[1.75rem] border border-[#FD5528]/30 bg-gradient-to-b from-white via-white to-orange-50 p-7 shadow-[0_25px_60px_rgba(0,0,0,0.1)] transition duration-500 hover:-translate-y-2 hover:shadow-[#da8871] hover:bg-white/10 hover:backdrop-blur-[18px] text-gray-900">
-
-  <div class="pointer-events-none absolute inset-0 rounded-[1.75rem] bg-gradient-to-br from-[#FD5528]/15 via-white/40 to-white/10 opacity-0 transition duration-500 group-hover:opacity-80 backdrop-blur-[0px] group-hover:backdrop-blur-[24px]"></div>
-
-  <div class="relative z-10 flex flex-col items-center text-center space-y-4">
-
-    <!-- LABEL -->
-    <span class="text-[0.6rem] font-semibold uppercase tracking-[0.4em] text-[#FD5528]">
-      Site Performance
-    </span>
-
-    <!-- ICON -->
-    <div class="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] shadow-inner">
-      <img src="https://img.icons8.com/?size=100&id=110249&format=png&color=ffffff" alt="Technical SEO" class="h-14 w-14" />
-    </div>
-
-    <!-- TITLE -->
-    <h3 class="text-xl font-semibold transition duration-500 group-hover:text-black">
-      Technical SEO
-    </h3>
-
-    <!-- DESCRIPTION -->
-    <p class="text-sm text-gray-600 group-hover:text-gray-900">
-      Enhance your website’s performance with advanced technical SEO, including site speed optimization, mobile responsiveness, structured data, crawlability, and indexing improvements for higher search rankings.
-    </p>
-
-    <!-- TAGS -->
-    <div class="flex flex-wrap items-center justify-center gap-3 text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-[#FD5528]">
-      <span class="rounded-full border border-[#FD5528]/70 px-3 py-1">Speed</span>
-      <span class="rounded-full border border-[#FD5528]/70 px-3 py-1">Indexing</span>
-      <span class="rounded-full border border-[#FD5528]/70 px-3 py-1">Crawlability</span>
-    </div>
-
-  </div>
-</article>
-
-<article data-aos="fade-up" data-aos-delay="160"
-  class="group relative overflow-hidden rounded-[1.75rem] border border-[#FD5528]/30 bg-gradient-to-b from-white via-white to-orange-50 p-7 shadow-[0_25px_60px_rgba(0,0,0,0.1)] transition duration-500 hover:-translate-y-2 hover:shadow-[#da8871] hover:bg-white/10 hover:backdrop-blur-[18px] text-gray-900">
-
-  <div class="pointer-events-none absolute inset-0 rounded-[1.75rem] bg-gradient-to-br from-[#FD5528]/15 via-white/40 to-white/10 opacity-0 transition duration-500 group-hover:opacity-80 backdrop-blur-[0px] group-hover:backdrop-blur-[24px]"></div>
-
-  <div class="relative z-10 flex flex-col items-center text-center space-y-4">
-
-    <!-- LABEL -->
-    <span class="text-[0.6rem] font-semibold uppercase tracking-[0.4em] text-[#FD5528]">
-      Local Visibility
-    </span>
-
-    <!-- ICON -->
-    <div class="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] shadow-inner">
-      <img src="https://img.icons8.com/?size=100&id=7880&format=png&color=ffffff" alt="Local SEO" class="h-14 w-14" />
-    </div>
-
-    <!-- TITLE -->
-    <h3 class="text-xl font-semibold transition duration-500 group-hover:text-black">
-      Local SEO
-    </h3>
-
-    <!-- DESCRIPTION -->
-    <p class="text-sm text-gray-600 group-hover:text-gray-900">
-      Improve your visibility in local search results and Google Maps with optimized business listings, local keywords, and review management to attract nearby customers and drive more conversions.
-    </p>
-
-    <!-- TAGS -->
-    <div class="flex flex-wrap items-center justify-center gap-3 text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-[#FD5528]">
-      <span class="rounded-full border border-[#FD5528]/70 px-3 py-1">Google Maps</span>
-      <span class="rounded-full border border-[#FD5528]/70 px-3 py-1">Local Search</span>
-      <span class="rounded-full border border-[#FD5528]/70 px-3 py-1">Reviews</span>
-    </div>
-
-  </div>
-</article>
-
-<article data-aos="fade-up" data-aos-delay="180"
-  class="group relative overflow-hidden rounded-[1.75rem] border border-[#FD5528]/30 bg-gradient-to-b from-white via-white to-orange-50 p-7 shadow-[0_25px_60px_rgba(0,0,0,0.1)] transition duration-500 hover:-translate-y-2 hover:shadow-[#da8871] hover:bg-white/10 hover:backdrop-blur-[18px] text-gray-900">
-
-  <div class="pointer-events-none absolute inset-0 rounded-[1.75rem] bg-gradient-to-br from-[#FD5528]/15 via-white/40 to-white/10 opacity-0 transition duration-500 group-hover:opacity-80 backdrop-blur-[0px] group-hover:backdrop-blur-[24px]"></div>
-
-  <div class="relative z-10 flex flex-col items-center text-center space-y-4">
-
-    <!-- LABEL -->
-    <span class="text-[0.6rem] font-semibold uppercase tracking-[0.4em] text-[#FD5528]">
-      Online Store Growth
-    </span>
-
-    <!-- ICON -->
-    <div class="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] shadow-inner">
-      <img src="https://img.icons8.com/?size=100&id=85467&format=png&color=ffffff" alt="Ecommerce SEO" class="h-14 w-14" />
-    </div>
-
-    <!-- TITLE -->
-    <h3 class="text-xl font-semibold transition duration-500 group-hover:text-black">
-      E-commerce SEO
-    </h3>
-
-    <!-- DESCRIPTION -->
-    <p class="text-sm text-gray-600 group-hover:text-gray-900">
-      Boost your online store visibility with optimized product pages, category structures, and keyword-rich content designed to increase organic traffic, improve rankings, and drive higher sales conversions.
-    </p>
-
-    <!-- TAGS -->
-    <div class="flex flex-wrap items-center justify-center gap-3 text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-[#FD5528]">
-      <span class="rounded-full border border-[#FD5528]/70 px-3 py-1">Products</span>
-      <span class="rounded-full border border-[#FD5528]/70 px-3 py-1">Categories</span>
-      <span class="rounded-full border border-[#FD5528]/70 px-3 py-1">Sales</span>
-    </div>
-
-  </div>
-</article>
-
-<article data-aos="fade-up" data-aos-delay="200"
-  class="group relative overflow-hidden rounded-[1.75rem] border border-[#FD5528]/30 bg-gradient-to-b from-white via-white to-orange-50 p-7 shadow-[0_25px_60px_rgba(0,0,0,0.1)] transition duration-500 hover:-translate-y-2 hover:shadow-[#da8871] hover:bg-white/10 hover:backdrop-blur-[18px] text-gray-900">
-
-  <div class="pointer-events-none absolute inset-0 rounded-[1.75rem] bg-gradient-to-br from-[#FD5528]/15 via-white/40 to-white/10 opacity-0 transition duration-500 group-hover:opacity-80 backdrop-blur-[0px] group-hover:backdrop-blur-[24px]"></div>
-
-  <div class="relative z-10 flex flex-col items-center text-center space-y-4">
-
-    <!-- LABEL -->
-    <span class="text-[0.6rem] font-semibold uppercase tracking-[0.4em] text-[#FD5528]">
-      SEO Insights
-    </span>
-
-    <!-- ICON -->
-    <div class="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] shadow-inner">
-      <img src="https://img.icons8.com/?size=100&id=59873&format=png&color=ffffff" alt="SEO Audit" class="h-14 w-14" />
-    </div>
-
-    <!-- TITLE -->
-    <h3 class="text-xl font-semibold transition duration-500 group-hover:text-black">
-      SEO Audit & Strategy
-    </h3>
-
-    <!-- DESCRIPTION -->
-    <p class="text-sm text-gray-600 group-hover:text-gray-900">
-      Analyze your website performance with comprehensive SEO audits, competitor research, and data-driven insights to uncover growth opportunities and build effective long-term SEO strategies.
-    </p>
-
-    <!-- TAGS -->
-    <div class="flex flex-wrap items-center justify-center gap-3 text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-[#FD5528]">
-      <span class="rounded-full border border-[#FD5528]/70 px-3 py-1">Audit</span>
-      <span class="rounded-full border border-[#FD5528]/70 px-3 py-1">Strategy</span>
-      <span class="rounded-full border border-[#FD5528]/70 px-3 py-1">Analysis</span>
-    </div>
-
-  </div>
-</article>
-
-    </div>
-
-  </div>
-</section>
-
-
-<!-- FEATURES -->
-<section class="bg-gray-50 py-16">
-  <div class="max-w-7xl mx-auto px-6">
-
-    <h2 class="text-3xl font-bold text-center text-gray-900 mb-10">
-      What We Do to <span class="text-[#FD5528]">Improve Your SEO Performance</span>
-    </h2>
-
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-      <div class="p-5 bg-white rounded-xl shadow text-center service-card transition duration-300 transform hover:-translate-y-1 hover:shadow-[0_15px_35px_rgba(253,85,40,0.15)]" data-aos="zoom-in">Keyword Research</div>
-      <div class="p-5 bg-white rounded-xl shadow text-center service-card transition duration-300 transform hover:-translate-y-1 hover:shadow-[0_15px_35px_rgba(253,85,40,0.15)]" data-aos="zoom-in">Website Audit</div>
-      <div class="p-5 bg-white rounded-xl shadow text-center service-card transition duration-300 transform hover:-translate-y-1 hover:shadow-[0_15px_35px_rgba(253,85,40,0.15)]" data-aos="zoom-in">Content Optimization</div>
-      <div class="p-5 bg-white rounded-xl shadow text-center service-card transition duration-300 transform hover:-translate-y-1 hover:shadow-[0_15px_35px_rgba(253,85,40,0.15)]" data-aos="zoom-in">Technical Improvements</div>
-      <div class="p-5 bg-white rounded-xl shadow text-center service-card transition duration-300 transform hover:-translate-y-1 hover:shadow-[0_15px_35px_rgba(253,85,40,0.15)]" data-aos="zoom-in">Link Building</div>
-      <div class="p-5 bg-white rounded-xl shadow text-center service-card transition duration-300 transform hover:-translate-y-1 hover:shadow-[0_15px_35px_rgba(253,85,40,0.15)]" data-aos="zoom-in">Competitor Analysis</div>
-      <div class="p-5 bg-white rounded-xl shadow text-center service-card transition duration-300 transform hover:-translate-y-1 hover:shadow-[0_15px_35px_rgba(253,85,40,0.15)]" data-aos="zoom-in">On-Page Optimization</div>
-      <div class="p-5 bg-white rounded-xl shadow text-center service-card transition duration-300 transform hover:-translate-y-1 hover:shadow-[0_15px_35px_rgba(253,85,40,0.15)]" data-aos="zoom-in">Off-Page SEO</div>
-      <div class="p-5 bg-white rounded-xl shadow text-center service-card transition duration-300 transform hover:-translate-y-1 hover:shadow-[0_15px_35px_rgba(253,85,40,0.15)]" data-aos="zoom-in">Performance Tracking</div>
-
-    </div>
-
-  </div>
-</section>
-
-
-<!-- CTA -->
-<section class="bg-[#FD5528] py-16 text-center text-white">
-  <div class="max-w-3xl mx-auto px-6">
-
-    <h2 class="text-3xl font-bold">
-      Ready to Rank #1 on Google?
-    </h2>
-
-    <p class="mt-4">
-      Partner with a top SEO company in India and grow your business with powerful, data-driven SEO strategies that deliver long-term results.
-    </p>
-
-    <a href="{{ route('frontend.contact') }}"
-      class="inline-block mt-6 bg-white text-[#FD5528] px-6 py-3 rounded-xl font-semibold hover:bg-gray-100 transition">
-      Start Your SEO Journey
-    </a>
-
-  </div>
-</section>
-
-@php $hero = $page->sections->where('type','hero')->first(); @endphp
-
-@if($hero && $hero->items->count())
-
-<section class="bg-white py-16">
-  <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
-
-    <div>
-      <h1 class="text-4xl font-bold leading-tight text-gray-900">
-        {!! $hero->items[0]->title !!}
-      </h1>
-
-      <p class="mt-6 text-gray-600">
-        {{ $hero->items[0]->description }}
-      </p>
-
-      <p class="mt-4 text-gray-600">
-        {{ $hero->items[0]->extra['sub_text'] ?? '' }}
-      </p>
-
-      <a href="{{ route('frontend.contact') }}"
-        class="inline-block mt-6 bg-[#FD5528] text-white px-6 py-3 rounded-xl">
-        {{ $hero->items[0]->extra['button'] ?? 'Get Started' }}
-      </a>
-    </div>
-
-    <div>
-      <img src="{{ asset('storage/'.$hero->items[0]->image) }}"
-        class="rounded-2xl shadow-lg w-full object-cover">
-    </div>
-
-  </div>
-</section>
-
-@endif
-
+@php
+    $sections = $page?->sections ?? collect();
+    $heroSection = $sections->firstWhere('type', 'hero');
+    $heroItem = $heroSection?->items?->first();
+    $contentSections = $sections->reject(fn ($section) => \Illuminate\Support\Str::lower((string) $section->type) === 'hero')->values();
+    $sectionAnchors = $contentSections->map(function ($section, $index) {
+        return [
+            'id' => 'section-' . ($section->id ?? $index),
+            'label' => $section->title ?: ucfirst(str_replace(['-', '_'], ' ', (string) $section->type)),
+        ];
+    });
+
+    $mediaUrl = function ($path) {
+        if (! $path) {
+            return null;
+        }
+
+        if (\Illuminate\Support\Str::startsWith($path, ['http://', 'https://', '//'])) {
+            return $path;
+        }
+
+        if (\Illuminate\Support\Str::startsWith($path, 'storage/')) {
+            return asset($path);
+        }
+
+        return asset('storage/' . ltrim($path, '/'));
+    };
+
+    $firstItem = fn ($section) => $section?->items?->first();
+    $heroExtra = $heroItem?->extra ?? [];
+    $pageTitle = $page->meta_title ?: $page->title;
+    $pageDescription = $page->meta_description;
+@endphp
+
+<main class="bg-white">
+    @auth
+        <section class="border-b border-slate-200 bg-slate-50/80">
+            <div class="mx-auto flex max-w-7xl flex-col gap-4 px-6 py-4 lg:flex-row lg:items-center lg:justify-between">
+                <div>
+                    <p class="text-xs font-semibold uppercase tracking-[0.35em] text-[#FD5528]">CMS Links</p>
+                    <h2 class="mt-1 text-lg font-semibold text-slate-900">Manage this dynamic page</h2>
+                </div>
+
+                <div class="flex flex-wrap gap-3">
+                    <a href="{{ route('pages.index') }}" class="rounded-xl border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-[#FD5528] hover:text-[#FD5528]">
+                        All Pages
+                    </a>
+                    <a href="{{ route('pages.create') }}" class="rounded-xl bg-[#FD5528] px-4 py-2 text-sm font-semibold text-white transition hover:bg-orange-600">
+                        Create Page
+                    </a>
+                    <a href="{{ route('pages.edit', $page->id) }}" class="rounded-xl border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-[#FD5528] hover:text-[#FD5528]">
+                        Edit This Page
+                    </a>
+                </div>
+            </div>
+        </section>
+    @endauth
+
+    @if($sectionAnchors->isNotEmpty())
+        <section class="border-b border-slate-200 bg-white/95">
+            <div class="mx-auto max-w-7xl px-6 py-4">
+                <div class="flex flex-wrap items-center gap-3">
+                    <span class="text-xs font-semibold uppercase tracking-[0.35em] text-slate-400">Jump to section</span>
+                    @foreach($sectionAnchors as $anchor)
+                        <a href="#{{ $anchor['id'] }}" class="rounded-full border border-slate-200 px-4 py-2 text-sm text-slate-600 transition hover:border-[#FD5528] hover:text-[#FD5528]">
+                            {{ $anchor['label'] }}
+                        </a>
+                    @endforeach
+                </div>
+            </div>
+        </section>
+    @endif
+
+    <section class="relative overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-[#FD5528] py-16 text-white sm:py-20 lg:py-24">
+        <div class="pointer-events-none absolute inset-0 opacity-50">
+            <div class="absolute -top-20 right-0 h-72 w-72 rounded-full bg-white/10 blur-3xl"></div>
+            <div class="absolute bottom-0 left-0 h-72 w-72 rounded-full bg-[#FD5528]/25 blur-3xl"></div>
+        </div>
+
+        <div class="relative mx-auto grid max-w-7xl items-center gap-12 px-6 lg:grid-cols-2">
+            <div>
+                @if($heroExtra['eyebrow'] ?? null)
+                    <span class="inline-flex rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.35em] text-white/80">
+                        {{ $heroExtra['eyebrow'] }}
+                    </span>
+                @else
+                    <span class="inline-flex rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.35em] text-white/80">
+                        {{ $pageTitle }}
+                    </span>
+                @endif
+
+                <h1 class="mt-5 text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl">
+                    @if($heroItem && $heroItem->title)
+                        {!! $heroItem->title !!}
+                    @else
+                        {{ $pageTitle }}
+                    @endif
+                </h1>
+
+                @if($heroItem && $heroItem->description)
+                    <div class="mt-6 max-w-2xl text-base leading-8 text-white/80 sm:text-lg">
+                        {!! nl2br(e($heroItem->description)) !!}
+                    </div>
+                @elseif($pageDescription)
+                    <p class="mt-6 max-w-2xl text-base leading-8 text-white/80 sm:text-lg">
+                        {{ $pageDescription }}
+                    </p>
+                @endif
+
+                @if(($heroExtra['sub_text'] ?? null) || ($heroExtra['button'] ?? null) || ($heroExtra['button_text'] ?? null))
+                    <div class="mt-8 flex flex-col gap-4 sm:flex-row">
+                        @if($heroExtra['button'] ?? null || $heroExtra['button_text'] ?? null)
+                            <a
+                                href="{{ $heroExtra['button_url'] ?? route('frontend.contact') }}"
+                                target="{{ $heroExtra['button_target'] ?? '_self' }}"
+                                class="inline-flex items-center justify-center rounded-xl bg-white px-6 py-3 font-semibold text-[#FD5528] shadow-lg shadow-black/10 transition hover:scale-[1.02]"
+                            >
+                                {{ $heroExtra['button'] ?? $heroExtra['button_text'] }}
+                            </a>
+                        @endif
+
+                        @if($heroExtra['secondary_button'] ?? null)
+                            <a
+                                href="{{ $heroExtra['secondary_button_url'] ?? '#' }}"
+                                target="{{ $heroExtra['secondary_button_target'] ?? '_self' }}"
+                                class="inline-flex items-center justify-center rounded-xl border border-white/20 px-6 py-3 font-semibold text-white transition hover:bg-white/10"
+                            >
+                                {{ $heroExtra['secondary_button'] }}
+                            </a>
+                        @endif
+                    </div>
+                @endif
+            </div>
+
+            <div class="relative">
+                @if($heroItem && $heroItem->image)
+                    <img
+                        src="{{ $mediaUrl($heroItem->image) }}"
+                        alt="{{ $heroItem->title }}"
+                        class="h-[420px] w-full rounded-[2rem] object-cover shadow-2xl shadow-black/30"
+                    >
+                @else
+                    <div class="flex h-[420px] items-center justify-center rounded-[2rem] border border-white/10 bg-white/5 p-8 text-center backdrop-blur">
+                        <div>
+                            <p class="text-sm uppercase tracking-[0.4em] text-white/50">Dynamic Page</p>
+                            <p class="mt-4 text-2xl font-semibold">Add a hero image in the CMS to show it here.</p>
+                        </div>
+                    </div>
+                @endif
+            </div>
+        </div>
+    </section>
+
+    @foreach($contentSections as $section)
+        @php
+            $items = $section->items ?? collect();
+            $sectionType = \Illuminate\Support\Str::lower((string) $section->type);
+            $sectionTitle = $section->title ?: data_get($items->first(), 'extra.heading');
+            $sectionId = 'section-' . ($section->id ?? $loop->index);
+        @endphp
+
+        @switch($sectionType)
+            @case('about')
+            @case('content')
+            @case('text')
+                @php $item = $firstItem($section); @endphp
+                <section id="{{ $sectionId }}" class="bg-white py-16 sm:py-20">
+                    <div class="mx-auto grid max-w-7xl gap-10 px-6 lg:grid-cols-2 lg:items-center">
+                        <div>
+                            @if($sectionTitle)
+                                <p class="text-xs font-semibold uppercase tracking-[0.35em] text-[#FD5528]">
+                                    {{ $sectionTitle }}
+                                </p>
+                            @endif
+
+                            @if($item && $item->title)
+                                <h2 class="mt-4 text-3xl font-bold leading-tight text-slate-900 sm:text-4xl">
+                                    {!! $item->title !!}
+                                </h2>
+                            @endif
+
+                            @if($item && $item->description)
+                                <div class="mt-6 space-y-4 text-base leading-8 text-slate-600">
+                                    {!! nl2br(e($item->description)) !!}
+                                </div>
+                            @endif
+
+                            @if(data_get($item, 'extra.button_text') || data_get($item, 'extra.link_text'))
+                                <a
+                                    href="{{ data_get($item, 'extra.button_url', route('frontend.contact')) }}"
+                                    target="{{ data_get($item, 'extra.button_target', '_self') }}"
+                                    class="mt-8 inline-flex items-center justify-center rounded-xl bg-[#FD5528] px-6 py-3 font-semibold text-white shadow-lg shadow-[#FD5528]/20 transition hover:bg-orange-600"
+                                >
+                                    {{ data_get($item, 'extra.button_text', data_get($item, 'extra.link_text', 'Learn More')) }}
+                                </a>
+                            @endif
+                        </div>
+
+                        <div>
+                            @if($item && $item->image)
+                                <img
+                                    src="{{ $mediaUrl($item->image) }}"
+                                    alt="{{ $item->title ?? $sectionTitle }}"
+                                    class="w-full rounded-[1.75rem] object-cover shadow-2xl shadow-slate-200"
+                                >
+                            @endif
+                        </div>
+                    </div>
+                </section>
+                @break
+
+            @case('services')
+            @case('cards')
+            @case('features')
+                <section id="{{ $sectionId }}" class="bg-slate-50 py-16 sm:py-20">
+                    <div class="mx-auto max-w-7xl px-6">
+                        @if($sectionTitle)
+                            <div class="mx-auto max-w-3xl text-center">
+                                <p class="text-xs font-semibold uppercase tracking-[0.35em] text-[#FD5528]">
+                                    {{ $sectionTitle }}
+                                </p>
+                            </div>
+                        @endif
+
+                        <div class="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                            @foreach($items as $item)
+                                @php $itemExtra = $item->extra ?? []; @endphp
+                                <article class="group relative overflow-hidden rounded-[1.75rem] border border-[#FD5528]/20 bg-white p-7 shadow-[0_25px_60px_rgba(0,0,0,0.08)] transition duration-500 hover:-translate-y-2 hover:shadow-[#da8871]">
+                                    <div class="pointer-events-none absolute inset-0 rounded-[1.75rem] bg-gradient-to-br from-[#FD5528]/10 via-white/40 to-white/10 opacity-0 transition duration-500 group-hover:opacity-100"></div>
+
+                                    <div class="relative z-10 flex h-full flex-col gap-4 text-center">
+                                        @if($item->image)
+                                            <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-r from-[#b00000] to-[#fb813b] p-3 shadow-inner">
+                                                <img src="{{ $mediaUrl($item->image) }}" alt="{{ $item->title }}" class="h-full w-full object-contain">
+                                            </div>
+                                        @endif
+
+                                        @if(data_get($itemExtra, 'label'))
+                                            <p class="text-xs font-semibold uppercase tracking-[0.35em] text-[#FD5528]">
+                                                {{ data_get($itemExtra, 'label') }}
+                                            </p>
+                                        @endif
+
+                                        @if($item->title)
+                                            <h3 class="text-xl font-semibold text-slate-900">
+                                                {!! $item->title !!}
+                                            </h3>
+                                        @endif
+
+                                        @if($item->description)
+                                            <p class="text-sm leading-7 text-slate-600">
+                                                {{ $item->description }}
+                                            </p>
+                                        @endif
+
+                                        @php $tags = data_get($itemExtra, 'tags', []); @endphp
+                                        @if(is_array($tags) && count($tags))
+                                            <div class="flex flex-wrap justify-center gap-2 pt-2">
+                                                @foreach($tags as $tag)
+                                                    <span class="rounded-full border border-[#FD5528]/30 px-3 py-1 text-xs font-semibold text-[#FD5528]">
+                                                        {{ $tag }}
+                                                    </span>
+                                                @endforeach
+                                            </div>
+                                        @endif
+                                    </div>
+                                </article>
+                            @endforeach
+                        </div>
+                    </div>
+                </section>
+                @break
+
+            @case('faq')
+                <section id="{{ $sectionId }}" class="bg-white py-16 sm:py-20">
+                    <div class="mx-auto max-w-5xl px-6">
+                        @if($sectionTitle)
+                            <div class="text-center">
+                                <p class="text-xs font-semibold uppercase tracking-[0.35em] text-[#FD5528]">{{ $sectionTitle }}</p>
+                            </div>
+                        @endif
+
+                        <div class="mt-10 space-y-4">
+                            @foreach($items as $item)
+                                <details class="group rounded-2xl border border-slate-200 bg-slate-50 p-5 shadow-sm">
+                                    <summary class="cursor-pointer list-none font-medium text-slate-900">
+                                        <span class="flex items-center justify-between gap-4">
+                                            <span>{!! $item->title !!}</span>
+                                            <span class="text-2xl leading-none text-[#FD5528] group-open:rotate-45">+</span>
+                                        </span>
+                                    </summary>
+                                    @if($item->description)
+                                        <div class="mt-4 text-sm leading-7 text-slate-600">
+                                            {{ $item->description }}
+                                        </div>
+                                    @endif
+                                </details>
+                            @endforeach
+                        </div>
+                    </div>
+                </section>
+                @break
+
+            @case('stats')
+            @case('metrics')
+                <section id="{{ $sectionId }}" class="bg-gradient-to-r from-slate-950 to-[#FD5528] py-16 text-white sm:py-20">
+                    <div class="mx-auto max-w-7xl px-6">
+                        @if($sectionTitle)
+                            <div class="text-center">
+                                <p class="text-xs font-semibold uppercase tracking-[0.35em] text-white/70">{{ $sectionTitle }}</p>
+                            </div>
+                        @endif
+
+                        <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                            @foreach($items as $item)
+                                @php $itemExtra = $item->extra ?? []; @endphp
+                                <div class="rounded-3xl border border-white/10 bg-white/10 p-6 backdrop-blur">
+                                    <p class="text-4xl font-bold">{{ data_get($itemExtra, 'value', $item->title) }}</p>
+                                    @if($item->description)
+                                        <p class="mt-2 text-sm text-white/80">{{ $item->description }}</p>
+                                    @endif
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+                </section>
+                @break
+
+            @case('timeline')
+            @case('process')
+            @case('steps')
+                <section id="{{ $sectionId }}" class="bg-slate-50 py-16 sm:py-20">
+                    <div class="mx-auto max-w-7xl px-6">
+                        @if($sectionTitle)
+                            <div class="text-center">
+                                <p class="text-xs font-semibold uppercase tracking-[0.35em] text-[#FD5528]">{{ $sectionTitle }}</p>
+                            </div>
+                        @endif
+
+                        <div class="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+                            @foreach($items as $index => $item)
+                                <div class="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm">
+                                    <div class="flex h-12 w-12 items-center justify-center rounded-full bg-[#FD5528] font-bold text-white">
+                                        {{ str_pad($index + 1, 2, '0', STR_PAD_LEFT) }}
+                                    </div>
+                                    @if($item->title)
+                                        <h3 class="mt-5 text-lg font-semibold text-slate-900">{{ $item->title }}</h3>
+                                    @endif
+                                    @if($item->description)
+                                        <p class="mt-3 text-sm leading-7 text-slate-600">{{ $item->description }}</p>
+                                    @endif
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+                </section>
+                @break
+
+            @case('gallery')
+                <section id="{{ $sectionId }}" class="bg-white py-16 sm:py-20">
+                    <div class="mx-auto max-w-7xl px-6">
+                        @if($sectionTitle)
+                            <div class="text-center">
+                                <p class="text-xs font-semibold uppercase tracking-[0.35em] text-[#FD5528]">{{ $sectionTitle }}</p>
+                            </div>
+                        @endif
+
+                        <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                            @foreach($items as $item)
+                                <div class="overflow-hidden rounded-[1.75rem] border border-slate-200 bg-slate-50 shadow-sm">
+                                    @if($item->image)
+                                        <img src="{{ $mediaUrl($item->image) }}" alt="{{ $item->title }}" class="h-60 w-full object-cover">
+                                    @endif
+                                    <div class="p-5">
+                                        @if($item->title)
+                                            <h3 class="text-lg font-semibold text-slate-900">{{ $item->title }}</h3>
+                                        @endif
+                                        @if($item->description)
+                                            <p class="mt-2 text-sm leading-7 text-slate-600">{{ $item->description }}</p>
+                                        @endif
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+                </section>
+                @break
+
+            @case('cta')
+                @php $cta = $items->first(); @endphp
+                <section id="{{ $sectionId }}" class="relative overflow-hidden bg-gradient-to-r from-[#FC5124] via-[#FD5528] to-orange-400 py-20 text-white">
+                    <div class="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_top_left,_white,_transparent_50%)]"></div>
+                    <div class="relative mx-auto max-w-5xl px-6 text-center">
+                        @if($cta && $cta->title)
+                            <h2 class="text-3xl font-bold sm:text-4xl md:text-5xl">
+                                {!! $cta->title !!}
+                            </h2>
+                        @endif
+
+                        @if($cta && $cta->description)
+                            <p class="mx-auto mt-4 max-w-2xl text-sm text-white/80 sm:text-base md:text-lg">
+                                {{ $cta->description }}
+                            </p>
+                        @endif
+
+                        @if($cta && (data_get($cta, 'extra.button_text') || data_get($cta, 'extra.button') || data_get($cta, 'extra.link_text')))
+                            <div class="mt-10">
+                                <a
+                                    href="{{ data_get($cta, 'extra.button_url', route('frontend.contact')) }}"
+                                    target="{{ data_get($cta, 'extra.button_target', '_self') }}"
+                                    class="inline-flex items-center justify-center rounded-xl bg-white px-6 py-3 font-semibold text-[#FC5124] shadow-lg transition hover:scale-105"
+                                >
+                                    {{ data_get($cta, 'extra.button_text', data_get($cta, 'extra.button', data_get($cta, 'extra.link_text', 'Contact Us'))) }}
+                                </a>
+                            </div>
+                        @endif
+                    </div>
+                </section>
+                @break
+
+            @default
+                <section id="{{ $sectionId }}" class="bg-white py-16 sm:py-20">
+                    <div class="mx-auto max-w-7xl px-6">
+                        @if($sectionTitle)
+                            <div class="text-center">
+                                <p class="text-xs font-semibold uppercase tracking-[0.35em] text-[#FD5528]">{{ $sectionTitle }}</p>
+                            </div>
+                        @endif
+
+                        <div class="mt-10 space-y-8">
+                            @foreach($items as $item)
+                                <div class="grid gap-8 lg:grid-cols-2 lg:items-center">
+                                    <div>
+                                        @if($item->title)
+                                            <h3 class="text-2xl font-bold text-slate-900">{!! $item->title !!}</h3>
+                                        @endif
+                                        @if($item->description)
+                                            <p class="mt-4 text-base leading-8 text-slate-600">{{ $item->description }}</p>
+                                        @endif
+                                    </div>
+
+                                    @if($item->image)
+                                        <img src="{{ $mediaUrl($item->image) }}" alt="{{ $item->title }}" class="w-full rounded-[1.5rem] object-cover shadow-lg">
+                                    @endif
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+                </section>
+        @endswitch
+    @endforeach
+
+    @if($contentSections->isEmpty())
+        <section class="bg-white py-16 sm:py-20">
+            <div class="mx-auto max-w-3xl px-6 text-center">
+                <h2 class="text-2xl font-bold text-slate-900">This page has not been built out yet.</h2>
+                <p class="mt-4 text-slate-600">
+                    Add sections and section items in the CMS to render this page dynamically.
+                </p>
+            </div>
+        </section>
+    @endif
+</main>
 @endsection

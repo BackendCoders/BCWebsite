@@ -196,12 +196,12 @@
         </div>
 
         <div class="bg-[#F9FAFB] p-6 rounded-xl text-center">
-          <h3 class="text-2xl font-bold text-[#FD5528]">20+</h3>
+          <h3 class="text-2xl font-bold text-[#FD5528]">40+</h3>
           <p class="text-sm text-gray-500">Happy Clients</p>
         </div>
 
         <div class="bg-[#F9FAFB] p-6 rounded-xl text-center">
-          <h3 class="text-2xl font-bold text-[#FD5528]">5+</h3>
+          <h3 class="text-2xl font-bold text-[#FD5528]">3+</h3>
           <p class="text-sm text-gray-500">Countries Served</p>
         </div>
 
@@ -489,7 +489,7 @@
 
       <!-- CARD -->
       <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 hover:scale-105 transition duration-300 shadow-lg">
-        <h3 class="counter text-4xl md:text-5xl font-bold" data-target="15">0</h3>
+        <h3 class="counter text-4xl md:text-5xl font-bold" data-target="3">0</h3>
         <p class="mt-2 text-white/80 text-sm">Countries Served</p>
       </div>
 

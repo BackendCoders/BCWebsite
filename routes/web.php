@@ -15,6 +15,7 @@ use App\Http\Controllers\SolutionController;
 use App\Http\Controllers\ServiceDetailController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\HeroController;
+use App\Http\Controllers\SectionController;
 
 use App\Models\Page;
 
@@ -63,6 +64,7 @@ Route::get('/content_marketing', [HomeController::class, 'content_marketing'])->
 Route::get('/local_seo', [HomeController::class, 'local_seo'])->name('frontend.local_seo');
 Route::get('/custom_web', [HomeController::class, 'custom_web'])->name('frontend.custom_web');
 Route::get('/web', [HomeController::class, 'custom_web'])->name('frontend.custom_web');
+Route::get('/page/{slug}', [HomeController::class, 'page'])->name('frontend.page');
 
 
 
@@ -102,6 +104,20 @@ Route::middleware(['auth'])->group(function () {
 
 });
 
+Route::middleware(['auth', 'admin.role'])->group(function () {
+    Route::get('/sections', [SectionController::class, 'index'])->name('sections.index');
+
+    Route::post('/pages/{page}/sections', [SectionController::class, 'store'])->name('pages.sections.store');
+    Route::get('/pages/{page}/sections/{section}/edit', [SectionController::class, 'edit'])->name('pages.sections.edit');
+    Route::put('/pages/{page}/sections/{section}', [SectionController::class, 'update'])->name('pages.sections.update');
+    Route::delete('/pages/{page}/sections/{section}', [SectionController::class, 'destroy'])->name('pages.sections.destroy');
+    Route::post('/pages/{page}/sections/reorder', [SectionController::class, 'reorder'])->name('pages.sections.reorder');
+
+    Route::post('/pages/{page}/sections/{section}/items', [SectionController::class, 'storeItem'])->name('pages.section-items.store');
+    Route::put('/pages/{page}/sections/{section}/items/{item}', [SectionController::class, 'updateItem'])->name('pages.section-items.update');
+    Route::delete('/pages/{page}/sections/{section}/items/{item}', [SectionController::class, 'destroyItem'])->name('pages.section-items.destroy');
+});
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
@@ -120,12 +136,6 @@ Route::resource('services', ServiceController::class);
 Route::resource('service-details', ServiceDetailController::class);
 
 Route::resource('pages', PageController::class);
-
-// Route::get('/page/{slug}', [HomeController::class, 'page']);
-Route::get('/page/{slug}', [HomeController::class, 'page']);
-
-
-
 
 // Route::prefix('banner')->group(function () {
 

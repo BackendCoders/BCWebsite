@@ -171,37 +171,21 @@
 
                 <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
 
-                    @foreach($solutionsMenu->children as $group)
+                 @if(isset($solutionsMenu) && $solutionsMenu && $solutionsMenu->children)
 
-                    <div class="space-y-3">
+    @foreach($solutionsMenu->children as $group)
 
-                        {{-- GROUP TITLE --}}
-                        <p class="text-xs font-semibold uppercase tracking-wider text-[#FD5528]">
-                            {{ $group->title }}
-                        </p>
+        <div class="space-y-3">
 
-                        {{-- CHILD LINKS --}}
-                        <ul class="space-y-2 text-sm text-slate-700">
+            <p class="text-xs font-semibold text-[#FD5528]">
+                {{ $group->title }}
+            </p>
 
-                            @foreach($group->children as $child)
+        </div>
 
-                            <li>
-                                <a href="{{ $child->page ? url('/page/'.$child->page->slug) : '#' }}"
-                                class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">
+    @endforeach
 
-                                    {{ $child->title }}
-
-                                </a>
-                            </li>
-
-                            @endforeach
-
-                        </ul>
-
-                    </div>
-
-                    @endforeach
-
+@endif
                 </div>
             </div>
             </div>
@@ -446,9 +430,5 @@
         }
     });
 </script>
-
-
-
-
 
 

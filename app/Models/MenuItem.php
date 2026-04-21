@@ -18,6 +18,11 @@ class MenuItem extends Model
         return $this->hasMany(MenuItem::class, 'parent_id')->orderBy('order');
     }
 
+    public function parent()
+    {
+        return $this->belongsTo(MenuItem::class, 'parent_id');
+    }
+
     public function page()
     {
         return $this->belongsTo(Page::class);

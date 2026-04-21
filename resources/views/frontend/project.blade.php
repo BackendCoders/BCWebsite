@@ -39,6 +39,204 @@
 </section>
 <!-- end hero section  -->
 
+<!-- WORLD MAP VISUAL -->
+
+
+
+<section class="relative overflow-hidden bg-white py-12 sm:py-16 lg:py-12">
+  <!-- 🔥 Heading -->
+<div class="text-center mb-4">
+
+  <!-- Eyebrow Badge -->
+    <!-- BADGE -->
+      <span 
+    
+      data-aos="fade-up"
+      class="inline-block text-xs sm:text-sm font-semibold uppercase tracking-[0.35em] 
+         text-[#FD5528] relative px-5 py-2 my-2 rounded-full 
+         bg-white/60 backdrop-blur-md 
+         shadow-[0_8px_20px_rgba(0,0,0,0.08)] 
+         border border-white/40
+         before:absolute before:inset-0 before:rounded-full 
+         before:bg-gradient-to-r before:from-[#FD5528]/20 before:to-orange-200/30 
+         before:-z-10">
+
+        Global Network
+      </span>
+
+  <!-- Main Heading -->
+  <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-slate-900 leading-tight">
+    Our 
+    <span class="bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent">
+      Global Presence
+    </span>
+  </h2>
+
+  <!-- Subtext -->
+  <p class="mt-4 text-slate-600 max-w-2xl mx-auto text-base sm:text-lg leading-relaxed">
+    Delivering reliable digital solutions across key global markets with 
+    <span class="font-medium text-slate-800">precision, trust, and scalability.</span>
+  </p>
+
+</div>
+    </div>
+
+  <div class="relative max-w-5xl mx-auto px-4">
+
+    <div class="relative rounded-xl overflow-hidden border border-slate-200 shadow-lg">
+
+      <!-- MAP -->
+      <div class="relative w-full">
+
+        <!-- MAP IMAGE -->
+        <img 
+          src="{{ asset('assets/images/map.jpeg') }}"
+          class="w-full lg:h-[500px] grayscale opacity-90 contrast-110"
+          alt="World Map"
+        />
+
+        <!-- PINS -->
+        <div class="absolute inset-0">
+
+          <!-- USA -->
+          <div class="absolute left-[22%] top-[34%] -translate-x-1/2 -translate-y-1/2">
+            <div class="flex flex-col items-center">
+              
+              <!-- ping -->
+              <span class="absolute h-6 w-6 rounded-full bg-orange-500/30 animate-ping"></span>
+
+              <!-- ICON -->
+              <img 
+                src="https://img.icons8.com/fluency/48/marker.png"
+                class="w-6 h-6 drop-shadow-lg"
+              />
+
+              <!-- LABEL -->
+              <div class="mt-1 text-[10px] bg-gray-700 text-white px-2 py-0.5 rounded">
+                USA
+              </div>
+            </div>
+          </div>
+
+          <!-- UK -->
+          <div class="absolute left-[48%] top-[28%] -translate-x-1/2 -translate-y-1/2">
+            <div class="flex flex-col items-center">
+              
+              <span class="absolute h-6 w-6 rounded-full bg-orange-500/30 animate-ping"></span>
+
+              <img 
+                src="https://img.icons8.com/fluency/48/marker.png"
+                class="w-6 h-6 drop-shadow-lg"
+              />
+
+              <div class="mt-1 text-[10px] bg-gray-700 text-white px-2 py-0.5 rounded">
+                UK
+              </div>
+            </div>
+          </div>
+
+          <!-- INDIA -->
+          <div class="absolute left-[71%] top-[46%] -translate-x-1/2 -translate-y-1/2">
+            <div class="flex flex-col items-center">
+              
+              <span class="absolute h-6 w-6 rounded-full bg-orange-500/30 animate-ping"></span>
+
+              <img 
+                src="https://img.icons8.com/fluency/48/marker.png"
+                class="w-6 h-6 drop-shadow-lg"
+              />
+
+              <div class="mt-1 text-[10px] bg-gray-700 text-white px-2 py-0.5 rounded">
+                India
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+ 
+
+
+
+<!-- 📊 STATS -->
+<div class="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-6 text-center mt-14">
+
+  <!-- CARD -->
+ <div class="stat-card group p-6 rounded-xl bg-gradient-to-br from-orange-50 to-white border border-orange-100 shadow-sm text-center">
+
+  <!-- Number + Symbol -->
+  <div class="flex items-center justify-center gap-1">
+    <h3 class="text-3xl font-bold text-orange-500 counter" data-target="50">0</h3>
+    <span class="text-3xl font-bold text-orange-500">+</span>
+  </div>
+
+  <!-- Label -->
+  <p class="text-sm text-slate-600 mt-2">Projects Delivered</p>
+
+</div>
+
+<div class="stat-card group p-6 rounded-xl bg-gradient-to-br from-orange-50 to-white border border-orange-100 shadow-sm text-center">
+
+  <!-- Number + Symbol -->
+  <div class="flex items-center justify-center gap-1">
+    <h3 class="text-3xl font-bold text-orange-500 counter" data-target="3">0</h3>
+    <span class="text-3xl font-bold text-orange-500">+</span>
+  </div>
+
+  <!-- Label -->
+  <p class="text-sm text-slate-600 mt-2">Countries Served</p>
+
+</div>
+
+  <!-- <div class="stat-card group p-6 rounded-xl bg-gradient-to-br from-orange-50 to-white border border-orange-100 shadow-sm">
+    <div class="text-2xl mb-2">🌍</div>
+    <h3 class="text-3xl font-bold text-orange-500 counter" data-target="3">3+</h3>
+    <p class="text-sm text-slate-600 mt-1">Countries Served</p>
+  </div> -->
+
+  <div class="stat-card group p-6 rounded-xl bg-gradient-to-br from-orange-50 to-white border border-orange-100 shadow-sm text-center">
+
+  <!-- Number + Symbol -->
+  <div class="flex items-center justify-center gap-1">
+    <h3 class="text-3xl font-bold text-orange-500 counter" data-target="100">0</h3>
+    <span class="text-3xl font-bold text-orange-500">+</span>
+  </div>
+
+  <!-- Label -->
+  <p class="text-sm text-slate-600 mt-2">Client Satisfaction</p>
+
+</div>
+  <!-- <div class="stat-card group p-6 rounded-xl bg-gradient-to-br from-orange-50 to-white border border-orange-100 shadow-sm">
+    <div class="text-2xl mb-2">⭐</div>
+    <h3 class="text-3xl font-bold text-orange-500 counter" data-target="100">100%</h3>
+    <p class="text-sm text-slate-600 mt-1">Client Satisfaction</p>
+  </div> -->
+
+</div>
+
+
+<!-- 🚀 CTA -->
+<div class="text-center my-6">
+
+  <a href="/contact"
+     class="relative inline-flex items-center gap-2 px-8 py-3 font-semibold text-white rounded-xl 
+            bg-gradient-to-r from-orange-500 to-orange-600 
+            shadow-lg hover:shadow-2xl hover:scale-105 transition duration-300">
+
+    Work With Us
+
+  </a>
+
+
+
+</div>
+</section>
+
+
 <section class="py-16">
 <div class="max-w-7xl mx-auto px-6">
 
@@ -701,7 +899,7 @@
 
       <!-- CARD -->
       <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 hover:scale-105 transition duration-300 shadow-lg">
-        <h3 class="counter text-4xl md:text-5xl font-bold" data-target="15">0</h3>
+        <h3 class="counter text-4xl md:text-5xl font-bold" data-target="3">0</h3>
         <p class="mt-2 text-white/80 text-sm">Countries Served</p>
       </div>
 
@@ -722,7 +920,7 @@
 <!-- Swiper CSS -->
 
 
-
+<!-- testimonial -->
 <section class="relative py-28 px-6 overflow-hidden">
 
   <!-- BACKGROUND GLOW -->
@@ -746,198 +944,257 @@
          Testimonials
       </span>
     <!-- BADGE -->
-   
+    <!-- <span class="inline-block text-xs font-semibold uppercase tracking-[0.35em] text-[#FD5528] px-5 py-2 rounded-full bg-white shadow">
+      Testimonials
+    </span> -->
 
     <!-- TITLE -->
     <h2 class="mt-6 text-3xl md:text-5xl font-bold text-black">
       What Our <span class="text-[#FD5528]">Clients Say</span>
     </h2>
+    <p> Our clients trust Backend Coders India for clear communication, reliable development, scalable architecture, SEO growth, and digital solutions that create measurable business impact.</p>
 
     <!-- SWIPER -->
-<div class="swiper mt-16">
+    <div class="swiper mt-16">
 
       <div class="swiper-wrapper">
 
         <!-- SLIDE -->
         <div class="swiper-slide">
-<div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition duration-300 p-6 max-w-md border border-gray-100">
+          <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition duration-300 p-6 max-w-md border border-gray-100">
 
-  <!-- HEADER -->
-  <div class="flex items-center justify-between mb-4">
+            <!-- HEADER -->
+            <div class="flex items-center justify-between mb-4">
 
-    <!-- USER -->
-    <div class="flex items-center gap-3">
-      <div class="relative">
-        <img src="https://randomuser.me/api/portraits/women/68.jpg"
-             class="w-12 h-12 rounded-full object-cover">
+              <!-- USER -->
+              <div class="flex items-center gap-3">
+                <div class="relative">
+                  <img src="{{ asset('assets/images/client1-d') }}"
+                      class="w-12 h-12 rounded-full object-cover">
 
-        <!-- VERIFIED BADGE -->
-        <span class="absolute -bottom-1 -right-1 bg-green-500 text-white text-[10px] px-1 rounded-full">✔</span>
-      </div>
+                  <!-- VERIFIED BADGE -->
+                  <span class="absolute -bottom-1 -right-1 bg-green-500 text-white text-[10px] px-1 rounded-full">✔</span>
+                </div>
 
-      <div>
-        <h4 class="font-semibold text-gray-900 text-sm">Aimee H</h4>
-        <p class="text-xs text-gray-500">1 January 2026</p>
-      </div>
-    </div>
+                <div>
+                  <h4 class="font-semibold text-gray-900 text-sm">Dashawn Robinson</h4>
+                  <p class="text-xs text-gray-500">June 6, 2025</p>
+                </div>
+              </div>
 
-    <!-- GOOGLE LOGO -->
-    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"
-         class="w-12 opacity-80">
-  </div>
+              <!-- GOOGLE LOGO -->
+          <img src="https://upload.wikimedia.org/wikipedia/commons/f/f4/Upwork_Logo.svg"
+              class="w-12 opacity-80">
+            </div>
 
-  <!-- STARS -->
-  <div class="flex items-center gap-1 mb-3">
-    <span class="text-yellow-400 text-lg">★★★★★</span>
-  </div>
+            <!-- STARS -->
+            <div class="flex items-center gap-1 mb-3">
+              <span class="text-yellow-400 text-lg">★★★★★</span>
+            </div>
 
-  <!-- REVIEW TEXT -->
-  <p class="text-gray-700 text-start text-sm leading-relaxed mb-4">
-    This is a really wonderful experience on all counts. The food was lovely, traditional, and of excellent quality with very polite and attentive service.
-  </p>
+            <!-- REVIEW TEXT -->
+            <p class="text-gray-700 text-start text-sm leading-relaxed mb-4">
+            Freelancer was extremely communicative, skilled, prompt and professional. Their work exceeded my expectation. I'd definitely hire them again and refer them to my colleagues
+            </p>
 
-  <!-- FOOTER -->
-  <div class="flex items-center justify-between text-xs text-gray-400">
+            <!-- FOOTER -->
+            <div class="flex items-center justify-between text-xs text-gray-400">
 
-    <!-- CATEGORY -->
-    <span class="bg-gray-100 px-2 py-1 rounded-full text-gray-500">
-      Verified Review
-    </span>
+              <!-- CATEGORY -->
+              <span class="bg-gray-100 px-2 py-1 rounded-full text-orange-500">
+                United States
+              </span>
 
-    <!-- ACTION -->
-    <button class="flex items-center gap-1 hover:text-[#FD5528] transition">
-      Director
-    </button>
+              <!-- ACTION -->
+              <button class="flex items-center gap-1 text-orange-500 hover:text-[#FD5528] transition">
+                CEO
+              </button>
 
-  </div>
+            </div>
 
-</div>
+          </div>
         </div>
 
         <!-- SLIDE -->
         <div class="swiper-slide">
-<div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition duration-300 p-6 max-w-md border border-gray-100">
+          <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition duration-300 p-6 max-w-md border border-gray-100">
 
-  <!-- HEADER -->
-  <div class="flex items-center justify-between mb-4">
+            <!-- HEADER -->
+            <div class="flex items-center justify-between mb-4">
 
-    <!-- USER -->
-    <div class="flex items-center gap-3">
-      <div class="relative">
-        <img src="https://randomuser.me/api/portraits/women/44.jpg"
-             class="w-12 h-12 rounded-full object-cover">
+              <!-- USER -->
+              <div class="flex items-center gap-3">
+                <div class="relative">
+                  <img src="{{ asset('assets/images/client-mj.jpg') }}"
+                      class="w-12 h-12 rounded-full object-cover">
 
-        <!-- VERIFIED BADGE -->
-        <span class="absolute -bottom-1 -right-1 bg-green-500 text-white text-[10px] px-1 rounded-full">✔</span>
-      </div>
+                  <!-- VERIFIED BADGE -->
+                  <span class="absolute -bottom-1 -right-1 bg-green-500 text-white text-[10px] px-1 rounded-full">✔</span>
+                </div>
 
-      <div>
-        <h4 class="font-semibold text-gray-900 text-sm">Sophia Green</h4>
-        <p class="text-xs text-gray-500">1 January 2026</p>
-      </div>
-    </div>
+                <div>
+                  <h4 class="font-semibold text-gray-900 text-sm">Minwoon Jung </h4>
+                  <p class="text-xs text-gray-500">May 5, 2025</p>
+                </div>
+              </div>
 
-    <!-- GOOGLE LOGO -->
-    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"
-         class="w-12 opacity-80">
-  </div>
+              <!-- GOOGLE LOGO -->
+              <img src="https://upload.wikimedia.org/wikipedia/commons/f/f4/Upwork_Logo.svg"
+                  class="w-12 opacity-80">
+            </div>
 
-  <!-- STARS -->
-  <div class="flex items-center gap-1 mb-3">
-    <span class="text-yellow-400 text-lg">★★★★★</span>
-  </div>
+            <!-- STARS -->
+            <div class="flex items-center gap-1 mb-3">
+              <span class="text-yellow-400 text-lg">★★★★★</span>
+            </div>
 
-  <!-- REVIEW TEXT -->
-  <p class="text-gray-700 text-start text-sm leading-relaxed mb-4">
-    This is a really wonderful experience on all counts.  Outstanding UI and backend performance. Our bookings increased significantly.
-  </p>
+            <!-- REVIEW TEXT -->
+            <p class="text-gray-700 text-start text-sm leading-relaxed mb-4">
+         Ravindra went above and beyond fixing major issues left by a previous developer, saving the project with top-notch skills, great attitude, and reliability.
+            </p>
 
-  <!-- FOOTER -->
-  <div class="flex items-center justify-between text-xs text-gray-400">
+            <!-- FOOTER -->
+            <div class="flex items-center justify-between text-xs text-gray-400">
 
-    <!-- CATEGORY -->
-    <span class="bg-gray-100 px-2 py-1 rounded-full text-gray-500">
-      Verified Review
-    </span>
+              <!-- CATEGORY -->
+              <span class="bg-gray-100 px-2 py-1 rounded-full text-orange-500">
+                United States
+              </span>
 
-    <!-- ACTION -->
-    <button class="flex items-center gap-1 hover:text-[#FD5528] transition">
-      Director
-    </button>
+              <!-- ACTION -->
+              <button class="flex items-center gap-1 text-orange-500 hover:text-[#FD5528] transition">
+               Ceo
+              </button>
 
-  </div>
+            </div>
 
-</div>
-         
+          </div>
         </div>
 
         <!-- SLIDE -->
-        <div class="swiper-slide">
-<div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition duration-300 p-6 max-w-md border border-gray-100">
+      <div class="swiper-slide">
+                <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition duration-300 p-6 max-w-md border border-gray-100">
 
-  <!-- HEADER -->
-  <div class="flex items-center justify-between mb-4">
+                  <!-- HEADER -->
+                  <div class="flex items-center justify-between mb-4">
 
-    <!-- USER -->
-    <div class="flex items-center gap-3">
-      <div class="relative">
-        <img src="https://randomuser.me/api/portraits/women/44.jpg"
-             class="w-12 h-12 rounded-full object-cover">
+                    <!-- USER -->
+                    <div class="flex items-center gap-3">
+                      <div class="relative">
+                        <img src="{{ asset('assets/images/client-p.jpg') }}"
+                            class="w-12 h-12 rounded-full object-cover">
 
-        <!-- VERIFIED BADGE -->
-        <span class="absolute -bottom-1 -right-1 bg-green-500 text-white text-[10px] px-1 rounded-full">✔</span>
+                        <!-- VERIFIED BADGE -->
+                        <span class="absolute -bottom-1 -right-1 bg-green-500 text-white text-[10px] px-1 rounded-full">✔</span>
+                      </div>
+
+                      <div>
+                        <h4 class="font-semibold text-gray-900 text-sm">Peter Farrell </h4>
+                        <p class="text-xs text-gray-500">May 5, 2025</p>
+                      </div>
+                    </div>
+
+                    <!-- GOOGLE LOGO -->
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f4/Upwork_Logo.svg"
+                        class="w-12 opacity-80">
+                  </div>
+
+                  <!-- STARS -->
+                  <div class="flex items-center gap-1 mb-3">
+                    <span class="text-yellow-400 text-lg">★★★★★</span>
+                  </div>
+
+                  <!-- REVIEW TEXT -->
+                  <p class="text-gray-700 text-start text-sm leading-relaxed mb-4">
+                Very pleased with the work provided, understood my requirements and delivered on time. Highly recommended
+                  </p>
+
+                  <!-- FOOTER -->
+                  <div class="flex items-center justify-between text-xs text-gray-400">
+
+                    <!-- CATEGORY -->
+                    <span class="bg-gray-100 px-2 py-1 rounded-full text-orange-500">
+                      United States
+                    </span>
+
+                    <!-- ACTION -->
+                    <button class="flex items-center gap-1 text-orange-500 hover:text-[#FD5528] transition">
+                      Director
+                    </button>
+
+                  </div>
+
+                </div>
       </div>
 
-      <div>
-        <h4 class="font-semibold text-gray-900 text-sm">Daniel Smith</h4>
-        <p class="text-xs text-gray-500">1 January 2026</p>
+
+         <!-- SLIDE -->
+      <div class="swiper-slide">
+                <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition duration-300 p-6 max-w-md border border-gray-100">
+
+                  <!-- HEADER -->
+                  <div class="flex items-center justify-between mb-4">
+
+                    <!-- USER -->
+                    <div class="flex items-center gap-3">
+                      <div class="relative">
+                        <img src="{{ asset('assets/images/client-v.jpg') }}"
+                            class="w-12 h-12 rounded-full object-cover">
+
+                        <!-- VERIFIED BADGE -->
+                        <span class="absolute -bottom-1 -right-1 bg-green-500 text-white text-[10px] px-1 rounded-full">✔</span>
+                      </div>
+
+                      <div>
+                        <h4 class="font-semibold text-gray-900 text-sm">Veera Linga</h4>
+                        <p class="text-xs text-gray-500">May 5, 2025</p>
+                      </div>
+                    </div>
+
+                    <!-- GOOGLE LOGO -->
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f4/Upwork_Logo.svg"
+                        class="w-12 opacity-80">
+                  </div>
+
+                  <!-- STARS -->
+                  <div class="flex items-center gap-1 mb-3">
+                    <span class="text-yellow-400 text-lg">★★★★★</span>
+                  </div>
+
+                  <!-- REVIEW TEXT -->
+                  <p class="text-gray-700 text-start text-sm leading-relaxed mb-4">
+           Ravindra delivered a visually appealing, responsive, and highly functional website with top-notch skills, great communication, flexibility, and strong post-launch support, highly recommended.
+                  </p>
+
+                  <!-- FOOTER -->
+                  <div class="flex items-center justify-between text-xs text-gray-400">
+
+                    <!-- CATEGORY -->
+                    <span class="bg-gray-100 px-2 py-1 rounded-full text-orange-500">
+                      United States
+                    </span>
+
+                    <!-- ACTION -->
+                    <button class="flex items-center gap-1 text-orange-500 hover:text-[#FD5528] transition">
+                      Director
+                    </button>
+
+                  </div>
+
+                </div>
       </div>
+
+         
+       </div>
+
     </div>
-
-    <!-- GOOGLE LOGO -->
-    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"
-         class="w-12 opacity-80">
-  </div>
-
-  <!-- STARS -->
-  <div class="flex items-center gap-1 mb-3">
-    <span class="text-yellow-400 text-lg">★★★★★</span>
-  </div>
-
-  <!-- REVIEW TEXT -->
-  <p class="text-gray-700 text-start text-sm leading-relaxed mb-4">
-    This is a really wonderful experience on all counts.   Professional team with strong technical expertise. They understand business needs..
-  </p>
-
-  <!-- FOOTER -->
-  <div class="flex items-center justify-between text-xs text-gray-400">
-
-    <!-- CATEGORY -->
-    <span class="bg-gray-100 px-2 py-1 rounded-full text-gray-500">
-      Verified Review
-    </span>
-
-    <!-- ACTION -->
-    <button class="flex items-center gap-1 hover:text-[#FD5528] transition">
-      Director
-    </button>
 
   </div>
 
 </div>
-
-
-         
-        </div>
-
-      </div>
-
-    
-    </div>
-
-  </div>
 
 </section>
+
 
 
 <!-- CTA SECTION -->
