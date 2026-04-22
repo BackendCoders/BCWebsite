@@ -24,11 +24,14 @@ class AppServiceProvider extends ServiceProvider
     {
        View::composer('*', function ($view) {
 
-        $menuItems = MenuItem::with('page')->get();
+        $menuItems = MenuItem::with('page')
+            ->where('is_active', 1)
+            ->whereNull('parent_id') // only main menu
+            ->orderBy('order')
+            ->get();
 
         $view->with('menuItems', $menuItems);
     });
-    
     }
 
 }   

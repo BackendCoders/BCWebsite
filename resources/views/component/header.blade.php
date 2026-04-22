@@ -141,16 +141,18 @@
                             <p class="text-xs font-semibold uppercase tracking-wider text-[#FD5528]">Digital Marketing</p>
                            <!-- DIGITAL MARKETING -->
                                 <ul class="space-y-2 text-sm text-slate-700">
-    @foreach($menuItems->where('type','Digital Marketing') as $item)
-        <li class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">
+                                    @foreach($menuItems->where('type','Digital Marketing') as $item)
+                                        <li class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">
 
-            <a href="{{ $item->page ? url($item->page->slug) : '#' }}">
-                {{ $item->title }}
-            </a>
+                                    @if($item->page)
+                                        <a href="{{ route('frontend.page', $item->page->slug) }}">
+                                            {{ $item->title }}
+                                        </a>
+                                    @endif
 
-        </li>
-    @endforeach
-</ul>
+                                        </li>
+                                    @endforeach
+                                </ul>
                            <!-- <ul class="space-y-2 text-sm text-slate-700">
                                 <li><a href="{{ route('frontend.social_media') }}" class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">Social Media Management</a></li>
                                 <li><a href="{{ route('frontend.seo') }}" class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">SEO Services</a></li>
@@ -164,13 +166,14 @@
 
                         <div class="space-y-3">
                             <p class="text-xs font-semibold uppercase tracking-wider text-[#FD5528]">Software Development</p>
-                            <ul class="space-y-2 text-sm text-slate-700">
+                              <ul class="space-y-2 text-sm text-slate-700">
                                     @foreach($menuItems->where('type','Software Development') as $item)
                                         <li class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">
-
-                                            <a href="{{ $item->page ? url($item->page->slug) : '#' }}">
-                                                {{ $item->title }}
-                                            </a>
+                                     @if($item->page)
+                                        <a href="{{ route('frontend.page', $item->page->slug) }}">
+                                            {{ $item->title }}
+                                        </a>
+                                    @endif
 
                                         </li>
                                     @endforeach
