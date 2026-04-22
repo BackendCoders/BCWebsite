@@ -323,6 +323,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 }
 
 
+
 </style>
 </head>
 <body>
@@ -336,8 +337,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <div class="" style="font-family:Space Grotesk, sans-serif; font-body: Inter, sans-serif;
     font-mono:JetBrains Mono, monospace; muted-foreground: 215 14% 40%;">
-<!-- FLOATING CONTACT BUTTON -->
-<!-- FLOATING STACK -->
+
 <!-- FLOATING STACK -->
 <div class="fixed right-5 bottom-6 z-[60] flex flex-col gap-3 items-end">
 
@@ -347,7 +347,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         class="w-14 h-14 flex items-center justify-center rounded-full 
                bg-[#1aac26] text-white shadow-lg hover:scale-110 transition">
         
-        <img src="https://img.icons8.com/?size=100&id=122809&format=png&color=FFFFFF" class="w-6">
+        <img src="https://img.icons8.com/?size=100&id=122809&format=png&color=FFFFFF" class="w-8">
     </button>
 
     <!-- CONTACT MENU -->
@@ -358,13 +358,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         <a href="tel:+919140092133"
             class="flex items-center gap-3 p-3 rounded-xl hover:bg-orange-50">
-            📞 <span>Call Us</span>
+          <img src="https://img.icons8.com/?size=100&id=9730&format=png&color=FA5252" class="w-6">
+          <span>Call Us</span>
         </a>
 
         <a href="https://wa.me/919140092133"
             target="_blank"
             class="flex items-center gap-3 p-3 rounded-xl hover:bg-orange-50">
-            💬 <span>WhatsApp</span>
+            <img src="https://img.icons8.com/?size=100&id=Jneo9ShAzJw7&format=png&color=000000" class="w-6">
+            <span>WhatsApp</span>
         </a>
 
     </div>
@@ -393,24 +395,6 @@ contactBtn.addEventListener('click', () => {
     menu.classList.toggle('pointer-events-none');
     menu.classList.toggle('translate-y-5');
 });
-
-// CHAT TOGGLE
-function toggleChatbot() {
-    const chat = document.getElementById('chatbot-wrapper');
-
-    if (!chat) {
-        console.error('Chatbot not found');
-        return;
-    }
-
-    if (chat.classList.contains('scale-0')) {
-        chat.classList.remove('scale-0', 'opacity-0');
-        chat.classList.add('scale-100', 'opacity-100');
-    } else {
-        chat.classList.add('scale-0', 'opacity-0');
-        chat.classList.remove('scale-100', 'opacity-100');
-    }
-}
 
 </script>
 
