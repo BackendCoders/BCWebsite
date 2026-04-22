@@ -1,3 +1,5 @@
+
+
 <footer class="bg-black text-gray-400 pt-16 pb-8 px-6 border-t border-gray-800">
 
   <div class="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-5 gap-10">

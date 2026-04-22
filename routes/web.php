@@ -17,6 +17,8 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\HeroController;
 use App\Http\Controllers\SectionController;
 
+use BotMan\BotMan\BotMan;
+
 use App\Models\Page;
 
 // Route::get('/', function () {
@@ -149,6 +151,18 @@ Route::resource('pages', PageController::class);
 //     Route::delete('hero/{id}', [HeroController::class, 'destroy'])->name('hero.destroy');
 // });
 
+});
+
+
+
+Route::match(['get', 'post'], '/botman', function () {
+    $botman = app('botman');
+
+    $botman->hears('seo services', function (BotMan $bot) {
+        $bot->reply('SEO services are available 🚀');
+    });
+
+    $botman->listen();
 });
 
 require __DIR__.'/auth.php';

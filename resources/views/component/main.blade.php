@@ -11,6 +11,8 @@
 
 <meta name="description" content="{{ $page->meta_description ?? 'Backend Coders India is a trusted web development company in Kanpur, India delivering custom software development, SaaS platforms, website design, SEO, digital marketing, mobile apps, API development, and AI solutions for Indian and international clients.' }}">
 
+<meta name="csrf-token" content="{{ csrf_token() }}">
+
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -324,6 +326,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </style>
 </head>
 <body>
+  
   <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WLWCJJ7N"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -334,45 +337,38 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="" style="font-family:Space Grotesk, sans-serif; font-body: Inter, sans-serif;
     font-mono:JetBrains Mono, monospace; muted-foreground: 215 14% 40%;">
 <!-- FLOATING CONTACT BUTTON -->
-<div class="fixed right-5 bottom-6 z-50">
-
-  <!-- TOGGLE BUTTON -->
-  <button id="contactToggle"
-    class="w-14 h-14 flex items-center justify-center rounded-full 
-           bg-[#1aac26] p-2 text-white shadow-lg hover:scale-110 transition">
-    
-    <img src="https://img.icons8.com/?size=100&id=16712&format=png&color=ffffff" alt="">
-  </button>
-
-  <!-- MENU -->
-  <div id="contactMenu"
-    class="absolute bottom-16 right-0 w-64
-           p-4 space-y-3 opacity-0 pointer-events-none translate-y-5 
-           transition-all duration-300">
-
-    <!-- PHONE -->
-    <a href="tel:+919140092133"
-      class="flex items-center gap-3 p-3 rounded-xl bg-gray-100 transition">
-      
-      <img src="https://img.icons8.com/?size=100&id=9730&format=png&color=fd5528" class="w-5 h-5">
-      <span class="text-sm font-medium text-gray-700">Call Us</span>
-    </a>
-
-    <!-- WHATSAPP -->
-    <a href="https://wa.me/919140092133"
-      target="_blank"
-      class="flex items-center gap-3 p-3 rounded-xl bg-gray-100 transition">
-      
-      <img src="https://img.icons8.com/?size=100&id=16713&format=png&color=FD5528" class="w-5 h-5">
-      <span class="text-sm font-medium text-gray-700">WhatsApp</span>
-    </a>
+<!-- FLOATING STACK -->
+<!-- FLOATING STACK -->
+<div class="fixed right-5 bottom-6 z-[60] flex flex-col gap-3 items-end">
 
 
+    <!-- CONTACT BUTTON -->
+    <button id="contactToggle"
+        class="w-14 h-14 flex items-center justify-center rounded-full 
+               bg-[#1aac26] text-white shadow-lg hover:scale-110 transition">
+        
+        <img src="https://img.icons8.com/?size=100&id=122809&format=png&color=FFFFFF" class="w-6">
+    </button>
 
-  </div>
+    <!-- CONTACT MENU -->
+    <div id="contactMenu"
+        class="absolute bottom-20 right-0 w-64 bg-white rounded-2xl shadow-2xl border
+               p-3 space-y-2 opacity-0 pointer-events-none translate-y-5 
+               transition-all duration-300">
 
+        <a href="tel:+919140092133"
+            class="flex items-center gap-3 p-3 rounded-xl hover:bg-orange-50">
+            📞 <span>Call Us</span>
+        </a>
+
+        <a href="https://wa.me/919140092133"
+            target="_blank"
+            class="flex items-center gap-3 p-3 rounded-xl hover:bg-orange-50">
+            💬 <span>WhatsApp</span>
+        </a>
+
+    </div>
 </div>
-
 <!-- JS -->
 
 <style>
@@ -387,42 +383,35 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </style>
 
 <script>
-document.addEventListener("DOMContentLoaded", () => {
-  const counters = document.querySelectorAll('.counter');
 
-  const animate = (counter) => {
-    const target = +counter.getAttribute('data-target');
-    let count = 0;
+  
+const contactBtn = document.getElementById('contactToggle');
+const menu = document.getElementById('contactMenu');
 
-    const update = () => {
-      const increment = target / 60;
-      count += increment;
-
-      if (count < target) {
-        counter.innerText = Math.ceil(count);
-        requestAnimationFrame(update);
-      } else {
-        counter.innerText = target;
-      }
-    };
-
-    update();
-  };
-
-  // Run when visible
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        animate(entry.target);
-        observer.unobserve(entry.target);
-      }
-    });
-  });
-
-  counters.forEach(counter => {
-    observer.observe(counter);
-  });
+contactBtn.addEventListener('click', () => {
+    menu.classList.toggle('opacity-0');
+    menu.classList.toggle('pointer-events-none');
+    menu.classList.toggle('translate-y-5');
 });
+
+// CHAT TOGGLE
+function toggleChatbot() {
+    const chat = document.getElementById('chatbot-wrapper');
+
+    if (!chat) {
+        console.error('Chatbot not found');
+        return;
+    }
+
+    if (chat.classList.contains('scale-0')) {
+        chat.classList.remove('scale-0', 'opacity-0');
+        chat.classList.add('scale-100', 'opacity-100');
+    } else {
+        chat.classList.add('scale-0', 'opacity-0');
+        chat.classList.remove('scale-100', 'opacity-100');
+    }
+}
+
 </script>
 
 <script>
@@ -660,5 +649,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 </script>
+
+<!-- @include('laravel-chatbot::components.floating-chat') -->
+
+
+    @include('laravel-chatbot::components.floating-chat')
+
+
 </body>
 </html>

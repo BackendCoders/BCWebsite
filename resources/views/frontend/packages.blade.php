@@ -50,12 +50,12 @@
 
     <!-- TABS -->
     <div class="flex flex-wrap justify-center gap-3 mt-10">
-      <button class="tab active px-5 py-2 rounded-full border border-[#FD5528] transition hover:bg-[#FD5528] hover:text-white" data-tab="it">IT Services</button>
+      <button class="tab active px-5 py-2 rounded-full border border-[#FD5528] transition hover:bg-[#FD5528] hover:text-white" data-tab="it">Web Development</button>
       <button class="tab px-5 py-2 rounded-full border border-[#FD5528] transition hover:bg-[#FD5528] hover:text-white" data-tab="seo">SEO</button>
-      <button class="tab px-5 py-2 rounded-full border border-[#FD5528] transition hover:bg-[#FD5528] hover:text-white" data-tab="marketing">Marketing</button>
+      <button class="tab px-5 py-2 rounded-full border border-[#FD5528] transition hover:bg-[#FD5528] hover:text-white" data-tab="marketing">Digital Marketing</button>
       <button class="tab px-5 py-2 rounded-full border border-[#FD5528] transition hover:bg-[#FD5528] hover:text-white" data-tab="saas">CRM / SaaS</button>
       <button class="tab px-5 py-2 rounded-full border border-[#FD5528] transition hover:bg-[#FD5528] hover:text-white" data-tab="app">App Dev</button>
-      <button class="tab px-5 py-2 rounded-full border border-[#FD5528] transition hover:bg-[#FD5528] hover:text-white" data-tab="design">Graphic Design</button>
+      <button class="tab px-5 py-2 rounded-full border border-[#FD5528] transition hover:bg-[#FD5528] hover:text-white" data-tab="design">SMM</button>
     </div>
 
     <!-- CONTENT -->
