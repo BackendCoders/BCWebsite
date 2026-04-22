@@ -69,7 +69,7 @@
         <h3 class="text-xl font-semibold mb-4">BASIC PLAN (Starter Business)</h3>
 
         <h2 class="text-4xl font-bold mb-6">
-          ₹ 7,999/- <span class="text-base font-normal">Monthly</span>
+          ₹ 7,999/- <span class="text-base font-normal"></span>
         </h2>
 
         <ul class="space-y-4 mb-8">
@@ -106,7 +106,7 @@
         <h3 class="text-xl font-semibold mb-4">STANDARD PLAN (Growth Business)</h3>
 
         <h2 class="text-4xl font-bold mb-6">
-          ₹ 15,999/- <span class="text-base font-normal">Monthly</span>
+          ₹ 15,999/- <span class="text-base font-normal"></span>
         </h2>
 
         <ul class="space-y-4 mb-8 text-left">
@@ -152,7 +152,7 @@
         <h3 class="text-xl font-semibold mb-4">CUSTOMISED / PREMIUM PLAN (Scale Business)</h3>
 
         <h2 class="text-4xl font-bold mb-6">
-          ₹ 24,999/- <span class="text-base font-normal">Monthly</span>
+          ₹ 24,999/- <span class="text-base font-normal"></span>
         </h2>
 
         <ul class="space-y-4 mb-8">
@@ -205,7 +205,7 @@
         </h3>
 
         <h2 class="text-4xl font-bold mb-6">
-          ₹ 7,999/- <span class="text-base font-normal text-gray-900">Monthly</span>
+          ₹ 7,999/- <span class="text-base font-normal text-black">Monthly</span>
         </h2>
 
         <ul class="space-y-4 mb-8">
@@ -244,7 +244,7 @@
           </li>
         </ul>
 
-        <button class="w-full  bg-gradient-to-r from-[#FD5528] to-[#fbb03b] text-black py-3 rounded-full font-medium">
+        <button class="w-full  bg-gradient-to-r from-[#FD5528] to-[#fbb03b] text-white py-3 rounded-full font-medium">
           Choose Plan
         </button>
       </div>
@@ -258,7 +258,7 @@
         </h3>
 
         <h2 class="text-5xl font-bold mb-6">
-          ₹ 11,999/- <span class="text-base font-normal text-gray-600">Monthly</span>
+          ₹ 11,999/- <span class="text-base font-normal text-white">Monthly</span>
         </h2>
 
         <ul class="space-y-4 mb-8 text-left">
@@ -304,7 +304,7 @@
         </h3>
 
         <h2 class="text-4xl font-bold mb-6">
-          ₹ 15,999/- <span class="text-base font-normal text-gray-300">Monthly</span>
+          ₹ 15,999/- <span class="text-base font-normal text-black">Monthly</span>
         </h2>
 
         <ul class="space-y-4 mb-8">
@@ -340,7 +340,7 @@
           </li>
         </ul>
 
-        <button class="w-full  bg-gradient-to-r from-[#FD5528] to-[#fbb03b] text-black py-3 rounded-full font-medium">
+        <button class="w-full  bg-gradient-to-r from-[#FD5528] to-[#fbb03b] text-white py-3 rounded-full font-medium">
           Choose Plan
         </button>
       </div>
@@ -384,7 +384,7 @@
           </li>
         </ul>
 
-        <button class="w-full bg-gradient-to-r from-[#FD5528] to-[#fbb03b] text-black py-3 rounded-full font-medium">
+        <button class="w-full bg-gradient-to-r from-[#FD5528] to-[#fbb03b] text-white py-3 rounded-full font-medium">
           Choose Plan
         </button>
       </div>
@@ -450,7 +450,7 @@
         </h3>
 
         <h2 class="text-4xl font-bold mb-6">
-          ₹ 15,999/- <span class="text-base font-normal text-gray-300">Monthly</span>
+          ₹ 15,999/- <span class="text-base font-normal text-black">Monthly</span>
         </h2>
 
         <ul class="space-y-4 mb-8">
@@ -493,7 +493,7 @@
 
         </ul>
 
-        <button class="w-full bg-gradient-to-r from-[#FD5528] to-[#fbb03b] text-black py-3 rounded-full font-medium">
+        <button class="w-full bg-gradient-to-r from-[#FD5528] to-[#fbb03b] text-white py-3 rounded-full font-medium">
           Choose Plan
         </button>
       </div>
@@ -510,7 +510,7 @@
         </h3>
 
         <h2 class="text-4xl font-bold mb-6">
-          ₹ 4,999/- <span class="text-base font-normal text-gray-900">Monthly</span>
+          ₹ 4,999/- <span class="text-base font-normal text-gray-900">Starting</span>
         </h2>
 
         <ul class="space-y-4 mb-8">
@@ -542,7 +542,7 @@
 
         </ul>
 
-        <button class="w-full bg-gradient-to-r from-[#FD5528] to-[#fbb03b] text-black py-3 rounded-full font-medium">
+        <button class="w-full bg-gradient-to-r from-[#FD5528] to-[#fbb03b] text-white py-3 rounded-full font-medium">
           Choose Plan
         </button>
       </div>
@@ -555,7 +555,7 @@
         </h3>
 
         <h2 class="text-5xl font-bold mb-6">
-          ₹ 7,999/- <span class="text-base font-normal text-gray-50">Monthly</span>
+          ₹ 7,999/- <span class="text-base font-normal text-gray-50">Starting</span>
         </h2>
 
         <ul class="space-y-4 mb-8 text-left">
@@ -604,7 +604,7 @@
         </h3>
 
         <h2 class="text-4xl font-bold mb-6">
-          ₹ 13,999/- <span class="text-base font-normal text-gray-300">Monthly</span>
+          ₹ 13,999/- <span class="text-base font-normal text-black">Starting</span>
         </h2>
 
         <ul class="space-y-4 mb-8">
@@ -646,7 +646,7 @@
           </li>
         </ul>
 
-        <button class="w-full bg-gradient-to-r from-[#FD5528] to-[#fbb03b] text-black py-3 rounded-full font-medium">
+        <button class="w-full bg-gradient-to-r from-[#FD5528] to-[#fbb03b] text-white py-3 rounded-full font-medium">
           Choose Plan
         </button>
       </div>
@@ -663,7 +663,7 @@
         </h3>
 
         <h2 class="text-4xl font-bold mb-6">
-          ₹ 19,999<span class="text-base font-normal text-gray-900">Starting</span>
+          ₹ 19,999/-<span class="text-base font-normal text-black">Starting</span>
         </h2>
 
         <ul class="space-y-4 mb-8">
@@ -694,7 +694,7 @@
           
         </ul>
 
-        <button class="w-full  bg-gradient-to-r from-[#FD5528] to-[#fbb03b] text-black py-3 rounded-full font-medium">
+        <button class="w-full  bg-gradient-to-r from-[#FD5528] to-[#fbb03b] text-white py-3 rounded-full font-medium">
           Choose Plan
         </button>
       </div>
@@ -707,7 +707,7 @@
         </h3>
 
         <h2 class="text-5xl font-bold mb-6">
-         ₹ 39,999<span class="text-base font-normal text-gray-600">Starting</span>
+         ₹ 39,999/-<span class="text-base font-normal text-white">Starting</span>
         </h2>
 
         <ul class="space-y-4 mb-8 text-left">
@@ -756,7 +756,7 @@
         </h3>
 
         <h2 class="text-4xl font-bold mb-6">
-         ₹ 69,999<span class="text-base font-normal text-gray-600">Starting</span>
+         ₹ 69,999/-<span class="text-base font-normal text-black">Starting</span>
         </h2>
 
         <ul class="space-y-4 mb-8">
@@ -797,7 +797,7 @@
           </li>
         </ul>
 
-        <button class="w-full  bg-gradient-to-r from-[#FD5528] to-[#fbb03b] text-black py-3 rounded-full font-medium">
+        <button class="w-full  bg-gradient-to-r from-[#FD5528] to-[#fbb03b] text-white py-3 rounded-full font-medium">
           Choose Plan
         </button>
       </div>
@@ -814,7 +814,7 @@
         </h3>
 
         <h2 class="text-4xl font-bold mb-6">
-          ₹ 2,999- <span class="text-base font-normal text-gray-600">Monthly</span>
+          ₹ 2,999/- <span class="text-base font-normal text-gray-600"></span>
         </h2>
 
         <ul class="space-y-4 mb-8">
@@ -845,7 +845,7 @@
 
         </ul>
 
-        <button class="w-full  bg-gradient-to-r from-[#FD5528] to-[#fbb03b]  hover:bg-gradient-to-r hover:from-[#FD5528] hover:to-[#fbb03b] text-black py-3 rounded-full font-medium">
+        <button class="w-full  bg-gradient-to-r from-[#FD5528] to-[#fbb03b]  hover:bg-gradient-to-r hover:from-[#FD5528] hover:to-[#fbb03b] text-white py-3 rounded-full font-medium">
           Choose Plan
         </button>
       </div>
@@ -858,7 +858,7 @@
         </h3>
 
         <h2 class="text-5xl font-bold mb-6">
-          ₹ 5,999/- <span class="text-base font-normal text-gray-600">Monthly</span>
+          ₹ 5,999/- <span class="text-base font-normal text-gray-600"></span>
         </h2>
 
         <ul class="space-y-4 mb-8 text-left">
@@ -904,7 +904,7 @@
         </h3>
 
         <h2 class="text-4xl font-bold mb-6">
-          ₹ 9,999/- <span class="text-base font-normal text-gray-600">Monthly</span>
+          ₹ 9,999/- <span class="text-base font-normal text-gray-600"></span>
         </h2>
 
         <ul class="space-y-4 mb-8">

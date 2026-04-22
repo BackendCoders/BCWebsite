@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Page;
+use App\Models\MenuItem;
 
 class PageController extends Controller
 {
@@ -30,7 +31,7 @@ class PageController extends Controller
             'meta_description' => 'nullable|max:255',
         ]);
 
-        Page::create([
+        $page = Page::create([
             'title' => $request->title,
             'slug' => $request->slug,
             'meta_title' => $request->meta_title,
@@ -40,6 +41,14 @@ class PageController extends Controller
             'is_index' => $request->is_index ?? 1,
         ]);
 
+        // ✅ AUTO CREATE MENU ITEM
+        MenuItem::create([
+            'title' => $page->title,
+            'page_id' => $page->id,
+            'type' => 'Digital Marketing', // or make dynamic later
+            'order' => MenuItem::max('order') + 1
+        ]);
+                
         return redirect()->route('pages.index')
             ->with('success', 'Page Created Successfully');
     }

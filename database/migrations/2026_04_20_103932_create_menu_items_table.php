@@ -1,36 +1,34 @@
 <?php
-
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up(): void
     {
         Schema::create('menu_items', function (Blueprint $table) {
-            
-        $table->id();
 
-        $table->string('title');
+            $table->id();
 
-        $table->foreignId('page_id')->nullable()->constrained()->nullOnDelete();
+            $table->string('title');
 
-        $table->foreignId('parent_id')->nullable()->constrained('menu_items')->cascadeOnDelete();
+            // Relations
+            $table->foreignId('page_id')->nullable()->constrained()->nullOnDelete();
+            $table->foreignId('parent_id')->nullable()->constrained('menu_items')->cascadeOnDelete();
 
-        $table->integer('order')->default(0);
+            // Ordering
+            $table->integer('order')->default(0);
 
-        $table->timestamps();
+            // Mega Menu Fields
+            $table->string('type')->nullable(); // Digital Marketing / Software Development
+            $table->string('icon')->nullable();
+            $table->boolean('is_active')->default(true);
 
+            $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
         Schema::dropIfExists('menu_items');

@@ -22,11 +22,13 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        $solutionsMenu = MenuItem::with('children.children.page')
-            ->where('title', 'Solutions')
-            ->first();
+       View::composer('*', function ($view) {
 
-        View::share('solutionsMenu', $solutionsMenu);
+        $menuItems = MenuItem::with('page')->get();
+
+        $view->with('menuItems', $menuItems);
+    });
+    
     }
 
 }   

@@ -10,20 +10,13 @@ class MenuItem extends Model
         'title',
         'page_id',
         'parent_id',
-        'order'
+        'order',
+        'type',        // ✅ ADD THIS
+        'icon',        // ✅ ADD THIS
+        'is_active'
     ];
 
-    public function children()
-    {
-        return $this->hasMany(MenuItem::class, 'parent_id')->orderBy('order');
-    }
-
-    public function parent()
-    {
-        return $this->belongsTo(MenuItem::class, 'parent_id');
-    }
-
-    public function page()
+ public function page()
     {
         return $this->belongsTo(Page::class);
     }

@@ -496,6 +496,8 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+
+
 </script>
 </script>
 <script>
@@ -632,6 +634,30 @@ document.querySelector("form").addEventListener("submit", function(e) {
         generateCaptcha();
         document.getElementById("captchaInput").value = "";
     }
+});
+</script>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const tabs = document.querySelectorAll('.tab');
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', function () {
+
+            // Remove active styles from all tabs
+            tabs.forEach(t => {
+                t.classList.remove('bg-[#FD5528]', 'text-white', 'active');
+                t.classList.add('text-[#FD5528]');
+            });
+
+            // Add active styles to clicked tab
+            this.classList.add('bg-[#FD5528]', 'text-white', 'active');
+            this.classList.remove('text-[#FD5528]');
+        });
+    });
+
 });
 </script>
 </body>
