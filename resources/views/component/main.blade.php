@@ -384,6 +384,41 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 }
 </style>
 
+
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    document.querySelectorAll('.read-more-btn').forEach((btn) => {
+
+        const text = btn.previousElementSibling;
+
+        // Hide button if text is small
+        setTimeout(() => {
+            if (text.scrollHeight <= text.clientHeight) {
+                btn.style.display = 'none';
+            }
+        }, 100);
+
+        btn.addEventListener('click', function () {
+
+            if (text.classList.contains('line-clamp-2')) {
+                text.classList.remove('line-clamp-2');
+                btn.innerText = 'Read Less';
+            } else {
+                text.classList.add('line-clamp-2');
+                btn.innerText = 'Read More';
+            }
+
+        });
+
+    });
+
+});
+</script>
+
 <script>
 
   
@@ -634,10 +669,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 
-<!-- @include('laravel-chatbot::components.floating-chat') -->
-
-
-    @include('laravel-chatbot::components.floating-chat')
 
 
 </body>

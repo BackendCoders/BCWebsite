@@ -1055,9 +1055,12 @@
             </div>
 
             <!-- REVIEW TEXT -->
-            <p class="text-gray-700 text-start text-sm leading-relaxed mb-4">
+            <p class="text-gray-700 text-start text-sm leading-relaxed mb-2 line-clamp-2 review-text">
             Freelancer was extremely communicative, skilled, prompt and professional. Their work exceeded my expectation. I'd definitely hire them again and refer them to my colleagues
             </p>
+            <button class="read-more-btn text-[#FD5528] text-xs font-medium mb-4">
+    Read More
+</button>
 
             <!-- FOOTER -->
             <div class="flex items-center justify-between text-xs text-gray-400">
@@ -1111,9 +1114,12 @@
             </div>
 
             <!-- REVIEW TEXT -->
-            <p class="text-gray-700 text-start text-sm leading-relaxed mb-4">
+            <p class="text-gray-700 text-start text-sm leading-relaxed mb-2 line-clamp-2 review-text">
          Ravindra went above and beyond fixing major issues left by a previous developer, saving the project with top-notch skills, great attitude, and reliability.
             </p>
+            <button class="read-more-btn text-[#FD5528] text-xs font-medium mb-4">
+    Read More
+</button>
 
             <!-- FOOTER -->
             <div class="flex items-center justify-between text-xs text-gray-400">
@@ -1167,16 +1173,19 @@
                   </div>
 
                   <!-- REVIEW TEXT -->
-                  <p class="text-gray-700 text-start text-sm leading-relaxed mb-4">
-                Very pleased with the work provided, understood my requirements and delivered on time. Highly recommended
+                  <p class="text-gray-700 text-start text-sm leading-relaxed mb-2 line-clamp-2 review-text">
+                "Very pleased with the work provided, understood my requirements and delivered on time. Highly recommended."
                   </p>
+                  <button class="read-more-btn text-[#FD5528] text-xs font-medium mb-4">
+    Read More
+</button>
 
                   <!-- FOOTER -->
                   <div class="flex items-center justify-between text-xs text-gray-400">
 
                     <!-- CATEGORY -->
                     <span class="bg-gray-100 px-2 py-1 rounded-full text-orange-500">
-                      United States
+                      United kingdom
                     </span>
 
                     <!-- ACTION -->
@@ -1224,9 +1233,12 @@
                   </div>
 
                   <!-- REVIEW TEXT -->
-                  <p class="text-gray-700 text-start text-sm leading-relaxed mb-4">
+                  <p class="text-gray-700 text-start text-sm leading-relaxed mb-2 line-clamp-2 review-text">
            Ravindra delivered a visually appealing, responsive, and highly functional website with top-notch skills, great communication, flexibility, and strong post-launch support, highly recommended.
                   </p>
+                    <button class="read-more-btn text-[#FD5528] text-xs font-medium mb-4">
+    Read More
+</button>
 
                   <!-- FOOTER -->
                   <div class="flex items-center justify-between text-xs text-gray-400">
