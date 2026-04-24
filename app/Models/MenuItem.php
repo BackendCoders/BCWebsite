@@ -16,6 +16,9 @@ class MenuItem extends Model
         'is_active'
     ];
 
+const TYPE_DIGITAL = 'digital_marketing';
+const TYPE_SOFTWARE = 'software_development';
+
     //  Relation with Page
     public function page()
     {
