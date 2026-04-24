@@ -165,19 +165,24 @@
                         </div>
 
                         <div class="space-y-3">
-                            <p class="text-xs font-semibold uppercase tracking-wider text-[#FD5528]">Software Development</p>
-                              <ul class="space-y-2 text-sm text-slate-700">
-                                    @foreach($menuItems->where('type','Software Development') as $item)
-                                        <li class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">
-                                     @if($item->page)
-                                        <a href="{{ route('frontend.page', $item->page->slug) }}">
-                                            {{ $item->title }}
-                                        </a>
-                                    @endif
+                      <p class="text-xs font-semibold uppercase tracking-wider text-[#FD5528]">
+    Software Development
+</p>
 
-                                        </li>
-                                    @endforeach
-                                </ul>
+<ul class="space-y-2 mt-3 text-sm text-slate-700">
+@foreach($menuItems as $item)
+    @if(strtolower(trim($item->type)) == 'software development')
+        @if($item->page)
+            <li class="px-3 py-2 rounded-lg hover:bg-orange-50 transition">
+                <a href="{{ route('frontend.page', $item->page->slug) }}"
+                   class="block hover:text-[#FD5528]">
+                    {{ $item->title }}
+                </a>
+            </li>
+        @endif
+    @endif
+@endforeach
+</ul>
                              <!-- <ul class="space-y-2 text-sm text-slate-700">
                                 <li><a href="/custom-web-application-development" class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">Custom Web Applications</a></li>
                                 <li><a href="/website-design-development" class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">Website Design & Development</a></li>

@@ -83,11 +83,11 @@
         <div class="relative mx-auto grid max-w-7xl items-center gap-12 px-6 lg:grid-cols-2">
             <div>
                 @if($heroExtra['eyebrow'] ?? null)
-                    <span class="inline-flex rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.35em] text-black">
+                    <span class="inline-flex rounded-full border text-[#FD5528] border-white/20 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.35em] ">
                         {{ $heroExtra['eyebrow'] }}
                     </span>
                 @else
-                    <span class="inline-flex rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.35em] text-black">
+                    <span class="inline-flex rounded-full border text-[#FD5528] border-white/20 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.35em] ">
                         {{ $pageTitle }}
                     </span>
                 @endif
@@ -116,7 +116,7 @@
                             <a
                                 href="{{ $heroExtra['button_url'] ?? route('frontend.contact') }}"
                                 target="{{ $heroExtra['button_target'] ?? '_self' }}"
-                                class="inline-flex items-center justify-center rounded-xl bg-white px-6 py-3 font-semibold text-[#FD5528] shadow-lg shadow-black/10 transition hover:scale-[1.02]"
+                                class="inline-flex items-center justify-center rounded-xl bg-[#FD5528] px-6 py-3 font-semibold text-white shadow-lg shadow-black/10 transition hover:scale-[1.02]"
                             >
                                 {{ $heroExtra['button'] ?? $heroExtra['button_text'] }}
                             </a>
@@ -167,9 +167,9 @@
             @case('content')
             @case('text')
                 @php $item = $firstItem($section); @endphp
-                <section id="{{ $sectionId }}" class="bg-white py-16 sm:py-20">
+                <!-- <section id="{{ $sectionId }}" class="bg-white py-16 sm:py-20">
                     <div class="mx-auto grid max-w-7xl gap-10 px-6 lg:grid-cols-2 lg:items-center">
-                        <div>
+                        <div class="">
                             @if($sectionTitle)
                                 <p class="text-xs font-semibold uppercase tracking-[0.35em] text-[#FD5528]">
                                     {{ $sectionTitle }}
@@ -209,10 +209,98 @@
                             @endif
                         </div>
                     </div>
-                </section>
+                </section> -->
 
-                
+                @php $item = $firstItem($section); @endphp
+
+<section id="{{ $sectionId }}" class="bg-white py-16 sm:py-20">
+
+    @if($sectionType === 'content')
+        <!-- ✅ CENTERED LAYOUT -->
+        <div class="mx-auto max-w-3xl px-6 text-center">
+
+            @if($sectionTitle)
+                <p class="text-xs font-semibold uppercase tracking-[0.35em] text-[#FD5528]">
+                    {{ $sectionTitle }}
+                </p>
+            @endif
+
+            @if($item && $item->title)
+                <h2 class="mt-4 text-3xl font-bold leading-tight text-slate-900 sm:text-4xl">
+                    {!! $item->title !!}
+                </h2>
+            @endif
+
+            @if($item && $item->description)
+                <div class="mt-6 space-y-4 text-base leading-8 text-slate-600">
+                    {!! nl2br(e($item->description)) !!}
+                </div>
+            @endif
+
+            @if(data_get($item, 'extra.button_text') || data_get($item, 'extra.link_text'))
+                <div class="mt-8 flex justify-center">
+                    <a
+                        href="{{ data_get($item, 'extra.button_url', route('frontend.contact')) }}"
+                        target="{{ data_get($item, 'extra.button_target', '_self') }}"
+                        class="inline-flex items-center justify-center rounded-xl bg-[#FD5528] px-6 py-3 font-semibold text-white shadow-lg shadow-[#FD5528]/20 transition hover:bg-orange-600 hover:scale-105"
+                    >
+                        {{ data_get($item, 'extra.button_text', data_get($item, 'extra.link_text', 'Learn More')) }}
+                    </a>
+                </div>
+            @endif
+
+        </div>
+
+    @else
+        <!-- ✅ DEFAULT (LEFT + IMAGE) -->
+        <div class="mx-auto grid max-w-7xl gap-10 px-6 lg:grid-cols-2 lg:items-center">
+
+            <div>
+                @if($sectionTitle)
+                    <p class="text-xs font-semibold uppercase tracking-[0.35em] text-[#FD5528]">
+                        {{ $sectionTitle }}
+                    </p>
+                @endif
+
+                @if($item && $item->title)
+                    <h2 class="mt-4 text-3xl font-bold leading-tight text-slate-900 sm:text-4xl">
+                        {!! $item->title !!}
+                    </h2>
+                @endif
+
+                @if($item && $item->description)
+                    <div class="mt-6 space-y-4 text-base leading-8 text-slate-600">
+                        {!! nl2br(e($item->description)) !!}
+                    </div>
+                @endif
+
+                @if(data_get($item, 'extra.button_text') || data_get($item, 'extra.link_text'))
+                    <a
+                        href="{{ data_get($item, 'extra.button_url', route('frontend.contact')) }}"
+                        target="{{ data_get($item, 'extra.button_target', '_self') }}"
+                        class="mt-8 inline-flex items-center justify-center rounded-xl bg-[#FD5528] px-6 py-3 font-semibold text-white shadow-lg shadow-[#FD5528]/20 transition hover:bg-orange-600"
+                    >
+                        {{ data_get($item, 'extra.button_text', data_get($item, 'extra.link_text', 'Learn More')) }}
+                    </a>
+                @endif
+            </div>
+
+            <div>
+                @if($item && $item->image)
+                    <img
+                        src="{{ $mediaUrl($item->image) }}"
+                        alt="{{ $item->title ?? $sectionTitle }}"
+                        class="w-full rounded-[1.75rem] object-cover shadow-2xl shadow-slate-200"
+                    >
+                @endif
+            </div>
+
+        </div>
+    @endif
+
+</section>
                 @break
+                
 
             @case('services')
             @case('cards')
@@ -273,7 +361,7 @@
     @if(is_array($tags) && count($tags))
       <div class="flex flex-wrap justify-center gap-3 text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-[#FD5528]">
         @foreach($tags as $tag)
-          <span class="rounded-full border px-3 py-1">
+          <span class="rounded-full border border-[#FD5528]/70 px-3 py-1">
             {{ $tag }}
           </span>
         @endforeach
@@ -387,13 +475,13 @@
 
                         <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                             @foreach($items as $item)
-                                <div class="overflow-hidden rounded-[1.75rem] border border-slate-200 bg-slate-50 shadow-sm">
+                                <div class="overflow-hidden rounded-[1.75rem]">
                                     @if($item->image)
                                         <img src="{{ $mediaUrl($item->image) }}" alt="{{ $item->title }}" class="h-60 w-full object-cover">
                                     @endif
                                     <div class="p-5">
                                         @if($item->title)
-                                            <h3 class="text-lg font-semibold text-slate-900">{{ $item->title }}</h3>
+                                            <h3 class="p-5 bg-white rounded-xl shadow text-center service-card transition duration-300 transform hover:-translate-y-1 hover:shadow-[0_15px_35px_rgba(253,85,40,0.15)]" data-aos="zoom-in">{{ $item->title }}</h3>
                                         @endif
                                         @if($item->description)
                                             <p class="mt-2 text-sm leading-7 text-slate-600">{{ $item->description }}</p>

@@ -9,7 +9,7 @@ use App\Models\Category;
 use App\Models\Project;
 use App\Models\Service;
 use App\Models\Page;
-
+use App\Models\MenuItem;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -21,10 +21,12 @@ class HomeController extends Controller
     $page = Page::with('sections.items')
         ->where('slug', 'home')
         ->first();
+        $menuItems = MenuItem::with('page')->get();
 
-    return view('frontend.index', compact('page'));
+    return view('frontend.index', compact('page', 'menuItems'));
 }
     
+
 
     public function dashboard(){
         return view('dashboard', [

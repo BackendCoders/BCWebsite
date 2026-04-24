@@ -19,6 +19,7 @@ use App\Http\Controllers\SectionController;
 
 use BotMan\BotMan\BotMan;
 
+
 use App\Models\Page;
 
 // Route::get('/', function () {
@@ -164,5 +165,7 @@ Route::match(['get', 'post'], '/botman', function () {
 
     $botman->listen();
 });
+
+
 
 require __DIR__.'/auth.php';
