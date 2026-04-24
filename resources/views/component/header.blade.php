@@ -134,51 +134,53 @@
                  <div id="mega-menu-panel"
                     class="hidden absolute left-1/2 top-full z-40 mt-3 max-h-[70vh] w-[min(100vw-2rem,850px)] -translate-x-1/2 overflow-hidden rounded-2xl bg-white p-6 shadow-2xl ring-1 ring-black/10 transition duration-200"
                     role="menu" aria-hidden="true">
-
-                    @php
-$digitalMenus = $menuItems->filter(fn($item) => strtolower(trim($item->type)) === 'digital marketing');
-$softwareMenus = $menuItems->filter(fn($item) => strtolower(trim($item->type)) === 'software development');
+@php
+$digitalMenus = $menuItems->filter(fn($item) => str_contains(strtolower($item->type), 'digital marketing'));
+$softwareMenus = $menuItems->filter(fn($item) => str_contains(strtolower($item->type), 'software development'));
 @endphp
 
-<div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
+<div class="grid grid-cols-2 gap-10 w-full">
 
-    <!-- LEFT: DIGITAL -->
-    <div class="space-y-3">
-        <p class="text-xs font-semibold uppercase tracking-wider text-[#FD5528]">
+    <!-- LEFT -->
+    <div>
+        <p class="text-xs font-semibold uppercase text-[#FD5528]">
             Digital Marketing
         </p>
 
-        <ul class="space-y-2 text-sm text-slate-700">
-            @foreach($digitalMenus as $item)
-                @if($item->page)
-                    <li class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">
-                        <a href="{{ route('frontend.page', $item->page->slug) }}">
-                            {{ $item->title }}
-                        </a>
-                    </li>
-                @endif
-            @endforeach
-        </ul>
+             <ul class="space-y-2 text-sm text-slate-700">
+                                    @foreach($menuItems->where('type','Digital Marketing') as $item)
+                                        <li class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">
+
+                                    @if($item->page)
+                                        <a href="{{ route('frontend.page', $item->page->slug) }}">
+                                            {{ $item->title }}
+                                        </a>
+                                    @endif
+
+                                        </li>
+                                    @endforeach
+                                </ul>
     </div>
 
-    <!-- RIGHT: SOFTWARE -->
-    <div class="space-y-3">
-        <p class="text-xs font-semibold uppercase tracking-wider text-[#FD5528]">
+    <!-- RIGHT -->
+    <div>
+        <p class="text-xs font-semibold uppercase text-[#FD5528]">
             Software Development
         </p>
 
-        <ul class="space-y-2 text-sm text-slate-700">
-            @foreach($softwareMenus as $item)
-                @if($item->page)
-                    <li class="px-3 py-2 rounded-lg hover:bg-orange-50 transition">
-                        <a href="{{ route('frontend.page', $item->page->slug) }}"
-                           class="block hover:text-[#FD5528]">
-                            {{ $item->title }}
-                        </a>
-                    </li>
-                @endif
-            @endforeach
-        </ul>
+              <ul class="space-y-2 text-sm text-slate-700">
+                                    @foreach($menuItems->where('type','Software Development') as $item)
+                                        <li class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">
+
+                                    @if($item->page)
+                                        <a href="{{ route('frontend.page', $item->page->slug) }}">
+                                            {{ $item->title }}
+                                        </a>
+                                    @endif
+
+                                        </li>
+                                    @endforeach
+                                </ul>
     </div>
 
 </div>

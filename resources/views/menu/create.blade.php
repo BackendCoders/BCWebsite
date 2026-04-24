@@ -1,37 +1,36 @@
 @extends('layout.main')
 
 @section('content')
-<form method="POST" action="{{ route('menu-items.store') }}" class="space-y-4">
-    @csrf
 
-    <!-- Title -->
-    <input type="text" name="title" placeholder="Menu Title"
-        class="w-full border p-2 rounded" required>
 
-    <!-- Slug -->
-    <input type="text" name="slug" placeholder="URL (e.g. seo-services)"
-        class="w-full border p-2 rounded">
+<form method="POST" action="{{ route('menu-items.store') }}">
+@csrf
 
-    <!-- Route -->
-    <input type="text" name="route" placeholder="Route Name (optional)"
-        class="w-full border p-2 rounded">
+<input type="text" name="title" placeholder="Title" class="border p-2">
 
-    <!-- Parent Menu -->
-    <select name="parent_id" class="w-full border p-2 rounded">
-        <option value="">Main Menu</option>
-        @foreach($parents as $id => $title)
-            <option value="{{ $id }}">{{ $title }}</option>
-        @endforeach
-    </select>
+<select name="page_id">
+    <option value="">Select Page</option>
+    @foreach($pages as $id => $title)
+        <option value="{{ $id }}">{{ $title }}</option>
+    @endforeach
+</select>
 
-    <!-- Order -->
-    <input type="number" name="order" placeholder="Order"
-        class="w-full border p-2 rounded">
+<select name="parent_id">
+    <option value="">Parent Menu</option>
+    @foreach($parents as $id => $title)
+        <option value="{{ $id }}">{{ $title }}</option>
+    @endforeach
+</select>
 
-    <!-- Submit -->
-    <button class="bg-orange-500 text-white px-4 py-2 rounded">
-        Save Menu
-    </button>
+<select name="type">
+    <option value="">Select Type</option>
+    <option value="Digital Marketing">Digital Marketing</option>
+    <option value="Software Development">Software Development</option>
+</select>
+
+<button class="bg-green-500 text-white px-4 py-2">Save</button>
+
 </form>
+
 
 @endsection

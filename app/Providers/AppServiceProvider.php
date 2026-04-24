@@ -30,8 +30,7 @@ class AppServiceProvider extends ServiceProvider
             ->orderBy('order')
             ->get();
 
-        // $view->with('menuItems', $menuItems);
-         $view->with('menuItems', MenuItem::with('page')->get());
+        $view->with('menuItems', $menuItems);
     });
     }
 

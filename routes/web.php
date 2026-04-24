@@ -16,9 +16,8 @@ use App\Http\Controllers\ServiceDetailController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\HeroController;
 use App\Http\Controllers\SectionController;
-
+use App\Http\Controllers\MenuItemController;
 use BotMan\BotMan\BotMan;
-
 
 use App\Models\Page;
 
@@ -167,5 +166,8 @@ Route::match(['get', 'post'], '/botman', function () {
 });
 
 
+
+
+Route::resource('menu-items', MenuItemController::class);
 
 require __DIR__.'/auth.php';
