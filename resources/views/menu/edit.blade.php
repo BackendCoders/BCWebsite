@@ -35,12 +35,12 @@
                         class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-[#FD5528] focus:border-[#FD5528] outline-none">
 
                     <option value="Digital Marketing"
-                        {{ $menu_item->type == 'Digital Marketing' ? 'selected' : '' }}>
+                        {{ (string) old('type', $menu_item->type) === 'Digital Marketing' ? 'selected' : '' }}>
                         Digital Marketing
                     </option>
 
-                    <option value="Software Development"
-                        {{ $menu_item->type == 'software development' ? 'selected' : '' }}>
+                    <option value="software development"
+                        {{ strtolower((string) old('type', $menu_item->type)) === 'software development' ? 'selected' : '' }}>
                         Software Development
                     </option>
 

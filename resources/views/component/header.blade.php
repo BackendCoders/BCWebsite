@@ -131,9 +131,14 @@
                     </svg>
                 </button>
 
-                 <div id="mega-menu-panel"
+                <div id="mega-menu-panel"
                     class="hidden absolute left-0 top-full z-40 mt-3 max-h-[70vh] w-[min(100vw-2rem,850px)] overflow-visible rounded-2xl bg-white p-6 shadow-2xl ring-1 ring-black/10 transition duration-200 origin-top-left"
                     role="menu" aria-hidden="true">
+
+                @php
+                    $digitalMarketingItems = $menuItems->filter(fn($item) => strtolower(trim($item->type)) === 'digital marketing');
+                    $softwareDevelopmentItems = $menuItems->filter(fn($item) => strtolower(trim($item->type)) === 'software development');
+                @endphp
 
                 <div class="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-start">
 
@@ -141,7 +146,7 @@
                             <p class="text-xs font-semibold uppercase tracking-wider text-[#FD5528]">Digital Marketing</p>
                            <!-- DIGITAL MARKETING -->
                                 <ul class="flex w-full flex-col gap-2 text-sm text-slate-700">
-                                    @foreach($menuItems->filter(fn($item) => strtolower(trim($item->type)) === 'digital marketing') as $item)
+                                    @foreach($digitalMarketingItems as $item)
                                         <li class="w-full rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">
 
                                     @if($item->page)
@@ -169,16 +174,39 @@
                             Software Development
                         </p>
 
-                        <ul class="mt-3 flex w-full flex-col gap-2 text-sm text-slate-700">
-                                    @foreach($menuItems->filter(fn($item) => strtolower(trim($item->type)) === 'software development') as $item)
-                                        @if($item->page)
-                                            <li class="w-full rounded-lg px-3 py-2 hover:bg-orange-50 transition">
+                <ul class="mt-3 flex w-full flex-col gap-4 text-sm text-slate-700">
+                                    @foreach($softwareDevelopmentItems as $item)
+                                        <li class="w-full rounded-lg px-3 py-2 hover:bg-orange-50 transition">
+                                            @if($item->page)
                                                 <a href="{{ route('frontend.page', $item->page->slug) }}"
                                                 class="block w-full hover:text-[#FD5528]">
                                                     {{ $item->title }}
                                                 </a>
-                                            </li>
-                                        @endif
+                                            @else
+                                                <span class="block w-full font-medium text-slate-800">
+                                                    {{ $item->title }}
+                                                </span>
+                                            @endif
+
+                                            @if($item->children->isNotEmpty())
+                                                <ul class="mt-3 flex w-full flex-col gap-2 border-l border-slate-200 pl-4 text-sm text-slate-600">
+                                                    @foreach($item->children as $child)
+                                                        <li class="w-full">
+                                                            @if($child->page)
+                                                                <a href="{{ route('frontend.page', $child->page->slug) }}"
+                                                                   class="block w-full rounded-md px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">
+                                                                    {{ $child->title }}
+                                                                </a>
+                                                            @else
+                                                                <span class="block w-full rounded-md px-3 py-2">
+                                                                    {{ $child->title }}
+                                                                </span>
+                                                            @endif
+                                                        </li>
+                                                    @endforeach
+                                                </ul>
+                                            @endif
+                                        </li>
                                     @endforeach
                         </ul>
                                                     <!-- <ul class="space-y-2 text-sm text-slate-700">
@@ -445,4 +473,3 @@
         }
     });
 </script>
-

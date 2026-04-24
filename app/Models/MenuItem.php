@@ -6,9 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class MenuItem extends Model
 {
-    public const TYPE_DIGITAL = 'Digital Marketing';
-    public const TYPE_SOFTWARE = 'software development';
-
     protected $fillable = [
         'title',
         'page_id',
@@ -17,14 +14,6 @@ class MenuItem extends Model
         'type',
         'icon',
         'is_active'
-    ];
-
-    protected $casts = [
-        'is_active' => 'boolean',
-    ];
-
-    protected $attributes = [
-        'is_active' => 1,
     ];
 
     
@@ -46,4 +35,3 @@ class MenuItem extends Model
         return $this->hasMany(MenuItem::class, 'parent_id')->orderBy('order');
     }
 }
-

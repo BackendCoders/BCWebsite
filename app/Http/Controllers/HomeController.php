@@ -9,8 +9,6 @@ use App\Models\Category;
 use App\Models\Project;
 use App\Models\Service;
 use App\Models\Page;
-use App\Models\MenuItem;
-use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
@@ -18,16 +16,11 @@ class HomeController extends Controller
         
         // return view('frontend.index');
  
-    $page = Page::with('sections.items')
-        ->where('slug', 'home')
-        ->first();
-        $menuItems = MenuItem::with(['page', 'children.page'])
-            ->where('is_active', 1)
-            ->whereNull('parent_id')
-            ->orderBy('order')
-            ->get();
+        $page = Page::with('sections.items')
+            ->where('slug', 'home')
+            ->first();
 
-    return view('frontend.index', compact('page', 'menuItems'));
+        return view('frontend.index', compact('page'));
 }
     
 

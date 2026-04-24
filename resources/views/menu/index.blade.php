@@ -39,9 +39,9 @@
                     </td>
 
                     <td class="px-6 py-4">
-                        <span class="px-3 py-1 text-xs rounded-full 
-                            {{ $menu->type == 'Digital Marketing' ? 'bg-orange-100 text-orange-600' : 'bg-gray-100 text-gray-700' }}">
-                            {{ $menu->type == 'software development' ? 'bg-orange-100 text-orange-600' : 'bg-gray-100 text-gray-700' }}"
+                        <span class="px-3 py-1 text-xs rounded-full
+                            {{ strtolower(trim($menu->type)) === 'digital marketing' ? 'bg-orange-100 text-orange-600' : 'bg-gray-100 text-gray-700' }}">
+                            {{ $menu->type }}
                         </span>
                     </td>
 

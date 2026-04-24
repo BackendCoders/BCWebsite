@@ -9,6 +9,13 @@ use Illuminate\Support\Str;
 
 class PageController extends Controller
 {
+    private function normalizeMenuType(?string $type): string
+    {
+        return strtolower(trim((string) $type)) === 'software development'
+            ? 'software development'
+            : 'Digital Marketing';
+    }
+
     // 🔹 1. LIST ALL PAGES
     public function index()
     {
@@ -48,7 +55,7 @@ class PageController extends Controller
             ['page_id' => $page->id],
             [
                 'title' => $page->title,
-                'type' => $request->type ?? 'Digital Marketing',
+                'type' => $this->normalizeMenuType($request->type),
                 'order' => (MenuItem::max('order') ?? 0) + 1
             ]
         );
@@ -105,7 +112,7 @@ class PageController extends Controller
             ['page_id' => $page->id],
             [
                 'title' => $page->title,
-                'type' => $request->type ?? 'Digital Marketing',
+                'type' => $this->normalizeMenuType($request->type),
                 'order' => (MenuItem::max('order') ?? 0) + 1
             ]
         );

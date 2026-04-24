@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\MenuItem;
 use App\Models\Page;
 use Illuminate\Http\Request;
+use Illuminate\Validation\ValidationException;
 
 class MenuItemController extends Controller
 {
@@ -30,8 +31,11 @@ class MenuItemController extends Controller
             'page_id' => 'nullable|exists:pages,id',
             'parent_id' => 'nullable|exists:menu_items,id',
             'order' => 'nullable|integer',
-            'type' => 'required|in:Digital Marketing,software development',
+            'type' => ['required', 'string'],
         ]);
+
+        $data['type'] = $this->normalizeType($data['type']);
+        $this->assertValidType($data['type']);
 
         MenuItem::create($data);
 
@@ -54,8 +58,11 @@ class MenuItemController extends Controller
             'page_id' => 'nullable|exists:pages,id',
             'parent_id' => 'nullable|exists:menu_items,id',
             'order' => 'nullable|integer',
-            'type' => 'required|in:' . MenuItem::TYPE_DIGITAL . ',' . MenuItem::TYPE_SOFTWARE,
+            'type' => ['required', 'string'],
         ]);
+
+        $data['type'] = $this->normalizeType($data['type']);
+        $this->assertValidType($data['type']);
 
         $menu_item->update($data);
 
@@ -68,5 +75,21 @@ class MenuItemController extends Controller
         $menu_item->delete();
 
         return back()->with('success', 'Menu deleted');
+    }
+
+    private function normalizeType(string $type): string
+    {
+        return strtolower(trim($type)) === 'software development'
+            ? 'software development'
+            : 'Digital Marketing';
+    }
+
+    private function assertValidType(string $type): void
+    {
+        if (! in_array($type, ['Digital Marketing', 'software development'], true)) {
+            throw ValidationException::withMessages([
+                'type' => 'The selected type is invalid.',
+            ]);
+        }
     }
 }
