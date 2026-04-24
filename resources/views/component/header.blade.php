@@ -9,6 +9,41 @@
             && $item->page
             && !in_array($item->page->slug, $staticMenuSlugs, true);
     });
+    $menuText = function ($item) {
+        return strtolower(trim(
+            ($item->type ?? '') . ' ' .
+            ($item->title ?? '') . ' ' .
+            ($item->page?->slug ?? '')
+        ));
+    };
+    $isSoftwareMenuItem = function ($item) use ($menuText) {
+        $text = $menuText($item);
+
+        return str_contains($text, 'software development')
+            || str_contains($text, 'custom web')
+            || str_contains($text, 'website design')
+            || str_contains($text, 'website development')
+            || str_contains($text, 'web application')
+            || str_contains($text, 'web apps')
+            || str_contains($text, 'saas')
+            || str_contains($text, 'erp')
+            || str_contains($text, 'pos')
+            || str_contains($text, 'ecommerce')
+            || str_contains($text, 'mobile app')
+            || str_contains($text, 'api development')
+            || str_contains($text, 'mvp');
+    };
+    $isDigitalMenuItem = function ($item) use ($menuText) {
+        $text = $menuText($item);
+
+        return str_contains($text, 'digital marketing')
+            || str_contains($text, 'seo')
+            || str_contains($text, 'social media')
+            || str_contains($text, 'content marketing')
+            || str_contains($text, 'google ads')
+            || str_contains($text, 'meta ads')
+            || str_contains($text, 'local seo');
+    };
 @endphp
 
 <!-- topbar -->
@@ -149,25 +184,21 @@
                     role="menu" aria-hidden="true">
 
                 @php
-                    $normalize = fn ($value) => strtolower(trim((string) $value));
-
                     $digitalParent = $menuItems->first(fn ($item) =>
-                        $normalize($item->title) === 'digital marketing'
-                        || $normalize($item->type) === 'digital marketing'
+                        $isDigitalMenuItem($item)
                     );
 
                     $softwareParent = $menuItems->first(fn ($item) =>
-                        $normalize($item->title) === 'software development'
-                        || $normalize($item->type) === 'software development'
+                        $isSoftwareMenuItem($item)
                     );
 
                     $digitalMarketingItems = $digitalParent && $digitalParent->children->isNotEmpty()
                         ? $digitalParent->children
-                        : $menuItems->filter(fn($item) => $normalize($item->type) === 'digital marketing');
+                        : $menuItems->filter(fn($item) => $isDigitalMenuItem($item));
 
                     $softwareDevelopmentItems = $softwareParent && $softwareParent->children->isNotEmpty()
                         ? $softwareParent->children
-                        : $menuItems->filter(fn($item) => $normalize($item->type) === 'software development');
+                        : $menuItems->filter(fn($item) => $isSoftwareMenuItem($item));
                 @endphp
 
                 <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
@@ -176,7 +207,7 @@
                             <p class="text-xs font-semibold uppercase tracking-wider text-[#FD5528]">Digital Marketing</p>
                            <!-- DIGITAL MARKETING -->
                                 <ul class="space-y-2 text-sm text-slate-700">
-                                    @foreach($menuItems->where('type','Digital Marketing') as $item)
+                                    @foreach($digitalMarketingItems as $item)
                                         <li class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">
 
                                     @if($item->page)
@@ -205,16 +236,14 @@
 </p>
 
 <ul class="space-y-2 mt-3 text-sm text-slate-700">
-@foreach($menuItems as $item)
-    @if(strtolower(trim($item->type)) == 'software development')
-        @if($item->page)
-            <li class="px-3 py-2 rounded-lg hover:bg-orange-50 transition">
-                <a href="{{ route('frontend.page', $item->page->slug) }}"
-                   class="block hover:text-[#FD5528]">
-                    {{ $item->title }}
-                </a>
-            </li>
-        @endif
+@foreach($softwareDevelopmentItems as $item)
+    @if($item->page)
+        <li class="px-3 py-2 rounded-lg hover:bg-orange-50 transition">
+            <a href="{{ route('frontend.page', $item->page->slug) }}"
+               class="block hover:text-[#FD5528]">
+                {{ $item->title }}
+            </a>
+        </li>
     @endif
 @endforeach
 </ul>
