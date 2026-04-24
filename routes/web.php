@@ -77,27 +77,7 @@ Route::post('/career/apply', [CareerApplicationController::class, 'store'])->nam
 // Route::post('/inquiry/leads', [CareerApplicationController::class, 'store'])->name('contact.send');
 
 
-
-// DASHBOARD::
-
-// Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
-// Route::resource('categories', CategoryController::class);
-
-// Route::resource('solutions', SolutionController::class);
-// Route::get('/solutions/{solution}', [SolutionController::class, 'show'])
-//     ->name('solutions.show');
-
-// Route::resource('blogs', BlogController::class);
-// Route::resource('careers', CareerController::class);
-// Route::resource('projects', ProjectController::class);
-// Route::resource('services', ServiceController::class);
-
-
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth', 'verified'])->name('dashboard');
-
-
+// --------------------      DASHBOARD Routes       --------------------
 
 Route::middleware(['auth'])->group(function () {
 
@@ -141,32 +121,19 @@ Route::resource('pages', PageController::class);
 
 Route::resource('menu-items', MenuItemController::class);
 
+});
 
-// Route::prefix('banner')->group(function () {
 
-//     Route::get('hero', [HeroController::class, 'index'])->name('hero.index');
-//     Route::get('hero/create', [HeroController::class, 'create'])->name('hero.create');
-//     Route::post('hero/store', [HeroController::class, 'store'])->name('hero.store');
 
-//     Route::get('hero/{id}/edit', [HeroController::class, 'edit'])->name('hero.edit');
-//     Route::put('hero/{id}', [HeroController::class, 'update'])->name('hero.update');
+// Route::match(['get', 'post'], '/botman', function () {
+//     $botman = app('botman');
 
-//     Route::delete('hero/{id}', [HeroController::class, 'destroy'])->name('hero.destroy');
+//     $botman->hears('seo services', function (BotMan $bot) {
+//         $bot->reply('SEO services are available 🚀');
+//     });
+
+//     $botman->listen();
 // });
-
-});
-
-
-
-Route::match(['get', 'post'], '/botman', function () {
-    $botman = app('botman');
-
-    $botman->hears('seo services', function (BotMan $bot) {
-        $bot->reply('SEO services are available 🚀');
-    });
-
-    $botman->listen();
-});
 
 
 
