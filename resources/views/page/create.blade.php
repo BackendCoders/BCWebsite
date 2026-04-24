@@ -33,21 +33,6 @@
                 <input type="text" name="slug" id="slug"
                        class="w-full border p-2 rounded mt-1"
                        placeholder="auto-generated">
-                <p class="mt-1 text-xs text-gray-500">This slug is used for the live header link and page URL.</p>
-            </div>
-        </div>
-
-        <div class="grid grid-cols-2 gap-4 mb-6">
-            <div>
-                <label class="block text-sm font-medium">Menu Type</label>
-                <select name="type" class="w-full border p-2 rounded mt-1">
-                    <option value="" @selected(old('type') === null || old('type') === '')>No select type</option>
-                    <option value="Digital Marketing" @selected(old('type') === 'Digital Marketing')>Digital Marketing</option>
-                    <option value="Software Development" @selected(old('type') === 'Software Development')>Software Development</option>
-                </select>
-                @error('type')
-                    <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
-                @enderror
             </div>
         </div>
 

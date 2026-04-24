@@ -9,55 +9,6 @@ use Illuminate\Support\Str;
 
 class PageController extends Controller
 {
-    private function normalizeMenuType(?string $type): ?string
-    {
-        if (blank($type)) {
-            return null;
-        }
-
-        return strtolower(trim((string) $type)) === 'software development'
-            ? 'Software Development'
-            : 'Digital Marketing';
-    }
-
-    private function inferMenuTypeFromText(?string $type, string $title, string $slug): ?string
-    {
-        $normalizedType = $this->normalizeMenuType($type);
-
-        if ($normalizedType) {
-            return $normalizedType;
-        }
-
-        $haystack = strtolower(trim($title . ' ' . $slug));
-
-        if (
-            str_contains($haystack, 'software')
-            || str_contains($haystack, 'web')
-            || str_contains($haystack, 'app')
-            || str_contains($haystack, 'api')
-            || str_contains($haystack, 'saas')
-            || str_contains($haystack, 'erp')
-            || str_contains($haystack, 'ecommerce')
-            || str_contains($haystack, 'mvp')
-        ) {
-            return 'Software Development';
-        }
-
-        if (
-            str_contains($haystack, 'marketing')
-            || str_contains($haystack, 'seo')
-            || str_contains($haystack, 'social')
-            || str_contains($haystack, 'content')
-            || str_contains($haystack, 'google ads')
-            || str_contains($haystack, 'meta ads')
-            || str_contains($haystack, 'local seo')
-        ) {
-            return 'Digital Marketing';
-        }
-
-        return null;
-    }
-
     // 🔹 1. LIST ALL PAGES
     public function index()
     {
@@ -79,7 +30,6 @@ class PageController extends Controller
             'slug' => 'required|unique:pages,slug',
             'meta_title' => 'nullable|max:100',
             'meta_description' => 'nullable|max:255',
-            'type' => 'nullable|string|max:255',
         ]);
 
         // ✅ Create Page
@@ -98,9 +48,8 @@ class PageController extends Controller
             ['page_id' => $page->id],
             [
                 'title' => $page->title,
-                'type' => $this->inferMenuTypeFromText($request->type, $page->title, $page->slug),
-                'order' => (MenuItem::max('order') ?? 0) + 1,
-                'is_active' => 1,
+                'type' => $request->type ?? 'Digital Marketing',
+                'order' => (MenuItem::max('order') ?? 0) + 1
             ]
         );
 
@@ -123,7 +72,7 @@ class PageController extends Controller
     {
         $page = Page::with(['sections' => function ($query) {
             $query->orderBy('order')->with('items');
-        }, 'menuItem'])->findOrFail($id);
+        }])->findOrFail($id);
 
         return view('page.edit', compact('page'));
     }
@@ -138,7 +87,6 @@ class PageController extends Controller
             'slug' => 'required|unique:pages,slug,' . $id,
             'meta_title' => 'nullable|max:100',
             'meta_description' => 'nullable|max:255',
-            'type' => 'nullable|string|max:255',
         ]);
 
         // ✅ Update Page
@@ -157,9 +105,8 @@ class PageController extends Controller
             ['page_id' => $page->id],
             [
                 'title' => $page->title,
-                'type' => $this->inferMenuTypeFromText($request->type, $page->title, $page->slug),
-                'order' => (MenuItem::max('order') ?? 0) + 1,
-                'is_active' => 1,
+                'type' => $request->type ?? 'Digital Marketing',
+                'order' => (MenuItem::max('order') ?? 0) + 1
             ]
         );
 
