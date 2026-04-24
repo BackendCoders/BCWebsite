@@ -669,7 +669,43 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 
+<script>
+document.addEventListener("DOMContentLoaded", function () {
 
+    const counters = document.querySelectorAll('.counter');
+
+    const runCounter = (counter) => {
+        const target = +counter.getAttribute('data-target');
+        let count = 0;
+
+        const update = () => {
+            const increment = target / 100;
+            count += increment;
+
+            if (count < target) {
+                counter.innerText = Math.ceil(count);
+                requestAnimationFrame(update);
+            } else {
+                counter.innerText = target;
+            }
+        };
+
+        update();
+    };
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                runCounter(entry.target);
+                observer.unobserve(entry.target);
+            }
+        });
+    });
+
+    counters.forEach(counter => observer.observe(counter));
+
+});
+</script>
 
 </body>
 </html>
