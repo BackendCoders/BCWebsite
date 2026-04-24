@@ -17,6 +17,7 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\HeroController;
 use App\Http\Controllers\SectionController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\MenuItemController;
 
 use BotMan\BotMan\BotMan;
 
@@ -140,7 +141,7 @@ Route::resource('services', ServiceController::class);
 Route::resource('service-details', ServiceDetailController::class);
 
 Route::resource('pages', PageController::class);
-Route::resource('menus', MenuController::class);
+Route::resource('menus', MenuItemController::class);
 
 // Route::prefix('banner')->group(function () {
 
