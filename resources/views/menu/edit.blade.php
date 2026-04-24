@@ -40,7 +40,7 @@
                     </option>
 
                     <option value="Software Development"
-                        {{ $menu_item->type == 'Software Development' ? 'selected' : '' }}>
+                        {{ $menu_item->type == 'software development' ? 'selected' : '' }}>
                         Software Development
                     </option>
 
