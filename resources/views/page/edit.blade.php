@@ -38,6 +38,23 @@
             </div>
         </div>
 
+        <div class="grid grid-cols-2 gap-4 mb-6">
+            <div>
+                <label class="block text-sm font-medium">Menu Type</label>
+                <select name="type" class="w-full border p-2 rounded mt-1">
+                    @php
+                        $pageType = old('type', $page->menuItem?->type);
+                    @endphp
+                    <option value="" @selected(blank($pageType))>No select type</option>
+                    <option value="Digital Marketing" @selected($pageType === 'Digital Marketing')>Digital Marketing</option>
+                    <option value="Software Development" @selected($pageType === 'Software Development')>Software Development</option>
+                </select>
+                @error('type')
+                    <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+                @enderror
+            </div>
+        </div>
+
         <!-- SEO -->
         <div class="border-t pt-4 mb-6">
             <h3 class="text-lg font-semibold mb-3 text-gray-700">🔍 SEO Settings</h3>

@@ -17,6 +17,7 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\HeroController;
 use App\Http\Controllers\SectionController;
 use App\Http\Controllers\MenuItemController;
+use App\Models\Blog;
 use BotMan\BotMan\BotMan;
 
 use App\Models\Page;
@@ -51,7 +52,14 @@ Route::get('/process', [HomeController::class, 'process'])->name('frontend.proce
 Route::get('/packages', [HomeController::class, 'packages'])->name('frontend.packages');
 Route::get('/career', [HomeController::class, 'career'])->name('frontend.career');
 Route::get('/blog', [HomeController::class, 'blog'])->name('frontend.blog');
-Route::get('/blog_detail', [HomeController::class, 'blog_detail'])->name('frontend.blog-detail');
+Route::get('/blog/{blog:slug}', [HomeController::class, 'blog_detail'])->name('frontend.blog-detail');
+Route::get('/blog_detail', function () {
+    $blog = Blog::where('is_published', 1)->latest('published_at')->first();
+
+    return $blog
+        ? redirect()->route('frontend.blog-detail', $blog)
+        : redirect()->route('frontend.blog');
+});
 Route::get('/terms', [HomeController::class, 'terms'])->name('frontend.terms');
 Route::get('/privacy_policy', [HomeController::class, 'privacy_policy'])->name('frontend.privacy_policy');
 Route::get('/faq', [HomeController::class, 'faq'])->name('frontend.faq');

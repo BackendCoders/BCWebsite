@@ -27,7 +27,7 @@ class BlogController extends Controller
     public function store(Request $request)
     {
         $data = $this->validateBlog($request);
-        $data['slug'] = Str::slug($data['title']) . '-' . Str::random(5);
+        $data['slug'] = $this->makeUniqueSlug($data['title']);
         $data['published_at'] = $data['is_published'] ? now() : null;
         $data['is_published'] = (bool) ($data['is_published'] ?? false);
         $data['image'] = $this->storeImage($request);
@@ -47,7 +47,6 @@ class BlogController extends Controller
     public function update(Request $request, Blog $blog)
     {
         $data = $this->validateBlog($request);
-        $data['slug'] = Str::slug($data['title']) . '-' . Str::random(5);
         $data['published_at'] = $data['is_published'] ? ($blog->published_at ?? now()) : null;
         $data['is_published'] = (bool) ($data['is_published'] ?? false);
         $data['image'] = $this->updateImage($request, $blog);
@@ -102,5 +101,19 @@ class BlogController extends Controller
         if ($path && Storage::disk('public')->exists($path)) {
             Storage::disk('public')->delete($path);
         }
+    }
+
+    private function makeUniqueSlug(string $title): string
+    {
+        $base = Str::slug($title);
+        $slug = $base;
+        $index = 1;
+
+        while (Blog::where('slug', $slug)->exists()) {
+            $slug = $base.'-'.$index;
+            $index++;
+        }
+
+        return $slug;
     }
 }

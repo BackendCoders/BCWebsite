@@ -9,8 +9,12 @@ use Illuminate\Support\Str;
 
 class PageController extends Controller
 {
-    private function normalizeMenuType(?string $type): string
+    private function normalizeMenuType(?string $type): ?string
     {
+        if (blank($type)) {
+            return null;
+        }
+
         return strtolower(trim((string) $type)) === 'software development'
             ? 'Software Development'
             : 'Digital Marketing';
@@ -37,6 +41,7 @@ class PageController extends Controller
             'slug' => 'required|unique:pages,slug',
             'meta_title' => 'nullable|max:100',
             'meta_description' => 'nullable|max:255',
+            'type' => 'nullable|string|max:255',
         ]);
 
         // ✅ Create Page
@@ -79,7 +84,7 @@ class PageController extends Controller
     {
         $page = Page::with(['sections' => function ($query) {
             $query->orderBy('order')->with('items');
-        }])->findOrFail($id);
+        }, 'menuItem'])->findOrFail($id);
 
         return view('page.edit', compact('page'));
     }
@@ -94,6 +99,7 @@ class PageController extends Controller
             'slug' => 'required|unique:pages,slug,' . $id,
             'meta_title' => 'nullable|max:100',
             'meta_description' => 'nullable|max:255',
+            'type' => 'nullable|string|max:255',
         ]);
 
         // ✅ Update Page

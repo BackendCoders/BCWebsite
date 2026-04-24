@@ -9,6 +9,7 @@ use App\Models\Category;
 use App\Models\Project;
 use App\Models\Service;
 use App\Models\Page;
+use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
@@ -106,22 +107,59 @@ class HomeController extends Controller
     return view('frontend.career', compact('page'));
     }
 
-    public function blog(){
-            // return view('frontend.blog');
-              $page = Page::with('sections.items')
-        ->where('slug', 'blog')
-        ->first();
+    public function blog(Request $request){
+            $page = Page::with('sections.items')
+                ->where('slug', 'blog')
+                ->first();
 
-    return view('frontend.blog', compact('page'));
+            $blogsQuery = Blog::with('category')
+                ->where('is_published', 1);
+
+            if ($request->filled('category')) {
+                $blogsQuery->where('category_id', $request->integer('category'));
+            }
+
+            if ($request->filled('q')) {
+                $search = trim((string) $request->string('q'));
+                $blogsQuery->where(function ($query) use ($search) {
+                    $query->where('title', 'like', "%{$search}%")
+                        ->orWhere('excerpt', 'like', "%{$search}%")
+                        ->orWhere('content', 'like', "%{$search}%");
+                });
+            }
+
+            $blogs = $blogsQuery
+                ->latest('published_at')
+                ->latest()
+                ->get();
+
+            $featuredBlog = Blog::with('category')
+                ->where('is_published', 1)
+                ->latest('published_at')
+                ->latest()
+                ->first();
+
+            $categories = Category::orderBy('name')->get();
+
+            return view('frontend.blog', compact('page', 'blogs', 'featuredBlog', 'categories'));
     }
 
-    public function blog_detail(){
-    //    return view('frontend.blog-detail');
+    public function blog_detail(Blog $blog){
+      abort_unless($blog->is_published, 404);
+
       $page = Page::with('sections.items')
         ->where('slug', 'blog-detail')
         ->first();
 
-    return view('frontend.blog-detail', compact('page'));
+      $relatedBlogs = Blog::with('category')
+        ->where('is_published', 1)
+        ->where('id', '!=', $blog->id)
+        ->when($blog->category_id, fn ($query) => $query->where('category_id', $blog->category_id))
+        ->latest('published_at')
+        ->take(3)
+        ->get();
+
+    return view('frontend.blog-detail', compact('page', 'blog', 'relatedBlogs'));
      }
 
         public function terms(){
