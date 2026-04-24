@@ -3,6 +3,40 @@
 @php
     $activeNavClass = fn ($route) => request()->routeIs($route) ? 'bg-white text-[#FD5528]' : 'text-white';
     $activeMobileNavClass = fn ($route) => request()->routeIs($route) ? 'bg-[#FD5528] text-white' : 'text-black';
+    $normalizeMenuText = fn ($value) => strtolower(trim((string) $value));
+    $menuSearchText = function ($item) use ($normalizeMenuText) {
+        return $normalizeMenuText(
+            ($item->type ?? '') . ' ' .
+            ($item->title ?? '') . ' ' .
+            ($item->page?->slug ?? '')
+        );
+    };
+    $matchesDigitalMarketing = function ($item) use ($menuSearchText) {
+        $text = $menuSearchText($item);
+
+        return str_contains($text, 'digital marketing')
+            || str_contains($text, 'marketing')
+            || str_contains($text, 'seo')
+            || str_contains($text, 'social')
+            || str_contains($text, 'content')
+            || str_contains($text, 'google ads')
+            || str_contains($text, 'meta ads')
+            || str_contains($text, 'local seo');
+    };
+    $matchesSoftwareDevelopment = function ($item) use ($menuSearchText) {
+        $text = $menuSearchText($item);
+
+        return str_contains($text, 'software development')
+            || str_contains($text, 'software')
+            || str_contains($text, 'development')
+            || str_contains($text, 'web')
+            || str_contains($text, 'app')
+            || str_contains($text, 'api')
+            || str_contains($text, 'saas')
+            || str_contains($text, 'erp')
+            || str_contains($text, 'ecommerce')
+            || str_contains($text, 'mvp');
+    };
 @endphp
 
 <!-- topbar -->
@@ -141,20 +175,22 @@
                     $digitalParent = $menuItems->first(fn ($item) =>
                         $normalize($item->title) === 'digital marketing'
                         || $normalize($item->type) === 'digital marketing'
+                        || $matchesDigitalMarketing($item)
                     );
 
                     $softwareParent = $menuItems->first(fn ($item) =>
                         $normalize($item->title) === 'software development'
                         || $normalize($item->type) === 'software development'
+                        || $matchesSoftwareDevelopment($item)
                     );
 
                     $digitalMarketingItems = $digitalParent && $digitalParent->children->isNotEmpty()
                         ? $digitalParent->children
-                        : $menuItems->filter(fn($item) => $normalize($item->type) === 'digital marketing');
+                        : $menuItems->filter(fn($item) => $normalize($item->type) === 'digital marketing' || $matchesDigitalMarketing($item));
 
                     $softwareDevelopmentItems = $softwareParent && $softwareParent->children->isNotEmpty()
                         ? $softwareParent->children
-                        : $menuItems->filter(fn($item) => $normalize($item->type) === 'software development');
+                        : $menuItems->filter(fn($item) => $normalize($item->type) === 'software development' || $matchesSoftwareDevelopment($item));
                 @endphp
 
                 <div class="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-start">

@@ -61,7 +61,8 @@ class PageController extends Controller
             [
                 'title' => $page->title,
                 'type' => $this->normalizeMenuType($request->type),
-                'order' => (MenuItem::max('order') ?? 0) + 1
+                'order' => (MenuItem::max('order') ?? 0) + 1,
+                'is_active' => 1,
             ]
         );
 
@@ -119,7 +120,8 @@ class PageController extends Controller
             [
                 'title' => $page->title,
                 'type' => $this->normalizeMenuType($request->type),
-                'order' => (MenuItem::max('order') ?? 0) + 1
+                'order' => (MenuItem::max('order') ?? 0) + 1,
+                'is_active' => 1,
             ]
         );
 
