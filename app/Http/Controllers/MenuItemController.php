@@ -10,10 +10,12 @@ class MenuItemController extends Controller
 {
     public function index()
     {
-        $menus = MenuItem::with('page')->orderBy('order')->get();
+        $menus = MenuItem::with('page')
+            ->orderBy('order')
+            ->get();
+
         return view('menu.index', compact('menus'));
     }
-    
 
     public function create()
     {
@@ -33,8 +35,7 @@ class MenuItemController extends Controller
             'type' => 'required|in:' . MenuItem::TYPE_DIGITAL . ',' . MenuItem::TYPE_SOFTWARE,
         ]);
 
-        $data['type'] = $this->normalizeType($data['type']);
-
+        // ✅ No normalization needed — already correct value
         MenuItem::create($data);
 
         return redirect()->route('menu-items.index')
@@ -56,11 +57,10 @@ class MenuItemController extends Controller
             'page_id' => 'nullable|exists:pages,id',
             'parent_id' => 'nullable|exists:menu_items,id',
             'order' => 'nullable|integer',
-            'type' => ['required', 'string'],
+            'type' => 'required|in:' . MenuItem::TYPE_DIGITAL . ',' . MenuItem::TYPE_SOFTWARE,
         ]);
 
-        $data['type'] = $this->normalizeType($data['type']);
-
+        // ✅ No normalization needed
         $menu_item->update($data);
 
         return redirect()->route('menu-items.index')
@@ -72,12 +72,5 @@ class MenuItemController extends Controller
         $menu_item->delete();
 
         return back()->with('success', 'Menu deleted');
-    }
-
-    private function normalizeType(string $type): string
-    {
-        return strtolower(trim($type)) === 'software development'
-            ? 'Software Development'
-            : 'Digital Marketing';
     }
 }
