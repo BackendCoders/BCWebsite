@@ -48,7 +48,7 @@ class PageController extends Controller
             ['page_id' => $page->id],
             [
                 'title' => $page->title,
-                'type' => $request->type ?? 'Digital Marketing',
+                'type' => $request->type,
                 'order' => (MenuItem::max('order') ?? 0) + 1
             ]
         );
@@ -105,7 +105,7 @@ class PageController extends Controller
             ['page_id' => $page->id],
             [
                 'title' => $page->title,
-                'type' => $request->type ?? 'Digital Marketing',
+                'type' => $request->type,
                 'order' => (MenuItem::max('order') ?? 0) + 1
             ]
         );
