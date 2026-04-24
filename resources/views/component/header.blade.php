@@ -135,67 +135,53 @@
                     class="hidden absolute left-1/2 top-full z-40 mt-3 max-h-[70vh] w-[min(100vw-2rem,850px)] -translate-x-1/2 overflow-hidden rounded-2xl bg-white p-6 shadow-2xl ring-1 ring-black/10 transition duration-200"
                     role="menu" aria-hidden="true">
 
-                    <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
+                    @php
+$digitalMenus = $menuItems->filter(fn($item) => strtolower(trim($item->type)) === 'digital marketing');
+$softwareMenus = $menuItems->filter(fn($item) => strtolower(trim($item->type)) === 'software development');
+@endphp
 
-                        <div class="space-y-3">
-                            <p class="text-xs font-semibold uppercase tracking-wider text-[#FD5528]">Digital Marketing</p>
-                           <!-- DIGITAL MARKETING -->
-                                <ul class="space-y-2 text-sm text-slate-700">
-                                    @foreach($menuItems->where('type','Digital Marketing') as $item)
-                                        <li class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">
+<div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
 
-                                    @if($item->page)
-                                        <a href="{{ route('frontend.page', $item->page->slug) }}">
-                                            {{ $item->title }}
-                                        </a>
-                                    @endif
+    <!-- LEFT: DIGITAL -->
+    <div class="space-y-3">
+        <p class="text-xs font-semibold uppercase tracking-wider text-[#FD5528]">
+            Digital Marketing
+        </p>
 
-                                        </li>
-                                    @endforeach
-                                </ul>
-                           <!-- <ul class="space-y-2 text-sm text-slate-700">
-                                <li><a href="{{ route('frontend.social_media') }}" class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">Social Media Management</a></li>
-                                <li><a href="{{ route('frontend.seo') }}" class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">SEO Services</a></li>
-                                <li><a href="{{ route('frontend.ads') }}" class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">PPC Ads / Google Ads</a></li>
-                                <li><a href="{{ route('frontend.meta_ads') }}" class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">Meta Ads</a></li>
-                                <li><a href="{{ route('frontend.content_marketing') }}" class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">Content Marketing</a></li>
-                                <li><a href="{{ route('frontend.local_seo') }}" class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">Local SEO</a></li>
-                            </ul>  -->
-  
-                        </div>
+        <ul class="space-y-2 text-sm text-slate-700">
+            @foreach($digitalMenus as $item)
+                @if($item->page)
+                    <li class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">
+                        <a href="{{ route('frontend.page', $item->page->slug) }}">
+                            {{ $item->title }}
+                        </a>
+                    </li>
+                @endif
+            @endforeach
+        </ul>
+    </div>
 
-                        <div class="space-y-3">
-                      <p class="text-xs font-semibold uppercase tracking-wider text-[#FD5528]">
-    Software Development
-</p>
+    <!-- RIGHT: SOFTWARE -->
+    <div class="space-y-3">
+        <p class="text-xs font-semibold uppercase tracking-wider text-[#FD5528]">
+            Software Development
+        </p>
 
-<ul class="space-y-2 mt-3 text-sm text-slate-700">
-@foreach($menuItems as $item)
-    @if(strtolower(trim($item->type)) == 'software development')
-        @if($item->page)
-            <li class="px-3 py-2 rounded-lg hover:bg-orange-50 transition">
-                <a href="{{ route('frontend.page', $item->page->slug) }}"
-                   class="block hover:text-[#FD5528]">
-                    {{ $item->title }}
-                </a>
-            </li>
-        @endif
-    @endif
-@endforeach
-</ul>
-                             <!-- <ul class="space-y-2 text-sm text-slate-700">
-                                <li><a href="/custom-web-application-development" class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">Custom Web Applications</a></li>
-                                <li><a href="/website-design-development" class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">Website Design & Development</a></li>
-                                <li><a href="/saas-development" class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">SaaS Development</a></li>
-                                <li><a href="/erp-pos-software-development" class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">ERP & POS Software</a></li>
-                                <li><a href="/ecommerce-development" class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">Ecommerce Development</a></li>
-                                <li><a href="/mobile-app-development" class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">Mobile App Development</a></li>
-                                <li><a href="/api-development" class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">API Development</a></li>
-                                <li><a href="/startup-mvp-development" class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">Startup MVP Development</a></li>
-                            </ul>  -->
-                        </div>
+        <ul class="space-y-2 text-sm text-slate-700">
+            @foreach($softwareMenus as $item)
+                @if($item->page)
+                    <li class="px-3 py-2 rounded-lg hover:bg-orange-50 transition">
+                        <a href="{{ route('frontend.page', $item->page->slug) }}"
+                           class="block hover:text-[#FD5528]">
+                            {{ $item->title }}
+                        </a>
+                    </li>
+                @endif
+            @endforeach
+        </ul>
+    </div>
 
-                    </div>
+</div>
                 </div>
         
             </div>
