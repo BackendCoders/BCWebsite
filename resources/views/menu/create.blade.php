@@ -2,38 +2,80 @@
 
 @section('content')
 
+<div class="max-w-3xl mx-auto px-4 py-8">
 
+    <!-- Heading -->
+    <h2 class="text-2xl font-bold text-gray-800 mb-6">
+        Create Menu Item
+    </h2>
 
+    <!-- Card -->
+    <div class="bg-white shadow-xl rounded-2xl p-6 border border-gray-100">
 
-<form method="POST" action="{{ route('menu-items.store') }}">
-@csrf
+        <form method="POST" action="{{ route('menu-items.store') }}" class="space-y-5">
+            @csrf
 
-<input type="text" name="title" placeholder="Title" class="border p-2">
+            <!-- Title -->
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Title</label>
+                <input type="text" name="title"
+                       placeholder="Enter menu title"
+                       class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-[#FD5528] focus:border-[#FD5528] outline-none">
+            </div>
 
-<select name="page_id" class="border p-2">
-    <option value="">Select Page</option>
-    @foreach($pages as $id => $title)
-        <option value="{{ $id }}">{{ $title }}</option>
-    @endforeach
-</select>
+            <!-- Page -->
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Select Page</label>
+                <select name="page_id"
+                        class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-[#FD5528] focus:border-[#FD5528] outline-none">
+                    <option value="">Select Page</option>
+                    @foreach($pages as $id => $title)
+                        <option value="{{ $id }}">{{ $title }}</option>
+                    @endforeach
+                </select>
+            </div>
 
-<select name="parent_id" class="border p-2">
-    <option value="">Parent Menu</option>
-    @foreach($parents as $id => $title)
-        <option value="{{ $id }}">{{ $title }}</option>
-    @endforeach
-</select>
+            <!-- Parent -->
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Parent Menu</label>
+                <select name="parent_id"
+                        class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-[#FD5528] focus:border-[#FD5528] outline-none">
+                    <option value="">Parent Menu (optional)</option>
+                    @foreach($parents as $id => $title)
+                        <option value="{{ $id }}">{{ $title }}</option>
+                    @endforeach
+                </select>
+            </div>
 
-<select name="type" class="border p-2">
-    <option value="">Select Type</option>
-    <option value="Digital Marketing">Digital Marketing</option>
-    <option value="Software Development">Software Development</option>
-</select>
+            <!-- Type -->
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Type</label>
+                <select name="type" required
+                        class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-[#FD5528] focus:border-[#FD5528] outline-none">
+                    <option value="">Select Type</option>
+                    <option value="Digital Marketing">Digital Marketing</option>
+                    <option value="Software Development">Software Development</option>
+                </select>
+            </div>
 
-<button class="bg-green-500 text-white px-4 py-2">Save</button>
+            <!-- Buttons -->
+            <div class="flex justify-between items-center pt-4">
 
-</form>
+                <a href="{{ route('menu-items.index') }}"
+                   class="text-gray-500 hover:text-gray-700 text-sm">
+                    ← Back
+                </a>
 
+                <button type="submit"
+                        class="bg-gradient-to-r from-[#FD5528] to-orange-400 hover:from-orange-400 hover:to-[#FD5528] text-white px-6 py-2 rounded-lg shadow-md transition">
+                    Save Menu
+                </button>
+            </div>
 
+        </form>
+
+    </div>
+
+</div>
 
 @endsection
