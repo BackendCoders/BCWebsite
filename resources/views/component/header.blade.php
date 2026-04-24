@@ -142,7 +142,7 @@
         </p>
 
         <ul class="space-y-2 text-sm text-slate-700">
-            @foreach($menuItems->filter(fn ($item) => \App\Models\MenuItem::normalizeType($item->type) === \App\Models\MenuItem::TYPE_DIGITAL) as $item)
+            @foreach($menuItems->filter(fn ($item) => \App\Models\MenuItem::normalizeType($item->type) === \App\Models\MenuItem::TYPE_DIGITAL || \Illuminate\Support\Str::contains(strtolower(trim((string) $item->title . ' ' . ($item->page?->slug ?? ''))), ['digital marketing', 'seo', 'social', 'content', 'google ads', 'meta ads', 'local seo'])) as $item)
                 <li class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">
                     @if($item->page)
                         <a href="{{ route('frontend.page', $item->page->slug) }}">
@@ -159,15 +159,16 @@
             Software Development
         </p>
 
-        <ul class="space-y-2 text-sm text-slate-700">
-            @foreach($menuItems->filter(fn ($item) => \App\Models\MenuItem::normalizeType($item->type) === \App\Models\MenuItem::TYPE_SOFTWARE) as $item)
-                <li class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">
-                    @if($item->page)
-                        <a href="{{ route('frontend.page', $item->page->slug) }}">
+        <ul class="space-y-2 mt-3 text-sm text-slate-700">
+            @foreach($menuItems->filter(fn ($item) => \App\Models\MenuItem::normalizeType($item->type) === \App\Models\MenuItem::TYPE_SOFTWARE || \Illuminate\Support\Str::contains(strtolower(trim((string) $item->title . ' ' . ($item->page?->slug ?? ''))), ['software development', 'custom web', 'website design', 'website development', 'web application', 'web app', 'saas', 'erp', 'pos', 'ecommerce', 'mobile app', 'api development', 'mvp'])) as $item)
+                @if($item->page)
+                    <li class="px-3 py-2 rounded-lg hover:bg-orange-50 transition">
+                        <a href="{{ route('frontend.page', $item->page->slug) }}"
+                           class="block hover:text-[#FD5528]">
                             {{ $item->title }}
                         </a>
-                    @endif
-                </li>
+                    </li>
+                @endif
             @endforeach
         </ul>
     </div>
@@ -417,4 +418,3 @@
         }
     });
 </script>
-
