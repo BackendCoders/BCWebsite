@@ -3,47 +3,6 @@
 @php
     $activeNavClass = fn ($route) => request()->routeIs($route) ? 'bg-white text-[#FD5528]' : 'text-white';
     $activeMobileNavClass = fn ($route) => request()->routeIs($route) ? 'bg-[#FD5528] text-white' : 'text-black';
-    $staticMenuSlugs = ['home', 'about', 'project', 'process', 'blog', 'packages', 'career', 'contact'];
-    $additionalMenuItems = $menuItems->filter(function ($item) use ($staticMenuSlugs) {
-        return blank($item->type)
-            && $item->page
-            && !in_array($item->page->slug, $staticMenuSlugs, true);
-    });
-    $menuText = function ($item) {
-        return strtolower(trim(
-            ($item->type ?? '') . ' ' .
-            ($item->title ?? '') . ' ' .
-            ($item->page?->slug ?? '')
-        ));
-    };
-    $isSoftwareMenuItem = function ($item) use ($menuText) {
-        $text = $menuText($item);
-
-        return str_contains($text, 'software development')
-            || str_contains($text, 'custom web')
-            || str_contains($text, 'website design')
-            || str_contains($text, 'website development')
-            || str_contains($text, 'web application')
-            || str_contains($text, 'web apps')
-            || str_contains($text, 'saas')
-            || str_contains($text, 'erp')
-            || str_contains($text, 'pos')
-            || str_contains($text, 'ecommerce')
-            || str_contains($text, 'mobile app')
-            || str_contains($text, 'api development')
-            || str_contains($text, 'mvp');
-    };
-    $isDigitalMenuItem = function ($item) use ($menuText) {
-        $text = $menuText($item);
-
-        return str_contains($text, 'digital marketing')
-            || str_contains($text, 'seo')
-            || str_contains($text, 'social media')
-            || str_contains($text, 'content marketing')
-            || str_contains($text, 'google ads')
-            || str_contains($text, 'meta ads')
-            || str_contains($text, 'local seo');
-    };
 @endphp
 
 <!-- topbar -->
@@ -159,14 +118,7 @@
                 Company
             </a>
 
-            @foreach($additionalMenuItems as $item)
-                <a href="{{ route('frontend.page', $item->page->slug) }}"
-                   class="nav-link px-3 py-2 rounded-md hover:bg-orange-50 hover:text-[#FD5528] transition {{ request()->routeIs('frontend.page') && request()->route('slug') === $item->page->slug ? 'bg-white text-[#FD5528]' : 'text-white' }}">
-                    {{ $item->title }}
-                </a>
-            @endforeach
-
-            <div class="relative isolate">
+            <div class="relative">
 
                 <button id="mega-menu-toggle"
                     type="button"
@@ -179,35 +131,17 @@
                     </svg>
                 </button>
 
-                <div id="mega-menu-panel"
-                    class="hidden absolute left-0 top-full z-40 mt-3 max-h-[70vh] w-[min(100vw-2rem,850px)] overflow-visible rounded-2xl bg-white p-6 shadow-2xl ring-1 ring-black/10 transition duration-200 origin-top-left"
+                 <div id="mega-menu-panel"
+                    class="hidden absolute left-1/2 top-full z-40 mt-3 max-h-[70vh] w-[min(100vw-2rem,850px)] -translate-x-1/2 overflow-hidden rounded-2xl bg-white p-6 shadow-2xl ring-1 ring-black/10 transition duration-200"
                     role="menu" aria-hidden="true">
 
-                @php
-                    $digitalParent = $menuItems->first(fn ($item) =>
-                        $isDigitalMenuItem($item)
-                    );
-
-                    $softwareParent = $menuItems->first(fn ($item) =>
-                        $isSoftwareMenuItem($item)
-                    );
-
-                    $digitalMarketingItems = $digitalParent && $digitalParent->children->isNotEmpty()
-                        ? $digitalParent->children
-                        : $menuItems->filter(fn($item) => $isDigitalMenuItem($item));
-
-                    $softwareDevelopmentItems = $softwareParent && $softwareParent->children->isNotEmpty()
-                        ? $softwareParent->children
-                        : $menuItems->filter(fn($item) => $isSoftwareMenuItem($item));
-                @endphp
-
-                <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
+                    <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
 
                         <div class="space-y-3">
                             <p class="text-xs font-semibold uppercase tracking-wider text-[#FD5528]">Digital Marketing</p>
                            <!-- DIGITAL MARKETING -->
                                 <ul class="space-y-2 text-sm text-slate-700">
-                                    @foreach($digitalMarketingItems as $item)
+                                    @foreach($menuItems->where('type','Digital Marketing') as $item)
                                         <li class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">
 
                                     @if($item->page)
@@ -236,14 +170,16 @@
 </p>
 
 <ul class="space-y-2 mt-3 text-sm text-slate-700">
-@foreach($softwareDevelopmentItems as $item)
-    @if($item->page)
-        <li class="px-3 py-2 rounded-lg hover:bg-orange-50 transition">
-            <a href="{{ route('frontend.page', $item->page->slug) }}"
-               class="block hover:text-[#FD5528]">
-                {{ $item->title }}
-            </a>
-        </li>
+@foreach($menuItems as $item)
+    @if(strtolower(trim($item->type)) == 'software development')
+        @if($item->page)
+            <li class="px-3 py-2 rounded-lg hover:bg-orange-50 transition">
+                <a href="{{ route('frontend.page', $item->page->slug) }}"
+                   class="block hover:text-[#FD5528]">
+                    {{ $item->title }}
+                </a>
+            </li>
+        @endif
     @endif
 @endforeach
 </ul>
@@ -262,11 +198,6 @@
                     </div>
                 </div>
         
-
-
-
-
-
             </div>
 
             <a href="{{ route('frontend.project') }}"
@@ -343,13 +274,6 @@
                aria-current="{{ request()->routeIs('frontend.about') ? 'page' : '' }}">
                 Company
             </a>
-
-            @foreach($additionalMenuItems as $item)
-                <a href="{{ route('frontend.page', $item->page->slug) }}"
-                   class="nav-link rounded-md px-3 py-2 hover:bg-orange-50 {{ request()->routeIs('frontend.page') && request()->route('slug') === $item->page->slug ? 'bg-[#FD5528] text-white' : 'text-black' }}">
-                    {{ $item->title }}
-                </a>
-            @endforeach
             <!-- <a href="{{ route('frontend.service') }}"
                class="nav-link rounded-md px-3 py-2 hover:bg-orange-50 {{ $activeMobileNavClass('frontend.service') }}"
                aria-current="{{ request()->routeIs('frontend.service') ? 'page' : '' }}">
@@ -488,8 +412,6 @@
             }
             closeMega();
         });
-
-        window.addEventListener("resize", closeMega);
     });
 </script>
 
@@ -518,3 +440,5 @@
         }
     });
 </script>
+
+
