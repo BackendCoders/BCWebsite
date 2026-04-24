@@ -10,9 +10,10 @@ class MenuItemController extends Controller
 {
     public function index()
     {
-        $menus = MenuItem::with('page')->where('is_active', 1)->orderBy('order')->get();
+        $menus = MenuItem::with('page')->orderBy('order')->get();
         return view('menu.index', compact('menus'));
     }
+    
 
     public function create()
     {

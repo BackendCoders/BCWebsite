@@ -141,9 +141,7 @@
                             <p class="text-xs font-semibold uppercase tracking-wider text-[#FD5528]">Digital Marketing</p>
                            <!-- DIGITAL MARKETING -->
                                 <ul class="space-y-2 text-sm text-slate-700">
-                                   @foreach($menuItems->filter(function($item){
-    return strtolower(trim($item->type)) === 'digital marketing';
-}) as $item)
+                                    @foreach($menuItems->filter(fn($item) => strtolower(trim($item->type)) === 'digital marketing') as $item)
                                         <li class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">
 
                                     @if($item->page)
@@ -172,9 +170,7 @@
                         </p>
 
                         <ul class="space-y-2 mt-3 text-sm text-slate-700">
-                                   @foreach($menuItems->filter(function($item){
-    return strtolower(trim($item->type)) === 'software development';
-}) as $item)
+                                    @foreach($menuItems->filter(fn($item) => strtolower(trim($item->type)) === 'software development') as $item)
                                         @if($item->page)
                                             <li class="px-3 py-2 rounded-lg hover:bg-orange-50 transition">
                                                 <a href="{{ route('frontend.page', $item->page->slug) }}"

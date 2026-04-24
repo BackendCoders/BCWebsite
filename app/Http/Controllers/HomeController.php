@@ -21,14 +21,9 @@ class HomeController extends Controller
     $page = Page::with('sections.items')
         ->where('slug', 'home')
         ->first();
-    $digitalMenus = MenuItem::with('page')
-        ->whereRaw("LOWER(TRIM(type)) = 'digital marketing'")
-        ->get();
+        $menuItems = MenuItem::with('page')->get();
 
-    $softwareMenus = MenuItem::with('page')
-        ->whereRaw("LOWER(TRIM(type)) = 'software development'")
-        ->get();
-    return view('frontend.index', compact('page', 'digitalMenus', 'softwareMenus'));
+    return view('frontend.index', compact('page', 'menuItems'));
 }
     
 
