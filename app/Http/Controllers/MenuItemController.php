@@ -30,7 +30,7 @@ class MenuItemController extends Controller
             'page_id' => 'nullable|exists:pages,id',
             'parent_id' => 'nullable|exists:menu_items,id',
             'order' => 'nullable|integer',
-            'type' => ['required', 'string'],
+            'type' => 'required|in:' . MenuItem::TYPE_DIGITAL . ',' . MenuItem::TYPE_SOFTWARE,
         ]);
 
         $data['type'] = $this->normalizeType($data['type']);

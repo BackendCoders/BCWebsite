@@ -50,13 +50,19 @@
             <!-- Type -->
             <div>
                 <label class="block text-sm font-medium text-gray-700 mb-1">Type</label>
-                <select name="type" required
-                        class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-[#FD5528] focus:border-[#FD5528] outline-none">
-                    <option value="">Select Type</option>
-                   <option value="Digital Marketing" @selected(old('type') === 'Digital Marketing')>Digital Marketing</option>
-                   <option value="Software Development" @selected(old('type') === 'Software Development')>Software Development</option>
-                </select>
+               @php
+    $selectedType = old('type');
+@endphp
 
+<select name="type" class="w-full border p-2 rounded mt-1">
+    <option value="">Select Type</option>
+
+    @foreach(\App\Models\MenuItem::getTypes() as $value => $label)
+        <option value="{{ $value }}" @selected($selectedType === $value)>
+            {{ $label }}
+        </option>
+    @endforeach
+</select>
                 @error('type')
                     <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
                 @enderror

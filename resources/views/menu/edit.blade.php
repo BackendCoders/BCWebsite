@@ -31,20 +31,19 @@
             <!-- Type -->
             <div>
                 <label class="block text-sm font-medium text-gray-700 mb-1">Type</label>
-                <select name="type"
-                        class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-[#FD5528] focus:border-[#FD5528] outline-none">
+               @php
+    $selectedType = old('type', $menu_item->type);
+@endphp
 
-                    <option value="Digital Marketing"
-                        {{ (string) old('type', $menu_item->type) === 'Digital Marketing' ? 'selected' : '' }}>
-                        Digital Marketing
-                    </option>
+<select name="type" class="w-full border p-2 rounded mt-1">
 
-                    <option value="Software Development"
-                        {{ strtolower((string) old('type', $menu_item->type)) === 'software development' ? 'selected' : '' }}>
-                        Software Development
-                    </option>
+    @foreach(\App\Models\MenuItem::getTypes() as $value => $label)
+        <option value="{{ $value }}" @selected($selectedType === $value)>
+            {{ $label }}
+        </option>
+    @endforeach
 
-                </select>
+</select>
 
                 @error('type')
                     <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
