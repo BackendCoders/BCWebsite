@@ -32,10 +32,15 @@ class MenuItemController extends Controller
             'page_id' => 'nullable|exists:pages,id',
             'parent_id' => 'nullable|exists:menu_items,id',
             'order' => 'nullable|integer',
-            'type' => 'required|in:' . MenuItem::TYPE_DIGITAL . ',' . MenuItem::TYPE_SOFTWARE,
+            'type' => 'required|string',
         ]);
 
-        // ✅ No normalization needed — already correct value
+        $data['type'] = MenuItem::normalizeType($data['type']);
+
+        if (blank($data['type'])) {
+            return back()->withErrors(['type' => 'Please select a valid menu type.'])->withInput();
+        }
+
         MenuItem::create($data);
 
         return redirect()->route('menu-items.index')
@@ -57,10 +62,15 @@ class MenuItemController extends Controller
             'page_id' => 'nullable|exists:pages,id',
             'parent_id' => 'nullable|exists:menu_items,id',
             'order' => 'nullable|integer',
-            'type' =>   'nullable|in:' . MenuItem::TYPE_DIGITAL . ',' . MenuItem::TYPE_SOFTWARE,    
+            'type' => 'required|string',
         ]);
 
-        // ✅ No normalization needed
+        $data['type'] = MenuItem::normalizeType($data['type']);
+
+        if (blank($data['type'])) {
+            return back()->withErrors(['type' => 'Please select a valid menu type.'])->withInput();
+        }
+
         $menu_item->update($data);
 
         return redirect()->route('menu-items.index')

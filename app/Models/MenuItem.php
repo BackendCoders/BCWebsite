@@ -6,11 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class MenuItem extends Model
 {
-    // ✅ Constants (correct)
     const TYPE_DIGITAL = 'digital_marketing';
     const TYPE_SOFTWARE = 'software_development';
 
-    // ✅ Fillable (good)
     protected $fillable = [
         'title',
         'page_id',
@@ -18,10 +16,9 @@ class MenuItem extends Model
         'order',
         'type',
         'icon',
-        'is_active'
+        'is_active',
     ];
 
-    // ✅ Dynamic Types
     public static function getTypes()
     {
         return [
@@ -30,28 +27,43 @@ class MenuItem extends Model
         ];
     }
 
-    // ✅ Label Accessor (FIXED for NULL case)
+    public static function normalizeType(?string $type): ?string
+    {
+        if (blank($type)) {
+            return null;
+        }
+
+        $value = strtolower(trim((string) $type));
+
+        if (in_array($value, [self::TYPE_DIGITAL, 'digital marketing'], true)) {
+            return self::TYPE_DIGITAL;
+        }
+
+        if (in_array($value, [self::TYPE_SOFTWARE, 'software development'], true)) {
+            return self::TYPE_SOFTWARE;
+        }
+
+        return null;
+    }
+
     public function getTypeLabelAttribute()
     {
         if (!$this->type) {
             return 'No Type';
         }
 
-        return self::getTypes()[$this->type] ?? 'Unknown';
+        return self::getTypes()[self::normalizeType($this->type) ?? $this->type] ?? 'Unknown';
     }
 
-    // ✅ Scope (VERY USEFUL for frontend menu)
     public function scopeDigital($query)
     {
-        return $query->where('type', self::TYPE_DIGITAL);
+        return $query->whereIn('type', [self::TYPE_DIGITAL, 'Digital Marketing']);
     }
 
     public function scopeSoftware($query)
     {
-        return $query->where('type', self::TYPE_SOFTWARE);
+        return $query->whereIn('type', [self::TYPE_SOFTWARE, 'Software Development']);
     }
-
-    // ✅ Relations
 
     public function page()
     {
