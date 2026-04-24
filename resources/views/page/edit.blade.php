@@ -35,6 +35,27 @@
                 <input type="text" name="slug" id="slug"
                        value="{{ old('slug', $page->slug) }}"
                        class="w-full border p-2 rounded mt-1">
+                <p class="mt-1 text-xs text-gray-500">Used for the live page URL and header link.</p>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 mb-6">
+            <div>
+                <label class="block text-sm font-medium">Menu Type</label>
+                @php
+                    $selectedType = \App\Models\MenuItem::normalizeType(old('type', $page->menuItem?->type ?? ''));
+                @endphp
+                <select name="type" class="w-full border p-2 rounded mt-1">
+                    <option value="" {{ blank($selectedType) ? 'selected' : '' }}>No Type Selection</option>
+                    @foreach(\App\Models\MenuItem::getTypes() as $value => $label)
+                        <option value="{{ $value }}" {{ $selectedType === $value ? 'selected' : '' }}>
+                            {{ $label }}
+                        </option>
+                    @endforeach
+                </select>
+                @error('type')
+                    <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+                @enderror
             </div>
         </div>
 
