@@ -54,7 +54,7 @@
                         class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-[#FD5528] focus:border-[#FD5528] outline-none">
                     <option value="">Select Type</option>
                     <option value="Digital Marketing">Digital Marketing</option>
-                    <option value="Software Development">Software Development</option>
+                    <option value="software development">Software Development</option>
                 </select>
             </div>
 
