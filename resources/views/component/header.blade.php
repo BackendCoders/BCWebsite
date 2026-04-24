@@ -170,17 +170,17 @@
                         : $menuItems->filter(fn($item) => $normalize($item->type) === 'software development');
                 @endphp
 
-                <div class="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-start">
+                <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
 
-                        <div class="left flex flex-col items-start space-y-3 min-w-0">
+                        <div class="space-y-3">
                             <p class="text-xs font-semibold uppercase tracking-wider text-[#FD5528]">Digital Marketing</p>
                            <!-- DIGITAL MARKETING -->
-                                <ul class="flex w-full flex-col gap-2 text-sm text-slate-700">
-                                    @foreach($digitalMarketingItems as $item)
-                                        <li class="w-full rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">
+                                <ul class="space-y-2 text-sm text-slate-700">
+                                    @foreach($menuItems->where('type','Digital Marketing') as $item)
+                                        <li class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">
 
                                     @if($item->page)
-                                        <a href="{{ route('frontend.page', $item->page->slug) }}" class="block w-full">
+                                        <a href="{{ route('frontend.page', $item->page->slug) }}">
                                             {{ $item->title }}
                                         </a>
                                     @endif
@@ -199,56 +199,35 @@
   
                         </div>
 
-                        <div class="right flex flex-col items-start space-y-3 min-w-0">
-                                            <p class="text-xs font-semibold uppercase tracking-wider text-[#FD5528]">
-                            Software Development
-                        </p>
+                        <div class="space-y-3">
+                      <p class="text-xs font-semibold uppercase tracking-wider text-[#FD5528]">
+    Software Development
+</p>
 
-                <ul class="mt-3 flex w-full flex-col gap-4 text-sm text-slate-700">
-                                    @foreach($softwareDevelopmentItems as $item)
-                                        <li class="w-full rounded-lg px-3 py-2 hover:bg-orange-50 transition">
-                                            @if($item->page)
-                                                <a href="{{ route('frontend.page', $item->page->slug) }}"
-                                                class="block w-full hover:text-[#FD5528]">
-                                                    {{ $item->title }}
-                                                </a>
-                                            @else
-                                                <span class="block w-full font-medium text-slate-800">
-                                                    {{ $item->title }}
-                                                </span>
-                                            @endif
-
-                                            @if($item->children->isNotEmpty())
-                                                <ul class="mt-3 flex w-full flex-col gap-2 border-l border-slate-200 pl-4 text-sm text-slate-600">
-                                                    @foreach($item->children as $child)
-                                                        <li class="w-full">
-                                                            @if($child->page)
-                                                                <a href="{{ route('frontend.page', $child->page->slug) }}"
-                                                                   class="block w-full rounded-md px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">
-                                                                    {{ $child->title }}
-                                                                </a>
-                                                            @else
-                                                                <span class="block w-full rounded-md px-3 py-2">
-                                                                    {{ $child->title }}
-                                                                </span>
-                                                            @endif
-                                                        </li>
-                                                    @endforeach
-                                                </ul>
-                                            @endif
-                                        </li>
-                                    @endforeach
-                        </ul>
-                                                    <!-- <ul class="space-y-2 text-sm text-slate-700">
-                                                        <li><a href="/custom-web-application-development" class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">Custom Web Applications</a></li>
-                                                        <li><a href="/website-design-development" class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">Website Design & Development</a></li>
-                                                        <li><a href="/saas-development" class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">SaaS Development</a></li>
-                                                        <li><a href="/erp-pos-software-development" class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">ERP & POS Software</a></li>
-                                                        <li><a href="/ecommerce-development" class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">Ecommerce Development</a></li>
-                                                        <li><a href="/mobile-app-development" class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">Mobile App Development</a></li>
-                                                        <li><a href="/api-development" class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">API Development</a></li>
-                                                        <li><a href="/startup-mvp-development" class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">Startup MVP Development</a></li>
-                                                    </ul>  -->
+<ul class="space-y-2 mt-3 text-sm text-slate-700">
+@foreach($menuItems as $item)
+    @if(strtolower(trim($item->type)) == 'software development')
+        @if($item->page)
+            <li class="px-3 py-2 rounded-lg hover:bg-orange-50 transition">
+                <a href="{{ route('frontend.page', $item->page->slug) }}"
+                   class="block hover:text-[#FD5528]">
+                    {{ $item->title }}
+                </a>
+            </li>
+        @endif
+    @endif
+@endforeach
+</ul>
+                             <!-- <ul class="space-y-2 text-sm text-slate-700">
+                                <li><a href="/custom-web-application-development" class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">Custom Web Applications</a></li>
+                                <li><a href="/website-design-development" class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">Website Design & Development</a></li>
+                                <li><a href="/saas-development" class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">SaaS Development</a></li>
+                                <li><a href="/erp-pos-software-development" class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">ERP & POS Software</a></li>
+                                <li><a href="/ecommerce-development" class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">Ecommerce Development</a></li>
+                                <li><a href="/mobile-app-development" class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">Mobile App Development</a></li>
+                                <li><a href="/api-development" class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">API Development</a></li>
+                                <li><a href="/startup-mvp-development" class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">Startup MVP Development</a></li>
+                            </ul>  -->
                         </div>
 
                     </div>
