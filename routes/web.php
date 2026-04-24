@@ -141,7 +141,7 @@ Route::resource('services', ServiceController::class);
 Route::resource('service-details', ServiceDetailController::class);
 
 Route::resource('pages', PageController::class);
-Route::resource('menus', MenuItemController::class);
+Route::resource('menu-items', MenuItemController::class);
 
 // Route::prefix('banner')->group(function () {
 
