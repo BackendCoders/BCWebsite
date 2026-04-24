@@ -135,13 +135,11 @@
                     class="hidden absolute left-1/2 top-full z-40 mt-3 max-h-[70vh] w-[min(100vw-2rem,850px)] -translate-x-1/2 overflow-hidden rounded-2xl bg-white p-6 shadow-2xl ring-1 ring-black/10 transition duration-200"
                     role="menu" aria-hidden="true">
 
-                 <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
-
-    <!-- Digital Marketing -->
+<div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
     <div class="space-y-3">
-         <p class="text-xs font-semibold uppercase tracking-wider text-[#FD5528]">
+        <p class="text-xs font-semibold uppercase tracking-wider text-[#FD5528]">
             Digital Marketing
-         </p>
+        </p>
 
         <ul class="space-y-2 text-sm text-slate-700">
             @foreach($menuItems->filter(fn ($item) => \App\Models\MenuItem::normalizeType($item->type) === \App\Models\MenuItem::TYPE_DIGITAL) as $item)
@@ -156,13 +154,12 @@
         </ul>
     </div>
 
-    <!-- Software Development -->
     <div class="space-y-3">
         <p class="text-xs font-semibold uppercase tracking-wider text-[#FD5528]">
             Software Development
         </p>
 
-<ul class="space-y-2 text-sm text-slate-700">
+        <ul class="space-y-2 text-sm text-slate-700">
             @foreach($menuItems->filter(fn ($item) => \App\Models\MenuItem::normalizeType($item->type) === \App\Models\MenuItem::TYPE_SOFTWARE) as $item)
                 <li class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">
                     @if($item->page)
@@ -174,8 +171,8 @@
             @endforeach
         </ul>
     </div>
-
 </div>
+
                 </div>
         
             </div>
