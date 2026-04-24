@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class MenuItem extends Model
 {
+    public const TYPE_DIGITAL = 'digital';
+    public const TYPE_SOFTWARE = 'software';
+
     protected $fillable = [
         'title',
         'page_id',
@@ -16,9 +19,14 @@ class MenuItem extends Model
         'is_active'
     ];
 
-const TYPE_DIGITAL = 'digital_marketing';
-const TYPE_SOFTWARE = 'software_development';
-
+public function getTypeLabelAttribute()
+{
+    return match($this->type) {
+        self::TYPE_DIGITAL => 'Digital Marketing',
+        self::TYPE_SOFTWARE => 'Software Development',
+        default => 'Unknown',
+    };
+}
     //  Relation with Page
     public function page()
     {
