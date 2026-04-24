@@ -48,25 +48,34 @@
             </div>
 
             <!-- Type -->
-            <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1">Type</label>
-               @php
-    $selectedType = old('type');
-@endphp
+          <!-- Type -->
+<div>
+    <label class="block text-sm font-medium text-gray-700 mb-1">Type</label>
 
-<select name="type" class="w-full border p-2 rounded mt-1">
-    <option value="">Select Type</option>
+    @php
+        $selectedType = old('type', '');
+    @endphp
 
-    @foreach(\App\Models\MenuItem::getTypes() as $value => $label)
-        <option value="{{ $value }}" @selected($selectedType === $value)>
-            {{ $label }}
+    <select name="type" required
+        class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-[#FD5528] focus:border-[#FD5528] outline-none">
+
+        <!-- Default Placeholder -->
+        <option value="" disabled {{ $selectedType === '' ? 'selected' : '' }}>
+            Select Type
         </option>
-    @endforeach
-</select>
-                @error('type')
-                    <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
-                @enderror
-            </div>
+
+        @foreach(\App\Models\MenuItem::getTypes() as $value => $label)
+            <option value="{{ $value }}" {{ $selectedType === $value ? 'selected' : '' }}>
+                {{ $label }}
+            </option>
+        @endforeach
+
+    </select>
+
+    @error('type')
+        <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+    @enderror
+</div>
 
             <!-- Buttons -->
             <div class="flex justify-between items-center pt-4">
