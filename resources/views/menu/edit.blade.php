@@ -34,15 +34,15 @@
                 <select name="type"
                         class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-[#FD5528] focus:border-[#FD5528] outline-none">
 
-                    <option value="Digital Marketing"
-                        {{ $menu_item->type == 'Digital Marketing' ? 'selected' : '' }}>
-                        Digital Marketing
-                    </option>
+                                <option value="{{ \App\Models\MenuItem::TYPE_DIGITAL }}"
+                    {{ $menu_item->type == \App\Models\MenuItem::TYPE_DIGITAL ? 'selected' : '' }}>
+                    Digital Marketing
+                </option>
 
-                    <option value="Software Development"
-                        {{ $menu_item->type == 'software development' ? 'selected' : '' }}>
-                        Software Development
-                    </option>
+                <option value="{{ \App\Models\MenuItem::TYPE_SOFTWARE }}"
+                    {{ $menu_item->type == \App\Models\MenuItem::TYPE_SOFTWARE ? 'selected' : '' }}>
+                    Software Development
+                </option>
 
                 </select>
 
