@@ -21,7 +21,11 @@ class HomeController extends Controller
     $page = Page::with('sections.items')
         ->where('slug', 'home')
         ->first();
-        $menuItems = MenuItem::with('page')->get();
+        $menuItems = MenuItem::with(['page', 'children.page'])
+            ->where('is_active', 1)
+            ->whereNull('parent_id')
+            ->orderBy('order')
+            ->get();
 
     return view('frontend.index', compact('page', 'menuItems'));
 }

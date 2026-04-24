@@ -24,7 +24,7 @@ class AppServiceProvider extends ServiceProvider
     {
        View::composer('*', function ($view) {
 
-        $menuItems = MenuItem::with('page')
+        $menuItems = MenuItem::with(['page', 'children.page'])
             ->where('is_active', 1)
             ->whereNull('parent_id') // only main menu
             ->orderBy('order')
@@ -35,4 +35,3 @@ class AppServiceProvider extends ServiceProvider
     }
 
 }   
-

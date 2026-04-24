@@ -118,7 +118,7 @@
                 Company
             </a>
 
-            <div class="relative">
+            <div class="relative isolate">
 
                 <button id="mega-menu-toggle"
                     type="button"
@@ -132,20 +132,20 @@
                 </button>
 
                  <div id="mega-menu-panel"
-                    class="hidden absolute left-1/2 top-full z-40 mt-3 max-h-[70vh] w-[min(100vw-2rem,850px)] -translate-x-1/2 overflow-hidden rounded-2xl bg-white p-6 shadow-2xl ring-1 ring-black/10 transition duration-200"
+                    class="hidden absolute left-0 top-full z-40 mt-3 max-h-[70vh] w-[min(100vw-2rem,850px)] overflow-visible rounded-2xl bg-white p-6 shadow-2xl ring-1 ring-black/10 transition duration-200 origin-top-left"
                     role="menu" aria-hidden="true">
 
-                <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
+                <div class="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-start">
 
-                        <div class="left space-y-3">
+                        <div class="left flex flex-col items-start space-y-3 min-w-0">
                             <p class="text-xs font-semibold uppercase tracking-wider text-[#FD5528]">Digital Marketing</p>
                            <!-- DIGITAL MARKETING -->
-                                <ul class="space-y-2 text-sm text-slate-700">
+                                <ul class="flex w-full flex-col gap-2 text-sm text-slate-700">
                                     @foreach($menuItems->filter(fn($item) => strtolower(trim($item->type)) === 'digital marketing') as $item)
-                                        <li class="block rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">
+                                        <li class="w-full rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-[#FD5528] transition">
 
                                     @if($item->page)
-                                        <a href="{{ route('frontend.page', $item->page->slug) }}">
+                                        <a href="{{ route('frontend.page', $item->page->slug) }}" class="block w-full">
                                             {{ $item->title }}
                                         </a>
                                     @endif
@@ -164,17 +164,17 @@
   
                         </div>
 
-                        <div class="right space-y-3">
+                        <div class="right flex flex-col items-start space-y-3 min-w-0">
                                             <p class="text-xs font-semibold uppercase tracking-wider text-[#FD5528]">
                             Software Development
                         </p>
 
-                        <ul class="space-y-2 mt-3 text-sm text-slate-700">
+                        <ul class="mt-3 flex w-full flex-col gap-2 text-sm text-slate-700">
                                     @foreach($menuItems->filter(fn($item) => strtolower(trim($item->type)) === 'software development') as $item)
                                         @if($item->page)
-                                            <li class="px-3 py-2 rounded-lg hover:bg-orange-50 transition">
+                                            <li class="w-full rounded-lg px-3 py-2 hover:bg-orange-50 transition">
                                                 <a href="{{ route('frontend.page', $item->page->slug) }}"
-                                                class="block hover:text-[#FD5528]">
+                                                class="block w-full hover:text-[#FD5528]">
                                                     {{ $item->title }}
                                                 </a>
                                             </li>
@@ -415,6 +415,8 @@
             }
             closeMega();
         });
+
+        window.addEventListener("resize", closeMega);
     });
 </script>
 
@@ -443,5 +445,4 @@
         }
     });
 </script>
-
 
