@@ -39,7 +39,7 @@
                         Digital Marketing
                     </option>
 
-                    <option value="software development"
+                    <option value="Software Development"
                         {{ strtolower((string) old('type', $menu_item->type)) === 'software development' ? 'selected' : '' }}>
                         Software Development
                     </option>

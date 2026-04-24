@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\MenuItem;
 use App\Models\Page;
 use Illuminate\Http\Request;
-use Illuminate\Validation\ValidationException;
 
 class MenuItemController extends Controller
 {
@@ -35,7 +34,6 @@ class MenuItemController extends Controller
         ]);
 
         $data['type'] = $this->normalizeType($data['type']);
-        $this->assertValidType($data['type']);
 
         MenuItem::create($data);
 
@@ -62,7 +60,6 @@ class MenuItemController extends Controller
         ]);
 
         $data['type'] = $this->normalizeType($data['type']);
-        $this->assertValidType($data['type']);
 
         $menu_item->update($data);
 
@@ -80,16 +77,7 @@ class MenuItemController extends Controller
     private function normalizeType(string $type): string
     {
         return strtolower(trim($type)) === 'software development'
-            ? 'software development'
+            ? 'Software Development'
             : 'Digital Marketing';
-    }
-
-    private function assertValidType(string $type): void
-    {
-        if (! in_array($type, ['Digital Marketing', 'software development'], true)) {
-            throw ValidationException::withMessages([
-                'type' => 'The selected type is invalid.',
-            ]);
-        }
     }
 }

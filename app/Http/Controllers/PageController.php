@@ -12,7 +12,7 @@ class PageController extends Controller
     private function normalizeMenuType(?string $type): string
     {
         return strtolower(trim((string) $type)) === 'software development'
-            ? 'software development'
+            ? 'Software Development'
             : 'Digital Marketing';
     }
 

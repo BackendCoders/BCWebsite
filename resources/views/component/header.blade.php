@@ -136,8 +136,25 @@
                     role="menu" aria-hidden="true">
 
                 @php
-                    $digitalMarketingItems = $menuItems->filter(fn($item) => strtolower(trim($item->type)) === 'digital marketing');
-                    $softwareDevelopmentItems = $menuItems->filter(fn($item) => strtolower(trim($item->type)) === 'software development');
+                    $normalize = fn ($value) => strtolower(trim((string) $value));
+
+                    $digitalParent = $menuItems->first(fn ($item) =>
+                        $normalize($item->title) === 'digital marketing'
+                        || $normalize($item->type) === 'digital marketing'
+                    );
+
+                    $softwareParent = $menuItems->first(fn ($item) =>
+                        $normalize($item->title) === 'software development'
+                        || $normalize($item->type) === 'software development'
+                    );
+
+                    $digitalMarketingItems = $digitalParent && $digitalParent->children->isNotEmpty()
+                        ? $digitalParent->children
+                        : $menuItems->filter(fn($item) => $normalize($item->type) === 'digital marketing');
+
+                    $softwareDevelopmentItems = $softwareParent && $softwareParent->children->isNotEmpty()
+                        ? $softwareParent->children
+                        : $menuItems->filter(fn($item) => $normalize($item->type) === 'software development');
                 @endphp
 
                 <div class="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-start">
