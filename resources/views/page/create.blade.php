@@ -33,6 +33,7 @@
                 <input type="text" name="slug" id="slug"
                        class="w-full border p-2 rounded mt-1"
                        placeholder="auto-generated">
+                <p class="mt-1 text-xs text-gray-500">This slug is used for the live header link and page URL.</p>
             </div>
         </div>
 
