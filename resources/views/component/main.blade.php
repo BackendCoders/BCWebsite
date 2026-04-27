@@ -508,7 +508,7 @@ document.addEventListener('DOMContentLoaded', function () {
     botInput.value = '';
 
     try {
-      const response = await fetch('{{ route('botman.web-chat') }}', {
+      const response = await fetch('{{ route('botman.controller-web-chat') }}', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

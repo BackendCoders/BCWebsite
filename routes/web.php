@@ -18,6 +18,8 @@ use App\Http\Controllers\HeroController;
 use App\Http\Controllers\SectionController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\MenuItemController;
+use App\Http\Controllers\BotmanController;
+
 
 use BotMan\BotMan\BotMan;
 
@@ -159,16 +161,11 @@ Route::resource('menu-items', MenuItemController::class);
 
 
 
-Route::match(['get', 'post'], '/botman', function () {
-    $botman = app('botman');
 
-    $botman->hears('seo services', function (BotMan $bot) {
-        $bot->reply('SEO services are available 🚀');
-    });
+Route::match(['get', 'post'], '/botman', [BotmanController::class, 'handle'])
+    ->name('botman.controller-handle');
 
-    $botman->listen();
-});
-
-
+Route::post('/botman/web-chat', [BotmanController::class, 'webChat'])
+    ->name('botman.controller-web-chat');
 
 require __DIR__.'/auth.php';

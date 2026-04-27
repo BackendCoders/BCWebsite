@@ -102,7 +102,7 @@
                 if (!text) return;
                 appendMessage(text, 'user');
                 input.value = '';
-                fetch('{{ route('botman.web-chat') }}', {
+                fetch('{{ route('botman.controller-web-chat') }}', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -134,5 +134,4 @@
         })();
     </script>
 </div>
-
 
