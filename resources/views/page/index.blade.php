@@ -3,11 +3,11 @@
 <div class="max-w-6xl mx-auto">
 
     <!-- Header -->
-    <div class="flex justify-between items-center mb-6">
-        <h2 class="text-2xl font-bold text-gray-800">📄 Pages</h2>
+    <div class="flex bg-gradient-to-tr from-orange-50 to-orange-200 justify-between items-center mb-6 p-2">
+        <h2 class="text-2xl font-bold text-gray-800"> Pages</h2>
 
         <a href="{{ route('pages.create') }}"
-           class="bg-blue-600 text-white px-4 py-2 rounded-lg shadow hover:bg-blue-700">
+           class="bg-orange-600 text-white px-4 py-2 rounded-lg shadow hover:bg-orange-700">
             + Create Page
         </a>
     </div>
@@ -22,7 +22,7 @@
     <!-- Table -->
     <div class="bg-white shadow rounded-lg overflow-hidden">
         <table class="w-full text-left">
-            <thead class="bg-gray-200 text-gray-700">
+            <thead class="bg-gradient-to-r from-orange-600 to-orange-400 text-white">
                 <tr>
                     <th class="p-3">Title</th>
                     <th class="p-3">Slug</th>
@@ -53,7 +53,7 @@
                     </td>
 
                     <!-- Actions -->
-                    <td class="p-3 text-center space-x-2">
+                    <td class="p-3 grid grid-cols-2 gap-2 text-center">
 
                         <a href="{{ route('pages.show', $page->id) }}"
                            class="bg-slate-700 text-white px-3 py-1 rounded hover:bg-slate-800">

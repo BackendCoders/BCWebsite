@@ -7,9 +7,46 @@
     $activeCategory = request('category');
 @endphp
 
-<section class="relative overflow-hidden bg-slate-950 text-white">
+<section class="relative h-[30vh] flex items-center justify-center text-center text-white overflow-hidden">
+
+  <!-- BACKGROUND IMAGE -->
+  <img 
+    src="{{asset('assets/images/banner.png')}}"
+    class="absolute inset-0 w-full h-full object-cover"
+  />
+
+  <!-- DARK OVERLAY -->
+  <div class="absolute inset-0 bg-black/60"></div>
+
+  <!-- CONTENT -->
+  <div class="relative z-10 max-w-4xl px-6">
+
+  
+
+    <!-- HEADING -->
+    <h1 class="mt-6 text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
+        Stories, updates, and releases from the
+<span class="text-[#FC5124] font-semibold"> 
+                 backend team.</span> <span class="text-[#FD5528] font-semibold">
+     
+    </h1>
+
+    <!-- SUBTEXT -->
+    <p class="mt-6 text-gray-300 text-sm sm:text-base md:text-lg max-w-2xl mx-auto">
+   Every new blog created in the dashboard appears here automatically. Search, filter, and read the latest posts as soon as they are published.
+    </p>
+
+ 
+
+  </div>
+
+</section>
+
+
+
+<!-- <section class="relative overflow-hidden bg-slate-950 text-white">
     <img src="{{ asset('assets/images/banner.png') }}" class="absolute inset-0 h-full w-full object-cover opacity-20" alt="Blog banner">
-    <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/55 to-slate-950"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-slate-500"></div>
 
     <div class="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
         <div class="max-w-3xl space-y-6">
@@ -24,7 +61,7 @@
             </p>
         </div>
     </div>
-</section>
+</section> -->
 
 <section class="bg-slate-50 py-12">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -60,43 +97,73 @@
             <div class="space-y-8">
                 <div class="grid gap-6 md:grid-cols-2">
                     @forelse($blogs as $blog)
-                        <article class="group overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-xl transition hover:-translate-y-1 hover:shadow-2xl">
-                            <a href="{{ route('frontend.blog-detail', $blog) }}" class="block">
-                                <div class="relative h-56 overflow-hidden">
-                                    <img
-                                        src="{{ $blog->image ? asset('storage/' . $blog->image) : asset('assets/images/banner.png') }}"
-                                        alt="{{ $blog->title }}"
-                                        class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
-                                    >
-                                    <div class="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent"></div>
-                                    <div class="absolute bottom-4 left-4 flex flex-wrap gap-2">
-                                        <span class="rounded-full bg-[#FD5528] px-3 py-1 text-xs font-semibold text-white">
-                                            {{ $blog->category?->name ?? 'Uncategorized' }}
-                                        </span>
-                                        <span class="rounded-full bg-white/15 px-3 py-1 text-xs font-semibold text-white backdrop-blur">
-                                            {{ optional($blog->published_at ?? $blog->created_at)->format('d M, Y') }}
-                                        </span>
-                                    </div>
-                                </div>
-                            </a>
+                       <article class="group overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:border-[#FD5528]/40">
 
-                            <div class="space-y-4 p-6">
-                                <h2 class="text-xl font-bold text-slate-900 transition group-hover:text-[#FD5528]">
-                                    <a href="{{ route('frontend.blog-detail', $blog) }}">{{ $blog->title }}</a>
-                                </h2>
-                                <p class="text-sm leading-6 text-slate-600">
-                                    {{ \Illuminate\Support\Str::limit(strip_tags($blog->excerpt ?: $blog->content ?: ''), 160) }}
-                                </p>
-                                <div class="flex items-center justify-between">
-                                    <span class="text-xs uppercase tracking-[0.35em] text-slate-400">
-                                        {{ $blog->is_published ? 'Published' : 'Draft' }}
-                                    </span>
-                                    <a href="{{ route('frontend.blog-detail', $blog) }}" class="text-sm font-semibold text-[#FD5528]">
-                                        Read more
-                                    </a>
-                                </div>
-                            </div>
-                        </article>
+    <a href="{{ route('frontend.blog-detail', $blog) }}" class="block">
+        <div class="relative h-56 overflow-hidden">
+
+            <!-- Image -->
+            <img
+                src="{{ $blog->image ? asset('storage/' . $blog->image) : asset('assets/images/banner.png') }}"
+                alt="{{ $blog->title }}"
+                class="h-full w-full object-cover transition duration-700 ease-out group-hover:scale-110"
+            >
+
+            <!-- Overlay Gradient -->
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+
+            <!-- Top Glow Effect -->
+            <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 bg-gradient-to-tr from-[#FD5528]/30 via-transparent to-transparent"></div>
+
+            <!-- Bottom Tags -->
+            <div class="absolute bottom-4 left-4 flex flex-wrap gap-2">
+
+                <span class="rounded-full bg-[#FD5528] px-3 py-1 text-xs font-semibold text-white shadow-md">
+                    {{ $blog->category?->name ?? 'Uncategorized' }}
+                </span>
+
+                <span class="rounded-full bg-white/20 px-3 py-1 text-xs font-semibold text-white backdrop-blur-md border border-white/20">
+                    {{ optional($blog->published_at ?? $blog->created_at)->format('d M, Y') }}
+                </span>
+
+            </div>
+
+        </div>
+    </a>
+
+    <div class="space-y-4 p-6">
+
+        <!-- Title -->
+        <h2 class="text-xl font-bold text-slate-900 transition duration-300 group-hover:text-[#FD5528] leading-snug">
+            <a href="{{ route('frontend.blog-detail', $blog) }}">
+                {{ $blog->title }}
+            </a>
+        </h2>
+
+        <!-- Description -->
+        <p class="text-sm leading-6 text-slate-600 group-hover:text-slate-700 transition">
+            {{ \Illuminate\Support\Str::limit(strip_tags($blog->excerpt ?: $blog->content ?: ''), 160) }}
+        </p>
+
+        <!-- Footer -->
+        <div class="flex items-center justify-between pt-2 border-t border-slate-100">
+
+            <span class="text-xs uppercase tracking-[0.35em] text-slate-400 group-hover:text-[#FD5528] transition">
+                {{ $blog->is_published ? 'Published' : 'Draft' }}
+            </span>
+
+            <a href="{{ route('frontend.blog-detail', $blog) }}"
+               class="text-sm font-semibold text-[#FD5528] flex items-center gap-1 group-hover:gap-2 transition-all duration-300">
+
+                Read more
+                <span class="transition-transform duration-300 group-hover:translate-x-1">→</span>
+
+            </a>
+
+        </div>
+
+    </div>
+</article>
                     @empty
                         <div class="rounded-[2rem] border border-dashed border-slate-300 bg-white p-10 text-center text-slate-500 md:col-span-2">
                             No published blog posts found.

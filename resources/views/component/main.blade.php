@@ -339,39 +339,89 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     font-mono:JetBrains Mono, monospace; muted-foreground: 215 14% 40%;">
 
 <!-- FLOATING STACK -->
-<div class="fixed right-5 bottom-6 z-[60] flex flex-col gap-3 items-end">
+<div class="fixed right-5 bottom-6 z-[60] flex flex-col items-end gap-3">
+    <div class="relative">
+        <button id="contactToggle"
+            type="button"
+            class="flex h-14 w-14 items-center justify-center rounded-full bg-[#1aac26] text-white shadow-lg transition hover:scale-110"
+            aria-label="Open contact menu">
+            <img src="https://img.icons8.com/?size=100&id=122809&format=png&color=FFFFFF" class="w-8" alt="Contact">
+        </button>
 
+        <div id="contactMenu"
+            class="absolute bottom-20 right-0 w-64 translate-y-5 space-y-2 rounded-2xl border bg-white p-3 opacity-0 shadow-2xl transition-all duration-300 pointer-events-none">
+            <a href="tel:+919140092133" class="flex items-center gap-3 rounded-xl p-3 hover:bg-orange-50">
+                <img src="https://img.icons8.com/?size=100&id=9730&format=png&color=FA5252" class="w-6" alt="">
+                <span>Call Us</span>
+            </a>
 
-    <!-- CONTACT BUTTON -->
-    <button id="contactToggle"
-        class="w-14 h-14 flex items-center justify-center rounded-full 
-               bg-[#1aac26] text-white shadow-lg hover:scale-110 transition">
-        
-        <img src="https://img.icons8.com/?size=100&id=122809&format=png&color=FFFFFF" class="w-8">
-    </button>
+            <a href="https://wa.me/919140092133" target="_blank" class="flex items-center gap-3 rounded-xl p-3 hover:bg-orange-50">
+                <img src="https://img.icons8.com/?size=100&id=Jneo9ShAzJw7&format=png&color=000000" class="w-6" alt="">
+                <span>WhatsApp</span>
+            </a>
+        </div>
+    </div>
 
-    <!-- CONTACT MENU -->
-    <div id="contactMenu"
-        class="absolute bottom-20 right-0 w-64 bg-white rounded-2xl shadow-2xl border
-               p-3 space-y-2 opacity-0 pointer-events-none translate-y-5 
-               transition-all duration-300">
+    <div class="relative">
+        <button id="botToggle"
+            type="button"
+            class="flex h-14 w-14 items-center justify-center rounded-full bg-[#FD5528] text-white shadow-lg shadow-[#FD5528]/30 transition hover:scale-110"
+            aria-label="Open chatbot">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" class="h-6 w-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 6.5A2 2 0 0 1 6.5 4.5h11A2 2 0 0 1 19.5 6.5v7A2 2 0 0 1 17.5 15.5H10l-4.5 4.5v-4.5h-1A2 2 0 0 1 2.5 13.5v-7Z" />
+            </svg>
+        </button>
 
-        <a href="tel:+919140092133"
-            class="flex items-center gap-3 p-3 rounded-xl hover:bg-orange-50">
-          <img src="https://img.icons8.com/?size=100&id=9730&format=png&color=FA5252" class="w-6">
-          <span>Call Us</span>
-        </a>
+        <div id="botPanel"
+            class="absolute bottom-20 right-0 hidden w-[22rem] overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white shadow-[0_24px_80px_rgba(15,23,42,0.18)]">
+            <div class="flex items-center justify-between bg-gradient-to-r from-[#FD5528] to-[#f97316] px-4 py-4 text-white">
+                <div>
+                    <p class="text-xs font-semibold uppercase tracking-[0.35em] text-white/70">Chatbot</p>
+                    <h3 class="mt-1 text-lg font-semibold">Backend Coders Assistant</h3>
+                </div>
+                <div class="flex h-10 w-10 items-center justify-center rounded-full bg-white/15">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="h-5 w-5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 10.5A4.5 4.5 0 0 1 12 6h0a4.5 4.5 0 0 1 4.5 4.5V12A4.5 4.5 0 0 1 12 16.5h0A4.5 4.5 0 0 1 7.5 12v-1.5Z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 10.5h.01M15 10.5h.01" />
+                    </svg>
+                </div>
+            </div>
 
-        <a href="https://wa.me/919140092133"
-            target="_blank"
-            class="flex items-center gap-3 p-3 rounded-xl hover:bg-orange-50">
-            <img src="https://img.icons8.com/?size=100&id=Jneo9ShAzJw7&format=png&color=000000" class="w-6">
-            <span>WhatsApp</span>
-        </a>
+            <div id="botMessages" class="max-h-80 space-y-3 overflow-y-auto bg-slate-50 p-4">
+                <div class="max-w-[85%] rounded-2xl rounded-bl-md border border-slate-200 bg-white px-4 py-3 text-sm text-slate-700">
+                    {{ config('laravel-chatbot.welcome_message', 'Hello! How can I help you today?') }}
+                </div>
+            </div>
 
+            <div class="border-t border-slate-200 bg-white p-4">
+                <!-- <div class="mb-3 flex flex-wrap gap-2">
+                    <button type="button" data-bot-quick="SEO" class="rounded-full border border-slate-200 px-3 py-1.5 text-xs font-semibold text-slate-600 transition hover:border-[#FD5528] hover:text-[#FD5528]">SEO</button>
+                    <button type="button" data-bot-quick="Website" class="rounded-full border border-slate-200 px-3 py-1.5 text-xs font-semibold text-slate-600 transition hover:border-[#FD5528] hover:text-[#FD5528]">Website</button>
+                    <button type="button" data-bot-quick="Blogs" class="rounded-full border border-slate-200 px-3 py-1.5 text-xs font-semibold text-slate-600 transition hover:border-[#FD5528] hover:text-[#FD5528]">Blogs</button>
+                    <button type="button" data-bot-quick="Contact" class="rounded-full border border-slate-200 px-3 py-1.5 text-xs font-semibold text-slate-600 transition hover:border-[#FD5528] hover:text-[#FD5528]">Contact</button>
+                </div> -->
+
+                <div class="flex gap-2">
+                    <input
+                        id="botInput"
+                        type="text"
+                        placeholder="Type a message..."
+                        class="w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm outline-none transition placeholder:text-slate-400 focus:border-[#FD5528] focus:ring-4 focus:ring-[#FD5528]/10"
+                    >
+                    <button
+                        id="botSend"
+                        type="button"
+                        class="inline-flex shrink-0 items-center justify-center rounded-2xl bg-[#FD5528] px-4 py-3 text-sm font-semibold text-white transition hover:bg-[#e94c20]"
+                    >
+                        Send
+                    </button>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 <!-- JS -->
+</div>
 
 <style>
 .stat-card {
@@ -383,9 +433,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   box-shadow: 0 20px 40px rgba(253, 85, 40, 0.15);
 }
 </style>
-
-
-
 
 
 <script>
@@ -420,35 +467,109 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 
 <script>
+document.addEventListener('DOMContentLoaded', function () {
+  const contactToggle = document.getElementById('contactToggle');
+  const contactMenu = document.getElementById('contactMenu');
+  const botToggle = document.getElementById('botToggle');
+  const botPanel = document.getElementById('botPanel');
+  const botInput = document.getElementById('botInput');
+  const botSend = document.getElementById('botSend');
+  const botMessages = document.getElementById('botMessages');
+  const csrfToken = document.querySelector('meta[name="csrf-token"]')?.content || '';
 
-  
-const contactBtn = document.getElementById('contactToggle');
-const menu = document.getElementById('contactMenu');
+  if (contactToggle && contactMenu) {
+    contactToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      contactMenu.classList.toggle('opacity-0');
+      contactMenu.classList.toggle('pointer-events-none');
+      contactMenu.classList.toggle('translate-y-5');
+    });
+  }
 
-contactBtn.addEventListener('click', () => {
-    menu.classList.toggle('opacity-0');
-    menu.classList.toggle('pointer-events-none');
-    menu.classList.toggle('translate-y-5');
-});
+  const appendBotMessage = (text, type = 'bot') => {
+    if (!botMessages) return;
 
-</script>
+    const bubble = document.createElement('div');
+    bubble.className = type === 'user'
+      ? 'ml-auto max-w-[85%] rounded-2xl rounded-br-md bg-[#FD5528] px-4 py-3 text-sm text-white'
+      : 'max-w-[85%] rounded-2xl rounded-bl-md border border-slate-200 bg-white px-4 py-3 text-sm text-slate-700';
+    bubble.textContent = text;
+    botMessages.appendChild(bubble);
+    botMessages.scrollTop = botMessages.scrollHeight;
+  };
 
-<script>
-  const toggleBtn = document.getElementById('contactToggle');
-  const menu = document.getElementById('contactMenu');
+  const sendBotMessage = async (value = '') => {
+    if (!botInput || !botMessages) return;
 
-  toggleBtn.addEventListener('click', () => {
-    menu.classList.toggle('opacity-0');
-    menu.classList.toggle('pointer-events-none');
-    menu.classList.toggle('translate-y-5');
-  });
+    const text = (value || botInput.value).trim();
+    if (!text) return;
 
-  // Close when clicking outside
+    appendBotMessage(text, 'user');
+    botInput.value = '';
+
+    try {
+      const response = await fetch('{{ route('botman.web-chat') }}', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+          'X-CSRF-TOKEN': csrfToken,
+        },
+        credentials: 'same-origin',
+        body: JSON.stringify({ message: text }),
+      });
+
+      const data = await response.json();
+      appendBotMessage(data.text || 'I did not get that.');
+    } catch (error) {
+      appendBotMessage('Sorry, the chatbot is unavailable right now.');
+    }
+  };
+
+  const fillBotInput = (value) => {
+    if (!botInput) return;
+
+    botInput.value = value;
+    botInput.focus();
+    botInput.setSelectionRange(botInput.value.length, botInput.value.length);
+  };
+
+  if (botToggle && botPanel && botInput && botSend) {
+    botToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      botPanel.classList.toggle('hidden');
+      if (!botPanel.classList.contains('hidden')) {
+        botInput.focus();
+        if (botMessages) {
+          botMessages.scrollTop = botMessages.scrollHeight;
+        }
+      }
+    });
+
+    botSend.addEventListener('click', () => sendBotMessage());
+
+    botInput.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter') {
+        event.preventDefault();
+        sendBotMessage();
+      }
+    });
+
+    botMessages.querySelectorAll('[data-bot-quick]').forEach((button) => {
+      button.addEventListener('click', () => fillBotInput(button.getAttribute('data-bot-quick') || ''));
+    });
+  }
+
   document.addEventListener('click', (e) => {
-    if (!toggleBtn.contains(e.target) && !menu.contains(e.target)) {
-      menu.classList.add('opacity-0', 'pointer-events-none', 'translate-y-5');
+    if (contactToggle && contactMenu && !contactToggle.contains(e.target) && !contactMenu.contains(e.target)) {
+      contactMenu.classList.add('opacity-0', 'pointer-events-none', 'translate-y-5');
+    }
+
+    if (botToggle && botPanel && !botToggle.contains(e.target) && !botPanel.contains(e.target)) {
+      botPanel.classList.add('hidden');
     }
   });
+});
 </script>
 
 
@@ -472,7 +593,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const tabs = document.querySelectorAll(".tab");
   const projects = document.querySelectorAll(".project");
 
-  if (!tabs.length || !projects.length) return; // safety check
+  if (!tabs.length || !projects.length) return; 
 
   tabs.forEach(tab => {
     tab.addEventListener("click", () => {
