@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class Blog extends Model
 {
@@ -25,5 +26,17 @@ class Blog extends Model
     public function category()
     {
         return $this->belongsTo(Category::class);
+    }
+
+    // ✅ AUTO SLUG GENERATION
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::saving(function ($blog) {
+            if (empty($blog->slug) && !empty($blog->title)) {
+                $blog->slug = Str::slug($blog->title);
+            }
+        });
     }
 }

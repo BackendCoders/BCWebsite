@@ -144,8 +144,8 @@ class HomeController extends Controller
             return view('frontend.blog', compact('page', 'blogs', 'featuredBlog', 'categories'));
     }
 
-    public function blog_detail(Blog $blog){
-      abort_unless($blog->is_published, 404);
+    public function blog_detail($slug){
+      $blog = Blog::where('slug', $slug)->where('is_published', 1)->firstOrFail();
 
       $page = Page::with('sections.items')
         ->where('slug', 'blog-detail')

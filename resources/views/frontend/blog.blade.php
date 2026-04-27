@@ -99,7 +99,7 @@
                     @forelse($blogs as $blog)
                        <article class="group overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:border-[#FD5528]/40">
 
-    <a href="{{ route('frontend.blog-detail', $blog) }}" class="block">
+    <a href="{{ route('frontend.blog-detail', $blog->slug) }}" class="block">
         <div class="relative h-56 overflow-hidden">
 
             <!-- Image -->
@@ -135,7 +135,7 @@
 
         <!-- Title -->
         <h2 class="text-xl font-bold text-slate-900 transition duration-300 group-hover:text-[#FD5528] leading-snug">
-            <a href="{{ route('frontend.blog-detail', $blog) }}">
+            <a href="{{ route('frontend.blog-detail', $blog->slug) }}">
                 {{ $blog->title }}
             </a>
         </h2>
@@ -152,7 +152,7 @@
                 {{ $blog->is_published ? 'Published' : 'Draft' }}
             </span>
 
-            <a href="{{ route('frontend.blog-detail', $blog) }}"
+            <a href="{{ route('frontend.blog-detail', $blog->slug) }}"
                class="text-sm font-semibold text-[#FD5528] flex items-center gap-1 group-hover:gap-2 transition-all duration-300">
 
                 Read more
@@ -189,7 +189,7 @@
                 <div class="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-lg">
                     <p class="text-xs uppercase tracking-[0.4em] text-slate-400">Featured</p>
                     @if($featuredBlog)
-                        <a href="{{ route('frontend.blog-detail', $featuredBlog) }}" class="mt-4 block space-y-4">
+                        <a href="{{ route('frontend.blog-detail', $featuredBlog->slug) }}" class="mt-4 block space-y-4">
                             <img
                                 src="{{ $featuredBlog->image ? asset('storage/' . $featuredBlog->image) : asset('assets/images/banner.png') }}"
                                 alt="{{ $featuredBlog->title }}"

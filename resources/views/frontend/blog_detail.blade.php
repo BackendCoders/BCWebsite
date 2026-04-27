@@ -91,7 +91,7 @@
                     <p class="text-xs uppercase tracking-[0.4em] text-slate-400">Related posts</p>
                     <div class="mt-4 space-y-4">
                         @forelse($relatedBlogs as $related)
-                            <a href="{{ route('frontend.blog-detail', $related) }}" class="flex gap-3 rounded-2xl border border-slate-200 p-3 transition hover:-translate-y-0.5 hover:shadow-lg">
+                            <a href="{{ route('frontend.blog-detail', $related->slug) }}" class="flex gap-3 rounded-2xl border border-slate-200 p-3 transition hover:-translate-y-0.5 hover:shadow-lg">
                                 <img
                                     src="{{ $related->image ? asset('storage/' . $related->image) : asset('assets/images/banner.png') }}"
                                     alt="{{ $related->title }}"
