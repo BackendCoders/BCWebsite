@@ -438,9 +438,9 @@
 
       <!-- CTA -->
       <div class="mt-6">
-        <button class="w-full bg-gray-200 text-[#FC5124] py-2 rounded-lg font-semibold">
+        <a href="{{ route('frontend.packages') }}" <button class="w-full bg-gray-200 text-[#FC5124] px-2 py-2 rounded-lg font-semibold">
           Learn More →
-        </button>
+        </button></a>
       </div>
 
     </div>
@@ -485,9 +485,9 @@
 
       <!-- CTA -->
       <div class="mt-6">
-        <button class="w-full bg-gray-200 text-[#FC5124] py-2 rounded-lg font-semibold">
+        <a href="{{ route('frontend.packages') }}" <button class="w-full bg-gray-200 text-[#FC5124] px-2 py-2 rounded-lg font-semibold">
           Learn More →
-        </button>
+        </button></a>
       </div>
 
     </div>
@@ -529,9 +529,9 @@
 
       <!-- CTA -->
       <div class="mt-6">
-        <button class="w-full bg-gray-200 text-[#FC5124] py-2 rounded-lg font-semibold">
+        <a href="{{ route('frontend.packages') }}" <button class="w-full bg-gray-200 text-[#FC5124] px-2 py-2 rounded-lg font-semibold">
           Learn More →
-        </button>
+        </button></a>
       </div>
 
     </div>   
@@ -573,9 +573,9 @@
 
       <!-- CTA -->
       <div class="mt-6">
-        <button class="w-full bg-gray-200 text-[#FC5124] py-2 rounded-lg font-semibold">
+        <a href="{{ route('frontend.packages') }}" <button class="w-full bg-gray-200 text-[#FC5124] px-2 py-2 rounded-lg font-semibold">
           Learn More →
-        </button>
+        </button></a>
       </div>
 
     </div>  
@@ -617,9 +617,9 @@
 
       <!-- CTA -->
       <div class="mt-6">
-        <button class="w-full bg-gray-200 text-[#FC5124] py-2 rounded-lg font-semibold">
+        <a href="{{ route('frontend.packages') }}" <button class="w-full bg-gray-200 text-[#FC5124] px-2 py-2 rounded-lg font-semibold">
           Learn More →
-        </button>
+        </button></a>
       </div>
 
     </div>  
@@ -661,9 +661,9 @@
 
       <!-- CTA -->
       <div class="mt-6">
-        <button class="w-full bg-gray-200 text-[#FC5124] py-2 rounded-lg font-semibold">
+        <a href="{{ route('frontend.packages') }}" <button class="w-full bg-gray-200 text-[#FC5124] px-2 py-2 rounded-lg font-semibold">
           Learn More →
-        </button>
+        </button></a>
       </div>
 
     </div>
@@ -705,9 +705,9 @@
 
       <!-- CTA -->
       <div class="mt-6">
-        <button class="w-full bg-gray-200 text-[#FC5124] py-2 rounded-lg font-semibold">
+        <a href="{{ route('frontend.packages') }}" <button class="w-full bg-gray-200 text-[#FC5124] px-2 py-2 rounded-lg font-semibold">
           Learn More →
-        </button>
+        </button></a>
       </div>
 
     </div>
@@ -749,9 +749,9 @@
 
       <!-- CTA -->
       <div class="mt-6">
-        <button class="w-full bg-gray-200 text-[#FC5124] py-2 rounded-lg font-semibold">
+        <a href="{{ route('frontend.packages') }}" <button class="w-full bg-gray-200 text-[#FC5124] px-2 py-2 rounded-lg font-semibold">
           Learn More →
-        </button>
+        </button></a>
       </div>
 
     </div>

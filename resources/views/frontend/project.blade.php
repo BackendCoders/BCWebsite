@@ -237,373 +237,6 @@
 </section>
 
 
-<section class="py-16">
-<div class="max-w-7xl mx-auto px-6">
-
-<!-- TABS -->
-<div class="flex flex-wrap justify-center gap-2 sm:gap-3 mb-10">
-  <button class="tab active border border-[#FD5528] text-orange-600 px-4 py-2 rounded-full" data-tab="all">All</button>
-  <button class="tab border border-[#FD5528] text-orange-600 px-4 py-2 rounded-full" data-tab="web">Web Apps</button>
-  <button class="tab border border-[#FD5528] text-orange-600 px-4 py-2 rounded-full" data-tab="saas">SaaS</button>
-  <button class="tab border border-[#FD5528] text-orange-600 px-4 py-2 rounded-full" data-tab="ecommerce">E-commerce</button>
-  <button class="tab border border-[#FD5528] text-orange-600 px-4 py-2 rounded-full" data-tab="crm">CRM</button>
-   <button class="tab border border-[#FD5528] text-orange-600 px-4 py-2 rounded-full" data-tab="others">Others</button>
-</div>
-
-<!-- GRID -->
-<div id="projects" class="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
-
-<!-- CARD 1 -->
-<div class="project web bg-white rounded-3xl shadow-lg overflow-hidden p-5 group hover:-translate-y-1 hover:shadow-2xl transition">
-  <div class="relative h-44 overflow-hidden mb-4">
-    <img src="{{asset('assets/images/ace.png')}}" class="w-full h-full object-cover group-hover:scale-105 transition">
-    <span class="absolute top-3 left-3 bg-green-600 text-white text-xs px-3 py-1 rounded-full">LIVE</span>
-  </div>
-  <div class="p-5 space-y-3">
-    <div class="flex justify-between text-xs text-gray-500 uppercase">
-      <span>Web</span><span class="text-[#FD5528] font-semibold">Jan 2025</span>
-    </div>
-    <h3 class="text-xl font-semibold">Ace Taxis UK</h3>
-    <p class="text-sm text-gray-600">Cab booking & dispatch system.</p>
-    <div class="flex gap-2 flex-wrap">
-      <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">Node</span>
-      <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">Mongo</span>
-    </div>
-    <div class="flex justify-between text-xs text-gray-500">
-      <span>+650 drivers</span>
-      <a href="#" class="text-[#FD5528] font-semibold">View</a>
-    </div>
-  </div>
-
-</div>
-
-<!-- CARD 2 -->
-<div class="project saas bg-white rounded-3xl shadow-lg overflow-hidden p-5 group hover:-translate-y-1 hover:shadow-2xl transition">
-  <div class="relative h-44 overflow-hidden mb-4">
-    <img src="{{asset('assets/images/tanning.png')}}" class="w-full h-full object-cover">
-    <span class="absolute top-3 left-3 bg-green-600 text-white text-xs px-3 py-1 rounded-full">LIVE</span>
-  </div>
-   <div class="flex justify-between text-[10px] text-gray-400 mb-2">
-    <span>SAAS</span>
-    <span class="text-[#FD5528]">JAN 2025</span>
-  </div>
-
-  <h3 class="text-lg font-semibold mb-2">Tanning Salon System</h3>
-  <p class="text-sm text-gray-500 mb-4">Salon booking & automation system.</p>
-
-  <div class="flex gap-2 flex-wrap mb-4">
-    <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">Node.js</span>
-    <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">MongoDB</span>
-    <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">REST API</span>
-  </div>
-
-  <div class="flex justify-between text-xs text-gray-400">
-    <span>+28% bookings</span>
-    <a href="#" class="text-[#FD5528]">View</a>
-  </div>
-
-</div>
-
-<!-- CARD 3 -->
-<div class="project web bg-white rounded-3xl shadow-lg overflow-hidden p-5 group hover:-translate-y-1 hover:shadow-2xl transition">
-  <div class="relative h-44 overflow-hidden mb-4">
-    <img src="{{asset('assets/images/skydatech.png')}}" class="w-full h-full object-cover">
-    <span class="absolute top-3 left-3 bg-green-600 text-white text-xs px-3 py-1 rounded-full">LIVE</span>
-  </div>
-  <div class="flex justify-between text-[10px] text-gray-400 mb-2">
-    <span>WEB</span>
-    <span class="text-[#FD5528]">JAN 2025</span>
-  </div>
-
-  <h3 class="text-lg font-semibold mb-2">Skydatech Technology</h3>
-  <p class="text-sm text-gray-500 mb-4">IT consulting & tracking platform.</p>
-
-  <div class="flex gap-2 flex-wrap mb-4">
-    <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">Node.js</span>
-    <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">MongoDB</span>
-    <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">REST API</span>
-  </div>
-
-  <div class="flex justify-between text-xs text-gray-400">
-    <span>47ms response</span>
-    <a href="#" class="text-[#FD5528]">View</a>
-  </div>
-
-</div>
-
-<!-- CARD 4 -->
-<div class="project ecommerce bg-white rounded-3xl shadow-lg overflow-hidden p-5 group hover:-translate-y-1 hover:shadow-2xl transition">
-  <div class="relative h-44 overflow-hidden mb-4">
-    <img src="{{asset('assets/images/childcare.png')}}" class="w-full h-full object-cover">
-    <span class="absolute top-3 left-3 bg-green-600 text-white text-xs px-3 py-1 rounded-full">LIVE</span>
-  </div>
-  <div class="flex justify-between text-[10px] text-gray-400 mb-2">
-    <span>WEB</span>
-    <span class="text-[#FD5528]">JAN 2025</span>
-  </div>
-
-  <h3 class="text-lg font-semibold mb-2">Alberta ChildCare</h3>
-  <p class="text-sm text-gray-500 mb-4">Education portal system.</p>
-
-  <div class="flex gap-2 flex-wrap mb-4">
-    <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">Node.js</span>
-    <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">MongoDB</span>
-    <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">REST API</span>
-  </div>
-
-  <div class="flex justify-between text-xs text-gray-400">
-    <span>24x7 monitoring</span>
-    <a href="#" class="text-[#FD5528]">View</a>
-  </div>
-
-</div>
-
-<!-- CARD 5 -->
-<div class="project web bg-white rounded-3xl shadow-lg overflow-hidden p-5 group hover:-translate-y-1 hover:shadow-2xl transition">
-  <div class="relative h-44 overflow-hidden mb-4">
-    <img src="{{asset('assets/images/marley.png')}}" class="w-full h-full object-cover">
-    <span class="absolute top-3 left-3 bg-green-600 text-white text-xs px-3 py-1 rounded-full">LIVE</span>
-  </div>
-   <div class="flex justify-between text-[10px] text-gray-400 mb-2">
-    <span>WEB</span>
-    <span class="text-[#FD5528]">JAN 2025</span>
-  </div>
-
-  <h3 class="text-lg font-semibold mb-2">Marley Moves</h3>
-  <p class="text-sm text-gray-500 mb-4">Logistics control system.</p>
-
-  <div class="flex gap-2 flex-wrap mb-4">
-    <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">Node.js</span>
-    <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">MongoDB</span>
-    <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">REST API</span>
-  </div>
-
-  <div class="flex justify-between text-xs text-gray-400">
-    <span>+41% throughput</span>
-    <a href="#" class="text-[#FD5528]">View</a>
-  </div>
-
-</div>
-
-<!-- CARD 6 -->
-<div class="project crm bg-white rounded-3xl shadow-lg overflow-hidden p-5 group hover:-translate-y-1 hover:shadow-2xl transition">
-  <div class="relative h-44 overflow-hidden mb-4">
-    <img src="{{asset('assets/images/erdata.png')}}" class="w-full h-full object-cover">
-    <span class="absolute top-3 left-3 bg-green-600 text-white text-xs px-3 py-1 rounded-full">LIVE</span>
-  </div>
-  <div class="flex justify-between text-[10px] text-gray-400 mb-2">
-    <span>CRM</span>
-    <span class="text-[#FD5528]">JAN 2025</span>
-  </div>
-
-  <h3 class="text-lg font-semibold mb-2">ER Data Solutions</h3>
-  <p class="text-sm text-gray-500 mb-4">CRM dashboard & analytics.</p>
-
-  <div class="flex gap-2 flex-wrap mb-4">
-    <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">Node.js</span>
-    <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">MongoDB</span>
-    <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">REST API</span>
-  </div>
-
-  <div class="flex justify-between text-xs text-gray-400">
-    <span>+31% accuracy</span>
-    <a href="#" class="text-[#FD5528]">View</a>
-  </div>
-</div>
-
-<!-- more -->
-  <!-- CARD 1 -->
-<div class="project others bg-white rounded-3xl shadow-lg overflow-hidden p-5 group hover:-translate-y-1 hover:shadow-2xl transition">
-  <div class="relative h-44 overflow-hidden mb-4">
-    <img src="{{asset('assets/ai_demo/dental_clinic/1.png')}}" class="w-full h-full object-cover group-hover:scale-105 transition">
-    <span class="absolute top-3 left-3 bg-green-600 text-white text-xs px-3 py-1 rounded-full">LIVE</span>
-  </div>
-  <div class="p-5 space-y-3">
-    <div class="flex justify-between text-xs text-gray-500 uppercase">
-      <span>Web</span><span class="text-[#FD5528] font-semibold">Jan 2025</span>
-    </div>
-    <h3 class="text-xl font-semibold">Dentify</h3>
-    <p class="text-sm text-gray-600">Dental clinic management system.</p>
-    <div class="flex gap-2 flex-wrap">
-      <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">Node</span>
-      <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">Mongo</span>
-    </div>
-    <div class="flex justify-between text-xs text-gray-500">
-      <span>+650 drivers</span>
-      <a href="#" class="text-[#FD5528] font-semibold">View</a>
-    </div>
-  </div>
-
-</div>
-
-<!-- CARD 2 -->
-<div class="project others bg-white rounded-3xl shadow-lg overflow-hidden p-5 group hover:-translate-y-1 hover:shadow-2xl transition">
-  <div class="relative h-44 overflow-hidden mb-4">
-    <img src="{{asset('assets/ai_demo/gym/1.png')}}" class="w-full h-full object-cover">
-    <span class="absolute top-3 left-3 bg-green-600 text-white text-xs px-3 py-1 rounded-full">LIVE</span>
-  </div>
-   <div class="flex justify-between text-[10px] text-gray-400 mb-2">
-    <span>SAAS</span>
-    <span class="text-[#FD5528]">JAN 2025</span>
-  </div>
-
-  <h3 class="text-lg font-semibold mb-2">FitCore</h3>
-  <p class="text-sm text-gray-500 mb-4">Gym management & fitness tracking system.</p>
-
-  <div class="flex gap-2 flex-wrap mb-4">
-    <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">Node.js</span>
-    <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">MongoDB</span>
-    <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">REST API</span>
-  </div>
-
-  <div class="flex justify-between text-xs text-gray-400">
-    <span>+28% bookings</span>
-    <a href="#" class="text-[#FD5528]">View</a>
-  </div>
-
-</div>
-
-<!-- CARD 3 -->
-<div class="project others bg-white rounded-3xl shadow-lg overflow-hidden p-5 group hover:-translate-y-1 hover:shadow-2xl transition">
-  <div class="relative h-44 overflow-hidden mb-4">
-    <img src="{{asset('assets/ai_demo/incredible_india/1.png')}}" class="w-full h-full object-cover">
-    <span class="absolute top-3 left-3 bg-green-600 text-white text-xs px-3 py-1 rounded-full">LIVE</span>
-  </div>
-  <div class="flex justify-between text-[10px] text-gray-400 mb-2">
-    <span>WEB</span>
-    <span class="text-[#FD5528]">JAN 2025</span>
-  </div>
-
-  <h3 class="text-lg font-semibold mb-2">Incredible India</h3>
-  <p class="text-sm text-gray-500 mb-4">Tourism & travel platform.</p>
-
-  <div class="flex gap-2 flex-wrap mb-4">
-    <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">Node.js</span>
-    <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">MongoDB</span>
-    <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">REST API</span>
-  </div>
-
-  <div class="flex justify-between text-xs text-gray-400">
-    <span>47ms response</span>
-    <a href="#" class="text-[#FD5528]">View</a>
-  </div>
-
-</div>
-
-<!-- CARD 4 -->
-<div class="project others bg-white rounded-3xl shadow-lg overflow-hidden p-5 group hover:-translate-y-1 hover:shadow-2xl transition">
-  <div class="relative h-44 overflow-hidden mb-4">
-    <img src="{{asset('assets/ai_demo/plumber/1.png')}}" class="w-full h-full object-cover">
-    <span class="absolute top-3 left-3 bg-green-600 text-white text-xs px-3 py-1 rounded-full">LIVE</span>
-  </div>
-  <div class="flex justify-between text-[10px] text-gray-400 mb-2">
-    <span>WEB</span>
-    <span class="text-[#FD5528]">JAN 2025</span>
-  </div>
-
-  <h3 class="text-lg font-semibold mb-2">PlumbEase</h3>
-  <p class="text-sm text-gray-500 mb-4">Plumbing service booking system.</p>
-
-  <div class="flex gap-2 flex-wrap mb-4">
-    <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">Node.js</span>
-    <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">MongoDB</span>
-    <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">REST API</span>
-  </div>
-
-  <div class="flex justify-between text-xs text-gray-400">
-    <span>24x7 monitoring</span>
-    <a href="#" class="text-[#FD5528]">View</a>
-  </div>
-
-</div>
-
-<!-- CARD 5 -->
-<div class="project others bg-white rounded-3xl shadow-lg overflow-hidden p-5 group hover:-translate-y-1 hover:shadow-2xl transition">
-  <div class="relative h-44 overflow-hidden mb-4">
-    <img src="{{asset('assets/ai_demo/restaurant/1.png')}}" class="w-full h-full object-cover">
-    <span class="absolute top-3 left-3 bg-green-600 text-white text-xs px-3 py-1 rounded-full">LIVE</span>
-  </div>
-   <div class="flex justify-between text-[10px] text-gray-400 mb-2">
-    <span>WEB</span>
-    <span class="text-[#FD5528]">JAN 2025</span>
-  </div>
-
-  <h3 class="text-lg font-semibold mb-2">Savory Bites</h3>
-  <p class="text-sm text-gray-500 mb-4">Restaurant management & ordering system.</p>
-
-  <div class="flex gap-2 flex-wrap mb-4">
-    <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">Node.js</span>
-    <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">MongoDB</span>
-    <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">REST API</span>
-  </div>
-
-  <div class="flex justify-between text-xs text-gray-400">
-    <span>+41% throughput</span>
-    <a href="#" class="text-[#FD5528]">View</a>
-  </div>
-
-</div>
-
-
-<!-- marketing -->
-<div class="project others bg-white rounded-3xl shadow-lg overflow-hidden p-5 group hover:-translate-y-1 hover:shadow-2xl transition">
-  <div class="relative h-44 overflow-hidden mb-4">
-    <img src="{{asset('assets/images/marley.jpeg')}}" class="w-full h-full object-cover">
-    <span class="absolute top-3 left-3 bg-green-600 text-white text-xs px-3 py-1 rounded-full">LIVE</span>
-  </div>
-  <div class="flex justify-between text-[10px] text-gray-400 mb-2">
-    <span>WEB</span>
-    <span class="text-[#FD5528]">JAN 2025</span>
-  </div>
-
-  <h3 class="text-lg font-semibold mb-2">Marley Moves</h3>
-  <p class="text-sm text-gray-500 mb-4">Social media handling & digital marketing for a UK removals company.</p>
-
-  <div class="flex gap-2 flex-wrap mb-4">
-    <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">Social Media</span>
-    <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">Meta Ads</span>
-    <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">SEO</span>
-  </div>
-
-  <div class="flex justify-between text-xs text-gray-400">
-    <span>3x engagement growth</span>
-    <a href="#" class="text-[#FD5528]">View</a>
-  </div>
-
-</div>
-
-<!-- CARD 4 -->
-<div class="project others bg-white rounded-3xl shadow-lg overflow-hidden p-5 group hover:-translate-y-1 hover:shadow-2xl transition">
-    <div class="relative h-44 overflow-hidden mb-4">
-    <img src="{{asset('assets/images/pulse.jpeg')}}" class="w-full h-full object-cover">
-    <span class="absolute top-3 left-3 bg-green-600 text-white text-xs px-3 py-1 rounded-full">LIVE</span>
-    </div>
-    <div class="flex justify-between text-[10px] text-gray-400 mb-2">
-    <span>WEB</span>
-    <span class="text-[#FD5528]">JAN 2025</span>
-  </div>
-
-  <h3 class="text-lg font-semibold mb-2">Pulse Event</h3>
-  <p class="text-sm text-gray-500 mb-4">Social media marketing & event promotion strategy for high-energy event branding.</p>
-
-  <div class="flex gap-2 flex-wrap mb-4">
-    <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">Social Media</span>
-    <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">Event Promotion</span>
-    <span class="bg-orange-100 text-[#FD5528] text-xs px-3 py-1 rounded-full">Meta Ads</span>
-  </div>
-
-  <div class="flex justify-between text-xs text-gray-400">
-    <span>2.5x ticket sales growth</span>
-    <a href="#" class="text-[#FD5528]">View</a>
-  </div>
-
-</div>
-</div>
-
-</div>
-
-</div>
-</section>
 
 
 <!-- CASE STUDY -->
@@ -918,9 +551,6 @@
 
 <!-- TESTIMONIAL -->
 <!-- Swiper CSS -->
-
-
-<!-- testimonial -->
 <section class="relative py-28 px-6 overflow-hidden">
 
   <!-- BACKGROUND GLOW -->
@@ -993,9 +623,12 @@
             </div>
 
             <!-- REVIEW TEXT -->
-            <p class="text-gray-700 text-start text-sm leading-relaxed mb-4">
+            <p class="text-gray-700 text-start text-sm leading-relaxed mb-2 line-clamp-2 review-text">
             Freelancer was extremely communicative, skilled, prompt and professional. Their work exceeded my expectation. I'd definitely hire them again and refer them to my colleagues
             </p>
+            <button class="read-more-btn text-[#FD5528] text-xs font-medium mb-4">
+    Read More
+</button>
 
             <!-- FOOTER -->
             <div class="flex items-center justify-between text-xs text-gray-400">
@@ -1049,9 +682,12 @@
             </div>
 
             <!-- REVIEW TEXT -->
-            <p class="text-gray-700 text-start text-sm leading-relaxed mb-4">
+            <p class="text-gray-700 text-start text-sm leading-relaxed mb-2 line-clamp-2 review-text">
          Ravindra went above and beyond fixing major issues left by a previous developer, saving the project with top-notch skills, great attitude, and reliability.
             </p>
+            <button class="read-more-btn text-[#FD5528] text-xs font-medium mb-4">
+    Read More
+</button>
 
             <!-- FOOTER -->
             <div class="flex items-center justify-between text-xs text-gray-400">
@@ -1105,16 +741,19 @@
                   </div>
 
                   <!-- REVIEW TEXT -->
-                  <p class="text-gray-700 text-start text-sm leading-relaxed mb-4">
-                Very pleased with the work provided, understood my requirements and delivered on time. Highly recommended
+                  <p class="text-gray-700 text-start text-sm leading-relaxed mb-2 line-clamp-2 review-text">
+                "Very pleased with the work provided, understood my requirements and delivered on time. Highly recommended."
                   </p>
+                  <button class="read-more-btn text-[#FD5528] text-xs font-medium mb-4">
+    Read More
+</button>
 
                   <!-- FOOTER -->
                   <div class="flex items-center justify-between text-xs text-gray-400">
 
                     <!-- CATEGORY -->
                     <span class="bg-gray-100 px-2 py-1 rounded-full text-orange-500">
-                      United States
+                      United kingdom
                     </span>
 
                     <!-- ACTION -->
@@ -1162,9 +801,12 @@
                   </div>
 
                   <!-- REVIEW TEXT -->
-                  <p class="text-gray-700 text-start text-sm leading-relaxed mb-4">
+                  <p class="text-gray-700 text-start text-sm leading-relaxed mb-2 line-clamp-2 review-text">
            Ravindra delivered a visually appealing, responsive, and highly functional website with top-notch skills, great communication, flexibility, and strong post-launch support, highly recommended.
                   </p>
+                    <button class="read-more-btn text-[#FD5528] text-xs font-medium mb-4">
+    Read More
+</button>
 
                   <!-- FOOTER -->
                   <div class="flex items-center justify-between text-xs text-gray-400">
@@ -1194,6 +836,7 @@
 </div>
 
 </section>
+
 
 
 

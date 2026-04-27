@@ -23,13 +23,17 @@ class CategoryController extends Controller
     //  3. Store data
     public function store(Request $request)
     {
-        $request->validate([
+        $validated = $request->validate([
             'name' => 'required|max:255',
-             'slug'=> 'nullable',
+            'slug' => 'nullable|max:255|unique:categories,slug',
             'description' => 'nullable'
         ]);
 
-        Category::create($request->all());
+        $validated['slug'] = !empty($validated['slug'])
+            ? $validated['slug']
+            : Category::uniqueSlug($validated['name']);
+
+        Category::create($validated);
 
         return redirect()->route('categories.index')
                          ->with('success', 'Category created successfully');
@@ -52,13 +56,17 @@ class CategoryController extends Controller
     //  5. Update data
     public function update(Request $request, Category $category)
     {
-        $request->validate([
+        $validated = $request->validate([
             'name' => 'required|max:255',
-            'slug'=> 'nullable',
+            'slug' => 'nullable|max:255|unique:categories,slug,' . $category->id,
             'description' => 'nullable'
         ]);
 
-        $category->update($request->all());
+        $validated['slug'] = !empty($validated['slug'])
+            ? $validated['slug']
+            : Category::uniqueSlug($validated['name'], $category->id);
+
+        $category->update($validated);
 
         return redirect()->route('categories.index')
                          ->with('success', 'Category updated successfully');
