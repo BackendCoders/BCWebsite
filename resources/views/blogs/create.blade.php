@@ -58,7 +58,6 @@
                 <!-- ✅ Hidden Input (IMPORTANT) -->
                 <input type="hidden" name="content" id="content" value="{{ old('content') }}">
             </div>
-            </div>
 
             <div class="flex flex-col-reverse gap-3 sm:flex-row sm:justify-end">
                 <a href="{{ route('blogs.index') }}" class="inline-flex items-center justify-center rounded-2xl border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-slate-700 transition hover:border-[#FD5528] hover:text-[#FD5528]">
@@ -72,5 +71,32 @@
     </div>
 </div>
 
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.querySelector('form[action="{{ route('blogs.store') }}"]');
+    const editor = document.getElementById('editor');
+    const hiddenContent = document.getElementById('content');
+
+    if (!form || !editor || !hiddenContent) {
+        return;
+    }
+
+    const syncContent = () => {
+        const quillEditor = editor.querySelector('.ql-editor');
+        hiddenContent.value = quillEditor ? quillEditor.innerHTML : editor.innerHTML;
+    };
+
+    form.addEventListener('submit', syncContent);
+
+    const quillEditor = editor.querySelector('.ql-editor');
+    if (quillEditor) {
+        quillEditor.addEventListener('input', syncContent);
+        quillEditor.addEventListener('keyup', syncContent);
+        quillEditor.addEventListener('blur', syncContent);
+    }
+
+    syncContent();
+});
+</script>
 
 @endsection

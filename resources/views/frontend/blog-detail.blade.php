@@ -39,7 +39,7 @@
                         {{ $blog->title }}
                     </h1>
                     <p class="text-base leading-7 text-slate-600">
-                        {{ $blog->excerpt ?: \Illuminate\Support\Str::limit(strip_tags($blog->content ?: ''), 220) }}
+                        {{ $blog->excerpt ?: strip_tags($blog->content ?: '') }}
                     </p>
                     <div class="flex flex-wrap gap-3 text-sm text-slate-500">
                         <span class="flex items-center gap-2">
@@ -74,7 +74,7 @@
                     <div class="mt-4 space-y-3">
                         <h2 class="text-lg font-bold text-slate-900">{{ $blog->title }}</h2>
                         <p class="text-sm leading-6 text-slate-600">
-                            {{ $blog->excerpt ?: \Illuminate\Support\Str::limit(strip_tags($blog->content ?: ''), 140) }}
+                            {{ $blog->excerpt ?: strip_tags($blog->content ?: '') }}
                         </p>
                         <div class="flex flex-wrap gap-2">
                             <span class="rounded-full bg-[#FD5528]/10 px-3 py-1 text-xs font-semibold text-[#FD5528]">

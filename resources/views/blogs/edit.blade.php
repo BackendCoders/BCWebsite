@@ -56,14 +56,13 @@
             <div>
                 <label class="mb-2 block text-sm font-medium text-slate-700">Content</label>
                 <!-- <textarea name="content"  rows="8" class="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-[#FD5528] focus:ring-4 focus:ring-[#FD5528]/10" id="editor"  style="height: 300px;">{{ old('content', $blog->content) }}</textarea> -->
-                         <!-- ✅ Quill Editor -->
-            <!-- ✅ Quill Editor -->
-    <div id="editor" style="height: 300px;"
-         class="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3"></div>
+                <!-- ✅ Quill Editor -->
+                <div id="editor" style="height: 300px;"
+                     class="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3"></div>
 
-    <!-- ✅ Hidden Input -->
-    <input type="hidden" name="content" id="content"
-           value="{{ old('content', $blog->content) }}">
+                <!-- ✅ Hidden Input -->
+                <input type="hidden" name="content" id="content"
+                       value="{{ old('content', $blog->content) }}">
             </div>
 
             <div class="flex flex-col-reverse gap-3 sm:flex-row sm:justify-end">
@@ -83,11 +82,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
     var quill = new Quill('#editor', {
         theme: 'snow',
+        modules: {
+            toolbar: [
+                [{ header: [1, 2, 3, false] }],
+                ['bold', 'italic', 'underline', 'strike'],
+                [{ list: 'ordered' }, { list: 'bullet' }],
+                ['blockquote', 'link', 'image'],
+                ['clean']
+            ]
+        },
         placeholder: 'Write your blog content here...'
     });
 
-    // ✅ Load existing content (EDIT PAGE FIX 🔥)
-    var oldContent = `{!! addslashes(old('content', $blog->content)) !!}`;
+    // ✅ Load existing content safely
+    var oldContent = @json(old('content', $blog->content));
     
     if (oldContent) {
         quill.root.innerHTML = oldContent;
