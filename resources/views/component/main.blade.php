@@ -14,12 +14,6 @@
 <meta name="csrf-token" content="{{ csrf_token() }}">
 
 <link rel="canonical" href="{{ $page->canonical_url ?? url()->current() }}">
-<meta name="theme-color" content="#FD5528">
-<meta property="og:type" content="website">
-<meta property="og:title" content="{{ $page->meta_title ?? $page->title ?? 'Backend Coders India | Web Development Company in Kanpur, India | Custom Software, SaaS, SEO, Mobile App & AI Solutions' }}">
-<meta property="og:description" content="{{ $page->meta_description ?? 'Backend Coders India is a trusted web development company in Kanpur, India delivering custom software development, SaaS platforms, website design, SEO, digital marketing, mobile apps, API development, and AI solutions for Indian and international clients.' }}">
-<meta property="og:url" content="{{ $page->canonical_url ?? url()->current() }}">
-<meta name="twitter:card" content="summary_large_image">
 
 <!-- ✅ PRECONNECT (faster fonts) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -49,33 +43,42 @@
 
 
 <!-- Google Tag Manager -->
-<script>
-(function (w, d, s, l, i) {
-  w[l] = w[l] || [];
-  w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
-  var loadGtm = function () {
-    var f = d.getElementsByTagName(s)[0];
-    var j = d.createElement(s);
-    var dl = l !== 'dataLayer' ? '&l=' + l : '';
-    j.async = true;
-    j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-    f.parentNode.insertBefore(j, f);
-  };
-
-  if (w.requestIdleCallback) {
-    w.requestIdleCallback(loadGtm, { timeout: 2000 });
-  } else {
-    w.addEventListener('load', loadGtm, { once: true });
-  }
-})(window, document, 'script', 'dataLayer', 'GTM-WLWCJJ7N');
-</script>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WLWCJJ7N');</script>
 <!-- End Google Tag Manager -->
 
   <!-- <meta name="description" content="Backend Coders India is a trusted web development company in Kanpur, India delivering custom software development, SaaS platforms, website design, SEO, digital marketing, mobile apps, API development, and AI solutions for Indian and international clients." /> -->
 
-<script src="https://cdn.tailwindcss.com" defer></script>
-<link rel="icon" type="image/svg+xml" alt="Backend Coders India logo" href="{{asset('assets/images/bci_icon.png')}}" class="bg-black"/>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="canonical" href="{{ $page->canonical_url ?? url()->current() }}">
+
+  <!-- <link rel="canonical" href="{{ $page->canonical_url ?? url()->current() }}"> -->
+
+
+ <script src="https://cdn.tailwindcss.com"></script>
+<link rel="icon" type="image/svg+xml" alt="web development company in Kanpur" href="{{asset('assets/images/bci_icon.png')}}" class="bg-black"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+
+  <!--  -->
+ <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    
+<!-- Swiper CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+ 
+  <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}" />
 
   @if(optional($page)->is_index === 0)
     <meta name="robots" content="noindex, nofollow">
@@ -99,6 +102,11 @@
 @keyframes blink {
   0%, 50%, 100% { opacity: 1; }
   25%, 75% { opacity: 0; }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }
 
 .marquee-wrapper {
@@ -183,6 +191,38 @@
 }
 
 /* ===== SVG ANIMATION (SCOPED) ===== */
+.process-section .process-line {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: processDrawLine 3s ease forwards;
+}
+
+/* Animation renamed */
+@keyframes processDrawLine {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+/* ===== HOVER ===== */
+.process-section .group:hover .step-circle {
+  background: #FD5528;
+  color: white;
+  transform: scale(1.1);
+  box-shadow: 0 15px 30px rgba(253,85,40,0.3);
+}
+
+.process-section .group:hover .step-title {
+  color: #FD5528;
+}
+
+/* ===== ALIGN ZIG-ZAG ===== */
+.process-section .process-step:nth-child(2),
+.process-section .process-step:nth-child(4),
+.process-section .process-step:nth-child(6) {
+  margin-top: 60px;
+}
+
+/* ===== SVG ANIMATION ===== */
 .process-section .process-line {
   stroke-dasharray: 1;
   stroke-dashoffset: 1;
@@ -276,6 +316,11 @@
     font-size: 14px;
   }
 }
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
 .animate-marquee {
     animation: marquee 20s linear infinite;
 }
@@ -328,22 +373,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <button id="contactToggle"
             type="button"
             class="flex h-14 w-14 items-center justify-center rounded-full bg-[#1aac26] text-white shadow-lg transition hover:scale-110"
-            aria-label="Open contact menu"
-            aria-expanded="false"
-            aria-controls="contactMenu">
-            <img src="https://img.icons8.com/?size=100&id=122809&format=png&color=FFFFFF" class="w-8" alt="" aria-hidden="true">
+            aria-label="Open contact menu">
+            <img src="https://img.icons8.com/?size=100&id=122809&format=png&color=FFFFFF" class="w-8" alt="Contact">
         </button>
 
         <div id="contactMenu"
-            class="absolute bottom-20 right-0 w-64 translate-y-5 space-y-2 rounded-2xl border bg-white p-3 opacity-0 shadow-2xl transition-all duration-300 pointer-events-none"
-            aria-hidden="true">
+            class="absolute bottom-20 right-0 w-64 translate-y-5 space-y-2 rounded-2xl border bg-white p-3 opacity-0 shadow-2xl transition-all duration-300 pointer-events-none">
             <a href="tel:+919140092133" class="flex items-center gap-3 rounded-xl p-3 hover:bg-orange-50">
-                <img src="https://img.icons8.com/?size=100&id=9730&format=png&color=FA5252" class="w-6" alt="" aria-hidden="true">
+                <img src="https://img.icons8.com/?size=100&id=9730&format=png&color=FA5252" class="w-6" alt="">
                 <span>Call Us</span>
             </a>
 
             <a href="https://wa.me/919140092133" target="_blank" class="flex items-center gap-3 rounded-xl p-3 hover:bg-orange-50">
-                <img src="https://img.icons8.com/?size=100&id=Jneo9ShAzJw7&format=png&color=000000" class="w-6" alt="" aria-hidden="true">
+                <img src="https://img.icons8.com/?size=100&id=Jneo9ShAzJw7&format=png&color=000000" class="w-6" alt="">
                 <span>WhatsApp</span>
             </a>
         </div>
@@ -353,17 +395,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <button id="botToggle"
             type="button"
             class="flex h-14 w-14 items-center justify-center rounded-full bg-[#FD5528] text-white shadow-lg shadow-[#FD5528]/30 transition hover:scale-110"
-            aria-label="Open chatbot"
-            aria-expanded="false"
-            aria-controls="botPanel">
+            aria-label="Open chatbot">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" class="h-6 w-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 6.5A2 2 0 0 1 6.5 4.5h11A2 2 0 0 1 19.5 6.5v7A2 2 0 0 1 17.5 15.5H10l-4.5 4.5v-4.5h-1A2 2 0 0 1 2.5 13.5v-7Z" />
             </svg>
         </button>
 
         <div id="botPanel"
-            class="absolute bottom-20 right-0 hidden w-[22rem] overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white shadow-[0_24px_80px_rgba(15,23,42,0.18)]"
-            aria-hidden="true">
+            class="absolute bottom-20 right-0 hidden w-[22rem] overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white shadow-[0_24px_80px_rgba(15,23,42,0.18)]">
             <div class="flex items-center justify-between bg-gradient-to-r from-[#FD5528] to-[#f97316] px-4 py-4 text-white">
                 <div>
                     <p class="text-xs font-semibold uppercase tracking-[0.35em] text-white/70">Chatbot</p>
@@ -377,7 +416,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>
             </div>
 
-            <div id="botMessages" class="max-h-80 space-y-3 overflow-y-auto bg-slate-50 p-4" aria-live="polite" aria-relevant="additions text">
+            <div id="botMessages" class="max-h-80 space-y-3 overflow-y-auto bg-slate-50 p-4">
                 <div class="max-w-[85%] rounded-2xl rounded-bl-md border border-slate-200 bg-white px-4 py-3 text-sm text-slate-700">
                     {{ config('laravel-chatbot.welcome_message', 'Hello! How can I help you today?') }}
                 </div>
@@ -470,12 +509,9 @@ document.addEventListener('DOMContentLoaded', function () {
   if (contactToggle && contactMenu) {
     contactToggle.addEventListener('click', (e) => {
       e.stopPropagation();
-      const isOpen = contactMenu.classList.contains('translate-y-5') === false;
       contactMenu.classList.toggle('opacity-0');
       contactMenu.classList.toggle('pointer-events-none');
       contactMenu.classList.toggle('translate-y-5');
-      contactToggle.setAttribute('aria-expanded', String(!isOpen));
-      contactMenu.setAttribute('aria-hidden', String(isOpen));
     });
   }
 
@@ -530,7 +566,6 @@ document.addEventListener('DOMContentLoaded', function () {
   if (botToggle && botPanel && botInput && botSend) {
     botToggle.addEventListener('click', (e) => {
       e.stopPropagation();
-      const isHidden = botPanel.classList.contains('hidden');
       botPanel.classList.toggle('hidden');
       if (!botPanel.classList.contains('hidden')) {
         botInput.focus();
@@ -538,8 +573,6 @@ document.addEventListener('DOMContentLoaded', function () {
           botMessages.scrollTop = botMessages.scrollHeight;
         }
       }
-      botToggle.setAttribute('aria-expanded', String(isHidden));
-      botPanel.setAttribute('aria-hidden', String(!isHidden));
     });
 
     botSend.addEventListener('click', () => sendBotMessage());
@@ -551,24 +584,18 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
 
-    if (botMessages) {
-      botMessages.querySelectorAll('[data-bot-quick]').forEach((button) => {
-        button.addEventListener('click', () => fillBotInput(button.getAttribute('data-bot-quick') || ''));
-      });
-    }
+    botMessages.querySelectorAll('[data-bot-quick]').forEach((button) => {
+      button.addEventListener('click', () => fillBotInput(button.getAttribute('data-bot-quick') || ''));
+    });
   }
 
   document.addEventListener('click', (e) => {
     if (contactToggle && contactMenu && !contactToggle.contains(e.target) && !contactMenu.contains(e.target)) {
       contactMenu.classList.add('opacity-0', 'pointer-events-none', 'translate-y-5');
-      contactToggle.setAttribute('aria-expanded', 'false');
-      contactMenu.setAttribute('aria-hidden', 'true');
     }
 
     if (botToggle && botPanel && !botToggle.contains(e.target) && !botPanel.contains(e.target)) {
       botPanel.classList.add('hidden');
-      botToggle.setAttribute('aria-expanded', 'false');
-      botPanel.setAttribute('aria-hidden', 'true');
     }
   });
 });
@@ -579,17 +606,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
     @include('component.footer')
 
-  <script src="scripts/site.js" defer></script>
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js" defer></script>
+  <script src="scripts/site.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 
 <script>
-window.addEventListener('load', () => {
-  if (window.AOS) {
-    AOS.init({
-      duration: 1000,
-      once: true
-    });
-  }
+AOS.init({
+  duration: 1000,
+  once: true
 });
 
 
@@ -631,6 +654,9 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+
+
+</script>
 </script>
 <script>
   
@@ -723,8 +749,9 @@ document.addEventListener("click", function (e) {
 });
 </script>
 <!-- Swiper JS -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
+ <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script src="{{ asset('assets/js/main.js') }}" defer></script>
 <script>
 function generateCaptcha() {
@@ -772,6 +799,29 @@ if (contactForm) {
 }
 </script>
 
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const tabs = document.querySelectorAll('.tab');
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', function () {
+
+            // Remove active styles from all tabs
+            tabs.forEach(t => {
+                t.classList.remove('bg-[#FD5528]', 'text-white', 'active');
+                t.classList.add('text-[#FD5528]');
+            });
+
+            // Add active styles to clicked tab
+            this.classList.add('bg-[#FD5528]', 'text-white', 'active');
+            this.classList.remove('text-[#FD5528]');
+        });
+    });
+
+});
+</script>
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
