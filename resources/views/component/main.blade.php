@@ -49,16 +49,31 @@
 
 
 <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-WLWCJJ7N');</script>
+<script>
+(function (w, d, s, l, i) {
+  w[l] = w[l] || [];
+  w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+  var loadGtm = function () {
+    var f = d.getElementsByTagName(s)[0];
+    var j = d.createElement(s);
+    var dl = l !== 'dataLayer' ? '&l=' + l : '';
+    j.async = true;
+    j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+    f.parentNode.insertBefore(j, f);
+  };
+
+  if (w.requestIdleCallback) {
+    w.requestIdleCallback(loadGtm, { timeout: 2000 });
+  } else {
+    w.addEventListener('load', loadGtm, { once: true });
+  }
+})(window, document, 'script', 'dataLayer', 'GTM-WLWCJJ7N');
+</script>
 <!-- End Google Tag Manager -->
 
   <!-- <meta name="description" content="Backend Coders India is a trusted web development company in Kanpur, India delivering custom software development, SaaS platforms, website design, SEO, digital marketing, mobile apps, API development, and AI solutions for Indian and international clients." /> -->
 
-<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.tailwindcss.com" defer></script>
 <link rel="icon" type="image/svg+xml" alt="Backend Coders India logo" href="{{asset('assets/images/bci_icon.png')}}" class="bg-black"/>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
@@ -565,12 +580,16 @@ document.addEventListener('DOMContentLoaded', function () {
     @include('component.footer')
 
   <script src="scripts/site.js" defer></script>
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js" defer></script>
 
 <script>
-AOS.init({
-  duration: 1000,
-  once: true
+window.addEventListener('load', () => {
+  if (window.AOS) {
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  }
 });
 
 
@@ -704,7 +723,7 @@ document.addEventListener("click", function (e) {
 });
 </script>
 <!-- Swiper JS -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
 
   <script src="{{ asset('assets/js/main.js') }}" defer></script>
 <script>
