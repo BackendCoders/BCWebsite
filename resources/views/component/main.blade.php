@@ -86,11 +86,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   25%, 75% { opacity: 0; }
 }
 
-@keyframes marquee {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
-
 .marquee-wrapper {
   overflow: hidden;
   width: 100%;
@@ -173,38 +168,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 }
 
 /* ===== SVG ANIMATION (SCOPED) ===== */
-.process-section .process-line {
-  stroke-dasharray: 1;
-  stroke-dashoffset: 1;
-  animation: processDrawLine 3s ease forwards;
-}
-
-/* Animation renamed */
-@keyframes processDrawLine {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-/* ===== HOVER ===== */
-.process-section .group:hover .step-circle {
-  background: #FD5528;
-  color: white;
-  transform: scale(1.1);
-  box-shadow: 0 15px 30px rgba(253,85,40,0.3);
-}
-
-.process-section .group:hover .step-title {
-  color: #FD5528;
-}
-
-/* ===== ALIGN ZIG-ZAG ===== */
-.process-section .process-step:nth-child(2),
-.process-section .process-step:nth-child(4),
-.process-section .process-step:nth-child(6) {
-  margin-top: 60px;
-}
-
-/* ===== SVG ANIMATION ===== */
 .process-section .process-line {
   stroke-dasharray: 1;
   stroke-dashoffset: 1;
@@ -298,11 +261,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     font-size: 14px;
   }
 }
-@keyframes marquee {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-}
-
 .animate-marquee {
     animation: marquee 20s linear infinite;
 }
@@ -795,29 +753,6 @@ if (contactForm) {
 }
 </script>
 
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-
-    const tabs = document.querySelectorAll('.tab');
-
-    tabs.forEach(tab => {
-        tab.addEventListener('click', function () {
-
-            // Remove active styles from all tabs
-            tabs.forEach(t => {
-                t.classList.remove('bg-[#FD5528]', 'text-white', 'active');
-                t.classList.add('text-[#FD5528]');
-            });
-
-            // Add active styles to clicked tab
-            this.classList.add('bg-[#FD5528]', 'text-white', 'active');
-            this.classList.remove('text-[#FD5528]');
-        });
-    });
-
-});
-</script>
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
