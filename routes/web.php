@@ -46,6 +46,37 @@ Route::get('/video/{file}', function ($file) {
 
 });
 
+// sitemap and robots assets
+Route::get('/sitemap.xml', function () {
+    return response()->file(public_path('sitemap.xml'), [
+        'Content-Type' => 'application/xml; charset=UTF-8',
+    ]);
+});
+
+Route::get('/ror.xml', function () {
+    return response()->file(public_path('ror.xml'), [
+        'Content-Type' => 'application/xml; charset=UTF-8',
+    ]);
+});
+
+Route::get('/sitemap.html', function () {
+    return response()->file(public_path('sitemap.html'), [
+        'Content-Type' => 'text/html; charset=UTF-8',
+    ]);
+});
+
+Route::get('/urllist.txt', function () {
+    return response()->file(public_path('urllist.txt'), [
+        'Content-Type' => 'text/plain; charset=UTF-8',
+    ]);
+});
+
+Route::get('/robots.txt', function () {
+    return response()->file(public_path('robots.txt'), [
+        'Content-Type' => 'text/plain; charset=UTF-8',
+    ]);
+});
+
 // frontend::
 Route::get('/', [HomeController::class, 'index'])->name('frontend.index');
 Route::get('/about', [HomeController::class, 'about'])->name('frontend.about');

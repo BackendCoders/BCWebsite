@@ -120,10 +120,6 @@ const swiper = new Swiper('.swiper', {
 });
 
 
-// our journey slider
-
-
-
 
 // Pause on hover (premium feel)
 const swiperEl = document.querySelector('.swiper');
@@ -195,41 +191,6 @@ navLinks.forEach(link => {
     });
 });
 
-// timeline///
-// (function () {
-//   "use strict";
-
-//   // define variables
-//   var items = document.querySelectorAll(".timeline li");
-
-//   // check if an element is in viewport
-//   // http://stackoverflow.com/questions/123999/how-to-tell-if-a-dom-element-is-visible-in-the-current-viewport
-//   function isElementInViewport(el) {
-//     var rect = el.getBoundingClientRect();
-//     return (
-//       rect.top >= 0 &&
-//       rect.left >= 0 &&
-//       rect.bottom <=
-//         (window.innerHeight || document.documentElement.clientHeight) &&
-//       rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-//     );
-//   }
-
-//   function callbackFunc() {
-//     for (var i = 0; i < items.length; i++) {
-//       if (isElementInViewport(items[i])) {
-//         items[i].classList.add("in-view");
-//       }
-//     }
-//   }
-
-//   // listen for events
-//   window.addEventListener("load", callbackFunc);
-//   window.addEventListener("resize", callbackFunc);
-//   window.addEventListener("scroll", callbackFunc);
-// })();
-
-// timeline////
 document.addEventListener("DOMContentLoaded", () => {
   const items = document.querySelectorAll(".timeline-item");
 
@@ -244,42 +205,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   items.forEach(item => observer.observe(item));
 });
-
-// document.addEventListener("DOMContentLoaded", () => {
-
-//   const tabs = document.querySelectorAll(".tab");
-//   const projects = document.querySelectorAll(".project");
-
-//   if (!tabs.length || !projects.length) return; // safety check
-
-//   tabs.forEach(tab => {
-//     tab.addEventListener("click", () => {
-
-//       // RESET ALL TABS
-//       tabs.forEach(t => {
-//         t.classList.remove("bg-orange-500", "text-white");
-//         t.classList.add("text-orange-600");
-//       });
-
-//       // ACTIVE TAB
-//       tab.classList.remove("text-orange-600");
-//       tab.classList.add("bg-orange-500", "text-white");
-
-//       // FILTER PROJECTS
-//       const type = tab.dataset.tab;
-
-//       projects.forEach(p => {
-//         if (type === "all" || p.classList.contains(type)) {
-//           p.style.display = "";
-//         } else {
-//           p.style.display = "none";
-//         }
-//       });
-
-//     });
-//   });
-
-// });
 
 
 

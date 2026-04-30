@@ -13,35 +13,6 @@
 
 <meta name="csrf-token" content="{{ csrf_token() }}">
 
-<link rel="canonical" href="{{ $page->canonical_url ?? url()->current() }}">
-
-<!-- ✅ PRECONNECT (faster fonts) -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-
-
-<!-- ✅ PRELOAD FONT -->
-<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" as="style">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-
-<!-- ✅ LOCAL CSS (IMPORTANT - remove CDN tailwind) -->
-<link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
-
-<!-- ✅ AOS (deferred) -->
-<link rel="preload" href="https://unpkg.com/aos@2.3.4/dist/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-
-<!-- ✅ Swiper -->
-<link rel="preload" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" as="style" onload="this.rel='stylesheet'">
-
-<!-- ✅ Icons -->
-<link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
-
-<link rel="icon" href="{{asset('assets/images/bci_icon.png')}}">
-
-
-
-
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -74,6 +45,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     />
 
     
+<!-- Swiper CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+ 
   <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}" />
 
   @if(optional($page)->is_index === 0)
@@ -602,11 +577,153 @@ document.addEventListener('DOMContentLoaded', function () {
 
     @include('component.footer')
 
+  <script src="scripts/site.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+AOS.init({
+  duration: 1000,
+  once: true
+});
+
+
+// tabs
+document.addEventListener("DOMContentLoaded", () => {
+
+  const tabs = document.querySelectorAll(".tab");
+  const projects = document.querySelectorAll(".project");
+
+  if (!tabs.length || !projects.length) return; 
+
+  tabs.forEach(tab => {
+    tab.addEventListener("click", () => {
+
+      // RESET ALL TABS
+      tabs.forEach(t => {
+        t.classList.remove("bg-orange-500", "text-white");
+      
+      });
+
+      // ACTIVE TAB
+      tab.classList.remove("text-orange-600");
+      tab.classList.add("bg-orange-500", "text-white");
+
+      // FILTER PROJECTS
+      const type = tab.dataset.tab;
+
+      projects.forEach(p => {
+        if (type === "all" || p.classList.contains(type)) {
+          p.style.display = "";
+        } else {
+          p.style.display = "none";
+        }
+      });
+
+    });
+  });
+
+});
+
+
+
+
+</script>
+</script>
+<script>
   
+  // timeline////
+document.addEventListener("DOMContentLoaded", () => {
+  const items = document.querySelectorAll(".timeline-item");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.remove("opacity-0", "translate-y-10");
+        entry.target.classList.add("opacity-100", "translate-y-0");
+      }
+    });
+  }, { threshold: 0.2 });
+
+  items.forEach(item => observer.observe(item));
+});
+
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const items = document.querySelectorAll('.faq-item');
+
+  items.forEach((item) => {
+    const trigger = item.querySelector('[data-faq-trigger]');
+    const answer = item.querySelector('.faq-answer');
+    const icon = item.querySelector('.faq-icon-text');
+
+    if (!trigger || !answer || !icon) return;
+
+    const closeAll = () => {
+      items.forEach((i) => {
+        const ans = i.querySelector('.faq-answer');
+        const ic = i.querySelector('.faq-icon-text');
+        const trg = i.querySelector('[data-faq-trigger]');
+
+        i.classList.remove('faq-open');
+        ans.style.maxHeight = null;
+        ans.setAttribute('aria-hidden', 'true');
+        trg.setAttribute('aria-expanded', 'false');
+        ic.textContent = '+';
+      });
+    };
+
+    const openItem = () => {
+      closeAll();
+
+      item.classList.add('faq-open');
+      answer.style.maxHeight = answer.scrollHeight + "px";
+      answer.setAttribute('aria-hidden', 'false');
+      trigger.setAttribute('aria-expanded', 'true');
+      icon.textContent = icon.querySelector('.vertical').style.opacity = '0';
+    };
+
+    trigger.addEventListener('click', () => {
+      const isOpen = item.classList.contains('faq-open');
+
+      if (isOpen) {
+        closeAll();
+      } else {
+        openItem();
+      }
+    });
+
+    // Accessibility (keyboard)
+    trigger.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        trigger.click();
+      }
+    });
+  });
+});
+</script>
+
+<script>
+function toggleDropdown() {
+    const dropdown = document.getElementById("serviceDropdown");
+    dropdown.classList.toggle("hidden");
+}
+
+// 🔥 CLOSE ON OUTSIDE CLICK
+document.addEventListener("click", function (e) {
+    const dropdown = document.getElementById("serviceDropdown");
+
+    if (!e.target.closest(".relative")) {
+        dropdown.classList.add("hidden");
+    }
+});
+</script>
 <!-- Swiper JS -->
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js" defer></script>
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
-<script src="{{ asset('assets/js/main.js') }}" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+ <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="{{ asset('assets/js/main.js') }}" defer></script>
 <script>
 function generateCaptcha() {
     let num1 = Math.floor(Math.random() * 10);
@@ -653,6 +770,67 @@ if (contactForm) {
 }
 </script>
 
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const tabs = document.querySelectorAll('.tab');
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', function () {
+
+            // Remove active styles from all tabs
+            tabs.forEach(t => {
+                t.classList.remove('bg-[#FD5528]', 'text-white', 'active');
+                t.classList.add('text-[#FD5528]');
+            });
+
+            // Add active styles to clicked tab
+            this.classList.add('bg-[#FD5528]', 'text-white', 'active');
+            this.classList.remove('text-[#FD5528]');
+        });
+    });
+
+});
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const counters = document.querySelectorAll('.counter');
+
+    const runCounter = (counter) => {
+        const target = +counter.getAttribute('data-target');
+        let count = 0;
+
+        const update = () => {
+            const increment = target / 100;
+            count += increment;
+
+            if (count < target) {
+                counter.innerText = Math.ceil(count);
+                requestAnimationFrame(update);
+            } else {
+                counter.innerText = target;
+            }
+        };
+
+        update();
+    };
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                runCounter(entry.target);
+                observer.unobserve(entry.target);
+            }
+        });
+    });
+
+    counters.forEach(counter => observer.observe(counter));
+
+});
+</script>
 
 </body>
 </html>
