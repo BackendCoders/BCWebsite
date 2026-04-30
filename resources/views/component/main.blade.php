@@ -14,6 +14,12 @@
 <meta name="csrf-token" content="{{ csrf_token() }}">
 
 <link rel="canonical" href="{{ $page->canonical_url ?? url()->current() }}">
+<meta name="theme-color" content="#FD5528">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{ $page->meta_title ?? $page->title ?? 'Backend Coders India | Web Development Company in Kanpur, India | Custom Software, SaaS, SEO, Mobile App & AI Solutions' }}">
+<meta property="og:description" content="{{ $page->meta_description ?? 'Backend Coders India is a trusted web development company in Kanpur, India delivering custom software development, SaaS platforms, website design, SEO, digital marketing, mobile apps, API development, and AI solutions for Indian and international clients.' }}">
+<meta property="og:url" content="{{ $page->canonical_url ?? url()->current() }}">
+<meta name="twitter:card" content="summary_large_image">
 
 <!-- ✅ PRECONNECT (faster fonts) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -52,33 +58,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   <!-- <meta name="description" content="Backend Coders India is a trusted web development company in Kanpur, India delivering custom software development, SaaS platforms, website design, SEO, digital marketing, mobile apps, API development, and AI solutions for Indian and international clients." /> -->
 
-<link rel="canonical" href="{{ $page->canonical_url ?? url()->current() }}">
-
-  <!-- <link rel="canonical" href="{{ $page->canonical_url ?? url()->current() }}"> -->
-
-
- <script src="https://cdn.tailwindcss.com"></script>
-<link rel="icon" type="image/svg+xml" alt="web development company in Kanpur" href="{{asset('assets/images/bci_icon.png')}}" class="bg-black"/>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
-
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
-
-  <!--  -->
- <link
-      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-      rel="stylesheet"
-    />
-
-    
-<!-- Swiper CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-
- 
-  <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}" />
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="icon" type="image/svg+xml" alt="Backend Coders India logo" href="{{asset('assets/images/bci_icon.png')}}" class="bg-black"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   @if(optional($page)->is_index === 0)
     <meta name="robots" content="noindex, nofollow">
@@ -373,19 +355,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <button id="contactToggle"
             type="button"
             class="flex h-14 w-14 items-center justify-center rounded-full bg-[#1aac26] text-white shadow-lg transition hover:scale-110"
-            aria-label="Open contact menu">
-            <img src="https://img.icons8.com/?size=100&id=122809&format=png&color=FFFFFF" class="w-8" alt="Contact">
+            aria-label="Open contact menu"
+            aria-expanded="false"
+            aria-controls="contactMenu">
+            <img src="https://img.icons8.com/?size=100&id=122809&format=png&color=FFFFFF" class="w-8" alt="" aria-hidden="true">
         </button>
 
         <div id="contactMenu"
-            class="absolute bottom-20 right-0 w-64 translate-y-5 space-y-2 rounded-2xl border bg-white p-3 opacity-0 shadow-2xl transition-all duration-300 pointer-events-none">
+            class="absolute bottom-20 right-0 w-64 translate-y-5 space-y-2 rounded-2xl border bg-white p-3 opacity-0 shadow-2xl transition-all duration-300 pointer-events-none"
+            aria-hidden="true">
             <a href="tel:+919140092133" class="flex items-center gap-3 rounded-xl p-3 hover:bg-orange-50">
-                <img src="https://img.icons8.com/?size=100&id=9730&format=png&color=FA5252" class="w-6" alt="">
+                <img src="https://img.icons8.com/?size=100&id=9730&format=png&color=FA5252" class="w-6" alt="" aria-hidden="true">
                 <span>Call Us</span>
             </a>
 
             <a href="https://wa.me/919140092133" target="_blank" class="flex items-center gap-3 rounded-xl p-3 hover:bg-orange-50">
-                <img src="https://img.icons8.com/?size=100&id=Jneo9ShAzJw7&format=png&color=000000" class="w-6" alt="">
+                <img src="https://img.icons8.com/?size=100&id=Jneo9ShAzJw7&format=png&color=000000" class="w-6" alt="" aria-hidden="true">
                 <span>WhatsApp</span>
             </a>
         </div>
@@ -395,14 +380,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <button id="botToggle"
             type="button"
             class="flex h-14 w-14 items-center justify-center rounded-full bg-[#FD5528] text-white shadow-lg shadow-[#FD5528]/30 transition hover:scale-110"
-            aria-label="Open chatbot">
+            aria-label="Open chatbot"
+            aria-expanded="false"
+            aria-controls="botPanel">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" class="h-6 w-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 6.5A2 2 0 0 1 6.5 4.5h11A2 2 0 0 1 19.5 6.5v7A2 2 0 0 1 17.5 15.5H10l-4.5 4.5v-4.5h-1A2 2 0 0 1 2.5 13.5v-7Z" />
             </svg>
         </button>
 
         <div id="botPanel"
-            class="absolute bottom-20 right-0 hidden w-[22rem] overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white shadow-[0_24px_80px_rgba(15,23,42,0.18)]">
+            class="absolute bottom-20 right-0 hidden w-[22rem] overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white shadow-[0_24px_80px_rgba(15,23,42,0.18)]"
+            aria-hidden="true">
             <div class="flex items-center justify-between bg-gradient-to-r from-[#FD5528] to-[#f97316] px-4 py-4 text-white">
                 <div>
                     <p class="text-xs font-semibold uppercase tracking-[0.35em] text-white/70">Chatbot</p>
@@ -416,7 +404,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>
             </div>
 
-            <div id="botMessages" class="max-h-80 space-y-3 overflow-y-auto bg-slate-50 p-4">
+            <div id="botMessages" class="max-h-80 space-y-3 overflow-y-auto bg-slate-50 p-4" aria-live="polite" aria-relevant="additions text">
                 <div class="max-w-[85%] rounded-2xl rounded-bl-md border border-slate-200 bg-white px-4 py-3 text-sm text-slate-700">
                     {{ config('laravel-chatbot.welcome_message', 'Hello! How can I help you today?') }}
                 </div>
@@ -509,9 +497,12 @@ document.addEventListener('DOMContentLoaded', function () {
   if (contactToggle && contactMenu) {
     contactToggle.addEventListener('click', (e) => {
       e.stopPropagation();
+      const isOpen = contactMenu.classList.contains('translate-y-5') === false;
       contactMenu.classList.toggle('opacity-0');
       contactMenu.classList.toggle('pointer-events-none');
       contactMenu.classList.toggle('translate-y-5');
+      contactToggle.setAttribute('aria-expanded', String(!isOpen));
+      contactMenu.setAttribute('aria-hidden', String(isOpen));
     });
   }
 
@@ -566,6 +557,7 @@ document.addEventListener('DOMContentLoaded', function () {
   if (botToggle && botPanel && botInput && botSend) {
     botToggle.addEventListener('click', (e) => {
       e.stopPropagation();
+      const isHidden = botPanel.classList.contains('hidden');
       botPanel.classList.toggle('hidden');
       if (!botPanel.classList.contains('hidden')) {
         botInput.focus();
@@ -573,6 +565,8 @@ document.addEventListener('DOMContentLoaded', function () {
           botMessages.scrollTop = botMessages.scrollHeight;
         }
       }
+      botToggle.setAttribute('aria-expanded', String(isHidden));
+      botPanel.setAttribute('aria-hidden', String(!isHidden));
     });
 
     botSend.addEventListener('click', () => sendBotMessage());
@@ -584,18 +578,24 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
 
-    botMessages.querySelectorAll('[data-bot-quick]').forEach((button) => {
-      button.addEventListener('click', () => fillBotInput(button.getAttribute('data-bot-quick') || ''));
-    });
+    if (botMessages) {
+      botMessages.querySelectorAll('[data-bot-quick]').forEach((button) => {
+        button.addEventListener('click', () => fillBotInput(button.getAttribute('data-bot-quick') || ''));
+      });
+    }
   }
 
   document.addEventListener('click', (e) => {
     if (contactToggle && contactMenu && !contactToggle.contains(e.target) && !contactMenu.contains(e.target)) {
       contactMenu.classList.add('opacity-0', 'pointer-events-none', 'translate-y-5');
+      contactToggle.setAttribute('aria-expanded', 'false');
+      contactMenu.setAttribute('aria-hidden', 'true');
     }
 
     if (botToggle && botPanel && !botToggle.contains(e.target) && !botPanel.contains(e.target)) {
       botPanel.classList.add('hidden');
+      botToggle.setAttribute('aria-expanded', 'false');
+      botPanel.setAttribute('aria-hidden', 'true');
     }
   });
 });
@@ -606,7 +606,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     @include('component.footer')
 
-  <script src="scripts/site.js"></script>
+  <script src="scripts/site.js" defer></script>
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 
 <script>
@@ -654,9 +654,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-
-
-</script>
 </script>
 <script>
   
@@ -751,7 +748,6 @@ document.addEventListener("click", function (e) {
 <!-- Swiper JS -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
- <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script src="{{ asset('assets/js/main.js') }}" defer></script>
 <script>
 function generateCaptcha() {
