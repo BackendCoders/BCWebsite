@@ -382,6 +382,14 @@
             @case('faq')
                 <section id="{{ $sectionId }}" class="bg-white py-16 sm:py-20">
                     <div class="mx-auto max-w-5xl px-6">
+                        <div class="flex flex-col items-center text-center">
+                           <span class="text-xs font-semibold uppercase tracking-[0.35em] text-[#FD5528]">
+                              {{ $sectionTitle ?? ' Get answers before you ask' }}
+                            </span>
+                            <h2 class="mt-4 text-3xl font-bold leading-tight text-slate-900 sm:text-4xl">
+                                {{ $sectionTitle ?? 'Everything you need to know about accounts, support, billing, and contacting our team.' }}
+                            </h2>
+                        </div>
                         @if($sectionTitle)
                             <div class="text-center">
                                 <p class="text-xs font-semibold uppercase tracking-[0.35em] text-[#FD5528]">{{ $sectionTitle }}</p>
@@ -467,6 +475,11 @@
             @case('gallery')
                 <section id="{{ $sectionId }}" class="bg-white py-16 sm:py-20">
                     <div class="mx-auto max-w-7xl px-6">
+                          <div class="flex flex-col items-center text-center">
+                             <span class="text-3xl font-bold leading-tight text-center text-[#050100]">What We Do to Improve Your Performance</span> 
+                           
+                        </div>
+                     
                         @if($sectionTitle)
                             <div class="text-center">
                                 <p class="text-xs font-semibold uppercase tracking-[0.35em] text-[#FD5528]">{{ $sectionTitle }}</p>

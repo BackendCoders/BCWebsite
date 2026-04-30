@@ -2,30 +2,26 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Mail;
 use App\Mail\ContactMail;
+use App\Mail\ContactReplyMail;
 use App\Models\Contact;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
 
 class ContactController extends Controller
 {
+    public function send(Request $request)
+    {
+        $validated = $request->validate([
+            'first_name' => ['required', 'string', 'max:100'],
+            'last_name' => ['nullable', 'string', 'max:100'],
+            'email' => ['required', 'email'],
+            'phone' => ['required', 'string', 'max:20'],
+            'message' => ['nullable', 'string'],
+            'captcha' => ['required'],
+        ]);
 
-
-
-
-  public function send(Request $request)
-{
-    //  STEP 1: VALIDATE (THIS CREATES $validated)
-    $validated = $request->validate([
-        'first_name' => 'required',
-        'last_name' => 'nullable',
-        'email' => 'required|email',
-        'phone' => 'required',
-        'message' => 'nullable',
-        'captcha' =>'required'
-    ]);
- // 2. CAPTCHA CHECK
         if ($request->captcha != $request->captcha_correct) {
             return back()
                 ->withInput()
@@ -41,24 +37,54 @@ class ContactController extends Controller
                 'message' => $validated['message'] ?? '',
             ]);
 
-            $recipient = config('mail.admin_email') ?: config('mail.from.address');
+            $adminRecipient = config('mail.contact.admin_email', config('mail.from.address'));
+            if (! $adminRecipient) {
+                Log::error('Contact mail configuration is missing an admin recipient.');
+
+                return back()->with('error', 'Email configuration missing.');
+            }
+
+            $adminMailSent = false;
+            $replyMailSent = false;
+            $adminMailFailed = null;
+            $replyMailFailed = null;
 
             try {
-                Mail::to($recipient)
-                    ->send(new ContactMail($contact->toArray()));
+                Mail::to($adminRecipient)->send(new ContactMail($contact->toArray()));
+                $adminMailSent = true;
             } catch (\Throwable $mailException) {
-                Log::warning('Contact mail delivery failed: '.$mailException->getMessage(), [
+                $adminMailFailed = $mailException->getMessage();
+
+                Log::error('Contact admin mail failed: '.$mailException->getMessage(), [
                     'contact_id' => $contact->id,
-                    'email' => $contact->email,
+                    'recipient' => $adminRecipient,
                 ]);
             }
 
+            try {
+                Mail::to($contact->email)->send(new ContactReplyMail($contact->toArray()));
+                $replyMailSent = true;
+            } catch (\Throwable $replyException) {
+                $replyMailFailed = $replyException->getMessage();
+
+                Log::warning('Contact auto-reply failed: '.$replyException->getMessage(), [
+                    'contact_id' => $contact->id,
+                    'recipient' => $contact->email,
+                ]);
+            }
+
+            if (! $adminMailSent && ! $replyMailSent) {
+                return back()
+                    ->with('error', 'Message saved, but email delivery failed. Please try again later.');
+            }
+
+            if ($adminMailFailed || $replyMailFailed) {
+                return back()->with('success', 'Message saved successfully. Email delivery had a minor issue, but your submission was received.');
+            }
+
             return back()->with('success', 'Message sent successfully!');
-
-        } catch (\Exception $e) {
-
-            //  6. LOG ERROR
-            Log::error('Contact Form Error: ' . $e->getMessage());
+        } catch (\Throwable $e) {
+            Log::error('Contact Form Error: '.$e->getMessage());
 
             return back()
                 ->withInput()

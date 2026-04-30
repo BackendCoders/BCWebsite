@@ -115,6 +115,12 @@ return [
         'name' => env('MAIL_FROM_NAME', env('APP_NAME', 'Laravel')),
     ],
 
-    'admin_email' => env('ADMIN_EMAIL', env('MAIL_FROM_ADDRESS', 'hello@example.com')),
+    'contact' => [
+        'admin_email' => env('CONTACT_ADMIN_EMAIL', env('ADMIN_EMAIL', env('MAIL_FROM_ADDRESS', 'hello@example.com'))),
+        'from_address' => env('CONTACT_FROM_ADDRESS', env('MAIL_FROM_ADDRESS', 'hello@example.com')),
+        'from_name' => env('CONTACT_FROM_NAME', env('MAIL_FROM_NAME', env('APP_NAME', 'Laravel'))),
+        'reply_subject' => env('CONTACT_REPLY_SUBJECT', 'Thanks for contacting us'),
+        'notification_subject' => env('CONTACT_NOTIFICATION_SUBJECT', 'New Contact Message'),
+    ],
 
 ];

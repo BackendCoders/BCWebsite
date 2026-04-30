@@ -337,7 +337,7 @@
 <!-- 🚀 CTA -->
 <div class="text-center my-6">
 
-  <a href="/contact"
+  <a href="{{ route('frontend.contact') }}"
      class="relative inline-flex items-center gap-2 px-8 py-3 font-semibold text-white rounded-xl 
             bg-gradient-to-r from-orange-500 to-orange-600 
             shadow-lg hover:shadow-2xl hover:scale-105 transition duration-300">
@@ -771,7 +771,9 @@
 
         <!-- CTA -->
         <div class="mt-4 flex items-center text-sm font-medium text-[#FD5528] opacity-0 group-hover:opacity-100 transition">
-          Read More →
+          <a href="{{ route('frontend.blog') }}" class="underline">
+            Read More →
+          </a>
         </div>
 
       </article>
@@ -799,7 +801,9 @@
 
         <!-- CTA -->
         <div class="mt-4 flex items-center text-sm font-medium text-[#FD5528] opacity-0 group-hover:opacity-100 transition">
-          Read More →
+          <a href="{{ route('frontend.blog') }}" class="underline">
+            Read More →
+          </a>
         </div>
 
       </article>

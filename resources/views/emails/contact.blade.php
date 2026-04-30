@@ -48,7 +48,7 @@
                             <tr>
                                 <td style="font-weight:bold; color:#333;">Message</td>
                                 <td style="color:#555; line-height:1.5; word-break:break-word;">
-                                    {{ $data['message'] ?? '' }}
+                                    {!! nl2br(e($data['message'] ?? '')) !!}
                                 </td>
                             </tr>
 
@@ -70,7 +70,7 @@
                 <!-- FOOTER -->
                 <tr>
                     <td style="background:#fafafa; text-align:center; padding:12px; font-size:12px; color:#999;">
-                        © {{ date('Y') }} Your Company. All rights reserved.
+                        &copy; {{ date('Y') }} Your Company. All rights reserved.
                     </td>
                 </tr>
 

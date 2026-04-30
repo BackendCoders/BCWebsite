@@ -13,6 +13,35 @@
 
 <meta name="csrf-token" content="{{ csrf_token() }}">
 
+<link rel="canonical" href="{{ $page->canonical_url ?? url()->current() }}">
+
+<!-- ✅ PRECONNECT (faster fonts) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+
+
+<!-- ✅ PRELOAD FONT -->
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" as="style">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+<!-- ✅ LOCAL CSS (IMPORTANT - remove CDN tailwind) -->
+<link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+
+<!-- ✅ AOS (deferred) -->
+<link rel="preload" href="https://unpkg.com/aos@2.3.4/dist/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+<!-- ✅ Swiper -->
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" as="style" onload="this.rel='stylesheet'">
+
+<!-- ✅ Icons -->
+<link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+
+<link rel="icon" href="{{asset('assets/images/bci_icon.png')}}">
+
+
+
+
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],

@@ -140,6 +140,8 @@ Route::get('/solutions/{solution}', [SolutionController::class, 'show'])
     ->name('solutions.show');
 
 Route::resource('blogs', BlogController::class);
+Route::get('/blog/category/{slug}', [BlogController::class, 'category']);
+
 Route::resource('careers', CareerController::class);
 Route::resource('projects', ProjectController::class);
 Route::resource('services', ServiceController::class);

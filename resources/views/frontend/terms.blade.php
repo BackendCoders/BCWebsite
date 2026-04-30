@@ -20,7 +20,7 @@
 
     <!-- HEADING -->
     <h1 class="mt-6 text-4xl sm:text-5xl md:text-6xl font-bold leading-tight">
-        Term of<span class="text-orange-600">Use</span><span class="text-[#FC5124] font-semibold">
+        Term of <span class="text-orange-600">Use</span><span class="text-[#FC5124] font-semibold">
      
     </h1>
 
