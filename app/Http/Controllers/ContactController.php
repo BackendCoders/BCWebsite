@@ -33,29 +33,26 @@ class ContactController extends Controller
         }
 
         try {
-            //  3. SAVE TO DATABASE
-            // Contact::create([
-            //     'name'     => $validated['name'],
-            //     'email'    => $validated['email'],
-            //     'phone'    => $validated['phone'] ?? null,
-            //     'country'  => $validated['country'] ?? null,
-            //     'product'  => $validated['product'] ?? null,
-            //     'quantity' => $validated['quantity'] ?? null,
-            //     'message'  => $validated['message'],
+            $contact = Contact::create([
+                'first_name' => $validated['first_name'],
+                'last_name' => $validated['last_name'] ?? '',
+                'email' => $validated['email'],
+                'phone' => $validated['phone'],
+                'message' => $validated['message'] ?? '',
+            ]);
 
-       
-            // ]);
+            $recipient = config('mail.admin_email') ?: config('mail.from.address');
 
+            try {
+                Mail::to($recipient)
+                    ->send(new ContactMail($contact->toArray()));
+            } catch (\Throwable $mailException) {
+                Log::warning('Contact mail delivery failed: '.$mailException->getMessage(), [
+                    'contact_id' => $contact->id,
+                    'email' => $contact->email,
+                ]);
+            }
 
-            //  4. SEND EMAIL TO ADMIN
-
-            //  dd('Email sent');
-             Mail::to(config('mail.admin_email') ?: 'enquiry@backendcodersindia.com')
-            ->send(new ContactMail($validated));
-
-                //   dd('Email sent');
-        // return back()->with('success', 'Message sent successfully!');
-            //  5. SUCCESS RESPONSE
             return back()->with('success', 'Message sent successfully!');
 
         } catch (\Exception $e) {

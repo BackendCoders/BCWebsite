@@ -735,9 +735,12 @@ function generateCaptcha() {
     document.getElementById("captchaCorrect").value = num1 + num2;
 }
 
-generateCaptcha();
+const contactForm = document.querySelector("[data-contact-form]");
 
-document.querySelector("form").addEventListener("submit", function(e) {
+if (contactForm) {
+  generateCaptcha();
+
+  contactForm.addEventListener("submit", function(e) {
 
     let form = this;
 
@@ -763,7 +766,8 @@ document.querySelector("form").addEventListener("submit", function(e) {
         generateCaptcha();
         document.getElementById("captchaInput").value = "";
     }
-});
+  });
+}
 </script>
 
 

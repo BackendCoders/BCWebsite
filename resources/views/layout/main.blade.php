@@ -22,19 +22,46 @@
         };
     </script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
     <style>
         body {
             font-family: 'Manrope', sans-serif;
         }
 
-        ::-webkit-scrollbar {
-    width: 0px;
-}
+        .ql-toolbar.ql-snow {
+            border-color: rgb(226 232 240);
+            border-top-left-radius: 1rem;
+            border-top-right-radius: 1rem;
+            background: rgb(248 250 252);
+        }
 
-::-webkit-scrollbar-thumb {
-    background: #FD5528;
-    border-radius: 10px;
-}
+        .ql-container.ql-snow {
+            border-color: rgb(226 232 240);
+            border-bottom-left-radius: 1rem;
+            border-bottom-right-radius: 1rem;
+            background: #fff;
+        }
+
+        .ql-editor {
+            min-height: 14rem;
+            font-size: 1rem;
+            line-height: 1.75;
+            color: rgb(15 23 42);
+        }
+
+        .ql-editor.ql-blank::before {
+            color: rgb(148 163 184);
+            font-style: italic;
+        }
+
+        ::-webkit-scrollbar {
+            width: 0px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #FD5528;
+            border-radius: 10px;
+        }
     </style>
 </head>
 <body class="bg-slate-100 text-slate-900 antialiased transition-colors duration-300">
@@ -49,107 +76,102 @@
         </main>
     </div>
 
-<script>
-document.addEventListener('DOMContentLoaded', function () {
+    <script src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const root = document.documentElement;
+        const sidebar = document.getElementById('sidebar');
+        const sidebarBackdrop = document.getElementById('sidebarBackdrop');
+        const sidebarToggle = document.getElementById('sidebarToggle');
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        const themeLabel = document.getElementById('themeLabel');
 
-    const root = document.documentElement;
-    const sidebar = document.getElementById('sidebar');
-    const sidebarBackdrop = document.getElementById('sidebarBackdrop');
-    const sidebarToggle = document.getElementById('sidebarToggle');
-    const themeToggle = document.getElementById('themeToggle');
-    const themeIcon = document.getElementById('themeIcon');
-    const themeLabel = document.getElementById('themeLabel');
+        const applyTheme = (theme) => {
+            const isDark = theme === 'dark';
+            root.classList.toggle('dark', isDark);
+            localStorage.setItem('dashboard-theme', theme);
 
-    // ✅ THEME FUNCTION
-    const applyTheme = (theme) => {
-        const isDark = theme === 'dark';
-        root.classList.toggle('dark', isDark);
-        localStorage.setItem('dashboard-theme', theme);
+            if (themeIcon) themeIcon.textContent = isDark ? '☀' : '☾';
+            if (themeLabel) themeLabel.textContent = isDark ? 'Light' : 'Dark';
+        };
 
-        if (themeIcon) themeIcon.textContent = isDark ? '☀' : '☾';
-        if (themeLabel) themeLabel.textContent = isDark ? 'Light' : 'Dark';
-    };
+        const savedTheme = localStorage.getItem('dashboard-theme');
+        const preferredTheme = savedTheme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        applyTheme(preferredTheme);
 
-    const savedTheme = localStorage.getItem('dashboard-theme');
-    const preferredTheme = savedTheme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-    applyTheme(preferredTheme);
+        themeToggle?.addEventListener('click', function () {
+            applyTheme(root.classList.contains('dark') ? 'light' : 'dark');
+        });
 
-    themeToggle?.addEventListener('click', function () {
-        applyTheme(root.classList.contains('dark') ? 'light' : 'dark');
-    });
-
-    // ✅ SIDEBAR FUNCTIONS
-    const openSidebar = () => {
-        sidebar?.classList.remove('-translate-x-full');
-        sidebarBackdrop?.classList.remove('hidden');
-    };
-
-    const closeSidebar = () => {
-        sidebar?.classList.add('-translate-x-full');
-        sidebarBackdrop?.classList.add('hidden');
-    };
-
-    // ✅ TOGGLE CLICK
-    sidebarToggle?.addEventListener('click', function () {
-        const isOpen = !sidebar?.classList.contains('-translate-x-full');
-        isOpen ? closeSidebar() : openSidebar();
-    });
-
-    // ✅ BACKDROP CLICK
-    sidebarBackdrop?.addEventListener('click', closeSidebar);
-
-    // ✅ DESKTOP FIX
-    const handleResize = () => {
-        if (window.innerWidth >= 1024) {
+        const openSidebar = () => {
             sidebar?.classList.remove('-translate-x-full');
-            sidebarBackdrop?.classList.add('hidden');
-        } else {
+            sidebarBackdrop?.classList.remove('hidden');
+        };
+
+        const closeSidebar = () => {
             sidebar?.classList.add('-translate-x-full');
-        }
-    };
+            sidebarBackdrop?.classList.add('hidden');
+        };
 
-    handleResize();
-    window.addEventListener('resize', handleResize);
+        sidebarToggle?.addEventListener('click', function () {
+            const isOpen = !sidebar?.classList.contains('-translate-x-full');
+            isOpen ? closeSidebar() : openSidebar();
+        });
 
-});
-</script>
-<link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
-<script src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script>
+        sidebarBackdrop?.addEventListener('click', closeSidebar);
 
-<script>
-document.addEventListener('DOMContentLoaded', function () {
+        const handleResize = () => {
+            if (window.innerWidth >= 1024) {
+                sidebar?.classList.remove('-translate-x-full');
+                sidebarBackdrop?.classList.add('hidden');
+            } else {
+                sidebar?.classList.add('-translate-x-full');
+            }
+        };
 
-    var quill = new Quill('#editor', {
-        theme: 'snow',
-        placeholder: 'Write your blog content here...',
-        modules: {
-            toolbar: [
-                [{ 'header': [1, 2, 3, false] }],
-                ['bold', 'italic', 'underline'],
-                ['link', 'image'],
-                [{ 'list': 'ordered'}, { 'list': 'bullet' }],
-                ['clean']
-            ]
-        }
+        handleResize();
+        window.addEventListener('resize', handleResize);
+
+        const blogForms = document.querySelectorAll('[data-blog-form]');
+
+        blogForms.forEach((form) => {
+            const editorContainer = form.querySelector('[data-blog-editor]');
+            const hiddenInput = form.querySelector('[data-blog-content]');
+
+            if (!editorContainer || !hiddenInput || typeof Quill === 'undefined') {
+                return;
+            }
+
+            const quill = new Quill(editorContainer, {
+                theme: 'snow',
+                placeholder: 'Write your blog content here...',
+                modules: {
+                    toolbar: [
+                        [{ header: [1, 2, 3, false] }],
+                        ['bold', 'italic', 'underline', 'strike'],
+                        [{ list: 'ordered' }, { list: 'bullet' }],
+                        ['blockquote', 'link', 'image'],
+                        ['clean'],
+                    ],
+                },
+            });
+
+            const initialContent = hiddenInput.value || '';
+            if (initialContent) {
+                quill.root.innerHTML = initialContent;
+            }
+
+            const syncContent = () => {
+                hiddenInput.value = quill.root.innerHTML;
+            };
+
+            quill.on('text-change', syncContent);
+            form.addEventListener('submit', syncContent);
+            syncContent();
+        });
     });
-
-    // ✅ Load old value (create form)
-    var oldContent = `{!! old('content') !!}`;
-    if (oldContent) {
-        quill.root.innerHTML = oldContent;
-    }
-
-    // ✅ Save before submit
-    document.querySelector('form').addEventListener('submit', function () {
-        document.querySelector('#content').value = quill.root.innerHTML;
-    });
-
-});
-
-
-
-</script>
-
+    </script>
 
 </body>
 </html>

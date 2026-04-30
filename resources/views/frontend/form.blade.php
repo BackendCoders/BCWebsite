@@ -1,4 +1,4 @@
-<form method="POST" action="{{ route('contact.send') }}" novalidate>
+<form method="POST" action="{{ route('contact.send') }}" novalidate data-contact-form>
     @csrf
 
     <div class="w-full max-w-4xl  rounded-3xl p-2 md:p-10 space-y-6">

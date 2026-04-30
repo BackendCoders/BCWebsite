@@ -65,7 +65,7 @@
 
      
 
-        <a href="#" class="flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-medium text-slate-600 transition hover:bg-slate-100">
+        <a href="{{ route('leads.index') }}" class="flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-medium text-slate-600 transition hover:bg-slate-100">
             <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-slate-100 text-slate-500">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="h-5 w-5">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M7 7h10v10H7z" />
@@ -114,6 +114,16 @@
             Blogs
         </a>
 
+        <a href="{{ route('contacts.index') }}" class="flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-medium text-slate-600 transition hover:bg-slate-100">
+            <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-slate-100 text-slate-500">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="h-5 w-5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 7.5A2 2 0 0 1 6.5 5.5h11A2 2 0 0 1 19.5 7.5v9A2 2 0 0 1 17.5 18.5h-11a2 2 0 0 1-2-2v-9Z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M7 9.5l5 4 5-4" />
+                </svg>
+            </span>
+            Contacts
+        </a>
+
         <a href="{{ route('careers.index') }}" class="flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-medium text-slate-600 transition hover:bg-slate-100">
             <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-slate-100 text-slate-500">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="h-5 w-5">
@@ -139,7 +149,7 @@
             <div class="mt-3 grid gap-3">
                 <div class="rounded-2xl border border-slate-200/70 bg-slate-50 p-4">
                     <p class="text-xs text-slate-400">This week</p>
-                    <p class="mt-1 text-sm font-medium text-slate-900">18 new leads</p>
+            <p class="mt-1 text-sm font-medium text-slate-900">{{ \App\Models\CareerApplication::count() }} new leads</p>
                 </div>
                 <div class="rounded-2xl border border-slate-200/70 bg-slate-50 p-4">
                     <p class="text-xs text-slate-400">Revenue</p>

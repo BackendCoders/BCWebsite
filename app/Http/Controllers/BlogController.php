@@ -45,6 +45,13 @@ class BlogController extends Controller
         return view('blogs.edit', compact('blog', 'categories'));
     }
 
+    public function show(Blog $blog)
+    {
+        $blog->load('category');
+
+        return view('blogs.show', compact('blog'));
+    }
+
     public function update(Request $request, Blog $blog)
     {
         $data = $this->validateBlog($request);

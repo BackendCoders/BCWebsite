@@ -8,7 +8,7 @@
     </div>
 
     <div class="rounded-[2rem] border border-slate-200/70 bg-white/80 p-6 shadow-xl shadow-slate-200/40 backdrop-blur-xl">
-        <form action="{{ route('blogs.update', $blog) }}" method="POST" enctype="multipart/form-data" class="grid gap-5">
+        <form action="{{ route('blogs.update', $blog) }}" method="POST" enctype="multipart/form-data" class="grid gap-5 pb-24" data-blog-form>
             @csrf
             @method('PUT')
 
@@ -55,17 +55,11 @@
 
             <div>
                 <label class="mb-2 block text-sm font-medium text-slate-700">Content</label>
-                <!-- <textarea name="content"  rows="8" class="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-[#FD5528] focus:ring-4 focus:ring-[#FD5528]/10" id="editor"  style="height: 300px;">{{ old('content', $blog->content) }}</textarea> -->
-                <!-- ✅ Quill Editor -->
-                <div id="editor" style="height: 300px;"
-                     class="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3"></div>
-
-                <!-- ✅ Hidden Input -->
-                <input type="hidden" name="content" id="content"
-                       value="{{ old('content', $blog->content) }}">
+                <div data-blog-editor class="w-full rounded-2xl border border-slate-200 bg-white"></div>
+                <input type="hidden" name="content" data-blog-content value="{{ old('content', $blog->content) }}">
             </div>
 
-            <div class="flex flex-col-reverse gap-3 sm:flex-row sm:justify-end">
+            <div class="sticky bottom-0 z-10 flex flex-col-reverse gap-3 border-t border-slate-200 bg-white/95 py-4 backdrop-blur sm:flex-row sm:justify-end">
                 <a href="{{ route('blogs.index') }}" class="inline-flex items-center justify-center rounded-2xl border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-slate-700 transition hover:border-[#FD5528] hover:text-[#FD5528]">
                     Cancel
                 </a>
@@ -76,37 +70,4 @@
         </form>
     </div>
 </div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-
-    var quill = new Quill('#editor', {
-        theme: 'snow',
-        modules: {
-            toolbar: [
-                [{ header: [1, 2, 3, false] }],
-                ['bold', 'italic', 'underline', 'strike'],
-                [{ list: 'ordered' }, { list: 'bullet' }],
-                ['blockquote', 'link', 'image'],
-                ['clean']
-            ]
-        },
-        placeholder: 'Write your blog content here...'
-    });
-
-    // ✅ Load existing content safely
-    var oldContent = @json(old('content', $blog->content));
-    
-    if (oldContent) {
-        quill.root.innerHTML = oldContent;
-    }
-
-    // ✅ Save to hidden input on submit
-    document.querySelector('form').addEventListener('submit', function () {
-        document.querySelector('#content').value = quill.root.innerHTML;
-    });
-
-});
-</script>
-
 @endsection

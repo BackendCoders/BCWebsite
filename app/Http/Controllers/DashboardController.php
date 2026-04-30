@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Blog;
 use App\Models\Service;
+use App\Models\Contact;
 use App\Models\Career;
 use App\Models\CareerApplication;
 use App\Models\Project;
@@ -24,6 +25,7 @@ class DashboardController extends Controller
             'serviceCount' => Service::count(),
             'careerCount' => Career::count(),
             'applicationCount' => CareerApplication::count(),
+            'contactCount' => Contact::count(),
             'projectCount' => Project::count(),
 
             // ✅ RECENT DATA (IMPORTANT 🔥)
@@ -31,9 +33,26 @@ class DashboardController extends Controller
             'recentBlogs' => Blog::latest()->take(5)->get(),
             'recentCareers' => Career::latest()->take(5)->get(),
             'recentApplications' => CareerApplication::latest()->take(5)->get(),
+            'recentContacts' => Contact::latest()->take(5)->get(),
             'recentProjects' => Project::latest()->take(6)->get(),
             'recentServices' => Service::latest()->take(6)->get(),
 
+        ]);
+    }
+
+    public function leads()
+    {
+        return view('inquiry.leads', [
+            'applicationCount' => CareerApplication::count(),
+            'recentApplications' => CareerApplication::latest('id')->take(25)->get(),
+        ]);
+    }
+
+    public function contacts()
+    {
+        return view('inquiry.contacts', [
+            'contactCount' => Contact::count(),
+            'recentContacts' => Contact::latest('id')->take(25)->get(),
         ]);
     }
 };

@@ -108,6 +108,10 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/dashboard', [DashboardController::class, 'index'])
         ->name('dashboard');
+    Route::get('/leads', [DashboardController::class, 'leads'])
+        ->name('leads.index');
+    Route::get('/contact-leads', [DashboardController::class, 'contacts'])
+        ->name('contacts.index');
 
 });
 

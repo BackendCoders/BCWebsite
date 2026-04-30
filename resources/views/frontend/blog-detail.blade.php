@@ -6,12 +6,23 @@
 
 <section class="bg-slate-50 py-12">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="mb-6 flex flex-wrap items-center gap-3">
+        <div class="mb-6 flex flex-wrap items-center justify-between gap-3">
             <a href="{{ route('frontend.blog') }}" class="text-sm font-semibold text-[#FD5528] hover:underline">
                 &larr; Back to blog
             </a>
-            <span class="text-sm text-slate-400">/</span>
-            <span class="text-sm text-slate-500">{{ $blog->category?->name ?? 'Uncategorized' }}</span>
+
+            <div class="flex flex-wrap items-center gap-2">
+                <span class="text-sm text-slate-400">/</span>
+                <span class="text-sm text-slate-500">{{ $blog->category?->name ?? 'Uncategorized' }}</span>
+
+                @auth
+                    @if(auth()->user()->isAdmin())
+                        <a href="{{ route('blogs.edit', $blog) }}" class="ml-2 rounded-full bg-sky-500 px-4 py-2 text-xs font-semibold uppercase tracking-[0.25em] text-white shadow-lg shadow-sky-500/20 transition hover:bg-sky-600">
+                            Edit
+                        </a>
+                    @endif
+                @endauth
+            </div>
         </div>
 
         <header class="overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-2xl">
@@ -91,7 +102,7 @@
                     <p class="text-xs uppercase tracking-[0.4em] text-slate-400">Related posts</p>
                     <div class="mt-4 space-y-4">
                         @forelse($relatedBlogs as $related)
-                            <a href="{{ route('frontend.blog-detail', $related) }}" class="flex gap-3 rounded-2xl border border-slate-200 p-3 transition hover:-translate-y-0.5 hover:shadow-lg">
+                            <a href="{{ route('frontend.blog-detail', $related->slug) }}" class="flex gap-3 rounded-2xl border border-slate-200 p-3 transition hover:-translate-y-0.5 hover:shadow-lg">
                                 <img
                                     src="{{ $related->image ? asset('storage/' . $related->image) : asset('assets/images/banner.png') }}"
                                     alt="{{ $related->title }}"

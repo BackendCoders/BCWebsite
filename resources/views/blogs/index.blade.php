@@ -63,6 +63,9 @@
                             </td>
                             <td class="px-6 py-4 text-right">
                                 <div class="inline-flex gap-2">
+                                    <a href="{{ route('blogs.show', $blog) }}" class="rounded-xl bg-emerald-500/10 px-3 py-2 text-sm font-semibold text-emerald-600 transition hover:bg-emerald-500/20">
+                                        View
+                                    </a>
                                     <a href="{{ route('blogs.edit', $blog) }}" class="rounded-xl bg-sky-500/10 px-3 py-2 text-sm font-semibold text-sky-600 transition hover:bg-sky-500/20">
                                         Edit
                                     </a>

@@ -96,12 +96,61 @@
 
                         <div class="flex items-center justify-between rounded-2xl bg-white px-4 py-4 shadow-sm dark:bg-slate-950/40">
                             <div>
+                                <p class="text-xs uppercase tracking-[0.3em] text-slate-400">Contacts</p>
+                                <p class="mt-1 text-2xl font-bold text-slate-900 dark:text-white">{{ $contactCount }}</p>
+                            </div>
+                            <span class="rounded-full bg-sky-500/10 px-3 py-1 text-xs font-semibold text-sky-600">Inbox</span>
+                        </div>
+
+                        <div class="flex items-center justify-between rounded-2xl bg-white px-4 py-4 shadow-sm dark:bg-slate-950/40">
+                            <div>
                                 <p class="text-xs uppercase tracking-[0.3em] text-slate-400">Projects</p>
                                 <p class="mt-1 text-2xl font-bold text-slate-900 dark:text-white">{{ $projectCount }}</p>
                             </div>
                             <span class="rounded-full bg-[#FD5528]/10 px-3 py-1 text-xs font-semibold text-[#FD5528]">Live</span>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="grid gap-6 xl:grid-cols-12">
+        <div class="xl:col-span-12">
+            <div class="rounded-[2rem] border border-slate-200/70 bg-white/80 p-6 shadow-xl shadow-slate-200/40 backdrop-blur-xl dark:border-white/10 dark:bg-white/5 dark:shadow-black/20">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-sm text-slate-500 dark:text-slate-400">Recent contacts</p>
+                        <h3 class="mt-1 text-xl font-semibold text-slate-900 dark:text-white">Latest contact form submissions</h3>
+                    </div>
+                    <a href="{{ route('contacts.index') }}" class="text-sm font-semibold text-[#FD5528]">View all</a>
+                </div>
+
+                <div class="mt-6 overflow-x-auto">
+                    <table class="min-w-full divide-y divide-slate-200/70 text-left dark:divide-white/10">
+                        <thead class="text-xs uppercase tracking-[0.3em] text-slate-400">
+                            <tr>
+                                <th class="py-3 pr-4 font-semibold">Name</th>
+                                <th class="py-3 pr-4 font-semibold">Email</th>
+                                <th class="py-3 pr-4 font-semibold">Phone</th>
+                                <th class="py-3 pr-4 font-semibold">Message</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-200/70 text-sm dark:divide-white/10">
+                            @forelse($recentContacts as $contact)
+                                <tr>
+                                    <td class="py-4 pr-4 font-medium text-slate-900 dark:text-white">{{ trim($contact->first_name.' '.$contact->last_name) ?: $contact->first_name }}</td>
+                                    <td class="py-4 pr-4 text-slate-500 dark:text-slate-300">{{ $contact->email }}</td>
+                                    <td class="py-4 pr-4 text-slate-500 dark:text-slate-300">{{ $contact->phone }}</td>
+                                    <td class="py-4 pr-4 text-slate-500 dark:text-slate-300">{{ \Illuminate\Support\Str::limit($contact->message, 90) }}</td>
+                                </tr>
+                            @empty
+                                <tr>
+                                    <td colspan="4" class="py-10 text-center text-slate-500 dark:text-slate-400">No contact submissions yet.</td>
+                                </tr>
+                            @endforelse
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
@@ -263,6 +312,7 @@
                         <p class="text-sm text-slate-500 dark:text-slate-400">Recent applications</p>
                         <h3 class="mt-1 text-xl font-semibold text-slate-900 dark:text-white">Latest career form submissions</h3>
                     </div>
+                    <a href="{{ route('leads.index') }}" class="text-sm font-semibold text-[#FD5528]">View all</a>
                 </div>
 
                 <div class="mt-6 overflow-x-auto">

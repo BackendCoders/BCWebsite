@@ -6,12 +6,23 @@
 
 <section class="bg-slate-50 py-12">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="mb-6 flex flex-wrap items-center gap-3">
+        <div class="mb-6 flex flex-wrap items-center justify-between gap-3">
             <a href="{{ route('frontend.blog') }}" class="text-sm font-semibold text-[#FD5528] hover:underline">
-                ← Back to blog
+                &larr; Back to blog
             </a>
-            <span class="text-sm text-slate-400">/</span>
-            <span class="text-sm text-slate-500">{{ $blog->category?->name ?? 'Uncategorized' }}</span>
+
+            <div class="flex flex-wrap items-center gap-2">
+                <span class="text-sm text-slate-400">/</span>
+                <span class="text-sm text-slate-500">{{ $blog->category?->name ?? 'Uncategorized' }}</span>
+
+                @auth
+                    @if(auth()->user()->isAdmin())
+                        <a href="{{ route('blogs.edit', $blog) }}" class="ml-2 rounded-full bg-sky-500 px-4 py-2 text-xs font-semibold uppercase tracking-[0.25em] text-white shadow-lg shadow-sky-500/20 transition hover:bg-sky-600">
+                            Edit
+                        </a>
+                    @endif
+                @endauth
+            </div>
         </div>
 
         <header class="overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-2xl">
@@ -39,7 +50,7 @@
                         {{ $blog->title }}
                     </h1>
                     <p class="text-base leading-7 text-slate-600">
-                        {{ $blog->excerpt ?: \Illuminate\Support\Str::limit(strip_tags($blog->content ?: ''), 220) }}
+                        {{ $blog->excerpt ?: strip_tags($blog->content ?: '') }}
                     </p>
                     <div class="flex flex-wrap gap-3 text-sm text-slate-500">
                         <span class="flex items-center gap-2">
@@ -74,7 +85,7 @@
                     <div class="mt-4 space-y-3">
                         <h2 class="text-lg font-bold text-slate-900">{{ $blog->title }}</h2>
                         <p class="text-sm leading-6 text-slate-600">
-                            {{ $blog->excerpt ?: \Illuminate\Support\Str::limit(strip_tags($blog->content ?: ''), 140) }}
+                            {{ $blog->excerpt ?: strip_tags($blog->content ?: '') }}
                         </p>
                         <div class="flex flex-wrap gap-2">
                             <span class="rounded-full bg-[#FD5528]/10 px-3 py-1 text-xs font-semibold text-[#FD5528]">
