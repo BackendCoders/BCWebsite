@@ -87,7 +87,7 @@
 
         <!-- Footer -->
         <p class="text-center text-xs text-gray-400 mt-6">
-            © {{ date('Y') }} Your Company. All rights reserved.
+            © {{ date('Y') }} Backend Coders India. All rights reserved.
         </p>
 
     </div>

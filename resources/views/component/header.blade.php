@@ -34,7 +34,10 @@
       </a>
 
       <!-- EMAIL -->
-      <a href="mailto:info@backendcodersindia.com" 
+      <a href="#" 
+         id="email-link"
+         data-user="info"
+         data-domain="backendcodersindia.com"
          class="flex items-center justify-center sm:justify-start gap-2 transition">
 
         <div class="w-7 h-7 flex items-center justify-center rounded-full 
@@ -43,9 +46,8 @@
                class="w-4 h-4">
         </div>
 
-        <span class="break-all sm:break-normal">
-          info@backendcodersindia.com
-        </span>
+       <span id="email" class="no-copy" style="user-select:none; pointer-events:none;" aria-label="Email address"></span>
+
       </a>
 
     </div>
@@ -356,6 +358,23 @@
         mobileMenuToggle?.addEventListener("click", () => {
             menu?.classList.toggle("hidden");
         });
+    });
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const emailLink = document.getElementById("email-link");
+        const emailText = document.getElementById("email");
+
+        if (!emailLink || !emailText) return;
+
+        const user = emailLink.dataset.user || "";
+        const domain = emailLink.dataset.domain || "";
+        const email = `${user}@${domain}`;
+
+        emailText.textContent = email;
+        emailLink.href = `mailto:${email}`;
+        emailLink.setAttribute("aria-label", `Email ${email}`);
     });
 </script>
 

@@ -55,4 +55,25 @@ class DashboardController extends Controller
             'recentContacts' => Contact::latest('id')->take(25)->get(),
         ]);
     }
+
+    public function showContact(Contact $contact)
+    {
+        return view('inquiry.contact-show', [
+            'contact' => $contact,
+        ]);
+    }
+
+    public function destroyContact(Contact $contact)
+    {
+        $contact->delete();
+
+        return redirect()->route('contacts.index')->with('success', 'Contact deleted successfully.');
+    }
+
+    public function destroyApplication(CareerApplication $application)
+    {
+        $application->delete();
+
+        return redirect()->route('leads.index')->with('success', 'Application deleted successfully.');
+    }
 };

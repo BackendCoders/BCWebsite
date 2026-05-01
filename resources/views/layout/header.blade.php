@@ -33,8 +33,8 @@
     <nav class="mt-8 flex-1 space-y-1 overflow-y-auto no-scrollbar">
         <p class="px-3 text-xs font-semibold uppercase tracking-[0.3em] text-slate-400">Menu</p>
         @if(auth()->user()?->isAdmin())
-            <a href="{{ route('pages.index') }}" class="flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-medium text-slate-600 transition hover:bg-slate-100">
-                <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-slate-100 text-slate-500">
+            <a href="{{ route('pages.index') }}" class="group flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-medium text-slate-700 transition hover:bg-indigo-50 hover:text-indigo-700">
+                <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-indigo-500/10 text-indigo-600 transition group-hover:bg-indigo-500 group-hover:text-white">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="h-5 w-5">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 5.5A1.5 1.5 0 0 1 6 4h9l4.5 4.5V19A1.5 1.5 0 0 1 18 20.5H6A1.5 1.5 0 0 1 4.5 19V5.5Z" />
                         <path stroke-linecap="round" stroke-linejoin="round" d="M15 4v4.5h4.5" />
@@ -44,8 +44,8 @@
                 Pages
             </a>
 
-            <a href="{{ route('menu-items.index') }}" class="flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-medium text-slate-600 transition hover:bg-slate-100">
-                <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-slate-100 text-slate-500">
+            <a href="{{ route('menu-items.index') }}" class="group flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-medium text-slate-700 transition hover:bg-violet-50 hover:text-violet-700">
+                <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-violet-500/10 text-violet-600 transition group-hover:bg-violet-500 group-hover:text-white">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="h-5 w-5">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 5v14M5 12h14" />
                     </svg>
@@ -53,8 +53,8 @@
                 Menu Items
             </a>
 
-            <a href="{{ route('sections.index') }}" class="flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-medium text-slate-600 transition hover:bg-slate-100">
-                <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-slate-100 text-slate-500">
+            <a href="{{ route('sections.index') }}" class="group flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-medium text-slate-700 transition hover:bg-sky-50 hover:text-sky-700">
+                <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-sky-500/10 text-sky-600 transition group-hover:bg-sky-500 group-hover:text-white">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="h-5 w-5">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 7.5h15M4.5 12h15M4.5 16.5h15" />
                     </svg>
@@ -65,18 +65,18 @@
 
      
 
-        <a href="{{ route('leads.index') }}" class="flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-medium text-slate-600 transition hover:bg-slate-100">
-            <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-slate-100 text-slate-500">
+        <a href="{{ route('leads.index') }}" class="group flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-medium text-slate-700 transition hover:bg-emerald-50 hover:text-emerald-700">
+            <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-600 transition group-hover:bg-emerald-500 group-hover:text-white">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="h-5 w-5">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M7 7h10v10H7z" />
                     <path stroke-linecap="round" stroke-linejoin="round" d="M7 10h10M10 7v10" />
                 </svg>
             </span>
-            Leads
+            Applications
         </a>
 
-        <a href="{{ route('projects.index') }}" class="flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-medium text-slate-600 transition hover:bg-slate-100">
-            <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-slate-100 text-slate-500">
+        <a href="{{ route('projects.index') }}" class="group flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-medium text-slate-700 transition hover:bg-amber-50 hover:text-amber-700">
+            <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-amber-500/10 text-amber-600 transition group-hover:bg-amber-500 group-hover:text-white">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="h-5 w-5">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M7 6.5h10A1.5 1.5 0 0 1 18.5 8v8A1.5 1.5 0 0 1 17 17.5H7A1.5 1.5 0 0 1 5.5 16V8A1.5 1.5 0 0 1 7 6.5Z" />
                     <path stroke-linecap="round" stroke-linejoin="round" d="M9 10h6M9 13h4" />
@@ -85,8 +85,8 @@
             Projects
         </a>
 
-        <a href="{{ route('services.index') }}" class="flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-medium text-slate-600 transition hover:bg-slate-100">
-            <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-slate-100 text-slate-500">
+        <a href="{{ route('services.index') }}" class="group flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-medium text-slate-700 transition hover:bg-orange-50 hover:text-orange-700">
+            <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-orange-500/10 text-orange-600 transition group-hover:bg-orange-500 group-hover:text-white">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="h-5 w-5">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 3.5l1.9 4 4.4.6-3.2 3.1.8 4.4-3.9-2.1-3.9 2.1.8-4.4-3.2-3.1 4.4-.6L12 3.5Z" />
                 </svg>
@@ -94,8 +94,8 @@
             Services
         </a>
 
-        <a href="{{ route('categories.index') }}" class="flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-medium text-slate-600 transition hover:bg-slate-100">
-            <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-slate-100 text-slate-500">
+        <a href="{{ route('categories.index') }}" class="group flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-medium text-slate-700 transition hover:bg-rose-50 hover:text-rose-700">
+            <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-rose-500/10 text-rose-600 transition group-hover:bg-rose-500 group-hover:text-white">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="h-5 w-5">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 7.5A2 2 0 0 1 6.5 5.5h11A2 2 0 0 1 19.5 7.5v9A2 2 0 0 1 17.5 18.5h-11a2 2 0 0 1-2-2v-9Z" />
                     <path stroke-linecap="round" stroke-linejoin="round" d="M8 10h8M8 13h5" />
@@ -104,8 +104,8 @@
             Categories
         </a>
 
-        <a href="{{ route('blogs.index') }}" class="flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-medium text-slate-600 transition hover:bg-slate-100">
-            <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-slate-100 text-slate-500">
+        <a href="{{ route('blogs.index') }}" class="group flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-medium text-slate-700 transition hover:bg-cyan-50 hover:text-cyan-700">
+            <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-cyan-500/10 text-cyan-600 transition group-hover:bg-cyan-500 group-hover:text-white">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="h-5 w-5">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M5 6.5A1.5 1.5 0 0 1 6.5 5h9l3 3V17.5A1.5 1.5 0 0 1 17 19H6.5A1.5 1.5 0 0 1 5 17.5v-11Z" />
                     <path stroke-linecap="round" stroke-linejoin="round" d="M8 10h7M8 13h5" />
@@ -114,18 +114,18 @@
             Blogs
         </a>
 
-        <a href="{{ route('contacts.index') }}" class="flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-medium text-slate-600 transition hover:bg-slate-100">
-            <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-slate-100 text-slate-500">
+        <a href="{{ route('contacts.index') }}" class="group flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-medium text-slate-700 transition hover:bg-fuchsia-50 hover:text-fuchsia-700">
+            <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-fuchsia-500/10 text-fuchsia-600 transition group-hover:bg-fuchsia-500 group-hover:text-white">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="h-5 w-5">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 7.5A2 2 0 0 1 6.5 5.5h11A2 2 0 0 1 19.5 7.5v9A2 2 0 0 1 17.5 18.5h-11a2 2 0 0 1-2-2v-9Z" />
                     <path stroke-linecap="round" stroke-linejoin="round" d="M7 9.5l5 4 5-4" />
                 </svg>
             </span>
-            Contacts
+            Contact Leads
         </a>
 
-        <a href="{{ route('careers.index') }}" class="flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-medium text-slate-600 transition hover:bg-slate-100">
-            <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-slate-100 text-slate-500">
+        <a href="{{ route('careers.index') }}" class="group flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-medium text-slate-700 transition hover:bg-lime-50 hover:text-lime-700">
+            <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-lime-500/10 text-lime-600 transition group-hover:bg-lime-500 group-hover:text-white">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="h-5 w-5">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 6.5A2.5 2.5 0 0 1 10 4h4a2.5 2.5 0 0 1 2.5 2.5V6H19a1.5 1.5 0 0 1 1.5 1.5v2A1.5 1.5 0 0 1 19 11H5A1.5 1.5 0 0 1 3.5 9.5v-2A1.5 1.5 0 0 1 5 6h2.5v.5Z" />
                     <path stroke-linecap="round" stroke-linejoin="round" d="M3.5 11.5V18A1.5 1.5 0 0 0 5 19.5h14A1.5 1.5 0 0 0 20.5 18v-6.5" />
@@ -134,17 +134,17 @@
             </span>
             Careers
         </a>
-
-        <a href="{{ route('frontend.career') }}" class="flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-medium text-slate-600 transition hover:bg-slate-100">
-            <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-slate-100 text-slate-500">
+<!-- 
+        <a href="{{ route('frontend.career') }}" class="group flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-medium text-slate-700 transition hover:bg-pink-50 hover:text-pink-700">
+            <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-pink-500/10 text-pink-600 transition group-hover:bg-pink-500 group-hover:text-white">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="h-5 w-5">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 3.5l2.2 4.5 5 .7-3.6 3.5.9 4.9-4.5-2.4-4.5 2.4.9-4.9-3.6-3.5 5-.7L12 3.5Z" />
                 </svg>
             </span>
             Applications
-        </a>
+        </a> -->
 
-        <div class="pt-4">
+        <!-- <div class="pt-4">
             <p class="px-3 text-xs font-semibold uppercase tracking-[0.3em] text-slate-400">Shortcuts</p>
             <div class="mt-3 grid gap-3">
                 <div class="rounded-2xl border border-slate-200/70 bg-slate-50 p-4">
@@ -156,16 +156,16 @@
                     <p class="mt-1 text-sm font-medium text-slate-900">$24.8k collected</p>
                 </div>
             </div>
-        </div>
+        </div> -->
     </nav>
 
-    <div class="mt-6 rounded-3xl bg-slate-900 p-4 text-white shadow-lg shadow-slate-900/20">
+    <!-- <div class="mt-6 rounded-3xl bg-slate-900 p-4 text-white shadow-lg shadow-slate-900/20">
         <p class="text-xs uppercase tracking-[0.3em] text-white/50">Need help?</p>
         <p class="mt-2 text-sm text-white/80">Track tasks, review progress, and stay on top of the workspace from one place.</p>
         <button type="button" class="mt-4 w-full rounded-2xl bg-[#FD5528] px-4 py-3 text-sm font-semibold text-white transition hover:bg-[#e94c20]">
             View insights
         </button>
-    </div>
+    </div> -->
 </aside>
 
 <header class="fixed left-0 right-0 top-0 z-20 border-b border-slate-200/70 bg-white/80 backdrop-blur-xl lg:left-72">
@@ -187,7 +187,7 @@
         </div>
 
         <div class="flex items-center gap-3">
-            <details class="relative">
+            <!-- <details class="relative">
                 <summary class="list-none inline-flex h-11 w-11 cursor-pointer items-center justify-center rounded-2xl border border-[#FD5528]/20 bg-[#FD5528]/10 text-[#FD5528] transition hover:border-[#FD5528]/40 hover:bg-[#FD5528]/15">
                     <span class="sr-only">Open bot menu</span>
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="h-5 w-5">
@@ -241,45 +241,40 @@
                         </a>
                     </div>
                 </div>
-            </details>
+            </details> -->
 
-            <div class="hidden items-center gap-3 rounded-2xl border border-slate-200 bg-white px-3 py-2 sm:flex">
-                <div class="text-right">
-                    <p class="text-xs text-[#FD5528]">Signed in as</p>
+            @auth
+                <div class="hidden items-center gap-3 rounded-2xl border border-slate-200 bg-white px-3 py-2 sm:flex">
+                    <div class="text-right">
+                        <p class="text-xs text-[#FD5528]">Signed in as</p>
+                        <p class="text-sm font-semibold text-slate-900">{{ Auth::user()->name }}</p>
+                    </div>
+
+                    <a href="{{ route('profile.edit') }}" class="rounded-xl border border-slate-200 px-3 py-2 text-sm font-medium text-slate-600 transition hover:border-[#FD5528] hover:text-[#FD5528]">
+                        Profile
+                    </a>
+
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <button type="submit" class="rounded-xl bg-[#FD5528] px-3 py-2 text-sm font-semibold text-white transition hover:bg-[#e94c20]">
+                            Logout
+                        </button>
+                    </form>
                 </div>
 
-                <div class="hidden sm:flex sm:items-center sm:ms-6">
-                    <x-dropdown align="right" width="48">
-                        <x-slot name="trigger">
-                            <button class="inline-flex items-center rounded-md border border-transparent bg-white px-3 py-2 text-sm font-medium leading-4 text-gray-500 transition duration-150 ease-in-out hover:text-gray-700 focus:outline-none">
-                                <div>{{ Auth::user()->name }}</div>
-
-                                <div class="ms-1">
-                                    <svg class="h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                                    </svg>
-                                </div>
-                            </button>
-                        </x-slot>
-
-                        <x-slot name="content">
-                            <x-dropdown-link :href="route('profile.edit')">
-                                {{ __('Profile') }}
-                            </x-dropdown-link>
-
-                            <form method="POST" action="{{ route('logout') }}">
-                                @csrf
-
-                                <x-dropdown-link :href="route('logout')"
-                                        onclick="event.preventDefault();
-                                                    this.closest('form').submit();">
-                                    {{ __('Log Out') }}
-                                </x-dropdown-link>
-                            </form>
-                        </x-slot>
-                    </x-dropdown>
+                <div class="flex items-center gap-2 sm:hidden">
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <button type="submit" class="inline-flex h-11 items-center justify-center rounded-2xl bg-[#FD5528] px-4 text-sm font-semibold text-white transition hover:bg-[#e94c20]">
+                            Logout
+                        </button>
+                    </form>
                 </div>
-            </div>
+            @else
+                <a href="{{ route('login') }}" class="inline-flex h-11 items-center justify-center rounded-2xl bg-[#FD5528] px-4 text-sm font-semibold text-white transition hover:bg-[#e94c20]">
+                    Login
+                </a>
+            @endauth
         </div>
     </div>
 </header>

@@ -40,8 +40,11 @@
     };
 @endphp
 
-<div class="mx-auto max-w-7xl space-y-6">
-    <section class="overflow-hidden rounded-[2rem] border border-slate-200/70 bg-white shadow-2xl shadow-slate-200/50">
+<div class="relative overflow-hidden">
+    <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(253,85,40,0.12),_transparent_26%),radial-gradient(circle_at_top_right,_rgba(14,165,233,0.10),_transparent_22%),linear-gradient(180deg,_rgba(248,250,252,0.98),_white_15%,_rgba(248,250,252,0.96))]"></div>
+
+    <div class="relative mx-auto max-w-7xl space-y-6 px-4 pb-12 pt-28 sm:px-6 lg:px-8">
+    <section class="overflow-hidden rounded-[2.25rem] border border-slate-200/70 bg-white/95 shadow-[0_24px_80px_rgba(15,23,42,0.08)] backdrop-blur-xl">
         <div class="relative bg-gradient-to-br from-slate-950 via-slate-900 to-[#FD5528] px-6 py-8 text-white sm:px-8">
             <div class="pointer-events-none absolute inset-0 opacity-40">
                 <div class="absolute -top-20 right-0 h-64 w-64 rounded-full bg-white/10 blur-3xl"></div>
@@ -60,13 +63,13 @@
                 </div>
 
                 <div class="flex flex-wrap gap-3">
-                    <a href="{{ route('pages.index') }}" class="rounded-xl border border-white/15 bg-white/10 px-4 py-2 text-sm font-semibold text-white transition hover:bg-white/15">
+                    <a href="{{ route('pages.index') }}" class="rounded-xl border border-white/15 bg-white/10 px-4 py-2 text-sm font-semibold text-white transition hover:bg-white/20">
                         All Pages
                     </a>
-                    <a href="{{ route('sections.index') }}" class="rounded-xl border border-white/15 bg-white/10 px-4 py-2 text-sm font-semibold text-white transition hover:bg-white/15">
+                    <a href="{{ route('sections.index') }}" class="rounded-xl border border-white/15 bg-white/10 px-4 py-2 text-sm font-semibold text-white transition hover:bg-white/20">
                         Manage Sections
                     </a>
-                    <a href="{{ route('frontend.page', $page->slug) }}" target="_blank" class="rounded-xl bg-white px-4 py-2 text-sm font-semibold text-[#FD5528] transition hover:bg-slate-100">
+                    <a href="{{ route('frontend.page', $page->slug) }}" target="_blank" class="rounded-xl bg-white px-4 py-2 text-sm font-semibold text-[#FD5528] shadow-lg shadow-black/10 transition hover:bg-slate-100">
                         Preview Frontend
                     </a>
                 </div>
@@ -110,7 +113,7 @@
 
     <div class="grid gap-6 xl:grid-cols-12">
         <div class="space-y-6 xl:col-span-5">
-            <section class="rounded-[2rem] border border-slate-200/70 bg-white p-6 shadow-xl shadow-slate-200/40">
+            <section class="rounded-[2rem] border border-slate-200/70 bg-white/95 p-6 shadow-xl shadow-slate-200/40 backdrop-blur-xl">
                 <div class="flex items-center justify-between gap-4">
                     <div>
                         <h2 class="text-xl font-semibold text-slate-900">Edit section</h2>
@@ -205,7 +208,7 @@
                         </p>
                     </div>
 
-                    <button type="submit" class="inline-flex w-full items-center justify-center rounded-xl bg-[#FD5528] px-4 py-3 text-sm font-semibold text-white transition hover:bg-orange-600">
+                    <button type="submit" class="inline-flex w-full items-center justify-center rounded-xl bg-[#FD5528] px-4 py-3 text-sm font-semibold text-white shadow-lg shadow-[#FD5528]/25 transition hover:bg-orange-600">
                         Update Section
                     </button>
                 </form>
@@ -221,7 +224,7 @@
         </div>
 
         <div class="space-y-6 xl:col-span-7">
-            <section class="overflow-hidden rounded-[2rem] border border-slate-200/70 bg-white shadow-xl shadow-slate-200/40">
+            <section class="overflow-hidden rounded-[2rem] border border-slate-200/70 bg-white/95 shadow-xl shadow-slate-200/40 backdrop-blur-xl">
                 <div class="border-b border-slate-200/70 px-6 py-5">
                     <h2 class="text-xl font-semibold text-slate-900">Section preview</h2>
                     <p class="mt-1 text-sm text-slate-500">A quick visual reference of the current content.</p>
@@ -265,7 +268,7 @@
                 </div>
             </section>
 
-            <section class="rounded-[2rem] border border-slate-200/70 bg-white p-6 shadow-xl shadow-slate-200/40">
+            <section class="rounded-[2rem] border border-slate-200/70 bg-white/95 p-6 shadow-xl shadow-slate-200/40 backdrop-blur-xl">
                 <div class="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
                     <div>
                         <h2 class="text-xl font-semibold text-slate-900">Add section item</h2>

@@ -96,12 +96,12 @@
         <!-- CARD -->
         <div class="relative overflow-hidden rounded-xl group translate-y-4 sm:translate-y-6">
 
-          <img src="{{asset('assets/images/backend_coders_split_1.png')}}"
+          <img src="{{asset('assets/images/backend_coders_split_1.png')}}" alt="video"
             class="w-full h-full object-cover transition duration-500 group-hover:opacity-0 group-hover:scale-105">
 
           <video autoplay muted loop playsinline
             class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition duration-500">
-            <source src="{{asset('assets/images/1.mp4')}}" type="video/mp4">
+            <source src="{{asset('assets/images/1.mp4')}}"  type="video/mp4">
           </video>
 
         </div>
@@ -109,7 +109,7 @@
         <!-- CARD -->
         <div class="relative overflow-hidden rounded-xl group -translate-y-4 sm:-translate-y-6">
 
-          <img src="{{asset('assets/images/backend_coders_split_2.png')}}"
+          <img src="{{asset('assets/images/backend_coders_split_2.png')}}" alt="video"
             class="w-full h-full object-cover transition duration-500 group-hover:opacity-0 group-hover:scale-105">
 
           <video autoplay muted loop playsinline
@@ -122,7 +122,7 @@
         <!-- CARD -->
         <div class="relative overflow-hidden rounded-xl group translate-y-4 sm:translate-y-6">
 
-          <img src="{{asset('assets/images/backend_coders_split_3.png')}}"
+          <img src="{{asset('assets/images/backend_coders_split_3.png')}}" alt="video"
             class="w-full h-full object-cover transition duration-500 group-hover:opacity-0 group-hover:scale-105">
 
           <video autoplay muted loop playsinline
@@ -135,7 +135,7 @@
         <!-- CARD -->
         <div class="relative overflow-hidden rounded-xl group -translate-y-4 sm:-translate-y-6">
 
-          <img src="{{asset('assets/images/backend_coders_split_4.png')}}"
+          <img src="{{asset('assets/images/backend_coders_split_4.png')}}" alt="video"
             class="w-full h-full object-cover transition duration-500 group-hover:opacity-0 group-hover:scale-105">
 
           <video autoplay muted loop playsinline
@@ -205,8 +205,8 @@
 
         <!-- MAP IMAGE -->
         <img 
-          src="{{ asset('assets/images/map.jpeg') }}"
-          class="w-full lg:h-[500px] grayscale opacity-90 contrast-110"
+          src="{{ asset('assets/images/map.jpeg') }}" alt="map"
+          class="w-full lg:h-[500px] grayscale opacity-90 contrast-110 contrast-110 pointer-events-none select-none"
           alt="World Map"
         />
 
@@ -222,7 +222,7 @@
 
               <!-- ICON -->
               <img 
-                src="https://img.icons8.com/fluency/48/marker.png"
+                src="https://img.icons8.com/fluency/48/marker.png" alt="marker"
                 class="w-6 h-6 drop-shadow-lg"
               />
 
@@ -240,7 +240,7 @@
               <span class="absolute h-6 w-6 rounded-full bg-orange-500/30 animate-ping"></span>
 
               <img 
-                src="https://img.icons8.com/fluency/48/marker.png"
+                src="https://img.icons8.com/fluency/48/marker.png" alt="marker"
                 class="w-6 h-6 drop-shadow-lg"
               />
 
@@ -257,7 +257,7 @@
               <span class="absolute h-6 w-6 rounded-full bg-orange-500/30 animate-ping"></span>
 
               <img 
-                src="https://img.icons8.com/fluency/48/marker.png"
+                src="https://img.icons8.com/fluency/48/marker.png" alt="marker"
                 class="w-6 h-6 drop-shadow-lg"
               />
 
@@ -402,7 +402,7 @@
                         <span class="text-[0.6rem] font-semibold uppercase tracking-[0.4em] text-[#FD5528]">Bespoke Web</span>
                         <div class="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] 
                     hover:from-[#fb813b] hover:to-[#b00000]  shadow-inner">
-                            <img src="https://img.icons8.com/?size=100&id=DCkAZ79sIYhT&format=png&color=ffffff" alt="Custom web app" class="h-16 w-16" />
+                            <img src="https://img.icons8.com/?size=100&id=DCkAZ79sIYhT&format=png&color=ffffff"  alt="Custom web app" class="h-16 w-16" />
                         </div>
                         <h3 class="text-xl font-semibold transition duration-500 group-hover:text-black">Custom Web Applications</h3>
                         <p class="text-sm text-gray-600 group-hover:text-gray-900">We build secure and scalable custom web applications tailored to your business workflows, customer journeys, and growth goals. Our solutions are performance-focused, easy to maintain, and designed for long-term value.</p>
@@ -1035,7 +1035,7 @@
               <!-- USER -->
               <div class="flex items-center gap-3">
                 <div class="relative">
-                  <img src="{{ asset('assets/images/client1-d') }}"
+                  <img src="{{ asset('assets/images/client1-d') }}" alt="client"
                       class="w-12 h-12 rounded-full object-cover">
 
                   <!-- VERIFIED BADGE -->
@@ -1049,7 +1049,7 @@
               </div>
 
               <!-- GOOGLE LOGO -->
-          <img src="https://upload.wikimedia.org/wikipedia/commons/f/f4/Upwork_Logo.svg"
+          <img src="https://upload.wikimedia.org/wikipedia/commons/f/f4/Upwork_Logo.svg" alt="logo"
               class="w-12 opacity-80">
             </div>
 
@@ -1094,7 +1094,7 @@
               <!-- USER -->
               <div class="flex items-center gap-3">
                 <div class="relative">
-                  <img src="{{ asset('assets/images/client-mj.jpg') }}"
+                  <img src="{{ asset('assets/images/client-mj.jpg') }}" alt="client"
                       class="w-12 h-12 rounded-full object-cover">
 
                   <!-- VERIFIED BADGE -->
@@ -1108,7 +1108,7 @@
               </div>
 
               <!-- GOOGLE LOGO -->
-              <img src="https://upload.wikimedia.org/wikipedia/commons/f/f4/Upwork_Logo.svg"
+              <img src="https://upload.wikimedia.org/wikipedia/commons/f/f4/Upwork_Logo.svg" alt="logo"
                   class="w-12 opacity-80">
             </div>
 
@@ -1153,7 +1153,7 @@
                     <!-- USER -->
                     <div class="flex items-center gap-3">
                       <div class="relative">
-                        <img src="{{ asset('assets/images/client-p.jpg') }}"
+                        <img src="{{ asset('assets/images/client-p.jpg') }}" alt="client"
                             class="w-12 h-12 rounded-full object-cover">
 
                         <!-- VERIFIED BADGE -->
@@ -1167,7 +1167,7 @@
                     </div>
 
                     <!-- GOOGLE LOGO -->
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f4/Upwork_Logo.svg"
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f4/Upwork_Logo.svg" alt="logo"
                         class="w-12 opacity-80">
                   </div>
 
@@ -1213,7 +1213,7 @@
                     <!-- USER -->
                     <div class="flex items-center gap-3">
                       <div class="relative">
-                        <img src="{{ asset('assets/images/client-v.jpg') }}"
+                        <img src="{{ asset('assets/images/client-v.jpg') }}" alt="client"
                             class="w-12 h-12 rounded-full object-cover">
 
                         <!-- VERIFIED BADGE -->
@@ -1227,7 +1227,7 @@
                     </div>
 
                     <!-- GOOGLE LOGO -->
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f4/Upwork_Logo.svg"
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f4/Upwork_Logo.svg" alt="logo"
                         class="w-12 opacity-80">
                   </div>
 

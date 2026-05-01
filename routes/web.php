@@ -141,8 +141,14 @@ Route::middleware(['auth'])->group(function () {
         ->name('dashboard');
     Route::get('/leads', [DashboardController::class, 'leads'])
         ->name('leads.index');
+    Route::delete('/leads/{application}', [DashboardController::class, 'destroyApplication'])
+        ->name('leads.destroy');
     Route::get('/contact-leads', [DashboardController::class, 'contacts'])
         ->name('contacts.index');
+    Route::get('/contact-leads/{contact}', [DashboardController::class, 'showContact'])
+        ->name('contacts.show');
+    Route::delete('/contact-leads/{contact}', [DashboardController::class, 'destroyContact'])
+        ->name('contacts.destroy');
 
 });
 

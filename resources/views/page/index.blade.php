@@ -1,6 +1,6 @@
 @extends('layout.main')
 @section('content')
-<div class="max-w-6xl mx-auto">
+<div class="max-w-6xl mx-auto mt-32">
 
     <!-- Header -->
     <div class="flex bg-gradient-to-tr from-orange-50 to-orange-200 justify-between items-center mb-6 p-2">

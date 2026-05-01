@@ -5,7 +5,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'Laravel') }} - Admin</title>
+        <title>{{ config('app.name', 'Backend Coders India') }} - Admin</title>
+
+            <link rel="icon" type="image/svg+xml" alt="web development company in Kanpur" href="{{asset('assets/images/bci_icon.png')}}" class="bg-black"/>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -31,7 +33,7 @@
                     <div class="flex flex-col h-full">
                         <!-- Logo/Brand -->
                         <div class="flex items-center justify-center h-16 bg-gray-50 dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700">
-                            <h1 class="text-xl font-bold text-gray-900 dark:text-white">{{ config('app.name', 'Laravel') }}</h1>
+                            <h1 class="text-xl font-bold text-gray-900 dark:text-white">{{ config('app.name', 'Backend Coders India') }}</h1>
                         </div>
 
                         <!-- Navigation -->

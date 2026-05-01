@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 Sitemap: https://backendcodersindia.com/sitemap.xml
-Sitemap: https://backendcodersindia.com/ror.xml
+
