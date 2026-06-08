@@ -61,7 +61,7 @@
                         <input type="file" name="image" accept="image/*" class="w-full rounded-2xl border border-dashed border-slate-300 bg-white px-4 py-3 text-sm text-slate-600 shadow-sm outline-none transition file:mr-4 file:rounded-xl file:border-0 file:bg-[#FD5528] file:px-4 file:py-2 file:text-sm file:font-semibold file:text-white focus:border-[#FD5528] focus:ring-4 focus:ring-[#FD5528]/10">
                         @if($blog->image)
                             <div class="mt-3 overflow-hidden rounded-2xl border border-slate-200 shadow-sm">
-                                <img src="{{ asset('storage/' . $blog->image) }}" alt="{{ $blog->title }}" class="h-44 w-full object-cover">
+                                <img src="{{ $blog->getImageUrl() }}" alt="{{ $blog->title }}" class="h-44 w-full object-cover">
                             </div>
                         @endif
                         @error('image')<p class="mt-2 text-sm text-rose-500">{{ $message }}</p>@enderror

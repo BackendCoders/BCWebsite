@@ -13,18 +13,42 @@
 
     $mediaUrl = function ($path) {
         if (! $path) {
-            return null;
+            return asset('assets/images/banner.png');
         }
+
+        $path = trim(str_replace('\\', '/', (string) $path));
 
         if (\Illuminate\Support\Str::startsWith($path, ['http://', 'https://', '//'])) {
             return $path;
         }
 
-        if (\Illuminate\Support\Str::startsWith($path, 'storage/')) {
+        $path = ltrim($path, '/');
+
+        if (\Illuminate\Support\Str::startsWith($path, 'public/')) {
+            $path = \Illuminate\Support\Str::after($path, 'public/');
+        }
+
+        $storagePath = \Illuminate\Support\Str::startsWith($path, 'storage/')
+            ? \Illuminate\Support\Str::after($path, 'storage/')
+            : $path;
+
+        if (file_exists(public_path($path))) {
             return asset($path);
         }
 
-        return asset('storage/' . ltrim($path, '/'));
+        if (file_exists(public_path('storage/' . $storagePath))) {
+            return asset('storage/' . $storagePath);
+        }
+
+        if (\Illuminate\Support\Facades\Storage::disk('public')->exists($storagePath)) {
+            return asset('storage/' . $storagePath);
+        }
+
+        if (\Illuminate\Support\Str::startsWith($path, 'storage/')) {
+            return asset('storage/' . $storagePath);
+        }
+
+        return asset('assets/images/banner.png');
     };
 
     $defaultHero = [

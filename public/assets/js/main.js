@@ -11,12 +11,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const counterObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach((entry) => {
       if (!entry.isIntersecting) return;
+
       const element = entry.target;
       const target = parseInt(element.getAttribute('data-counter'), 10) || 0;
       let current = 0;
       const step = Math.max(1, Math.round(target / 60));
+
       const interval = setInterval(() => {
         current += step;
+
         if (current >= target) {
           element.textContent = target.toLocaleString();
           clearInterval(interval);
@@ -24,6 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
           element.textContent = current.toLocaleString();
         }
       }, 30);
+
       observer.unobserve(element);
     });
   }, { threshold: 0.5 });
@@ -39,201 +43,50 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-
-// Counter Animation
-
-document.addEventListener("DOMContentLoaded", () => {
-
-  const counters = document.querySelectorAll('.counter');
-  const section = document.getElementById('stats-section-pro');
-
-  if (!section) return;
-
-  let started = false;
-
-  const runCounter = () => {
-    if (started) return;
-
-    counters.forEach(counter => {
-      const target = +counter.getAttribute('data-target');
-      let count = 0;
-
-      const update = () => {
-        const increment = target / 80;
-
-        if (count < target) {
-          count += increment;
-          counter.innerText = Math.ceil(count) + (target !== 100 ? '+' : '%');
-          requestAnimationFrame(update);
-        } else {
-          counter.innerText = target + (target !== 100 ? '+' : '%');
-        }
-      };
-
-      update();
-    });
-
-    started = true;
-  };
-
-  // ✅ INTERSECTION OBSERVER (BEST)
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        runCounter();
-        observer.unobserve(section); // run once only
-      }
-    });
-  }, { threshold: 0.3 });
-
-  observer.observe(section);
-
-});
-
-// testimonial slider
-
-const swiper = new Swiper('.swiper', {
-  loop: true,
-  spaceBetween: 14,
-
-  slidesPerView: 2, // 👈 EXACTLY 2 CARDS
-
-  speed: 4000, // smooth continuous
-
-  autoplay: {
-    delay: 30,
-    disableOnInteraction: false,
-  },
-
-  freeMode: true,
-  freeModeMomentum: false,
-
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-
-  breakpoints: {
-    0: { slidesPerView: 1 },
-    768: { slidesPerView: 2 }, // 👈 2 on tablet+
-  }
-});
-
-
-
-// Pause on hover (premium feel)
 const swiperEl = document.querySelector('.swiper');
 
-swiperEl.addEventListener('mouseenter', () => swiper.autoplay.stop());
-swiperEl.addEventListener('mouseleave', () => swiper.autoplay.start());
-
-
-// 
-
-document.addEventListener("DOMContentLoaded", function () {
-
-  const code = `// Backend Coders India - Project Config
-
-{
-  "project": "enterprise-erp-v3",
-  "stack": {
-    "backend": ".NET Core 8.0",
-    "frontend": "React 18 + TypeScript",
-    "database": "SQL Server + Redis",
-    "cloud": "Azure App Services",
-    "ci_cd": "GitHub Actions"
-  },
-  "features": [
-    "multi-tenant-auth",
-    "real-time-sync",
-    "role-based-access",
-    "automated-reporting"
-  ],
-  "status": "production ✓"
-}`;
-
-  let i = 0;
-  const speed = 30;
-  const element = document.getElementById("typing-code");
-
-  function typeWriter() {
-    if (i < code.length) {
-      element.innerHTML += code.charAt(i);
-      i++;
-      setTimeout(typeWriter, speed);
-    }
-  }
-
-  typeWriter();
-});
-
-
-const navLinks = document.querySelectorAll(".nav-link");
-
-navLinks.forEach(link => {
-    link.addEventListener("click", function () {
-
-        // Remove Tailwind active styles from all
-        navLinks.forEach(l => {
-            l.classList.remove(
-                "text-orange-600",
-                "bg-orange-50",
-                "font-semibold"
-            );
-        });
-
-        // Add Tailwind active styles to clicked one
-        this.classList.add(
-            "text-orange-600",
-            "bg-orange-50",
-            "font-semibold"
-        );
-    });
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-  const items = document.querySelectorAll(".timeline-item");
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.remove("opacity-0", "translate-y-10");
-        entry.target.classList.add("opacity-100", "translate-y-0");
-      }
-    });
-  }, { threshold: 0.2 });
-
-  items.forEach(item => observer.observe(item));
-});
-
-
-
-
-document.addEventListener("DOMContentLoaded", () => {
-
-  const items = document.querySelectorAll(".faq-item");
-
-  items.forEach(item => {
-    item.addEventListener("click", () => {
-
-      const answer = item.querySelector(".faq-answer");
-      const icon = item.querySelector(".faq-icon");
-
-      const isOpen = answer.classList.contains("max-h-40");
-
-      // CLOSE ALL
-      items.forEach(i => {
-        i.querySelector(".faq-answer").classList.remove("max-h-40");
-        i.querySelector(".faq-icon").classList.remove("rotate-45");
-      });
-
-      // OPEN CURRENT
-      if (!isOpen) {
-        answer.classList.add("max-h-40");
-        icon.classList.add("rotate-45");
-      }
-
-    });
+if (swiperEl && window.Swiper) {
+  const swiper = new Swiper(swiperEl, {
+    loop: true,
+    spaceBetween: 14,
+    slidesPerView: 2,
+    speed: 4000,
+    autoplay: {
+      delay: 30,
+      disableOnInteraction: false,
+    },
+    freeMode: true,
+    freeModeMomentum: false,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    breakpoints: {
+      0: { slidesPerView: 1 },
+      768: { slidesPerView: 2 },
+    },
   });
 
+  swiperEl.addEventListener('mouseenter', () => swiper.autoplay.stop());
+  swiperEl.addEventListener('mouseleave', () => swiper.autoplay.start());
+}
+
+const navLinks = document.querySelectorAll('.nav-link');
+
+navLinks.forEach((link) => {
+  link.addEventListener('click', function () {
+    navLinks.forEach((navLink) => {
+      navLink.classList.remove(
+        'text-orange-600',
+        'bg-orange-50',
+        'font-semibold',
+      );
+    });
+
+    this.classList.add(
+      'text-orange-600',
+      'bg-orange-50',
+      'font-semibold',
+    );
+  });
 });

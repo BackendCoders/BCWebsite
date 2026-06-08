@@ -39,25 +39,54 @@
             </div>
         </div>
 
-        <div class="grid grid-cols-2 gap-4 mb-6">
-            <div>
-                <label class="block text-sm font-medium">Menu Type</label>
-                @php
-                    $selectedType = \App\Models\MenuItem::normalizeType(old('type', $page->menuItem?->type ?? ''));
-                @endphp
-                <select name="type" class="w-full border p-2 rounded mt-1">
-                    <option value="" {{ blank($selectedType) ? 'selected' : '' }}>No Type Selection</option>
-                    @foreach(\App\Models\MenuItem::getTypes() as $value => $label)
-                        <option value="{{ $value }}" {{ $selectedType === $value ? 'selected' : '' }}>
-                            {{ $label }}
-                        </option>
-                    @endforeach
-                </select>
-                @error('type')
-                    <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
-                @enderror
-            </div>
-        </div>
+       <div class="grid grid-cols-2 gap-4 mb-6">
+
+    <div>
+
+        <label class="block text-sm font-medium text-slate-700">
+            Menu Type
+        </label>
+
+        @php
+            $selectedType = old(
+                'type',
+                optional($page->menuItem)->type
+            );
+        @endphp
+
+        <select
+            name="type"
+            class="w-full border border-slate-300 p-3 rounded-xl mt-1 bg-white focus:border-[#FD5528] focus:ring-4 focus:ring-[#FD5528]/10 outline-none"
+        >
+
+            <option value="">
+                No Type Selection
+            </option>
+
+            @foreach(\App\Models\MenuItem::getTypes() as $value => $label)
+
+                <option
+                    value="{{ $value }}"
+                    {{ $selectedType == $value ? 'selected' : '' }}
+                >
+                    {{ $label }}
+                </option>
+
+            @endforeach
+
+        </select>
+
+        @error('type')
+
+            <p class="text-red-500 text-xs mt-2">
+                {{ $message }}
+            </p>
+
+        @enderror
+
+    </div>
+
+</div>
 
         <!-- SEO -->
         <div class="border-t pt-4 mb-6">

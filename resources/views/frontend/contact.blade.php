@@ -21,12 +21,15 @@
 
     <!-- HEADING -->
     <h1 class="mt-6 text-4xl sm:text-5xl md:text-6xl font-bold leading-tight">
-     Contact<span class="text-[#FD5528]"> Us</span>
+    Contact <span class="text-[#FD5528]">Us</span>
     </h1>
 
+    <h2 class="text-md text-[#FD5528] font-bold uppercase tracking-[0.35em] ">
+Let’s Talk About Your Project
+    </h2>
     <!-- SUBTEXT -->
-    <p class="mt-6 text-gray-300 text-sm sm:text-base md:text-lg max-w-2xl mx-auto">
-      Build your future with us. Work on exciting projects, grow your skills, and make an impact.
+
+Connect with Backend Coders India for software, web, app, and digital growth discussions built around your business goals.
     </p>
 
  

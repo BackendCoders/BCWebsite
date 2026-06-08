@@ -15,20 +15,20 @@
   <div class="absolute inset-0 bg-black/60"></div>
 
   <!-- CONTENT -->
-  <div class="relative z-10 max-w-4xl px-6">
+  <div class="relative z-10 max-w-6xl px-6">
 
   
 
     <!-- HEADING -->
     <h1 class="mt-6 text-4xl sm:text-5xl md:text-6xl font-bold leading-tight">
-     Processes & Technologies at <span class="text-[#FC5124] font-semibold">Backend</span> <span class="text-[#FD5528] font-semibold">
-     
+        Our Software Development <span class="text-[#FC5124] font-semibold"> Process</span> <span class="text-[#FD5528] font-semibold">
+
     </h1>
 
     <!-- SUBTEXT -->
-    <p class="mt-6 text-gray-300 text-sm sm:text-base md:text-lg max-w-2xl mx-auto">
-      We are a passionate team of developers and designers helping businesses 
-      transform ideas into scalable, high-performance digital products.
+    <p class="mt-6 text-gray-300 text-sm sm:text-base md:text-lg max-w-6xl mx-auto">
+            A clear process that takes ideas from planning to delivery with better visibility and execution.
+        Backend Coders India follows a structured workflow that helps startups, SMEs, and enterprises move forward with clarity, collaboration, and reliable project delivery.
     </p>
 
  
@@ -184,6 +184,413 @@
 
 </section>
 <!-- pr -->
+
+<!-- SOFTWARE DEVELOPMENT PROCESS SECTION -->
+<section class="relative bg-white py-24 overflow-hidden">
+    <!-- Background Elements -->
+    <div class="absolute inset-0 pointer-events-none">
+        <div class="absolute top-0 left-0 w-72 h-72 bg-orange-100 rounded-full blur-3xl opacity-60"></div>
+        <div class="absolute bottom-0 right-0 w-96 h-96 bg-orange-50 rounded-full blur-3xl opacity-80"></div>
+    </div>
+
+    <div class="relative max-w-7xl mx-auto px-6 lg:px-8">
+
+        <!-- Header -->
+        <div class="max-w-4xl mx-auto text-center">
+            <span class="inline-flex items-center px-5 py-2 rounded-full bg-orange-100 text-[#FD5528] font-semibold text-sm tracking-wide">
+                Our Development Methodology
+            </span>
+
+            <h2 class="mt-6 text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
+                 Projects That Reflect
+                <span class="text-[#FD5528]">   Real Execution and Business Impact</span>
+            </h2>
+
+            <p class="mt-6 text-lg text-gray-600 leading-relaxed">
+                A clear, structured approach that helps ideas move from planning to delivery
+                with better visibility, stronger execution, and long-term reliability.
+            </p>
+
+            <p class="mt-4 text-base md:text-lg text-gray-500 leading-relaxed">
+       
+Explore selected work from Backend Coders India across software, web, ecommerce, mobile, ERP, SaaS, and custom digital solutions.
+We partner with startups, SMEs, and growing businesses to deliver technology solutions that solve operational challenges, support business growth, and improve digital performance. Each project reflects practical thinking, technical capability, and a focus on building systems that work in real business environments.
+
+            </p>
+        </div>
+
+
+    </div>
+</section>
+
+
+<!-- DELIVERY PROCESS SECTION -->
+<section class="relative bg-white py-24 overflow-hidden">
+    <!-- Background Effects -->
+    <div class="absolute inset-0 pointer-events-none">
+        <div class="absolute -top-20 -left-20 w-72 h-72 bg-orange-100 rounded-full blur-3xl opacity-60"></div>
+        <div class="absolute bottom-0 right-0 w-96 h-96 bg-orange-50 rounded-full blur-3xl opacity-80"></div>
+    </div>
+
+    <div class="relative max-w-7xl mx-auto px-6 lg:px-8">
+
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+            <!-- LEFT CONTENT -->
+            <div>
+
+                <span class="inline-flex items-center px-5 py-2 rounded-full bg-orange-100 text-[#FD5528] text-sm font-semibold tracking-wide">
+                    Our Delivery Framework
+                </span>
+
+                <h2 class="mt-6 text-4xl lg:text-5xl font-extrabold text-gray-900 leading-tight">
+                   A Delivery Process Built Around 
+                    <span class="text-[#FD5528]">Clarity and Execution</span>
+                </h2>
+
+                <p class="mt-6 text-lg text-gray-600 leading-relaxed">
+                    Successful digital products are not built through guesswork. They come from structured planning, focused execution, and steady communication throughout the project lifecycle.
+                </p>
+
+                <p class="mt-5 text-gray-600 leading-relaxed">
+                
+                  At Backend Coders India, our delivery philosophy is centered on understanding requirements clearly, planning with purpose, building in stages, and maintaining visibility across every milestone. This helps clients make better decisions, manage scope more effectively, and move forward with confidence.
+
+                </p>
+
+           
+
+            </div>
+
+            <!-- RIGHT IMAGE -->
+            <div class="relative">
+
+                <!-- Main Image -->
+                <div class="relative overflow-hidden rounded-[2rem] border border-orange-100 bg-white shadow-[0_30px_80px_rgba(15,23,42,0.12)]">
+                    <img
+                        src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80"
+                        alt="Software Development Process"
+                        class="w-full h-full object-cover">
+                </div>
+
+             
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- Development Process -->
+<section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+
+        <!-- Heading -->
+        <div class="max-w-4xl mx-auto text-center">
+            <span
+                class="inline-flex items-center rounded-full bg-orange-50 px-5 py-2 text-sm font-semibold text-[#FD5528] border border-orange-100">
+                Development Process
+            </span>
+
+            <h2 class="mt-6 text-4xl md:text-5xl font-bold tracking-tight text-gray-900">
+                Our End-to-End Development Process
+            </h2>
+
+            <p class="mt-6 text-lg leading-relaxed text-gray-600">
+                A structured and transparent workflow designed to transform ideas into
+                scalable digital solutions while maintaining quality, visibility, and
+                business alignment at every stage.
+            </p>
+        </div>
+
+        <!-- Timeline -->
+        <div class="relative mt-20">
+
+            <!-- Desktop Connector -->
+            <div
+                class="hidden lg:block absolute top-10 left-0 right-0 h-[2px] bg-gradient-to-r from-orange-200 via-orange-300 to-orange-200">
+            </div>
+
+            <div class="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+
+                <!-- Card 1 -->
+                <div
+                    class="group relative rounded-3xl border border-gray-100 bg-white p-8 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
+
+
+                    <h3 class="mt-8 text-2xl font-bold text-[#FD5528]">
+                         Discovery and Consultation
+                    </h3>
+
+                    <p class="mt-4 leading-relaxed text-gray-600">
+                      
+                    understand idea and goals
+
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div
+                    class="group relative rounded-3xl bg-[#111111] p-8 shadow-xl transition-all duration-500 hover:-translate-y-2">
+
+                   
+
+                    <h3 class="mt-8 text-2xl font-bold text-[#FD5528]">
+                          Requirement Analysis
+                    </h3>
+
+                    <p class="mt-4 leading-relaxed text-gray-600">
+                     
+                          define scope and features
+
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div
+                    class="group relative rounded-3xl border border-gray-100 bg-white p-8 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
+
+                  
+
+                    <h3 class="mt-8 text-2xl font-bold text-[#FD5528]">
+                       Planning and Strategy
+                    </h3>
+
+                    <p class="mt-4 leading-relaxed text-gray-600">
+                                             
+                        create the roadmap
+
+                    </p>
+                </div>
+
+                <!-- Card 4 -->
+                <div
+                    class="group relative rounded-3xl border border-gray-100 bg-white p-8 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
+
+                
+
+                    <h3 class="mt-8 text-2xl font-bold text-[#FD5528]">
+                        UI and UX Design
+                    </h3>
+
+                    <p class="mt-4 leading-relaxed text-gray-600">
+                       
+                    shape the user experience
+
+                    </p>
+                </div>
+
+                <!-- Card 5 -->
+                <div
+                    class="group relative rounded-3xl bg-[#111111] p-8 shadow-xl transition-all duration-500 hover:-translate-y-2">
+
+               
+
+                    <h3 class="mt-8 text-2xl font-bold text-[#FD5528]">
+                        Development
+                    </h3>
+
+                    <p class="mt-4 leading-relaxed text-gray-600">
+                     
+                      build in agile stages
+
+                    </p>
+                </div>
+
+                <!-- Card 6 -->
+                <div
+                    class="group relative rounded-3xl border border-gray-100 bg-white p-8 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
+
+              
+
+                    <h3 class="mt-8 text-2xl font-bold text-[#FD5528]">
+                       Testing and Quality Assurance
+                    </h3>
+
+                    <p class="mt-4 leading-relaxed text-gray-600">
+                      
+                    test quality and performance
+
+                    </p>
+                </div>
+
+                <!-- Card 7 -->
+                <div
+                    class="group relative rounded-3xl border border-gray-100 bg-white p-8 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
+
+              
+
+                    <h3 class="mt-8 text-2xl font-bold text-[#FD5528]">
+                           Deployment and Launch
+                    </h3>
+
+                    <p class="mt-4 leading-relaxed text-gray-600">
+                      prepare and launch the solution
+
+                    </p>
+                </div>
+
+                <!-- Card 8-->
+                <div
+                    class="group relative rounded-3xl border border-gray-100 bg-white p-8 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
+
+              
+
+                    <h3 class="mt-8 text-2xl font-bold text-[#FD5528]">
+                           Ongoing Support
+                    </h3>
+
+                    <p class="mt-4 leading-relaxed text-gray-600">
+                   
+                      provide ongoing updates and support.
+
+
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- COLLABORATION & WHY OUR PROCESS WORKS -->
+<section class="relative bg-white py-24 overflow-hidden">
+    <!-- Background Blur -->
+    <div class="absolute inset-0 pointer-events-none">
+        <div class="absolute top-0 right-0 w-80 h-80 bg-orange-50 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 w-72 h-72 bg-orange-100/50 rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="relative max-w-7xl mx-auto px-4 lg:px-6">
+
+        <div class="grid lg:grid-cols-2 gap-12">
+
+            <!-- LEFT IMAGE -->
+            <div class="relative">
+
+                <div class="relative overflow-hidden rounded-[2rem] border border-orange-100 shadow-[0_25px_80px_rgba(15,23,42,0.10)]">
+                    <img
+                        src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80"
+                        alt="Project Collaboration and Communication"
+                        class="w-full h-full object-cover">
+                </div>
+
+              
+                <!-- Decorative Circle -->
+                <div class="absolute -top-8 -left-8 w-32 h-32 rounded-full border-[18px] border-orange-100"></div>
+
+            </div>
+
+            <!-- RIGHT CONTENT -->
+            <div>
+
+                <span class="inline-flex items-center px-5 py-2 rounded-full bg-orange-50 border border-orange-100 text-[#FD5528] text-sm font-semibold">
+                    Collaboration & Communication
+                </span>
+
+                <h2 class="mt-6 text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+                   Collaboration and Communication 
+                    <span class="text-[#FD5528]">Throughout the Project</span>
+                </h2>
+
+                <p class="mt-6 text-lg text-gray-600 leading-relaxed">
+                   
+                  A strong process depends on more than technical delivery. It also depends on how well a project is communicated, reviewed, and managed along the way.
+                  Our workflow supports project visibility through milestone tracking, feedback loops, and clear communication at each stage. Clients stay involved in key decisions without needing to manage every technical detail. This creates a more transparent development workflow, better alignment, and fewer surprises during execution.
+
+                </p>
+            </div>
+
+        </div>
+
+        <!-- WHY OUR PROCESS WORKS -->
+        <div class="mt-28">
+
+            <div class="relative overflow-hidden rounded-[2rem] bg-[#111111] p-10 lg:p-16">
+
+                <div class="absolute top-0 right-0 w-80 h-80 bg-[#FD5528]/20 rounded-full blur-3xl"></div>
+
+                <div class="relative">
+
+                    <div class="max-w-3xl">
+                        <span class="inline-flex items-center px-5 py-2 rounded-full bg-white/10 text-[#FD5528] text-sm font-semibold">
+                            Why Clients Choose Us
+                        </span>
+
+                        <h2 class="mt-6 text-4xl lg:text-5xl font-bold text-black">
+                           Why Our Process Works
+                        </h2>
+
+                        <p class="mt-6 text-lg text-black leading-relaxed">
+                      
+                          Our process works because it balances planning, execution, quality control, and collaboration in a practical way.
+                          Clients trust Backend Coders India for:
+
+                        </p>
+                    </div>
+
+                    <!-- Benefits Grid -->
+                    <div class="mt-12 grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+
+                        <div class="bg-white/5 border border-white/10 rounded-2xl p-5">
+                            <h3 class="font-semibold text-black">
+                                •	clear project structure
+                            </h3>
+                        </div>
+
+                        <div class="bg-white/5 border border-white/10 rounded-2xl p-5">
+                            <h3 class="font-semibold text-black">
+                             •	transparent communication
+                            </h3>
+                        </div>
+
+                        <div class="bg-white/5 border border-white/10 rounded-2xl p-5">
+                            <h3 class="font-semibold text-black">
+                            •	agile and milestone-based execution
+                            </h3>
+                        </div>
+
+                        <div class="bg-white/5 border border-white/10 rounded-2xl p-5">
+                            <h3 class="font-semibold text-black">
+                              •	better requirement alignment
+                            </h3>
+                        </div>
+
+                        <div class="bg-white/5 border border-white/10 rounded-2xl p-5">
+                            <h3 class="font-semibold text-black">
+                              •	quality-focused delivery
+                            </h3>
+                        </div>
+
+                        <div class="bg-white/5 border border-white/10 rounded-2xl p-5">
+                            <h3 class="font-semibold text-black">
+                              •	scalable implementation thinking
+                            </h3>
+                        </div>
+
+                        <div class="bg-white/5 border border-white/10 rounded-2xl p-5">
+                            <h3 class="font-semibold text-black">
+                            •	continued support after launch
+                            </h3>
+                        </div>
+
+                    </div>
+
+                    <!-- Bottom Text -->
+                    <p class="mt-10 text-black leading-relaxed max-w-4xl">
+                     This approach helps reduce project risk, improve accountability, and create solutions that are more reliable in real business use.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
 
 <!-- TECHNOLOGIES -->
 <section id="technologies" class="bg-[#F9FAFB] px-6 py-16 sm:py-20 lg:py-24">
@@ -371,398 +778,53 @@
 <!-- END TECHNOLOGIES -->
 
 
-<section class="bg-gray-50 py-16">
 
-  <div class="max-w-7xl mx-auto px-6">
-   <div class="text-center md:mb-16">
-         <p 
-      data-aos="fade-up"
-      class="inline-block text-xs sm:text-sm font-semibold uppercase tracking-[0.35em] 
-         text-[#FD5528] relative px-5 py-2 rounded-full 
-         bg-white/60 backdrop-blur-md 
-         shadow-[0_8px_20px_rgba(0,0,0,0.08)] 
-         border border-white/40
-         before:absolute before:inset-0 before:rounded-full 
-         before:bg-gradient-to-r before:from-[#FD5528]/20 before:to-orange-200/30 
-         before:-z-10">
 
-         Service we offer
+<!-- CTA SECTION -->
+<section class="relative overflow-hidden py-20 bg-gradient-to-r from-[#FC5124] via-[#FD5528] to-orange-400 text-white">
+
+  <!-- BACKGROUND GLOW -->
+  <div class="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_top_left,_white,_transparent_50%)]"></div>
+
+  <div class="relative max-w-5xl mx-auto px-6 text-center">
+
+    <!-- HEADING -->
+    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 leading-tight">
+    Ready to Start Your Project?
+    </h2>
+
+    <!-- SUBTEXT -->
+    <p class="text-white/80 text-sm sm:text-base md:text-lg max-w-2xl mx-auto mb-10">
+        Need a software team with a clear and reliable process? Backend Coders India is ready to help.
+        Get in touch with our team to build your project with clarity and confidence.
 
     </p>
-    
-      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-3">
-          What We Do
-      </h2>
-      <p class="text-gray-500 mt-3 max-w-xl mx-auto">
-          From custom backend development to full-stack solutions, we offer a range of services to bring your digital vision to life.
-      </p>
-    </div>
 
-    <!-- GRID -->
-    <div class=" grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+    <!-- BUTTONS -->
+    <div class="flex flex-col sm:flex-row justify-center gap-4">
 
-      <!-- CARD -->
-  <!-- GLASS CARD -->
-    <div class="relative backdrop-blur-xl bg-white/10 border border-white/20 rounded-2xl p-6 shadow-xl hover:scale-105 transition duration-500">
+      <!-- PRIMARY BUTTON -->
+      <a href="{{ route('frontend.contact') }}"
+         class="group inline-flex items-center justify-center bg-white text-[#FC5124] px-6 py-3 rounded-xl font-semibold shadow-lg hover:shadow-2xl hover:scale-105 transition duration-300">
 
-      <!-- TITLE -->
-      <h3 class="text-2xl font-bold text-[#FC5124] mb-4 flex items-center gap-2">
-        <i class='bx bx-code-alt text-[#FC5124] text-3xl'></i>
-        Application Development
-      </h3>
+        Contact Us
 
-      <!-- STEPS -->
-      <div class="space-y-4 text-black">
+        <!-- ARROW -->
+        <span class="ml-2 transition group-hover:translate-x-1">→</span>
+      </a>
 
-        <div class="flex items-center gap-3">
-          <i class='bx bx-search-alt-2 text-[#FC5124] text-xl'></i>
-          <span>Requirement Analysis</span>
-        </div>
+      <!-- WHATSAPP BUTTON -->
+      <a href="https://wa.me/+919140092133" target="_blank"
+         class="group inline-flex items-center justify-center border border-white/40 px-6 py-3 rounded-xl font-semibold backdrop-blur-md hover:bg-white/10 hover:scale-105 transition duration-300">
 
-        <div class="flex items-center gap-3">
-          <i class='bx bx-palette text-[#FC5124] text-xl'></i>
-          <span>UI/UX Planning</span>
-        </div>
-
-        <div class="flex items-center gap-3">
-          <i class='bx bx-server text-[#FC5124] text-xl'></i>
-          <span>Backend Architecture</span>
-        </div>
-
-        <div class="flex items-center gap-3">
-          <i class='bx bx-check-shield text-[#FC5124] text-xl'></i>
-          <span>Testing & Deployment</span>
-        </div>
-
-      </div>
-
-      <!-- CTA -->
-      <div class="mt-6">
-        <a href="{{ route('frontend.packages') }}" <button class="w-full bg-gray-200 text-[#FC5124] px-2 py-2 rounded-lg font-semibold">
-          Learn More →
-        </button></a>
-      </div>
-
-    </div>
-
-
-
-
-      <!-- CARD -->
-
-    <div class="relative backdrop-blur-xl bg-white/10 border border-white/20 rounded-2xl p-6 shadow-xl hover:scale-105 transition duration-500">
-
-      <!-- TITLE -->
-      <h3 class="text-2xl font-bold text-[#FC5124] mb-4 flex items-center gap-2">
-        <i class='bx bx-code-alt text-[#FC5124] text-3xl'></i>
-       Web Development
-      </h3>
-
-      <!-- STEPS -->
-      <div class="space-y-4 text-black">
-
-        <div class="flex items-center gap-3">
-          <i class='bx bx-search-alt-2 text-[#FC5124] text-xl'></i>
-          <span>Wireframing & Design</span>
-        </div>
-
-        <div class="flex items-center gap-3">
-          <i class='bx bx-palette text-[#FC5124] text-xl'></i>
-          <span>Frontend Development</span>
-        </div>
-
-        <div class="flex items-center gap-3">
-          <i class='bx bx-server text-[#FC5124] text-xl'></i>
-          <span>Backend Integration</span>
-        </div>
-
-        <div class="flex items-center gap-3">
-          <i class='bx bx-check-shield text-[#FC5124] text-xl'></i>
-          <span> Performance Optimization</span>
-        </div>
-
-      </div>
-
-      <!-- CTA -->
-      <div class="mt-6">
-        <a href="{{ route('frontend.packages') }}" <button class="w-full bg-gray-200 text-[#FC5124] px-2 py-2 rounded-lg font-semibold">
-          Learn More →
-        </button></a>
-      </div>
-
-    </div>
-
-
-      <!-- CARD -->
-    <div class="relative backdrop-blur-xl bg-white/10 border border-white/20 rounded-2xl p-6 shadow-xl hover:scale-105 transition duration-500">
-
-      <!-- TITLE -->
-      <h3 class="text-2xl font-bold text-[#FC5124] mb-4 flex items-center gap-2">
-        <i class='bx bx-code-alt text-[#FC5124] text-3xl'></i>
-        SEO
-      </h3>
-
-      <!-- STEPS -->
-      <div class="space-y-4 text-black">
-
-        <div class="flex items-center gap-3">
-          <i class='bx bx-search-alt-2 text-[#FC5124] text-xl'></i>
-          <span>Keyword Research</span>
-        </div>
-
-        <div class="flex items-center gap-3">
-          <i class='bx bx-palette text-[#FC5124] text-xl'></i>
-          <span>On-page Optimization</span>
-        </div>
-
-        <div class="flex items-center gap-3">
-          <i class='bx bx-server text-[#FC5124] text-xl'></i>
-          <span>Technical SEO</span>
-        </div>
-
-        <div class="flex items-center gap-3">
-          <i class='bx bx-check-shield text-[#FC5124] text-xl'></i>
-          <span>Reporting & Analytics</span>
-        </div>
-
-      </div>
-
-      <!-- CTA -->
-      <div class="mt-6">
-        <a href="{{ route('frontend.packages') }}" <button class="w-full bg-gray-200 text-[#FC5124] px-2 py-2 rounded-lg font-semibold">
-          Learn More →
-        </button></a>
-      </div>
-
-    </div>   
-     
-
-      <!-- CARD -->
-    <div class="relative backdrop-blur-xl bg-white/10 border border-white/20 rounded-2xl p-6 shadow-xl hover:scale-105 transition duration-500">
-
-      <!-- TITLE -->
-      <h3 class="text-2xl font-bold text-[#FC5124] mb-4 flex items-center gap-2">
-        <i class='bx bx-code-alt text-[#FC5124] text-3xl'></i>
-        Digital Marketing
-      </h3>
-
-      <!-- STEPS -->
-      <div class="space-y-4 text-black">
-
-        <div class="flex items-center gap-3">
-          <i class='bx bx-search-alt-2 text-[#FC5124] text-xl'></i>
-          <span>Keyword Research</span>
-        </div>
-
-        <div class="flex items-center gap-3">
-          <i class='bx bx-palette text-[#FC5124] text-xl'></i>
-          <span>On-page Optimization</span>
-        </div>
-
-        <div class="flex items-center gap-3">
-          <i class='bx bx-server text-[#FC5124] text-xl'></i>
-          <span>Technical SEO</span>
-        </div>
-
-        <div class="flex items-center gap-3">
-          <i class='bx bx-check-shield text-[#FC5124] text-xl'></i>
-          <span>Reporting & Analytics</span>
-        </div>
-
-      </div>
-
-      <!-- CTA -->
-      <div class="mt-6">
-        <a href="{{ route('frontend.packages') }}" <button class="w-full bg-gray-200 text-[#FC5124] px-2 py-2 rounded-lg font-semibold">
-          Learn More →
-        </button></a>
-      </div>
-
-    </div>  
-     
-
-      <!-- CARD -->
-    <div class="relative backdrop-blur-xl bg-white/10 border border-white/20 rounded-2xl p-6 shadow-xl hover:scale-105 transition duration-500">
-
-      <!-- TITLE -->
-      <h3 class="text-2xl font-bold text-[#FC5124] mb-4 flex items-center gap-2">
-        <i class='bx bx-code-alt text-[#FC5124] text-3xl'></i>
-        Digital Marketing
-      </h3>
-
-      <!-- STEPS -->
-      <div class="space-y-4 text-black">
-
-        <div class="flex items-center gap-3">
-          <i class='bx bx-search-alt-2 text-[#FC5124] text-xl'></i>
-          <span>Strategy Planning</span>
-        </div>
-
-        <div class="flex items-center gap-3">
-          <i class='bx bx-palette text-[#FC5124] text-xl'></i>
-          <span>Social Media Campaigns</span>
-        </div>
-
-        <div class="flex items-center gap-3">
-          <i class='bx bx-server text-[#FC5124] text-xl'></i>
-          <span>Paid Ads (PPC)</span>
-        </div>
-
-        <div class="flex items-center gap-3">
-          <i class='bx bx-check-shield text-[#FC5124] text-xl'></i>
-          <span>Performance Tracking</span>
-        </div>
-
-      </div>
-
-      <!-- CTA -->
-      <div class="mt-6">
-        <a href="{{ route('frontend.packages') }}" <button class="w-full bg-gray-200 text-[#FC5124] px-2 py-2 rounded-lg font-semibold">
-          Learn More →
-        </button></a>
-      </div>
-
-    </div>  
-   
-
-      <!-- CARD -->
-    <div class="relative backdrop-blur-xl bg-white/10 border border-white/20 rounded-2xl p-6 shadow-xl hover:scale-105 transition duration-500">
-
-      <!-- TITLE -->
-      <h3 class="text-2xl font-bold text-[#FC5124] mb-4 flex items-center gap-2">
-        <i class='bx bx-code-alt text-[#FC5124] text-3xl'></i>
-        Software Development
-      </h3>
-
-      <!-- STEPS -->
-      <div class="space-y-4 text-black">
-
-        <div class="flex items-center gap-3">
-          <i class='bx bx-search-alt-2 text-[#FC5124] text-xl'></i>
-          <span>System Design</span>
-        </div>
-
-        <div class="flex items-center gap-3">
-          <i class='bx bx-palette text-[#FC5124] text-xl'></i>
-          <span>Development & Integration</span>
-        </div>
-
-        <div class="flex items-center gap-3">
-          <i class='bx bx-server text-[#FC5124] text-xl'></i>
-          <span>QA Testing</span>
-        </div>
-
-        <div class="flex items-center gap-3">
-          <i class='bx bx-check-shield text-[#FC5124] text-xl'></i>
-          <span>Maintenance & Support</span>
-        </div>
-
-      </div>
-
-      <!-- CTA -->
-      <div class="mt-6">
-        <a href="{{ route('frontend.packages') }}" <button class="w-full bg-gray-200 text-[#FC5124] px-2 py-2 rounded-lg font-semibold">
-          Learn More →
-        </button></a>
-      </div>
-
-    </div>
-      
-
-      <!-- CARD -->
-    <div class="relative backdrop-blur-xl bg-white/10 border border-white/20 rounded-2xl p-6 shadow-xl hover:scale-105 transition duration-500">
-
-      <!-- TITLE -->
-      <h3 class="text-2xl font-bold text-[#FC5124] mb-4 flex items-center gap-2">
-        <i class='bx bx-code-alt text-[#FC5124] text-3xl'></i>
-        App Development
-      </h3>
-
-      <!-- STEPS -->
-      <div class="space-y-4 text-black">
-
-        <div class="flex items-center gap-3">
-          <i class='bx bx-search-alt-2 text-[#FC5124] text-xl'></i>
-          <span>UI/UX Design</span>
-        </div>
-
-        <div class="flex items-center gap-3">
-          <i class='bx bx-palette text-[#FC5124] text-xl'></i>
-          <span>Android/iOS Development</span>
-        </div>
-
-        <div class="flex items-center gap-3">
-          <i class='bx bx-server text-[#FC5124] text-xl'></i>
-          <span>API Integration</span>
-        </div>
-
-        <div class="flex items-center gap-3">
-          <i class='bx bx-check-shield text-[#FC5124] text-xl'></i>
-          <span> App Store Deployment</span>
-        </div>
-
-      </div>
-
-      <!-- CTA -->
-      <div class="mt-6">
-        <a href="{{ route('frontend.packages') }}" <button class="w-full bg-gray-200 text-[#FC5124] px-2 py-2 rounded-lg font-semibold">
-          Learn More →
-        </button></a>
-      </div>
-
-    </div>
-    
-
-      <!-- CARD -->
-    <div class="relative backdrop-blur-xl bg-white/10 border border-white/20 rounded-2xl p-6 shadow-xl hover:scale-105 transition duration-500">
-
-      <!-- TITLE -->
-      <h3 class="text-2xl font-bold text-[#FC5124] mb-4 flex items-center gap-2">
-        <i class='bx bx-code-alt text-[#FC5124] text-3xl'></i>
-       Graphic Design
-      </h3>
-
-      <!-- STEPS -->
-      <div class="space-y-4 text-black">
-
-        <div class="flex items-center gap-3">
-          <i class='bx bx-search-alt-2 text-[#FC5124] text-xl'></i>
-          <span>Branding & Identity</span>
-        </div>
-
-        <div class="flex items-center gap-3">
-          <i class='bx bx-palette text-[#FC5124] text-xl'></i>
-          <span>UI/UX Design</span>
-        </div>
-
-        <div class="flex items-center gap-3">
-          <i class='bx bx-server text-[#FC5124] text-xl'></i>
-          <span>Social Media Creatives</span>
-        </div>
-
-        <div class="flex items-center gap-3">
-          <i class='bx bx-check-shield text-[#FC5124] text-xl'></i>
-          <span>Marketing Materials</span>
-        </div>
-
-      </div>
-
-      <!-- CTA -->
-      <div class="mt-6">
-        <a href="{{ route('frontend.packages') }}" <button class="w-full bg-gray-200 text-[#FC5124] px-2 py-2 rounded-lg font-semibold">
-          Learn More →
-        </button></a>
-      </div>
-
-    </div>
+       
+        Let's Chat on WhatsApp
+      </a>
 
     </div>
 
   </div>
 
 </section>
-
-
-
 
 @endsection

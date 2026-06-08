@@ -37,18 +37,31 @@
             background: rgb(248 250 252);
         }
 
+        .rich-editor-shell {
+            display: flex;
+            height: 13rem;
+            flex-direction: column;
+        }
+
         .ql-container.ql-snow {
             border-color: rgb(226 232 240);
             border-bottom-left-radius: 1rem;
             border-bottom-right-radius: 1rem;
             background: #fff;
+            height: calc(100% - 42px);
+            flex: 1 1 auto;
+            overflow: hidden;
         }
 
         .ql-editor {
-            min-height: 14rem;
+            height: 100%;
+            min-height: 0;
             font-size: 1rem;
-            line-height: 1.75;
+            line-height: 1.05;
             color: rgb(15 23 42);
+            padding: 0.9rem 1rem 1.5rem;
+            padding-bottom:4px;
+            overflow-y: auto;
         }
 
         .ql-editor.ql-blank::before {
@@ -65,6 +78,9 @@
             border-radius: 10px;
         }
     </style>
+
+<!--  -->
+
 </head>
 <body class="bg-slate-100 text-slate-900 antialiased transition-colors duration-300">
     <div class="min-h-screen bg-[radial-gradient(circle_at_top_right,_rgba(253,85,40,0.16),_transparent_30%),radial-gradient(circle_at_top_left,_rgba(148,163,184,0.18),_transparent_24%)]">
@@ -135,43 +151,46 @@
         handleResize();
         window.addEventListener('resize', handleResize);
 
-        const blogForms = document.querySelectorAll('[data-blog-form]');
+        const initQuillEditors = (formSelector, editorSelector, hiddenSelector, placeholder) => {
+            document.querySelectorAll(formSelector).forEach((form) => {
+                const editorContainer = form.querySelector(editorSelector);
+                const hiddenInput = form.querySelector(hiddenSelector);
 
-        blogForms.forEach((form) => {
-            const editorContainer = form.querySelector('[data-blog-editor]');
-            const hiddenInput = form.querySelector('[data-blog-content]');
+                if (!editorContainer || !hiddenInput || typeof Quill === 'undefined') {
+                    return;
+                }
 
-            if (!editorContainer || !hiddenInput || typeof Quill === 'undefined') {
-                return;
-            }
+                const quill = new Quill(editorContainer, {
+                    theme: 'snow',
+                    placeholder,
+                    modules: {
+                        toolbar: [
+                            [{ header: [1, 2, 3, false] }],
+                            ['bold', 'italic', 'underline', 'strike'],
+                            [{ list: 'ordered' }, { list: 'bullet' }],
+                            ['blockquote', 'link', 'image'],
+                            ['clean'],
+                        ],
+                    },
+                });
 
-            const quill = new Quill(editorContainer, {
-                theme: 'snow',
-                placeholder: 'Write your blog content here...',
-                modules: {
-                    toolbar: [
-                        [{ header: [1, 2, 3, false] }],
-                        ['bold', 'italic', 'underline', 'strike'],
-                        [{ list: 'ordered' }, { list: 'bullet' }],
-                        ['blockquote', 'link', 'image'],
-                        ['clean'],
-                    ],
-                },
+                const initialContent = hiddenInput.value || '';
+                if (initialContent) {
+                    quill.root.innerHTML = initialContent;
+                }
+
+                const syncContent = () => {
+                    hiddenInput.value = quill.root.innerHTML;
+                };
+
+                quill.on('text-change', syncContent);
+                form.addEventListener('submit', syncContent);
+                syncContent();
             });
+        };
 
-            const initialContent = hiddenInput.value || '';
-            if (initialContent) {
-                quill.root.innerHTML = initialContent;
-            }
-
-            const syncContent = () => {
-                hiddenInput.value = quill.root.innerHTML;
-            };
-
-            quill.on('text-change', syncContent);
-            form.addEventListener('submit', syncContent);
-            syncContent();
-        });
+        initQuillEditors('[data-blog-form]', '[data-blog-editor]', '[data-blog-content]', 'Write your blog content here...');
+        initQuillEditors('[data-rich-form]', '[data-rich-editor]', '[data-rich-content]', 'Write rich text here...');
     });
     </script>
 

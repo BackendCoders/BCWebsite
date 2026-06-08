@@ -2,7 +2,8 @@
   <div class="mx-auto grid max-w-7xl grid-cols-1 gap-12 md:grid-cols-2 xl:grid-cols-5 xl:gap-10">
     <div class="xl:col-span-2">
       <a href="{{ route('frontend.index') }}" class="inline-flex items-center gap-3">
-        <img src="{{ asset('assets/images/bc_bg.png') }}" class="h-12 w-auto sm:h-14" alt="Backend Coders India logo">
+        <img src="{{ asset('assets/images/bc_bg.png.webp') }}"   width="100"
+    height="40" class="h-12 w-auto sm:h-14" alt="Backend Coders India logo" >
       </a>
 
       <p class="mt-4 max-w-md text-sm leading-relaxed">

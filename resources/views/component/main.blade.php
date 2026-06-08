@@ -13,6 +13,8 @@
 
 <meta name="csrf-token" content="{{ csrf_token() }}">
 
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -27,26 +29,27 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   <!-- <link rel="canonical" href="{{ $page->canonical_url ?? url()->current() }}"> -->
 
+@stack('head')
 
- <script src="https://cdn.tailwindcss.com"></script>
+@vite(['resources/css/app.css', 'resources/js/app.js'])
+
 <link rel="icon" type="image/svg+xml" alt="web development company in Kanpur" href="{{asset('assets/images/bci_icon.png')}}" class="bg-black"/>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
 
-  <!--  -->
- <link
-      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-      rel="stylesheet"
-    />
+<link rel="preload" href="https://unpkg.com/aos@2.3.4/dist/aos.css" as="style" onload="this.rel='stylesheet'">
+
+<!-- GOOGLE FONTS -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     
 <!-- Swiper CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" as="style" onload="this.rel='stylesheet'">
 
  
   <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}" />
@@ -174,37 +177,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     stroke-dashoffset: 0;
   }
 }
-/* ===== HOVER ===== */
-.process-section .group:hover .step-circle {
-  background: #FD5528;
-  color: white;
-  transform: scale(1.1);
-  box-shadow: 0 15px 30px rgba(253,85,40,0.3);
-}
 
-.process-section .group:hover .step-title {
-  color: #FD5528;
-}
-
-/* ===== ALIGN ZIG-ZAG ===== */
-.process-section .process-step:nth-child(2),
-.process-section .process-step:nth-child(4),
-.process-section .process-step:nth-child(6) {
-  margin-top: 60px;
-}
-
-/* ===== SVG ANIMATION ===== */
-.process-section .process-line {
-  stroke-dasharray: 1;
-  stroke-dashoffset: 1;
-  animation: processDrawLine 3s ease forwards;
-}
-
-@keyframes processDrawLine {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
 @media (min-width: 768px) {
   .process-section .process-step:nth-child(2),
   .process-section .process-step:nth-child(4),
@@ -287,10 +260,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     font-size: 14px;
   }
 }
-@keyframes marquee {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-}
+/*  */
 
 .animate-marquee {
     animation: marquee 20s linear infinite;
@@ -435,37 +405,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </style>
 
 
-<script>
-document.addEventListener("DOMContentLoaded", function () {
 
-    document.querySelectorAll('.read-more-btn').forEach((btn) => {
 
-        const text = btn.previousElementSibling;
 
-        // Hide button if text is small
-        setTimeout(() => {
-            if (text.scrollHeight <= text.clientHeight) {
-                btn.style.display = 'none';
-            }
-        }, 100);
+    @yield('content') </div>
 
-        btn.addEventListener('click', function () {
-
-            if (text.classList.contains('line-clamp-2')) {
-                text.classList.remove('line-clamp-2');
-                btn.innerText = 'Read Less';
-            } else {
-                text.classList.add('line-clamp-2');
-                btn.innerText = 'Read More';
-            }
-
-        });
-
-    });
-
-});
-</script>
-
+    @include('component.footer')
 <script>
 document.addEventListener('DOMContentLoaded', function () {
   const contactToggle = document.getElementById('contactToggle');
@@ -570,67 +515,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 });
-</script>
 
-
-    @yield('content') </div>
-
-    @include('component.footer')
-
-  <script src="scripts/site.js"></script>
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-
-<script>
-AOS.init({
-  duration: 1000,
-  once: true
-});
-
-
-// tabs
-document.addEventListener("DOMContentLoaded", () => {
-
-  const tabs = document.querySelectorAll(".tab");
-  const projects = document.querySelectorAll(".project");
-
-  if (!tabs.length || !projects.length) return; 
-
-  tabs.forEach(tab => {
-    tab.addEventListener("click", () => {
-
-      // RESET ALL TABS
-      tabs.forEach(t => {
-        t.classList.remove("bg-orange-500", "text-white");
-      
-      });
-
-      // ACTIVE TAB
-      tab.classList.remove("text-orange-600");
-      tab.classList.add("bg-orange-500", "text-white");
-
-      // FILTER PROJECTS
-      const type = tab.dataset.tab;
-
-      projects.forEach(p => {
-        if (type === "all" || p.classList.contains(type)) {
-          p.style.display = "";
-        } else {
-          p.style.display = "none";
-        }
-      });
-
-    });
-  });
-
-});
-
-
-
-
-</script>
-</script>
-<script>
-  
   // timeline////
 document.addEventListener("DOMContentLoaded", () => {
   const items = document.querySelectorAll(".timeline-item");
@@ -647,8 +532,7 @@ document.addEventListener("DOMContentLoaded", () => {
   items.forEach(item => observer.observe(item));
 });
 
-</script>
-<script>
+
 document.addEventListener('DOMContentLoaded', () => {
   const items = document.querySelectorAll('.faq-item');
 
@@ -702,9 +586,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
-</script>
 
-<script>
+
+// DROIPDOWN:::
+
 function toggleDropdown() {
     const dropdown = document.getElementById("serviceDropdown");
     dropdown.classList.toggle("hidden");
@@ -718,13 +603,9 @@ document.addEventListener("click", function (e) {
         dropdown.classList.add("hidden");
     }
 });
-</script>
-<!-- Swiper JS -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
- <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script src="{{ asset('assets/js/main.js') }}" defer></script>
-<script>
+
+
 function generateCaptcha() {
     let num1 = Math.floor(Math.random() * 10);
     let num2 = Math.floor(Math.random() * 10);
@@ -768,33 +649,8 @@ if (contactForm) {
     }
   });
 }
-</script>
 
 
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-
-    const tabs = document.querySelectorAll('.tab');
-
-    tabs.forEach(tab => {
-        tab.addEventListener('click', function () {
-
-            // Remove active styles from all tabs
-            tabs.forEach(t => {
-                t.classList.remove('bg-[#FD5528]', 'text-white', 'active');
-                t.classList.add('text-[#FD5528]');
-            });
-
-            // Add active styles to clicked tab
-            this.classList.add('bg-[#FD5528]', 'text-white', 'active');
-            this.classList.remove('text-[#FD5528]');
-        });
-    });
-
-});
-</script>
-
-<script>
 document.addEventListener("DOMContentLoaded", function () {
 
     const counters = document.querySelectorAll('.counter');
@@ -832,7 +688,11 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
+<script src="{{ asset('assets/js/main.js') }}" defer></script>
 
 </body>
 </html>

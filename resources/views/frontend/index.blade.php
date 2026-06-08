@@ -96,12 +96,13 @@
         <!-- CARD -->
         <div class="relative overflow-hidden rounded-xl group translate-y-4 sm:translate-y-6">
 
-          <img src="{{asset('assets/images/backend_coders_split_1.png')}}" alt="video"
+          <img src="{{asset('assets/images/backend_coders_split_1.webp.webp')}}"  width="300"
+    height="195" alt="IT team working on backend development and coding solutions" title="Backend Development Team at Work"
             class="w-full h-full object-cover transition duration-500 group-hover:opacity-0 group-hover:scale-105">
 
-          <video autoplay muted loop playsinline
+          <video autoplay muted loop playsinline  aria-label="Backend developers coding and building scalable IT solutions" title="Backend Developers in Action"
             class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition duration-500">
-            <source src="{{asset('assets/images/1.mp4')}}"  type="video/mp4">
+            <source src="{{asset('assets/images/1(1).mp4')}}"  type="video/mp4">
           </video>
 
         </div>
@@ -109,12 +110,13 @@
         <!-- CARD -->
         <div class="relative overflow-hidden rounded-xl group -translate-y-4 sm:-translate-y-6">
 
-          <img src="{{asset('assets/images/backend_coders_split_2.png')}}" alt="video"
+          <img src="{{asset('assets/images/backend_coders_split_2.webp.webp')}}"  width="300"
+    height="195" alt="Software developers collaborating on web application development and system architecture" title="Web Application Development Team"
             class="w-full h-full object-cover transition duration-500 group-hover:opacity-0 group-hover:scale-105">
 
-          <video autoplay muted loop playsinline
+          <video autoplay muted loop playsinline  aria-label="Developers building scalable web applications and backend systems" title="Software Development in Progress"
             class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition duration-500">
-            <source src="{{asset('assets/images/2.mp4')}}" type="video/mp4">
+            <source src="{{asset('assets/images/2 (1).mp4')}}" type="video/mp4">
           </video>
 
         </div>
@@ -122,12 +124,14 @@
         <!-- CARD -->
         <div class="relative overflow-hidden rounded-xl group translate-y-4 sm:translate-y-6">
 
-          <img src="{{asset('assets/images/backend_coders_split_3.png')}}" alt="video"
+          <img src="{{asset('assets/images/backend_coders_split_3.webp.webp')}}"  width="300"
+    height="195"   alt="IT engineers managing cloud infrastructure and deploying scalable applications"
+    title="Cloud Infrastructure and DevOps Engineering"
             class="w-full h-full object-cover transition duration-500 group-hover:opacity-0 group-hover:scale-105">
 
-          <video autoplay muted loop playsinline
+          <video autoplay muted loop playsinline  aria-label="DevOps engineers deploying applications and managing cloud servers" title="DevOps and Cloud Management in Action"
             class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition duration-500">
-            <source src="{{asset('assets/images/3.mp4')}}" type="video/mp4">
+            <source src="{{asset('assets/images/3 (1).mp4')}}" type="video/mp4">
           </video>
 
         </div>
@@ -135,12 +139,13 @@
         <!-- CARD -->
         <div class="relative overflow-hidden rounded-xl group -translate-y-4 sm:-translate-y-6">
 
-          <img src="{{asset('assets/images/backend_coders_split_4.png')}}" alt="video"
+          <img src="{{asset('assets/images/backend_coders_split_4.webp.webp')}}"  width="300"
+    height="195" alt="IT professionals providing technical support and maintenance services" title="Technical Support and Maintenance Team"
             class="w-full h-full object-cover transition duration-500 group-hover:opacity-0 group-hover:scale-105">
 
-          <video autoplay muted loop playsinline
+          <video autoplay muted loop playsinline  aria-label="IT professionals providing technical support and maintenance services" title="Technical Support and Maintenance"
             class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition duration-500">
-            <source src="{{asset('assets/images/4.mp4')}}" type="video/mp4">
+            <source src="{{asset('assets/images/4 (1).mp4')}}" type="video/mp4">
           </video>
 
         </div>
@@ -153,6 +158,14 @@
 
 </section>
 <!-- END HERO SECTIOPN -->
+
+
+<!-- product saection -->
+<!-- SEO ROCKET PRO SHOWCASE -->
+
+
+
+
 
 <!-- WORLD MAP VISUAL -->
 
@@ -180,12 +193,50 @@
       </span>
 
   <!-- Main Heading -->
-  <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-slate-900 leading-tight">
-    Our 
-    <span class="bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent">
-      Global Presence
-    </span>
-  </h2>
+<h2
+  style="
+    font-size: clamp(34px, 5vw, 60px);
+    font-weight: 900;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    color: #0f172a;
+    margin: 0;
+  "
+>
+
+  Our
+
+  <span
+    style="
+      position: relative;
+      display: inline-block;
+      background: linear-gradient(90deg, #FD5528 0%, #ff7b54 50%, #FD5529 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+    "
+  >
+
+    Global Presence
+
+    <span
+      style="
+        position: absolute;
+        left: 0;
+        bottom: -8px;
+        width: 100%;
+        height: 10px;
+        background: linear-gradient(90deg, rgba(253,85,40,0.20), rgba(253,85,41,0.20));
+        filter: blur(10px);
+        border-radius: 999px;
+        z-index: -1;
+      "
+    ></span>
+
+  </span>
+
+</h2>
 
   <!-- Subtext -->
   <p class="mt-4 text-slate-600 max-w-2xl mx-auto text-base sm:text-lg leading-relaxed">
@@ -205,7 +256,8 @@
 
         <!-- MAP IMAGE -->
         <img 
-          src="{{ asset('assets/images/map.jpeg') }}" alt="map"
+          src="{{ asset('assets/images/map.jpeg.webp') }}" alt="map"   width="1000"
+    height="500"
           class="w-full lg:h-[500px] grayscale opacity-90 contrast-110 contrast-110 pointer-events-none select-none"
           alt="World Map"
         />
@@ -335,18 +387,63 @@
 
 
 <!-- 🚀 CTA -->
-<div class="text-center my-6">
+<div style="text-align:center; margin:40px 0 20px;">
 
-  <a href="{{ route('frontend.contact') }}"
-     class="relative inline-flex items-center gap-2 px-8 py-3 font-semibold text-white rounded-xl 
-            bg-gradient-to-r from-orange-500 to-orange-600 
-            shadow-lg hover:shadow-2xl hover:scale-105 transition duration-300">
+  <a
+    href="{{ route('frontend.contact') }}"
+    style="
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 34px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #FD5528 0%, #ff7b54 100%);
+      color: #ffffff;
+      font-size: 16px;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 15px 35px rgba(253,85,40,0.28);
+      transition: all 0.35s ease;
+      overflow: hidden;
+      letter-spacing: 0.02em;
+    "
+    onmouseover="
+      this.style.transform='translateY(-4px) scale(1.03)';
+      this.style.boxShadow='0 25px 55px rgba(253,85,40,0.38)';
+    "
+    onmouseout="
+      this.style.transform='translateY(0px) scale(1)';
+      this.style.boxShadow='0 15px 35px rgba(253,85,40,0.28)';
+    "
+  >
 
-    Work With Us
+    <span
+      style="
+        position:absolute;
+        inset:0;
+        background: linear-gradient(120deg, rgba(255,255,255,0.18), transparent);
+        transform: skewX(-25deg) translateX(-120%);
+        transition: 0.7s;
+      "
+    ></span>
+
+    <span style="position:relative; z-index:2;">
+      Work With Us
+    </span>
+
+    <span
+      style="
+        position:relative;
+        z-index:2;
+        font-size:18px;
+        transition: transform 0.3s ease;
+      "
+    >
+      
+    </span>
 
   </a>
-
-
 
 </div>
 </section>
@@ -1094,7 +1191,8 @@
               <!-- USER -->
               <div class="flex items-center gap-3">
                 <div class="relative">
-                  <img src="{{ asset('assets/images/client-mj.jpg') }}" alt="client"
+                  <img src="{{ asset('assets/images/client-mj.webp') }}" alt="Client testimonial highlighting satisfaction with mobile app development and IT support services"
+  title="Client feedback on mobile app and IT solutions"
                       class="w-12 h-12 rounded-full object-cover">
 
                   <!-- VERIFIED BADGE -->
@@ -1153,7 +1251,8 @@
                     <!-- USER -->
                     <div class="flex items-center gap-3">
                       <div class="relative">
-                        <img src="{{ asset('assets/images/client-p.jpg') }}" alt="client"
+                        <img src="{{ asset('assets/images/client-p.webp') }}"   alt="Client sharing positive feedback on web development and IT services"
+  title="Client testimonial for software and IT solutions"
                             class="w-12 h-12 rounded-full object-cover">
 
                         <!-- VERIFIED BADGE -->
@@ -1213,7 +1312,7 @@
                     <!-- USER -->
                     <div class="flex items-center gap-3">
                       <div class="relative">
-                        <img src="{{ asset('assets/images/client-v.jpg') }}" alt="client"
+                        <img src="{{ asset('assets/images/client-v.webp') }}"   alt="Happy client reviewing IT services and web development solutions" title="Client testimonial for IT and web development services"
                             class="w-12 h-12 rounded-full object-cover">
 
                         <!-- VERIFIED BADGE -->

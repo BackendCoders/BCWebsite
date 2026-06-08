@@ -42,8 +42,6 @@
 
 </section>
 
-
-
 <!-- <section class="relative overflow-hidden bg-slate-950 text-white">
     <img src="{{ asset('assets/images/banner.png') }}" class="absolute inset-0 h-full w-full object-cover opacity-20" alt="Blog banner">
     <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-slate-500"></div>
@@ -104,9 +102,10 @@
 
             <!-- Image -->
             <img
-                src="{{ $blog->image ? asset('storage/' . $blog->image) : asset('assets/images/banner.png') }}"
+                src="{{ $blog->getImageUrl() }}"
                 alt="{{ $blog->title }}"
                 class="h-full w-full object-cover transition duration-700 ease-out group-hover:scale-110"
+                loading="lazy"
             >
 
             <!-- Overlay Gradient -->
@@ -191,9 +190,10 @@
                     @if($featuredBlog)
                         <a href="{{ route('frontend.blog-detail', $featuredBlog->slug) }}" class="mt-4 block space-y-4">
                             <img
-                                src="{{ $featuredBlog->image ? asset('storage/' . $featuredBlog->image) : asset('assets/images/banner.png') }}"
+                                src="{{ $featuredBlog->getImageUrl() }}"
                                 alt="{{ $featuredBlog->title }}"
                                 class="h-44 w-full rounded-3xl object-cover"
+                                loading="lazy"
                             >
                             <div class="space-y-2">
                                 <h3 class="text-lg font-bold text-slate-900">{{ $featuredBlog->title }}</h3>
@@ -233,4 +233,269 @@
         </div>
     </div>
 </section>
+
+<main class="max-w-7xl mx-auto px-6 lg:px-8 py-20">
+
+    <!-- WHY WEBSITE DEVELOPMENT -->
+    <section id="need">
+
+        <div class="grid lg:grid-cols-2 gap-14 items-center">
+
+            <!-- Content -->
+            <div>
+
+                <span class="inline-flex px-4 py-2 rounded-full bg-orange-100 text-[#FD5528] font-semibold text-sm">
+                    Website Development
+                </span>
+
+                <h2 class="mt-6 text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+                    Why Businesses Need
+                    <span class="text-[#FD5528]">
+                        Professional Website Development
+                    </span>
+                </h2>
+
+                <p class="mt-6 text-lg leading-8 text-gray-600">
+                    Your website is often the first interaction customers have
+                    with your business. A professionally developed website
+                    builds trust, supports marketing efforts, improves user
+                    experience, and helps convert visitors into enquiries.
+                </p>
+
+                <div class="mt-8 grid sm:grid-cols-2 gap-4">
+
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-orange-100 flex items-center justify-center">
+                            ✓
+                        </div>
+                        <span class="font-medium text-gray-700">
+                            Build Trust
+                        </span>
+                    </div>
+
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-orange-100 flex items-center justify-center">
+                            ✓
+                        </div>
+                        <span class="font-medium text-gray-700">
+                            Generate Leads
+                        </span>
+                    </div>
+
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-orange-100 flex items-center justify-center">
+                            ✓
+                        </div>
+                        <span class="font-medium text-gray-700">
+                            Improve SEO
+                        </span>
+                    </div>
+
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-orange-100 flex items-center justify-center">
+                            ✓
+                        </div>
+                        <span class="font-medium text-gray-700">
+                            Increase Conversions
+                        </span>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Image -->
+            <div>
+                <img
+                    src="/images/website-development.jpg"
+                    alt="Website Development Company in Kanpur"
+                    class="rounded-[32px] shadow-2xl w-full">
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- BENEFITS -->
+    <section id="benefits" class="mt-24">
+        <div class="text-center max-w-3xl mx-auto">
+
+            <span class="inline-flex px-4 py-2 rounded-full bg-orange-100 text-[#FD5528] font-semibold text-sm">
+                Benefits
+            </span>
+
+            <h2 class="mt-5 text-4xl font-bold text-gray-900">
+                Benefits of Choosing a Professional Web Development Company
+            </h2>
+
+        </div>
+
+        <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-6 mt-14">
+
+            <div class="group bg-white border border-orange-100 rounded-[28px] p-8 hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
+                <div class="w-16 h-16 rounded-2xl bg-orange-50 flex items-center justify-center text-[#FD5528] text-2xl">
+                    ★
+                </div>
+
+                <h3 class="mt-6 text-xl font-bold text-gray-900">
+                    Customer Trust
+                </h3>
+
+                <p class="mt-3 text-gray-600">
+                    Professional design builds confidence and credibility.
+                </p>
+            </div>
+
+            <div class="group bg-white border border-orange-100 rounded-[28px] p-8 hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
+                <div class="w-16 h-16 rounded-2xl bg-orange-50 flex items-center justify-center text-[#FD5528] text-2xl">
+                    📱
+                </div>
+
+                <h3 class="mt-6 text-xl font-bold text-gray-900">
+                    Mobile Experience
+                </h3>
+
+                <p class="mt-3 text-gray-600">
+                    Responsive websites across all devices.
+                </p>
+            </div>
+
+            <div class="group bg-white border border-orange-100 rounded-[28px] p-8 hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
+                <div class="w-16 h-16 rounded-2xl bg-orange-50 flex items-center justify-center text-[#FD5528] text-2xl">
+                    🚀
+                </div>
+
+                <h3 class="mt-6 text-xl font-bold text-gray-900">
+                    Search Visibility
+                </h3>
+
+                <p class="mt-3 text-gray-600">
+                    Better SEO performance and Google rankings.
+                </p>
+            </div>
+
+            <div class="group bg-white border border-orange-100 rounded-[28px] p-8 hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
+                <div class="w-16 h-16 rounded-2xl bg-orange-50 flex items-center justify-center text-[#FD5528] text-2xl">
+                    📈
+                </div>
+
+                <h3 class="mt-6 text-xl font-bold text-gray-900">
+                    More Leads
+                </h3>
+
+                <p class="mt-3 text-gray-600">
+                    Higher conversion rates and enquiries.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FEATURES -->
+    <section id="features" class="mt-24">
+
+        <div class="rounded-[40px] bg-[#111111] p-10 lg:p-16">
+
+            <div class="max-w-3xl">
+                <h2 class="text-4xl font-bold text-white">
+                    Key Features Every Modern Business Website Should Have
+                </h2>
+
+                <p class="mt-5 text-gray-300">
+                    Modern websites need to be fast, responsive,
+                    SEO-friendly, and ready for business growth.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6 mt-12">
+
+                <div class="bg-white/5 rounded-3xl p-8 border border-white/10">
+                    <h3 class="text-xl font-bold text-white">
+                        Responsive Design
+                    </h3>
+                    <p class="mt-3 text-gray-300">
+                        Works perfectly on desktop, tablet and mobile.
+                    </p>
+                </div>
+
+                <div class="bg-white/5 rounded-3xl p-8 border border-white/10">
+                    <h3 class="text-xl font-bold text-white">
+                        SEO Ready Structure
+                    </h3>
+                    <p class="mt-3 text-gray-300">
+                        Optimized for search engines from day one.
+                    </p>
+                </div>
+
+                <div class="bg-white/5 rounded-3xl p-8 border border-white/10">
+                    <h3 class="text-xl font-bold text-white">
+                        Fast Performance
+                    </h3>
+                    <p class="mt-3 text-gray-300">
+                        Optimized code and assets for maximum speed.
+                    </p>
+                </div>
+
+                <div class="bg-white/5 rounded-3xl p-8 border border-white/10">
+                    <h3 class="text-xl font-bold text-white">
+                        Scalable Architecture
+                    </h3>
+                    <p class="mt-3 text-gray-300">
+                        Ready for future growth and integrations.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section id="whyus" class="mt-24">
+
+        <div class="text-center">
+            <span class="inline-flex px-4 py-2 rounded-full bg-orange-100 text-[#FD5528] font-semibold">
+                Why Choose Us
+            </span>
+
+            <h2 class="mt-5 text-4xl font-bold text-gray-900">
+                Why Choose Backend Coders India
+            </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-14">
+
+            <div class="rounded-3xl border border-orange-100 p-6">
+                SEO-Friendly Structure
+            </div>
+
+            <div class="rounded-3xl border border-orange-100 p-6">
+                Custom Design Solutions
+            </div>
+
+            <div class="rounded-3xl border border-orange-100 p-6">
+                Fast Development Process
+            </div>
+
+            <div class="rounded-3xl border border-orange-100 p-6">
+                Startup & SME Expertise
+            </div>
+
+            <div class="rounded-3xl border border-orange-100 p-6">
+                Ecommerce Development
+            </div>
+
+            <div class="rounded-3xl border border-orange-100 p-6">
+                Mobile App Solutions
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
 @endsection

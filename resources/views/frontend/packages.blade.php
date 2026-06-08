@@ -1,5 +1,15 @@
 @extends("component.main")
 @section("content")
+
+<style>
+.tab.active {
+  background-color: #FD5528;
+  color: #fff;
+  border-color: #FD5528;
+}
+</style>
+
+
 <!-- hero section  -->
 <section class="relative h-[30vh] flex items-center justify-center text-center text-white overflow-hidden">
 
@@ -1160,26 +1170,32 @@
 
 <!-- SCRIPT -->
 <script>
-const tabs = document.querySelectorAll(".tab");
-const contents = document.querySelectorAll(".tab-content");
+document.addEventListener("DOMContentLoaded", function () {
 
-tabs.forEach(tab => {
-  tab.addEventListener("click", () => {
+  const tabs = document.querySelectorAll(".tab");
+  const contents = document.querySelectorAll(".tab-content");
 
-    tabs.forEach(t => t.classList.remove("active"));
-    tab.classList.add("active");
-
-    const target = tab.getAttribute("data-tab");
-
+  function showTab(target) {
     contents.forEach(c => {
-      if (c.getAttribute("data-content") === target) {
-        c.classList.remove("hidden");
-      } else {
-        c.classList.add("hidden");
-      }
+      c.classList.toggle("hidden", c.dataset.content !== target);
     });
 
+    tabs.forEach(t => {
+      t.classList.toggle("active", t.dataset.tab === target);
+    });
+  }
+
+  // click
+  tabs.forEach(tab => {
+    tab.addEventListener("click", function () {
+      showTab(this.dataset.tab);
+    });
   });
+
+  // default load
+  const defaultTab = document.querySelector(".tab.active") || tabs[0];
+  if (defaultTab) showTab(defaultTab.dataset.tab);
+
 });
 </script>
 

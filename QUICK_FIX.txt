@@ -1,0 +1,93 @@
+# 🔧 QUICK FIX: Blog Images Not Showing on Live
+
+## TL;DR - Do This NOW
+
+```bash
+# SSH into your live server, then run:
+ssh user@yourdomain.com
+cd /var/www/yourapp
+php artisan storage:link
+chmod -R 775 storage/app/public
+```
+
+That's it! Images will appear.
+
+---
+
+## What Changed in the Code
+
+### ✅ The Fix
+- Added `getImageUrl()` method to Blog model
+- Updated all blade templates to use it
+- Now works automatically on both local and production
+
+### 📍 Files Modified
+- `app/Models/Blog.php` - Added helper method
+- `resources/views/frontend/blog.blade.php` - Updated image tags
+- `resources/views/frontend/blog-detail.blade.php` - Updated image tags
+- `resources/views/frontend/blog_detail.blade.php` - Updated image tags
+
+---
+
+## Why Images Don't Show on Live
+
+```
+❌ Local (works):           ✅ Production (needs symlink):
+   No symlink needed         Must have: public/storage → storage/app/public
+   Everything works magic    Without symlink: 404 errors
+```
+
+The storage symlink connects the web-accessible directory to where Laravel stores files.
+
+---
+
+## Verification Checklist
+
+After running `php artisan storage:link`, verify:
+
+```bash
+✓ Symlink exists:        ls -l public/storage
+✓ Images exist:          ls storage/app/public/blogs/
+✓ Permissions correct:   stat storage/app/public/blogs/
+✓ APP_URL updated:       grep APP_URL .env
+```
+
+---
+
+## Test on Live
+
+Visit: `https://yourdomain.com/blog/your-post-name`
+
+- [ ] Images appear
+- [ ] No 404 errors in console
+- [ ] Images load in DevTools Network tab
+
+---
+
+## If It Still Doesn't Work
+
+1. Is symlink created? → `ls -l public/storage` should show `→`
+2. Do files exist? → `ls storage/app/public/blogs/` should list files
+3. Are permissions correct? → `stat storage/app/public/blogs/`
+4. Is APP_URL correct? → `grep APP_URL .env` (no localhost!)
+
+See `DEPLOYMENT_SETUP.md` for detailed troubleshooting.
+
+---
+
+## Automated Setup (Optional)
+
+We provided a script that does everything:
+
+```bash
+bash deploy-setup.sh
+```
+
+---
+
+## That's All!
+
+The code changes are automatic. You just need to:
+1. Deploy the new code
+2. Run `php artisan storage:link` on live
+3. Test ✅

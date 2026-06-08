@@ -82,7 +82,9 @@ Route::get('/', [HomeController::class, 'index'])->name('frontend.index');
 Route::get('/about', [HomeController::class, 'about'])->name('frontend.about');
 Route::get('/service', [HomeController::class, 'service'])->name('frontend.service');
 Route::get('/project', [HomeController::class, 'project'])->name('frontend.project');
-Route::get('/contacts', [HomeController::class, 'contact'])->name('frontend.contact');
+Route::get('/project/{slug}', [HomeController::class, 'project_detail'])
+    ->name('frontend.project-detail');
+Route::get('/contact', [HomeController::class, 'contact'])->name('frontend.contact');
 Route::get('/process', [HomeController::class, 'process'])->name('frontend.process');
 Route::get('/packages', [HomeController::class, 'packages'])->name('frontend.packages');
 Route::get('/career', [HomeController::class, 'career'])->name('frontend.career');
@@ -103,6 +105,9 @@ Route::get('/local_seo', [HomeController::class, 'local_seo'])->name('frontend.l
 Route::get('/custom_web', [HomeController::class, 'custom_web'])->name('frontend.custom_web');
 Route::get('/web', [HomeController::class, 'custom_web'])->name('frontend.custom_web');
 Route::get('/page/{slug}', [HomeController::class, 'page'])->name('frontend.page');
+Route::get('/blog-images/{path}', [BlogController::class, 'image'])
+    ->where('path', '.*')
+    ->name('blogs.image');
 
 
 

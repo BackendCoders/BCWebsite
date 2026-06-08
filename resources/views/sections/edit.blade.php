@@ -2,7 +2,23 @@
 
 @section('content')
 @php
-    $sectionTypes = ['hero', 'content', 'text', 'image', 'gallery', 'cards', 'faq', 'stats', 'timeline', 'cta', 'footer'];
+    $sectionTypes = ['hero', 'content', 'text', 'image', 'gallery', 'cards', 'faq', 'stats', 'timeline', 'cta', 'footer', 'social-media-content-strategy', 'social-media-reels-strategy', 'social-media-paid-campaigns'];
+    $sectionTypeLabels = [
+        'hero' => 'Hero',
+        'content' => 'Content',
+        'text' => 'Text',
+        'image' => 'Image',
+        'gallery' => 'Gallery',
+        'cards' => 'Cards',
+        'faq' => 'FAQ',
+        'stats' => 'Stats',
+        'timeline' => 'Timeline',
+        'cta' => 'CTA',
+        'footer' => 'Footer',
+        'social-media-content-strategy' => 'Social Media Content Strategy',
+        'social-media-reels-strategy' => 'Social Media Reels Strategy',
+        'social-media-paid-campaigns' => 'Social Media Paid Campaigns',
+    ];
 
     $decodeJsonField = function ($value) {
         if (! is_string($value) || trim($value) === '') {
@@ -134,7 +150,7 @@
                             <select name="type" class="mt-1 w-full rounded-xl border border-slate-300 px-4 py-3 focus:border-[#FD5528] focus:ring-[#FD5528]">
                                 @foreach($sectionTypes as $type)
                                     <option value="{{ $type }}" @selected(old('type', $section->type) === $type)>
-                                        {{ ucfirst($type) }}
+                                        {{ $sectionTypeLabels[$type] ?? \Illuminate\Support\Str::headline(str_replace('-', ' ', $type)) }}
                                     </option>
                                 @endforeach
                             </select>
@@ -239,7 +255,7 @@
                         @if(data_get($sectionContent, 'subtitle'))
                             <p class="mt-4 text-base leading-8 text-slate-600">{{ data_get($sectionContent, 'subtitle') }}</p>
                         @elseif($firstItem?->description)
-                            <p class="mt-4 text-base leading-8 text-slate-600">{{ $firstItem->description }}</p>
+                            <div class="mt-4 text-base leading-8 text-slate-600">{!! $firstItem->description !!}</div>
                         @endif
 
                         @if(data_get($sectionContent, 'button_text') || data_get($sectionContent, 'button'))
@@ -279,7 +295,7 @@
                     </span>
                 </div>
 
-                <form id="newItemForm" method="POST" action="{{ route('pages.section-items.store', [$page->id, $section->id]) }}" enctype="multipart/form-data" class="mt-6 grid gap-4 md:grid-cols-2">
+                <form id="newItemForm" method="POST" action="{{ route('pages.section-items.store', [$page->id, $section->id]) }}" enctype="multipart/form-data" class="mt-6 grid gap-4 md:grid-cols-2" data-rich-form>
                     @csrf
 
                     <div>
@@ -294,10 +310,11 @@
 
                     <div class="md:col-span-2">
                         <label class="block text-sm font-medium text-slate-700">Description</label>
-                        <textarea name="description" rows="4" class="mt-1 w-full rounded-xl border border-slate-300 px-4 py-3 focus:border-[#FD5528] focus:ring-[#FD5528]" placeholder="Short supporting copy"></textarea>
+                        <div data-rich-editor class="rich-editor-shell mt-1 w-full overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm"></div>
+                        <input type="hidden" name="description" data-rich-content value="{{ old('description') }}">
                     </div>
 
-                    <div class="grid gap-4 md:col-span-2 md:grid-cols-2">
+                    <div class="grid gap-4 md:col-span-2 md:grid-cols-2 mt-4">
                         <div>
                             <label class="block text-sm font-medium text-slate-700">Label</label>
                             <input type="text" id="new_item_label" class="mt-1 w-full rounded-xl border border-slate-300 px-4 py-3 focus:border-[#FD5528] focus:ring-[#FD5528]" placeholder="Card label or badge">
@@ -364,7 +381,7 @@
                         </div>
 
                         <div class="grid gap-6 px-6 py-6 lg:grid-cols-[1.05fr_0.95fr]">
-                            <form id="itemForm-{{ $item->id }}" method="POST" action="{{ route('pages.section-items.update', [$page->id, $section->id, $item->id]) }}" enctype="multipart/form-data" class="space-y-4">
+                            <form id="itemForm-{{ $item->id }}" method="POST" action="{{ route('pages.section-items.update', [$page->id, $section->id, $item->id]) }}" enctype="multipart/form-data" class="space-y-4" data-rich-form>
                                 @csrf
                                 @method('PUT')
 
@@ -380,9 +397,10 @@
                                     </div>
                                 </div>
 
-                                <div>
+                                <div class="space-y-1">
                                     <label class="block text-sm font-medium text-slate-700">Description</label>
-                                    <textarea name="description" rows="4" class="mt-1 w-full rounded-xl border border-slate-300 px-4 py-3 focus:border-[#FD5528] focus:ring-[#FD5528]">{{ old('description', $item->description) }}</textarea>
+                                    <div data-rich-editor class="rich-editor-shell mt-1 w-full overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm"></div>
+                                    <input type="hidden" name="description" data-rich-content value="{{ old('description', $item->description) }}">
                                 </div>
 
                                 <div class="grid gap-4 sm:grid-cols-2">
@@ -440,9 +458,9 @@
                                             </span>
                                         @endif
 
-                                        <p class="text-sm leading-7 text-slate-600">
-                                            {{ $item->description ?: 'No description added yet.' }}
-                                        </p>
+                                        <div class="text-sm leading-7 text-slate-600">
+                                            {!! $item->description ?: 'No description added yet.' !!}
+                                        </div>
 
                                         @php $itemTags = data_get($itemExtra, 'tags', []); @endphp
                                         @if(is_array($itemTags) && count($itemTags))

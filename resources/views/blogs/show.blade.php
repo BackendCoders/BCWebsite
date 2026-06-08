@@ -36,7 +36,7 @@
         <article class="overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-xl">
             <div class="relative aspect-[16/9] w-full">
                 <img
-                    src="{{ $blog->image ? asset('storage/' . $blog->image) : asset('assets/images/banner.png') }}"
+                    src="{{ $blog->getImageUrl() }}"
                     alt="{{ $blog->title }}"
                     class="h-full w-full object-cover"
                 >

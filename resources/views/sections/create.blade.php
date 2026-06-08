@@ -2,7 +2,23 @@
 
 @section('content')
 @php
-    $sectionTypes = ['hero', 'content', 'text', 'image', 'gallery', 'cards', 'faq', 'stats', 'timeline', 'cta', 'footer'];
+    $sectionTypes = ['hero', 'content', 'text', 'image', 'gallery', 'cards', 'faq', 'stats', 'timeline', 'cta', 'footer', 'social-media-content-strategy', 'social-media-reels-strategy', 'social-media-paid-campaigns'];
+    $sectionTypeLabels = [
+        'hero' => 'Hero',
+        'content' => 'Content',
+        'text' => 'Text',
+        'image' => 'Image',
+        'gallery' => 'Gallery',
+        'cards' => 'Cards',
+        'faq' => 'FAQ',
+        'stats' => 'Stats',
+        'timeline' => 'Timeline',
+        'cta' => 'CTA',
+        'footer' => 'Footer',
+        'social-media-content-strategy' => 'Social Media Content Strategy',
+        'social-media-reels-strategy' => 'Social Media Reels Strategy',
+        'social-media-paid-campaigns' => 'Social Media Paid Campaigns',
+    ];
 
     $jsonValue = old('content', json_encode([
         'eyebrow' => '',
@@ -108,9 +124,9 @@
                             <div>
                                 <label class="block text-sm font-medium text-slate-700">Type</label>
                                 <select name="type" class="mt-1 w-full rounded-xl border border-slate-300 px-4 py-3 focus:border-[#FD5528] focus:ring-[#FD5528]">
-                                    @foreach($sectionTypes as $type)
-                                        <option value="{{ $type }}" @selected(old('type') === $type)>
-                                            {{ ucfirst($type) }}
+                                @foreach($sectionTypes as $type)
+                                    <option value="{{ $type }}" @selected(old('type') === $type)>
+                                            {{ $sectionTypeLabels[$type] ?? \Illuminate\Support\Str::headline(str_replace('-', ' ', $type)) }}
                                         </option>
                                     @endforeach
                                 </select>
@@ -221,7 +237,7 @@
                     <h2 class="text-xl font-semibold text-slate-900">Best for</h2>
                     <div class="mt-4 flex flex-wrap gap-2">
                         @foreach($sectionTypes as $type)
-                            <span class="rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs font-semibold text-slate-600">{{ ucfirst($type) }}</span>
+                            <span class="rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs font-semibold text-slate-600">{{ $sectionTypeLabels[$type] ?? \Illuminate\Support\Str::headline(str_replace('-', ' ', $type)) }}</span>
                         @endforeach
                     </div>
                 </section>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Blog;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
 
@@ -50,6 +51,24 @@ class BlogController extends Controller
         $blog->load('category');
 
         return view('blogs.show', compact('blog'));
+    }
+
+    public function image(string $path)
+    {
+        $path = $this->normalizeImagePath($path);
+
+        abort_unless(str_starts_with($path, 'blogs/'), 404);
+        abort_unless(Storage::disk('public')->exists($path), 404);
+
+        $fullPath = Storage::disk('public')->path($path);
+        $mimeType = Storage::disk('public')->mimeType($path)
+            ?: File::mimeType($fullPath)
+            ?: 'application/octet-stream';
+
+        return response()->file($fullPath, [
+            'Content-Type' => $mimeType,
+            'Cache-Control' => 'public, max-age=31536000, immutable',
+        ]);
     }
 
     public function update(Request $request, Blog $blog)
@@ -129,5 +148,21 @@ class BlogController extends Controller
         }
 
         return $slug;
+    }
+
+    private function normalizeImagePath(string $path): string
+    {
+        $path = trim(str_replace('\\', '/', $path));
+        $path = ltrim($path, '/');
+
+        if (Str::startsWith($path, 'public/')) {
+            return Str::after($path, 'public/');
+        }
+
+        if (Str::startsWith($path, 'storage/')) {
+            return Str::after($path, 'storage/');
+        }
+
+        return $path;
     }
 }

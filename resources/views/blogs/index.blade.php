@@ -55,7 +55,7 @@
                         <tr class="transition hover:bg-orange-50/40">
                             <td class="px-6 py-4">
                                 @if($blog->image)
-                                    <img src="{{ asset('storage/' . $blog->image) }}" alt="{{ $blog->title }}" class="h-14 w-20 rounded-2xl object-cover ring-1 ring-slate-200 shadow-sm">
+                                    <img src="{{ $blog->getImageUrl() }}" alt="{{ $blog->title }}" class="h-14 w-20 rounded-2xl object-cover ring-1 ring-slate-200 shadow-sm">
                                 @else
                                     <div class="flex h-14 w-20 items-center justify-center rounded-2xl bg-gradient-to-br from-slate-100 to-slate-200 text-xs font-semibold text-slate-400">No image</div>
                                 @endif

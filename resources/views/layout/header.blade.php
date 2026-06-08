@@ -5,13 +5,16 @@
     class="fixed inset-y-0 left-0 z-40 flex w-72 -translate-x-full flex-col border-r border-slate-200/70 bg-white/95 px-5 py-6 shadow-2xl shadow-slate-200/50 backdrop-blur-xl transition-transform duration-300 ease-out lg:translate-x-0"
 >
     <div class="flex items-center gap-3">
-        <div class="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#FD5528] text-base font-black text-white shadow-lg shadow-[#FD5528]/30">
+
+         <a href="{{ route('frontend.index') }}"><div class="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#FD5528] text-base font-black text-white shadow-lg shadow-[#FD5528]/30">
             <img src="{{ asset('assets/images/bci_icon.png') }}" alt="Backend Coders logo">
-        </div>
+        </div></a>
         <div>
+
             <p class="text-xs font-bold uppercase tracking-[0.35em] text-[#FD5528]">Backend</p>
             <h1 class="text-lg font-semibold text-slate-900">Coders India</h1>
         </div>
+
     </div>
 
     <div class="mt-8 rounded-3xl bg-slate-50 p-4 ring-1 ring-slate-200/70">

@@ -62,13 +62,121 @@ class HomeController extends Controller
     return view('frontend.service', compact('page'));
     }
 
-     public function project(){
+    public function project(){
         // return view('frontend.project');
           $page = Page::with('sections.items')
         ->where('slug', 'project')
         ->first();
 
-    return view('frontend.project', compact('page'));
+        $projects = Project::latest()->take(6)->get();
+
+    return view('frontend.project', compact('page', 'projects'));
+    }
+
+    public function project_detail(string $slug)
+    {
+        $projectLibrary = [
+            'seo-rocket-pro' => (object) [
+                'slug' => 'seo-rocket-pro',
+                'title' => 'SEO Rocket Pro',
+                'category' => 'SEO Growth Platform',
+                'summary' => 'A conversion-focused SEO platform designed to improve rankings, track growth, and turn organic traffic into qualified leads.',
+                'description' => 'SEO Rocket Pro is our flagship growth platform for businesses that want a sharper SEO workflow, cleaner insights, and a more predictable path to organic visibility. The interface is built to feel premium, fast, and easy to use for teams of every size.',
+                'challenge' => 'The client needed a clearer way to manage SEO execution, surface keyword opportunities, and keep reporting easy to understand for stakeholders.',
+                'solution' => 'We created a sleek product experience that blends a performance dashboard, campaign tracking, analytics cards, and a clear feature hierarchy that supports day-to-day decision making.',
+                'image' => asset('assets/images/backend_coders_split_1.webp.webp'),
+                'accent' => '#FD5528',
+                'metrics' => [
+                    ['value' => '3x', 'label' => 'more qualified leads'],
+                    ['value' => '45%', 'label' => 'faster reporting'],
+                    ['value' => '12+', 'label' => 'core SEO modules'],
+                ],
+                'highlights' => [
+                    'Keyword opportunity dashboard',
+                    'Technical audit workflow',
+                    'Ranking and visibility tracking',
+                    'Lead-focused CTA system',
+                ],
+                'stack' => ['Laravel', 'Tailwind CSS', 'Alpine.js', 'Analytics UI', 'Responsive Design'],
+                'timeline' => [
+                    ['step' => 'Discovery', 'text' => 'Mapped the client goals, product users, and reporting priorities.'],
+                    ['step' => 'UI Design', 'text' => 'Built a polished visual language centered on clarity and trust.'],
+                    ['step' => 'Launch', 'text' => 'Delivered a responsive interface ready for future data integration.'],
+                ],
+            ],
+            'gymflow-pro' => (object) [
+                'slug' => 'gymflow-pro',
+                'title' => 'GymFlow Pro',
+                'category' => 'Fitness Management',
+                'summary' => 'A modern gym management UI with memberships, attendance, trainer flows, and clean admin reporting.',
+                'description' => 'GymFlow Pro is designed for fitness businesses that need a clear, engaging, and easy-to-navigate interface for daily operations. It balances speed, structure, and a premium product feel.',
+                'challenge' => 'The goal was to make gym operations feel simple for staff while still showing enough depth for owners and managers.',
+                'solution' => 'We designed a modular dashboard with member tracking, schedules, payment status, and analytics cards that keep the experience fast and calm.',
+                'image' => asset('assets/images/backend_coders_split_2.webp.webp'),
+                'accent' => '#0F766E',
+                'metrics' => [
+                    ['value' => '8+', 'label' => 'admin panels'],
+                    ['value' => '99%', 'label' => 'mobile friendly'],
+                    ['value' => '24/7', 'label' => 'workflow access'],
+                ],
+                'highlights' => [
+                    'Membership overview',
+                    'Trainer and attendance tracking',
+                    'Payments and subscription clarity',
+                    'Performance insights panel',
+                ],
+                'stack' => ['Laravel', 'Tailwind CSS', 'Dashboard UI', 'Alpine.js', 'Responsive Components'],
+                'timeline' => [
+                    ['step' => 'Research', 'text' => 'Studied gym staff workflows and member journeys.'],
+                    ['step' => 'Layout', 'text' => 'Organized tasks into clear cards and action zones.'],
+                    ['step' => 'Polish', 'text' => 'Refined spacing, hierarchy, and hover states for a premium feel.'],
+                ],
+            ],
+            'pos-master' => (object) [
+                'slug' => 'pos-master',
+                'title' => 'POS Master',
+                'category' => 'Retail Operations',
+                'summary' => 'A polished point-of-sale interface built for billing speed, stock control, and multi-store visibility.',
+                'description' => 'POS Master brings together billing, inventory, and store management in a clean and intuitive UI that keeps staff focused and confident at checkout.',
+                'challenge' => 'The client needed a retail system that looked modern, reduced friction, and stayed readable under fast-paced usage.',
+                'solution' => 'We created a visually strong dashboard with a crisp billing flow, quick inventory references, and clear status indicators for store teams.',
+                'image' => asset('assets/images/backend_coders_split_3.webp.webp'),
+                'accent' => '#C2410C',
+                'metrics' => [
+                    ['value' => '2x', 'label' => 'faster billing flow'],
+                    ['value' => '14+', 'label' => 'retail screens'],
+                    ['value' => '1 UI', 'label' => 'unified operations'],
+                ],
+                'highlights' => [
+                    'Fast checkout experience',
+                    'Inventory and barcode panels',
+                    'Sales reporting clarity',
+                    'Multi-location management',
+                ],
+                'stack' => ['Laravel', 'Tailwind CSS', 'Retail UI', 'Alpine.js', 'Responsive Design'],
+                'timeline' => [
+                    ['step' => 'Scope', 'text' => 'Defined the retail actions that needed to stay fastest on screen.'],
+                    ['step' => 'Build', 'text' => 'Created modular cards for billing, inventory, and reports.'],
+                    ['step' => 'Launch', 'text' => 'Finished with strong contrast, rhythm, and a premium product finish.'],
+                ],
+            ],
+        ];
+
+        $project = $projectLibrary[$slug] ?? $projectLibrary['seo-rocket-pro'];
+        $relatedProjects = array_values(array_filter(
+            $projectLibrary,
+            fn ($item) => $item->slug !== $project->slug
+        ));
+
+        $page = (object) [
+            'meta_title' => $project->title . ' | Project Detail | Backend Coders India',
+            'meta_description' => $project->summary,
+            'canonical_url' => url()->current(),
+            'title' => $project->title,
+            'is_index' => 1,
+        ];
+
+        return view('frontend.project-detail', compact('page', 'project', 'relatedProjects'));
     }
 
     public function contact(){
