@@ -1,6 +1,7 @@
 ﻿@extends('component.main')
 
 @section('content')
+@php($showcaseProject = $projects->firstWhere('is_featured', true) ?? $projects->first())
 <style>
     @keyframes marquee {
         from {
@@ -481,13 +482,20 @@ We partner with startups, SMEs, and growing businesses to deliver technology sol
                       <div class="mt-4 flex flex-wrap gap-4">
 
                           <a
-                              href="{{ route('frontend.project-detail',['slug'=>'seo-rocket-pro']) }}"
+                             href="{{ $showcaseProject ? route('frontend.project-detail', ['slug' => $showcaseProject->slug]) : route('frontend.project') }}"
                               class="inline-flex items-center justify-center rounded-xl bg-[#FD5528] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#e94c20]"
                           >
+                          
+                              View Project
+                          </a>
+<!-- 
+                          <a href="https://seorocketpro.com/"
+                              class="inline-flex items-center justify-center rounded-xl bg-[#FD5528] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#e94c20]"
+                          > 
 
                               View Product
 
-                          </a>
+                          </a> -->
 
                           <a
                               href="{{ route('frontend.contact') }}"
@@ -514,7 +522,6 @@ We partner with startups, SMEs, and growing businesses to deliver technology sol
 
           </div>
 </section>
-
 <!-- OUR CLIENTS SECTION -->
 <section class="py-20 bg-white overflow-hidden">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
@@ -687,7 +694,7 @@ From business websites and ecommerce platforms to CRM tools, mobile apps, SaaS p
     
       <!-- CTA -->
       <div class="mt-8 flex gap-4 flex-wrap">
-        <a href="{{ route('frontend.project-detail', ['slug' => 'seo-rocket-pro']) }}" class="bg-gradient-to-r from-[#FD5528] to-[#fbb03b] hover:from-[#fbb03b] hover:to-[#FD5528] text-white px-6 py-3 rounded-xl font-semibold shadow hover:scale-105 transition">
+        <a href="{{ $showcaseProject ? route('frontend.project-detail', ['slug' => $showcaseProject->slug]) : route('frontend.project') }}" class="bg-gradient-to-r from-[#FD5528] to-[#fbb03b] hover:from-[#fbb03b] hover:to-[#FD5528] text-white px-6 py-3 rounded-xl font-semibold shadow hover:scale-105 transition">
           View Full Case Study
         </a>
 
@@ -708,7 +715,7 @@ From business websites and ecommerce platforms to CRM tools, mobile apps, SaaS p
 <!-- =========================
      FEATURED PROJECTS SECTION
 ========================== -->
-<section class="relative overflow-hidden bg-gradient-to-b from-slate-50 via-white to-white py-32 lg:py-40">
+<section class="relative overflow-hidden bg-gradient-to-b from-slate-50 via-white to-white py-4 lg:py-4">
 
     <div class="mx-auto max-w-7xl px-6 lg:px-8 py-12">
 
@@ -746,7 +753,7 @@ From business websites and ecommerce platforms to CRM tools, mobile apps, SaaS p
 <!-- =========================
      DEVELOPMENT EXPERTISE
 ========================== -->
-<section class="bg-white py-12 lg:py-24">
+<section class="bg-white py-2 lg:py-4">
 
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
 
@@ -763,7 +770,7 @@ From business websites and ecommerce platforms to CRM tools, mobile apps, SaaS p
 
         </div>
 
-        <div class="mt-20 grid gap-8 md:grid-cols-2 xl:grid-cols-3 py-12">
+        <div class="mt-2 grid gap-8 md:grid-cols-2 xl:grid-cols-3 py-12">
 
             <!-- Web Applications -->
             <div

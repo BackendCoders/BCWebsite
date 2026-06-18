@@ -17,6 +17,10 @@ class Project extends Model
         'live_url',
         'description',
         'image',
+        'meta_title',
+        'meta_description',
+        'meta_keywords',
+        'faqs',
         'is_featured',
         'completed_at',
     ];
@@ -24,7 +28,51 @@ class Project extends Model
     protected $casts = [
         'is_featured' => 'boolean',
         'completed_at' => 'date',
+        'faqs' => 'array',
     ];
+
+    public function getSlugAttribute(): string
+    {
+        return Str::slug((string) $this->title);
+    }
+
+    public function getTechnologiesArrayAttribute(): array
+    {
+        return collect(explode(',', (string) $this->technologies))
+            ->map(fn ($technology) => trim($technology))
+            ->filter()
+            ->values()
+            ->all();
+    }
+
+    public function getFaqItemsAttribute(): array
+    {
+        return collect($this->faqs ?? [])
+            ->filter()
+            ->map(function ($item) {
+                if (is_string($item)) {
+                    return [
+                        'question' => trim($item),
+                        'answer' => '',
+                    ];
+                }
+
+                return [
+                    'question' => trim((string) data_get($item, 'question', '')),
+                    'answer' => (string) data_get($item, 'answer', ''),
+                ];
+            })
+            ->filter(fn ($item) => filled($item['question']))
+            ->values()
+            ->all();
+    }
+
+    public function getReadingTimeAttribute(): int
+    {
+        $source = trim(strip_tags((string) ($this->description ?: '')));
+
+        return max(1, (int) ceil(str_word_count($source) / 200));
+    }
 
     public function getImageUrl(): string
     {

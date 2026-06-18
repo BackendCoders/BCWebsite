@@ -485,14 +485,14 @@
 
             <p class="mt-4 text-gray-600 sm:text-lg"
             data-aos="fade-up" data-aos-delay="200">
-                As a trusted software development company in Kanpur, Backend Coders India offers complete technology and growth solutions from idea validation to design, development, deployment, SEO, marketing, and long-term support. We help businesses in India and international markets build secure, scalable, and conversion-focused digital products.
+               Backend Coders India provides software development, SEO, and digital marketing services for businesses in Kanpur, across India, and international markets. We help brands build scalable digital products and support long-term growth.
             </p>
 
         </div>
 
-        <div class="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
 
-                <article data-aos="fade-up" data-aos-delay="100"
+              <!-- <article data-aos="fade-up" data-aos-delay="100"
                     class="group relative overflow-hidden rounded-[1.75rem] border border-[#FD5528]/30 bg-gradient-to-b from-white via-white to-orange-50 p-7 shadow-[0_25px_60px_rgba(0,0,0,0.1)] transition duration-500 hover:-translate-y-2 hover:shadow-[#da8871] hover:bg-white/10 hover:backdrop-blur-[18px] text-gray-900">
                     <div class="pointer-events-none absolute inset-0 rounded-[1.75rem] bg-gradient-to-br from-[#FD5528]/15 via-white/40 to-white/10 opacity-0 transition duration-500 group-hover:opacity-80 backdrop-blur-[0px] group-hover:backdrop-blur-[24px]"></div>
                     <div class="relative z-10 flex flex-col items-center text-center space-y-4">
@@ -508,151 +508,716 @@
                             <span class="rounded-full border border-[#FD5528]/70 px-3 py-1">Performance</span>
                         </div>
                     </div>
-                </article>
+                </article> -->
+          
+              <!-- card-0 -->
+       <div class="flip-card" data-aos="fade-up" data-aos-delay="100">
 
-                <article data-aos="fade-up" data-aos-delay="120"
-                    class="group relative overflow-hidden rounded-[1.75rem] border border-[#FD5528]/30 bg-gradient-to-b from-white via-white to-orange-50 p-7 shadow-[0_25px_60px_rgba(0,0,0,0.1)] transition duration-500 hover:-translate-y-2 hover:shadow-[#da8871] hover:bg-white/10 hover:backdrop-blur-[18px] text-gray-900">
-                    <div class="pointer-events-none absolute inset-0 rounded-[1.75rem] bg-gradient-to-br from-[#FD5528]/15 via-white/40 to-white/10 opacity-0 transition duration-500 group-hover:opacity-80 backdrop-blur-[0px] group-hover:backdrop-blur-[24px]"></div>
-                    <div class="relative z-10 flex flex-col items-center text-center space-y-4">
-                        <span class="text-[0.6rem] font-semibold uppercase tracking-[0.4em] text-[#FD5528]">Design & Build</span>
-                        <div class="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] 
-                    hover:from-[#fb813b] hover:to-[#b00000] shadow-inner">
-                            <img src="https://img.icons8.com/?size=100&id=8Y6ohiJ337rc&format=png&color=ffffff" alt="Design icon" class="h-16 w-16" />
-                        </div>
-                        <h3 class="text-xl font-semibold transition duration-500 group-hover:text-black">Website Design & Development</h3>
-                        <p class="text-sm text-gray-600 group-hover:text-gray-900">We create responsive, modern, and SEO-friendly websites for businesses in Kanpur, across India, and for international clients. Our websites are built to load fast, look professional, and convert visitors into leads and customers.</p>
-                        <div class="flex flex-wrap items-center justify-center gap-3 text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-[#FD5528]">
-                            <span class="rounded-full border border-[#FD5528]/70 px-3 py-1">Responsive</span>
-                            <span class="rounded-full border border-[#FD5528]/70 px-3 py-1">SEO Friendly</span>
-                        </div>
-                    </div>
-                </article>
+        <div class="flip-card-inner">
 
-                <article data-aos="fade-up" data-aos-delay="140"
-                    class="group relative overflow-hidden rounded-[1.75rem] border border-[#FD5528]/30 bg-gradient-to-b from-white via-white to-orange-50 p-7 shadow-[0_25px_60px_rgba(0,0,0,0.1)] transition duration-500 hover:-translate-y-2 hover:shadow-[#da8871] hover:bg-white/10 hover:backdrop-blur-[18px] text-gray-900">
-                    <div class="pointer-events-none absolute inset-0 rounded-[1.75rem] bg-gradient-to-br from-[#FD5528]/15 via-white/40 to-white/10 opacity-0 transition duration-500 group-hover:opacity-80 backdrop-blur-[0px] group-hover:backdrop-blur-[24px]"></div>
-                    <div class="relative z-10 flex flex-col items-center text-center space-y-4">
-                        <span class="text-[0.6rem] font-semibold uppercase tracking-[0.4em] text-[#FD5528]">SaaS Forces</span>
-                        <div class="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] 
-                    hover:from-[#fb813b] hover:to-[#b00000] shadow-inner">
-                            <img src="https://img.icons8.com/?size=100&id=k8TSihyFk2cJ&format=png&color=ffffff" alt="SaaS icon" class="h-16 w-16" />
-                        </div>
-                        <h3 class="text-xl font-semibold transition duration-500 group-hover:text-black">SaaS Development</h3>
-                        <p class="text-sm text-gray-600 group-hover:text-gray-900">We develop cloud-based SaaS products with secure architecture, smooth user experience, automation features, and scalable backend systems for startups and growing businesses.</p>
-                        <div class="flex flex-wrap items-center justify-center gap-3 text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-[#FD5528]">
-                            <span class="rounded-full border border-[#FD5528]/70 px-3 py-1">Cloud Ready</span>
-                            <span class="rounded-full border border-[#FD5528]/70 px-3 py-1">Managed Ops</span>
-                        </div>
-                    </div>
-                </article>
+                  <!-- FRONT SIDE -->
+                  <article
+                      class="absolute inset-0 overflow-hidden rounded-[1.75rem] border border-[#FD5528]/30 bg-gradient-to-b from-white via-white to-orange-50 p-4 shadow-[0_25px_60px_rgba(0,0,0,0.1)] text-gray-900"
+                      style="backface-visibility:hidden;">
 
-                <article data-aos="fade-up" data-aos-delay="160"
-                    class="group relative overflow-hidden rounded-[1.75rem] border border-[#FD5528]/30 bg-gradient-to-b from-white via-white to-orange-50 p-7 shadow-[0_25px_60px_rgba(0,0,0,0.1)] transition duration-500 hover:-translate-y-2 hover:shadow-[#da8871] hover:bg-white/10 hover:backdrop-blur-[18px] text-gray-900">
-                    <div class="pointer-events-none absolute inset-0 rounded-[1.75rem] bg-gradient-to-br from-[#FD5528]/15 via-white/40 to-white/10 opacity-0 transition duration-500 group-hover:opacity-80 backdrop-blur-[0px] group-hover:backdrop-blur-[24px]"></div>
-                    <div class="relative z-10 flex flex-col items-center text-center space-y-4">
-                        <span class="text-[0.6rem] font-semibold uppercase tracking-[0.4em] text-[#FD5528]">Enterprise Core</span>
-                        <div class="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] 
-                    hover:from-[#fb813b] hover:to-[#b00000] shadow-inner">
-                            <img src="https://img.icons8.com/?size=100&id=Rk5rrSlqrNZO&format=png&color=ffffff" alt="ERP icon" class="h-16 w-16" />
-                        </div>
-                        <h3 class="text-xl font-semibold transition duration-500 group-hover:text-black">ERP & POS Software</h3>
-                        <p class="text-sm text-gray-600 group-hover:text-gray-900">We build ERP and POS software that helps businesses manage inventory, billing, reporting, payments, and operations through one reliable digital platform.</p>
-                        <div class="flex flex-wrap items-center justify-center gap-3 text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-[#FD5528]">
-                            <span class="rounded-full border border-[#FD5528]/70 px-3 py-1">Real-time</span>
-                            <span class="rounded-full border border-[#FD5528]/70 px-3 py-1">Proactive</span>
-                        </div>
-                    </div>
-                </article>
+                      <div class="flex h-full flex-col items-center justify-center text-center">
 
-                <article data-aos="fade-up" data-aos-delay="180"
-                    class="group relative overflow-hidden rounded-[1.75rem] border border-[#FD5528]/30 bg-gradient-to-b from-white via-white to-orange-50 p-7 shadow-[0_25px_60px_rgba(0,0,0,0.1)] transition duration-500 hover:-translate-y-2 hover:shadow-[#da8871] hover:bg-white/10 hover:backdrop-blur-[18px] text-gray-900">
-                    <div class="pointer-events-none absolute inset-0 rounded-[1.75rem] bg-gradient-to-br from-[#FD5528]/15 via-white/40 to-white/10 opacity-0 transition duration-500 group-hover:opacity-80 backdrop-blur-[0px] group-hover:backdrop-blur-[24px]"></div>
-                    <div class="relative z-10 flex flex-col items-center text-center space-y-4">
-                        <span class="text-[0.6rem] font-semibold uppercase tracking-[0.4em] text-[#FD5528]">Commerce Pulse</span>
-                        <div class="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] 
-                    hover:from-[#fb813b] hover:to-[#b00000] shadow-inner">
-                            <img src="https://img.icons8.com/?size=100&id=8OxFnElAJgpE&format=png&color=ffffff" alt="Commerce icon" class="h-16 w-16" />
-                        </div>
-                        <h3 class="text-xl font-semibold transition duration-500 group-hover:text-black">E-commerce Development</h3>
-                        <p class="text-sm text-gray-600 group-hover:text-gray-900">We create eCommerce websites and online store platforms with secure checkout, product management, payment integration, mobile optimization, and conversion-focused design.</p>
-                        <div class="flex flex-wrap items-center justify-center gap-3 text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-[#FD5528]">
-                            <span class="rounded-full border border-[#FD5528]/70 px-3 py-1">Secure</span>
-                            <span class="rounded-full border border-[#FD5528]/70 px-3 py-1">Fast Checkout</span>
-                        </div>
-                    </div>
-                </article>
+                          <span class="mb-2 text-[0.6rem] font-semibold uppercase tracking-[0.4em] text-[#FD5528]">
+                              Bespoke Web
+                          </span>
 
-                <article data-aos="fade-up" data-aos-delay="200"
-                    class="group relative overflow-hidden rounded-[1.75rem] border border-[#FD5528]/30 bg-gradient-to-b from-white via-white to-orange-50 p-7 shadow-[0_25px_60px_rgba(0,0,0,0.1)] transition duration-500 hover:-translate-y-2 hover:shadow-[#da8871] hover:bg-white/10 hover:backdrop-blur-[18px] text-gray-900">
-                    <div class="pointer-events-none absolute inset-0 rounded-[1.75rem] bg-gradient-to-br from-[#FD5528]/15 via-white/40 to-white/10 opacity-0 transition duration-500 group-hover:opacity-80 backdrop-blur-[0px] group-hover:backdrop-blur-[24px]"></div>
-                    <div class="relative z-10 flex flex-col items-center text-center space-y-4">
-                        <span class="text-[0.6rem] font-semibold uppercase tracking-[0.4em] text-[#FD5528]">Mobile Pulse</span>
-                        <div class="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] 
-                    hover:from-[#fb813b] hover:to-[#b00000] shadow-inner">
-                            <img src="https://img.icons8.com/?size=100&id=67475&format=png&color=ffffff" alt="Mobile icon" class="h-16 w-16" />
-                        </div>
-                        <h3 class="text-xl font-semibold transition duration-500 group-hover:text-black">Mobile App Development</h3>
-                        <p class="text-sm text-gray-600 group-hover:text-gray-900">We build Android and cross-platform mobile apps with intuitive design, strong API connectivity, and scalable performance for startups and businesses.</p>
-                        <div class="flex flex-wrap items-center justify-center gap-3 text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-[#FD5528]">
-                            <span class="rounded-full border border-[#FD5528]/70 px-3 py-1">Smooth UI</span>
-                            <span class="rounded-full border border-[#FD5528]/70 px-3 py-1">Cross Platform</span>
-                        </div>
-                    </div>
-                </article>
+                          <div class="flex h-24 w-24 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] shadow-xl">
 
-                <article data-aos="fade-up" data-aos-delay="220"
-                    class="group relative overflow-hidden rounded-[1.75rem] border border-[#FD5528]/30 bg-gradient-to-b from-white via-white to-orange-50 p-7 shadow-[0_25px_60px_rgba(0,0,0,0.1)] transition duration-500 hover:-translate-y-2 hover:shadow-[#da8871] hover:bg-white/10 hover:backdrop-blur-[18px] text-gray-900">
-                    <div class="pointer-events-none absolute inset-0 rounded-[1.75rem] bg-gradient-to-br from-[#FD5528]/15 via-white/40 to-white/10 opacity-0 transition duration-500 group-hover:opacity-80 backdrop-blur-[0px] group-hover:backdrop-blur-[24px]"></div>
-                    <div class="relative z-10 flex flex-col items-center text-center space-y-4">
-                        <span class="text-[0.6rem] font-semibold uppercase tracking-[0.4em] text-[#FD5528]">API Layer</span>
-                        <div class="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] 
-                    hover:from-[#fb813b] hover:to-[#b00000] shadow-inner">
-                            <img src="https://img.icons8.com/?size=100&id=6kPR2dlup5KK&format=png&color=ffffff" alt="API icon" class="h-16 w-16" />
-                        </div>
-                        <h3 class="text-xl font-semibold transition duration-500 group-hover:text-black">API Development</h3>
-                        <p class="text-sm text-gray-600 group-hover:text-gray-900">We create secure and integration-ready APIs for mobile apps, web apps, SaaS products, enterprise systems, and third-party platforms, making your software faster and more connected.</p>
-                        <div class="flex flex-wrap items-center justify-center gap-3 text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-[#FD5528]">
-                            <span class="rounded-full border border-[#FD5528]/70 px-3 py-1">REST API</span>
-                            <span class="rounded-full border border-[#FD5528]/70 px-3 py-1">Web Hooks</span>
-                        </div>
-                    </div>
-                </article>
+                              <img
+                                  src="https://img.icons8.com/?size=100&id=DCkAZ79sIYhT&format=png&color=ffffff"
+                                  alt="Custom web app"
+                                  class="h-24 w-24">
 
-                <article data-aos="fade-up" data-aos-delay="240"
-                    class="group relative overflow-hidden rounded-[1.75rem] border border-[#FD5528]/30 bg-gradient-to-b from-white via-white to-orange-50 p-7 shadow-[0_25px_60px_rgba(0,0,0,0.1)] transition duration-500 hover:-translate-y-2 hover:shadow-[#da8871] hover:bg-white/10 hover:backdrop-blur-[18px] text-gray-900">
-                    <div class="pointer-events-none absolute inset-0 rounded-[1.75rem] bg-gradient-to-br from-[#FD5528]/15 via-white/40 to-white/10 opacity-0 transition duration-500 group-hover:opacity-80 backdrop-blur-[0px] group-hover:backdrop-blur-[24px]"></div>
-                    <div class="relative z-10 flex flex-col items-center text-center space-y-4">
-                        <span class="text-[0.6rem] font-semibold uppercase tracking-[0.4em] text-[#FD5528]">Growth Duo</span>
-                        <div class="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] 
-                    hover:from-[#fb813b] hover:to-[#b00000] shadow-inner">
-                            <img src="https://img.icons8.com/?size=100&id=103102&format=png&color=ffffff" alt="Marketing icon" class="h-16 w-16" />
-                        </div>
-                        <h3 class="text-xl font-semibold transition duration-500 group-hover:text-black">Digital Marketing & SEO</h3>
-                        <p class="text-sm text-gray-600 group-hover:text-gray-900">We help businesses increase visibility on Google with on-page SEO, local SEO, technical SEO, content strategy, and growth-focused digital marketing services tailored for Kanpur, India, and international markets.</p>
-                        <div class="flex flex-wrap items-center justify-center gap-3 text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-[#FD5528]">
-                            <span class="rounded-full border border-[#FD5528]/70 px-3 py-1">Analytics</span>
-                            <span class="rounded-full border border-[#FD5528]/70 px-3 py-1">Lead Growth</span>
-                        </div>
-                    </div>
-                </article>
+                          </div>
 
-                <article data-aos="fade-up" data-aos-delay="260"
-                    class="group relative overflow-hidden rounded-[1.75rem] border border-[#FD5528]/30 bg-gradient-to-b from-white via-white to-orange-50 p-7 shadow-[0_25px_60px_rgba(0,0,0,0.1)] transition duration-500 hover:-translate-y-2 hover:shadow-[#da8871] hover:bg-white/10 hover:backdrop-blur-[18px] text-gray-900">
-                    <div class="pointer-events-none absolute inset-0 rounded-[1.75rem] bg-gradient-to-br from-[#FD5528]/15 via-white/40 to-white/10 opacity-0 transition duration-500 group-hover:opacity-80 backdrop-blur-[0px] group-hover:backdrop-blur-[24px]"></div>
-                    <div class="relative z-10 flex flex-col items-center text-center space-y-4">
-                        <span class="text-[0.6rem] font-semibold uppercase tracking-[0.4em] text-[#FD5528]">Startup Sprint</span>
-                        <div class="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] 
-                    hover:from-[#fb813b] hover:to-[#b00000] shadow-inner">
-                            <img src="https://img.icons8.com/?size=100&id=KR7IxBJfODTv&format=png&color=ffffff" alt="MVP icon" class="h-16 w-16" />
-                        </div>
-                        <h3 class="text-xl font-semibold transition duration-500 group-hover:text-black">Startup MVP Development</h3>
-                        <p class="text-sm text-gray-600 group-hover:text-gray-900">We help founders validate ideas quickly through lean MVP development, rapid iteration, and scalable technical foundations that support future product growth.</p>
-                        <div class="flex flex-wrap items-center justify-center gap-3 text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-[#FD5528]">
-                            <span class="rounded-full border border-[#FD5528]/70 px-3 py-1">Rapid Launch</span>
-                            <span class="rounded-full border border-[#FD5528]/70 px-3 py-1">Validated</span>
-                        </div>
+                          <h3 class="mt-4 text-2xl font-bold text-gray-900">
+                              Custom Web Applications
+                          </h3>
+
+                      </div>
+
+                  </article>
+
+                  <!-- BACK SIDE -->
+                  <article
+                      class="absolute inset-0 overflow-hidden rounded-[1.75rem] bg-gradient-to-br from-[#b00000] via-[#FD5528] to-[#fb813b] p-4 text-white shadow-[0_25px_60px_rgba(0,0,0,0.15)]"
+                      style="
+                          transform:rotateY(180deg);
+                          backface-visibility:hidden;
+                      ">
+
+                      <div class="flex h-full flex-col items-center justify-center text-center">
+
+                          <!-- <div class="flex h-20 w-20 items-center justify-center rounded-full bg-white/15 backdrop-blur-md">
+
+                              <img
+                                  src="https://img.icons8.com/?size=100&id=DCkAZ79sIYhT&format=png&color=ffffff"
+                                  alt="Custom web app"
+                                  class="h-14 w-14">
+
+                          </div> -->
+
+                          <h3 class="mt-5 text-xl font-bold">
+                              Custom Web Applications
+                          </h3>
+
+                          <p class="mt-4 text-sm leading-7 text-white/90">
+
+                            We build secure custom web applications designed for your workflows, users, and growth goals.
+                          </p>
+
+                          <div class="mt-6 flex flex-wrap justify-center gap-2">
+
+                              <span class="rounded-full border border-white/30 bg-white/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] backdrop-blur">
+                                  Scalable
+
+                              </span>
+
+                              <span class="rounded-full border border-white/30 bg-white/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] backdrop-blur">
+                                  Performance
+                              </span>
+
+                              <span class="rounded-full border border-white/30 bg-white/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] backdrop-blur">
+                                  Secure
+                              </span>
+
+                          </div>
+
+                      </div>
+
+                  </article>
+
+              </div>
+
+          </div>
+
+
+    <!-- Card 1 -->
+    <div class="flip-card" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="flip-card-inner">
+
+            <!-- FRONT -->
+            <article class="flip-front border border-[#FD5528]/30 bg-gradient-to-b from-white via-white to-orange-50 p-8 shadow-[0_25px_60px_rgba(0,0,0,0.1)]">
+
+                <div class="flex h-full flex-col items-center justify-center text-center">
+
+                    <span class="text-[0.65rem] font-semibold uppercase tracking-[0.4em] text-[#FD5528]">
+                        Design & Build
+                    </span>
+
+                    <div class="mt-5 flex h-24 w-24 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] shadow-xl">
+
+                        <img
+                            src="https://img.icons8.com/?size=100&id=8Y6ohiJ337rc&format=png&color=ffffff"
+                            alt=""
+                            class="h-24 w-24 p-2">
+
                     </div>
-                </article>
+
+                    <h3 class="mt-6 text-2xl font-bold text-slate-900">
+                       Website Design & Development
+                    </h3>
+
+                </div>
+
+            </article>
+
+            <!-- BACK -->
+            <article class="flip-back bg-gradient-to-br from-[#b00000] via-[#FD5528] to-[#fb813b] p-6 text-white shadow-[0_25px_60px_rgba(0,0,0,0.15)]">
+
+                <div class="flex h-full flex-col">
+
+                    <!-- <div class="flex justify-center">
+
+                        <div class="flex h-20 w-20 items-center justify-center rounded-full bg-white/15 backdrop-blur">
+
+                            <img
+                                src="https://img.icons8.com/?size=100&id=DCkAZ79sIYhT&format=png&color=ffffff"
+                                alt=""
+                                class="h-12 w-12">
+
+                        </div>
+
+                    </div> -->
+
+                    <h3 class="mt-3 text-center text-xl font-bold">
+                        Website Design & Development
+                    </h3>
+
+                    <p class="mt-2 text-center text-sm leading-7 text-white/90">
+                   We create responsive, SEO-friendly websites that load fast and support better conversions.
+
+                    </p>
+
+                    <div class="mt-auto flex flex-wrap justify-center gap-2 pt-5">
+
+                        <span class="rounded-full border border-white/30 px-3 py-1 text-[11px]">
+                       SEO Friendly
+                        </span>
+
+                        <span class="rounded-full border border-white/30 px-3 py-1 text-[11px]">
+                          Responsive
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+        <!-- Card 2-->
+    <div class="flip-card" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="flip-card-inner">
+
+            <!-- FRONT -->
+            <article class="flip-front border border-[#FD5528]/30 bg-gradient-to-b from-white via-white to-orange-50 p-8 shadow-[0_25px_60px_rgba(0,0,0,0.1)]">
+
+                <div class="flex h-full flex-col items-center justify-center text-center">
+
+                    <span class="text-[0.65rem] font-semibold uppercase tracking-[0.4em] text-[#FD5528]">
+                       SaaS Forces
+                    </span>
+
+                    <div class="mt-5 flex h-24 w-24 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] shadow-xl">
+
+                        <img
+                            src="https://img.icons8.com/?size=100&id=k8TSihyFk2cJ&format=png&color=ffffff"
+                            alt=""
+                            class="h-24 w-24 p-2">
+
+                    </div>
+
+                    <h3 class="mt-6 text-2xl font-bold text-slate-900">
+                       SaaS Development
+                    </h3>
+
+                </div>
+
+            </article>
+
+            <!-- BACK -->
+            <article class="flip-back bg-gradient-to-br from-[#b00000] via-[#FD5528] to-[#fb813b] p-6 text-white shadow-[0_25px_60px_rgba(0,0,0,0.15)]">
+
+                <div class="flex h-full flex-col">
+
+                    <!-- <div class="flex justify-center">
+
+                        <div class="flex h-20 w-20 items-center justify-center rounded-full bg-white/15 backdrop-blur">
+
+                            <img
+                                src="https://img.icons8.com/?size=100&id=DCkAZ79sIYhT&format=png&color=ffffff"
+                                alt=""
+                                class="h-12 w-12">
+
+                        </div>
+
+                    </div> -->
+
+                    <h3 class="mt-5 text-center text-xl font-bold">
+                        SaaS Development
+                    </h3>
+
+                    <p class="mt-4 text-center text-sm leading-7 text-white/90">
+                     We develop cloud-based SaaS products with scalable systems and smooth user experience.
+
+                    </p>
+
+                    <div class="mt-auto flex flex-wrap justify-center gap-2 pt-5">
+
+                        <span class="rounded-full border border-white/30 px-3 py-1 text-[11px]">
+                      Cloud Ready
+
+                        </span>
+
+                        <span class="rounded-full border border-white/30 px-3 py-1 text-[11px]">
+                       Manage OPS
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+       <!-- Card 3-->
+    <div class="flip-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="flip-card-inner">
+
+            <!-- FRONT -->
+            <article class="flip-front border border-[#FD5528]/30 bg-gradient-to-b from-white via-white to-orange-50 p-8 shadow-[0_25px_60px_rgba(0,0,0,0.1)]">
+
+                <div class="flex h-full flex-col items-center justify-center text-center">
+
+                    <span class="text-[0.65rem] font-semibold uppercase tracking-[0.4em] text-[#FD5528]">
+                   Enterprise Core
+                    </span>
+
+                    <div class="mt-5 flex h-24 w-24 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] shadow-xl">
+
+                        <img
+                            src="https://img.icons8.com/?size=100&id=Rk5rrSlqrNZO&format=png&color=ffffff"
+                            alt=""
+                            class="h-24 w-24 p-2">
+
+                    </div>
+
+                    <h3 class="mt-6 text-2xl font-bold text-slate-900">
+                      ERP & POS Software
+                    </h3>
+
+                </div>
+
+            </article>
+
+            <!-- BACK -->
+            <article class="flip-back bg-gradient-to-br from-[#b00000] via-[#FD5528] to-[#fb813b] p-6 text-white shadow-[0_25px_60px_rgba(0,0,0,0.15)]">
+
+                <div class="flex h-full flex-col">
+
+                    <!-- <div class="flex justify-center">
+
+                        <div class="flex h-20 w-20 items-center justify-center rounded-full bg-white/15 backdrop-blur">
+
+                            <img
+                                src="https://img.icons8.com/?size=100&id=Rk5rrSlqrNZO&format=png&color=ffffff"
+                                alt=""
+                                class="h-12 w-12">
+
+                        </div>
+
+                    </div> -->
+
+                    <h3 class="mt-5 text-center text-xl font-bold">
+                      ERP & POS Software
+                    </h3>
+
+                    <p class="mt-4 text-center text-sm leading-7 text-white/90">
+                  We build ERP and POS software for billing, inventory, reporting, and operations management.
+                    </p>
+
+                    <div class="mt-auto flex flex-wrap justify-center gap-2 pt-5">
+
+                        <span class="rounded-full border border-white/30 px-3 py-1 text-[11px]">
+                          Real-Time
+
+
+                        </span>
+
+                        <span class="rounded-full border border-white/30 px-3 py-1 text-[11px]">
+                          Proactive
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+            
+    <!-- Card 4-->
+    <div class="flip-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="flip-card-inner">
+
+            <!-- FRONT -->
+            <article class="flip-front border border-[#FD5528]/30 bg-gradient-to-b from-white via-white to-orange-50 p-8 shadow-[0_25px_60px_rgba(0,0,0,0.1)]">
+
+                <div class="flex h-full flex-col items-center justify-center text-center">
+
+                    <span class="text-[0.65rem] font-semibold uppercase tracking-[0.4em] text-[#FD5528]">
+                   Commerce Pulse
+                    </span>
+
+                    <div class="mt-5 flex h-24 w-24 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] shadow-xl">
+
+                        <img
+                            src="https://img.icons8.com/?size=100&id=8OxFnElAJgpE&format=png&color=ffffff"
+                            alt=""
+                            class="h-24 w-24 p-2">
+
+                    </div>
+
+                    <h3 class="mt-6 text-2xl font-bold text-slate-900">
+                     E-commerce Development
+                    </h3>
+
+                </div>
+
+            </article>
+
+            <!-- BACK -->
+            <article class="flip-back bg-gradient-to-br from-[#b00000] via-[#FD5528] to-[#fb813b] p-6 text-white shadow-[0_25px_60px_rgba(0,0,0,0.15)]">
+
+                <div class="flex h-full flex-col">
+
+                    <!-- <div class="flex justify-center">
+
+                        <div class="flex h-20 w-20 items-center justify-center rounded-full bg-white/15 backdrop-blur">
+
+                            <img
+                                src="https://img.icons8.com/?size=100&id=8OxFnElAJgpE&format=png&color=ffffff"
+                                alt=""
+                                class="h-12 w-12">
+
+                        </div>
+
+                    </div>-->
+
+                    <h3 class="mt-5 text-center text-xl font-bold">
+                      E-commerce Development
+                    </h3>
+
+                    <p class="mt-4 text-center text-sm leading-7 text-white/90">
+           We create eCommerce websites with secure checkout, mobile optimization, and product management.
+                    </p>
+
+                    <div class="mt-auto flex flex-wrap justify-center gap-2 pt-5">
+
+                        <span class="rounded-full border border-white/30 px-3 py-1 text-[11px]">
+                         Secure
+
+                        </span>
+
+                        <span class="rounded-full border border-white/30 px-3 py-1 text-[11px]">
+                    Fast Checkout
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+            
+
+          <!-- Card 5-->
+    <div class="flip-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="flip-card-inner">
+
+            <!-- FRONT -->
+            <article class="flip-front border border-[#FD5528]/30 bg-gradient-to-b from-white via-white to-orange-50 p-8 shadow-[0_25px_60px_rgba(0,0,0,0.1)]">
+
+                <div class="flex h-full flex-col items-center justify-center text-center">
+
+                    <span class="text-[0.65rem] font-semibold uppercase tracking-[0.4em] text-[#FD5528]">
+                   Mobile Pulse
+                    </span>
+
+                    <div class="mt-5 flex h-24 w-24 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] shadow-xl">
+
+                        <img
+                            src="https://img.icons8.com/?size=100&id=67475&format=png&color=ffffff"
+                            alt=""
+                            class="h-24 w-24 p-2">
+
+                    </div>
+
+                    <h3 class="mt-6 text-2xl font-bold text-slate-900">
+                     Mobile App Development
+                    </h3>
+
+                </div>
+
+            </article>
+
+            <!-- BACK -->
+            <article class="flip-back bg-gradient-to-br from-[#b00000] via-[#FD5528] to-[#fb813b] p-6 text-white shadow-[0_25px_60px_rgba(0,0,0,0.15)]">
+
+                <div class="flex h-full flex-col">
+
+                    <!-- <div class="flex justify-center">
+
+                        <div class="flex h-20 w-20 items-center justify-center rounded-full bg-white/15 backdrop-blur">
+
+                            <img
+                                src="https://img.icons8.com/?size=100&id=67475&format=png&color=ffffff"
+                                alt=""
+                                class="h-12 w-12">
+
+                        </div>
+
+                    </div> -->
+
+                    <h3 class="mt-5 text-center text-xl font-bold">
+                      Mobile App Development
+                    </h3>
+
+                    <p class="mt-4 text-center text-sm leading-7 text-white/90">
+               We build Android and cross-platform mobile apps with smooth design and scalable performance.
+                    </p>
+
+                    <div class="mt-auto flex flex-wrap justify-center gap-2 pt-5">
+
+                        <span class="rounded-full border border-white/30 px-3 py-1 text-[11px]">
+                          Smooth UI
+
+                        </span>
+
+                        <span class="rounded-full border border-white/30 px-3 py-1 text-[11px]">
+                          Cross Platform
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+                      
+        <!-- Card 5-->
+    <div class="flip-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="flip-card-inner">
+
+            <!-- FRONT -->
+            <article class="flip-front border border-[#FD5528]/30 bg-gradient-to-b from-white via-white to-orange-50 p-8 shadow-[0_25px_60px_rgba(0,0,0,0.1)]">
+
+                <div class="flex h-full flex-col items-center justify-center text-center">
+
+                    <span class="text-[0.65rem] font-semibold uppercase tracking-[0.4em] text-[#FD5528]">
+                  API Layer
+                    </span>
+
+                    <div class="mt-5 flex h-24 w-24 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] shadow-xl">
+
+                        <img
+                            src="https://img.icons8.com/?size=100&id=6kPR2dlup5KK&format=png&color=ffffff"
+                            alt=""
+                            class="h-24 w-24 p-2">
+
+                    </div>
+
+                    <h3 class="mt-6 text-2xl font-bold text-slate-900">
+                     API Development
+                    </h3>
+
+                </div>
+
+            </article>
+
+            <!-- BACK -->
+            <article class="flip-back bg-gradient-to-br from-[#b00000] via-[#FD5528] to-[#fb813b] p-6 text-white shadow-[0_25px_60px_rgba(0,0,0,0.15)]">
+
+                <div class="flex h-full flex-col">
+
+                    <!-- <div class="flex justify-center">
+
+                        <div class="flex h-20 w-20 items-center justify-center rounded-full bg-white/15 backdrop-blur">
+
+                            <img
+                                src="https://img.icons8.com/?size=100&id=6kPR2dlup5KK&format=png&color=ffffff"
+                                alt=""
+                                class="h-12 w-12">
+
+                        </div>
+
+                    </div>-->
+
+                    <h3 class="mt-5 text-center text-xl font-bold">
+                      Mobile App Development
+                    </h3>
+
+                    <p class="mt-4 text-center text-sm leading-7 text-white/90">
+                 We create secure APIs for apps, SaaS platforms, and third-party integrations.
+                    </p>
+
+                    <div class="mt-auto flex flex-wrap justify-center gap-2 pt-5">
+
+                        <span class="rounded-full border border-white/30 px-3 py-1 text-[11px]">
+                       REST API
+
+                        </span>
+
+                        <span class="rounded-full border border-white/30 px-3 py-1 text-[11px]">
+                          Web Hooks
+                        </span>
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+            <!-- Card 6-->
+    <div class="flip-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="flip-card-inner">
+
+            <!-- FRONT -->
+            <article class="flip-front border border-[#FD5528]/30 bg-gradient-to-b from-white via-white to-orange-50 p-8 shadow-[0_25px_60px_rgba(0,0,0,0.1)]">
+
+                <div class="flex h-full flex-col items-center justify-center text-center">
+
+                    <span class="text-[0.65rem] font-semibold uppercase tracking-[0.4em] text-[#FD5528]">
+                Growth Duo
+                    </span>
+
+                    <div class="mt-5 flex h-24 w-24 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] shadow-xl">
+
+                        <img
+                            src="https://img.icons8.com/?size=100&id=103102&format=png&color=ffffff"
+                            alt=""
+                            class="h-24 w-24 p-2">
+
+                    </div>
+
+                    <h3 class="mt-6 text-2xl font-bold text-slate-900">
+                    Digital Marketing & SEO
+                    </h3>
+
+                </div>
+
+            </article>
+
+            <!-- BACK -->
+            <article class="flip-back bg-gradient-to-br from-[#b00000] via-[#FD5528] to-[#fb813b] p-6 text-white shadow-[0_25px_60px_rgba(0,0,0,0.15)]">
+
+                <div class="flex h-full flex-col">
+
+                    <!-- <div class="flex justify-center">
+
+                        <div class="flex h-20 w-20 items-center justify-center rounded-full bg-white/15 backdrop-blur">
+
+                            <img
+                                src="https://img.icons8.com/?size=100&id=103102&format=png&color=ffffff"
+                                alt=""
+                                class="h-12 w-12">
+
+                        </div> 
+
+                    </div>-->
+
+                    <h3 class="mt-2 text-center text-xl font-bold">
+                     Digital Marketing & SEO
+                    </h3>
+
+                    <p class="mt-2 text-center text-sm leading-7 text-white/90">
+                        We help businesses grow visibility through SEO, content, and digital marketing strategies.
+                    </p>
+
+                    <div class="mt-auto flex flex-wrap justify-center gap-2 pt-5">
+
+                        <span class="rounded-full border border-white/30 px-3 py-1 text-[11px]">
+                        Analytics
+                        </span>
+
+                        <span class="rounded-full border border-white/30 px-3 py-1 text-[11px]">
+                       Lead Growth
+
+                        </span>
+                    </div>
+
+                </div>
+
+            </article>
+
+    </div>
+
+ 
+
+
+    </div>
+
+              <!-- Card 7-->
+    <div class="flip-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="flip-card-inner">
+
+            <!-- FRONT -->
+            <article class="flip-front border border-[#FD5528]/30 bg-gradient-to-b from-white via-white to-orange-50 p-8 shadow-[0_25px_60px_rgba(0,0,0,0.1)]">
+
+                <div class="flex h-full flex-col items-center justify-center text-center">
+
+                    <span class="text-[0.65rem] font-semibold uppercase tracking-[0.4em] text-[#FD5528]">
+               Startup Sprint
+                    </span>
+
+                    <div class="mt-5 flex h-24 w-24 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] shadow-xl">
+
+                        <img
+                            src="https://img.icons8.com/?size=100&id=KR7IxBJfODTv&format=png&color=ffffff"
+                            alt=""
+                            class="h-24 w-24 p-2">
+
+                    </div>
+
+                    <h3 class="mt-6 text-2xl font-bold text-slate-900">
+                  Startup MVP Development
+                    </h3>
+
+                </div>
+
+            </article>
+
+            <!-- BACK -->
+            <article class="flip-back bg-gradient-to-br from-[#b00000] via-[#FD5528] to-[#fb813b] p-6 text-white shadow-[0_25px_60px_rgba(0,0,0,0.15)]">
+
+                <div class="flex h-full flex-col">
+
+                    <!-- <div class="flex justify-center">
+
+                        <div class="flex h-20 w-20 items-center justify-center rounded-full bg-white/15 backdrop-blur">
+
+                            <img
+                                src="https://img.icons8.com/?size=100&id=KR7IxBJfODTv&format=png&color=ffffff"
+                                alt=""
+                                class="h-12 w-12">
+
+                        </div>
+
+                    </div> -->
+
+                    <h3 class="mt-5 text-center text-xl font-bold">
+                    Startup MVP Development
+                    </h3>
+
+                    <p class="mt-4 text-center text-sm leading-7 text-white/90">
+       We help founders launch MVPs quickly with lean development and scalable foundations.
+                    </p>
+
+                    <div class="mt-auto flex flex-wrap justify-center gap-2 pt-5">
+
+                        <span class="rounded-full border border-white/30 px-3 py-1 text-[11px]">
+                        Rapid Launch
+                        </span>
+
+                        <span class="rounded-full border border-white/30 px-3 py-1 text-[11px]">
+                       Validated
+                        </span>
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
 
             </div>
         </div>
@@ -685,10 +1250,10 @@
     </p>
     
       <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-3">
-        Predictable Software Delivery Process
+       Predictable Software Delivery Process
       </h2>
       <p class="text-gray-500 mt-3 max-w-xl mx-auto">
-        We follow a structured and transparent delivery process that keeps every website, software product, SaaS platform, AI solution, and marketing initiative aligned with your goals, timelines, quality expectations, and business outcomes.
+       We follow a clear and structured process that keeps every project aligned with your goals, timeline, and quality expectations.
       </p>
     </div>
 
@@ -714,10 +1279,10 @@
           <!-- TEXT -->
           <div>
             <h3 class="font-semibold text-gray-900 group-hover:text-[#FD5528]">
-              Discovery
+                   Discovery
             </h3>
             <p class="text-sm text-gray-500 mt-1">
-              Understand business objectives, target audience, project scope, and technology requirements.
+Understand goals, audience, scope, and technical needs.
             </p>
           </div>
 
@@ -733,7 +1298,7 @@
               UI / UX
             </h3>
             <p class="text-sm text-gray-500 mt-1">
-              Design intuitive user flows and interfaces for better usability, engagement and product experience.
+             Design user-friendly flows and interfaces.
             </p>
           </div>
         </div>
@@ -748,7 +1313,7 @@
               Development
             </h3>
             <p class="text-sm text-gray-500 mt-1">
-              Build scalable, secure, and high-performance software using modern technologies.
+              Build secure, scalable, and high-performance solutions.
             </p>
           </div>
         </div>
@@ -763,7 +1328,7 @@
               Testing
             </h3>
             <p class="text-sm text-gray-500 mt-1">
-             Test application for performance, usability, responsiveness, and functionality before launch.
+             Test performance, usability, and functionality before launch.
             </p>
           </div>
         </div>
@@ -778,7 +1343,7 @@
               Deployment
             </h3>
             <p class="text-sm text-gray-500 mt-1">
-              Deploy production-ready websites, apps, and software platforms with proper optimization.
+              Launch optimized websites, apps, and software platforms.
             </p>
           </div>
         </div>
@@ -793,7 +1358,7 @@
               Support
             </h3>
             <p class="text-sm text-gray-500 mt-1">
-              Provide continuous maintenance, updates, improvements, and technical support.
+              Provide updates, maintenance, and technical support.
             </p>
           </div>
         </div>

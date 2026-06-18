@@ -308,9 +308,9 @@ We partner with startups, SMEs, and growing businesses to deliver technology sol
         <div class="relative mt-20">
 
             <!-- Desktop Connector -->
-            <div
+            <!-- <div
                 class="hidden lg:block absolute top-10 left-0 right-0 h-[2px] bg-gradient-to-r from-orange-200 via-orange-300 to-orange-200">
-            </div>
+            </div> -->
 
             <div class="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
 
@@ -332,7 +332,7 @@ We partner with startups, SMEs, and growing businesses to deliver technology sol
 
                 <!-- Card 2 -->
                 <div
-                    class="group relative rounded-3xl bg-[#111111] p-8 shadow-xl transition-all duration-500 hover:-translate-y-2">
+                    class="group relative rounded-3xl bg-[#fdfdfd] p-8 shadow-sm transition-all duration-500 hover:-translate-y-2">
 
                    
 
@@ -383,7 +383,7 @@ We partner with startups, SMEs, and growing businesses to deliver technology sol
 
                 <!-- Card 5 -->
                 <div
-                    class="group relative rounded-3xl bg-[#111111] p-8 shadow-xl transition-all duration-500 hover:-translate-y-2">
+                    class="group relative rounded-3xl bg-[#fffdfd] p-8 shadow-sm transition-all duration-500 hover:-translate-y-2">
 
                
 
@@ -508,7 +508,7 @@ We partner with startups, SMEs, and growing businesses to deliver technology sol
         <!-- WHY OUR PROCESS WORKS -->
         <div class="mt-28">
 
-            <div class="relative overflow-hidden rounded-[2rem] bg-[#111111] p-10 lg:p-16">
+            <div class="relative overflow-hidden rounded-[2rem] bg-[#fffefe] p-10 lg:p-16">
 
                 <div class="absolute top-0 right-0 w-80 h-80 bg-[#FD5528]/20 rounded-full blur-3xl"></div>
 

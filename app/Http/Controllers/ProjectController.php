@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Project;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class ProjectController extends Controller
 {
@@ -24,11 +26,23 @@ class ProjectController extends Controller
         $data = $this->validateProject($request);
         $data['is_featured'] = (bool) ($data['is_featured'] ?? false);
         $data['technologies'] = $this->normalizeTechnologies($request->input('technologies', []));
+        $data['faqs'] = $this->normalizeFaqs($request->input('faqs', []));
         $data['image'] = $this->storeImage($request);
 
         Project::create($data);
 
         return redirect()->route('projects.index')->with('success', 'Project created successfully');
+    }
+
+    public function show(Project $project)
+    {
+        $relatedProjects = Project::latest()
+            ->where('id', '!=', $project->id)
+            ->when($project->category, fn ($query) => $query->where('category', $project->category))
+            ->take(3)
+            ->get();
+
+        return view('projects.show', compact('project', 'relatedProjects'));
     }
 
     public function edit(Project $project)
@@ -41,6 +55,7 @@ class ProjectController extends Controller
         $data = $this->validateProject($request);
         $data['is_featured'] = (bool) ($data['is_featured'] ?? false);
         $data['technologies'] = $this->normalizeTechnologies($request->input('technologies', []));
+        $data['faqs'] = $this->normalizeFaqs($request->input('faqs', []));
         $data['image'] = $this->updateImage($request, $project);
 
         $project->update($data);
@@ -67,6 +82,12 @@ class ProjectController extends Controller
             'technologies.*' => ['nullable', 'string', 'max:255'],
             'live_url' => ['nullable', 'url', 'max:255'],
             'description' => ['nullable', 'string'],
+            'meta_title' => ['nullable', 'string', 'max:255'],
+            'meta_description' => ['nullable', 'string'],
+            'meta_keywords' => ['nullable', 'string'],
+            'faqs' => ['nullable', 'array'],
+            'faqs.*.question' => ['nullable', 'string', 'max:500'],
+            'faqs.*.answer' => ['nullable', 'string'],
             'image' => ['nullable', 'image', 'mimes:jpg,jpeg,png,webp,avif', 'max:4096'],
             'is_featured' => ['nullable', 'boolean'],
             'completed_at' => ['nullable', 'date'],
@@ -95,8 +116,8 @@ class ProjectController extends Controller
 
     private function deleteImage(?string $path): void
     {
-        if ($path && \Illuminate\Support\Facades\Storage::disk('public')->exists($path)) {
-            \Illuminate\Support\Facades\Storage::disk('public')->delete($path);
+        if ($path && Storage::disk('public')->exists($path)) {
+            Storage::disk('public')->delete($path);
         }
     }
 
@@ -107,5 +128,19 @@ class ProjectController extends Controller
         }, $technologies)));
 
         return $values ? implode(', ', $values) : null;
+    }
+
+    private function normalizeFaqs(array $faqs): array
+    {
+        return collect($faqs)
+            ->map(function ($faq) {
+                return [
+                    'question' => trim((string) data_get($faq, 'question', '')),
+                    'answer' => trim((string) data_get($faq, 'answer', '')),
+                ];
+            })
+            ->filter(fn ($faq) => filled($faq['question']) || filled($faq['answer']))
+            ->values()
+            ->all();
     }
 }

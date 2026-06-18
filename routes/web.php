@@ -21,9 +21,6 @@ use App\Http\Controllers\MenuItemController;
 use App\Http\Controllers\BotmanController;
 
 
-use BotMan\BotMan\BotMan;
-
-
 use App\Models\Page;
 
 // Route::get('/', function () {
@@ -78,12 +75,18 @@ Route::get('/robots.txt', function () {
 });
 
 // frontend::
+Route::get('/demo',[HomeController::class, 'demo'])->name('frontend.demo');
+
 Route::get('/', [HomeController::class, 'index'])->name('frontend.index');
 Route::get('/about', [HomeController::class, 'about'])->name('frontend.about');
 Route::get('/service', [HomeController::class, 'service'])->name('frontend.service');
 Route::get('/project', [HomeController::class, 'project'])->name('frontend.project');
+
+// Route::get('/project/{slug}', [HomeController::class, 'project_detail'])
+//     ->name('frontend.project-detail');
 Route::get('/project/{slug}', [HomeController::class, 'project_detail'])
     ->name('frontend.project-detail');
+
 Route::get('/contact', [HomeController::class, 'contact'])->name('frontend.contact');
 Route::get('/process', [HomeController::class, 'process'])->name('frontend.process');
 Route::get('/packages', [HomeController::class, 'packages'])->name('frontend.packages');
@@ -185,7 +188,8 @@ Route::resource('blogs', BlogController::class);
 Route::get('/blog/category/{slug}', [BlogController::class, 'category']);
 
 Route::resource('careers', CareerController::class);
-Route::resource('projects', ProjectController::class);
+Route::resource('
+s', ProjectController::class);
 Route::resource('services', ServiceController::class);
 
 Route::resource('service-details', ServiceDetailController::class);

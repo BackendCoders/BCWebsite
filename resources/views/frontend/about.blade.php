@@ -838,6 +838,7 @@ Backend Coders India is a modern web development agency and digital marketing co
 
 
 <!-- process-directions -->
+<!-- process-directions -->
 <section class="relative overflow-hidden py-16 sm:py-20 lg:py-24 bg-[#F9FAFB]">
 
   <div class="max-w-7xl mx-auto px-6">
@@ -860,10 +861,10 @@ Backend Coders India is a modern web development agency and digital marketing co
     </p>
     
       <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-3">
-       Our Development Process
+       Predictable Software Delivery Process
       </h2>
       <p class="text-gray-500 mt-3 max-w-xl mx-auto">
-       We follow a structured and transparent process that keeps projects efficient, scalable, and aligned with business goals.
+       We follow a clear and structured process that keeps every project aligned with your goals, timeline, and quality expectations.
       </p>
     </div>
 
@@ -889,10 +890,10 @@ Backend Coders India is a modern web development agency and digital marketing co
           <!-- TEXT -->
           <div>
             <h3 class="font-semibold text-gray-900 group-hover:text-[#FD5528]">
-              Discovery
+                   Discovery
             </h3>
             <p class="text-sm text-gray-500 mt-1">
-             We start by understanding your business model, users, goals, pain points, competitors, and opportunities.
+Understand goals, audience, scope, and technical needs.
             </p>
           </div>
 
@@ -905,10 +906,10 @@ Backend Coders India is a modern web development agency and digital marketing co
           </div>
           <div>
             <h3 class="font-semibold text-gray-900 group-hover:text-[#FD5528]">
-              UI / UX Planning
+              UI / UX
             </h3>
             <p class="text-sm text-gray-500 mt-1">
-              We create user-focused structures and interfaces that improve usability, engagement, and conversion performance.
+             Design user-friendly flows and interfaces.
             </p>
           </div>
         </div>
@@ -923,7 +924,7 @@ Backend Coders India is a modern web development agency and digital marketing co
               Development
             </h3>
             <p class="text-sm text-gray-500 mt-1">
-              Our team builds high-performance websites, software systems, and applications using modern full-stack development practices.
+              Build secure, scalable, and high-performance solutions.
             </p>
           </div>
         </div>
@@ -938,14 +939,14 @@ Backend Coders India is a modern web development agency and digital marketing co
               Testing
             </h3>
             <p class="text-sm text-gray-500 mt-1">
-              Every solution is checked for performance, usability, responsiveness, and reliability before launch.
+             Test performance, usability, and functionality before launch.
             </p>
           </div>
         </div>
 
         <!-- STEP -->
         <div class="flex items-start gap-4 lg:flex-col lg:items-center text-left lg:text-center group">
-          <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#FD5528] font-semibold transition  ">
+          <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#FD5528] font-semibold transition ">
             05
           </div>
           <div>
@@ -953,7 +954,7 @@ Backend Coders India is a modern web development agency and digital marketing co
               Deployment
             </h3>
             <p class="text-sm text-gray-500 mt-1">
-              We launch cleanly, carefully, and with the right technical setup to reduce friction and downtime.
+              Launch optimized websites, apps, and software platforms.
             </p>
           </div>
         </div>
@@ -968,7 +969,7 @@ Backend Coders India is a modern web development agency and digital marketing co
               Support
             </h3>
             <p class="text-sm text-gray-500 mt-1">
-             We continue to support clients after launch with improvements, updates, and same-day communication whenever possible.
+              Provide updates, maintenance, and technical support.
             </p>
           </div>
         </div>
@@ -980,6 +981,7 @@ Backend Coders India is a modern web development agency and digital marketing co
   </div>
 
 </section>
+<!-- pr -->
 <!-- pr -->
 
 

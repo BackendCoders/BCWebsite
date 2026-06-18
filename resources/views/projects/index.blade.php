@@ -31,7 +31,7 @@
             <div class="group overflow-hidden rounded-[2rem] border border-slate-200/70 bg-white/85 shadow-xl shadow-slate-200/40 backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-slate-300/40">
                 <div class="relative h-48 overflow-hidden">
                     @if($project->image)
-                        <img src="{{ asset('storage/' . $project->image) }}" alt="{{ $project->title }}" class="h-full w-full object-cover transition duration-500 group-hover:scale-105">
+                        <img src="{{ $project->getImageUrl() }}" alt="{{ $project->title }}" class="h-full w-full object-cover transition duration-500 group-hover:scale-105">
                     @else
                         <div class="flex h-full w-full items-center justify-center bg-gradient-to-br from-slate-100 to-slate-200 text-sm font-medium text-slate-400">No image</div>
                     @endif
@@ -78,10 +78,17 @@
                     </div>
 
                     <div class="flex items-center justify-between gap-2">
-                        <a href="{{ $project->live_url ?: '#' }}" target="_blank" class="inline-flex items-center gap-2 font-semibold text-[#FD5528] transition hover:text-[#e94c20]">
-                            <span>View live</span>
-                            <span aria-hidden="true">-&gt;</span>
-                        </a>
+                        <div class="inline-flex gap-2">
+                            <a href="{{ route('projects.show', $project) }}" class="rounded-xl bg-slate-900/10 px-3 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-900/20">
+                                View
+                            </a>
+                            @if($project->live_url)
+                                <a href="{{ $project->live_url }}" target="_blank" class="inline-flex items-center gap-2 font-semibold text-[#FD5528] transition hover:text-[#e94c20]">
+                                    <span>Live</span>
+                                    <span aria-hidden="true">-&gt;</span>
+                                </a>
+                            @endif
+                        </div>
                         <div class="inline-flex gap-2">
                             <a href="{{ route('projects.edit', $project) }}" class="rounded-xl bg-sky-500/10 px-3 py-2 text-sm font-semibold text-sky-600 transition hover:bg-sky-500/20 hover:text-sky-700">Edit</a>
                             <form action="{{ route('projects.destroy', $project) }}" method="POST" onsubmit="return confirm('Delete this project?')">

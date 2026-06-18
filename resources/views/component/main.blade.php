@@ -47,6 +47,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
+
     
 <!-- Swiper CSS -->
 <link rel="preload" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" as="style" onload="this.rel='stylesheet'">
@@ -54,7 +55,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
  
   <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}" />
 
-  @if(optional($page)->is_index === 0)
+  <!-- @if(optional($page)->is_index === 0)
+    <meta name="robots" content="noindex, nofollow">
+@endif -->
+
+@if(($page ?? null)?->is_index === 0)
     <meta name="robots" content="noindex, nofollow">
 @endif
 
@@ -295,6 +300,41 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
 </style>
+
+<style>
+    .flip-card {
+        perspective: 1500px;
+        height: 240px;
+    }
+
+    .flip-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transition: transform 0.8s cubic-bezier(.4,.2,.2,1);
+        transform-style: preserve-3d;
+    }
+
+    .flip-card:hover .flip-card-inner {
+        transform: rotateY(180deg);
+    }
+
+    .flip-front,
+    .flip-back {
+        position: absolute;
+        inset: 0;
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+        border-radius: 1.75rem;
+        overflow: hidden;
+    }
+
+    .flip-back {
+        transform: rotateY(180deg);
+    }
+</style>
+
+
 </head>
 <body>
   

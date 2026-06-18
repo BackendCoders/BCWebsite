@@ -9,6 +9,13 @@ class BotmanController extends Controller
 {
     public function handle()
     {
+        if (! class_exists(\BotMan\BotMan\BotMan::class) || ! app()->bound('botman')) {
+            return response()->json([
+                'text' => 'Chat is temporarily unavailable.',
+                'buttons' => [],
+            ], 503);
+        }
+
         $botman = app('botman');
 
         // Greetings

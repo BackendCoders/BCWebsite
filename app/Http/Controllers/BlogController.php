@@ -31,7 +31,10 @@ class BlogController extends Controller
         $data['category_id'] = $this->normalizeCategoryId($data['category_id'] ?? null);
         $data['slug'] = $this->makeUniqueSlug($data['title']);
         $data['is_published'] = $request->boolean('is_published');
+        $data['is_featured'] = $request->boolean('is_featured');
         $data['published_at'] = $data['is_published'] ? now() : null;
+        $data['table_of_contents'] = $this->normalizeTableOfContents($request->input('table_of_contents', []));
+        $data['faqs'] = $this->normalizeFaqs($request->input('faqs', []));
         $data['image'] = $this->storeImage($request);
 
         Blog::create($data);
@@ -76,7 +79,10 @@ class BlogController extends Controller
         $data = $this->validateBlog($request);
         $data['category_id'] = $this->normalizeCategoryId($data['category_id'] ?? null);
         $data['is_published'] = $request->boolean('is_published');
+        $data['is_featured'] = $request->boolean('is_featured');
         $data['published_at'] = $data['is_published'] ? ($blog->published_at ?? now()) : null;
+        $data['table_of_contents'] = $this->normalizeTableOfContents($request->input('table_of_contents', []));
+        $data['faqs'] = $this->normalizeFaqs($request->input('faqs', []));
         $data['image'] = $this->updateImage($request, $blog);
 
         $blog->update($data);
@@ -92,18 +98,103 @@ class BlogController extends Controller
         return redirect()->route('blogs.index')->with('success', 'Blog deleted successfully');
     }
 
+    // private function validateBlog(Request $request): array
+    // {
+    //     return $request->validate([
+    //         'category_id' => ['nullable', 'integer', 'exists:categories,id'],
+    //         'title' => ['required', 'string', 'max:255'],
+    //         'excerpt' => ['nullable', 'string'],
+    //         'content' => ['nullable', 'string'],
+    //         'image' => ['nullable', 'image', 'mimes:jpg,jpeg,png,webp,avif', 'max:4096'],
+    //         'is_published' => ['nullable', 'boolean'],
+    //     ]);
+    // }
+
+   
     private function validateBlog(Request $request): array
+{
+return $request->validate([
+
+    'category_id' => ['nullable', 'integer', 'exists:categories,id'],
+    'title' => [ 'required', 'string','max:255' ],
+
+    'excerpt' => ['nullable', 'string' ],
+
+    'content' => [  'nullable','string' ],
+
+    'image' => [ 'nullable', 'image','mimes:jpg,jpeg,png,webp,avif', 'max:4096' ],
+
+    'meta_title' => ['nullable','string','max:255' ],
+
+    'meta_description' => [ 'nullable', 'string' ],
+
+    'meta_keywords' => ['nullable','string'],
+
+    'table_of_contents' => ['nullable', 'array'],
+
+    'table_of_contents.*.title' => ['nullable', 'string', 'max:255'],
+
+    'table_of_contents.*.anchor' => ['nullable', 'string', 'max:255'],
+
+    'faqs' => ['nullable','array' ],
+
+    'faqs.*.question' => [ 'required_with:faqs', 'string', 'max:500' ],
+
+    'faqs.*.answer' => [ 'required_with:faqs','string' ],
+
+    'is_featured' => [ 'nullable', 'boolean' ],
+
+    'is_published' => [ 'nullable','boolean' ],
+
+]);
+
+
+}
+
+    private function normalizeTableOfContents(array $tableOfContents): array
     {
-        return $request->validate([
-            'category_id' => ['nullable', 'integer', 'exists:categories,id'],
-            'title' => ['required', 'string', 'max:255'],
-            'excerpt' => ['nullable', 'string'],
-            'content' => ['nullable', 'string'],
-            'image' => ['nullable', 'image', 'mimes:jpg,jpeg,png,webp,avif', 'max:4096'],
-            'is_published' => ['nullable', 'boolean'],
-        ]);
+        return collect($tableOfContents)
+            ->map(function ($item, $index) {
+                $title = trim((string) data_get($item, 'title', is_string($item) ? $item : ''));
+                $anchor = trim((string) data_get($item, 'anchor', ''));
+
+                if (! filled($title) && ! filled($anchor)) {
+                    return null;
+                }
+
+                return [
+                    'title' => $title ?: 'Section '.($index + 1),
+                    'anchor' => $anchor ?: \Illuminate\Support\Str::slug($title ?: 'section-'.($index + 1)),
+                ];
+            })
+            ->filter()
+            ->values()
+            ->all();
     }
 
+    private function normalizeFaqs(array $faqs): array
+    {
+        return collect($faqs)
+            ->map(function ($faq) {
+                $question = trim((string) data_get($faq, 'question', ''));
+                $answer = (string) data_get($faq, 'answer', '');
+
+                if (! filled($question) && ! filled($answer)) {
+                    return null;
+                }
+
+                return [
+                    'question' => $question,
+                    'answer' => $answer,
+                ];
+            })
+            ->filter(fn ($faq) => filled($faq['question']))
+            ->values()
+            ->all();
+    }
+
+   
+   
     private function storeImage(Request $request): ?string
     {
         if (! $request->hasFile('image')) {
