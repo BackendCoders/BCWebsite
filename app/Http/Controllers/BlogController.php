@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Blog;
 use App\Models\Category;
+use App\Services\BlogContentFormatter;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
@@ -27,14 +28,25 @@ class BlogController extends Controller
 
     public function store(Request $request)
     {
+        $request->merge([
+            'table_of_contents' => $this->normalizeTableOfContents($request->input('table_of_contents', [])),
+            'faqs' => $this->normalizeFaqs($request->input('faqs', [])),
+        ]);
+
         $data = $this->validateBlog($request);
         $data['category_id'] = $this->normalizeCategoryId($data['category_id'] ?? null);
-        $data['slug'] = $this->makeUniqueSlug($data['title']);
+        $data['slug'] = $this->resolveUniqueSlug($data['slug'] ?? '', $data['title']);
         $data['is_published'] = $request->boolean('is_published');
         $data['is_featured'] = $request->boolean('is_featured');
         $data['published_at'] = $data['is_published'] ? now() : null;
-        $data['table_of_contents'] = $this->normalizeTableOfContents($request->input('table_of_contents', []));
-        $data['faqs'] = $this->normalizeFaqs($request->input('faqs', []));
+        $formattedContent = app(BlogContentFormatter::class)->format($data['content'] ?? '', $data['title'] ?? '', $data['meta_keywords'] ?? null);
+        $data['content'] = $formattedContent['content'];
+        if (empty($data['table_of_contents'])) {
+            $data['table_of_contents'] = $formattedContent['table_of_contents'];
+        }
+        if (empty($data['faqs'])) {
+            $data['faqs'] = $formattedContent['faqs'];
+        }
         $data['image'] = $this->storeImage($request);
 
         Blog::create($data);
@@ -76,13 +88,25 @@ class BlogController extends Controller
 
     public function update(Request $request, Blog $blog)
     {
+        $request->merge([
+            'table_of_contents' => $this->normalizeTableOfContents($request->input('table_of_contents', [])),
+            'faqs' => $this->normalizeFaqs($request->input('faqs', [])),
+        ]);
+
         $data = $this->validateBlog($request);
         $data['category_id'] = $this->normalizeCategoryId($data['category_id'] ?? null);
+        $data['slug'] = $this->resolveUniqueSlug($data['slug'] ?? '', $data['title'], $blog->id);
         $data['is_published'] = $request->boolean('is_published');
         $data['is_featured'] = $request->boolean('is_featured');
         $data['published_at'] = $data['is_published'] ? ($blog->published_at ?? now()) : null;
-        $data['table_of_contents'] = $this->normalizeTableOfContents($request->input('table_of_contents', []));
-        $data['faqs'] = $this->normalizeFaqs($request->input('faqs', []));
+        $formattedContent = app(BlogContentFormatter::class)->format($data['content'] ?? '', $data['title'] ?? '', $data['meta_keywords'] ?? null);
+        $data['content'] = $formattedContent['content'];
+        if (empty($data['table_of_contents'])) {
+            $data['table_of_contents'] = $formattedContent['table_of_contents'];
+        }
+        if (empty($data['faqs'])) {
+            $data['faqs'] = $formattedContent['faqs'];
+        }
         $data['image'] = $this->updateImage($request, $blog);
 
         $blog->update($data);
@@ -117,6 +141,7 @@ return $request->validate([
 
     'category_id' => ['nullable', 'integer', 'exists:categories,id'],
     'title' => [ 'required', 'string','max:255' ],
+    'slug' => ['nullable', 'string', 'max:255'],
 
     'excerpt' => ['nullable', 'string' ],
 
@@ -138,9 +163,9 @@ return $request->validate([
 
     'faqs' => ['nullable','array' ],
 
-    'faqs.*.question' => [ 'required_with:faqs', 'string', 'max:500' ],
+    'faqs.*.question' => [ 'nullable', 'string', 'max:500' ],
 
-    'faqs.*.answer' => [ 'required_with:faqs','string' ],
+    'faqs.*.answer' => [ 'nullable','string' ],
 
     'is_featured' => [ 'nullable', 'boolean' ],
 
@@ -172,7 +197,7 @@ return $request->validate([
             ->all();
     }
 
-    private function normalizeFaqs(array $faqs): array
+private function normalizeFaqs(array $faqs): array
     {
         return collect($faqs)
             ->map(function ($faq) {
@@ -183,12 +208,16 @@ return $request->validate([
                     return null;
                 }
 
+                if (! filled($question) || ! filled($answer)) {
+                    return null;
+                }
+
                 return [
                     'question' => $question,
                     'answer' => $answer,
                 ];
             })
-            ->filter(fn ($faq) => filled($faq['question']))
+            ->filter()
             ->values()
             ->all();
     }
@@ -229,16 +258,26 @@ return $request->validate([
 
     private function makeUniqueSlug(string $title): string
     {
-        $base = Str::slug($title);
-        $slug = $base;
+        return $this->resolveUniqueSlug('', $title);
+    }
+
+    private function resolveUniqueSlug(string $slug, string $title, ?int $ignoreId = null): string
+    {
+        $base = Str::slug(trim($slug) !== '' ? $slug : $title);
+        $base = $base !== '' ? $base : 'blog';
+        $candidate = $base;
         $index = 1;
 
-        while (Blog::where('slug', $slug)->exists()) {
-            $slug = $base.'-'.$index;
+        while (
+            Blog::where('slug', $candidate)
+                ->when($ignoreId, fn ($query) => $query->where('id', '!=', $ignoreId))
+                ->exists()
+        ) {
+            $candidate = $base.'-'.$index;
             $index++;
         }
 
-        return $slug;
+        return $candidate;
     }
 
     private function normalizeImagePath(string $path): string
@@ -255,5 +294,26 @@ return $request->validate([
         }
 
         return $path;
+    }
+
+    public function uploadEditorImage(Request $request)
+    {
+        $request->validate([
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,webp,svg|max:10240',
+        ]);
+
+        $file = $request->file('image');
+        $extension = $file->getClientOriginalExtension() ?: 'webp';
+        $filename = 'editor_' . time() . '_' . Str::random(10) . '.' . $extension;
+
+        $path = $file->storeAs('blogs', $filename, 'public');
+        $url = route('blogs.image', ['path' => $path]);
+
+        return response()->json([
+            'success' => true,
+            'url' => $url,
+            'path' => $path,
+            'filename' => $filename,
+        ]);
     }
 }

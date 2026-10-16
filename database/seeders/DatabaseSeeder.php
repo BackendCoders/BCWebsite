@@ -27,6 +27,8 @@ class DatabaseSeeder extends Seeder
     ]
 );
 
+        $this->call(VideoSeeder::class);
+
         
 
         // ServiceCategory::factory() ->count(6) ->create() 

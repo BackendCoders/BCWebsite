@@ -5,7 +5,7 @@
 
   <!-- BACKGROUND IMAGE -->
   <img 
-    src="{{asset('assets/images/banner.png')}}"
+    src="{{asset('assets/images/banner.png')}}"   alt="Backend Coders India office team providing website development, custom software, mobile app development, and digital marketing services"
     class="absolute inset-0 w-full h-full object-cover"
   />
 
@@ -29,9 +29,9 @@
 
     <!-- SUBTEXT -->
     <p class="mt-4 sm:mt-4 lg:mt-4 text-gray-100 text-xs xs:text-sm sm:text-base md:text-lg lg:text-md max-w-7xl mx-auto leading-relaxed mb-2">
-    Backend Coders India is a best software company in Kanpur helping startups, small businesses, and growing brands with website development, custom software, SEO, and digital marketing built for growth.
+    Backend Coders India is a software company based in Kanpur. We help startups, small businesses, and growing brands build websites and custom software. We also offer search support and digital marketing.
 
-We deliver SEO-ready websites, ecommerce solutions, ERP and CRM systems, mobile apps, and scalable digital products that help businesses grow with confidence.
+We build ecommerce sites, ERP and CRM tools, mobile apps, and other digital products.
     </p>
 
  
@@ -88,7 +88,7 @@ We deliver SEO-ready websites, ecommerce solutions, ERP and CRM systems, mobile 
       leading-relaxed text-gray-600"
       data-aos="fade-up"
       data-aos-delay="200">
-Backend Coders India is a modern web development agency and digital marketing company in Kanpur helping startups, founders, ecommerce brands, and growing businesses build powerful digital foundations. We create scalable websites, custom web applications, ERP solutions, SEO strategies, and performance-driven marketing systems designed to improve visibility, customer engagement, and business growth. By combining technology, design, and business strategy, our team delivers practical, conversion-focused digital solutions that are aligned with long-term goals, user experience, and real business results.
+Backend Coders India builds websites and software for businesses. Our team works from Kanpur with startups, online stores, and growing companies. We make web apps, ERP tools, and search plans. Our goal is simple: help people find your business and use your services.
     </p>
 
     <!-- SERVICES -->
@@ -96,27 +96,27 @@ Backend Coders India is a modern web development agency and digital marketing co
 
       <!-- CARD -->
       <div class="service-card transition duration-300 transform hover:-translate-y-1 hover:shadow-[0_15px_35px_rgba(253,85,40,0.15)]" data-aos="zoom-in">
-        <img src="https://img.icons8.com/?size=100&id=2169&format=png&color=fd5528" class="mx-auto mb-2">
+        <img src="https://img.icons8.com/?size=100&id=2169&format=png&color=fd5528" alt="Software as a Service (SaaS) platform development" class="mx-auto mb-2">
         <p class="text-sm font-semibold text-gray-900 tracking-tight">SaaS Platforms</p>
       </div>
 
       <div class="service-card transition duration-300 transform hover:-translate-y-1 hover:shadow-[0_15px_35px_rgba(253,85,40,0.15)]" data-aos="zoom-in" data-aos-delay="100">
-        <img src="https://img.icons8.com/?size=100&id=XZzsxYpJLV3S&format=png&color=fd5528" class="mx-auto mb-2">
+        <img src="https://img.icons8.com/?size=100&id=XZzsxYpJLV3S&format=png&color=fd5528" alt="Enterprise Resource Planning (ERP) system development" class="mx-auto mb-2">
         <p class="text-sm font-semibold text-gray-900 tracking-tight">ERP Systems</p>
       </div>
 
       <div class="service-card transition duration-300 transform hover:-translate-y-1 hover:shadow-[0_15px_35px_rgba(253,85,40,0.15)]" data-aos="zoom-in" data-aos-delay="200">
-        <img src="https://img.icons8.com/?size=100&id=3578&format=png&color=fd5528" class="mx-auto mb-2">
+        <img src="https://img.icons8.com/?size=100&id=3578&format=png&color=fd5528" alt="Point of Sale (POS) system development services" class="mx-auto mb-2">
         <p class="text-sm font-semibold text-gray-900 tracking-tight">POS Systems</p>
       </div>
 
       <div class="service-card transition duration-300 transform hover:-translate-y-1 hover:shadow-[0_15px_35px_rgba(253,85,40,0.15)]" data-aos="zoom-in" data-aos-delay="300">
-        <img src="https://img.icons8.com/?size=100&id=XkroSDpLASWA&format=png&color=fd5528" class="mx-auto mb-2">
+        <img src="https://img.icons8.com/?size=100&id=XkroSDpLASWA&format=png&color=fd5528" alt="E-commerce website development" class="mx-auto mb-2">
         <p class="text-sm font-semibold text-gray-900 tracking-tight">E-commerce</p>
       </div>
 
       <div class="service-card transition duration-300 transform hover:-translate-y-1 hover:shadow-[0_15px_35px_rgba(253,85,40,0.15)]" data-aos="zoom-in" data-aos-delay="400">
-        <img src="https://img.icons8.com/?size=100&id=vJuSkDSbjZgp&format=png&color=fd5528" class="mx-auto mb-2">
+        <img src="https://img.icons8.com/?size=100&id=vJuSkDSbjZgp&format=png&color=fd5528" alt="Custom web application development" class="mx-auto mb-2">
         <p class="text-sm font-semibold text-gray-900 tracking-tight">Custom Web Apps</p>
       </div>
 
@@ -135,16 +135,88 @@ Backend Coders India is a modern web development agency and digital marketing co
 
     <!-- IMAGE -->
     <div class="relative">
-      <img 
+      <img alt="" 
         src="{{asset('assets/images/about.png')}}"
         class="rounded-2xl  w-full h-full object-cover"
       />
 
       <!-- FLOATING CARD -->
-      <!-- <div class="absolute bottom-6 left-6 bg-white p-4 rounded-xl shadow-lg">
-        <p class="text-sm text-gray-500">Since</p>
-        <h4 class="text-xl font-bold text-[#FD5528]">2023</h4>
-      </div> -->
+   
+<div class="group absolute -bottom-8 right-6 z-20">
+    <a
+        href="/team"
+        class="relative flex items-center gap-5 overflow-hidden
+               rounded-2xl border border-white/70
+               bg-white/95 px-5 py-4
+               shadow-[0_16px_40px_rgba(0,0,0,0.16)]
+               backdrop-blur-xl
+               transition-all duration-300 ease-out
+               hover:-translate-y-1
+               hover:shadow-[0_22px_50px_rgba(0,0,0,0.22)]
+               focus:outline-none
+               focus-visible:ring-2
+               focus-visible:ring-[#FD5528]
+               focus-visible:ring-offset-2"
+    >
+
+        <!-- Subtle hover shine -->
+        <span
+            aria-hidden="true"
+            class="pointer-events-none absolute inset-0
+                   -translate-x-full
+                   bg-gradient-to-r
+                   from-transparent via-[#FD5528]/[0.06] to-transparent
+                   transition-transform duration-700
+                   group-hover:translate-x-full"
+        ></span>
+
+        <!-- Text -->
+        <span class="relative z-10 block">
+      
+
+            <span
+                class="mt-1 block text-[17px] font-medium leading-tight
+                       tracking-[-0.02em] text-gray-900"
+            >
+                Explore
+            </span>
+
+            <span
+                class="block text-[17px] font-bold leading-tight
+                       tracking-[-0.025em] text-[#FD5528]"
+            >
+               Our Team
+            </span>
+        </span>
+
+        <!-- Arrow -->
+        <span
+            aria-hidden="true"
+            class="relative z-10 flex h-10 w-10 shrink-0
+                   items-center justify-center
+                   rounded-full bg-[#FD5528] text-white
+                   shadow-[0_8px_20px_rgba(253,85,40,0.22)]
+                   transition-all duration-300
+                   group-hover:translate-x-1
+                   group-hover:shadow-[0_10px_25px_rgba(253,85,40,0.35)]"
+        >
+            <svg
+                viewBox="0 0 20 20"
+                fill="none"
+                class="h-4 w-4"
+            >
+                <path
+                    d="M4 10h11M10.5 5.5L15 10l-4.5 4.5"
+                    stroke="currentColor"
+                    stroke-width="1.7"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                />
+            </svg>
+        </span>
+
+    </a>
+</div>
     </div>
 
     <!-- CONTENT -->
@@ -166,11 +238,7 @@ Backend Coders India is a modern web development agency and digital marketing co
          Our Story
     </span>
       <!-- BADGE -->
-      <!-- <span class="inline-block text-xs font-semibold uppercase tracking-[0.35em] 
-        text-[#FD5528] px-5 py-2 rounded-full bg-orange-50">
-        Our Story
-      </span> -->
-
+  
       <!-- HEADING -->
       <h2 class="mt-6 text-3xl md:text-4xl font-bold text-gray-900 leading-snug">
         From Idea to Innovation —  
@@ -200,13 +268,8 @@ Backend Coders India is a modern web development agency and digital marketing co
         </div>
 
         <div class="bg-[#F9FAFB] p-6 rounded-xl text-center">
-          <h3 class="text-2xl font-bold text-[#FD5528]">3+</h3>
-          <p class="text-sm text-gray-500">Countries Served</p>
-        </div>
-
-        <div class="bg-[#F9FAFB] p-6 rounded-xl text-center">
-          <h3 class="text-2xl font-bold text-[#FD5528]">100%</h3>
-          <p class="text-sm text-gray-500">Client Satisfaction</p>
+          <h3 class="text-2xl font-bold text-[#FD5528]">Client-focused</h3>
+          <p class="text-sm text-gray-500">Delivery approach</p>
         </div>
 
       </div>
@@ -258,7 +321,7 @@ Backend Coders India is a modern web development agency and digital marketing co
 
         <!-- Icon -->
         <div class="w-14 h-14 flex items-center justify-center bg-[#EA580C] text-white rounded-xl mb-6 shadow-md">
-          <img src="https://img.icons8.com/?size=100&id=lEDHtWo9fVxM&format=png&color=FFFFFF" alt="">
+          <img src="https://img.icons8.com/?size=100&id=lEDHtWo9fVxM&format=png&color=FFFFFF" alt="Company mission for innovative software development">
         </div>
 
         <p class="text-xs uppercase tracking-[0.4em] text-[#F44918]">
@@ -286,7 +349,7 @@ Backend Coders India is a modern web development agency and digital marketing co
 
         <!-- Icon -->
         <div class="w-14 h-14 flex items-center justify-center bg-[#F44918] text-white rounded-xl mb-6 shadow-md">
-          <img src="https://img.icons8.com/?size=100&id=cEcenq1dEbND&format=png&color=FFFFFF" alt="">
+          <img src="https://img.icons8.com/?size=100&id=cEcenq1dEbND&format=png&color=FFFFFF" alt="Company vision for technological innovation">
         </div>
 
         <p class="text-xs uppercase tracking-[0.4em] text-[#F44918]">
@@ -338,9 +401,7 @@ Backend Coders India is a modern web development agency and digital marketing co
 
         Why Choose us
     </span>
-            <!-- <span class="inline-flex items-center justify-center gap-2 px-5 py-2 rounded-full bg-orange-50 border border-orange-100 text-orange-600 text-sm font-semibold shadow-sm">
-                Why Choose Backend Coders India
-            </span> -->
+           
 
             
             <h2 class="mt-6 text-[38px] sm:text-[48px] lg:text-[60px] font-black leading-[1.05] tracking-tight text-[#0f172a]">
@@ -366,7 +427,7 @@ Backend Coders India is a modern web development agency and digital marketing co
 
             <img src="https://img.icons8.com/?size=100&id=18902&format=png&color=ea580c"
                  class="w-8 h-8"
-                 alt="">
+                 alt="Business-First Thinking">
 
         </div>
 
@@ -393,7 +454,7 @@ Backend Coders India is a modern web development agency and digital marketing co
 
             <img src="https://img.icons8.com/?size=100&id=0wUGo16jNLh8&format=png&color=ea580c"
                  class="w-8 h-8"
-                 alt="">
+                 alt="SEO-Ready Development">
 
         </div>
 
@@ -420,7 +481,7 @@ Backend Coders India is a modern web development agency and digital marketing co
 
             <img src="https://img.icons8.com/?size=100&id=AV-5aAJqrST6&format=png&color=ea580c"
                  class="w-8 h-8"
-                 alt="">
+                 alt="Affordable International Quality">
 
         </div>
 
@@ -447,7 +508,7 @@ Backend Coders India is a modern web development agency and digital marketing co
 
             <img src="https://img.icons8.com/?size=100&id=IUTNvue1VdDB&format=png&color=ea580c"
                  class="w-8 h-8"
-                 alt="">
+                 alt="Startup-Friendly Execution">
 
         </div>
 
@@ -474,7 +535,7 @@ Backend Coders India is a modern web development agency and digital marketing co
 
             <img src="https://img.icons8.com/?size=100&id=11218&format=png&color=ea580c"
                  class="w-8 h-8"
-                 alt="">
+                 alt="Same-Day Support Mindset">
 
         </div>
 
@@ -501,7 +562,7 @@ Backend Coders India is a modern web development agency and digital marketing co
 
             <img src="https://img.icons8.com/?size=100&id=4NqPX7BpGawp&format=png&color=ea580c"
                  class="w-8 h-8"
-                 alt="">
+                 alt="Full-Service Capability">
 
         </div>
 
@@ -589,7 +650,7 @@ Backend Coders India is a modern web development agency and digital marketing co
         <img 
             src="https://img.icons8.com/?size=100&id=JvGW4sbJLEKN&format=png&color=ea580c" 
             class="w-9 h-9" 
-            alt=""
+            alt="Digital Marketing Services"
         >
 
     </div>
@@ -608,12 +669,12 @@ Backend Coders India is a modern web development agency and digital marketing co
 
                <div class="mt-8 grid sm:grid-cols-2 gap-4">
 
-    <a href="{{ url('/page/seo-services') }}"
+    <a href="{{ route('frontend.seo') }}"
        class="flex items-center gap-3 group">
 
         <img src="https://img.icons8.com/?size=100&id=W9RS5YNuHAdG&format=png&color=ea580c"
              class="w-5 h-5"
-             alt="">
+             alt="SEO services in Kanpur">
 
         <span class="text-gray-700 group-hover:text-orange-600 transition font-medium">
             SEO services in Kanpur
@@ -621,12 +682,12 @@ Backend Coders India is a modern web development agency and digital marketing co
 
     </a>
 
-    <a href="{{ url('/page/seo-services') }}"
+    <a href="{{ route('frontend.seo') }}"
        class="flex items-center gap-3 group">
 
         <img src="https://img.icons8.com/?size=100&id=W9RS5YNuHAdG&format=png&color=ea580c"
              class="w-5 h-5"
-             alt="">
+             alt="Local SEO">
 
         <span class="text-gray-700 group-hover:text-orange-600 transition font-medium">
             Local SEO
@@ -639,7 +700,7 @@ Backend Coders India is a modern web development agency and digital marketing co
 
         <img src="https://img.icons8.com/?size=100&id=W9RS5YNuHAdG&format=png&color=ea580c"
              class="w-5 h-5"
-             alt="">
+             alt="Social Media Management">
 
         <span class="text-gray-700 group-hover:text-orange-600 transition font-medium">
             Social Media Management
@@ -652,7 +713,7 @@ Backend Coders India is a modern web development agency and digital marketing co
 
         <img src="https://img.icons8.com/?size=100&id=W9RS5YNuHAdG&format=png&color=ea580c"
              class="w-5 h-5"
-             alt="">
+             alt="Google Ads & PPC">
 
         <span class="text-gray-700 group-hover:text-orange-600 transition font-medium">
             Google Ads & PPC
@@ -665,7 +726,7 @@ Backend Coders India is a modern web development agency and digital marketing co
 
         <img src="https://img.icons8.com/?size=100&id=W9RS5YNuHAdG&format=png&color=ea580c"
              class="w-5 h-5"
-             alt="">
+             alt="Meta Ads">
 
         <span class="text-gray-700 group-hover:text-orange-600 transition font-medium">
             Meta Ads
@@ -678,7 +739,7 @@ Backend Coders India is a modern web development agency and digital marketing co
 
         <img src="https://img.icons8.com/?size=100&id=W9RS5YNuHAdG&format=png&color=ea580c"
              class="w-5 h-5"
-             alt="">
+             alt="Content Marketing">
 
         <span class="text-gray-700 group-hover:text-orange-600 transition font-medium">
             Content Marketing
@@ -700,7 +761,7 @@ Backend Coders India is a modern web development agency and digital marketing co
         <img 
             src="https://img.icons8.com/?size=100&id=W2e4CgbFTSVY&format=png&color=ea580c" 
             class="w-9 h-9" 
-            alt=""
+            alt="Software Development"
         >
 
     </div>
@@ -725,7 +786,7 @@ Backend Coders India is a modern web development agency and digital marketing co
 
         <img src="https://img.icons8.com/?size=100&id=W9RS5YNuHAdG&format=png&color=ea580c"
              class="w-5 h-5"
-             alt="">
+             alt="  Custom web application development by Backend Coders India">
 
         <span class="text-gray-700 group-hover:text-orange-600 transition font-medium">
             Custom web application development
@@ -739,7 +800,7 @@ Backend Coders India is a modern web development agency and digital marketing co
 
         <img src="https://img.icons8.com/?size=100&id=W9RS5YNuHAdG&format=png&color=ea580c"
              class="w-5 h-5"
-             alt="">
+             alt="Website design and development by Backend Coders India">
 
         <span class="text-gray-700 group-hover:text-orange-600 transition font-medium">
             Website design and development
@@ -752,7 +813,7 @@ Backend Coders India is a modern web development agency and digital marketing co
 
         <img src="https://img.icons8.com/?size=100&id=W9RS5YNuHAdG&format=png&color=ea580c"
              class="w-5 h-5"
-             alt="">
+             alt="SaaS development by Backend Coders India">
 
         <span class="text-gray-700 group-hover:text-orange-600 transition font-medium">
             SaaS Development
@@ -765,7 +826,7 @@ Backend Coders India is a modern web development agency and digital marketing co
 
         <img src="https://img.icons8.com/?size=100&id=W9RS5YNuHAdG&format=png&color=ea580c"
              class="w-5 h-5"
-             alt="">
+             alt="ERP and POS software by Backend Coders India">
 
         <span class="text-gray-700 group-hover:text-orange-600 transition font-medium">
             ERP & POS Software
@@ -778,7 +839,7 @@ Backend Coders India is a modern web development agency and digital marketing co
 
         <img src="https://img.icons8.com/?size=100&id=W9RS5YNuHAdG&format=png&color=ea580c"
              class="w-5 h-5"
-             alt="">
+             alt="Ecommerce website development by Backend Coders India">
 
         <span class="text-gray-700 group-hover:text-orange-600 transition font-medium">
             Ecommerce website development
@@ -791,7 +852,7 @@ Backend Coders India is a modern web development agency and digital marketing co
 
         <img src="https://img.icons8.com/?size=100&id=W9RS5YNuHAdG&format=png&color=ea580c"
              class="w-5 h-5"
-             alt="">
+             alt="Mobile app development by Backend Coders India">
 
         <span class="text-gray-700 group-hover:text-orange-600 transition font-medium">
             Mobile app development
@@ -804,7 +865,7 @@ Backend Coders India is a modern web development agency and digital marketing co
 
         <img src="https://img.icons8.com/?size=100&id=W9RS5YNuHAdG&format=png&color=ea580c"
              class="w-5 h-5"
-             alt="">
+             alt="API development in Kanpur">
 
         <span class="text-gray-700 group-hover:text-orange-600 transition font-medium">
             API Development
@@ -817,7 +878,7 @@ Backend Coders India is a modern web development agency and digital marketing co
 
         <img src="https://img.icons8.com/?size=100&id=W9RS5YNuHAdG&format=png&color=ea580c"
              class="w-5 h-5"
-             alt="">
+             alt="Startup MVP development in Kanpur">
 
         <span class="text-gray-700 group-hover:text-orange-600 transition font-medium">
           Startup MVP development
@@ -835,9 +896,6 @@ Backend Coders India is a modern web development agency and digital marketing co
 
 </section>
 
-
-
-<!-- process-directions -->
 <!-- process-directions -->
 <section class="relative overflow-hidden py-16 sm:py-20 lg:py-24 bg-[#F9FAFB]">
 
@@ -893,7 +951,7 @@ Backend Coders India is a modern web development agency and digital marketing co
                    Discovery
             </h3>
             <p class="text-sm text-gray-500 mt-1">
-Understand goals, audience, scope, and technical needs.
+        Understand goals, audience, scope, and technical needs.
             </p>
           </div>
 
@@ -981,8 +1039,6 @@ Understand goals, audience, scope, and technical needs.
   </div>
 
 </section>
-<!-- pr -->
-<!-- pr -->
 
 
    <!-- STATS SECTION -->
@@ -1007,26 +1063,26 @@ Understand goals, audience, scope, and technical needs.
 
       <!-- CARD -->
       <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 hover:scale-105 transition duration-300 shadow-lg">
-        <h3 class="counter text-4xl md:text-5xl font-bold" data-target="50">0</h3>
+        <h3 class="counter text-4xl md:text-5xl font-bold" data-target="50">50</h3>
         <p class="mt-2 text-white/80 text-sm">Projects Delivered</p>
       </div>
 
       <!-- CARD -->
       <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 hover:scale-105 transition duration-300 shadow-lg">
-        <h3 class="counter text-4xl md:text-5xl font-bold" data-target="40">0</h3>
+        <h3 class="counter text-4xl md:text-5xl font-bold" data-target="40">40</h3>
         <p class="mt-2 text-white/80 text-sm">Happy Clients</p>
       </div>
 
       <!-- CARD -->
       <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 hover:scale-105 transition duration-300 shadow-lg">
-        <h3 class="counter text-4xl md:text-5xl font-bold" data-target="3">0</h3>
+        <h3 class="counter text-4xl md:text-5xl font-bold" data-target="3">3</h3>
         <p class="mt-2 text-white/80 text-sm">Countries Served</p>
       </div>
 
       <!-- CARD -->
       <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 hover:scale-105 transition duration-300 shadow-lg">
-        <h3 class="counter text-4xl md:text-5xl font-bold" data-target="100">0</h3>
-        <p class="mt-2 text-white/80 text-sm">Client Satisfaction %</p>
+        <h3 class="text-2xl md:text-3xl font-bold">Client-focused</h3>
+        <p class="mt-2 text-white/80 text-sm">Delivery approach</p>
       </div>
 
     </div>
@@ -1034,9 +1090,6 @@ Understand goals, audience, scope, and technical needs.
   </div>
 
 </section>
-
-
-
 
 
 <!-- TECHNOLOGIES -->
@@ -1115,104 +1168,53 @@ Understand goals, audience, scope, and technical needs.
               Responsive layout
             </span>
           </div>
-
-          <!-- <div class="mt-8 grid gap-4 grid-cols-2 sm:grid-cols-3 xl:grid-cols-4">
-            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition  hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg" class="w-12 h-12" alt="Dotnet Core">
-              <span class="text-sm font-semibold text-gray-900">.NET Core</span>
-            </div>
-            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" class="w-12 h-12" alt="React">
-              <span class="text-sm font-semibold text-gray-900">React</span>
-            </div>
-            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" class="w-12 h-12" alt="Node.js">
-              <span class="text-sm font-semibold text-gray-900">Node.js</span>
-            </div>
-            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" class="w-12 h-12" alt="MongoDB">
-              <span class="text-sm font-semibold text-gray-900">MERN</span>
-            </div>
-            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-original.svg" class="w-12 h-12" alt="WordPress">
-              <span class="text-sm font-semibold text-gray-900">WordPress</span>
-            </div>
-            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
-              <img src="https://cdn.simpleicons.org/spotify/1DB954" class="w-12 h-12" alt="Shopify">
-              <span class="text-sm font-semibold text-gray-900">Shopify</span>
-            </div>
-            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" class="w-12 h-12" alt="Laravel">
-              <span class="text-sm font-semibold text-gray-900">Laravel</span>
-            </div>
-            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" class="w-12 h-12" alt="SQL Server">
-              <span class="text-sm font-semibold text-gray-900">SQL Server</span>
-            </div>
-            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" class="w-12 h-12" alt="Firebase">
-              <span class="text-sm font-semibold text-gray-900">Firebase</span>
-            </div>
-            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" class="w-12 h-12" alt="AWS">
-              <span class="text-sm font-semibold text-gray-900">AWS</span>
-            </div>
-            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" class="w-12 h-12" alt="TypeScript">
-              <span class="text-sm font-semibold text-gray-900">TypeScript</span>
-            </div>
-            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" class="w-12 h-12 bg-white p-1 rounded" alt="Next.js">
-              <span class="text-sm font-semibold text-gray-900">Next.js</span>
-            </div>
-          </div> -->
            <div class="mt-8 grid gap-4 grid-cols-3 sm:grid-cols-3 xl:grid-cols-4">
             <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition  hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg" class="w-12 h-12" alt="Dotnet Core">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg" class="w-12 h-12"  alt=".NET Core development technology icon for custom web application development">
               <span class="text-sm font-semibold text-gray-900">.NET Core</span>
             </div>
             <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" class="w-12 h-12" alt="React">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" class="w-12 h-12" alt="React JavaScript framework for modern web applications">
               <span class="text-sm font-semibold text-gray-900">React</span>
             </div>
             <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" class="w-12 h-12" alt="Node.js">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" class="w-12 h-12" alt="Node.js technology used for server-side application development">
               <span class="text-sm font-semibold text-gray-900">Node.js</span>
             </div>
             <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" class="w-12 h-12" alt="MongoDB">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" class="w-12 h-12"  alt="MERN stack technology for full-stack web application development">
               <span class="text-sm font-semibold text-gray-900">MERN</span>
             </div>
             <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-original.svg" class="w-12 h-12" alt="WordPress">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-original.svg" class="w-12 h-12" alt="WordPress CMS for business website development">
               <span class="text-sm font-semibold text-gray-900">WordPress</span>
             </div>
             <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
-              <img src="https://cdn.simpleicons.org/spotify/1DB954" class="w-12 h-12" alt="Shopify">
+              <img src="https://cdn.simpleicons.org/spotify/1DB954" class="w-12 h-12" alt="Shopify e-commerce website development platform">
               <span class="text-sm font-semibold text-gray-900">Shopify</span>
             </div>
             <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" class="w-12 h-12" alt="Laravel">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" class="w-12 h-12" alt="Laravel PHP framework for enterprise web development">
               <span class="text-sm font-semibold text-gray-900">Laravel</span>
             </div>
             <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" class="w-12 h-12" alt="SQL Server">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" class="w-12 h-12" alt="Microsoft SQL Server relational database technology">
               <span class="text-sm font-semibold text-gray-900">SQL Server</span>
             </div>
             <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" class="w-12 h-12" alt="Firebase">
-              <span class="text-sm font-semibold text-gray-900">Firebase</span>
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" class="w-12 h-12" alt="Google Firebase platform for scalable application development">
+                <span class="text-sm font-semibold text-gray-900">Firebase</span>
             </div>
             <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" class="w-12 h-12" alt="AWS">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" class="w-12 h-12" alt="Amazon Web Services platform for cloud-based application development">
               <span class="text-sm font-semibold text-gray-900">AWS</span>
             </div>
             <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" class="w-12 h-12" alt="TypeScript">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" class="w-12 h-12" alt="TypeScript programming language for building scalable web applications">
               <span class="text-sm font-semibold text-gray-900">TypeScript</span>
             </div>
             <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" class="w-12 h-12 bg-white p-1 rounded" alt="Next.js">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" class="w-12 h-12 bg-white p-1 rounded" alt="Next.js framework for server-side rendered React applications">
               <span class="text-sm font-semibold text-gray-900">Next.js</span>
             </div>
           </div>
@@ -1232,9 +1234,9 @@ Understand goals, audience, scope, and technical needs.
 
 <section class="bg-white text-black py-16 sm:py-20">
   <div class="max-w-5xl mx-auto px-4 text-center mb-10 sm:mb-16">
-    <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold text-[#FD5528]">
+    <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-[#FD5528]">
       Our Journey
-    </h1>
+    </h2>
   </div>
 
   <div class="relative max-w-4xl mx-auto px-4">
@@ -1377,16 +1379,6 @@ Understand goals, audience, scope, and technical needs.
     <!-- GRID -->
     <div class="grid lg:grid-cols-1 gap-10 lg:gap-16 items-center">
 
-      <!-- LEFT IMAGE
-      <div class="order-1 lg:order-2 relative rounded-[32px] bg-gradient-to-br from-[#FFEDD5] via-white to-[#FEE2E2] p-6 shadow-[0_25px_60px_rgba(253,85,40,0.25)]">
-        <div class="absolute inset-x-4 top-4 h-2 rounded-full bg-gradient-to-r from-[#FD5528]/60 to-orange-200/70 blur-3xl opacity-70"></div>
-        <img 
-          src="{{asset('assets/images/faq.png')}}"
-          alt="FAQ Illustration"
-          class="rounded-2xl shadow-2xl w-full h-[360px] object-cover relative z-10"
-        >
-      </div> -->
-
       <!-- FAQ LIST -->
       <div class="order-2 lg:order-1 space-y-4">
 
@@ -1407,7 +1399,7 @@ Understand goals, audience, scope, and technical needs.
         </button>
         <div id="faq-answer-1" class="faq-answer max-h-0 overflow-hidden transition-all duration-500 text-sm text-gray-600 mt-3" aria-hidden="true">
    
-Backend Coders India provides software development, website development, SEO, Google Ads, Meta Ads, social media management, content marketing, ecommerce development, mobile app development, API development, and startup MVP services.
+We build websites, apps, online stores, and business software. We also help with search, ads, and social media. Startups can work with us to build a first version of a product.
 
         </div>
       </div>
@@ -1424,7 +1416,7 @@ Backend Coders India provides software development, website development, SEO, Go
         </button>
         <div id="faq-answer-2" class="faq-answer max-h-0 overflow-hidden transition-all duration-500 text-sm text-gray-600 mt-3" aria-hidden="true">
      
-Yes. Backend Coders India is a software company in Kanpur offering custom software development, web applications, ERP and POS software, SaaS development, and digital growth services.
+Yes. We are a software company in Kanpur. We build custom software, web apps, ERP and POS tools, and online products. We also help businesses grow online.
 
         </div>
       </div>
@@ -1445,7 +1437,7 @@ Yes. Backend Coders India is a software company in Kanpur offering custom softwa
         </button>
         <div id="faq-answer-3" class="faq-answer max-h-0 overflow-hidden transition-all duration-500 text-sm text-gray-600 mt-3" aria-hidden="true">
       
-No. While we are a trusted IT company in Kanpur, we also work with businesses across India and selected international markets.
+No. We work with businesses across India and in some other countries. Our team is based in Kanpur.
 
         </div>
       </div>
@@ -1461,7 +1453,7 @@ No. While we are a trusted IT company in Kanpur, we also work with businesses ac
         </button>
         <div id="faq-answer-4" class="faq-answer max-h-0 overflow-hidden transition-all duration-500 text-sm text-gray-600 mt-3" aria-hidden="true">
     
-Yes. We position ourselves as an SEO ready website company and build websites with responsive layouts, clean structure, fast-loading pages, and search-friendly foundations.
+Yes. We build sites that work on phones and computers. We use clear page layouts and help pages load fast. We also follow basic search guidelines.
 
         </div>
       </div>
@@ -1477,7 +1469,7 @@ Yes. We position ourselves as an SEO ready website company and build websites wi
         </button>
         <div id="faq-answer-4" class="faq-answer max-h-0 overflow-hidden transition-all duration-500 text-sm text-gray-600 mt-3" aria-hidden="true">
 
-Yes. We are a startup-friendly IT company and support founders with MVP development, SaaS products, websites, digital marketing, and growth-focused strategy.
+Yes. We help founders plan and build a first version of their product. This can be a website, an app, or an online service. We can also help with digital marketing.
 
         </div>
       </div>
@@ -1493,7 +1485,7 @@ Yes. We are a startup-friendly IT company and support founders with MVP developm
         </button>
         <div id="faq-answer-4" class="faq-answer max-h-0 overflow-hidden transition-all duration-500 text-sm text-gray-600 mt-3" aria-hidden="true">
 
-Businesses choose us for business-focused development, affordable international quality IT services, same-day support mindset, SEO-aware execution, and scalable digital solutions.
+Clients choose us for clear plans, helpful support, and software that can grow with their business. We also build sites with search in mind.
 
         </div>
       </div>
@@ -1513,7 +1505,7 @@ Businesses choose us for business-focused development, affordable international 
           </span>
         </button>
         <div id="faq-answer-5" class="faq-answer max-h-0 overflow-hidden transition-all duration-500 text-sm text-gray-600 mt-3" aria-hidden="true">
-     Our process includes discovery, planning, UI/UX, development, testing, deployment, SEO refinement, and support to deliver structured and high-quality digital solutions.
+     First, we learn what you need. Then we plan, design, build, and test the product. We launch it and can help with updates and support.
         </div>
       </div>
 
@@ -1527,7 +1519,7 @@ Businesses choose us for business-focused development, affordable international 
           </span>
         </button>
         <div id="faq-answer-6" class="faq-answer max-h-0 overflow-hidden transition-all duration-500 text-sm text-gray-600 mt-3" aria-hidden="true">
-          Yes, Backend Coders India provides AI chatbot development, AI workflow automation, custom AI integrations, and AI-powered application development for businesses in Kanpur, across India, and for international Market.
+          Yes. We build AI chatbots and connect AI tools to business apps. We work with clients in Kanpur, across India, and in other countries.
         </div>
       </div>
 
@@ -1549,74 +1541,6 @@ Businesses choose us for business-focused development, affordable international 
   </div>
 
 </section>
-
-@verbatim
-<!-- FAQ SCHEMA -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-
-    {
-      "@type": "Question",
-      "name": "What does Backend Coders India do?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Backend Coders India provides software development, website development, SEO, Google Ads, Meta Ads, social media management, content marketing, ecommerce development, mobile app development, API development, and startup MVP services."
-      }
-    },
-
-    {
-      "@type": "Question",
-      "name": "Is Backend Coders India a software company in Kanpur?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. Backend Coders India is a software company in Kanpur offering custom software development, web applications, ERP and POS software, SaaS development, and digital growth services."
-      }
-    },
-
-    {
-      "@type": "Question",
-      "name": "Do you only work with Kanpur businesses?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No. While we are a trusted IT company in Kanpur, we also work with businesses across India and selected international markets."
-      }
-    },
-
-    {
-      "@type": "Question",
-      "name": "Are your websites SEO-friendly?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. We position ourselves as an SEO ready website company and build websites with responsive layouts, clean structure, fast-loading pages, and search-friendly foundations."
-      }
-    },
-
-    {
-      "@type": "Question",
-      "name": "Do you work with startups?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. We are a startup-friendly IT company and support founders with MVP development, SaaS products, websites, digital marketing, and growth-focused strategy."
-      }
-    },
-
-    {
-      "@type": "Question",
-      "name": "Why should I choose Backend Coders India?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Businesses choose us for business-focused development, affordable international quality IT services, same-day support mindset, SEO-aware execution, and scalable digital solutions."
-      }
-    }
-
-  ]
-}
-</script>
-@endverbatim
-
 
 <!-- CTA SECTION -->
 <section class="relative overflow-hidden py-20 bg-gradient-to-r from-[#FC5124] via-orange-500 to-orange-400 text-white">

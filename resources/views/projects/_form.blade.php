@@ -81,7 +81,7 @@
                 @error('image')<p class="mt-2 text-sm text-rose-500">{{ $message }}</p>@enderror
                 @if($projectModel?->image)
                     <div class="mt-3 overflow-hidden rounded-2xl border border-slate-200 shadow-sm">
-                        <img src="{{ $projectModel->getImageUrl() }}" alt="{{ $projectModel->title }}" class="h-44 w-full object-cover">
+                        <img alt="" src="{{ $projectModel->getImageUrl() }}" alt="{{ $projectModel->title }}" class="h-44 w-full object-cover">
                     </div>
                 @endif
             </div>

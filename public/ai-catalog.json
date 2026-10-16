@@ -1,0 +1,20 @@
+{
+  "specVersion": "1.0",
+  "host": {
+    "displayName": "Backend Coders",
+    "documentationUrl": "https://backendcodersindia.com"
+  },
+  "entries": [
+    {
+      "identifier": "urn:air:backendcodersindia.com:services:web-development",
+      "displayName": "Backend Coders Web & API Development",
+      "type": "text/html",
+      "url": "https://backendcodersindia.com/service",
+      "description": "Custom backend engineering, API architecture, web app development, and cloud services.",
+      "representativeQueries": [
+        "hire backend developers",
+        "custom web application development"
+      ]
+    }
+  ]
+}

@@ -6,7 +6,7 @@
 
   <!-- BACKGROUND IMAGE -->
   <img 
-    src="{{asset('assets/images/banner.png')}}"
+    src="{{asset('assets/images/banner.png')}}" alt="banner"
     class="absolute inset-0 w-full h-full object-cover"
   />
 
@@ -20,8 +20,7 @@
 
     <!-- HEADING -->
     <h1 class="mt-6 text-4xl sm:text-5xl md:text-6xl font-bold leading-tight">
-        Privacy & <span class="text-orange-600">Policy</span><span class="text-[#FC5124] font-semibold">
-     
+        Privacy & <span class="text-orange-600">Policy</span><span class="text-[#FC5124] font-semibold"> 
     </h1>
 
     <!-- SUBTEXT -->
@@ -57,7 +56,7 @@
       Terms of Use
     </span>
       <!-- <p class="text-xs uppercase tracking-[0.6em] text-[#FD5528]">Terms of Use</p> -->
-      <h1 class="text-3xl sm:text-4xl font-bold text-gray-900">Privacy Policy</h1>
+      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900">Privacy Policy</h2>
       <p class="text-gray-600 max-w-3xl mx-auto">
         At BackendCodersIndia, we are committed to protecting your privacy. This Privacy Policy outlines how we collect, use, and safeguard your personal information when you visit our website.
       </p>

@@ -7,8 +7,11 @@
 
   <!-- BACKGROUND IMAGE -->
   <img 
-    src="{{asset('assets/images/banner.png')}}"
-    class="absolute inset-0 w-full h-full object-cover"
+    src="{{asset('assets/images/banner_bci.png')}}" alt="contact banner "
+    class="absolute inset-0 w-full h-full object-cover" width="1920"
+height="800"
+fetchpriority="high"
+decoding="async"
   />
 
   <!-- DARK OVERLAY -->
@@ -25,11 +28,11 @@
     </h1>
 
     <h2 class="text-md text-[#FD5528] font-bold uppercase tracking-[0.35em] ">
-Let’s Talk About Your Project
+    Let’s Talk About Your Project
     </h2>
     <!-- SUBTEXT -->
 
-Connect with Backend Coders India for software, web, app, and digital growth discussions built around your business goals.
+    Connect with Backend Coders India for software, web, app, and digital growth discussions built around your business goals.
     </p>
 
  
@@ -67,9 +70,9 @@ Connect with Backend Coders India for software, web, app, and digital growth dis
 
        
  <!-- Heading -->
-    <h1 class="text-4xl py-2 text-[#FD5528] md:text-5xl font-bold mb-4" text-black data-aos="fade-up">
+    <h2 class="text-4xl py-2 text-[#FD5528] md:text-5xl font-bold mb-4" text-black data-aos="fade-up">
       Get in Touch
-    </h1>
+    </h2>
 
        <!-- Subheading -->
     <p class="text-lg text-black max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
@@ -97,8 +100,8 @@ Connect with Backend Coders India for software, web, app, and digital growth dis
 
         <!-- ICON -->
         <div class="w-11 h-11 flex items-center justify-center rounded-xl bg-[#FFF1EC]   group-hover:scale-110 transition duration-300">
-          <img src="https://img.icons8.com/?size=100&id=3723&format=png&color=ea580c" 
-               class="w-5 h-5">
+          <img src="{{ asset('assets/icons/address.png') }}" alt="address"
+               class="w-5 h-5" width="16" height="16">
         </div>
 
         <!-- TEXT -->
@@ -119,8 +122,8 @@ Connect with Backend Coders India for software, web, app, and digital growth dis
       <div class="flex items-start gap-4 group">
 
         <div class="w-11 h-11 flex items-center justify-center rounded-xl bg-[#FFF1EC]   group-hover:scale-110 transition duration-300">
-          <img src="https://img.icons8.com/?size=100&id=9659&format=png&color=ea580c" 
-               class="w-5 h-5">
+          <img src="{{ asset('assets/icons/call.png') }}" alt="phone"
+               class="w-5 h-5" width="16" height="16">
         </div>
 
         <div class="flex-1">
@@ -140,17 +143,29 @@ Connect with Backend Coders India for software, web, app, and digital growth dis
       <div class="flex items-start gap-4 group">
 
         <div class="w-11 h-11 flex items-center justify-center rounded-xl bg-[#FFF1EC]   group-hover:scale-110 transition duration-300">
-          <img src="https://img.icons8.com/?size=100&id=53388&format=png&color=ea580c" 
-               class="w-5 h-5">
+          <img src="{{ asset('assets/icons/mail.png') }}" alt="email"
+               class="w-5 h-5" width="16" height="16">
         </div>
 
         <div class="flex-1">
           <h3 class="font-semibold text-black leading-none">
             Email
           </h3>
-          <p class="text-black mt-2 break-all">
-            info@backendcodersindia.com
-          </p>
+          <div class="mt-2 flex flex-wrap items-center gap-2">
+            <a href="mailto:info@backendcodersindia.com" class="text-black hover:text-[#FD5528] transition break-all font-medium select-text">
+              info@backendcodersindia.com
+            </a>
+            <button type="button"
+                    onclick="copyContactEmail(this)"
+                    class="inline-flex items-center gap-1 rounded border border-gray-300 bg-gray-50 px-2 py-0.5 text-xs font-medium text-gray-700 hover:bg-gray-100 hover:text-black transition cursor-pointer"
+                    title="Copy email address"
+                    aria-label="Copy email address">
+              <svg class="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+              </svg>
+              <span class="copy-text">Copy</span>
+            </button>
+          </div>
         </div>
 
       </div>
@@ -167,19 +182,19 @@ Connect with Backend Coders India for software, web, app, and digital growth dis
       <div class="flex gap-3">
 
         <a href="https://www.facebook.com/backendcoders/" target="_blank" class="w-10 h-10 flex items-center justify-center rounded-xl bg-[#FFF1EC] hover:bg-[#FD5528] transition group">
-          <img src="https://img.icons8.com/?size=100&id=118468&format=png&color=f44918" class="w-5 h-5 group-hover:brightness-0 group-hover:invert">
+          <img src="{{ asset('assets/icons/facebook.png') }}" alt="facebook" class="w-5 h-5 group-hover:brightness-0 group-hover:invert" width="16" height="16">
         </a>
 
         <a href="https://www.instagram.com/backendcoders/" class="w-10 h-10 flex items-center justify-center rounded-xl bg-[#FFF1EC] hover:bg-[#FD5528] transition group">
-          <img src="https://img.icons8.com/?size=100&id=32292&format=png&color=f44918" class="w-5 h-5 group-hover:brightness-0 group-hover:invert">
+          <img src="{{ asset('assets/icons/instagram.png') }}" alt="instagram" class="w-5 h-5 group-hover:brightness-0 group-hover:invert" width="16" height="16">
         </a>
 
-        <a href="https://www.linkedin.com/company/103738896/admin/dashboard/" class="w-10 h-10 flex items-center justify-center rounded-xl bg-[#FFF1EC] hover:bg-[#FD5528] transition group">
-          <img src="https://img.icons8.com/?size=100&id=447&format=png&color=f44918" class="w-5 h-5 group-hover:brightness-0 group-hover:invert">
+        <a href="https://www.linkedin.com/company/backendcodersindia/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 flex items-center justify-center rounded-xl bg-[#FFF1EC] hover:bg-[#FD5528] transition group">
+          <img src="{{ asset('assets/icons/linkedin.png') }}" alt="linkedin" class="w-5 h-5 group-hover:brightness-0 group-hover:invert" width="16" height="16">
         </a>
 
         <a href="https://wa.me/919140092133?text=Hi%20I%20want%20to%20discuss%20a%20project" class="w-10 h-10 flex items-center justify-center rounded-xl bg-[#FFF1EC] hover:bg-[#FD5528] transition group">
-          <img src="https://img.icons8.com/?size=100&id=16712&format=png&color=f44918" class="w-5 h-5 group-hover:brightness-0 group-hover:invert">
+          <img src="{{ asset('assets/icons/whatsapp.png') }}" alt="whatsapp" class="w-5 h-5 group-hover:brightness-0 group-hover:invert" width="16" height="16">
         </a>
 
       </div>
@@ -188,10 +203,14 @@ Connect with Backend Coders India for software, web, app, and digital growth dis
   </div>
 
   <!-- MAP -->
-  <div class="mt-8 rounded-2xl overflow-hidden border border-gray-200 shadow-sm group">
+  <div aria-labelledby="location-heading"  class="mt-8 rounded-2xl overflow-hidden border border-gray-200 shadow-sm group">
+      <h2 id="location-heading" class="sr-only">
+        Backend Coders India Office Location
+    </h2>
+
 
   <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d7146.187936818438!2d80.372306!3d26.420444!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1774945612057!5m2!1sen!2sin" width="600" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade  class="w-full h-[150px] border-0 transition duration-500 group-hover:scale-105"
-      loading="lazy"></iframe>
+  title="Google Map Location for Backend Coders India"></iframe>
  
 
   </div>
@@ -202,7 +221,7 @@ Connect with Backend Coders India for software, web, app, and digital growth dis
       <div class="relative bg-white p-8 rounded-3xl shadow-xl border border-gray-200 overflow-hidden">
 
   <!-- Decorative Curve -->
-  <div class="absolute -bottom-20 -right-20 w-72 h-72 bg-[#FD5528]/10 rounded-full blur-3xl"></div>
+  <!-- <div class="absolute -bottom-20 -right-20 w-72 h-72 bg-[#FD5528]/10 rounded-full blur-3xl"></div> -->
 
   <!-- HEADING -->
   <div class="relative mb-6">
@@ -215,33 +234,7 @@ Connect with Backend Coders India for software, web, app, and digital growth dis
   </div>
 
   <!-- FORM -->
-  <!-- <form class="relative space-y-6">
 
-    <div class="grid sm:grid-cols-2 gap-4">
-      <input type="text" placeholder="First Name"
-        class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FD5528]/30">
-
-      <input type="text" placeholder="Last Name"
-        class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FD5528]/30">
-    </div>
-
-    <input type="email" placeholder="Email Address"
-      class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FD5528]/30">
-
-    <input type="text" placeholder="Subject"
-      class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FD5528]/30">
-
-    <textarea rows="4" placeholder="Your Message"
-      class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FD5528]/30"></textarea>
-
-   <div class="flex justify-center">
-     <button type="submit"
-      class="max-w-md px-4 py-2 bg-gradient-to-r from-[#FD5528] to-[#fbb03b] hover:from-[#fbb03b] hover:to-[#FD5528] hover:scale-110 transition-all text-white py-3 rounded-lg font-medium hover:bg-[#e04a22] shadow-md hover:shadow-lg">
-      Send Message
-    </button>
-   </div>
-
-  </form> -->
   @include('frontend.form')
 
 </div>
@@ -252,4 +245,38 @@ Connect with Backend Coders India for software, web, app, and digital growth dis
 
 </section>
 <!-- END contact section -->
+
+<script>
+  function copyContactEmail(btn) {
+    const email = "info@backendcodersindia.com";
+    const updateUi = () => {
+      const copyText = btn.querySelector('.copy-text');
+      const originalText = copyText ? copyText.textContent : 'Copy';
+      if (copyText) copyText.textContent = 'Copied!';
+      btn.classList.add('border-emerald-500', 'text-emerald-700', 'bg-emerald-50');
+      setTimeout(() => {
+        if (copyText) copyText.textContent = originalText;
+        btn.classList.remove('border-emerald-500', 'text-emerald-700', 'bg-emerald-50');
+      }, 2000);
+    };
+
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(email).then(updateUi).catch(() => {
+        const input = document.createElement('input');
+        input.value = email;
+        document.body.appendChild(input);
+        input.select();
+        try { document.execCommand('copy'); updateUi(); } catch (e) {}
+        document.body.removeChild(input);
+      });
+    } else {
+      const input = document.createElement('input');
+      input.value = email;
+      document.body.appendChild(input);
+      input.select();
+      try { document.execCommand('copy'); updateUi(); } catch (e) {}
+      document.body.removeChild(input);
+    }
+  }
+</script>
 @endsection

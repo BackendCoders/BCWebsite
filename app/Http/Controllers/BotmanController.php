@@ -43,7 +43,7 @@ class BotmanController extends Controller
         });
 
         // Services overview
-        $botman->hears('/\b(services?|what do you do|what can you do|offer|provide)\b/i', function ($bot) {
+        $botman->hears('/\b(service?|what do you do|what can you do|offer|provide)\b/i', function ($bot) {
             $bot->reply("We help businesses build, grow, and automate online.\n\n" . $this->serviceMenu());
         });
 

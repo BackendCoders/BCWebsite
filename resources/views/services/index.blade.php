@@ -38,7 +38,7 @@
 
                         <div class="mx-auto flex h-20 w-20 items-center justify-center overflow-hidden rounded-full bg-gradient-to-br from-[#FD5528] to-[#ff8a3d] shadow-lg shadow-[#FD5528]/25 ring-4 ring-white">
                             @if($service->icon_image)
-                                <img src="{{ asset('storage/'.$service->icon_image) }}" alt="{{ $service->title }}" class="h-14 w-14 object-contain">
+                                <img alt="" src="{{ asset('storage/'.$service->icon_image) }}" alt="{{ $service->title }}" class="h-14 w-14 object-contain">
                             @else
                                 <span class="text-lg font-bold text-white">{{ $service->icon ?? 'S' }}</span>
                             @endif

@@ -26,7 +26,7 @@
     </div>
 
     <div>
-      <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d"
+      <img alt="" src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d"
         class="rounded-2xl shadow-lg w-full object-cover">
     </div>
 
@@ -60,7 +60,7 @@
         <div class="text-center space-y-4">
           <span class="text-xs uppercase text-[#FD5528]">Business Profile</span>
           <div class="flex h-20 w-20 mx-auto items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b]">
-            <img src="https://img.icons8.com/?size=100&id=7880&format=png&color=ffffff" class="h-14 w-14" />
+            <img alt="" src="https://img.icons8.com/?size=100&id=7880&format=png&color=ffffff" class="h-14 w-14" />
           </div>
           <h3 class="text-xl font-semibold">Google Business Profile</h3>
           <p class="text-sm text-gray-600">
@@ -79,7 +79,7 @@
         <div class="text-center space-y-4">
           <span class="text-xs uppercase text-[#FD5528]">Keyword Targeting</span>
           <div class="flex h-20 w-20 mx-auto items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b]">
-            <img src="https://img.icons8.com/?size=100&id=11668&format=png&color=ffffff" class="h-14 w-14" />
+            <img alt="" src="https://img.icons8.com/?size=100&id=11668&format=png&color=ffffff" class="h-14 w-14" />
           </div>
           <h3 class="text-xl font-semibold">Local Keyword Optimization</h3>
           <p class="text-sm text-gray-600">
@@ -98,7 +98,7 @@
         <div class="text-center space-y-4">
           <span class="text-xs uppercase text-[#FD5528]">Citations</span>
           <div class="flex h-20 w-20 mx-auto items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b]">
-            <img src="https://img.icons8.com/?size=100&id=85467&format=png&color=ffffff" class="h-14 w-14" />
+            <img alt="" src="https://img.icons8.com/?size=100&id=85467&format=png&color=ffffff" class="h-14 w-14" />
           </div>
           <h3 class="text-xl font-semibold">Local Citations</h3>
           <p class="text-sm text-gray-600">
@@ -117,7 +117,7 @@
         <div class="text-center space-y-4">
           <span class="text-xs uppercase text-[#FD5528]">Reputation</span>
           <div class="flex h-20 w-20 mx-auto items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b]">
-            <img src="https://img.icons8.com/?size=100&id=110249&format=png&color=ffffff" class="h-14 w-14" />
+            <img alt="" src="https://img.icons8.com/?size=100&id=110249&format=png&color=ffffff" class="h-14 w-14" />
           </div>
           <h3 class="text-xl font-semibold">Review Management</h3>
           <p class="text-sm text-gray-600">
@@ -136,7 +136,7 @@
         <div class="text-center space-y-4">
           <span class="text-xs uppercase text-[#FD5528]">On Page SEO</span>
           <div class="flex h-20 w-20 mx-auto items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b]">
-            <img src="https://img.icons8.com/?size=100&id=59873&format=png&color=ffffff" class="h-14 w-14" />
+            <img alt="" src="https://img.icons8.com/?size=100&id=59873&format=png&color=ffffff" class="h-14 w-14" />
           </div>
           <h3 class="text-xl font-semibold">Local On-Page SEO</h3>
           <p class="text-sm text-gray-600">
@@ -155,7 +155,7 @@
         <div class="text-center space-y-4">
           <span class="text-xs uppercase text-[#FD5528]">Analytics</span>
           <div class="flex h-20 w-20 mx-auto items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b]">
-            <img src="https://img.icons8.com/?size=100&id=11668&format=png&color=ffffff" class="h-14 w-14" />
+            <img alt="" src="https://img.icons8.com/?size=100&id=11668&format=png&color=ffffff" class="h-14 w-14" />
           </div>
           <h3 class="text-xl font-semibold">Local SEO Tracking</h3>
           <p class="text-sm text-gray-600">

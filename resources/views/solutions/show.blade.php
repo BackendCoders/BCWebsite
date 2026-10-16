@@ -26,7 +26,7 @@
     </div>
 
     <div>
-      <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71"
+      <img alt="" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71"
         class="rounded-2xl shadow-lg w-full object-cover">
     </div>
 
@@ -318,11 +318,11 @@
   <div class="max-w-3xl mx-auto px-6">
 
     <h2 class="text-3xl font-bold">
-      Ready to Rank #1 on Google?
+      Build a Search Strategy for Sustainable Growth
     </h2>
 
     <p class="mt-4">
-      Partner with a top SEO company in India and grow your business with powerful, data-driven SEO strategies that deliver long-term results.
+      Improve your site’s technical health, useful content, and local visibility with a plan shaped around your goals. Search rankings and lead volumes are not guaranteed.
     </p>
 
     <a href="{{ route('frontend.contact') }}"

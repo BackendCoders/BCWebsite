@@ -26,7 +26,7 @@
     </div>
 
     <div>
-      <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71"
+      <img alt="" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71"
         class="rounded-2xl shadow-lg w-full object-cover">
     </div>
 
@@ -69,7 +69,7 @@
     </span>
 
     <div class="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] shadow-inner">
-      <img src="https://img.icons8.com/?size=100&id=11668&format=png&color=ffffff" class="h-14 w-14" />
+      <img alt="" src="https://img.icons8.com/?size=100&id=11668&format=png&color=ffffff" class="h-14 w-14" />
     </div>
 
     <h3 class="text-xl font-semibold">Google Search Ads</h3>
@@ -99,7 +99,7 @@
     </span>
 
     <div class="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b]">
-      <img src="https://img.icons8.com/?size=100&id=86127&format=png&color=ffffff" class="h-14 w-14" />
+      <img alt="" src="https://img.icons8.com/?size=100&id=86127&format=png&color=ffffff" class="h-14 w-14" />
     </div>
 
     <h3 class="text-xl font-semibold">Display Advertising</h3>
@@ -129,7 +129,7 @@
     </span>
 
     <div class="flex h-20 w-20 mx-auto items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b]">
-      <img src="https://img.icons8.com/?size=100&id=110249&format=png&color=ffffff" class="h-14 w-14" />
+      <img alt="" src="https://img.icons8.com/?size=100&id=110249&format=png&color=ffffff" class="h-14 w-14" />
     </div>
 
     <h3 class="text-xl font-semibold">Remarketing Ads</h3>
@@ -198,7 +198,7 @@
     </span>
 
     <div class="flex h-20 w-20 mx-auto items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b]">
-      <img src="https://img.icons8.com/?size=100&id=85467&format=png&color=ffffff" class="h-14 w-14" />
+      <img alt="" src="https://img.icons8.com/?size=100&id=85467&format=png&color=ffffff" class="h-14 w-14" />
     </div>
 
     <h3 class="text-xl font-semibold">Google Shopping Ads</h3>
@@ -228,7 +228,7 @@
     </span>
 
     <div class="flex h-20 w-20 mx-auto items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b]">
-      <img src="https://img.icons8.com/?size=100&id=59873&format=png&color=ffffff" class="h-14 w-14" />
+      <img alt="" src="https://img.icons8.com/?size=100&id=59873&format=png&color=ffffff" class="h-14 w-14" />
     </div>
 
     <h3 class="text-xl font-semibold">PPC Campaign Management</h3>

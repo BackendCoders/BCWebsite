@@ -28,7 +28,7 @@
         <header class="overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-2xl">
             <div class="grid lg:grid-cols-2">
                 <div class="relative min-h-[400px]">
-                    <img
+                    <img alt=""
                         src="{{ $blog->getImageUrl() }}"
                         alt="{{ $blog->title }}"
                         class="h-full w-full object-cover"
@@ -79,7 +79,7 @@
         <div class="mt-10 grid gap-8 lg:grid-cols-[minmax(0,1.6fr)_minmax(300px,0.8fr)]">
             <article class="space-y-8 rounded-[2rem] border border-slate-200 bg-white p-8 md:p-10 shadow-lg">
                 @if($blog->content)
-                    <div class="prose prose-slate max-w-none prose-headings:text-slate-900 prose-headings:font-bold prose-h2:mt-8 prose-h2:mb-4 prose-h2:text-2xl prose-h3:text-xl prose-h3:mt-6 prose-h3:mb-3 prose-p:text-slate-600 prose-p:leading-8 prose-p:mb-4 prose-a:text-[#FD5528] prose-a:font-semibold hover:prose-a:text-[#e94c20] prose-ul:text-slate-600 prose-ul:my-4 prose-li:my-2 prose-li:ml-2 prose-blockquote:border-l-4 prose-blockquote:border-[#FD5528] prose-blockquote:bg-slate-50 prose-blockquote:py-2 prose-blockquote:px-4 prose-blockquote:rounded prose-code:bg-slate-100 prose-code:text-slate-800 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-pre:bg-slate-900 prose-pre:rounded-xl prose-img:rounded-xl prose-img:shadow-lg">
+                    <div class="blog-content-body prose prose-slate max-w-none prose-headings:text-slate-900 prose-headings:font-bold prose-h2:mt-8 prose-h2:mb-4 prose-h2:text-2xl prose-h3:text-xl prose-h3:mt-6 prose-h3:mb-3 prose-p:text-slate-600 prose-p:leading-8 prose-p:mb-4 prose-a:text-[#FD5528] prose-a:font-semibold hover:prose-a:text-[#e94c20] prose-ul:text-slate-600 prose-ul:my-4 prose-li:my-2 prose-li:ml-2 prose-blockquote:border-l-4 prose-blockquote:border-[#FD5528] prose-blockquote:bg-slate-50 prose-blockquote:py-2 prose-blockquote:px-4 prose-blockquote:rounded prose-code:bg-slate-100 prose-code:text-slate-800 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-pre:bg-slate-900 prose-pre:rounded-xl prose-img:rounded-xl prose-img:shadow-lg">
                         {!! $blog->content !!}
                     </div>
                 @else
@@ -151,7 +151,7 @@
                         @forelse($relatedBlogs as $related)
                             <a href="{{ route('frontend.blog-detail', $related->slug) }}" class="group flex gap-3 rounded-2xl border border-slate-200 p-3 transition hover:border-[#FD5528] hover:bg-slate-50 hover:shadow-md">
                                 <div class="relative overflow-hidden rounded-lg flex-shrink-0">
-                                    <img
+                                    <img alt=""
                                         src="{{ $related->getImageUrl() }}"
                                         alt="{{ $related->title }}"
                                         class="h-16 w-20 object-cover group-hover:scale-110 transition duration-300"
@@ -207,7 +207,7 @@
                     <div class="mt-4 space-y-4">
                         @forelse($relatedBlogs as $related)
                             <a href="{{ route('frontend.blog-detail', $related->slug) }}" class="flex gap-3 rounded-2xl border border-slate-200 p-3 transition hover:-translate-y-0.5 hover:shadow-lg">
-                                <img
+                                <img alt=""
                                     src="{{ $related->getImageUrl() }}"
                                     alt="{{ $related->title }}"
                                     class="h-16 w-20 rounded-xl object-cover"

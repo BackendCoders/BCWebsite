@@ -43,6 +43,7 @@ return [
             'url' => env('MAIL_URL'),
             'host' => env('MAIL_HOST', '127.0.0.1'),
             'port' => env('MAIL_PORT', 2525),
+            'encryption' => env('MAIL_ENCRYPTION', 'ssl'),
             'username' => env('MAIL_USERNAME'),
             'password' => env('MAIL_PASSWORD'),
             'timeout' => null,
@@ -116,8 +117,8 @@ return [
     ],
 
     'contact' => [
-        'admin_email' => env('CONTACT_ADMIN_EMAIL', env('ADMIN_EMAIL', env('MAIL_FROM_ADDRESS', 'hello@example.com'))),
-        'from_address' => env('CONTACT_FROM_ADDRESS', env('MAIL_FROM_ADDRESS', 'hello@example.com')),
+        'admin_email' => env('CONTACT_ADMIN_EMAIL', env('ADMIN_EMAIL', env('MAIL_FROM_ADDRESS', 'info@backendcodersindia.com'))),
+        'from_address' => env('CONTACT_FROM_ADDRESS', env('MAIL_FROM_ADDRESS', 'info@backendcodersindia.com')),
         'from_name' => env('CONTACT_FROM_NAME', env('MAIL_FROM_NAME', env('APP_NAME', 'Backend Coders India'))),
         'reply_subject' => env('CONTACT_REPLY_SUBJECT', 'Thanks for contacting us'),
         'notification_subject' => env('CONTACT_NOTIFICATION_SUBJECT', 'New Contact Message'),

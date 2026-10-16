@@ -1,4 +1,19 @@
+User-agent: GPTBot
+Disallow: /login
+Disallow: /forgot-password
+Disallow: /reset-password
+Disallow: /register
+Disallow: /dashboard
+Disallow: /admin
+Allow: /
+
 User-agent: *
+Disallow: /login
+Disallow: /forgot-password
+Disallow: /reset-password
+Disallow: /register
+Disallow: /dashboard
+Disallow: /admin
 Allow: /
 Sitemap: https://backendcodersindia.com/sitemap.xml
 

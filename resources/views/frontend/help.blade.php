@@ -6,7 +6,7 @@
 
   <!-- BACKGROUND IMAGE -->
   <img 
-    src="{{asset('assets/images/banner.png')}}"
+    src="{{asset('assets/images/banner.png')}}" alt="banner"
     class="absolute inset-0 w-full h-full object-cover"
   />
 
@@ -57,7 +57,7 @@
      Help Center
     </span>
       <!-- <p class="text-xs uppercase tracking-[0.6em] text-[#FD5528]">Terms of Use</p> -->
-      <h1 class="text-3xl sm:text-4xl font-bold text-gray-900">Help Center</h1>
+      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900">Help Center</h2>
       <p class="text-gray-600 max-w-3xl mx-auto">
         Find answers to your questions and get support from our team.
       </p>
@@ -157,17 +157,7 @@
         <div class="h-px bg-gradient-to-r from-[#FD5528] via-[#FD5528]/60 to-transparent"></div>
       </article>
 
-      <article class="rounded-3xl border border-[#F1F5F9] bg-white/80 shadow-lg shadow-[#FD5528]/10 p-6 space-y-4">
-        <div class="flex items-center gap-3">
-          <img src="https://img.icons8.com/?size=100&id=53434&format=png&color=fd5528" alt="Community Forums" class="w-11 h-11">
-          <h2 class="text-xl font-semibold text-gray-900">Community Forums</h2>
-        </div>
-        <p class="text-gray-600 leading-relaxed">
-          Join our community forums to connect with other users, share experiences, and get help from our team.
-        </p>
-        <span class="text-[#FD5528] font-semibold">Visit: <a href="/community-forums" class="underline">Community Forum</a></span>
-        <div class="h-px bg-gradient-to-r from-[#FD5528] via-[#FD5528]/60 to-transparent"></div>
-      </article>
+      <!-- Removed community forums article -->
     </div>
   </section>
 </main>

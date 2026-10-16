@@ -48,11 +48,26 @@
             return $path;
         }
 
+        $path = trim(str_replace('\\', '/', (string) $path));
+        $path = ltrim($path, '/');
+
+        if (\Illuminate\Support\Str::startsWith($path, 'public/')) {
+            $path = \Illuminate\Support\Str::after($path, 'public/');
+        }
+
         if (\Illuminate\Support\Str::startsWith($path, 'storage/')) {
+            $path = \Illuminate\Support\Str::after($path, 'storage/');
+        }
+
+        if (\Illuminate\Support\Facades\Storage::disk('public')->exists($path)) {
+            return route('media.file', ['path' => $path]);
+        }
+
+        if (file_exists(public_path($path))) {
             return asset($path);
         }
 
-        return asset('storage/' . ltrim($path, '/'));
+        return asset('assets/images/banner.png');
     };
 @endphp
 
@@ -136,7 +151,7 @@
                         <p class="mt-1 text-sm text-slate-500">Keep the content structured and publish-ready.</p>
                     </div>
                     @if($section->image)
-                        <img src="{{ $mediaUrl($section->image) }}" alt="" class="h-16 w-16 rounded-2xl object-cover ring-4 ring-[#FD5528]/10">
+                        <img alt="" src="{{ $mediaUrl($section->image) }}" alt="" class="h-16 w-16 rounded-2xl object-cover ring-4 ring-[#FD5528]/10">
                     @endif
                 </div>
 
@@ -209,7 +224,7 @@
                         <label class="block text-sm font-medium text-slate-700">Section Image</label>
                         <input type="file" name="image" class="mt-1 w-full rounded-xl border border-slate-300 px-4 py-3 focus:border-[#FD5528] focus:ring-[#FD5528]">
                         @if($section->image)
-                            <img src="{{ $mediaUrl($section->image) }}" alt="" class="mt-3 h-36 w-full rounded-2xl object-cover">
+                            <img alt="" src="{{ $mediaUrl($section->image) }}" alt="" class="mt-3 h-36 w-full rounded-2xl object-cover">
                         @endif
                     </div>
 
@@ -274,7 +289,7 @@
 
                     <div class="rounded-[1.75rem] border border-slate-200 bg-slate-50 p-4">
                         @if($section->image)
-                            <img src="{{ $mediaUrl($section->image) }}" alt="" class="h-64 w-full rounded-[1.5rem] object-cover shadow-lg">
+                            <img alt="" src="{{ $mediaUrl($section->image) }}" alt="" class="h-64 w-full rounded-[1.5rem] object-cover shadow-lg">
                         @else
                             <div class="flex h-64 items-center justify-center rounded-[1.5rem] border border-dashed border-slate-300 bg-white text-center text-slate-500">
                                 Add a section image to make this block feel premium.
@@ -310,7 +325,9 @@
 
                     <div class="md:col-span-2">
                         <label class="block text-sm font-medium text-slate-700">Description</label>
-                        <div data-rich-editor class="rich-editor-shell mt-1 w-full overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm"></div>
+                        <div class="rich-editor-shell mt-1 min-h-[380px] w-full rounded-2xl border border-slate-300 bg-white shadow-sm flex flex-col overflow-visible">
+                            <div data-rich-editor class="w-full min-h-[300px] flex-1 bg-white"></div>
+                        </div>
                         <input type="hidden" name="description" data-rich-content value="{{ old('description') }}">
                     </div>
 
@@ -399,7 +416,9 @@
 
                                 <div class="space-y-1">
                                     <label class="block text-sm font-medium text-slate-700">Description</label>
-                                    <div data-rich-editor class="rich-editor-shell mt-1 w-full overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm"></div>
+                                    <div class="rich-editor-shell mt-1 min-h-[380px] w-full rounded-2xl border border-slate-300 bg-white shadow-sm flex flex-col overflow-visible">
+                                        <div data-rich-editor class="w-full min-h-[300px] flex-1 bg-white"></div>
+                                    </div>
                                     <input type="hidden" name="description" data-rich-content value="{{ old('description', $item->description) }}">
                                 </div>
 
@@ -444,7 +463,7 @@
                             <div class="space-y-4">
                                 <div class="rounded-[1.5rem] border border-slate-200 bg-slate-50 p-4">
                                     @if($item->image)
-                                        <img src="{{ $mediaUrl($item->image) }}" alt="{{ $item->title }}" class="h-40 w-full rounded-[1.25rem] object-cover">
+                                        <img alt="" src="{{ $mediaUrl($item->image) }}" alt="{{ $item->title }}" class="h-40 w-full rounded-[1.25rem] object-cover">
                                     @else
                                         <div class="flex h-40 items-center justify-center rounded-[1.25rem] border border-dashed border-slate-300 bg-white text-sm text-slate-500">
                                             No image for this item.

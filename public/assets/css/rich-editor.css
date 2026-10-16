@@ -1,0 +1,709 @@
+/* ==========================================================================
+   Backend Coders - Professional Rich Text Editor (White Theme / High Contrast)
+   Ultra-crisp white background with dark, bold, perfectly visible text & icons.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Outer Shell Container (Crisp White Background)
+   -------------------------------------------------------------------------- */
+.rich-editor-shell {
+    position: relative !important;
+    display: flex !important;
+    flex-direction: column !important;
+    min-height: 24rem !important;
+    background: #ffffff !important;
+    border: 1.5px solid #cbd5e1 !important;
+    border-radius: 1.25rem !important;
+    overflow: visible !important;
+    box-shadow: 0 4px 12px -2px rgba(15, 23, 42, 0.06), 0 2px 6px -1px rgba(15, 23, 42, 0.04) !important;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.rich-editor-shell:focus-within {
+    border-color: #FD5528 !important;
+    box-shadow: 0 0 0 4px rgba(253, 85, 40, 0.16) !important;
+}
+
+/* --------------------------------------------------------------------------
+   2. Fullscreen Writing Mode (Pure White Background)
+   -------------------------------------------------------------------------- */
+.rich-editor-shell.ql-fullscreen {
+    position: fixed !important;
+    inset: 0 !important;
+    z-index: 99999 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    border-radius: 0 !important;
+    border: none !important;
+    margin: 0 !important;
+    background: #ffffff !important;
+    box-shadow: none !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.rich-editor-shell.ql-fullscreen .ql-toolbar {
+    border-radius: 0 !important;
+    box-shadow: 0 2px 10px rgba(15, 23, 42, 0.08) !important;
+    background: #ffffff !important;
+}
+
+.rich-editor-shell.ql-fullscreen .ql-container {
+    max-width: 58rem !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    padding: 2.5rem 1.5rem !important;
+    background: #ffffff !important;
+}
+
+.rich-editor-shell.ql-fullscreen .ql-html-editor {
+    max-width: 58rem !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+}
+
+/* --------------------------------------------------------------------------
+   3. Toolbar: Crisp White Background & High-Contrast Borders
+   -------------------------------------------------------------------------- */
+.ql-toolbar.ql-snow {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    gap: 4px !important;
+    padding: 10px 14px !important;
+    background: #ffffff !important;
+    border: none !important;
+    border-bottom: 1.5px solid #e2e8f0 !important;
+    border-top-left-radius: 1.25rem !important;
+    border-top-right-radius: 1.25rem !important;
+    box-sizing: border-box !important;
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 30 !important;
+    user-select: none !important;
+}
+
+.ql-toolbar .ql-formats {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 2px !important;
+    margin-right: 8px !important;
+    padding-right: 8px !important;
+    border-right: 1.5px solid #e2e8f0 !important;
+    margin-bottom: 3px !important;
+    margin-top: 3px !important;
+    vertical-align: middle !important;
+}
+
+.ql-toolbar .ql-formats:last-child {
+    border-right: none !important;
+    margin-right: 0 !important;
+    padding-right: 0 !important;
+}
+
+/* --------------------------------------------------------------------------
+   4. Toolbar Buttons: Dark, Crisp, Visible Icons
+   -------------------------------------------------------------------------- */
+.ql-toolbar button,
+.ql-snow .ql-toolbar button,
+.ql-snow.ql-toolbar button {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 34px !important;
+    height: 34px !important;
+    min-width: 34px !important;
+    min-height: 34px !important;
+    max-width: 34px !important;
+    max-height: 34px !important;
+    padding: 6px !important;
+    border: 1px solid transparent !important;
+    background: #ffffff !important;
+    cursor: pointer !important;
+    border-radius: 8px !important;
+    color: #0f172a !important;
+    transition: all 0.15s ease !important;
+    box-sizing: border-box !important;
+    outline: none !important;
+    position: relative !important;
+}
+
+.ql-toolbar button:hover,
+.ql-snow .ql-toolbar button:hover {
+    background-color: #f1f5f9 !important;
+    color: #000000 !important;
+    border-color: #cbd5e1 !important;
+    transform: translateY(-1px) !important;
+}
+
+.ql-toolbar button.ql-active,
+.ql-snow .ql-toolbar button.ql-active,
+.ql-toolbar button:active {
+    background-color: #fff0eb !important;
+    color: #FD5528 !important;
+    border-color: #FD5528 !important;
+    box-shadow: 0 1px 3px rgba(253, 85, 40, 0.2) !important;
+}
+
+/* --------------------------------------------------------------------------
+   5. SVG Icons: High Contrast Dark Strokes (#0f172a / #1e293b)
+   -------------------------------------------------------------------------- */
+.ql-toolbar svg,
+.ql-snow .ql-toolbar svg,
+.ql-snow.ql-toolbar svg,
+.ql-snow.ql-toolbar button svg,
+.ql-snow .ql-toolbar button svg {
+    width: 18px !important;
+    height: 18px !important;
+    min-width: 18px !important;
+    min-height: 18px !important;
+    display: inline-block !important;
+    vertical-align: middle !important;
+    box-sizing: content-box !important;
+}
+
+.ql-snow .ql-stroke {
+    stroke: #0f172a !important;
+    stroke-linecap: round !important;
+    stroke-linejoin: round !important;
+    stroke-width: 2.2 !important;
+    fill: none !important;
+    transition: stroke 0.15s ease !important;
+}
+
+.ql-snow .ql-fill {
+    fill: #0f172a !important;
+    transition: fill 0.15s ease !important;
+}
+
+.ql-snow .ql-stroke.ql-thin {
+    stroke-width: 1.5 !important;
+}
+
+.ql-toolbar button:hover .ql-stroke,
+.ql-toolbar button.ql-active .ql-stroke {
+    stroke: #FD5528 !important;
+}
+
+.ql-toolbar button:hover .ql-fill,
+.ql-toolbar button.ql-active .ql-fill {
+    fill: #FD5528 !important;
+}
+
+/* --------------------------------------------------------------------------
+   6. Dropdowns (Headers, Fonts, Sizes): Highly Visible Labels & Options
+   -------------------------------------------------------------------------- */
+.ql-snow .ql-picker {
+    display: inline-block !important;
+    position: relative !important;
+    height: 34px !important;
+    vertical-align: middle !important;
+    font-size: 13.5px !important;
+    font-weight: 700 !important;
+    color: #0f172a !important;
+    box-sizing: border-box !important;
+}
+
+.ql-snow .ql-picker.ql-header {
+    width: 126px !important;
+}
+
+.ql-snow .ql-picker.ql-font {
+    width: 118px !important;
+}
+
+.ql-snow .ql-picker.ql-size {
+    width: 108px !important;
+}
+
+.ql-snow .ql-picker.ql-align,
+.ql-snow .ql-picker.ql-color,
+.ql-snow .ql-picker.ql-background {
+    width: 34px !important;
+}
+
+/* Picker Label Box */
+.ql-snow .ql-picker-label {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    height: 34px !important;
+    padding: 0 10px !important;
+    border: 1.5px solid #cbd5e1 !important;
+    border-radius: 8px !important;
+    background: #ffffff !important;
+    cursor: pointer !important;
+    position: relative !important;
+    user-select: none !important;
+    box-sizing: border-box !important;
+    font-weight: 700 !important;
+    color: #0f172a !important;
+    transition: all 0.15s ease !important;
+}
+
+.ql-snow .ql-picker-label:hover {
+    border-color: #64748b !important;
+    background-color: #f8fafc !important;
+    color: #000000 !important;
+}
+
+.ql-snow .ql-picker.ql-expanded .ql-picker-label {
+    border-color: #FD5528 !important;
+    box-shadow: 0 0 0 3px rgba(253, 85, 40, 0.18) !important;
+    background-color: #fff0eb !important;
+    color: #FD5528 !important;
+}
+
+/* Visible Label Text */
+.ql-snow .ql-picker-label::before {
+    display: inline-block !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+    line-height: 32px !important;
+    max-width: calc(100% - 16px) !important;
+    font-size: 13.5px !important;
+    font-weight: 700 !important;
+    color: #0f172a !important;
+}
+
+.ql-snow .ql-picker.ql-expanded .ql-picker-label::before {
+    color: #FD5528 !important;
+}
+
+.ql-snow .ql-picker-label svg {
+    position: static !important;
+    width: 13px !important;
+    height: 13px !important;
+    min-width: 13px !important;
+    min-height: 13px !important;
+    margin-left: auto !important;
+    flex-shrink: 0 !important;
+    stroke: #0f172a !important;
+    stroke-width: 2.4 !important;
+    fill: none !important;
+}
+
+.ql-snow .ql-picker.ql-expanded .ql-picker-label svg {
+    stroke: #FD5528 !important;
+}
+
+/* Icon Pickers */
+.ql-snow .ql-picker.ql-icon-picker .ql-picker-label,
+.ql-snow .ql-picker.ql-color-picker .ql-picker-label {
+    padding: 6px !important;
+    justify-content: center !important;
+    border-color: 1px solid #e2e8f0 !important;
+}
+
+.ql-snow .ql-picker.ql-icon-picker .ql-picker-label:hover,
+.ql-snow .ql-picker.ql-color-picker .ql-picker-label:hover {
+    background-color: #f1f5f9 !important;
+    border-color: #cbd5e1 !important;
+}
+
+/* Picker Dropdown Options Menu */
+.ql-snow .ql-picker-options {
+    display: none !important;
+    position: absolute !important;
+    top: calc(100% + 4px) !important;
+    left: 0 !important;
+    z-index: 9999 !important;
+    background: #ffffff !important;
+    border: 1.5px solid #cbd5e1 !important;
+    border-radius: 12px !important;
+    box-shadow: 0 20px 30px -4px rgba(15, 23, 42, 0.16), 0 8px 12px -3px rgba(15, 23, 42, 0.08) !important;
+    padding: 6px !important;
+    min-width: 144px !important;
+    animation: qlDropdownIn 0.15s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+@keyframes qlDropdownIn {
+    from {
+        opacity: 0;
+        transform: translateY(-4px) scale(0.97);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.ql-snow .ql-picker.ql-expanded .ql-picker-options {
+    display: block !important;
+}
+
+.ql-snow .ql-picker-item {
+    display: flex !important;
+    align-items: center !important;
+    padding: 7px 12px !important;
+    cursor: pointer !important;
+    border-radius: 8px !important;
+    color: #0f172a !important;
+    font-size: 13.5px !important;
+    font-weight: 600 !important;
+    transition: all 0.12s ease !important;
+    white-space: nowrap !important;
+}
+
+.ql-snow .ql-picker-item:hover,
+.ql-snow .ql-picker-item.ql-selected {
+    background-color: #fff0eb !important;
+    color: #FD5528 !important;
+    font-weight: 700 !important;
+}
+
+/* Color Swatches Grid */
+.ql-snow .ql-color-picker .ql-picker-options {
+    width: 176px !important;
+    padding: 8px !important;
+}
+
+.ql-snow .ql-color-picker .ql-picker-item {
+    width: 20px !important;
+    height: 20px !important;
+    padding: 0 !important;
+    margin: 2px !important;
+    border-radius: 4px !important;
+    display: inline-block !important;
+    border: 1px solid rgba(0, 0, 0, 0.15) !important;
+    transition: transform 0.1s ease !important;
+}
+
+.ql-snow .ql-color-picker .ql-picker-item:hover {
+    transform: scale(1.25) !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25) !important;
+    z-index: 2 !important;
+}
+
+/* Header Picker Item Font Previews */
+.ql-snow .ql-picker.ql-header .ql-picker-item[data-value="1"]::before {
+    font-size: 1.25rem !important;
+    font-weight: 800 !important;
+    color: #0f172a !important;
+}
+.ql-snow .ql-picker.ql-header .ql-picker-item[data-value="2"]::before {
+    font-size: 1.15rem !important;
+    font-weight: 800 !important;
+    color: #0f172a !important;
+}
+.ql-snow .ql-picker.ql-header .ql-picker-item[data-value="3"]::before {
+    font-size: 1.05rem !important;
+    font-weight: 700 !important;
+    color: #0f172a !important;
+}
+
+/* --------------------------------------------------------------------------
+   7. Editor Content: Pure White BG & Ultra-Visible Dark Slate Text
+   -------------------------------------------------------------------------- */
+.ql-container.ql-snow {
+    border: none !important;
+    background: #ffffff !important;
+    min-height: 22rem !important;
+    flex: 1 1 auto !important;
+    overflow-y: auto !important;
+    font-size: 16px !important;
+    font-family: inherit !important;
+    cursor: text !important;
+    pointer-events: auto !important;
+}
+
+.ql-editor {
+    min-height: 22rem !important;
+    font-size: 1rem !important;
+    line-height: 1.85 !important;
+    color: #0f172a !important;
+    padding: 1.5rem 1.75rem 2.5rem !important;
+    overflow-y: auto !important;
+    outline: none !important;
+    background: #ffffff !important;
+    cursor: text !important;
+    pointer-events: auto !important;
+    user-select: text !important;
+    -webkit-user-select: text !important;
+    word-break: break-word !important;
+}
+
+.ql-editor.ql-blank::before {
+    color: #64748b !important;
+    font-style: italic !important;
+    font-weight: 500 !important;
+    left: 1.75rem !important;
+    right: 1.75rem !important;
+}
+
+/* Typography styles inside editor: high contrast */
+.ql-editor p {
+    margin: 0 0 1.25rem;
+    color: #0f172a !important;
+}
+
+.ql-editor h1 {
+    font-size: 2.1rem;
+    line-height: 1.25;
+    font-weight: 800;
+    margin: 1.85rem 0 0.85rem;
+    color: #0f172a !important;
+}
+
+.ql-editor h2 {
+    font-size: 1.65rem;
+    line-height: 1.3;
+    font-weight: 800;
+    margin: 1.6rem 0 0.75rem;
+    color: #0f172a !important;
+}
+
+.ql-editor h3 {
+    font-size: 1.35rem;
+    line-height: 1.35;
+    font-weight: 700;
+    margin: 1.4rem 0 0.65rem;
+    color: #0f172a !important;
+}
+
+.ql-editor h4 {
+    font-size: 1.18rem;
+    line-height: 1.4;
+    font-weight: 700;
+    margin: 1.25rem 0 0.5rem;
+    color: #0f172a !important;
+}
+
+.ql-editor h5 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin: 1rem 0 0.5rem;
+    color: #0f172a !important;
+}
+
+.ql-editor h6 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #334155 !important;
+    margin: 1rem 0 0.5rem;
+}
+
+.ql-editor ul,
+.ql-editor ol {
+    margin: 0.85rem 0 1.35rem;
+    padding-left: 1.75rem;
+    color: #0f172a !important;
+}
+
+.ql-editor li {
+    margin-bottom: 0.4rem;
+    color: #0f172a !important;
+}
+
+.ql-editor strong,
+.ql-editor b {
+    font-weight: 700 !important;
+    color: #000000 !important;
+}
+
+.ql-editor blockquote {
+    margin: 1.5rem 0;
+    padding: 0.95rem 1.35rem;
+    border-left: 4px solid #FD5528 !important;
+    background: #fff8f5 !important;
+    border-radius: 0 0.75rem 0.75rem 0;
+    color: #0f172a !important;
+    font-style: italic;
+    font-weight: 500;
+}
+
+.ql-editor code {
+    background-color: #f1f5f9;
+    color: #b91c1c;
+    padding: 0.2rem 0.5rem;
+    border-radius: 6px;
+    border: 1px solid #e2e8f0;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 0.875em;
+    font-weight: 600;
+}
+
+.ql-editor pre.ql-syntax,
+.ql-editor .ql-code-block-container {
+    background-color: #0f172a !important;
+    color: #38bdf8 !important;
+    padding: 1.25rem 1.5rem !important;
+    border-radius: 0.85rem !important;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace !important;
+    font-size: 0.925rem !important;
+    line-height: 1.65 !important;
+    margin: 1.5rem 0 !important;
+    overflow-x: auto !important;
+}
+
+.ql-editor hr {
+    border: none;
+    border-top: 2px dashed #cbd5e1;
+    margin: 2rem 0;
+}
+
+.ql-editor img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.85rem;
+    margin: 1.5rem 0;
+    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.1);
+    display: block;
+}
+
+.ql-editor iframe.ql-video {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    height: auto;
+    border-radius: 0.85rem;
+    margin: 1.5rem 0;
+    border: none;
+}
+
+.ql-editor a {
+    color: #FD5528 !important;
+    text-decoration: underline !important;
+    text-underline-offset: 3px !important;
+    font-weight: 600 !important;
+}
+
+.ql-editor a:hover {
+    color: #e94c20 !important;
+}
+
+/* Tables in Editor */
+.ql-editor table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 1.5rem 0;
+    border: 1.5px solid #cbd5e1;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.ql-editor table td,
+.ql-editor table th {
+    border: 1.5px solid #cbd5e1;
+    padding: 11px 15px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #0f172a !important;
+}
+
+.ql-editor table th {
+    background-color: #f8fafc;
+    font-weight: 700;
+    text-align: left;
+    color: #0f172a !important;
+}
+
+/* Checklists */
+.ql-editor ul[data-checked=true],
+.ql-editor ul[data-checked=false] {
+    list-style: none !important;
+    padding-left: 0.5rem !important;
+}
+
+.ql-editor li[data-checked=true],
+.ql-editor li[data-checked=false] {
+    padding-left: 1.5rem !important;
+    position: relative !important;
+    color: #0f172a !important;
+}
+
+/* --------------------------------------------------------------------------
+   8. Raw HTML Source Code Textarea
+   -------------------------------------------------------------------------- */
+.ql-html-editor {
+    display: none;
+    min-height: 22rem;
+    width: 100%;
+    flex: 1 1 auto;
+    padding: 1.5rem;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 13.5px;
+    line-height: 1.65;
+    background: #0f172a;
+    color: #38bdf8;
+    outline: none;
+    border: none;
+    resize: vertical;
+    tab-size: 2;
+    box-sizing: border-box;
+}
+
+.ql-html-editor.active {
+    display: block !important;
+}
+
+/* --------------------------------------------------------------------------
+   9. Status Bar: Crisp White Background & High Contrast Text
+   -------------------------------------------------------------------------- */
+.rich-editor-statusbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 9px 16px;
+    font-size: 12.5px;
+    font-weight: 600;
+    background: #ffffff;
+    border-top: 1.5px solid #e2e8f0;
+    color: #0f172a;
+    border-bottom-left-radius: 1.25rem;
+    border-bottom-right-radius: 1.25rem;
+    user-select: none;
+}
+
+.rich-editor-shell.ql-fullscreen .rich-editor-statusbar {
+    border-radius: 0 !important;
+}
+
+/* --------------------------------------------------------------------------
+   10. Custom Dialog Modals (Link, Image, Video)
+   -------------------------------------------------------------------------- */
+.rich-editor-modal-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 999999;
+    background: rgba(15, 23, 42, 0.65);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    animation: qlFadeIn 0.2s ease-out;
+}
+
+@keyframes qlFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.rich-editor-modal-card {
+    background: #ffffff;
+    border-radius: 1.25rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 520px;
+    overflow: hidden;
+    border: 1.5px solid #cbd5e1;
+    color: #0f172a;
+    animation: qlSlideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes qlSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(12px) scale(0.96);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}

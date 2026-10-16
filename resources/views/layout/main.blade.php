@@ -4,83 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title> Backend Coders India-Dashboard</title>
+    <title> @yield('Backend', 'Backend Coders India ')</title>
 
     <link rel="icon" type="image/svg+xml" alt="web development company in Kanpur" href="{{asset('assets/images/bci_icon.png')}}" class="bg-black"/>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    </noscript>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://unpkg.com" crossorigin>
+
     <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        brand: '#FD5528'
+        window.tailwind = {
+            config: {
+                darkMode: 'class',
+                theme: {
+                    extend: {
+                        colors: {
+                            brand: '#FD5528'
+                        }
                     }
                 }
             }
         };
     </script>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+
+    <!-- Professional Rich Text Editor Styles -->
+    @include('layout.rich-editor-styles')
+    @include('layout.blog-content-styles')
+
     <style>
         body {
             font-family: 'Manrope', sans-serif;
         }
 
-        .ql-toolbar.ql-snow {
-            border-color: rgb(226 232 240);
-            border-top-left-radius: 1rem;
-            border-top-right-radius: 1rem;
-            background: rgb(248 250 252);
-        }
-
-        .rich-editor-shell {
-            display: flex;
-            height: 13rem;
-            flex-direction: column;
-        }
-
-        .ql-container.ql-snow {
-            border-color: rgb(226 232 240);
-            border-bottom-left-radius: 1rem;
-            border-bottom-right-radius: 1rem;
-            background: #fff;
-            height: calc(100% - 42px);
-            flex: 1 1 auto;
-            overflow: hidden;
-        }
-
-        .ql-editor {
-            height: 100%;
-            min-height: 0;
-            font-size: 1rem;
-            line-height: 1.05;
-            color: rgb(15 23 42);
-            padding: 0.9rem 1rem 1.5rem;
-            padding-bottom:4px;
-            overflow-y: auto;
-        }
-
-        .ql-editor.ql-blank::before {
-            color: rgb(148 163 184);
-            font-style: italic;
-        }
-
         ::-webkit-scrollbar {
-            width: 0px;
+            width: 6px;
+            height: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
         }
 
         ::-webkit-scrollbar-thumb {
-            background: #FD5528;
+            background: #cbd5e1;
             border-radius: 10px;
         }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #FD5528;
+        }
+
+        .dark ::-webkit-scrollbar-thumb {
+            background: #475569;
+        }
+
+        .dark ::-webkit-scrollbar-thumb:hover {
+            background: #FD5528;
+        }
     </style>
-
-<!--  -->
-
 </head>
 <body class="bg-slate-100 text-slate-900 antialiased transition-colors duration-300">
     <div class="min-h-screen bg-[radial-gradient(circle_at_top_right,_rgba(253,85,40,0.16),_transparent_30%),radial-gradient(circle_at_top_left,_rgba(148,163,184,0.18),_transparent_24%)]">
@@ -94,7 +82,9 @@
         </main>
     </div>
 
-    <script src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script>
+    <!-- Professional Rich Text Editor Scripts & Engine -->
+    @include('layout.rich-editor-scripts')
+
     <script>
     document.addEventListener('DOMContentLoaded', function () {
         const root = document.documentElement;
@@ -115,7 +105,7 @@
         };
 
         const savedTheme = localStorage.getItem('dashboard-theme');
-        const preferredTheme = savedTheme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        const preferredTheme = savedTheme || 'light';
         applyTheme(preferredTheme);
 
         themeToggle?.addEventListener('click', function () {
@@ -150,49 +140,7 @@
 
         handleResize();
         window.addEventListener('resize', handleResize);
-
-        const initQuillEditors = (formSelector, editorSelector, hiddenSelector, placeholder) => {
-            document.querySelectorAll(formSelector).forEach((form) => {
-                const editorContainer = form.querySelector(editorSelector);
-                const hiddenInput = form.querySelector(hiddenSelector);
-
-                if (!editorContainer || !hiddenInput || typeof Quill === 'undefined') {
-                    return;
-                }
-
-                const quill = new Quill(editorContainer, {
-                    theme: 'snow',
-                    placeholder,
-                    modules: {
-                        toolbar: [
-                            [{ header: [1, 2, 3, false] }],
-                            ['bold', 'italic', 'underline', 'strike'],
-                            [{ list: 'ordered' }, { list: 'bullet' }],
-                            ['blockquote', 'link', 'image'],
-                            ['clean'],
-                        ],
-                    },
-                });
-
-                const initialContent = hiddenInput.value || '';
-                if (initialContent) {
-                    quill.root.innerHTML = initialContent;
-                }
-
-                const syncContent = () => {
-                    hiddenInput.value = quill.root.innerHTML;
-                };
-
-                quill.on('text-change', syncContent);
-                form.addEventListener('submit', syncContent);
-                syncContent();
-            });
-        };
-
-        initQuillEditors('[data-blog-form]', '[data-blog-editor]', '[data-blog-content]', 'Write your blog content here...');
-        initQuillEditors('[data-rich-form]', '[data-rich-editor]', '[data-rich-content]', 'Write rich text here...');
     });
     </script>
-
 </body>
 </html>

@@ -1,0 +1,20 @@
+# Backend Coders
+
+> Backend Coders is a technology and software development company providing full-stack engineering, robust backend architectures, custom web applications, API development, and cloud infrastructure.
+
+## Core Pages
+
+- [Homepage](https://backendcodersindia.com/): Official homepage and overview of Backend Coders services and solutions.
+- [About Us](https://backendcodersindia.com/about): Company overview, mission, core values, and engineering leadership.
+- [Services](https://backendcodersindia.com/service): Specialized backend development, REST and GraphQL APIs, web applications, and database architecture.
+- [Projects](https://backendcodersindia.com/project): Portfolio of client implementations, case studies, and enterprise solutions.
+- [Packages](https://backendcodersindia.com/packages): Transparent service packages, pricing options, and development engagements.
+- [Development Process](https://backendcodersindia.com/process): Agile delivery methodology, architecture design, automated testing, and CI/CD pipelines.
+- [Team](https://backendcodersindia.com/team): Engineering leads, developers, and tech consultants at Backend Coders.
+- [Careers](https://backendcodersindia.com/career): Open tech roles, job requirements, and opportunities to join our development team.
+- [Contact](https://backendcodersindia.com/contact): Inquiries, technical consultation requests, and office contact information.
+- [Blog](https://backendcodersindia.com/blog): Technical insights, software architecture guides, and web development updates.
+
+## Optional
+
+- [Sitemap](https://backendcodersindia.com/sitemap.xml): Machine-readable XML sitemap of all public routes and content.

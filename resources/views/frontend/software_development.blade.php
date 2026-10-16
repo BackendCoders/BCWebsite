@@ -6,8 +6,8 @@
 <section class="relative h-[30vh] flex items-center justify-center text-center text-white overflow-hidden">
 
   <!-- BACKGROUND IMAGE -->
-  <img 
-    src="{{asset('assets/images/banner.png')}}"
+  <img alt="" 
+    src="{{asset('assets/images/bannerC.png')}}"
     class="absolute inset-0 w-full h-full object-cover"
   />
 
@@ -120,7 +120,7 @@
                     class="group relative overflow-hidden rounded-[1.75rem] border border-[#FD5528]/30 bg-gradient-to-b from-white via-white to-orange-50 p-7 shadow-[0_25px_60px_rgba(0,0,0,0.1)] transition duration-500 hover:-translate-y-2 hover:shadow-[#da8871] hover:bg-white/10 hover:backdrop-blur-[18px] text-gray-900">
                     <div class="pointer-events-none absolute inset-0 rounded-[1.75rem] bg-gradient-to-br from-[#FD5528]/15 via-white/40 to-white/10 opacity-0 transition duration-500 group-hover:opacity-80 backdrop-blur-[0px] group-hover:backdrop-blur-[24px]"></div>
                     <div class="relative z-10 flex flex-col items-center text-center space-y-4">
-                        <span class="text-[0.6rem] font-semibold uppercase tracking-[0.4em] text-[#FD5528]">SaaS Forces</span>
+                        <span class="text-[0.6rem] font-semibold uppercase tracking-[0.4em] text-[#FD5528]">SaaS Platforms</span>
                         <div class="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] 
                         hover:from-[#fb813b] hover:to-[#b00000] shadow-inner">
                             <img src="https://img.icons8.com/?size=100&id=k8TSihyFk2cJ&format=png&color=ffffff" alt="SaaS icon" class="h-16 w-16" />

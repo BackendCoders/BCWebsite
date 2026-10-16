@@ -6,65 +6,180 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 
-  <!-- <title>Backend Coders India | Web Development Company in Kanpur, India | Custom Software, SaaS, SEO, Mobile App & AI Solutions</title> -->
-<title>{{ $page->meta_title ?? $page->title ?? 'Backend Coders India | Web Development Company in Kanpur, India | Custom Software, SaaS, SEO, Mobile App & AI Solutions' }}</title>
+@php
+    $metaTitle = filled(data_get($page ?? null, 'meta_title')) ? $page->meta_title : ($page?->title ?? 'Backend Coders India | Web Development Company in Kanpur, India');
+    $metaDescription = filled(data_get($page ?? null, 'meta_description')) ? $page->meta_description : 'Backend Coders India builds websites, custom software, ecommerce platforms, and digital products for businesses in India and abroad.';
+    $rawMetaImage = data_get($page ?? null, 'og_image');
+    if ($rawMetaImage) {
+        $metaImage = \Illuminate\Support\Str::startsWith($rawMetaImage, ['http://', 'https://', '//'])
+            ? $rawMetaImage
+            : url($rawMetaImage);
+    } else {
+        $metaImage = asset('assets/images/banner.png');
+    }
+    $metaKeywords = filled(data_get($page ?? null, 'meta_keywords')) ? $page->meta_keywords : null;
 
-<meta name="description" content="{{ $page->meta_description ?? 'Backend Coders India is a trusted web development company in Kanpur, India delivering custom software development, SaaS platforms, website design, SEO, digital marketing, mobile apps, API development, and AI solutions for Indian and international clients.' }}">
+    $canonicalBase = 'https://backendcodersindia.com';
+    $rawPath = trim((string) request()->path(), '/');
+    $normalizedPath = ($rawPath === '' || $rawPath === '/') ? '' : '/' . $rawPath;
+    $selfCanonical = $canonicalBase . $normalizedPath;
+
+    $customCanonical = trim((string) data_get($page ?? null, 'canonical_url'));
+    $canonicalUrl = (filter_var($customCanonical, FILTER_VALIDATE_URL)
+        && in_array(parse_url($customCanonical, PHP_URL_HOST), ['backendcodersindia.com', 'www.backendcodersindia.com', parse_url(config('app.url'), PHP_URL_HOST)]))
+            ? preg_replace('#^https?://www\.backendcodersindia\.com#i', 'https://backendcodersindia.com', $customCanonical)
+            : $selfCanonical;
+
+    // Never allow an inner subpage to canonicalise to the root homepage
+    if ($normalizedPath !== '' && in_array(rtrim($canonicalUrl, '/'), [$canonicalBase, rtrim(config('app.url'), '/')], true)) {
+        $canonicalUrl = $selfCanonical;
+    }
+@endphp
+<title>{{ $metaTitle }}</title>
+
+<meta name="description" content="{{ $metaDescription }}">
+@if($metaKeywords)
+<meta name="keywords" content="{{ $metaKeywords }}">
+@endif
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="{{ request()->routeIs('frontend.blog-detail') ? 'article' : 'website' }}">
+<meta property="og:site_name" content="Backend Coders India">
+<meta property="og:title" content="{{ $metaTitle }}">
+<meta property="og:description" content="{{ $metaDescription }}">
+<meta property="og:url" content="{{ $canonicalUrl }}">
+<meta property="og:image" content="{{ $metaImage }}">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@backendcoders">
+<meta name="twitter:title" content="{{ $metaTitle }}">
+<meta name="twitter:description" content="{{ $metaDescription }}">
+<meta name="twitter:image" content="{{ $metaImage }}">
 
 <meta name="csrf-token" content="{{ csrf_token() }}">
 
+@if(($page ?? null)?->is_index === 0)
+<meta name="robots" content="noindex, nofollow">
+@else
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+@endif
 
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-WLWCJJ7N');</script>
-<!-- End Google Tag Manager -->
+<link rel="canonical" href="{{ $canonicalUrl }}">
 
-  <!-- <meta name="description" content="Backend Coders India is a trusted web development company in Kanpur, India delivering custom software development, SaaS platforms, website design, SEO, digital marketing, mobile apps, API development, and AI solutions for Indian and international clients." /> -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" media="print" onload="this.media='all'">
 
-<link rel="canonical" href="{{ $page->canonical_url ?? url()->current() }}">
-
-  <!-- <link rel="canonical" href="{{ $page->canonical_url ?? url()->current() }}"> -->
+<!-- Organization & WebSite Structured Data -->
+<script type="application/ld+json">
+{!! json_encode([
+  '@@context' => 'https://schema.org',
+  '@graph' => [
+    [
+      '@type' => 'WebSite',
+      '@id' => 'https://backendcodersindia.com/#website',
+      'url' => 'https://backendcodersindia.com',
+      'name' => 'Backend Coders India',
+      'description' => 'Custom Software Development, Web Development, SaaS, Mobile Apps & SEO Services in Kanpur, India',
+      'publisher' => [
+        '@id' => 'https://backendcodersindia.com/#organization'
+      ],
+      'potentialAction' => [
+        [
+          '@type' => 'SearchAction',
+          'target' => [
+            '@type' => 'EntryPoint',
+            'urlTemplate' => 'https://backendcodersindia.com/blog?q={search_term_string}'
+          ],
+          'query-input' => 'required name=search_term_string'
+        ]
+      ],
+      'inLanguage' => 'en'
+    ],
+    [
+      '@type' => ['ProfessionalService', 'Organization'],
+      '@id' => 'https://backendcodersindia.com/#organization',
+      'name' => 'Backend Coders India',
+      'alternateName' => 'Backend Coders',
+      'url' => 'https://backendcodersindia.com',
+      'logo' => [
+        '@type' => 'ImageObject',
+        '@id' => 'https://backendcodersindia.com/#logo',
+        'url' => 'https://backendcodersindia.com/assets/images/bci_icon.png',
+        'caption' => 'Backend Coders India'
+      ],
+      'image' => 'https://backendcodersindia.com/assets/images/banner.png',
+      'telephone' => '+91 914 0092 133',
+      'email' => 'info@backendcodersindia.com',
+      'priceRange' => '$$',
+      'address' => [
+        '@type' => 'PostalAddress',
+        'streetAddress' => '11/42, Krishna Nagar',
+        'addressLocality' => 'Kanpur',
+        'addressRegion' => 'Uttar Pradesh',
+        'postalCode' => '208007',
+        'addressCountry' => 'IN'
+      ],
+      'geo' => [
+        '@type' => 'GeoCoordinates',
+        'latitude' => '26.4499',
+        'longitude' => '80.3319'
+      ],
+      'openingHoursSpecification' => [
+        [
+          '@type' => 'OpeningHoursSpecification',
+          'dayOfWeek' => [
+            'Monday',
+            'Tuesday',
+            'Wednesday',
+            'Thursday',
+            'Friday',
+            'Saturday'
+          ],
+          'opens' => '09:30',
+          'closes' => '18:30'
+        ]
+      ],
+      'sameAs' => [
+        'https://www.linkedin.com/company/backendcodersindia/',
+        'https://www.facebook.com/backendcoders/',
+        'https://www.instagram.com/backendcoders/',
+        'https://x.com/backendcodersin'
+      ]
+    ]
+  ]
+], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) !!}
+</script>
 
 @stack('head')
 
-@vite(['resources/css/app.css', 'resources/js/app.js'])
+@vite([ 'resources/js/app.js'])
+
+@php
+$manifest = json_decode(file_get_contents(public_path('build/manifest.json')), true);
+$appCss = asset('build/'.$manifest['resources/css/app.css']['file']);
+@endphp
+
+<link rel="stylesheet" href="{{ $appCss }}">
+@include('layout.blog-content-styles')
 
 <link rel="icon" type="image/svg+xml" alt="web development company in Kanpur" href="{{asset('assets/images/bci_icon.png')}}" class="bg-black"/>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-
-<link rel="preload" href="https://unpkg.com/aos@2.3.4/dist/aos.css" as="style" onload="this.rel='stylesheet'">
-
-<!-- GOOGLE FONTS -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-
-    
-<!-- Swiper CSS -->
-<link rel="preload" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" as="style" onload="this.rel='stylesheet'">
-
- 
-  <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}" />
-
-  <!-- @if(optional($page)->is_index === 0)
-    <meta name="robots" content="noindex, nofollow">
-@endif -->
-
-@if(($page ?? null)?->is_index === 0)
-    <meta name="robots" content="noindex, nofollow">
+@if(request()->routeIs('frontend.index'))
+<link rel="preload" as="image" href="{{ asset('assets/images/backend_coders_split_1.webp.webp') }}" fetchpriority="high">
 @endif
 
 <style>
- 
+body {
+  margin: 0;
+  font-family: 'Space Grotesk', 'Inter', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Space Grotesk', 'Inter', sans-serif;
+}
+
 .active-link {
     color: #EA580C;
     background-color: #FFF7F2;
@@ -191,6 +306,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   }
 }
 
+/* Prevent AOS from hiding critical hero content before JS executes (improves LCP) */
+#hero, #hero [data-aos], .hero-section, .hero-section [data-aos] {
+  opacity: 1 !important;
+  transform: none !important;
+  visibility: visible !important;
+}
+
 .service-card {
   display: flex;
   flex-direction: column;
@@ -213,7 +335,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 }
 
 .service-card p {
-  font-size: 11px;
+  font-size: 13px;
+  line-height: 1.4;
   font-weight: 600;
   color: #374151;
   text-align: center;
@@ -237,7 +360,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     height: 30px;
   }
   .service-card p {
-    font-size: 12px;
+    font-size: 13px;
   }
 }
 
@@ -251,7 +374,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     height: 34px;
   }
   .service-card p {
-    font-size: 13px;
+    font-size: 14px;
   }
 }
 
@@ -300,6 +423,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
 </style>
+<style>
+.stat-card {
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 20px 40px rgba(253, 85, 40, 0.15);
+}
+</style>
 
 <style>
     .flip-card {
@@ -343,10 +476,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-    @include('component.header')
+    <!-- Site Preloader -->
+    <div id="site-preloader" class="fixed inset-0 z-[9999] flex items-center justify-center bg-white transition-opacity duration-500">
+        <img src="{{ asset('assets/images/bci_icon.png') }}" alt="Backend Coders India" width="80" height="80" fetchpriority="high" decoding="sync" class="h-20 w-20 animate-pulse object-contain">
+    </div>
+    <noscript>
+        <style>#site-preloader { display: none !important; }</style>
+    </noscript>
 
-<div class="" style="font-family:Space Grotesk, sans-serif; font-body: Inter, sans-serif;
-    font-mono:JetBrains Mono, monospace; muted-foreground: 215 14% 40%;">
+    @include('component.header')
 
 <!-- FLOATING STACK -->
 <div class="fixed right-5 bottom-6 z-[60] flex flex-col items-end gap-3">
@@ -355,22 +493,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             type="button"
             class="flex h-14 w-14 items-center justify-center rounded-full bg-[#1aac26] text-white shadow-lg transition hover:scale-110"
             aria-label="Open contact menu">
-            <img src="https://img.icons8.com/?size=100&id=122809&format=png&color=FFFFFF" class="w-8" alt="Contact">
+            <img src="{{asset('assets/icons/person.png')}}" class="w-6 h-6" alt="Contact">
         </button>
 
         <div id="contactMenu"
-            class="absolute bottom-20 right-0 w-64 translate-y-5 space-y-2 rounded-2xl border bg-white p-3 opacity-0 shadow-2xl transition-all duration-300 pointer-events-none">
-            <a href="tel:+919140092133" class="flex items-center gap-3 rounded-xl p-3 hover:bg-orange-50">
-                <img src="https://img.icons8.com/?size=100&id=9730&format=png&color=FA5252" class="w-6" alt="">
+            class="absolute bottom-20 right-0 w-64 space-y-2 rounded-2xl border bg-white p-3 opacity-0 shadow-2xl transition-all duration-300 pointer-events-none invisible translate-y-5 scale-95 origin-bottom-right">
+            <a href="tel:+919140092133" class="flex items-center gap-3 rounded-xl p-3 hover:bg-orange-50" aria-label="Call Us">
+                <img src="{{ asset('assets/icons/phone.png') }}" class="w-6 h-6" alt=" connect with us">
                 <span>Call Us</span>
             </a>
 
-            <a href="https://wa.me/919140092133" target="_blank" class="flex items-center gap-3 rounded-xl p-3 hover:bg-orange-50">
-                <img src="https://img.icons8.com/?size=100&id=Jneo9ShAzJw7&format=png&color=000000" class="w-6" alt="">
+            <a href="https://wa.me/919140092133" target="_blank" class="flex items-center gap-3 rounded-xl p-3 hover:bg-orange-50" aria-label="Chat on WhatsApp">
+                <img src="{{ asset('assets/icons/whatsapp.png') }}" class="w-6 h-6" alt="Chat on WhatsApp">
                 <span>WhatsApp</span>
             </a>
         </div>
     </div>
+
+
+    
 
     <div class="relative">
         <button id="botToggle"
@@ -383,7 +524,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </button>
 
         <div id="botPanel"
-            class="absolute bottom-20 right-0 hidden w-[22rem] overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white shadow-[0_24px_80px_rgba(15,23,42,0.18)]">
+            class="absolute bottom-20 right-0 w-[22rem] overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white opacity-0 shadow-[0_24px_80px_rgba(15,23,42,0.18)] transition-all duration-300 invisible translate-y-4 scale-95 pointer-events-none origin-bottom-right">
             <div class="flex items-center justify-between bg-gradient-to-r from-[#FD5528] to-[#f97316] px-4 py-4 text-white">
                 <div>
                     <p class="text-xs font-semibold uppercase tracking-[0.35em] text-white/70">Chatbot</p>
@@ -404,13 +545,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
 
             <div class="border-t border-slate-200 bg-white p-4">
-                <!-- <div class="mb-3 flex flex-wrap gap-2">
-                    <button type="button" data-bot-quick="SEO" class="rounded-full border border-slate-200 px-3 py-1.5 text-xs font-semibold text-slate-600 transition hover:border-[#FD5528] hover:text-[#FD5528]">SEO</button>
-                    <button type="button" data-bot-quick="Website" class="rounded-full border border-slate-200 px-3 py-1.5 text-xs font-semibold text-slate-600 transition hover:border-[#FD5528] hover:text-[#FD5528]">Website</button>
-                    <button type="button" data-bot-quick="Blogs" class="rounded-full border border-slate-200 px-3 py-1.5 text-xs font-semibold text-slate-600 transition hover:border-[#FD5528] hover:text-[#FD5528]">Blogs</button>
-                    <button type="button" data-bot-quick="Contact" class="rounded-full border border-slate-200 px-3 py-1.5 text-xs font-semibold text-slate-600 transition hover:border-[#FD5528] hover:text-[#FD5528]">Contact</button>
-                </div> -->
-
+          
                 <div class="flex gap-2">
                     <input
                         id="botInput"
@@ -430,28 +565,30 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
     </div>
 </div>
-<!-- JS -->
-</div>
-
-<style>
-.stat-card {
-  transition: all 0.3s ease;
-}
-
-.stat-card:hover {
-  transform: translateY(-8px) scale(1.03);
-  box-shadow: 0 20px 40px rgba(253, 85, 40, 0.15);
-}
-</style>
-
-
-
-
-
-    @yield('content') </div>
+    @yield('content')
 
     @include('component.footer')
 <script>
+function dismissSitePreloader() {
+    const preloader = document.getElementById('site-preloader');
+    if (preloader && !preloader.__dismissed) {
+        preloader.__dismissed = true;
+        preloader.classList.add('opacity-0');
+        setTimeout(() => {
+            preloader.classList.add('hidden');
+            preloader.style.display = 'none';
+        }, 400);
+    }
+}
+
+if (document.readyState === 'complete' || document.readyState === 'interactive') {
+    dismissSitePreloader();
+} else {
+    document.addEventListener('DOMContentLoaded', dismissSitePreloader);
+}
+window.addEventListener('load', dismissSitePreloader);
+setTimeout(dismissSitePreloader, 800);
+
 document.addEventListener('DOMContentLoaded', function () {
   const contactToggle = document.getElementById('contactToggle');
   const contactMenu = document.getElementById('contactMenu');
@@ -465,9 +602,15 @@ document.addEventListener('DOMContentLoaded', function () {
   if (contactToggle && contactMenu) {
     contactToggle.addEventListener('click', (e) => {
       e.stopPropagation();
+      const isHidden = contactMenu.classList.contains('opacity-0');
+
       contactMenu.classList.toggle('opacity-0');
       contactMenu.classList.toggle('pointer-events-none');
+      contactMenu.classList.toggle('invisible');
       contactMenu.classList.toggle('translate-y-5');
+      contactMenu.classList.toggle('scale-95');
+      contactMenu.classList.toggle('scale-100');
+      contactToggle.setAttribute('aria-expanded', String(isHidden));
     });
   }
 
@@ -522,8 +665,17 @@ document.addEventListener('DOMContentLoaded', function () {
   if (botToggle && botPanel && botInput && botSend) {
     botToggle.addEventListener('click', (e) => {
       e.stopPropagation();
-      botPanel.classList.toggle('hidden');
-      if (!botPanel.classList.contains('hidden')) {
+      const isHidden = botPanel.classList.contains('opacity-0');
+
+      botPanel.classList.toggle('opacity-0');
+      botPanel.classList.toggle('pointer-events-none');
+      botPanel.classList.toggle('invisible');
+      botPanel.classList.toggle('translate-y-4');
+      botPanel.classList.toggle('scale-95');
+      botPanel.classList.toggle('scale-100');
+      botToggle.setAttribute('aria-expanded', String(isHidden));
+
+      if (isHidden) {
         botInput.focus();
         if (botMessages) {
           botMessages.scrollTop = botMessages.scrollHeight;
@@ -547,11 +699,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
   document.addEventListener('click', (e) => {
     if (contactToggle && contactMenu && !contactToggle.contains(e.target) && !contactMenu.contains(e.target)) {
-      contactMenu.classList.add('opacity-0', 'pointer-events-none', 'translate-y-5');
+      contactMenu.classList.add('opacity-0', 'pointer-events-none', 'invisible', 'translate-y-5', 'scale-95');
+      contactMenu.classList.remove('scale-100');
+      contactToggle.setAttribute('aria-expanded', 'false');
     }
 
     if (botToggle && botPanel && !botToggle.contains(e.target) && !botPanel.contains(e.target)) {
-      botPanel.classList.add('hidden');
+      botPanel.classList.add('opacity-0', 'pointer-events-none', 'invisible', 'translate-y-4', 'scale-95');
+      botPanel.classList.remove('scale-100');
+      botToggle.setAttribute('aria-expanded', 'false');
     }
   });
 });
@@ -646,93 +802,393 @@ document.addEventListener("click", function (e) {
 
 
 
-function generateCaptcha() {
-    let num1 = Math.floor(Math.random() * 10);
-    let num2 = Math.floor(Math.random() * 10);
+function initContactFormCaptcha() {
+    const forms = document.querySelectorAll("[data-contact-form], #packageContactForm");
+    if (!forms.length) return;
 
-    document.getElementById("captchaQuestion").innerHTML =
-        `What is ${num1} + ${num2}? <span style="color:red">*</span>`;
+    forms.forEach(function(form) {
+        if (form.__captchaInitialized) return;
+        form.__captchaInitialized = true;
 
-    document.getElementById("captchaCorrect").value = num1 + num2;
+        const questionEl = form.querySelector("#captchaQuestion");
+        const correctInput = form.querySelector("#captchaCorrect, input[name='captcha_correct']");
+        const captchaInput = form.querySelector("#captchaInput, input[name='captcha']");
+        const errorEl = form.querySelector("#captchaError");
+        const reloadBtns = form.querySelectorAll(".reload-captcha-btn");
+
+        function refreshCaptcha() {
+            const num1 = Math.floor(Math.random() * 8) + 2;
+            const num2 = Math.floor(Math.random() * 9) + 1;
+            if (questionEl) {
+                questionEl.innerHTML = `What is ${num1} + ${num2}? <span class="text-red-500 font-bold">*</span>`;
+            }
+            if (correctInput) {
+                correctInput.value = (num1 + num2).toString();
+            }
+            if (captchaInput) {
+                captchaInput.value = "";
+                captchaInput.focus();
+            }
+            if (errorEl) {
+                errorEl.classList.add("hidden");
+            }
+        }
+
+        // If for any reason captcha was not pre-populated server-side, populate it now
+        if (correctInput && (!correctInput.value || correctInput.value.trim() === "")) {
+            refreshCaptcha();
+        }
+
+        // Bind reload challenge buttons
+        reloadBtns.forEach(function(btn) {
+            btn.addEventListener("click", function(e) {
+                e.preventDefault();
+                refreshCaptcha();
+            });
+        });
+
+        // Clear error message when user starts typing
+        if (captchaInput) {
+            captchaInput.addEventListener("input", function() {
+                if (errorEl) {
+                    errorEl.classList.add("hidden");
+                }
+            });
+        }
+
+        // Auto-scroll to feedback if page reloaded with success or error
+        const feedbackContainer = form.querySelector("#contact-feedback, #package-contact-feedback");
+        if (feedbackContainer && (feedbackContainer.querySelector("[role='alert']") || window.location.hash.includes("feedback"))) {
+            setTimeout(function() {
+                feedbackContainer.scrollIntoView({ behavior: "smooth", block: "center" });
+            }, 300);
+        }
+
+        const dynamicFeedback = form.querySelector("#contactDynamicFeedback, #packageContactDynamicFeedback");
+
+        // Form submission handling
+        form.addEventListener("submit", function(e) {
+            if (errorEl) {
+                errorEl.classList.add("hidden");
+            }
+            if (dynamicFeedback) {
+                dynamicFeedback.classList.add("hidden");
+                dynamicFeedback.innerHTML = "";
+            }
+
+            // HTML5 native validation
+            if (!form.checkValidity()) {
+                e.preventDefault();
+                form.reportValidity();
+                return;
+            }
+
+            // CAPTCHA check
+            const userAnswer = captchaInput ? captchaInput.value.trim() : "";
+            const correctAnswer = correctInput ? correctInput.value.trim() : "";
+
+            if (!userAnswer || !correctAnswer || userAnswer !== correctAnswer) {
+                e.preventDefault();
+                refreshCaptcha();
+                if (errorEl) {
+                    errorEl.classList.remove("hidden");
+                }
+                return;
+            }
+
+            e.preventDefault();
+
+            // Visual feedback on submission
+            const submitBtn = form.querySelector("button[type='submit']");
+            const originalBtnHtml = submitBtn ? submitBtn.innerHTML : "Send Message";
+
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.style.pointerEvents = "none";
+                submitBtn.style.opacity = "0.85";
+                submitBtn.innerHTML = `
+                    <span class="inline-flex items-center gap-2">
+                        <svg class="animate-spin h-4 w-4 text-white inline-block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                        Sending...
+                    </span>
+                `;
+            }
+
+            const formData = new FormData(form);
+
+            fetch(form.action, {
+                method: "POST",
+                body: formData,
+                headers: {
+                    "Accept": "application/json",
+                    "X-Requested-With": "XMLHttpRequest"
+                }
+            })
+            .then(async function(res) {
+                const data = await res.json().catch(() => null);
+
+                if (res.ok && data && data.success) {
+                    if (dynamicFeedback) {
+                        dynamicFeedback.innerHTML = `
+                            <div class="rounded-2xl border-2 border-emerald-400 bg-emerald-50 p-5 text-emerald-900 shadow-md flex items-start gap-3.5 transition-all" role="alert">
+                                <div class="p-1 rounded-full bg-emerald-100 text-emerald-600 flex-shrink-0 mt-0.5">
+                                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="text-base font-bold text-emerald-950">Inquiry Received!</h4>
+                                    <p class="text-sm font-semibold text-emerald-800 mt-0.5">${data.message || "Thanks! We'll reply within 24 hours."}</p>
+                                    <p class="text-xs text-emerald-700 mt-1">
+                                        Our team will get back to you shortly. Need immediate assistance? Call us directly at <a href="tel:+919140092133" class="underline font-bold">+91 9140092133</a>.
+                                    </p>
+                                </div>
+                            </div>
+                        `;
+                        dynamicFeedback.classList.remove("hidden");
+                        dynamicFeedback.scrollIntoView({ behavior: "smooth", block: "center" });
+                    }
+                    form.reset();
+                    refreshCaptcha();
+                } else {
+                    let errMsg = (data && data.message) ? data.message : "Unable to submit your inquiry.";
+                    if (data && data.errors) {
+                        const errorList = Object.values(data.errors).flat().join(" ");
+                        if (errorList) errMsg = errorList;
+                    }
+                    if (dynamicFeedback) {
+                        dynamicFeedback.innerHTML = `
+                            <div class="rounded-2xl border-2 border-red-300 bg-red-50 p-5 text-red-900 shadow-sm flex items-start gap-3.5" role="alert">
+                                <div class="p-1 rounded-full bg-red-100 text-red-600 flex-shrink-0 mt-0.5">
+                                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="text-base font-bold text-red-950">Submission Failed</h4>
+                                    <p class="text-sm font-medium text-red-800 mt-0.5">${errMsg}</p>
+                                    <p class="text-xs text-red-700 mt-1">
+                                        Next steps: Check your input details, try again, or email us at <a href="mailto:info@backendcodersindia.com" class="underline font-bold">info@backendcodersindia.com</a>.
+                                    </p>
+                                </div>
+                            </div>
+                        `;
+                        dynamicFeedback.classList.remove("hidden");
+                        dynamicFeedback.scrollIntoView({ behavior: "smooth", block: "center" });
+                    }
+                    refreshCaptcha();
+                }
+            })
+            .catch(function(err) {
+                console.warn("Async contact submission failed, falling back to standard submit:", err);
+                form.submit();
+            })
+            .finally(function() {
+                if (submitBtn) {
+                    submitBtn.disabled = false;
+                    submitBtn.style.pointerEvents = "";
+                    submitBtn.style.opacity = "";
+                    submitBtn.innerHTML = originalBtnHtml;
+                }
+            });
+        });
+    });
 }
 
-const contactForm = document.querySelector("[data-contact-form]");
+window.generateCaptcha = function() {
+    const forms = document.querySelectorAll("[data-contact-form], #packageContactForm");
+    forms.forEach(function(form) {
+        const questionEl = form.querySelector("#captchaQuestion");
+        const correctInput = form.querySelector("#captchaCorrect, input[name='captcha_correct']");
+        const num1 = Math.floor(Math.random() * 8) + 2;
+        const num2 = Math.floor(Math.random() * 9) + 1;
+        if (questionEl) questionEl.innerHTML = `What is ${num1} + ${num2}? <span class="text-red-500 font-bold">*</span>`;
+        if (correctInput) correctInput.value = (num1 + num2).toString();
+    });
+};
 
-if (contactForm) {
-  generateCaptcha();
-
-  contactForm.addEventListener("submit", function(e) {
-
-    let form = this;
-
-    // Reset error
-    document.getElementById("captchaError").classList.add("hidden");
-
-    // HTML validation
-    if (!form.checkValidity()) {
-        e.preventDefault();
-        form.reportValidity();
-        return;
-    }
-
-    // CAPTCHA validation
-    let userAnswer = document.getElementById("captchaInput").value.trim();
-    let correctAnswer = document.getElementById("captchaCorrect").value;
-
-    if (userAnswer == "" || userAnswer != correctAnswer) {
-        e.preventDefault();
-
-        document.getElementById("captchaError").classList.remove("hidden");
-
-        generateCaptcha();
-        document.getElementById("captchaInput").value = "";
-    }
-  });
+if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initContactFormCaptcha);
+} else {
+    initContactFormCaptcha();
 }
-
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    const counters = document.querySelectorAll('.counter');
+    const counters = document.querySelectorAll(".counter");
 
     const runCounter = (counter) => {
-        const target = +counter.getAttribute('data-target');
-        let count = 0;
 
-        const update = () => {
-            const increment = target / 100;
-            count += increment;
+        const target = Number(counter.getAttribute("data-target"));
 
-            if (count < target) {
-                counter.innerText = Math.ceil(count);
+        // Read the real value already present in HTML
+        const start = Number(
+            counter.textContent.replace(/[^\d.-]/g, "")
+        );
+
+        // Safety check
+        if (isNaN(target) || isNaN(start)) {
+            return;
+        }
+
+        // If already at target, don't animate
+        if (start >= target) {
+            counter.textContent = `${target}+`;
+            return;
+        }
+
+        const duration = 1500;
+        const startTime = performance.now();
+
+        const update = (currentTime) => {
+
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+
+            // Smooth easing
+            const easedProgress =
+                1 - Math.pow(1 - progress, 3);
+
+            const currentValue = Math.floor(
+                start + (target - start) * easedProgress
+            );
+
+            counter.textContent = `${currentValue}+`;
+
+            if (progress < 1) {
                 requestAnimationFrame(update);
             } else {
-                counter.innerText = target;
+                counter.textContent = `${target}+`;
             }
         };
 
-        update();
+        requestAnimationFrame(update);
     };
 
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                runCounter(entry.target);
-                observer.unobserve(entry.target);
-            }
-        });
+    const observer = new IntersectionObserver(
+        (entries, observer) => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    runCounter(entry.target);
+
+                    observer.unobserve(entry.target);
+                }
+
+            });
+
+        },
+        {
+            threshold: 0.3
+        }
+    );
+
+    counters.forEach(counter => {
+        observer.observe(counter);
     });
 
-    counters.forEach(counter => observer.observe(counter));
-
 });
+
+
+
+
+// hero grid
+function initHeroVideoCards() {
+    const cards = document.querySelectorAll('.video-card');
+    if (!cards.length) return;
+
+    cards.forEach(card => {
+        if (card.__videoInitialized) return;
+        card.__videoInitialized = true;
+
+        const img = card.querySelector('img');
+        const video = card.querySelector('video');
+        if (!video) return;
+
+        // Ensure proper attributes for cross-browser autoplay
+        video.muted = true;
+        video.defaultMuted = true;
+        video.playsInline = true;
+
+        let isHovered = false;
+
+        const showVideo = () => {
+            video.style.opacity = '1';
+            if (img) img.style.opacity = '0';
+        };
+
+        const showImage = () => {
+            video.style.opacity = '0';
+            if (img) img.style.opacity = '1';
+        };
+
+        const play = () => {
+            isHovered = true;
+            video.muted = true;
+            const sources = video.querySelectorAll('source[data-src]');
+            sources.forEach(source => {
+                source.src = source.dataset.src;
+                delete source.dataset.src;
+            });
+            if (sources.length) video.load();
+
+            const playPromise = video.play();
+            if (playPromise !== undefined && typeof playPromise.then === 'function') {
+                playPromise.then(() => {
+                    if (isHovered) {
+                        showVideo();
+                    } else {
+                        video.pause();
+                        showImage();
+                    }
+                }).catch(() => {
+                    showImage();
+                });
+            } else {
+                showVideo();
+            }
+        };
+
+        const pause = () => {
+            isHovered = false;
+            video.pause();
+            showImage();
+        };
+
+        card.addEventListener('mouseenter', play);
+        card.addEventListener('mouseleave', pause);
+
+        // Mobile touch interaction
+        card.addEventListener('touchstart', (e) => {
+            if (isHovered) {
+                pause();
+            } else {
+                play();
+            }
+        }, { passive: true });
+    });
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initHeroVideoCards);
+} else {
+    initHeroVideoCards();
+}
 </script>
 
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<!-- Swiper JS -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-<script src="{{ asset('assets/js/main.js') }}" defer></script>
+
+
+@php
+  $mainJs = asset('assets/js/main.js') . '?v=' . filemtime(public_path('assets/js/main.js'));
+@endphp
+
+<script src="{{ $mainJs }}" defer></script>
 
 </body>
 </html>

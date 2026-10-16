@@ -26,7 +26,7 @@
     </div>
 
     <div>
-      <img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7"
+      <img alt="" src="https://images.unsplash.com/photo-1492724441997-5dc865305da7"
         class="rounded-2xl shadow-lg w-full object-cover">
     </div>
 
@@ -61,7 +61,7 @@
           <span class="text-xs uppercase tracking-widest text-[#FD5528]">Content Creation</span>
 
           <div class="flex h-20 w-20 mx-auto items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b]">
-            <img src="https://img.icons8.com/?size=100&id=11668&format=png&color=ffffff" class="h-14 w-14" />
+            <img alt="" src="https://img.icons8.com/?size=100&id=11668&format=png&color=ffffff" class="h-14 w-14" />
           </div>
 
           <h3 class="text-xl font-semibold">Blog & Article Writing</h3>
@@ -85,7 +85,7 @@
           <span class="text-xs uppercase tracking-widest text-[#FD5528]">Social Content</span>
 
           <div class="flex h-20 w-20 mx-auto items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b]">
-            <img src="https://img.icons8.com/?size=100&id=86127&format=png&color=ffffff" class="h-14 w-14" />
+            <img alt="" src="https://img.icons8.com/?size=100&id=86127&format=png&color=ffffff" class="h-14 w-14" />
           </div>
 
           <h3 class="text-xl font-semibold">Social Media Content</h3>
@@ -109,7 +109,7 @@
           <span class="text-xs uppercase tracking-widest text-[#FD5528]">Planning</span>
 
           <div class="flex h-20 w-20 mx-auto items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b]">
-            <img src="https://img.icons8.com/?size=100&id=59873&format=png&color=ffffff" class="h-14 w-14" />
+            <img alt="" src="https://img.icons8.com/?size=100&id=59873&format=png&color=ffffff" class="h-14 w-14" />
           </div>
 
           <h3 class="text-xl font-semibold">Content Strategy</h3>
@@ -133,7 +133,7 @@
           <span class="text-xs uppercase tracking-widest text-[#FD5528]">Video Marketing</span>
 
           <div class="flex h-20 w-20 mx-auto items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b]">
-            <img src="https://img.icons8.com/?size=100&id=85375&format=png&color=ffffff" class="h-14 w-14" />
+            <img alt="" src="https://img.icons8.com/?size=100&id=85375&format=png&color=ffffff" class="h-14 w-14" />
           </div>
 
           <h3 class="text-xl font-semibold">Video Content</h3>
@@ -157,7 +157,7 @@
           <span class="text-xs uppercase tracking-widest text-[#FD5528]">Website Content</span>
 
           <div class="flex h-20 w-20 mx-auto items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b]">
-            <img src="https://img.icons8.com/?size=100&id=85467&format=png&color=ffffff" class="h-14 w-14" />
+            <img alt="" src="https://img.icons8.com/?size=100&id=85467&format=png&color=ffffff" class="h-14 w-14" />
           </div>
 
           <h3 class="text-xl font-semibold">Website & Landing Content</h3>
@@ -181,7 +181,7 @@
           <span class="text-xs uppercase tracking-widest text-[#FD5528]">Optimization</span>
 
           <div class="flex h-20 w-20 mx-auto items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b]">
-            <img src="https://img.icons8.com/?size=100&id=110249&format=png&color=ffffff" class="h-14 w-14" />
+            <img alt="" src="https://img.icons8.com/?size=100&id=110249&format=png&color=ffffff" class="h-14 w-14" />
           </div>
 
           <h3 class="text-xl font-semibold">Content Optimization</h3>

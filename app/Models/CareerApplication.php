@@ -13,5 +13,23 @@ class CareerApplication extends Model
         'position',
         'about',
         'resume',
+        'visitor_id',
+        'ip_address',
+        'status',
     ];
+
+    /**
+     * Count total submissions associated with this visitor ID.
+     */
+    public function getVisitorTotalSubmissionsAttribute(): int
+    {
+        if (empty($this->visitor_id)) {
+            return 1;
+        }
+
+        $contactCount = Contact::where('visitor_id', $this->visitor_id)->count();
+        $appCount = CareerApplication::where('visitor_id', $this->visitor_id)->count();
+
+        return $contactCount + $appCount;
+    }
 }

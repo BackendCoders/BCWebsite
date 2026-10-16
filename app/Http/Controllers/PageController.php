@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Page;
 use App\Models\MenuItem;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 class PageController extends Controller
@@ -68,6 +70,7 @@ class PageController extends Controller
             'slug' => 'required|unique:pages,slug',
             'meta_title' => 'nullable|max:100',
             'meta_description' => 'nullable|max:255',
+            'canonical_url' => 'nullable|url|max:255',
             'type' => 'nullable|string|max:255',
         ]);
 
@@ -127,6 +130,7 @@ class PageController extends Controller
             'slug' => 'required|unique:pages,slug,' . $id,
             'meta_title' => 'nullable|max:100',
             'meta_description' => 'nullable|max:255',
+            'canonical_url' => 'nullable|url|max:255',
             'type' => 'nullable|string|max:255',
         ]);
 
@@ -168,5 +172,77 @@ class PageController extends Controller
 
         return redirect()->route('pages.index')
             ->with('success', 'Page & Menu Deleted Successfully');
+    }
+
+    public function media(string $path)
+    {
+        $path = $this->normalizeMediaPath($path);
+        $fullPath = $this->resolveMediaFilePath($path);
+
+        if (! $fullPath || ! file_exists($fullPath)) {
+            $isIcon = Str::contains(strtolower($path), ['icon', 'logo', 'bci_icon', 'favicon']);
+            $fallbackFile = $isIcon ? 'assets/images/bci_icon.png' : 'assets/images/banner.png';
+            $fallbackPath = public_path($fallbackFile);
+
+            if (file_exists($fallbackPath)) {
+                $fullPath = $fallbackPath;
+            }
+        }
+
+        abort_unless($fullPath && file_exists($fullPath), 404);
+
+        $mimeType = File::mimeType($fullPath) ?: 'application/octet-stream';
+
+        return response()->file($fullPath, [
+            'Content-Type' => $mimeType,
+            'Cache-Control' => 'public, max-age=31536000, immutable',
+        ]);
+    }
+
+    private function resolveMediaFilePath(string $path): ?string
+    {
+        $candidates = [
+            Storage::disk('public')->path($path),
+            storage_path('app/public/' . $path),
+            public_path('storage/' . $path),
+            public_path($path),
+            public_path('assets/images/' . $path),
+            storage_path('app/' . $path),
+        ];
+
+        $basename = basename($path);
+        if ($basename && $basename !== $path) {
+            $candidates[] = storage_path('app/public/sections/' . $basename);
+            $candidates[] = storage_path('app/public/section-items/' . $basename);
+            $candidates[] = storage_path('app/public/blogs/' . $basename);
+            $candidates[] = storage_path('app/public/projects/' . $basename);
+            $candidates[] = public_path('assets/images/' . $basename);
+            $candidates[] = public_path('storage/sections/' . $basename);
+            $candidates[] = public_path('storage/section-items/' . $basename);
+        }
+
+        foreach ($candidates as $candidate) {
+            if ($candidate && file_exists($candidate) && is_file($candidate)) {
+                return $candidate;
+            }
+        }
+
+        return null;
+    }
+
+    private function normalizeMediaPath(string $path): string
+    {
+        $path = trim(str_replace('\\', '/', $path));
+        $path = ltrim($path, '/');
+
+        if (Str::startsWith($path, 'public/')) {
+            return Str::after($path, 'public/');
+        }
+
+        if (Str::startsWith($path, 'storage/')) {
+            return Str::after($path, 'storage/');
+        }
+
+        return $path;
     }
 }

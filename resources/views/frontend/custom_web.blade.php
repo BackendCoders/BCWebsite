@@ -26,7 +26,7 @@
     </div>
 
     <div>
-      <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c"
+      <img alt="" src="https://images.unsplash.com/photo-1555066931-4365d14bab8c"
         class="rounded-2xl shadow-lg w-full object-cover">
     </div>
 
@@ -65,7 +65,7 @@
           <span class="text-xs uppercase tracking-widest text-[#FD5528]">Development</span>
 
           <div class="flex h-20 w-20 mx-auto items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] shadow-inner">
-            <img src="https://img.icons8.com/?size=100&id=11668&format=png&color=ffffff" class="h-14 w-14" />
+            <img alt="" src="https://img.icons8.com/?size=100&id=11668&format=png&color=ffffff" class="h-14 w-14" />
           </div>
 
           <h3 class="text-xl font-semibold">Custom Web App Development</h3>
@@ -94,7 +94,7 @@
           <span class="text-xs uppercase tracking-widest text-[#FD5528]">Design</span>
 
           <div class="flex h-20 w-20 mx-auto items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b]">
-            <img src="https://img.icons8.com/?size=100&id=86127&format=png&color=ffffff" class="h-14 w-14" />
+            <img alt="" src="https://img.icons8.com/?size=100&id=86127&format=png&color=ffffff" class="h-14 w-14" />
           </div>
 
           <h3 class="text-xl font-semibold">UI/UX Design</h3>
@@ -121,7 +121,7 @@
           <span class="text-xs uppercase tracking-widest text-[#FD5528]">Integration</span>
 
           <div class="flex h-20 w-20 mx-auto items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b]">
-            <img src="https://img.icons8.com/?size=100&id=59873&format=png&color=ffffff" class="h-14 w-14" />
+            <img alt="" src="https://img.icons8.com/?size=100&id=59873&format=png&color=ffffff" class="h-14 w-14" />
           </div>
 
           <h3 class="text-xl font-semibold">API Integration</h3>
@@ -148,7 +148,7 @@
           <span class="text-xs uppercase tracking-widest text-[#FD5528]">SaaS</span>
 
           <div class="flex h-20 w-20 mx-auto items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b]">
-            <img src="https://img.icons8.com/?size=100&id=85375&format=png&color=ffffff" class="h-14 w-14" />
+            <img alt="" src="https://img.icons8.com/?size=100&id=85375&format=png&color=ffffff" class="h-14 w-14" />
           </div>
 
           <h3 class="text-xl font-semibold">SaaS Development</h3>
@@ -175,7 +175,7 @@
           <span class="text-xs uppercase tracking-widest text-[#FD5528]">CRM / ERP</span>
 
           <div class="flex h-20 w-20 mx-auto items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b]">
-            <img src="https://img.icons8.com/?size=100&id=85467&format=png&color=ffffff" class="h-14 w-14" />
+            <img alt="" src="https://img.icons8.com/?size=100&id=85467&format=png&color=ffffff" class="h-14 w-14" />
           </div>
 
           <h3 class="text-xl font-semibold">CRM & ERP Systems</h3>
@@ -202,7 +202,7 @@
           <span class="text-xs uppercase tracking-widest text-[#FD5528]">Support</span>
 
           <div class="flex h-20 w-20 mx-auto items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b]">
-            <img src="https://img.icons8.com/?size=100&id=110249&format=png&color=ffffff" class="h-14 w-14" />
+            <img alt="" src="https://img.icons8.com/?size=100&id=110249&format=png&color=ffffff" class="h-14 w-14" />
           </div>
 
           <h3 class="text-xl font-semibold">Maintenance & Support</h3>

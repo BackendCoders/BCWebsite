@@ -11,7 +11,7 @@
 
   <!-- BACKGROUND IMAGE -->
   <img 
-    src="{{asset('assets/images/banner.png')}}"
+    src="{{asset('assets/images/banner.png')}}" alt="Blog banner - Backend Coders India"
     class="absolute inset-0 w-full h-full object-cover"
   />
 
@@ -42,24 +42,14 @@
 
 </section>
 
-<!-- <section class="relative overflow-hidden bg-slate-950 text-white">
-    <img src="{{ asset('assets/images/banner.png') }}" class="absolute inset-0 h-full w-full object-cover opacity-20" alt="Blog banner">
-    <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-slate-500"></div>
-
-    <div class="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
-        <div class="max-w-3xl space-y-6">
-            <p class="text-xs font-semibold uppercase tracking-[0.45em] text-[#FD5528]">
-                Blog & Insights
-            </p>
-            <h1 class="text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl">
-                Stories, updates, and releases from the backend team.
-            </h1>
-            <p class="max-w-2xl text-base leading-7 text-slate-200 sm:text-lg">
-                Every new blog created in the dashboard appears here automatically. Search, filter, and read the latest posts as soon as they are published.
-            </p>
-        </div>
+<section class="bg-white py-10">
+    <div class="mx-auto max-w-4xl px-6 text-center">
+        <h2 class="text-xl font-bold text-slate-900 sm:text-2xl">Practical notes on building and growing digital products</h2>
+        <p class="mt-4 text-base leading-8 text-slate-600">
+            Explore articles on website planning, software development, ecommerce, search visibility, and digital operations. Each post is organized around a specific question, with clear explanations of the decisions, trade-offs, and next steps involved. Use the search and category filters below to find a topic, then open an article for the full guide.
+        </p>
     </div>
-</section> -->
+</section>
 
 <section class="bg-slate-50 py-12">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -101,7 +91,7 @@
         <div class="relative h-56 overflow-hidden">
 
             <!-- Image -->
-            <img
+            <img alt=""
                 src="{{ $blog->getImageUrl() }}"
                 alt="{{ $blog->title }}"
                 class="h-full w-full object-cover transition duration-700 ease-out group-hover:scale-110"
@@ -189,7 +179,7 @@
                     <p class="text-xs uppercase tracking-[0.4em] text-slate-400">Featured</p>
                     @if($featuredBlog)
                         <a href="{{ route('frontend.blog-detail', $featuredBlog->slug) }}" class="mt-4 block space-y-4">
-                            <img
+                            <img alt=""
                                 src="{{ $featuredBlog->getImageUrl() }}"
                                 alt="{{ $featuredBlog->title }}"
                                 class="h-44 w-full rounded-3xl object-cover"
@@ -307,8 +297,8 @@
             <!-- Image -->
             <div>
                 <img
-                    src="/images/website-development.jpg"
-                    alt="Website Development Company in Kanpur"
+                    src="{{ asset('assets/images/img1.webp') }}"
+                    alt="Website Development Company in Kanpur - Backend Coders India"
                     class="rounded-[32px] shadow-2xl w-full">
             </div>
 

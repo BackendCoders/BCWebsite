@@ -1,0 +1,2033 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+  <!-- <title>Backend Coders India | Web Development Company in Kanpur, India | Custom Software, SaaS, SEO, Mobile App & AI Solutions</title> -->
+<title>Website Development Cost for Startups in India (2026 Price Guide)</title>
+
+<meta name="description" content="What is the actual website development cost for startups in India? Compare custom website design vs templates, understand hidden costs, and scale your business.">
+
+<meta name="csrf-token" content="gXzqyBmh2lrureKEhGvlYocn448JHWrXUstXfbc5">
+
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</noscript>
+
+<link rel="canonical" href="https://backendcodersindia.com/blog/how-much-does-website-development-cost-for-startups-in-india-2026-guide">
+
+  <!-- <link rel="canonical" href="https://backendcodersindia.com/blog/how-much-does-website-development-cost-for-startups-in-india-2026-guide"> -->
+
+
+<link rel="modulepreload" as="script" href="https://backendcodersindia.com/build/assets/app-O_cUHpS0.js" /><script type="module" src="https://backendcodersindia.com/build/assets/app-O_cUHpS0.js"></script>
+
+<link rel="stylesheet" href="https://backendcodersindia.com/build/assets/app-BA_qcPvG.css">
+
+<link rel="icon" type="image/svg+xml" alt="web development company in Kanpur" href="https://backendcodersindia.com/assets/images/bci_icon.png" class="bg-black"/>
+
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+
+
+ 
+  <!-- <link rel="stylesheet" href="https://backendcodersindia.com/assets/css/style.css" /> -->
+
+  <!--  -->
+
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Space Grotesk', 'Inter', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Space Grotesk', 'Inter', sans-serif;
+}
+
+.active-link {
+    color: #EA580C;
+    background-color: #FFF7F2;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(255, 109, 11, 0.15);
+}
+
+  #typing-code::after {
+  content: "|";
+  animation: blink 1s infinite;
+  margin-left: 4px;
+}
+
+@keyframes blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.marquee-wrapper {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  gap: 20px;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marqueeScroll 25s linear infinite;
+}
+
+.marquee-content {
+  display: flex;
+  gap: 20px;
+}
+
+/* KEY FIX: seamless loop */
+@keyframes marqueeScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* HORIZONTAL DIRECTION */
+
+.step-circle {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto;
+  border-radius: 9999px;
+  background: white;
+  border: 2px solid #FD5528;
+  color: #FD5528;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  transition: all 0.4s ease;
+  position: relative;
+  z-index: 2;
+}
+
+/* ===== TEXT ===== */
+.step-title {
+  margin-top: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.step-desc {
+  margin-top: 6px;
+  font-size: 14px;
+  color: #6B7280;
+}
+
+/* ===== HOVER ===== */
+.group:hover .step-circle {
+  background: #FD5528;
+  color: white;
+  transform: scale(1.1);
+  box-shadow: 0 15px 30px rgba(253,85,40,0.3);
+}
+
+.group:hover .step-title {
+  color: #FD5528;
+}
+
+/* ===== ALIGN ZIG-ZAG (SCOPED) ===== */
+.process-section .process-step:nth-child(2),
+.process-section .process-step:nth-child(4),
+.process-section .process-step:nth-child(6) {
+  margin-top: 60px;
+}
+
+/* ===== SVG ANIMATION (SCOPED) ===== */
+.process-section .process-line {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: processDrawLine 3s ease forwards;
+}
+
+/* Animation renamed */
+@keyframes processDrawLine {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .process-section .process-step:nth-child(2),
+  .process-section .process-step:nth-child(4),
+  .process-section .process-step:nth-child(6) {
+    margin-top: 60px;
+  }
+}
+
+.service-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 14px 10px;
+  border-radius: 16px;
+
+  background: white;
+  border: 1px solid #e5e7eb;
+
+  transition: all 0.3s ease;
+}
+
+.service-card img {
+  width: 26px;
+  height: 26px;
+  margin-bottom: 8px;
+}
+
+.service-card p {
+  font-size: 11px;
+  font-weight: 600;
+  color: #374151;
+  text-align: center;
+}
+
+/* HOVER */
+.service-card:hover {
+  transform: translateY(-6px);
+  border-color: #FD5528;
+  box-shadow: 0 12px 30px rgba(253,85,40,0.25);
+  color: #FD5528;
+}
+
+/* SM */
+@media (min-width: 640px) {
+  .service-card {
+    padding: 16px 12px;
+  }
+  .service-card img {
+    width: 30px;
+    height: 30px;
+  }
+  .service-card p {
+    font-size: 12px;
+  }
+}
+
+/* MD */
+@media (min-width: 768px) {
+  .service-card {
+    padding: 18px;
+  }
+  .service-card img {
+    width: 34px;
+    height: 34px;
+  }
+  .service-card p {
+    font-size: 13px;
+  }
+}
+
+/* LG+ */
+@media (min-width: 1024px) {
+  .service-card img {
+    width: 38px;
+    height: 38px;
+  }
+  .service-card p {
+    font-size: 14px;
+  }
+}
+/*  */
+
+.animate-marquee {
+    animation: marquee 20s linear infinite;
+}
+
+.animate-marquee-reverse {
+    animation: marquee 20s linear infinite reverse;
+}
+
+/* client */
+.logo {
+  min-width: 160px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+
+  transition: all 0.3s ease;
+}
+
+.logo img {
+  height: 200px;
+ 
+ 
+  transition: all 0.3s ease;
+}
+
+
+
+</style>
+<style>
+.stat-card {
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 20px 40px rgba(253, 85, 40, 0.15);
+}
+</style>
+
+<style>
+    .flip-card {
+        perspective: 1500px;
+        height: 240px;
+    }
+
+    .flip-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transition: transform 0.8s cubic-bezier(.4,.2,.2,1);
+        transform-style: preserve-3d;
+    }
+
+    .flip-card:hover .flip-card-inner {
+        transform: rotateY(180deg);
+    }
+
+    .flip-front,
+    .flip-back {
+        position: absolute;
+        inset: 0;
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+        border-radius: 1.75rem;
+        overflow: hidden;
+    }
+
+    .flip-back {
+        transform: rotateY(180deg);
+    }
+</style>
+
+
+</head>
+<body>
+  
+  <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WLWCJJ7N"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+    <!-- TOP BAR -->
+<div class="hidden bg-[#FD5528] text-sm text-white md:block lg:block">
+    <div class="mx-auto flex max-w-9xl flex-col gap-4 px-4 py-3 sm:flex-row sm:items-center sm:justify-between sm:px-6">
+        <div class="flex w-full flex-col items-center gap-3 text-center text-xs sm:flex-row sm:items-start sm:gap-6 sm:text-left sm:text-sm">
+            <a href="tel:+91 9140092133" class="flex items-center justify-center gap-2 transition sm:justify-start">
+                <div class="flex h-7 w-7 items-center justify-center rounded-full bg-gradient-to-r from-[#f1e9e9] to-[#f5f1f1] transition-all duration-300 hover:scale-110">
+                    <img src="https://backendcodersindia.com/assets/icons/call.png" alt="Phone" class="h-4 w-4" aria-hidden="true">
+                </div>
+                <span>+91 9140092133</span>
+            </a>
+
+            <a href="#"
+               id="email-link"
+               data-user="info"
+               data-domain="backendcodersindia.com"
+               class="flex items-center justify-center gap-2 transition sm:justify-start">
+                <div class="flex h-7 w-7 items-center justify-center rounded-full bg-gradient-to-r from-[#f1e9e9] to-[#f5f1f1] transition-all duration-300 hover:scale-110">
+                    <img src="https://backendcodersindia.com/assets/icons/mail.png" alt="Email" class="h-4 w-4" aria-hidden="true">
+                </div>
+
+                <span id="email" class="no-copy" style="user-select:none; pointer-events:none;" aria-label="Email address"></span>
+            </a>
+        </div>
+
+        <div class="flex items-center justify-center gap-3">
+            <!-- <a href="https://www.facebook.com/backendcoders/" target="_blank" rel="noreferrer"
+               class="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-r from-[#f1e9e9] to-[#f5f1f1] transition-all duration-300 hover:scale-110">
+                <img src="https://backendcodersindia.com/assets/icons/facebook.png" alt="Facebook" class="h-4 w-4" aria-hidden="true">
+            </a> -->
+            <a href="https://www.facebook.com/backendcoders/"
+                target="_blank"
+                rel="noreferrer"
+                class="flex items-center gap-2 rounded-full bg-gradient-to-r from-[#f1e9e9] to-[#f5f1f1] px-3 py-2 transition-all duration-300 hover:scale-110">
+
+                <img src="https://backendcodersindia.com/assets/icons/facebook.png"
+                alt="Backend Coders India Facebook"
+                class="h-4 w-4">
+
+                <span class="text-sm font-medium text-gray-700 hidden">
+                    Follow us on Facebook
+                </span>
+            </a>
+
+            <a href="https://www.instagram.com/backendcoders/" target="_blank" rel="noreferrer"
+               class="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-r from-[#f1e9e9] to-[#f5f1f1] transition-all duration-300 hover:scale-110">
+                <img src="https://backendcodersindia.com/assets/icons/instagram.png" alt="Instagram" class="h-4 w-4" aria-hidden="true">
+            </a>
+
+            <a href="https://www.linkedin.com/company/103738896/admin/dashboard/" target="_blank" rel="noreferrer"
+               class="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-r from-[#f1e9e9] to-[#f5f1f1] transition-all duration-300 hover:scale-110">
+                <img src="https://backendcodersindia.com/assets/icons/linkedin.png" alt="LinkedIn" class="h-4 w-4" aria-hidden="true">
+            </a>
+
+            <a href="https://wa.me/919140092133" target="_blank" rel="noreferrer"
+               class="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-r from-[#f1e9e9] to-[#f5f1f1] transition-all duration-300 hover:scale-110">
+                <img src="https://backendcodersindia.com/assets/icons/whatsapp.png" alt="WhatsApp" class="h-4 w-4" aria-hidden="true">
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- NAVBAR -->
+<header class="sticky
+top-0
+z-40
+h-20
+overflow-visible
+bg-black/95
+backdrop-blur">
+    <div class=" max-w-7xl mx-auto h-full flex items-center justify-between px-4">
+        <a href="https://backendcodersindia.com" class="flex items-center gap-3">
+            <!-- <img src="https://backendcodersindia.com/assets/images/bc_bg.png.webp" width="100" height="40" class="h-10 w-auto" alt="Backend Coders"> -->
+              <img src="https://backendcodersindia.com/assets/images/bc_bg_logo_101x40.png"  
+                 width="180"
+                height="48"
+                alt="Backend Coders India"
+                class="w-[180px] h-12">
+                </a>
+
+        <!-- Desktop Menu -->
+        <nav class="hidden items-center gap-2 lg:flex min-w-[700px] text-sm font-medium ">
+            <a href="https://backendcodersindia.com"
+               class="nav-link rounded-md px-3 py-2 transition hover:bg-orange-50 hover:text-[#FD5528] text-white"
+               aria-current="">
+                Overview
+            </a>
+
+            <a href="https://backendcodersindia.com/about"
+               class="nav-link rounded-md px-3 py-2 transition hover:bg-orange-50 hover:text-[#FD5528] text-white"
+               aria-current="">
+                Company
+            </a>
+
+            <div class="relative">
+                <button id="mega-menu-toggle"
+                        type="button"
+                        class="nav-link flex items-center gap-1 rounded-md px-3 py-2 transition hover:bg-orange-50 hover:text-[#FD5528] text-white"
+                        aria-expanded="false"
+                        aria-controls="mega-menu-panel">
+                    Solutions
+                    <svg class="h-4 w-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+
+                <div id="mega-menu-panel"
+                     class="hidden absolute left-1/2 top-full z-[90] mt-3 max-h-[70vh] w-[min(100vw-2rem,850px)] -translate-x-1/2 overflow-hidden rounded-2xl bg-white p-6 shadow-2xl ring-1 ring-black/10"
+                     role="menu"
+                     aria-hidden="true">
+                    <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
+                        <div class="space-y-3">
+                            <p class="text-xs font-semibold uppercase tracking-wider text-[#FD5528]">Digital Marketing</p>
+                            <ul class="space-y-2 text-sm text-slate-700">
+                                                                                                            <li class="rounded-lg px-3 py-2 transition hover:bg-orange-50 hover:text-[#FD5528]">
+                                            <a class="block" href="https://backendcodersindia.com/page/social-media-management">
+                                                Social Media Management
+                                            </a>
+                                        </li>
+                                                                                                                                                <li class="rounded-lg px-3 py-2 transition hover:bg-orange-50 hover:text-[#FD5528]">
+                                            <a class="block" href="https://backendcodersindia.com/seo">
+                                                Seo Services
+                                            </a>
+                                        </li>
+                                                                                                                                                <li class="rounded-lg px-3 py-2 transition hover:bg-orange-50 hover:text-[#FD5528]">
+                                            <a class="block" href="https://backendcodersindia.com/page/ppc-ads-google-ads">
+                                                PPC Ads / Google Ads
+                                            </a>
+                                        </li>
+                                                                                                                                                <li class="rounded-lg px-3 py-2 transition hover:bg-orange-50 hover:text-[#FD5528]">
+                                            <a class="block" href="https://backendcodersindia.com/page/meta-ads">
+                                                Meta Ads
+                                            </a>
+                                        </li>
+                                                                                                                                                <li class="rounded-lg px-3 py-2 transition hover:bg-orange-50 hover:text-[#FD5528]">
+                                            <a class="block" href="https://backendcodersindia.com/page/content-marketing">
+                                                Content Marketing
+                                            </a>
+                                        </li>
+                                                                                                                                                <li class="rounded-lg px-3 py-2 transition hover:bg-orange-50 hover:text-[#FD5528]">
+                                            <a class="block" href="https://backendcodersindia.com/page/local-seo">
+                                                Local SEO
+                                            </a>
+                                        </li>
+                                                                                                </ul>
+                        </div>
+
+                        <div class="space-y-3">
+                            <p class="text-xs font-semibold uppercase tracking-wider text-[#FD5528]">Software Development</p>
+                            <ul class="mt-3 space-y-2 text-sm text-slate-700">
+                                                                                                            <li class="rounded-lg px-3 py-2 transition hover:bg-orange-50 hover:text-[#FD5528]">
+                                            <a class="block" href="https://backendcodersindia.com/page/custom-web-applications">
+                                                Custom Web Applications
+                                            </a>
+                                        </li>
+                                                                                                                                                <li class="rounded-lg px-3 py-2 transition hover:bg-orange-50 hover:text-[#FD5528]">
+                                            <a class="block" href="https://backendcodersindia.com/page/website-design-development">
+                                                Website Design &amp; Development
+                                            </a>
+                                        </li>
+                                                                                                                                                <li class="rounded-lg px-3 py-2 transition hover:bg-orange-50 hover:text-[#FD5528]">
+                                            <a class="block" href="https://backendcodersindia.com/page/saas-development">
+                                                SaaS Development
+                                            </a>
+                                        </li>
+                                                                                                                                                <li class="rounded-lg px-3 py-2 transition hover:bg-orange-50 hover:text-[#FD5528]">
+                                            <a class="block" href="https://backendcodersindia.com/page/erp-pos-software">
+                                                ERP &amp; POS Software
+                                            </a>
+                                        </li>
+                                                                                                                                                <li class="rounded-lg px-3 py-2 transition hover:bg-orange-50 hover:text-[#FD5528]">
+                                            <a class="block" href="https://backendcodersindia.com/page/ecommerce-development">
+                                                Ecommerce Development
+                                            </a>
+                                        </li>
+                                                                                                                                                <li class="rounded-lg px-3 py-2 transition hover:bg-orange-50 hover:text-[#FD5528]">
+                                            <a class="block" href="https://backendcodersindia.com/page/mobile-app-development">
+                                                Mobile App Development
+                                            </a>
+                                        </li>
+                                                                                                                                                <li class="rounded-lg px-3 py-2 transition hover:bg-orange-50 hover:text-[#FD5528]">
+                                            <a class="block" href="https://backendcodersindia.com/page/api-development">
+                                                API Development
+                                            </a>
+                                        </li>
+                                                                                                                                                <li class="rounded-lg px-3 py-2 transition hover:bg-orange-50 hover:text-[#FD5528]">
+                                            <a class="block" href="https://backendcodersindia.com/page/startup-mvp-development">
+                                                Startup MVP Development
+                                            </a>
+                                        </li>
+                                                                                                </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <a href="https://backendcodersindia.com/project"
+               class="nav-link rounded-md px-3 py-2 transition hover:bg-orange-50 hover:text-[#FD5528] text-white"
+               aria-current="">
+                Architecture
+            </a>
+
+            <a href="https://backendcodersindia.com/process"
+               class="nav-link rounded-md px-3 py-2 transition hover:bg-orange-50 hover:text-[#FD5528] text-white"
+               aria-current="">
+                Case Studies
+            </a>
+
+              <a href="https://backendcodersindia.com/demo"
+               class="nav-link rounded-md px-3 py-2 transition hover:bg-orange-50 hover:text-[#FD5528] text-white"
+               aria-current="">
+                Portfolio
+            </a>
+
+            <a href="https://backendcodersindia.com/blog"
+               class="nav-link rounded-md px-3 py-2 transition hover:bg-orange-50 hover:text-[#FD5528] text-white"
+               aria-current="">
+                Blog
+            </a>
+
+            <a href="https://backendcodersindia.com/packages"
+               class="nav-link rounded-md px-3 py-2 transition hover:bg-orange-50 hover:text-[#FD5528] text-white"
+               aria-current="">
+                Packages
+            </a>
+
+            <!-- <a href="https://backendcodersindia.com/career"
+               class="nav-link rounded-md px-3 py-2 transition hover:bg-orange-50 hover:text-[#FD5528] text-white"
+               aria-current="">
+                Insights
+            </a> -->
+
+            <a href="https://backendcodersindia.com/contact"
+               class="nav-link rounded-md px-3 py-2 transition hover:bg-orange-50 hover:text-[#FD5528] text-white"
+               aria-current="">
+                Ping Us
+            </a>
+        </nav>
+
+        <div class="hidden lg:flex">
+            <a href="tel:+91 9140092133"
+               class="inline-flex items-center justify-center rounded-2xl bg-gradient-to-r from-[#FD5528] to-[#fbb03b] px-5 py-2 font-semibold text-white transition-all duration-200 hover:scale-105 hover:from-[#fbb03b] hover:to-[#FD5528]">
+                Initialize
+            </a>
+        </div>
+
+        <button id="mobile-menu-toggle"
+                type="button"
+                class="rounded-md border border-white/30 p-2 text-white transition hover:bg-white/10 lg:hidden"
+                aria-controls="mobile-menu"
+                aria-expanded="false">
+            &#9776;
+        </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu"
+         class="hidden fixed inset-x-0 top-16 z-50 h-[calc(100dvh-4rem)] w-screen border-t border-white/10 bg-black/95 shadow-2xl backdrop-blur lg:hidden">
+        <div class="flex h-full min-h-0 flex-col gap-2 overflow-y-auto overscroll-contain px-3 py-3 text-sm sm:px-4 sm:py-4">
+            <a href="https://backendcodersindia.com"
+               data-mobile-menu-link
+               class="nav-link w-full rounded-md px-4 py-3 text-[15px] transition hover:bg-orange-50 sm:text-sm text-white"
+               aria-current="">
+                Overview
+            </a>
+
+            <a href="https://backendcodersindia.com/about"
+               data-mobile-menu-link
+               class="nav-link w-full rounded-md px-4 py-3 text-[15px] transition hover:bg-orange-50 sm:text-sm text-white"
+               aria-current="">
+                Company
+            </a>
+
+            <div class="w-full pt-2">
+                <button type="button"
+                        id="mobile-solution-btn"
+                        class="flex w-full items-center justify-between rounded-lg px-4 py-3.5 text-left text-white transition hover:bg-white/10">
+                    <span>Solutions</span>
+                    <span id="mobile-arrow" class="transition-transform duration-200" aria-hidden="true">
+                        <svg class="h-4 w-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </span>
+                </button>
+
+                <div id="mobile-service-menu" class="hidden mt-3 space-y-3 pr-1">
+                    <div class="w-full rounded-2xl border border-white/10 bg-white/95 p-3 shadow-sm sm:p-4">
+                        <div class="mb-2 flex items-center justify-between">
+                            <p class="text-[13px] font-semibold text-slate-800 sm:text-sm">Digital Marketing</p>
+                            <span class="text-xs text-[#FD5528]">6 services</span>
+                        </div>
+
+                        <div class="grid max-h-40 gap-2 overflow-y-auto overscroll-contain pr-1 text-sm text-slate-700 sm:max-h-48">
+                                                                                                <a href="https://backendcodersindia.com/page/social-media-management"
+                                       data-mobile-menu-link
+                                       class="block rounded-lg px-3 py-2.5 text-[14px] leading-snug transition hover:bg-orange-50 hover:text-[#FD5528] sm:py-2">
+                                        Social Media Management
+                                    </a>
+                                                                                                                                <a href="https://backendcodersindia.com/seo"
+                                       data-mobile-menu-link
+                                       class="block rounded-lg px-3 py-2.5 text-[14px] leading-snug transition hover:bg-orange-50 hover:text-[#FD5528] sm:py-2">
+                                        Seo Services
+                                    </a>
+                                                                                                                                <a href="https://backendcodersindia.com/page/ppc-ads-google-ads"
+                                       data-mobile-menu-link
+                                       class="block rounded-lg px-3 py-2.5 text-[14px] leading-snug transition hover:bg-orange-50 hover:text-[#FD5528] sm:py-2">
+                                        PPC Ads / Google Ads
+                                    </a>
+                                                                                                                                <a href="https://backendcodersindia.com/page/meta-ads"
+                                       data-mobile-menu-link
+                                       class="block rounded-lg px-3 py-2.5 text-[14px] leading-snug transition hover:bg-orange-50 hover:text-[#FD5528] sm:py-2">
+                                        Meta Ads
+                                    </a>
+                                                                                                                                <a href="https://backendcodersindia.com/page/content-marketing"
+                                       data-mobile-menu-link
+                                       class="block rounded-lg px-3 py-2.5 text-[14px] leading-snug transition hover:bg-orange-50 hover:text-[#FD5528] sm:py-2">
+                                        Content Marketing
+                                    </a>
+                                                                                                                                <a href="https://backendcodersindia.com/page/local-seo"
+                                       data-mobile-menu-link
+                                       class="block rounded-lg px-3 py-2.5 text-[14px] leading-snug transition hover:bg-orange-50 hover:text-[#FD5528] sm:py-2">
+                                        Local SEO
+                                    </a>
+                                                                                    </div>
+                    </div>
+
+                    <div class="w-full rounded-2xl border border-white/10 bg-white/95 p-3 shadow-sm sm:p-4">
+                        <div class="mb-2 flex items-center justify-between">
+                            <p class="text-[13px] font-semibold text-slate-800 sm:text-sm">Software Development</p>
+                            <span class="text-xs text-[#FD5528]">8 services</span>
+                        </div>
+
+                        <div class="grid max-h-40 gap-2 overflow-y-auto overscroll-contain pr-1 text-sm text-slate-700 sm:max-h-48">
+                                                                                                <a href="https://backendcodersindia.com/page/custom-web-applications"
+                                       data-mobile-menu-link
+                                       class="block rounded-lg px-3 py-2.5 text-[14px] leading-snug transition hover:bg-orange-50 hover:text-[#FD5528] sm:py-2">
+                                        Custom Web Applications
+                                    </a>
+                                                                                                                                <a href="https://backendcodersindia.com/page/website-design-development"
+                                       data-mobile-menu-link
+                                       class="block rounded-lg px-3 py-2.5 text-[14px] leading-snug transition hover:bg-orange-50 hover:text-[#FD5528] sm:py-2">
+                                        Website Design &amp; Development
+                                    </a>
+                                                                                                                                <a href="https://backendcodersindia.com/page/saas-development"
+                                       data-mobile-menu-link
+                                       class="block rounded-lg px-3 py-2.5 text-[14px] leading-snug transition hover:bg-orange-50 hover:text-[#FD5528] sm:py-2">
+                                        SaaS Development
+                                    </a>
+                                                                                                                                <a href="https://backendcodersindia.com/page/erp-pos-software"
+                                       data-mobile-menu-link
+                                       class="block rounded-lg px-3 py-2.5 text-[14px] leading-snug transition hover:bg-orange-50 hover:text-[#FD5528] sm:py-2">
+                                        ERP &amp; POS Software
+                                    </a>
+                                                                                                                                <a href="https://backendcodersindia.com/page/ecommerce-development"
+                                       data-mobile-menu-link
+                                       class="block rounded-lg px-3 py-2.5 text-[14px] leading-snug transition hover:bg-orange-50 hover:text-[#FD5528] sm:py-2">
+                                        Ecommerce Development
+                                    </a>
+                                                                                                                                <a href="https://backendcodersindia.com/page/mobile-app-development"
+                                       data-mobile-menu-link
+                                       class="block rounded-lg px-3 py-2.5 text-[14px] leading-snug transition hover:bg-orange-50 hover:text-[#FD5528] sm:py-2">
+                                        Mobile App Development
+                                    </a>
+                                                                                                                                <a href="https://backendcodersindia.com/page/api-development"
+                                       data-mobile-menu-link
+                                       class="block rounded-lg px-3 py-2.5 text-[14px] leading-snug transition hover:bg-orange-50 hover:text-[#FD5528] sm:py-2">
+                                        API Development
+                                    </a>
+                                                                                                                                <a href="https://backendcodersindia.com/page/startup-mvp-development"
+                                       data-mobile-menu-link
+                                       class="block rounded-lg px-3 py-2.5 text-[14px] leading-snug transition hover:bg-orange-50 hover:text-[#FD5528] sm:py-2">
+                                        Startup MVP Development
+                                    </a>
+                                                                                    </div>
+                    </div>
+                </div>
+            </div>
+
+            <a href="https://backendcodersindia.com/project"
+               data-mobile-menu-link
+               class="nav-link w-full rounded-md px-4 py-3 text-[15px] transition hover:bg-orange-50 sm:text-sm text-white"
+               aria-current="">
+                Architecture
+            </a>
+
+            <a href="https://backendcodersindia.com/process"
+               data-mobile-menu-link
+               class="nav-link w-full rounded-md px-4 py-3 text-[15px] transition hover:bg-orange-50 sm:text-sm text-white"
+               aria-current="">
+                Case Studies
+            </a>
+
+                <a href="https://backendcodersindia.com/demo"
+               data-mobile-menu-link
+               class="nav-link w-full rounded-md px-4 py-3 text-[15px] transition hover:bg-orange-50 sm:text-sm text-white"
+               aria-current="">
+                Portfolio
+            </a>
+
+
+            <a href="https://backendcodersindia.com/blog"
+               data-mobile-menu-link
+               class="nav-link w-full rounded-md px-4 py-3 text-[15px] transition hover:bg-orange-50 sm:text-sm text-white"
+               aria-current="">
+                Blog
+            </a>
+
+            <a href="https://backendcodersindia.com/packages"
+               data-mobile-menu-link
+               class="nav-link w-full rounded-md px-4 py-3 text-[15px] transition hover:bg-orange-50 sm:text-sm text-white"
+               aria-current="">
+                Packages
+            </a>
+
+            <a href="https://backendcodersindia.com/career"
+               data-mobile-menu-link
+               class="nav-link w-full rounded-md px-4 py-3 text-[15px] transition hover:bg-orange-50 sm:text-sm text-white"
+               aria-current="">
+                Insights
+            </a>
+
+            <a href="https://backendcodersindia.com/contact"
+               data-mobile-menu-link
+               class="nav-link w-full rounded-md px-4 py-3 text-[15px] transition hover:bg-orange-50 sm:text-sm text-white"
+               aria-current="">
+                Ping Us
+            </a>
+
+            <div class="py-2 sm:py-3">
+                <a href="tel:+91 9140092133"
+                   class="inline-flex w-full items-center justify-center rounded-xl bg-[#FD5528] px-4 py-3 text-sm font-semibold text-white transition hover:bg-orange-600">
+                    Initialize
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const mobileMenuToggle = document.getElementById("mobile-menu-toggle");
+        const menu = document.getElementById("mobile-menu");
+        const mobileLinks = document.querySelectorAll("[data-mobile-menu-link]");
+        const mobileSolutionBtn = document.getElementById("mobile-solution-btn");
+        const mobileServiceMenu = document.getElementById("mobile-service-menu");
+        const mobileArrow = document.getElementById("mobile-arrow");
+
+        const closeMobileMenu = () => {
+            menu?.classList.add("hidden");
+            mobileMenuToggle?.setAttribute("aria-expanded", "false");
+            document.body.classList.remove("overflow-hidden");
+        };
+
+        const closeMobileSolutions = () => {
+            mobileServiceMenu?.classList.add("hidden");
+            mobileArrow?.classList.remove("rotate-180");
+        };
+
+        mobileMenuToggle?.addEventListener("click", () => {
+            const isHidden = menu?.classList.toggle("hidden");
+            mobileMenuToggle.setAttribute("aria-expanded", String(!isHidden));
+            document.body.classList.toggle("overflow-hidden", !isHidden);
+
+            if (isHidden) {
+                closeMobileSolutions();
+            }
+        });
+
+        mobileLinks.forEach((link) => {
+            link.addEventListener("click", () => {
+                closeMobileMenu();
+                closeMobileSolutions();
+            });
+        });
+
+        mobileSolutionBtn?.addEventListener("click", function (e) {
+            e.stopPropagation();
+            mobileServiceMenu?.classList.toggle("hidden");
+            mobileArrow?.classList.toggle("rotate-180");
+        });
+
+        document.addEventListener("keydown", function (e) {
+            if (e.key === "Escape") {
+                closeMobileMenu();
+                closeMobileSolutions();
+            }
+        });
+
+        window.addEventListener("resize", function () {
+            if (window.innerWidth >= 1024) {
+                closeMobileMenu();
+                closeMobileSolutions();
+            }
+        });
+    });
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const emailLink = document.getElementById("email-link");
+        const emailText = document.getElementById("email");
+
+        if (!emailLink || !emailText) return;
+
+        const user = emailLink.dataset.user || "";
+        const domain = emailLink.dataset.domain || "";
+        const email = `${user}@${domain}`;
+
+        emailText.textContent = email;
+        emailLink.href = `mailto:${email}`;
+        emailLink.setAttribute("aria-label", `Email ${email}`);
+    });
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const megaToggle = document.getElementById("mega-menu-toggle");
+        const megaPanel = document.getElementById("mega-menu-panel");
+        const megaArrow = megaToggle?.querySelector("svg");
+
+        const closeMega = () => {
+            if (!megaPanel?.classList.contains("hidden")) {
+                megaPanel.classList.add("hidden");
+                megaToggle?.setAttribute("aria-expanded", "false");
+                megaArrow?.classList.remove("rotate-180");
+                megaPanel?.setAttribute("aria-hidden", "true");
+            }
+        };
+
+        megaToggle?.addEventListener("click", function (e) {
+            e.preventDefault();
+            megaPanel?.classList.toggle("hidden");
+            const isOpen = !megaPanel?.classList.contains("hidden");
+            megaToggle.setAttribute("aria-expanded", String(Boolean(isOpen)));
+            megaPanel?.setAttribute("aria-hidden", String(!isOpen));
+            megaArrow?.classList.toggle("rotate-180");
+        });
+
+        document.addEventListener("click", function (e) {
+            if (megaPanel?.contains(e.target) || megaToggle?.contains(e.target)) {
+                return;
+            }
+            closeMega();
+        });
+    });
+</script>
+
+<main>
+
+<!-- FLOATING STACK -->
+<div class="fixed right-5 bottom-6 z-[60] flex flex-col items-end gap-3">
+    <div class="relative">
+        <button id="contactToggle"
+            type="button"
+            class="flex h-14 w-14 items-center justify-center rounded-full bg-[#1aac26] text-white shadow-lg transition hover:scale-110"
+            aria-label="Open contact menu">
+            <img src="https://backendcodersindia.com/assets/icons/person.png" class="w-6 h-6" alt="Contact">
+        </button>
+
+        <div id="contactMenu"
+            class="absolute bottom-20 right-0 w-64 space-y-2 rounded-2xl border bg-white p-3 opacity-0 shadow-2xl transition-all duration-300 pointer-events-none invisible translate-y-5 scale-95 origin-bottom-right">
+            <a href="tel:+919140092133" class="flex items-center gap-3 rounded-xl p-3 hover:bg-orange-50" aria-label="Call Us">
+                <img src="https://backendcodersindia.com/assets/icons/phone.png" class="w-6 h-6" alt=" connect with us">
+                <span>Call Us</span>
+            </a>
+
+            <a href="https://wa.me/919140092133" target="_blank" class="flex items-center gap-3 rounded-xl p-3 hover:bg-orange-50" aria-label="Chat on WhatsApp">
+                <img src="https://backendcodersindia.com/assets/icons/whatsapp.png" class="w-6 h-6" alt="Chat on WhatsApp">
+                <span>WhatsApp</span>
+            </a>
+        </div>
+    </div>
+
+
+    
+
+    <div class="relative">
+        <button id="botToggle"
+            type="button"
+            class="flex h-14 w-14 items-center justify-center rounded-full bg-[#FD5528] text-white shadow-lg shadow-[#FD5528]/30 transition hover:scale-110"
+            aria-label="Open chatbot">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" class="h-6 w-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 6.5A2 2 0 0 1 6.5 4.5h11A2 2 0 0 1 19.5 6.5v7A2 2 0 0 1 17.5 15.5H10l-4.5 4.5v-4.5h-1A2 2 0 0 1 2.5 13.5v-7Z" />
+            </svg>
+        </button>
+
+        <div id="botPanel"
+            class="absolute bottom-20 right-0 w-[22rem] overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white opacity-0 shadow-[0_24px_80px_rgba(15,23,42,0.18)] transition-all duration-300 invisible translate-y-4 scale-95 pointer-events-none origin-bottom-right">
+            <div class="flex items-center justify-between bg-gradient-to-r from-[#FD5528] to-[#f97316] px-4 py-4 text-white">
+                <div>
+                    <p class="text-xs font-semibold uppercase tracking-[0.35em] text-white/70">Chatbot</p>
+                    <h3 class="mt-1 text-lg font-semibold">Backend Coders Assistant</h3>
+                </div>
+                <div class="flex h-10 w-10 items-center justify-center rounded-full bg-white/15">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="h-5 w-5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 10.5A4.5 4.5 0 0 1 12 6h0a4.5 4.5 0 0 1 4.5 4.5V12A4.5 4.5 0 0 1 12 16.5h0A4.5 4.5 0 0 1 7.5 12v-1.5Z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 10.5h.01M15 10.5h.01" />
+                    </svg>
+                </div>
+            </div>
+
+            <div id="botMessages" class="max-h-80 space-y-3 overflow-y-auto bg-slate-50 p-4">
+                <div class="max-w-[85%] rounded-2xl rounded-bl-md border border-slate-200 bg-white px-4 py-3 text-sm text-slate-700">
+                    Hello! How can I help you today?
+                </div>
+            </div>
+
+            <div class="border-t border-slate-200 bg-white p-4">
+          
+                <div class="flex gap-2">
+                    <input
+                        id="botInput"
+                        type="text"
+                        placeholder="Type a message..."
+                        class="w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm outline-none transition placeholder:text-slate-400 focus:border-[#FD5528] focus:ring-4 focus:ring-[#FD5528]/10"
+                    >
+                    <button
+                        id="botSend"
+                        type="button"
+                        class="inline-flex shrink-0 items-center justify-center rounded-2xl bg-[#FD5528] px-4 py-3 text-sm font-semibold text-white transition hover:bg-[#e94c20]"
+                    >
+                        Send
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
+<main class="relative overflow-hidden bg-[#f5f7fb] text-slate-950">
+<div class="pointer-events-none absolute inset-x-0 top-0 -z-10 h-72 bg-[radial-gradient(circle_at_top_left,_rgba(253,85,40,.12),_transparent_35%),radial-gradient(circle_at_top_right,_rgba(14,165,233,.10),_transparent_28%)]"></div>
+
+
+<div class="flex justify-center">
+    <header class="w-full max-w-9xl overflow-hidden  border border-slate-200 bg-white shadow-[0_24px_80px_rgba(15,23,42,0.12)]">
+     <div class="relative  h-[250px] md:h-[400px] lg:h-[500px] w-full overflow-hidden rounded-b-[3rem]">
+                        <img
+                            src="https://backendcodersindia.com/blog-images/blogs/wMH5Hh3Cpy6b14A9QvoZaIfjMP6pvlrB0AIOg7H1.jpg"
+                            alt="How Much Does Website Development Cost for Startups in India? (2026 Guide)"
+                            class="h-1/2 w-full object-cover"
+                        >
+    <!-- Premium Overlay -->
+ <div
+    class="absolute inset-0 backdrop-blur-[2px]"
+    style="
+        background:
+        radial-gradient(circle at top right, rgba(253,85,40,.18), transparent 40%),
+        radial-gradient(circle at bottom left, rgba(59,130,246,.12), transparent 35%),
+        linear-gradient(
+            to bottom,
+            rgba(2,6,23,.15),
+            rgba(2,6,23,.30),
+            rgba(2,6,23,.55)
+        );
+    ">
+</div>
+
+<div class="absolute inset-x-0 bottom-0 flex justify-center px-6 pb-8 md:pb-12">
+
+    <div
+        class="w-full max-w-9xl rounded-3xl border border-white/10 bg-white/[0.03] p-6 backdrop-blur-md">
+
+        <div class="mb-1 flex flex-wrap justify-center gap-3">
+
+            <span
+                class="rounded-full bg-[#FD5528] px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white shadow-lg">
+
+                Website Development
+
+            </span>
+
+            
+            <span
+                class="rounded-full border border-white/15 bg-white/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-white backdrop-blur">
+
+                Published
+
+            </span>
+
+        </div>
+
+        <h1
+            class="mx-auto max-w-7xl text-center text-3xl font-black leading-tight text-white sm:text-4xl md:text-5xl lg:text-6xl">
+
+            How Much Does Website Development Cost for Startups in India? (2026 Guide)
+
+        </h1>
+
+        <p
+            class="mx-auto mt-5 max-w-7xl text-center text-sm leading-7 text-slate-200 sm:text-base sm:leading-8 hidden">
+
+            How Much Does Website Development Cost for Startups in India? (2026 Guide)
+
+        </p>
+
+        <div
+            class="mt-6 flex flex-wrap items-center justify-center gap-4 text-sm text-slate-300">
+
+            <span class="text-white">
+                Jul 22, 2026
+            </span>
+
+            <span class="h-1 w-1 rounded-full bg-slate-50"></span>
+
+            <span class="text-white">
+                4 min read
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+                    </div>
+                </header>
+</div>
+
+    <section class="mx-auto max-w-9xl px-4 py-8 sm:px-6 lg:px-8 lg:px-10">
+        <div class="mb-6 flex flex-wrap items-center justify-between gap-3">
+            <a href="https://backendcodersindia.com/blog" class="inline-flex items-center gap-2 text-sm font-semibold text-[#FD5528] hover:underline">
+                <span>&larr;</span>
+                Back to blog
+            </a>
+
+            <div class="flex flex-wrap items-center gap-2">
+                <span class="rounded-full bg-white px-3 py-1 text-xs font-semibold uppercase tracking-[0.25em] text-slate-500 shadow-sm ring-1 ring-slate-200">
+                    Website Development
+                </span>
+                <span class="rounded-full bg-white px-3 py-1 text-xs font-semibold uppercase tracking-[0.25em] text-slate-500 shadow-sm ring-1 ring-slate-200">
+                    4 min read
+                </span>
+                                                            <a href="https://backendcodersindia.com/blogs/10/edit" class="rounded-full bg-sky-500 px-3 py-1 text-xs font-semibold uppercase tracking-[0.25em] text-white shadow-lg shadow-sky-500/20 transition hover:bg-sky-600">
+                            Edit
+                        </a>
+                                                </div>
+        </div>
+
+        <div class="grid grid-cols-1 gap-8 lg:grid-cols-4">
+            <aside class="space-y-4 lg:col-span-1">
+                <div class="sticky top-24 overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-[0_20px_60px_rgba(15,23,42,0.08)]">
+                    <div class="border-b border-slate-100 bg-gradient-to-r from-[#FD5528]/10 to-orange-50 px-5 py-4">
+                        <p class="text-xs font-semibold uppercase tracking-[0.35em] text-[#FD5528]">Contents</p>
+                        <h2 class="mt-2 text-lg font-bold text-slate-900">Jump to section</h2>
+                    </div>
+
+                    <nav class="p-3">
+                                                    <a href="#How Much Does Website Development Cost for Startups in India? (2026 Guide)" class="group mb-2 flex items-center gap-3 rounded-xl px-4 py-3 transition hover:bg-[#FD5528]/5 hover:text-[#FD5528]">
+                                <span class="flex h-7 w-7 items-center justify-center rounded-full bg-slate-100 text-xs font-bold text-slate-600 transition group-hover:bg-[#FD5528] group-hover:text-white">
+                                    01
+                                </span>
+                                <span class="text-sm font-medium text-slate-700 transition group-hover:text-[#FD5528]">
+                                    How Much Does Website Development Cost for Startups in India? (2026 Guide)
+                                </span>
+                            </a>
+                                                    <a href="#The Realistic Cost Breakdown of Startup Web Development (2026)" class="group mb-2 flex items-center gap-3 rounded-xl px-4 py-3 transition hover:bg-[#FD5528]/5 hover:text-[#FD5528]">
+                                <span class="flex h-7 w-7 items-center justify-center rounded-full bg-slate-100 text-xs font-bold text-slate-600 transition group-hover:bg-[#FD5528] group-hover:text-white">
+                                    02
+                                </span>
+                                <span class="text-sm font-medium text-slate-700 transition group-hover:text-[#FD5528]">
+                                    The Realistic Cost Breakdown of Startup Web Development (2026)
+                                </span>
+                            </a>
+                                                    <a href="#3 Hidden Costs Startups Overlook That Kill ROI" class="group mb-2 flex items-center gap-3 rounded-xl px-4 py-3 transition hover:bg-[#FD5528]/5 hover:text-[#FD5528]">
+                                <span class="flex h-7 w-7 items-center justify-center rounded-full bg-slate-100 text-xs font-bold text-slate-600 transition group-hover:bg-[#FD5528] group-hover:text-white">
+                                    03
+                                </span>
+                                <span class="text-sm font-medium text-slate-700 transition group-hover:text-[#FD5528]">
+                                    3 Hidden Costs Startups Overlook That Kill ROI
+                                </span>
+                            </a>
+                                                    <a href="#Choosing Your Partner: Custom Design vs. Cheap Templates" class="group mb-2 flex items-center gap-3 rounded-xl px-4 py-3 transition hover:bg-[#FD5528]/5 hover:text-[#FD5528]">
+                                <span class="flex h-7 w-7 items-center justify-center rounded-full bg-slate-100 text-xs font-bold text-slate-600 transition group-hover:bg-[#FD5528] group-hover:text-white">
+                                    04
+                                </span>
+                                <span class="text-sm font-medium text-slate-700 transition group-hover:text-[#FD5528]">
+                                    Choosing Your Partner: Custom Design vs. Cheap Templates
+                                </span>
+                            </a>
+                                                    <a href="#Frequently Asked Questions:" class="group mb-2 flex items-center gap-3 rounded-xl px-4 py-3 transition hover:bg-[#FD5528]/5 hover:text-[#FD5528]">
+                                <span class="flex h-7 w-7 items-center justify-center rounded-full bg-slate-100 text-xs font-bold text-slate-600 transition group-hover:bg-[#FD5528] group-hover:text-white">
+                                    05
+                                </span>
+                                <span class="text-sm font-medium text-slate-700 transition group-hover:text-[#FD5528]">
+                                    Frequently Asked Questions:
+                                </span>
+                            </a>
+                                            </nav>
+                </div>
+            </aside>
+
+            <section class="space-y-8 lg:col-span-2">
+               
+                <article class="overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-[0_20px_60px_rgba(15,23,42,0.08)]">
+                    <div class="border-b border-slate-100 px-6 py-5 sm:px-8">
+                        <div class="flex flex-wrap items-center justify-between gap-4">
+                            <div>
+                                <p class="text-xs font-semibold uppercase tracking-[0.35em] text-[#FD5528]">Article</p>
+                                <h2 class="mt-2 text-2xl font-bold text-slate-900">Overview</h2>
+                            </div>
+
+                            <div class="flex flex-wrap gap-2 text-xs font-semibold uppercase tracking-[0.25em]">
+                                <span class="rounded-full bg-emerald-50 px-3 py-2 text-emerald-700">
+                                    Published: Jul 22, 2026
+                                </span>
+                                <span class="rounded-full bg-orange-50 px-3 py-2 text-orange-700">
+                                    Reading: 4 min
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid gap-8 px-6 py-8 sm:px-8">
+                        <div id="content" class="prose prose-slate max-w-none prose-headings:text-slate-900 prose-headings:font-bold prose-h1:text-4xl prose-h1:mt-0 prose-h1:mb-6 prose-h2:mt-8 prose-h2:mb-4 prose-h2:text-2xl prose-h3:mt-6 prose-h3:mb-3 prose-h3:text-xl prose-p:text-slate-600 prose-p:leading-8 prose-p:mb-4 prose-a:text-[#FD5528] prose-a:font-semibold prose-a:underline prose-a:underline-offset-4 prose-a:decoration-2 prose-a:decoration-[#FD5528]/40 hover:prose-a:text-[#e94c20] hover:prose-a:decoration-[#e94c20] prose-ul:text-slate-600 prose-ul:my-4 prose-li:my-2 prose-li:ml-2 prose-ol:text-slate-600 prose-ol:my-4 prose-ol:pl-6 prose-ol:list-decimal prose-blockquote:border-l-4 prose-blockquote:border-[#FD5528] prose-blockquote:bg-slate-50 prose-blockquote:py-2 prose-blockquote:px-4 prose-blockquote:rounded prose-blockquote:not-italic prose-code:bg-slate-100 prose-code:text-slate-800 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-pre:bg-slate-900 prose-pre:rounded-xl prose-pre:overflow-x-auto prose-img:rounded-xl prose-img:shadow-lg prose-img:max-w-full prose-table:my-6 prose-table:w-full prose-table:border-collapse prose-table:overflow-hidden prose-th:border prose-th:border-slate-300 prose-th:bg-slate-100 prose-th:px-4 prose-th:py-3 prose-th:text-left prose-th:align-top prose-th:font-semibold prose-th:text-slate-900 prose-td:border prose-td:border-slate-300 prose-td:px-4 prose-td:py-3 prose-td:align-top prose-td:text-slate-700">
+                                                            <?xml encoding="utf-8" ?><p><span style="color: black;">For an early-stage founder, every single rupee matters. When you are looking to launch your digital presence, the sheer variance in pricing can be dizzying. One freelance developer might quote you &#8377;15,000, while a legacy agency demands &#8377;5,00,000 for what seems like the exact same website.</span></p><p><br></p><p><span style="color: black;">Getting trapped by the wrong pricing model can break a young business before it even launches. A cheap, poorly coded template site will crash under traffic spikes, while an overly complex enterprise build will drain your runway completely.</span></p><p><br></p><p><span style="color: black;">To make your launch seamless, this transparent guide breaks down the actual costs of high-intent </span><strong style="color: black;">business website development India</strong><span style="color: black;"> in 2026, helping you choose the right partner without wasting valuable capital.</span></p><p><br></p><h2 id="the-realistic-cost-breakdown-of-startup-web-development-2026" class="scroll-mt-24"><strong style="color: black;">The Realistic Cost Breakdown of Startup Web Development (2026)</strong></h2><p><br></p><p><span style="color: black;">Web development pricing isn't arbitrary; it is determined by complexity, architecture, page volume, and dynamic features. Here is what you can realistically expect to invest in India today:</span></p><p><br></p><h3 id="1-basic-static-templates-rs15000-rs40000" class="scroll-mt-24"><span style="color: black;">1. Basic Static Templates (&#8377;15,000 &ndash; &#8377;40,000)</span></h3><p><br></p><p><span style="color: black;">These are standard, pre-made theme installations (usually on basic builders). They are fast to set up but highly limited in performance.</span></p><p><br></p><p><span style="color: black;">&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><strong style="color: black;">Best for:</strong><span style="color: black;"> Small local portfolios or proof-of-concept landing pages.</span></p><p><span style="color: black;">&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><strong style="color: black;">The Risk:</strong><span style="color: black;"> These platforms rely on heavy, bloated code plugins that drag down page loading speeds and struggle to rank efficiently on AI engines.</span></p><p><br></p><h3 id="2-tailored-corporate-business-frameworks-rs50000-rs1500000" class="scroll-mt-24"><span style="color: black;">2. Tailored Corporate &amp; Business Frameworks (&#8377;50,000 &ndash; &#8377;1,500,000)</span></h3><p><br></p><p><span style="color: black;">Custom-tailored frameworks engineered specifically around business logic, lead generation, and dynamic user pathways.</span></p><p><br></p><p><span style="color: black;">&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><strong style="color: black;">Best for:</strong><span style="color: black;"> High-growth startups scaling their digital customer acquisition.</span></p><p><span style="color: black;">&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><strong style="color: black;">The Advantage:</strong><span style="color: black;"> Built using optimized tech stacks, clean backend architectures, and lightweight frontends that hold structural authority.</span></p><p><br></p><h3 id="3-full-scale-custom-e-commerce-web-apps-rs1500000" class="scroll-mt-24"><span style="color: black;">3. Full-Scale Custom E-commerce &amp; Web Apps (&#8377;1,500,000+)</span></h3><p><br></p><p><span style="color: black;">Complex platforms requiring custom database integrations, multi-vendor marketplaces, API connectors, and advanced web applications.</span></p><p><span style="color: black;">&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><strong style="color: black;">Best for:</strong><span style="color: black;"> Fintech, SaaS, or direct-to-consumer digital ecosystems.</span></p><p><br></p><h2 id="3-hidden-costs-startups-overlook-that-kill-roi" class="scroll-mt-24"><strong style="color: black;">3 Hidden Costs Startups Overlook That Kill ROI</strong></h2><p><br></p><p><span style="color: black;">If an agency gives you a flat quote without explaining infrastructure costs, run away. A professional </span><strong style="color: black;">startup website development company</strong><span style="color: black;"> will always lay out these long-term operational components clearly:</span></p><p><br></p><h3 id="i-hosting-infrastructure-server-setup" class="scroll-mt-24"><strong style="color: black;">I. Hosting Infrastructure &amp; Server Setup</strong></h3><p><br></p><p><span style="color: black;">Your site needs a secure home. Basic shared hosting might cost &#8377;3,000/year, but it will slow down your site significantly. High-performance cloud instances (like AWS, DigitalOcean, or Google Cloud) range between &#8377;12,000 to &#8377;60,000/year but guarantee lightning-fast uptime.</span></p><p><br></p><h3 id="ii-native-seo-framework-integration" class="scroll-mt-24"><strong style="color: black;">II. Native SEO Framework Integration</strong></h3><p><br></p><p><span style="color: black;">An invisible website generates zero revenue. Basic developers launch your site but leave the technical optimization completely blank. True </span><strong style="color: black;">SEO friendly website development</strong><span style="color: black;"> requires proper schema markup generation, canonical setups, clean semantic HTML heading hierarchies, and fast-rendering code structures built natively into the design.</span></p><p><br></p><h3 id="iii-scalability-and-ongoing-core-maintenance" class="scroll-mt-24"><strong style="color: black;">III. Scalability and Ongoing Core Maintenance</strong></h3><p><br></p><p><span style="color: black;">As your business changes, your website must adapt. If your platform is locked into a rigid layout, making updates becomes an expensive nightmare. Investing early in an agile framework gives you the flexibility to add features later without needing to rebuild the codebase from scratch.</span></p><p><br></p><h2 id="choosing-your-partner-custom-design-vs-cheap-templates" class="scroll-mt-24"><strong style="color: black;">Choosing Your Partner: Custom Design vs. Cheap Templates</strong></h2><p><span style="color: black;">When budget is tight, the temptation to use cheap, rigid page templates is high. However, smart founders quickly realize that hiring a dedicated </span><strong style="color: black;">custom website design company</strong><span style="color: black;"> is a strategic investment rather than a cost.</span></p><p><br></p><p><span style="color: black;">&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><strong style="color: black;">Templates Look Identical:</strong><span style="color: black;"> A generic template ensures you look exactly like thousands of your competitors. Custom development gives you a tailored identity that builds immediate trust.</span></p><p><br></p><p><span style="color: black;">&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><strong style="color: black;">Conversion Friction:</strong><span style="color: black;"> Standard templates force your content into pre-defined boxes. Custom layouts are engineered strictly around your customer's journey, actively guiding users toward your signup forms and checkout buttons.</span></p><p><br></p><p><span style="color: black;">&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><strong style="color: black;">Security Vulnerabilities:</strong><span style="color: black;"> Open-source templates that rely heavily on automated third-party plugins are prime targets for digital security breaches. Custom clean-code setups drastically reduce your exposure to malicious scripts.</span></p><p> </p><p><br></p><p><span style="color: black;"> </span></p>
+
+                                                    </div>
+
+                        <h2 class="mt-4 text-lg font-bold text-slate-900 hidden">Article details</h2>
+
+                        <div class="rounded-[1.75rem] border border-slate-200 bg-slate-50 p-5 hidden">
+                        <div class="flex flex-wrap items-center gap-3">
+                                <h3 class="text-xs font-semibold uppercase tracking-[0.3em] text-slate-400">
+                                    Keywords
+                                </h3>
+                                <div class="flex flex-wrap gap-2">
+                                                                            <span class="rounded-full bg-[#FD5528]/10 px-3 py-1 text-xs font-semibold text-[#FD5528]">startup website development company</span>
+                                                                    </div>
+                            </div>
+                        </div>
+
+    <div class="mt-6 flex flex-wrap gap-3 sm:gap-4">
+        <a href="https://www.facebook.com/backendcoders/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"
+           class="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-r from-[#f1e9e9] to-[#f5f1f1] transition-all duration-300 hover:scale-110">
+          <img src="https://img.icons8.com/?size=100&id=106163&format=png&color=fd5528" class="h-5 w-5" alt="Facebook" aria-hidden="true">
+        </a>
+
+        <a href="https://www.instagram.com/backendcoders/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"
+           class="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-r from-[#f1e9e9] to-[#f5f1f1] transition-all duration-300 hover:scale-110">
+          <img src="https://img.icons8.com/?size=100&id=32309&format=png&color=fd5528" class="h-5 w-5" alt="Instagram" aria-hidden="true">
+        </a>
+
+        <a href="https://www.linkedin.com/company/103738896/admin/dashboard/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"
+           class="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-r from-[#f1e9e9] to-[#f5f1f1] transition-all duration-300 hover:scale-110">
+          <img src="https://img.icons8.com/?size=100&id=34349&format=png&color=fd5528" class="h-5 w-5" alt="LinkedIn" aria-hidden="true">
+        </a>
+
+        <a href="https://wa.me/919140092133" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"
+           class="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-r from-[#f1e9e9] to-[#f5f1f1] transition-all duration-300 hover:scale-110">
+          <img src="https://img.icons8.com/?size=100&id=16733&format=png&color=fd5528" class="h-5 w-5" alt="WhatsApp" aria-hidden="true">
+        </a>
+      </div>
+                    </div>
+                </article>
+            </section>
+
+            <aside class="space-y-4 lg:col-span-1">
+                <div class="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-[0_20px_60px_rgba(15,23,42,0.08)]">
+                    <p class="text-xs font-semibold uppercase tracking-[0.35em] text-slate-400">Article Info</p>
+                    <div class="mt-5 space-y-4">
+                        <div class="rounded-2xl bg-slate-50 p-4">
+                            <p class="text-xs uppercase tracking-[0.3em] text-slate-400">Category</p>
+                            <p class="mt-1 text-sm font-bold text-slate-900">Website Development</p>
+                        </div>
+                        <div class="rounded-2xl bg-slate-50 p-4">
+                            <p class="text-xs uppercase tracking-[0.3em] text-slate-400">Published</p>
+                            <p class="mt-1 text-sm font-semibold text-slate-900">July 22, 2026</p>
+                        </div>
+                        <div class="rounded-2xl bg-slate-50 p-4">
+                            <p class="text-xs uppercase tracking-[0.3em] text-slate-400">Reading time</p>
+                            <p class="mt-1 text-sm font-semibold text-slate-900">~4 minutes</p>
+                        </div>
+                        <div class="rounded-2xl bg-slate-50 p-4">
+                            <p class="text-xs uppercase tracking-[0.3em] text-slate-400">Status</p>
+                            <p class="mt-1 text-sm font-semibold text-slate-900">Published</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-[0_20px_60px_rgba(15,23,42,0.08)]">
+                    <p class="text-xs font-semibold uppercase tracking-[0.35em] text-slate-400">Recent Posts</p>
+                    <div class="mt-5 space-y-4">
+                                                    <a href="https://backendcodersindia.com/blog/how-to-choose-a-website-development-company-in-kanpur" class="group flex gap-3 rounded-2xl border border-slate-200 p-3 transition hover:-translate-y-0.5 hover:border-[#FD5528] hover:shadow-lg">
+                                <img
+                                    src="https://backendcodersindia.com/blog-images/blogs/2clWFDDo1P39CHQLtYtMdiSQ2jv7kV1DXQuY7WxO.png"
+                                    alt="How to Choose a Website Development Company in Kanpur"
+                                    class="h-16 w-20 rounded-xl object-cover"
+                                    loading="lazy"
+                                >
+                                <div class="min-w-0">
+                                    <p class="text-xs uppercase tracking-[0.3em] text-slate-400">
+                                        Website Development
+                                    </p>
+                                    <h3 class="mt-1 text-sm font-semibold text-slate-900 transition group-hover:text-[#FD5528] line-clamp-2">
+                                       How to Choose a Website Development Company in Kanpur
+                                    </h3>
+                                    <p class="mt-1 text-xs text-slate-500">
+                                        16 Jul, 2026
+                                    </p>
+                                </div>
+                            </a>
+                                                    <a href="https://backendcodersindia.com/blog/custom-web-application-development-company-in-india-build-smarter-software-for-business-growth" class="group flex gap-3 rounded-2xl border border-slate-200 p-3 transition hover:-translate-y-0.5 hover:border-[#FD5528] hover:shadow-lg">
+                                <img
+                                    src="https://backendcodersindia.com/blog-images/blogs/VqQTafsxXIeJom6gYB20HLqMbGv3k6HAXO5MHeFZ.png"
+                                    alt="Custom Web Application Development Company in India – Build Smarter Software for Business Growth"
+                                    class="h-16 w-20 rounded-xl object-cover"
+                                    loading="lazy"
+                                >
+                                <div class="min-w-0">
+                                    <p class="text-xs uppercase tracking-[0.3em] text-slate-400">
+                                        custom web development
+                                    </p>
+                                    <h3 class="mt-1 text-sm font-semibold text-slate-900 transition group-hover:text-[#FD5528] line-clamp-2">
+                                        Custom Web Application Development Company in India – Build Smarter Software for Business Growth
+                                    </h3>
+                                    <p class="mt-1 text-xs text-slate-500">
+                                        09 Jul, 2026
+                                    </p>
+                                </div>
+                            </a>
+                                                    <a href="https://backendcodersindia.com/blog/website-development-company-in-kanpur" class="group flex gap-3 rounded-2xl border border-slate-200 p-3 transition hover:-translate-y-0.5 hover:border-[#FD5528] hover:shadow-lg">
+                                <img
+                                    src="https://backendcodersindia.com/blog-images/blogs/ymA4704iEBMVPFBMjXnv745JP5UpzBiB95ND30Rh.png"
+                                    alt="website development company in Kanpur"
+                                    class="h-16 w-20 rounded-xl object-cover"
+                                    loading="lazy"
+                                >
+                                <div class="min-w-0">
+                                    <p class="text-xs uppercase tracking-[0.3em] text-slate-400">
+                                        Website Development
+                                    </p>
+                                    <h3 class="mt-1 text-sm font-semibold text-slate-900 transition group-hover:text-[#FD5528] line-clamp-2">
+                                        website development company in Kanpur
+                                    </h3>
+                                    <p class="mt-1 text-xs text-slate-500">
+                                        08 Jul, 2026
+                                    </p>
+                                </div>
+                            </a>
+                                                    <a href="https://backendcodersindia.com/blog/application-development-building-smart-scalable-user-friendly-digital-solutions" class="group flex gap-3 rounded-2xl border border-slate-200 p-3 transition hover:-translate-y-0.5 hover:border-[#FD5528] hover:shadow-lg">
+                                <img
+                                    src="https://backendcodersindia.com/blog-images/blogs/FFuQegzcjfeHf1ooWrple8WhNzroqqB0uNzK6KDk.png"
+                                    alt="Application Development: Building Smart, Scalable &amp; User-Friendly Digital Solutions"
+                                    class="h-16 w-20 rounded-xl object-cover"
+                                    loading="lazy"
+                                >
+                                <div class="min-w-0">
+                                    <p class="text-xs uppercase tracking-[0.3em] text-slate-400">
+                                        Application development
+                                    </p>
+                                    <h3 class="mt-1 text-sm font-semibold text-slate-900 transition group-hover:text-[#FD5528] line-clamp-2">
+                                        Application Development: Building Smart, Scalable &amp; User-Friendly Digital Solutions
+                                    </h3>
+                                    <p class="mt-1 text-xs text-slate-500">
+                                        01 May, 2026
+                                    </p>
+                                </div>
+                            </a>
+                                            </div>
+                </div>
+
+                <div class="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-[0_20px_60px_rgba(15,23,42,0.08)]">
+                    <p class="text-xs font-semibold uppercase tracking-[0.35em] text-slate-400">Reviews</p>
+                    <div class="mt-5 space-y-4">
+                        <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                            <div class="flex items-center gap-3">
+                                <div class="flex h-11 w-11 items-center justify-center rounded-full bg-[#FD5528] font-bold text-white">A</div>
+                                <div>
+                                    <p class="font-semibold text-slate-900">Abdullah Ansari</p>
+                                    <p class="text-xs text-amber-500">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+                                </div>
+                            </div>
+                            <p class="mt-3 text-sm leading-6 text-slate-600">
+                                Excellent SEO services with measurable growth.
+                            </p>
+                        </div>
+
+                        <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                            <div class="flex items-center gap-3">
+                                <div class="flex h-11 w-11 items-center justify-center rounded-full bg-slate-900 font-bold text-white">R</div>
+                                <div>
+                                    <p class="font-semibold text-slate-900">Rahul Sharma</p>
+                                    <p class="text-xs text-amber-500">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+                                </div>
+                            </div>
+                            <p class="mt-3 text-sm leading-6 text-slate-600">
+                                Professional team and outstanding SEO results.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <div class="rounded-[2rem] border border-slate-200 bg-gradient-to-br from-[#FD5528] to-[#e94c20] p-6 text-white shadow-[0_20px_60px_rgba(253,85,40,0.22)]">
+                    <p class="text-xs font-semibold uppercase tracking-[0.3em] text-white/80">Need similar content?</p>
+                    <h3 class="mt-2 text-xl font-bold">Start a new article</h3>
+                    <p class="mt-3 text-sm leading-6 text-white/90">
+                        Use the dashboard to create a new post with FAQ, TOC, and SEO data in one place.
+                    </p>
+                    <a href="https://backendcodersindia.com/blogs/create" class="mt-5 inline-flex items-center justify-center rounded-2xl bg-white px-4 py-3 text-sm font-semibold text-[#FD5528] transition hover:bg-slate-100">
+                        Add Blog
+                    </a>
+                </div> -->
+            </aside>
+        </div>
+
+    </section>
+</main>
+
+    <section id="faq" class="bg-[#fff8f3] py-16 sm:py-20">
+        <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+            <div class="mb-10 text-center">
+                <p class="text-xs font-semibold uppercase tracking-[0.35em] text-[#FD5528]">FAQ</p>
+                <h2 class="mt-2 text-3xl font-bold text-slate-900">Frequently Asked Questions</h2>
+            </div>
+
+            <div class="space-y-4">
+                                    <details class="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:border-[#FD5528]/30">
+                        <summary class="flex cursor-pointer list-none items-center justify-between gap-4">
+                            <div class="flex items-center gap-3">
+                                <span class="flex h-8 w-8 items-center justify-center rounded-full bg-[#FD5528]/10 text-xs font-bold text-[#FD5528]">
+                                    01
+                                </span>
+                                <span class="font-semibold text-slate-900">How long does it take a startup website development company to launch a site?</span>
+                            </div>
+                            <span class="text-2xl text-[#FD5528] transition-transform group-open:rotate-45">+</span>
+                        </summary>
+
+                        <div class="mt-4 border-t border-slate-100 pt-4 text-slate-600 leading-8">
+                            A basic landing page or structural corporate site can be deployed within 2 to 3 weeks using agile sprints. Complex custom web applications or heavy e-commerce frameworks typically require 6 to 12 weeks of engineering.
+                        </div>
+                    </details>
+                                    <details class="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:border-[#FD5528]/30">
+                        <summary class="flex cursor-pointer list-none items-center justify-between gap-4">
+                            <div class="flex items-center gap-3">
+                                <span class="flex h-8 w-8 items-center justify-center rounded-full bg-[#FD5528]/10 text-xs font-bold text-[#FD5528]">
+                                    02
+                                </span>
+                                <span class="font-semibold text-slate-900">Why is business website development in India more cost-effective?</span>
+                            </div>
+                            <span class="text-2xl text-[#FD5528] transition-transform group-open:rotate-45">+</span>
+                        </summary>
+
+                        <div class="mt-4 border-t border-slate-100 pt-4 text-slate-600 leading-8">
+                            India offers access to a massive pool of highly skilled full-stack engineering talent. Startups worldwide build their platforms here because they receive elite-tier technical depth, clean code execution, and secure backend systems at a fraction of global agency prices.
+                        </div>
+                    </details>
+                                    <details class="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:border-[#FD5528]/30">
+                        <summary class="flex cursor-pointer list-none items-center justify-between gap-4">
+                            <div class="flex items-center gap-3">
+                                <span class="flex h-8 w-8 items-center justify-center rounded-full bg-[#FD5528]/10 text-xs font-bold text-[#FD5528]">
+                                    03
+                                </span>
+                                <span class="font-semibold text-slate-900">What should be included in a transparent website development quote?</span>
+                            </div>
+                            <span class="text-2xl text-[#FD5528] transition-transform group-open:rotate-45">+</span>
+                        </summary>
+
+                        <div class="mt-4 border-t border-slate-100 pt-4 text-slate-600 leading-8">
+                            A comprehensive project scope must clearly detail UI/UX wireframing, full frontend and backend engineering, clean mobile responsive testing across multiple devices, basic speed optimization metrics, and post-launch technical support milestones.
+                        </div>
+                    </details>
+                            </div>
+        </div>
+    </section>
+
+    <script type="application/ld+json">
+{"<?php $__contextArgs = [];\nif (context()->has($__contextArgs[0])) :\nif (isset($value)) { $__contextPrevious[] = $value; }\n$value = context()->get($__contextArgs[0]); ?>":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How long does it take a startup website development company to launch a site?","acceptedAnswer":{"@type":"Answer","text":"A basic landing page or structural corporate site can be deployed within 2 to 3 weeks using agile sprints. Complex custom web applications or heavy e-commerce frameworks typically require 6 to 12 weeks of engineering."}},{"@type":"Question","name":"Why is business website development in India more cost-effective?","acceptedAnswer":{"@type":"Answer","text":"India offers access to a massive pool of highly skilled full-stack engineering talent. Startups worldwide build their platforms here because they receive elite-tier technical depth, clean code execution, and secure backend systems at a fraction of global agency prices."}},{"@type":"Question","name":"What should be included in a transparent website development quote?","acceptedAnswer":{"@type":"Answer","text":"A comprehensive project scope must clearly detail UI/UX wireframing, full frontend and backend engineering, clean mobile responsive testing across multiple devices, basic speed optimization metrics, and post-launch technical support milestones."}}]}
+    </script>
+
+</main>
+
+    <footer class="border-t border-gray-800 bg-black px-4 pb-8 pt-14 text-gray-400 sm:px-6 lg:px-8">
+  <div class="mx-auto grid max-w-7xl grid-cols-1 gap-12 md:grid-cols-2 xl:grid-cols-5 xl:gap-10">
+    <div class="xl:col-span-2">
+      <a href="https://backendcodersindia.com" class="inline-flex items-center gap-3">
+        <img src="https://backendcodersindia.com/assets/images/bc_bg_logo_101x40.png" alt="Backend Coders India logo"   width="100"
+    height="40" class="h-12 w-auto sm:h-14" >
+      </a>
+
+      <p class="mt-4 max-w-md text-sm leading-relaxed">
+        Backend Coders India is a web development company in Kanpur, India delivering custom software development, SaaS platforms, mobile apps, website development, API integrations, digital marketing, SEO, and AI-powered business solutions for Indian and international clients.
+      </p>
+
+      <div class="mt-6 flex flex-wrap gap-3 sm:gap-4">
+        <a href="https://www.facebook.com/backendcoders/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"
+           class="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-r from-[#f1e9e9] to-[#f5f1f1] transition-all duration-300 hover:scale-110">
+          <img src="https://backendcodersindia.com/assets/icons/facebook.png" alt="Facebook" class="h-5 w-5" aria-hidden="true">
+        </a>
+
+        <a href="https://www.instagram.com/backendcoders/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"
+           class="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-r from-[#f1e9e9] to-[#f5f1f1] transition-all duration-300 hover:scale-110">
+          <img src="https://backendcodersindia.com/assets/icons/instagram.png" alt="Instagram" class="h-5 w-5" aria-hidden="true">
+        </a>
+
+        <a href="https://www.linkedin.com/company/103738896/admin/dashboard/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"
+           class="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-r from-[#f1e9e9] to-[#f5f1f1] transition-all duration-300 hover:scale-110">
+          <img src="https://backendcodersindia.com/assets/icons/linkedin.png" class="h-5 w-5" alt="LinkedIn" aria-hidden="true">
+        </a>
+
+        <a href="https://wa.me/919140092133" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"
+           class="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-r from-[#f1e9e9] to-[#f5f1f1] transition-all duration-300 hover:scale-110">
+          <img src="https://backendcodersindia.com/assets/icons/whatsapp.png" class="h-5 w-5" alt="WhatsApp" aria-hidden="true">
+        </a>
+      </div>
+    </div>
+
+    <div class="min-w-0">
+      <h3 class="mb-4 font-semibold text-white">Quick Links</h3>
+      <ul class="space-y-2 text-sm leading-7">
+        <li><a href="https://backendcodersindia.com/about" class="hover:text-[#FD5528]">Company</a></li>
+        <li><a href="https://backendcodersindia.com/contact" class="hover:text-[#FD5528]">Ping Us</a></li>
+        <li><a href="https://backendcodersindia.com/career" class="hover:text-[#FD5528]">Insights</a></li>
+        <li><a href="https://backendcodersindia.com/project" class="hover:text-[#FD5528]">Architecture</a></li>
+        <li><a href="https://backendcodersindia.com/blog" class="hover:text-[#FD5528]">Latest Blog</a></li>
+      </ul>
+    </div>
+
+    <div class="min-w-0">
+      <h3 class="mb-4 font-semibold text-white">Help</h3>
+      <ul class="space-y-2 text-sm leading-7">
+        <li><a href="https://backendcodersindia.com/terms" class="hover:text-[#FD5528]">Terms of Use</a></li>
+        <li><a href="https://backendcodersindia.com/privacy_policy" class="hover:text-[#FD5528]">Privacy Policy</a></li>
+        <li><a href="https://backendcodersindia.com/faq" class="hover:text-[#FD5528]">FAQs</a></li>
+        <li><a href="https://backendcodersindia.com/help" class="hover:text-[#FD5528]">Help</a></li>
+        <li><a href="https://backendcodersindia.com/contact" class="hover:text-[#FD5528]">Support</a></li>
+      </ul>
+    </div>
+
+    <div class="min-w-0">
+      <h3 class="mb-4 font-semibold text-white">Contact</h3>
+
+      <ul class="space-y-5 text-sm">
+        <li>
+          <div class="flex items-start gap-3 sm:gap-4">
+            <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white transition duration-300 hover:scale-110">
+              <img src="https://backendcodersindia.com/assets/icons/address.png" class="h-5 w-5" alt="Office Address" aria-hidden="true">
+            </div>
+
+            <div class="flex-1">
+              <h3 class="font-semibold leading-none text-white">Office Address</h3>
+              <p class="mt-2 leading-relaxed text-gray-400">
+                11/42, Krishna Nagar, Kanpur, UP 208007
+              </p>
+            </div>
+          </div>
+        </li>
+
+        <li>
+          <div class="flex items-start gap-3 sm:gap-4">
+            <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white transition duration-300 hover:scale-110">
+              <img src="https://backendcodersindia.com/assets/icons/call.png" class="h-5 w-5" alt="Phone" aria-hidden="true">
+            </div>
+
+            <div class="flex-1">
+              <h3 class="font-semibold leading-none text-white">Phone</h3>
+              <p class="mt-2 text-gray-400">
+                <a href="tel:+919140092133" class="transition hover:text-[#FD5528]">+91 914 0092 133</a>
+              </p>
+            </div>
+          </div>
+        </li>
+
+        <li>
+          <div class="flex items-start gap-3 sm:gap-4">
+            <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white transition duration-300 hover:scale-110">
+              <svg viewBox="0 0 24 24" class="h-5 w-5 text-[#FD5528]" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16v12H4z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="m4 7 8 6 8-6" />
+              </svg>
+            </div>
+
+            <div class="min-w-0 flex-1">
+              <h3 class="font-semibold leading-none text-white">Email</h3>
+              <a href="#"
+                 id="footer-email-link"
+                 data-user="info"
+                 data-domain="backendcodersindia.com"
+                 class="mt-2 block max-w-full break-all text-gray-400 transition hover:text-[#FD5528]">
+                <span id="footer-email" class="no-copy block pointer-events-none select-none leading-relaxed" aria-label="Email address"></span>
+              </a>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="mt-12 border-t border-gray-800 pt-6 text-center text-sm text-gray-500">
+    &copy; Backend Coders India Pvt. Ltd. All Rights Reserved <br>
+    <span class="text-[#FD5528]">Developed by Backend Coders India</span>
+  </div>
+</footer>
+
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const emailLink = document.getElementById('footer-email-link');
+    const emailText = document.getElementById('footer-email');
+
+    if (!emailLink || !emailText) return;
+
+    const user = emailLink.dataset.user || '';
+    const domain = emailLink.dataset.domain || '';
+    const email = `${user}@${domain}`;
+
+    emailText.textContent = email;
+    emailLink.href = `mailto:${email}`;
+    emailLink.setAttribute('aria-label', `Email ${email}`);
+  });
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const contactToggle = document.getElementById('contactToggle');
+  const contactMenu = document.getElementById('contactMenu');
+  const botToggle = document.getElementById('botToggle');
+  const botPanel = document.getElementById('botPanel');
+  const botInput = document.getElementById('botInput');
+  const botSend = document.getElementById('botSend');
+  const botMessages = document.getElementById('botMessages');
+  const csrfToken = document.querySelector('meta[name="csrf-token"]')?.content || '';
+
+  if (contactToggle && contactMenu) {
+    contactToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isHidden = contactMenu.classList.contains('opacity-0');
+
+      contactMenu.classList.toggle('opacity-0');
+      contactMenu.classList.toggle('pointer-events-none');
+      contactMenu.classList.toggle('invisible');
+      contactMenu.classList.toggle('translate-y-5');
+      contactMenu.classList.toggle('scale-95');
+      contactMenu.classList.toggle('scale-100');
+      contactToggle.setAttribute('aria-expanded', String(isHidden));
+    });
+  }
+
+  const appendBotMessage = (text, type = 'bot') => {
+    if (!botMessages) return;
+
+    const bubble = document.createElement('div');
+    bubble.className = type === 'user'
+      ? 'ml-auto max-w-[85%] rounded-2xl rounded-br-md bg-[#FD5528] px-4 py-3 text-sm text-white'
+      : 'max-w-[85%] rounded-2xl rounded-bl-md border border-slate-200 bg-white px-4 py-3 text-sm text-slate-700';
+    bubble.textContent = text;
+    botMessages.appendChild(bubble);
+    botMessages.scrollTop = botMessages.scrollHeight;
+  };
+
+  const sendBotMessage = async (value = '') => {
+    if (!botInput || !botMessages) return;
+
+    const text = (value || botInput.value).trim();
+    if (!text) return;
+
+    appendBotMessage(text, 'user');
+    botInput.value = '';
+
+    try {
+      const response = await fetch('https://backendcodersindia.com/botman/web-chat', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+          'X-CSRF-TOKEN': csrfToken,
+        },
+        credentials: 'same-origin',
+        body: JSON.stringify({ message: text }),
+      });
+
+      const data = await response.json();
+      appendBotMessage(data.text || 'I did not get that.');
+    } catch (error) {
+      appendBotMessage('Sorry, the chatbot is unavailable right now.');
+    }
+  };
+
+  const fillBotInput = (value) => {
+    if (!botInput) return;
+
+    botInput.value = value;
+    botInput.focus();
+    botInput.setSelectionRange(botInput.value.length, botInput.value.length);
+  };
+
+  if (botToggle && botPanel && botInput && botSend) {
+    botToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isHidden = botPanel.classList.contains('opacity-0');
+
+      botPanel.classList.toggle('opacity-0');
+      botPanel.classList.toggle('pointer-events-none');
+      botPanel.classList.toggle('invisible');
+      botPanel.classList.toggle('translate-y-4');
+      botPanel.classList.toggle('scale-95');
+      botPanel.classList.toggle('scale-100');
+      botToggle.setAttribute('aria-expanded', String(isHidden));
+
+      if (isHidden) {
+        botInput.focus();
+        if (botMessages) {
+          botMessages.scrollTop = botMessages.scrollHeight;
+        }
+      }
+    });
+
+    botSend.addEventListener('click', () => sendBotMessage());
+
+    botInput.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter') {
+        event.preventDefault();
+        sendBotMessage();
+      }
+    });
+
+    botMessages.querySelectorAll('[data-bot-quick]').forEach((button) => {
+      button.addEventListener('click', () => fillBotInput(button.getAttribute('data-bot-quick') || ''));
+    });
+  }
+
+  document.addEventListener('click', (e) => {
+    if (contactToggle && contactMenu && !contactToggle.contains(e.target) && !contactMenu.contains(e.target)) {
+      contactMenu.classList.add('opacity-0', 'pointer-events-none', 'invisible', 'translate-y-5', 'scale-95');
+      contactMenu.classList.remove('scale-100');
+      contactToggle.setAttribute('aria-expanded', 'false');
+    }
+
+    if (botToggle && botPanel && !botToggle.contains(e.target) && !botPanel.contains(e.target)) {
+      botPanel.classList.add('opacity-0', 'pointer-events-none', 'invisible', 'translate-y-4', 'scale-95');
+      botPanel.classList.remove('scale-100');
+      botToggle.setAttribute('aria-expanded', 'false');
+    }
+  });
+});
+
+  // timeline////
+document.addEventListener("DOMContentLoaded", () => {
+  const items = document.querySelectorAll(".timeline-item");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.remove("opacity-0", "translate-y-10");
+        entry.target.classList.add("opacity-100", "translate-y-0");
+      }
+    });
+  }, { threshold: 0.2 });
+
+  items.forEach(item => observer.observe(item));
+});
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const items = document.querySelectorAll('.faq-item');
+
+  items.forEach((item) => {
+    const trigger = item.querySelector('[data-faq-trigger]');
+    const answer = item.querySelector('.faq-answer');
+    const icon = item.querySelector('.faq-icon-text');
+
+    if (!trigger || !answer || !icon) return;
+
+    const closeAll = () => {
+      items.forEach((i) => {
+        const ans = i.querySelector('.faq-answer');
+        const ic = i.querySelector('.faq-icon-text');
+        const trg = i.querySelector('[data-faq-trigger]');
+
+        i.classList.remove('faq-open');
+        ans.style.maxHeight = null;
+        ans.setAttribute('aria-hidden', 'true');
+        trg.setAttribute('aria-expanded', 'false');
+        ic.textContent = '+';
+      });
+    };
+
+    const openItem = () => {
+      closeAll();
+
+      item.classList.add('faq-open');
+      answer.style.maxHeight = answer.scrollHeight + "px";
+      answer.setAttribute('aria-hidden', 'false');
+      trigger.setAttribute('aria-expanded', 'true');
+      icon.textContent = icon.querySelector('.vertical').style.opacity = '0';
+    };
+
+    trigger.addEventListener('click', () => {
+      const isOpen = item.classList.contains('faq-open');
+
+      if (isOpen) {
+        closeAll();
+      } else {
+        openItem();
+      }
+    });
+
+    // Accessibility (keyboard)
+    trigger.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        trigger.click();
+      }
+    });
+  });
+});
+
+
+// DROIPDOWN:::
+
+function toggleDropdown() {
+    const dropdown = document.getElementById("serviceDropdown");
+    dropdown.classList.toggle("hidden");
+}
+
+// 🔥 CLOSE ON OUTSIDE CLICK
+document.addEventListener("click", function (e) {
+    const dropdown = document.getElementById("serviceDropdown");
+
+    if (!e.target.closest(".relative")) {
+        dropdown.classList.add("hidden");
+    }
+});
+
+
+
+function generateCaptcha() {
+    let num1 = Math.floor(Math.random() * 10);
+    let num2 = Math.floor(Math.random() * 10);
+
+    document.getElementById("captchaQuestion").innerHTML =
+        `What is ${num1} + ${num2}? <span style="color:red">*</span>`;
+
+    document.getElementById("captchaCorrect").value = num1 + num2;
+}
+
+const contactForm = document.querySelector("[data-contact-form]");
+
+if (contactForm) {
+  generateCaptcha();
+
+  contactForm.addEventListener("submit", function(e) {
+
+    let form = this;
+
+    // Reset error
+    document.getElementById("captchaError").classList.add("hidden");
+
+    // HTML validation
+    if (!form.checkValidity()) {
+        e.preventDefault();
+        form.reportValidity();
+        return;
+    }
+
+    // CAPTCHA validation
+    let userAnswer = document.getElementById("captchaInput").value.trim();
+    let correctAnswer = document.getElementById("captchaCorrect").value;
+
+    if (userAnswer == "" || userAnswer != correctAnswer) {
+        e.preventDefault();
+
+        document.getElementById("captchaError").classList.remove("hidden");
+
+        generateCaptcha();
+        document.getElementById("captchaInput").value = "";
+    }
+  });
+}
+
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const counters = document.querySelectorAll('.counter');
+
+    const runCounter = (counter) => {
+        const target = +counter.getAttribute('data-target');
+        let count = 0;
+
+        const update = () => {
+            const increment = target / 100;
+            count += increment;
+
+            if (count < target) {
+                counter.innerText = Math.ceil(count);
+                requestAnimationFrame(update);
+            } else {
+                counter.innerText = target;
+            }
+        };
+
+        update();
+    };
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                runCounter(entry.target);
+                observer.unobserve(entry.target);
+            }
+        });
+    });
+
+    counters.forEach(counter => observer.observe(counter));
+
+});
+
+
+
+// hero grid
+document.querySelectorAll('.video-card').forEach(card=>{
+
+    let loadingPromise = null;
+    let isHovered = false;
+
+    const getImage = () => card.querySelector('img');
+    const getVideo = () => card.querySelector('video');
+    const showImage = () => {
+        const image = getImage();
+        if (image) {
+            image.style.opacity = 1;
+        }
+    };
+    const hideImage = () => {
+        const image = getImage();
+        if (image) {
+            image.style.opacity = 0;
+        }
+    };
+
+    const createVideo = async () => {
+        const videoUrl = card.dataset.videoUrl;
+        const fallbackUrl = card.dataset.videoFallback;
+
+        if (!videoUrl && !fallbackUrl) {
+            return null;
+        }
+
+        const video = document.createElement('video');
+        let source = fallbackUrl || '';
+
+        if (videoUrl) {
+            try {
+                const response = await fetch(videoUrl, {
+                    headers: {
+                        'Accept': 'application/json',
+                    },
+                    credentials: 'same-origin',
+                });
+
+                if (response.ok) {
+                    const json = await response.json();
+                    source = json?.data?.url || source;
+                }
+            } catch (error) {
+                // Fall back to the direct mp4 source when the API is unavailable on live.
+            }
+        }
+
+        if (!source) {
+            return null;
+        }
+
+        video.src = source;
+        video.autoplay = true;
+        video.loop = true;
+        video.muted = true;
+        video.playsInline = true;
+        video.setAttribute('playsinline', '');
+        video.setAttribute('webkit-playsinline', '');
+        video.preload = 'auto';
+        video.className = 'absolute inset-0 z-10 h-full w-full object-cover opacity-0 transition-opacity duration-500 ease-out';
+        video.setAttribute('aria-hidden', 'true');
+
+        card.appendChild(video);
+        video.load();
+        return video;
+    };
+
+    card.addEventListener('mouseenter',async()=>{
+        isHovered = true;
+
+        const existingVideo = getVideo();
+
+        if (existingVideo) {
+            hideImage();
+            existingVideo.style.opacity = 1;
+
+            try {
+                await existingVideo.play();
+            } catch (error) {
+                // Muted inline autoplay should normally work, but ignore any browser-specific rejection.
+            }
+
+            return;
+        }
+
+        if (!loadingPromise) {
+            loadingPromise = createVideo().finally(() => {
+                loadingPromise = null;
+            });
+        }
+
+        let video = null;
+
+        try {
+            video = await loadingPromise;
+        } catch (error) {
+            return;
+        }
+
+        if (!video || !isHovered) {
+            showImage();
+            if (video) {
+                video.style.opacity = 0;
+                video.pause();
+            }
+            return;
+        }
+
+        hideImage();
+        video.style.opacity = 1;
+
+        try {
+            await new Promise(resolve => requestAnimationFrame(resolve));
+            await video.play();
+        } catch (error) {
+            showImage();
+        }
+
+    });
+
+    card.addEventListener('mouseleave',()=>{
+        isHovered = false;
+
+        const video = getVideo();
+
+        if(video){
+
+            video.pause();
+
+            video.style.opacity = 0;
+
+        }
+
+        showImage();
+
+    });
+
+});
+</script>
+
+
+
+
+<!-- Lazy-load AOS during idle or on first interaction to avoid render blocking -->
+<script>
+  (function(){
+    function loadScript(src, cb){
+      var s = document.createElement('script');
+      s.src = src; s.async = true; s.onload = cb; s.onerror = cb; document.head.appendChild(s);
+    }
+
+    function loadLibs(){
+      if(window._perfLibsLoaded) return;
+      // AOS: init after loaded
+      loadScript('https://unpkg.com/aos@2.3.4/dist/aos.js', function(){
+        if(window.AOS && typeof AOS.init === 'function'){
+          AOS.init({ once: true, duration: 750, easing: 'ease-out-cubic' });
+        }
+      });
+
+      window._perfLibsLoaded = true;
+    }
+
+    if('requestIdleCallback' in window){
+      requestIdleCallback(function(){ setTimeout(loadLibs, 200); }, {timeout:2000});
+    } else {
+      window.addEventListener('load', function(){ setTimeout(loadLibs, 200); });
+    }
+
+    ['click','keydown','scroll','touchstart'].forEach(function(ev){
+      document.addEventListener(ev, loadLibs, {once:true, passive:true});
+    });
+  })();
+</script>
+
+
+<script src="https://backendcodersindia.com/assets/js/main.js?v=1784785883" defer></script>
+
+</body>
+</html>
+

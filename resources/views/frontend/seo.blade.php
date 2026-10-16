@@ -32,46 +32,38 @@
             ? \Illuminate\Support\Str::after($path, 'storage/')
             : $path;
 
+        if (\Illuminate\Support\Facades\Storage::disk('public')->exists($storagePath)) {
+            return route('media.file', ['path' => $storagePath]);
+        }
+
         if (file_exists(public_path($path))) {
             return asset($path);
-        }
-
-        if (file_exists(public_path('storage/' . $storagePath))) {
-            return asset('storage/' . $storagePath);
-        }
-
-        if (\Illuminate\Support\Facades\Storage::disk('public')->exists($storagePath)) {
-            return asset('storage/' . $storagePath);
-        }
-
-        if (\Illuminate\Support\Str::startsWith($path, 'storage/')) {
-            return asset('storage/' . $storagePath);
         }
 
         return asset('assets/images/banner.png');
     };
 
     $defaultHero = [
-        'title' => 'Rank Higher with a Leading <br><span class="text-[#FD5528]">SEO Company in India</span>',
-        'description_1' => 'In today’s competitive digital landscape, ranking on Google is not optional—it’s essential. As a trusted SEO company in India, we help businesses increase their online visibility, drive organic traffic, and generate consistent leads through result-driven SEO strategies.',
-        'description_2' => 'From startups to enterprises, our SEO experts craft customized strategies including keyword research, technical optimization, content marketing, and link building to ensure long-term growth and higher search engine rankings.',
-        'button_text' => 'Get Free SEO Consultation',
+        'title' => 'Build Sustainable <br><span class="text-[#FD5528]">Organic Search Visibility</span>',
+        'description_1' => 'We help businesses improve how their sites appear in search by addressing technical issues, useful content, and local visibility. Work starts with your goals and the current state of your website.',
+        'description_2' => 'Plans may include research, site improvements, content guidance, and progress reviews. The work and measures are agreed with you; search positions and lead volumes are not guaranteed.',
+        'button_text' => 'Get a Search Consultation',
         'button_url' => route('frontend.contact'),
         'image' => 'https://images.unsplash.com/photo-1551288049-bebda4e38f71',
     ];
 
     $defaultAbout = [
-        'title' => 'Data-Driven <span class="text-[#FD5528]">SEO Services in India</span>',
-        'description' => 'Our SEO services in India are designed to improve your website’s visibility on search engines like Google and Bing. We focus on increasing organic traffic, improving keyword rankings, and maximizing ROI through proven white-hat SEO techniques. Whether you need local SEO, eCommerce SEO, or enterprise SEO, our strategies are tailored to meet your business goals and target audience.',
+        'title' => 'Search Visibility Services for Indian Businesses',
+        'description' => 'We review how people find your website and identify practical improvements to its content, structure, and technical health. Recommendations depend on your audience, resources, and business goals.',
     ];
 
     $defaultServices = [
-        ['label' => 'On-Site Optimization', 'icon' => 'https://img.icons8.com/?size=100&id=11668&format=png&color=ffffff', 'title' => 'On-Page SEO', 'description' => 'Improve your website’s search engine visibility by optimizing meta tags, headings, content structure, internal linking, and keyword placement for better rankings and user experience.', 'tags' => ['Keywords', 'Meta Tags', 'Content']],
-        ['label' => 'Authority Building', 'icon' => 'https://img.icons8.com/?size=100&id=86127&format=png&color=ffffff', 'title' => 'Off-Page SEO', 'description' => 'Strengthen your website’s authority with high-quality backlinks, brand mentions, and strategic link-building techniques that improve domain trust and search engine rankings.', 'tags' => ['Backlinks', 'Authority', 'Brand Signals']],
-        ['label' => 'Site Performance', 'icon' => 'https://img.icons8.com/?size=100&id=110249&format=png&color=ffffff', 'title' => 'Technical SEO', 'description' => 'Enhance your website’s performance with advanced technical SEO, including site speed optimization, mobile responsiveness, structured data, crawlability, and indexing improvements for higher search rankings.', 'tags' => ['Speed', 'Indexing', 'Crawlability']],
-        ['label' => 'Local Visibility', 'icon' => 'https://img.icons8.com/?size=100&id=7880&format=png&color=ffffff', 'title' => 'Local SEO', 'description' => 'Improve your visibility in local search results and Google Maps with optimized business listings, local keywords, and review management to attract nearby customers and drive more conversions.', 'tags' => ['Google Maps', 'Local Search', 'Reviews']],
-        ['label' => 'Online Store Growth', 'icon' => 'https://img.icons8.com/?size=100&id=85467&format=png&color=ffffff', 'title' => 'E-commerce SEO', 'description' => 'Boost your online store visibility with optimized product pages, category structures, and keyword-rich content designed to increase organic traffic, improve rankings, and drive higher sales conversions.', 'tags' => ['Products', 'Categories', 'Sales']],
-        ['label' => 'SEO Insights', 'icon' => 'https://img.icons8.com/?size=100&id=59873&format=png&color=ffffff', 'title' => 'SEO Audit & Strategy', 'description' => 'Analyze your website performance with comprehensive SEO audits, competitor research, and data-driven insights to uncover growth opportunities and build effective long-term SEO strategies.', 'tags' => ['Audit', 'Strategy', 'Analysis']],
+        ['label' => 'On-Site Optimization', 'icon' => 'https://img.icons8.com/?size=100&id=11668&format=png&color=ffffff', 'title' => 'On-page search optimization', 'description' => 'Improve how people and search engines understand your pages through clear titles, headings, useful content, and internal links.', 'tags' => ['Page titles', 'Content', 'Links']],
+        ['label' => 'Authority Building', 'icon' => 'https://img.icons8.com/?size=100&id=86127&format=png&color=ffffff', 'title' => 'Off-page search optimization', 'description' => 'Build credibility through relevant mentions, useful partnerships, and links earned from appropriate sources.', 'tags' => ['Mentions', 'Partnerships', 'Links']],
+        ['label' => 'Site Performance', 'icon' => 'https://img.icons8.com/?size=100&id=110249&format=png&color=ffffff', 'title' => 'Technical site optimization', 'description' => 'Address site speed, mobile usability, structured data, crawlability, and indexing issues that affect discovery and use.', 'tags' => ['Speed', 'Indexing', 'Usability']],
+        ['label' => 'Local Visibility', 'icon' => 'https://img.icons8.com/?size=100&id=7880&format=png&color=ffffff', 'title' => 'Local search optimization', 'description' => 'Keep business details accurate, make location information easy to find, and help nearby customers understand your services.', 'tags' => ['Business details', 'Locations', 'Reviews']],
+        ['label' => 'Online Store Growth', 'icon' => 'https://img.icons8.com/?size=100&id=85467&format=png&color=ffffff', 'title' => 'E-commerce search optimization', 'description' => 'Improve product and category pages with clear information architecture, useful descriptions, and accessible navigation.', 'tags' => ['Products', 'Categories', 'Navigation']],
+        ['label' => 'Search Insights', 'icon' => 'https://img.icons8.com/?size=100&id=59873&format=png&color=ffffff', 'title' => 'Site Audit & Strategy', 'description' => 'Review site performance, competing results, and search data to identify useful next steps and build a maintainable plan.', 'tags' => ['Audit', 'Strategy', 'Analysis']],
     ];
 
     $defaultFeatures = [
@@ -82,13 +74,13 @@
         'Link Building',
         'Competitor Analysis',
         'On-Page Optimization',
-        'Off-Page SEO',
+        'Authority and link review',
         'Performance Tracking',
     ];
 
     $defaultCta = [
-        'title' => 'Ready to Rank #1 on Google?',
-        'description' => 'Partner with a top SEO company in India and grow your business with powerful, data-driven SEO strategies that deliver long-term results.',
+        'title' => 'Build a Search Strategy That Supports Growth',
+        'description' => 'Work with an SEO team on a practical strategy for technical health, useful content, and long-term organic growth.',
         'button_text' => 'Start Your SEO Journey',
         'button_url' => route('frontend.contact'),
     ];
@@ -112,7 +104,9 @@
                 <div class="flex flex-wrap gap-3">
                     <a href="{{ route('pages.index') }}" class="rounded-xl border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-[#FD5528] hover:text-[#FD5528]">All Pages</a>
                     <a href="{{ route('pages.create') }}" class="rounded-xl bg-[#FD5528] px-4 py-2 text-sm font-semibold text-white transition hover:bg-orange-600">Create Page</a>
-                    <a href="{{ route('pages.edit', $page->id) }}" class="rounded-xl border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-[#FD5528] hover:text-[#FD5528]">Edit This Page</a>
+                    @if($page?->exists)
+                        <a href="{{ route('pages.edit', $page->id) }}" class="rounded-xl border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-[#FD5528] hover:text-[#FD5528]">Edit This Page</a>
+                    @endif
                 </div>
             </div>
         </section>
@@ -140,13 +134,17 @@
                     {!! $heroItem?->title ?: $defaultHero['title'] !!}
                 </h1>
 
-                <p class="mt-6 text-gray-600">
-                    {{ $heroItem?->description ?: $defaultHero['description_1'] }}
-                </p>
+                @if($heroItem?->description || $defaultHero['description_1'])
+                    <div class="mt-6 text-gray-600 space-y-3 leading-relaxed">
+                        {!! $heroItem?->description ?: $defaultHero['description_1'] !!}
+                    </div>
+                @endif
 
-                <p class="mt-4 text-gray-600">
-                    {{ data_get($heroItem, 'extra.sub_text', $defaultHero['description_2']) }}
-                </p>
+                @if(data_get($heroItem, 'extra.sub_text', $defaultHero['description_2']))
+                    <div class="mt-4 text-gray-600 space-y-3 leading-relaxed">
+                        {!! data_get($heroItem, 'extra.sub_text', $defaultHero['description_2']) !!}
+                    </div>
+                @endif
 
                 <a href="{{ data_get($heroItem, 'extra.button_url', $defaultHero['button_url']) }}"
                     class="mt-6 inline-block rounded-xl bg-[#FD5528] px-6 py-3 font-semibold text-white shadow transition hover:bg-orange-600">
@@ -155,9 +153,9 @@
             </div>
 
             <div>
-                <img
+                <img alt=""
                     src="{{ $heroItem?->image ? $mediaUrl($heroItem->image) : $defaultHero['image'] }}"
-                    alt="{{ $heroItem?->title ?: 'SEO' }}"
+                    alt="{{ strip_tags((string) ($heroItem?->title ?: 'SEO')) }}"
                     class="w-full rounded-2xl object-cover shadow-lg"
                 >
             </div>
@@ -170,9 +168,11 @@
                 {!! $aboutItem?->title ?: $defaultAbout['title'] !!}
             </h2>
 
-            <p class="mx-auto mt-4 max-w-3xl text-gray-600">
-                {{ $aboutItem?->description ?: $defaultAbout['description'] }}
-            </p>
+            @if($aboutItem?->description || $defaultAbout['description'])
+                <div class="mx-auto mt-4 max-w-3xl text-gray-600 space-y-3 leading-relaxed">
+                    {!! $aboutItem?->description ?: $defaultAbout['description'] !!}
+                </div>
+            @endif
         </div>
     </section>
 
@@ -196,13 +196,17 @@
                             @endif
                             <div class="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] shadow-inner">
                                 @if($serviceIcon)
-                                    <img src="{{ $mediaUrl($serviceIcon) }}" class="h-14 w-14" alt="{{ $serviceTitle }}">
+                                    <img src="{{ $mediaUrl($serviceIcon) }}" class="h-14 w-14" alt="{{ strip_tags((string) $serviceTitle) }}">
                                 @else
-                                    <span class="text-2xl font-bold text-white">{{ strtoupper(mb_substr((string) $serviceTitle, 0, 1)) }}</span>
+                                    <span class="text-2xl font-bold text-white">{{ strtoupper(mb_substr(strip_tags((string) $serviceTitle), 0, 1)) }}</span>
                                 @endif
                             </div>
-                            <h3 class="text-xl font-semibold">{{ $serviceTitle }}</h3>
-                            <p class="text-sm text-gray-600">{{ $serviceDescription }}</p>
+                            <h3 class="text-xl font-semibold">{{ strip_tags((string) $serviceTitle) }}</h3>
+                            @if($serviceDescription)
+                                <div class="text-sm text-gray-600 leading-relaxed">
+                                    {!! $serviceDescription !!}
+                                </div>
+                            @endif
                             @if(is_array($serviceTags) && count($serviceTags))
                                 <div class="flex flex-wrap justify-center gap-3 text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-[#FD5528]">
                                     @foreach($serviceTags as $tag)
@@ -220,7 +224,7 @@
     <section class="bg-gray-50 py-16">
         <div class="mx-auto max-w-7xl px-6">
             <h2 class="text-3xl font-bold text-center text-gray-900 mb-10">
-                What We Do to <span class="text-[#FD5528]">Improve Your SEO Performance</span>
+                What We Do to <span class="text-[#FD5528]">Improve Organic Search Performance</span>
             </h2>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -230,9 +234,11 @@
                         $featureDescription = data_get($feature, 'description');
                     @endphp
                     <div class="p-5 bg-white rounded-xl shadow text-center service-card transition duration-300 transform hover:-translate-y-1 hover:shadow-[0_15px_35px_rgba(253,85,40,0.15)]" data-aos="zoom-in">
-                        <div class="font-medium text-gray-900">{{ $featureTitle }}</div>
+                        <div class="font-medium text-gray-900">{!! $featureTitle !!}</div>
                         @if($featureDescription)
-                            <div class="mt-2 text-sm text-gray-600">{{ $featureDescription }}</div>
+                            <div class="mt-2 text-sm text-gray-600 leading-relaxed">
+                                {!! $featureDescription !!}
+                            </div>
                         @endif
                     </div>
                 @endforeach
@@ -243,12 +249,14 @@
     <section class="bg-[#FD5528] py-16 text-center text-white">
         <div class="mx-auto max-w-3xl px-6">
             <h2 class="text-3xl font-bold">
-                {{ $ctaSection?->items?->first()?->title ?: $defaultCta['title'] }}
+                {!! $ctaSection?->items?->first()?->title ?: $defaultCta['title'] !!}
             </h2>
 
-            <p class="mt-4">
-                {{ $ctaSection?->items?->first()?->description ?: $defaultCta['description'] }}
-            </p>
+            @if($ctaSection?->items?->first()?->description || $defaultCta['description'])
+                <div class="mt-4 text-white/95 leading-relaxed">
+                    {!! $ctaSection?->items?->first()?->description ?: $defaultCta['description'] !!}
+                </div>
+            @endif
 
             <a
                 href="{{ data_get($ctaSection?->items?->first(), 'extra.button_url', $defaultCta['button_url']) }}"

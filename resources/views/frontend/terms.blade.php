@@ -6,7 +6,7 @@
 
   <!-- BACKGROUND IMAGE -->
   <img 
-    src="{{asset('assets/images/banner.png')}}"
+    src="{{asset('assets/images/banner.png')}}" alt="banner"
     class="absolute inset-0 w-full h-full object-cover"
   />
 
@@ -57,7 +57,7 @@
       Terms of Use
     </span>
       <!-- <p class="text-xs uppercase tracking-[0.6em] text-[#FD5528]">Terms of Use</p> -->
-      <h1 class="text-3xl sm:text-4xl font-bold text-gray-900">Terms of Use</h1>
+      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900">Terms of Use</h2>
       <p class="text-gray-600 max-w-3xl mx-auto">
         By using BackendCodersIndia, you agree to the policies below. Please read them carefully before continuing.
       </p>

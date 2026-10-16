@@ -2,8 +2,8 @@
   <div class="mx-auto grid max-w-7xl grid-cols-1 gap-12 md:grid-cols-2 xl:grid-cols-5 xl:gap-10">
     <div class="xl:col-span-2">
       <a href="{{ route('frontend.index') }}" class="inline-flex items-center gap-3">
-        <img src="{{ asset('assets/images/bc_bg.png.webp') }}"   width="100"
-    height="40" class="h-12 w-auto sm:h-14" alt="Backend Coders India logo" >
+        <img src="{{ asset('assets/images/bc_bg_logo_101x40.png') }}" alt="Backend Coders India logo"   width="100"
+    height="40" class="h-12 w-auto sm:h-14" >
       </a>
 
       <p class="mt-4 max-w-md text-sm leading-relaxed">
@@ -13,39 +13,44 @@
       <div class="mt-6 flex flex-wrap gap-3 sm:gap-4">
         <a href="https://www.facebook.com/backendcoders/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"
            class="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-r from-[#f1e9e9] to-[#f5f1f1] transition-all duration-300 hover:scale-110">
-          <img src="https://img.icons8.com/?size=100&id=106163&format=png&color=fd5528" class="h-5 w-5" alt="" aria-hidden="true">
+          <img src="{{ asset('assets/icons/facebook.png') }}" alt="Facebook" class="h-5 w-5" aria-hidden="true">
         </a>
 
         <a href="https://www.instagram.com/backendcoders/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"
            class="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-r from-[#f1e9e9] to-[#f5f1f1] transition-all duration-300 hover:scale-110">
-          <img src="https://img.icons8.com/?size=100&id=32309&format=png&color=fd5528" class="h-5 w-5" alt="" aria-hidden="true">
+          <img src="{{ asset('assets/icons/instagram.png') }}" alt="Instagram" class="h-5 w-5" aria-hidden="true">
         </a>
 
-        <a href="https://www.linkedin.com/company/103738896/admin/dashboard/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"
+        <a href="https://www.linkedin.com/company/backendcodersindia/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"
            class="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-r from-[#f1e9e9] to-[#f5f1f1] transition-all duration-300 hover:scale-110">
-          <img src="https://img.icons8.com/?size=100&id=34349&format=png&color=fd5528" class="h-5 w-5" alt="" aria-hidden="true">
+          <img src="{{ asset('assets/icons/linkedin.png') }}" class="h-5 w-5" alt="LinkedIn" aria-hidden="true">
         </a>
 
         <a href="https://wa.me/919140092133" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"
            class="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-r from-[#f1e9e9] to-[#f5f1f1] transition-all duration-300 hover:scale-110">
-          <img src="https://img.icons8.com/?size=100&id=16733&format=png&color=fd5528" class="h-5 w-5" alt="" aria-hidden="true">
+          <img src="{{ asset('assets/icons/whatsapp.png') }}" class="h-5 w-5" alt="WhatsApp" aria-hidden="true">
+        </a>
+
+         <a href="https://x.com/backendcodersin" target="_blank" rel="noopener noreferrer" aria-label="Twitter"
+           class="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-r from-[#f1e9e9] to-[#f5f1f1] transition-all duration-300 hover:scale-110">
+          <img src="{{ asset('assets/icons/twitter.png') }}" class="h-5 w-5" alt="Twitter" aria-hidden="true">
         </a>
       </div>
     </div>
 
     <div class="min-w-0">
-      <h4 class="mb-4 font-semibold text-white">Quick Links</h4>
+      <h3 class="mb-4 font-semibold text-white">Quick Links</h3>
       <ul class="space-y-2 text-sm leading-7">
         <li><a href="{{ route('frontend.about') }}" class="hover:text-[#FD5528]">Company</a></li>
-        <li><a href="{{ route('frontend.contact') }}" class="hover:text-[#FD5528]">Ping Us</a></li>
-        <li><a href="{{ route('frontend.service') }}" class="hover:text-[#FD5528]">Solutions</a></li>
-        <li><a href="{{ route('frontend.project') }}" class="hover:text-[#FD5528]">Architecture</a></li>
+        <li><a href="{{ route('frontend.project') }}" class="hover:text-[#FD5528]">Portfolio</a></li>
+        <li><a href="{{ route('frontend.process') }}" class="hover:text-[#FD5528]">Process</a></li>
+        <li><a href="{{ route('frontend.career') }}" class="hover:text-[#FD5528]">Careers</a></li>
         <li><a href="{{ route('frontend.blog') }}" class="hover:text-[#FD5528]">Latest Blog</a></li>
       </ul>
     </div>
 
     <div class="min-w-0">
-      <h4 class="mb-4 font-semibold text-white">Help</h4>
+      <h3 class="mb-4 font-semibold text-white">Help</h3>
       <ul class="space-y-2 text-sm leading-7">
         <li><a href="{{ route('frontend.terms') }}" class="hover:text-[#FD5528]">Terms of Use</a></li>
         <li><a href="{{ route('frontend.privacy_policy') }}" class="hover:text-[#FD5528]">Privacy Policy</a></li>
@@ -56,13 +61,13 @@
     </div>
 
     <div class="min-w-0">
-      <h4 class="mb-4 font-semibold text-white">Contact</h4>
+      <h3 class="mb-4 font-semibold text-white">Contact</h3>
 
       <ul class="space-y-5 text-sm">
         <li>
           <div class="flex items-start gap-3 sm:gap-4">
             <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white transition duration-300 hover:scale-110">
-              <img src="https://img.icons8.com/?size=100&id=7880&format=png&color=fd5528" class="h-5 w-5" alt="" aria-hidden="true">
+              <img src="{{ asset('assets/icons/address.png') }}" class="h-5 w-5" alt="Office Address" aria-hidden="true">
             </div>
 
             <div class="flex-1">
@@ -77,13 +82,13 @@
         <li>
           <div class="flex items-start gap-3 sm:gap-4">
             <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white transition duration-300 hover:scale-110">
-              <img src="https://img.icons8.com/?size=100&id=9730&format=png&color=fd5528" class="h-5 w-5" alt="" aria-hidden="true">
+              <img src="{{ asset('assets/icons/call.png') }}" class="h-5 w-5" alt="Phone" aria-hidden="true">
             </div>
 
             <div class="flex-1">
               <h3 class="font-semibold leading-none text-white">Phone</h3>
               <p class="mt-2 text-gray-400">
-                +91 914 0092 133
+                <a href="tel:+919140092133" class="transition hover:text-[#FD5528]">+91 914 0092 133</a>
               </p>
             </div>
           </div>
@@ -100,13 +105,25 @@
 
             <div class="min-w-0 flex-1">
               <h3 class="font-semibold leading-none text-white">Email</h3>
-              <a href="#"
-                 id="footer-email-link"
-                 data-user="info"
-                 data-domain="backendcodersindia.com"
-                 class="mt-2 block max-w-full break-all text-gray-400 transition hover:text-[#FD5528]">
-                <span id="footer-email" class="no-copy block pointer-events-none select-none leading-relaxed" aria-label="Email address"></span>
-              </a>
+              <div class="mt-2 flex flex-wrap items-center gap-2">
+                <a href="mailto:info@backendcodersindia.com"
+                   id="footer-email-link"
+                   aria-label="Email info@backendcodersindia.com"
+                   class="max-w-full break-all text-gray-300 transition hover:text-[#FD5528]">
+                  <span id="footer-email" class="select-text leading-relaxed font-medium">info@backendcodersindia.com</span>
+                </a>
+                <button type="button"
+                        id="copy-email-btn"
+                        onclick="copyFooterEmail(this)"
+                        class="inline-flex items-center gap-1 rounded border border-gray-700 bg-gray-800 px-2 py-0.5 text-xs font-medium text-gray-300 hover:border-gray-500 hover:bg-gray-700 hover:text-white transition cursor-pointer"
+                        title="Copy email address"
+                        aria-label="Copy email address">
+                  <svg class="h-3 w-3 copy-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                  </svg>
+                  <span class="copy-text">Copy</span>
+                </button>
+              </div>
             </div>
           </div>
         </li>
@@ -120,28 +137,51 @@
   </div>
 </footer>
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-BMHXQHYGH7"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-BMHXQHYGH7');
-</script>
+  function copyFooterEmail(btn) {
+    const email = "info@backendcodersindia.com";
+    const updateUi = () => {
+      const copyText = btn.querySelector('.copy-text');
+      const originalText = copyText ? copyText.textContent : 'Copy';
+      if (copyText) copyText.textContent = 'Copied!';
+      btn.classList.add('text-emerald-400', 'border-emerald-500');
+      setTimeout(() => {
+        if (copyText) copyText.textContent = originalText;
+        btn.classList.remove('text-emerald-400', 'border-emerald-500');
+      }, 2000);
+    };
 
-<script>
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(email).then(updateUi).catch(() => {
+        fallbackCopy(email, updateUi);
+      });
+    } else {
+      fallbackCopy(email, updateUi);
+    }
+  }
+
+  function fallbackCopy(text, callback) {
+    const input = document.createElement('input');
+    input.value = text;
+    document.body.appendChild(input);
+    input.select();
+    try {
+      document.execCommand('copy');
+      if (callback) callback();
+    } catch (e) {
+      console.warn('Copy failed', e);
+    }
+    document.body.removeChild(input);
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
     const emailLink = document.getElementById('footer-email-link');
     const emailText = document.getElementById('footer-email');
 
-    if (!emailLink || !emailText) return;
-
-    const user = emailLink.dataset.user || '';
-    const domain = emailLink.dataset.domain || '';
-    const email = `${user}@${domain}`;
-
-    emailText.textContent = email;
-    emailLink.href = `mailto:${email}`;
-    emailLink.setAttribute('aria-label', `Email ${email}`);
+    if (emailLink && emailText) {
+      emailText.textContent = 'info@backendcodersindia.com';
+      emailLink.href = 'mailto:info@backendcodersindia.com';
+      emailLink.setAttribute('aria-label', 'Email info@backendcodersindia.com');
+    }
   });
 </script>

@@ -87,12 +87,7 @@ class Project extends Model
         }
 
         if (Storage::disk('public')->exists($path)) {
-            $mimeType = Storage::disk('public')->mimeType($path) ?: 'image/jpeg';
-            $contents = Storage::disk('public')->get($path);
-
-            if ($contents !== false && $contents !== null) {
-                return 'data:' . $mimeType . ';base64,' . base64_encode($contents);
-            }
+            return asset('storage/' . $path);
         }
 
         if (file_exists(public_path('storage/' . $path))) {

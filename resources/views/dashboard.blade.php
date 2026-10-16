@@ -135,7 +135,10 @@
                             <p class="text-sm text-slate-500">Recent contacts</p>
                             <h3 class="mt-1 text-xl font-semibold text-slate-900">Latest contact form submissions</h3>
                         </div>
-                        <a href="{{ route('contacts.index') }}" class="text-sm font-semibold text-[#FD5528]">View all</a>
+                        <div class="flex items-center gap-3">
+                            <a href="{{ route('submissions.index') }}" class="rounded-xl bg-[#FD5528]/10 px-3 py-1.5 text-xs font-semibold text-[#FD5528] hover:bg-[#FD5528]/20 transition">All Submissions</a>
+                            <a href="{{ route('contacts.index') }}" class="text-sm font-semibold text-slate-600 hover:text-slate-900">View contacts</a>
+                        </div>
                     </div>
 
                     <div class="mt-6 overflow-x-auto">

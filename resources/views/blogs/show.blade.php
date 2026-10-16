@@ -42,7 +42,7 @@
     <div class="grid gap-6 xl:grid-cols-[minmax(0,1.55fr)_minmax(320px,0.85fr)]">
         <article class="overflow-hidden rounded-[2rem] border border-slate-200/70 bg-white shadow-xl shadow-slate-200/40">
             <div class="relative aspect-[16/9] w-full">
-                <img src="{{ $blog->getImageUrl() }}" alt="{{ $blog->title }}" class="h-full w-full object-cover">
+                <img alt="" src="{{ $blog->getImageUrl() }}" alt="{{ $blog->title }}" class="h-full w-full object-cover">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent"></div>
                 <div class="absolute bottom-5 left-5 flex flex-wrap gap-2">
                     <span class="rounded-full bg-[#FD5528] px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white">
@@ -79,7 +79,7 @@
 
                 <div id="content">
                     <p class="text-sm font-semibold uppercase tracking-[0.3em] text-slate-400">Content</p>
-                    <div class="prose prose-slate mt-3 max-w-none">
+                    <div class="blog-content-body prose prose-slate mt-3 max-w-none">
                         @if($blog->content)
                             {!! $blog->content !!}
                         @else

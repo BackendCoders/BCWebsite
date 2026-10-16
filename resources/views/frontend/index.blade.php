@@ -1,67 +1,63 @@
 @extends('component.main')
 @section('content')
 
+@php
+    $homepageBlogs = $homepageBlogs ?? collect();
+    $homepageBlogDate = function (string $slug, string $fallback) use ($homepageBlogs): string {
+        $blog = $homepageBlogs->get($slug);
+        return optional($blog?->published_at ?? $blog?->created_at)->format('d M, Y') ?: $fallback;
+    };
+@endphp
+
 
 <main class="flex-1">
       <!-- HERO SECTION -->
-<section id="hero" class="relative overflow-hidden bg-white px-4 sm:px-6 lg:px-8 py-14 sm:py-16 md:py-20 lg:py-24">
+<section id="hero" class="relative overflow-hidden bg-white px-4 py-14 sm:px-6 sm:py-16 md:py-20 lg:px-8 lg:py-24">
 
   <div class="max-w-[1400px] mx-auto grid items-center gap-10 md:gap-14 lg:gap-16 lg:grid-cols-2">
 
     <!-- LEFT CONTENT -->
     <div class="w-full max-w-xl mx-auto lg:mx-0 text-center lg:text-left">
 
-      <!-- BADGE -->
-      <span 
-    
-      data-aos="fade-up"
-      class="inline-block text-xs sm:text-sm font-semibold uppercase tracking-[0.35em] 
-         text-[#FD5528] relative px-5 py-2 rounded-full 
+   
+      <!-- HEADING -->
+      <h1
+      class="mt-4 sm:mt-5 text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[3.5rem] 
+        font-bold leading-tight text-gray-900">
+
+       Web Development & Digital Marketing 
+     
+
+
+        <span class="text-[#FD5528]">
+         Company in Kanpur
+        </span>
+      </h1>
+      
+
+    <h2 class="inline-block text-xs sm:text-sm font-semibold uppercase tracking-[0.2em] my-4
+         text-[#FD5528] relative px-3 py-2 rounded-full 
          bg-white/60 backdrop-blur-md 
          shadow-[0_8px_20px_rgba(0,0,0,0.08)] 
          border border-white/40
          before:absolute before:inset-0 before:rounded-full 
          before:bg-gradient-to-r before:from-[#FD5528]/20 before:to-orange-200/30 
          before:-z-10">
-
-        17+ Years Building Software Excellence
-      </span>
-
-      <!-- HEADING -->
-      <h2 
-        data-aos="fade-up"
-        data-aos-delay="200"
-        class="mt-4 sm:mt-5 text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[3.5rem] 
-        font-bold leading-tight text-gray-900">
-
-        Building Powerful 
-        <br class="hidden sm:block">
-
-
-        <span class="text-[#FD5528]">
-          Software & Digital Platforms
-        </span>
-      </h2>
-      
-      <h1 data-aos="fade-up"
-        data-aos-delay="400" class="mt-4 sm:mt-5 text-xs xs:text-sm sm:text-base md:text-lg 
-        leading-relaxed text-gray-600">
-         Web Development Company in Kanpur Building Powerful Software
-    </h1>
+      Software, Web & SEO Experience for Startups, SMEs & Global Brands
+    </h2>
 
       <!-- DESCRIPTION -->
       <p 
-        data-aos="fade-up"
-        data-aos-delay="300"
         class="mt-4 sm:mt-5 text-xs xs:text-sm sm:text-base md:text-lg 
         leading-relaxed text-gray-600">
-      Backend Coders India is a trusted web development company in Kanpur, India helping startups, SMEs, enterprises, and international brands build high-performance websites, custom software, SaaS platforms, mobile apps, APIs, AI-powered solutions, and digital marketing systems.
+    
+      Backend Coders India is a Kanpur-based web development and digital marketing company helping startups, SMEs, and enterprises across India — and clients in the USA and UK — build
+      high-performance websites, custom software, SaaS platforms, and SEO and digital marketing campaigns. Our team partners with businesses that want measurable growth, not just delivery.
+
       </p>
 
       <!-- BUTTONS -->
       <div 
-        data-aos="fade-up"
-        data-aos-delay="400"
         class="mt-6 sm:mt-7 flex flex-col sm:flex-row gap-3 sm:gap-4 
         justify-center lg:justify-start">
 
@@ -86,66 +82,64 @@
     </div>
 
     <!-- RIGHT IMAGE GRID -->
-    <div 
-      data-aos="zoom-in"
-      data-aos-delay="300"
-      class="relative w-full max-w-md sm:max-w-lg md:max-w-xl lg:max-w-full mx-auto">
+    <div class="relative w-full max-w-md sm:max-w-lg md:max-w-xl lg:max-w-full mx-auto">
 
       <div class="grid grid-cols-2 gap-3 sm:gap-4 md:gap-5">
 
         <!-- CARD -->
-        <div class="relative overflow-hidden rounded-xl group translate-y-4 sm:translate-y-6">
+      <div class="relative overflow-hidden rounded-xl group video-card translate-y-4 sm:translate-y-6">
 
-          <img src="{{asset('assets/images/backend_coders_split_1.webp.webp')}}"  width="300"
+          <img src="{{asset('assets/images/backend_coders_split_1.webp.webp')}}" width="300"
     height="195" alt="IT team working on backend development and coding solutions" title="Backend Development Team at Work"
-            class="w-full h-full object-cover transition duration-500 group-hover:opacity-0 group-hover:scale-105">
+            fetchpriority="high" loading="eager" decoding="async"
+            class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
 
-          <video autoplay muted loop playsinline  aria-label="Backend developers coding and building scalable IT solutions" title="Backend Developers in Action"
-            class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition duration-500">
-            <source src="{{asset('assets/images/1(1).mp4')}}"  type="video/mp4">
+          <video muted loop playsinline preload="none" aria-label="Backend developers coding and building scalable IT solutions" title="Backend Developers in Action"
+            class="absolute inset-0 w-full h-full object-cover opacity-0 transition duration-500">
+            <source data-src="{{asset('assets/images/1(1).mp4')}}" type="video/mp4">
           </video>
 
         </div>
 
         <!-- CARD -->
-        <div class="relative overflow-hidden rounded-xl group -translate-y-4 sm:-translate-y-6">
+        <div class="relative overflow-hidden rounded-xl group video-card -translate-y-4 sm:-translate-y-6">
 
           <img src="{{asset('assets/images/backend_coders_split_2.webp.webp')}}"  width="300"
     height="195" alt="Software developers collaborating on web application development and system architecture" title="Web Application Development Team"
-            class="w-full h-full object-cover transition duration-500 group-hover:opacity-0 group-hover:scale-105">
+            class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
 
-          <video autoplay muted loop playsinline  aria-label="Developers building scalable web applications and backend systems" title="Software Development in Progress"
-            class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition duration-500">
-            <source src="{{asset('assets/images/2 (1).mp4')}}" type="video/mp4">
+          <video muted loop playsinline preload="none" aria-label="Developers building scalable web applications and backend systems" title="Software Development in Progress"
+            class="absolute inset-0 w-full h-full object-cover opacity-0 transition duration-500">
+            <source data-src="{{asset('assets/images/2 (1).mp4')}}" type="video/mp4">
           </video>
 
         </div>
 
         <!-- CARD -->
-        <div class="relative overflow-hidden rounded-xl group translate-y-4 sm:translate-y-6">
+        <div class="relative overflow-hidden rounded-xl group video-card translate-y-4 sm:translate-y-6">
 
           <img src="{{asset('assets/images/backend_coders_split_3.webp.webp')}}"  width="300"
     height="195"   alt="IT engineers managing cloud infrastructure and deploying scalable applications"
     title="Cloud Infrastructure and DevOps Engineering"
-            class="w-full h-full object-cover transition duration-500 group-hover:opacity-0 group-hover:scale-105">
+            class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
 
-          <video autoplay muted loop playsinline  aria-label="DevOps engineers deploying applications and managing cloud servers" title="DevOps and Cloud Management in Action"
-            class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition duration-500">
-            <source src="{{asset('assets/images/3 (1).mp4')}}" type="video/mp4">
+          <video muted loop playsinline preload="none" aria-label="DevOps engineers deploying applications and managing cloud servers" title="DevOps and Cloud Management in Action"
+            class="absolute inset-0 w-full h-full object-cover opacity-0 transition duration-500">
+            <source data-src="{{asset('assets/images/3 (1).mp4')}}" type="video/mp4">
           </video>
 
         </div>
 
         <!-- CARD -->
-        <div class="relative overflow-hidden rounded-xl group -translate-y-4 sm:-translate-y-6">
+        <div class="relative overflow-hidden rounded-xl group video-card -translate-y-4 sm:-translate-y-6">
 
           <img src="{{asset('assets/images/backend_coders_split_4.webp.webp')}}"  width="300"
     height="195" alt="IT professionals providing technical support and maintenance services" title="Technical Support and Maintenance Team"
-            class="w-full h-full object-cover transition duration-500 group-hover:opacity-0 group-hover:scale-105">
+            class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
 
-          <video autoplay muted loop playsinline  aria-label="IT professionals providing technical support and maintenance services" title="Technical Support and Maintenance"
-            class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition duration-500">
-            <source src="{{asset('assets/images/4 (1).mp4')}}" type="video/mp4">
+          <video muted loop playsinline preload="none" aria-label="IT professionals providing technical support and maintenance services" title="Technical Support and Maintenance"
+            class="absolute inset-0 w-full h-full object-cover opacity-0 transition duration-500">
+            <source data-src="{{asset('assets/images/4 (1).mp4')}}" type="video/mp4">
           </video>
 
         </div>
@@ -154,17 +148,12 @@
 
     </div>
 
+    </div>
+
   </div>
 
 </section>
 <!-- END HERO SECTIOPN -->
-
-
-<!-- product saection -->
-<!-- SEO ROCKET PRO SHOWCASE -->
-
-
-
 
 
 <!-- WORLD MAP VISUAL -->
@@ -256,10 +245,10 @@
 
         <!-- MAP IMAGE -->
         <img 
-          src="{{ asset('assets/images/map.jpeg.webp') }}" alt="map"   width="1000"
-    height="500"
-          class="w-full lg:h-[500px] grayscale opacity-90 contrast-110 contrast-110 pointer-events-none select-none"
-          alt="World Map"
+          src="{{ asset('assets/images/map-1x.webp') }}" alt="Serve service internationally from kanpur"   width="1568"
+    height="1003"
+          class="w-full lg:h-[500px] grayscale opacity-90 contrast-110 pointer-events-none select-none"
+          style="aspect-ratio: 1568 / 1003;"
         />
 
         <!-- PINS -->
@@ -274,7 +263,7 @@
 
               <!-- ICON -->
               <img 
-                src="https://img.icons8.com/fluency/48/marker.png" alt="marker"
+                src="{{asset('assets/icons/address.png')}}" alt="United States service location"
                 class="w-6 h-6 drop-shadow-lg"
               />
 
@@ -292,7 +281,7 @@
               <span class="absolute h-6 w-6 rounded-full bg-orange-500/30 animate-ping"></span>
 
               <img 
-                src="https://img.icons8.com/fluency/48/marker.png" alt="marker"
+                src="{{asset('assets/icons/address.png')}}" alt="United Kingdom service location"
                 class="w-6 h-6 drop-shadow-lg"
               />
 
@@ -309,7 +298,7 @@
               <span class="absolute h-6 w-6 rounded-full bg-orange-500/30 animate-ping"></span>
 
               <img 
-                src="https://img.icons8.com/fluency/48/marker.png" alt="marker"
+                src="{{asset('assets/icons/address.png')}}" alt="India service location"
                 class="w-6 h-6 drop-shadow-lg"
               />
 
@@ -332,56 +321,32 @@
 <!-- 📊 STATS -->
 <div class="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-6 text-center mt-14">
 
-  <!-- CARD -->
- <div class="stat-card group p-6 rounded-xl bg-gradient-to-br from-orange-50 to-white border border-orange-100 shadow-sm text-center">
-
-  <!-- Number + Symbol -->
-  <div class="flex items-center justify-center gap-1">
-    <h3 class="text-3xl font-bold text-orange-500 counter" data-target="50">0</h3>
-    <span class="text-3xl font-bold text-orange-500">+</span>
+  <!-- CARD: PROJECTS DELIVERED -->
+  <div class="stat-card group p-6 rounded-2xl bg-gradient-to-br from-orange-50 via-white to-white border border-orange-100 shadow-sm text-center transition-all duration-300 hover:shadow-md hover:-translate-y-1 hover:border-orange-200">
+    <div class="flex items-center justify-center gap-0.5">
+      <h3 class="text-3xl font-bold text-orange-500 counter" data-target="50">50+</h3>
+    </div>
+    <p class="text-sm font-semibold text-slate-800 mt-2">Projects Delivered</p>
+    <p class="text-xs text-slate-500 mt-1">Web, apps & custom software</p>
   </div>
 
-  <!-- Label -->
-  <p class="text-sm text-slate-600 mt-2">Projects Delivered</p>
-
-</div>
-
-<div class="stat-card group p-6 rounded-xl bg-gradient-to-br from-orange-50 to-white border border-orange-100 shadow-sm text-center">
-
-  <!-- Number + Symbol -->
-  <div class="flex items-center justify-center gap-1">
-    <h3 class="text-3xl font-bold text-orange-500 counter" data-target="3">0</h3>
-    <span class="text-3xl font-bold text-orange-500">+</span>
+  <!-- CARD: HAPPY CLIENTS -->
+  <div class="stat-card group p-6 rounded-2xl bg-gradient-to-br from-orange-50 via-white to-white border border-orange-100 shadow-sm text-center transition-all duration-300 hover:shadow-md hover:-translate-y-1 hover:border-orange-200">
+    <div class="flex items-center justify-center gap-0.5">
+      <h3 class="text-3xl font-bold text-orange-500 counter" data-target="40">40+</h3>
+    </div>
+    <p class="text-sm font-semibold text-slate-800 mt-2">Happy Clients</p>
+    <p class="text-xs text-slate-500 mt-1">Startups, SMEs & enterprises</p>
   </div>
 
-  <!-- Label -->
-  <p class="text-sm text-slate-600 mt-2">Countries Served</p>
-
-</div>
-
-  <!-- <div class="stat-card group p-6 rounded-xl bg-gradient-to-br from-orange-50 to-white border border-orange-100 shadow-sm">
-    <div class="text-2xl mb-2">🌍</div>
-    <h3 class="text-3xl font-bold text-orange-500 counter" data-target="3">3+</h3>
-    <p class="text-sm text-slate-600 mt-1">Countries Served</p>
-  </div> -->
-
-  <div class="stat-card group p-6 rounded-xl bg-gradient-to-br from-orange-50 to-white border border-orange-100 shadow-sm text-center">
-
-  <!-- Number + Symbol -->
-  <div class="flex items-center justify-center gap-1">
-    <h3 class="text-3xl font-bold text-orange-500 counter" data-target="100">0</h3>
-    <span class="text-3xl font-bold text-orange-500">+</span>
+  <!-- CARD: COUNTRIES SERVED -->
+  <div class="stat-card group p-6 rounded-2xl bg-gradient-to-br from-orange-50 via-white to-white border border-orange-100 shadow-sm text-center transition-all duration-300 hover:shadow-md hover:-translate-y-1 hover:border-orange-200">
+    <div class="flex items-center justify-center gap-0.5">
+      <h3 class="text-3xl font-bold text-orange-500 counter" data-target="3">3+</h3>
+    </div>
+    <p class="text-sm font-semibold text-slate-800 mt-2">Countries Served</p>
+    <p class="text-xs text-slate-500 mt-1">India, UK & international</p>
   </div>
-
-  <!-- Label -->
-  <p class="text-sm text-slate-600 mt-2">Client Satisfaction</p>
-
-</div>
-  <!-- <div class="stat-card group p-6 rounded-xl bg-gradient-to-br from-orange-50 to-white border border-orange-100 shadow-sm">
-    <div class="text-2xl mb-2">⭐</div>
-    <h3 class="text-3xl font-bold text-orange-500 counter" data-target="100">100%</h3>
-    <p class="text-sm text-slate-600 mt-1">Client Satisfaction</p>
-  </div> -->
 
 </div>
 
@@ -448,7 +413,7 @@
 </div>
 </section>
 
-<!-- {{-- prjects --}} -->
+
 
 
 <!-- SERVICE -->
@@ -490,25 +455,8 @@
 
         </div>
 
-        <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="mt-6 grid gap-4 grid-cols-2 sm:grid-cols-2 lg:grid-cols-3">
 
-              <!-- <article data-aos="fade-up" data-aos-delay="100"
-                    class="group relative overflow-hidden rounded-[1.75rem] border border-[#FD5528]/30 bg-gradient-to-b from-white via-white to-orange-50 p-7 shadow-[0_25px_60px_rgba(0,0,0,0.1)] transition duration-500 hover:-translate-y-2 hover:shadow-[#da8871] hover:bg-white/10 hover:backdrop-blur-[18px] text-gray-900">
-                    <div class="pointer-events-none absolute inset-0 rounded-[1.75rem] bg-gradient-to-br from-[#FD5528]/15 via-white/40 to-white/10 opacity-0 transition duration-500 group-hover:opacity-80 backdrop-blur-[0px] group-hover:backdrop-blur-[24px]"></div>
-                    <div class="relative z-10 flex flex-col items-center text-center space-y-4">
-                        <span class="text-[0.6rem] font-semibold uppercase tracking-[0.4em] text-[#FD5528]">Bespoke Web</span>
-                        <div class="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] 
-                    hover:from-[#fb813b] hover:to-[#b00000]  shadow-inner">
-                            <img src="https://img.icons8.com/?size=100&id=DCkAZ79sIYhT&format=png&color=ffffff"  alt="Custom web app" class="h-16 w-16" />
-                        </div>
-                        <h3 class="text-xl font-semibold transition duration-500 group-hover:text-black">Custom Web Applications</h3>
-                        <p class="text-sm text-gray-600 group-hover:text-gray-900">We build secure and scalable custom web applications tailored to your business workflows, customer journeys, and growth goals. Our solutions are performance-focused, easy to maintain, and designed for long-term value.</p>
-                        <div class="flex flex-wrap items-center justify-center gap-3 text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-[#FD5528]">
-                            <span class="rounded-full border border-[#FD5528]/70 px-3 py-1">Scalable</span>
-                            <span class="rounded-full border border-[#FD5528]/70 px-3 py-1">Performance</span>
-                        </div>
-                    </div>
-                </article> -->
           
               <!-- card-0 -->
        <div class="flip-card" data-aos="fade-up" data-aos-delay="100">
@@ -522,20 +470,20 @@
 
                       <div class="flex h-full flex-col items-center justify-center text-center">
 
-                          <span class="mb-2 text-[0.6rem] font-semibold uppercase tracking-[0.4em] text-[#FD5528]">
+                          <span class="mb-2 text-sm md:text-[0.6rem] font-semibold uppercase md:tracking-[0.4em] text-[#FD5528]">
                               Bespoke Web
                           </span>
 
-                          <div class="flex h-24 w-24 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] shadow-xl">
+                          <div class="flex h-12 w-12 md:h-24 md:w-24 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] shadow-xl">
 
                               <img
                                   src="https://img.icons8.com/?size=100&id=DCkAZ79sIYhT&format=png&color=ffffff"
-                                  alt="Custom web app"
-                                  class="h-24 w-24">
+                                 alt="Custom web application development by Backend Coders India"
+                                  class="h-12 w-12 md:h-24 md:w-24">
 
                           </div>
 
-                          <h3 class="mt-4 text-2xl font-bold text-gray-900">
+                          <h3 class="mt-4 text md:text-2xl font-bold text-gray-900">
                               Custom Web Applications
                           </h3>
 
@@ -544,53 +492,56 @@
                   </article>
 
                   <!-- BACK SIDE -->
-                  <article
-                      class="absolute inset-0 overflow-hidden rounded-[1.75rem] bg-gradient-to-br from-[#b00000] via-[#FD5528] to-[#fb813b] p-4 text-white shadow-[0_25px_60px_rgba(0,0,0,0.15)]"
-                      style="
-                          transform:rotateY(180deg);
-                          backface-visibility:hidden;
-                      ">
+               <article
+              class="flip-back bg-gradient-to-br from-[#b00000] via-[#FD5528] to-[#fb813b] text-white shadow-[0_25px_60px_rgba(0,0,0,.15)] p-4 md:p-6 lg:p-8">
 
-                      <div class="flex h-full flex-col items-center justify-center text-center">
+              <div class="flex h-full flex-col justify-center text-center">
 
-                          <!-- <div class="flex h-20 w-20 items-center justify-center rounded-full bg-white/15 backdrop-blur-md">
+                  <div class="text-base sm:text-lg lg:text-2xl font-bold leading-tight">
 
-                              <img
-                                  src="https://img.icons8.com/?size=100&id=DCkAZ79sIYhT&format=png&color=ffffff"
-                                  alt="Custom web app"
-                                  class="h-14 w-14">
+                      Custom Web Applications
 
-                          </div> -->
+                  </div>
 
-                          <h3 class="mt-5 text-xl font-bold">
-                              Custom Web Applications
-                          </h3>
+                  <p class="md:mt-3 text-xs sm:text-sm lg:text-base leading-5 sm:leading-6 lg:leading-7 text-white/90 max-w-[320px] mx-auto">
 
-                          <p class="mt-4 text-sm leading-7 text-white/90">
+                      We build secure custom web applications designed for your workflows,
+                      users, and long-term business growth.
 
-                            We build secure custom web applications designed for your workflows, users, and growth goals.
-                          </p>
+                  </p>
 
-                          <div class="mt-6 flex flex-wrap justify-center gap-2">
+                  <div class="hidden md:block lg:block flex-wrap justify-center gap-2 mt-5">
 
-                              <span class="rounded-full border border-white/30 bg-white/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] backdrop-blur">
-                                  Scalable
+                      <span class="rounded-full border border-white/30 bg-white/10 px-3 py-1 text-[10px] lg:text-[32px] md:text-xs lg:text-sm font-semibold backdrop-blur">
 
-                              </span>
+                          Scalable
 
-                              <span class="rounded-full border border-white/30 bg-white/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] backdrop-blur">
-                                  Performance
-                              </span>
+                      </span>
 
-                              <span class="rounded-full border border-white/30 bg-white/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] backdrop-blur">
-                                  Secure
-                              </span>
+                      <span class="rounded-full border border-white/30 bg-white/10 px-3 py-1 text-[10px] lg:text-[32px] md:text-xs lg:text-sm font-semibold backdrop-blur">
 
-                          </div>
+                          Performance
 
-                      </div>
+                      </span>
 
-                  </article>
+                      <span class="rounded-full border border-white/30 bg-white/10 px-3 py-1 text-[10px] lg:text-[32px] md:text-xs lg:text-sm font-semibold backdrop-blur">
+
+                          Secure
+
+                      </span>
+
+                  </div>
+
+                  <div>
+                    <a href="https://backendcodersindia.com/page/custom-web-applications" aria-label="Explore Custom Web Application Development Services"
+                      class="mt-5 inline-flex items-center justify-center rounded-xl bg-white px-5 py-2.5 text-xs sm:text-sm font-semibold text-[#FD5528] shadow-lg transition-all duration-300 hover:bg-orange-50 hover:text-[#b00000] hover:scale-105 hover:shadow-xl">
+                        Explore Custom Web Applications
+                    </a>
+                  </div>
+
+              </div>
+
+              </article>
 
               </div>
 
@@ -607,20 +558,20 @@
 
                 <div class="flex h-full flex-col items-center justify-center text-center">
 
-                    <span class="text-[0.65rem] font-semibold uppercase tracking-[0.4em] text-[#FD5528]">
+                    <span class="text-sm md:text-[0.65rem] font-semibold uppercase md:tracking-[0.4em] text-[#FD5528]">
                         Design & Build
                     </span>
 
-                    <div class="mt-5 flex h-24 w-24 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] shadow-xl">
+                    <div class="mt-2 md:mt-5 flex h-12 w-12 md:h-24 md:w-24 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] shadow-xl">
 
                         <img
                             src="https://img.icons8.com/?size=100&id=8Y6ohiJ337rc&format=png&color=ffffff"
-                            alt=""
-                            class="h-24 w-24 p-2">
+                           alt="Website design and development by Backend Coders India"
+                            class="h-12 w-12 md:h-24 md:w-24 p-2">
 
                     </div>
 
-                    <h3 class="mt-6 text-2xl font-bold text-slate-900">
+                    <h3 class="mt-2 md:mt-6 text-sm md:text-2xl font-bold text-slate-900">
                        Website Design & Development
                     </h3>
 
@@ -631,42 +582,35 @@
             <!-- BACK -->
             <article class="flip-back bg-gradient-to-br from-[#b00000] via-[#FD5528] to-[#fb813b] p-6 text-white shadow-[0_25px_60px_rgba(0,0,0,0.15)]">
 
-                <div class="flex h-full flex-col">
+                <div class="flex h-full flex-col justify-center text-center">
 
-                    <!-- <div class="flex justify-center">
-
-                        <div class="flex h-20 w-20 items-center justify-center rounded-full bg-white/15 backdrop-blur">
-
-                            <img
-                                src="https://img.icons8.com/?size=100&id=DCkAZ79sIYhT&format=png&color=ffffff"
-                                alt=""
-                                class="h-12 w-12">
-
-                        </div>
-
-                    </div> -->
-
-                    <h3 class="mt-3 text-center text-xl font-bold">
+                    <div class="mt-3 text-center text-sm md:text-xl font-bold">
                         Website Design & Development
-                    </h3>
+                    </div>
 
-                    <p class="mt-2 text-center text-sm leading-7 text-white/90">
+                    <p class="md:mt-2 text-center text-sm md:text-base md:leading-7 text-white/90">
                    We create responsive, SEO-friendly websites that load fast and support better conversions.
 
                     </p>
 
-                    <div class="mt-auto flex flex-wrap justify-center gap-2 pt-5">
+                    <div class="hidden md:block lg:block flex-wrap justify-center gap-2 mt-5">
 
-                        <span class="rounded-full border border-white/30 px-3 py-1 text-[11px]">
+                        <span class="rounded-full border border-white/30 bg-white/10 px-3 py-1 text-[10px] lg:text-[32px] md:text-xs lg:text-sm font-semibold backdrop-blur">
                        SEO Friendly
                         </span>
 
-                        <span class="rounded-full border border-white/30 px-3 py-1 text-[11px]">
+                        <span class="rounded-full border border-white/30 bg-white/10 px-3 py-1 text-[11px] lg:text-[32px] md:text-xs lg:text-sm font-semibold backdrop-blur">
                           Responsive
 
                         </span>
 
                     </div>
+                       <div>
+                    <a href="https://backendcodersindia.com/page/website-design-development" aria-label="Explore Website Design and Development Services"
+                      class="mt-2 inline-flex items-center justify-center rounded-xl bg-white px-5 py-2 text-xs sm:text-sm font-semibold text-[#FD5528] shadow-lg transition-all duration-300 hover:bg-orange-50 hover:text-[#b00000] hover:scale-105 hover:shadow-xl">
+                        Explore Website Design & Development
+                    </a>
+                  </div>
 
                 </div>
 
@@ -686,20 +630,20 @@
 
                 <div class="flex h-full flex-col items-center justify-center text-center">
 
-                    <span class="text-[0.65rem] font-semibold uppercase tracking-[0.4em] text-[#FD5528]">
-                       SaaS Forces
+                    <span class=" text-sm md:text-[0.65rem] font-semibold uppercase md:tracking-[0.4em] text-[#FD5528]">
+                       SaaS Platforms
                     </span>
 
-                    <div class="mt-5 flex h-24 w-24 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] shadow-xl">
+                    <div class="md:mt-5 flex h-12 w-12  md:h-24 md:w-24 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] shadow-xl">
 
                         <img
                             src="https://img.icons8.com/?size=100&id=k8TSihyFk2cJ&format=png&color=ffffff"
-                            alt=""
-                            class="h-24 w-24 p-2">
+                            alt="SaaS development by Backend Coders India"
+                            class="h-12 w-12 md:h-24 md:w-24 p-2">
 
                     </div>
 
-                    <h3 class="mt-6 text-2xl font-bold text-slate-900">
+                    <h3 class="md:mt-6 text-sm md:text-2xl font-bold text-slate-900">
                        SaaS Development
                     </h3>
 
@@ -710,31 +654,18 @@
             <!-- BACK -->
             <article class="flip-back bg-gradient-to-br from-[#b00000] via-[#FD5528] to-[#fb813b] p-6 text-white shadow-[0_25px_60px_rgba(0,0,0,0.15)]">
 
-                <div class="flex h-full flex-col">
+                <div class="flex h-full flex-col justify-center text-center">
 
-                    <!-- <div class="flex justify-center">
-
-                        <div class="flex h-20 w-20 items-center justify-center rounded-full bg-white/15 backdrop-blur">
-
-                            <img
-                                src="https://img.icons8.com/?size=100&id=DCkAZ79sIYhT&format=png&color=ffffff"
-                                alt=""
-                                class="h-12 w-12">
-
-                        </div>
-
-                    </div> -->
-
-                    <h3 class="mt-5 text-center text-xl font-bold">
+                    <div class="mt-5 text-center text-sm md:text-xl font-bold">
                         SaaS Development
-                    </h3>
+                    </div>
 
-                    <p class="mt-4 text-center text-sm leading-7 text-white/90">
+                    <p class="md:mt-4 text-center text-sm md:leading-7 text-white/90">
                      We develop cloud-based SaaS products with scalable systems and smooth user experience.
 
                     </p>
 
-                    <div class="mt-auto flex flex-wrap justify-center gap-2 pt-5">
+                    <div class="hidden md:block lg:block flex-wrap justify-center gap-2 mt-5">
 
                         <span class="rounded-full border border-white/30 px-3 py-1 text-[11px]">
                       Cloud Ready
@@ -746,6 +677,13 @@
                         </span>
 
                     </div>
+
+                       <div>
+                    <a href="https://backendcodersindia.com/page/saas-development" aria-label="Explore SaaS Product Development Services"
+                      class="mt-2 inline-flex items-center justify-center rounded-xl bg-white px-5 py-2 text-xs sm:text-sm font-semibold text-[#FD5528] shadow-lg transition-all duration-300 hover:bg-orange-50 hover:text-[#b00000] hover:scale-105 hover:shadow-xl">
+                        Explore SaaS Development
+                    </a>
+                  </div>
 
                 </div>
 
@@ -764,20 +702,20 @@
 
                 <div class="flex h-full flex-col items-center justify-center text-center">
 
-                    <span class="text-[0.65rem] font-semibold uppercase tracking-[0.4em] text-[#FD5528]">
+                    <span class="text-sm md:text-[0.65rem] font-semibold uppercase md:tracking-[0.4em] text-[#FD5528]">
                    Enterprise Core
                     </span>
 
-                    <div class="mt-5 flex h-24 w-24 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] shadow-xl">
+                    <div class="md:mt-5 flex h-12 w-12 md:h-24 md:w-24 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] shadow-xl">
 
                         <img
                             src="https://img.icons8.com/?size=100&id=Rk5rrSlqrNZO&format=png&color=ffffff"
-                            alt=""
-                            class="h-24 w-24 p-2">
+                            alt="Enterprise Core software by Backend Coders India"
+                            class="h-12 w-12 md:h-24 md:w-24 p-2">
 
                     </div>
 
-                    <h3 class="mt-6 text-2xl font-bold text-slate-900">
+                    <h3 class="md:mt-6 text-sm md:text-2xl font-bold text-slate-900">
                       ERP & POS Software
                     </h3>
 
@@ -788,30 +726,17 @@
             <!-- BACK -->
             <article class="flip-back bg-gradient-to-br from-[#b00000] via-[#FD5528] to-[#fb813b] p-6 text-white shadow-[0_25px_60px_rgba(0,0,0,0.15)]">
 
-                <div class="flex h-full flex-col">
+                <div class="flex h-full flex-col justify-center text-center">
 
-                    <!-- <div class="flex justify-center">
-
-                        <div class="flex h-20 w-20 items-center justify-center rounded-full bg-white/15 backdrop-blur">
-
-                            <img
-                                src="https://img.icons8.com/?size=100&id=Rk5rrSlqrNZO&format=png&color=ffffff"
-                                alt=""
-                                class="h-12 w-12">
-
-                        </div>
-
-                    </div> -->
-
-                    <h3 class="mt-5 text-center text-xl font-bold">
+                    <div class="mt-5 text-center text-sm md:text-xl font-bold">
                       ERP & POS Software
-                    </h3>
+                    </div>
 
-                    <p class="mt-4 text-center text-sm leading-7 text-white/90">
+                    <p class="md:mt-4 text-center text-sm md:leading-7 text-white/90">
                   We build ERP and POS software for billing, inventory, reporting, and operations management.
                     </p>
 
-                    <div class="mt-auto flex flex-wrap justify-center gap-2 pt-5">
+                    <div class="hidden md:block lg:block flex-wrap justify-center gap-2 mt-5">
 
                         <span class="rounded-full border border-white/30 px-3 py-1 text-[11px]">
                           Real-Time
@@ -825,6 +750,12 @@
 
                     </div>
 
+                       <div>
+                    <a href="https://backendcodersindia.com/page/erp-pos-software" aria-label="Explore ERP and POS Software Solutions"
+                      class="mt-2 inline-flex items-center justify-center rounded-xl bg-white px-5 py-2 text-xs sm:text-sm font-semibold text-[#FD5528] shadow-lg transition-all duration-300 hover:bg-orange-50 hover:text-[#b00000] hover:scale-105 hover:shadow-xl">
+                        Explore ERP & POS Software
+                    </a>
+                  </div>
                 </div>
 
             </article>
@@ -843,20 +774,20 @@
 
                 <div class="flex h-full flex-col items-center justify-center text-center">
 
-                    <span class="text-[0.65rem] font-semibold uppercase tracking-[0.4em] text-[#FD5528]">
+                    <span class="text-sm md:text-[0.65rem] font-semibold uppercase md:tracking-[0.4em] text-[#FD5528]">
                    Commerce Pulse
                     </span>
 
-                    <div class="mt-5 flex h-24 w-24 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] shadow-xl">
+                    <div class="md:mt-5 flex h-12 w-12 md:h-24 md:w-24 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] shadow-xl">
 
                         <img
                             src="https://img.icons8.com/?size=100&id=8OxFnElAJgpE&format=png&color=ffffff"
-                            alt=""
-                            class="h-24 w-24 p-2">
+                            alt="E-commerce Development by Backend Coders India"
+                            class="h-12 w-12 md:h-24 md:w-24 p-2">
 
                     </div>
 
-                    <h3 class="mt-6 text-2xl font-bold text-slate-900">
+                    <h3 class="md:mt-6 text-sm md:text-2xl font-bold text-slate-900">
                      E-commerce Development
                     </h3>
 
@@ -867,30 +798,16 @@
             <!-- BACK -->
             <article class="flip-back bg-gradient-to-br from-[#b00000] via-[#FD5528] to-[#fb813b] p-6 text-white shadow-[0_25px_60px_rgba(0,0,0,0.15)]">
 
-                <div class="flex h-full flex-col">
-
-                    <!-- <div class="flex justify-center">
-
-                        <div class="flex h-20 w-20 items-center justify-center rounded-full bg-white/15 backdrop-blur">
-
-                            <img
-                                src="https://img.icons8.com/?size=100&id=8OxFnElAJgpE&format=png&color=ffffff"
-                                alt=""
-                                class="h-12 w-12">
-
-                        </div>
-
-                    </div>-->
-
-                    <h3 class="mt-5 text-center text-xl font-bold">
+                <div class="flex h-full flex-col justify-center text-center">
+                    <div class="mt-5 text-center text-sm md:text-xl font-bold">
                       E-commerce Development
-                    </h3>
+                    </div>
 
-                    <p class="mt-4 text-center text-sm leading-7 text-white/90">
-           We create eCommerce websites with secure checkout, mobile optimization, and product management.
+                    <p class="md:mt-4 text-center text-sm md:leading-7 text-white/90">
+                        We create eCommerce websites with secure, mobile optimization and product management.
                     </p>
 
-                    <div class="mt-auto flex flex-wrap justify-center gap-2 pt-5">
+                    <div class="hidden md:block lg:block flex-wrap justify-center gap-2 mt-5">
 
                         <span class="rounded-full border border-white/30 px-3 py-1 text-[11px]">
                          Secure
@@ -903,6 +820,13 @@
 
                     </div>
 
+                       <div>
+                    <a href="https://backendcodersindia.com/page/ecommerce-development"
+                      class="mt-2 inline-flex items-center justify-center rounded-xl bg-white px-5 py-2 text-xs sm:text-sm font-semibold text-[#FD5528] shadow-lg transition-all duration-300 hover:bg-orange-50 hover:text-[#b00000] hover:scale-105 hover:shadow-xl"
+                      aria-label="Explore E-Commerce Development Solutions">
+                        Explore E-Commerce Development
+                    </a>
+                  </div>
                 </div>
 
             </article>
@@ -921,20 +845,20 @@
 
                 <div class="flex h-full flex-col items-center justify-center text-center">
 
-                    <span class="text-[0.65rem] font-semibold uppercase tracking-[0.4em] text-[#FD5528]">
+                    <span class="text-sm md:text-[0.65rem] font-semibold uppercase md:tracking-[0.4em] text-[#FD5528]">
                    Mobile Pulse
                     </span>
 
-                    <div class="mt-5 flex h-24 w-24 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] shadow-xl">
+                    <div class="md:mt-5 flex h-12 w-12  md:h-24 md:w-24 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] shadow-xl">
 
                         <img
                             src="https://img.icons8.com/?size=100&id=67475&format=png&color=ffffff"
-                            alt=""
-                            class="h-24 w-24 p-2">
+                            alt="Mobile App Development by Backend Coders India"
+                            class="h-12 w-12 md:h-24 md:w-24 p-2">
 
                     </div>
 
-                    <h3 class="mt-6 text-2xl font-bold text-slate-900">
+                    <h3 class="md:mt-6 text-sm md:text-2xl font-bold text-slate-900">
                      Mobile App Development
                     </h3>
 
@@ -945,30 +869,17 @@
             <!-- BACK -->
             <article class="flip-back bg-gradient-to-br from-[#b00000] via-[#FD5528] to-[#fb813b] p-6 text-white shadow-[0_25px_60px_rgba(0,0,0,0.15)]">
 
-                <div class="flex h-full flex-col">
+                <div class="flex h-full flex-col justify-center text-center">
 
-                    <!-- <div class="flex justify-center">
-
-                        <div class="flex h-20 w-20 items-center justify-center rounded-full bg-white/15 backdrop-blur">
-
-                            <img
-                                src="https://img.icons8.com/?size=100&id=67475&format=png&color=ffffff"
-                                alt=""
-                                class="h-12 w-12">
-
-                        </div>
-
-                    </div> -->
-
-                    <h3 class="mt-5 text-center text-xl font-bold">
+                    <div class="mt-5 text-center text-sm md:text-xl font-bold">
                       Mobile App Development
-                    </h3>
+                    </div>
 
-                    <p class="mt-4 text-center text-sm leading-7 text-white/90">
+                    <p class="md:mt-4 text-center text-sm md:leading-7 text-white/90">
                We build Android and cross-platform mobile apps with smooth design and scalable performance.
                     </p>
 
-                    <div class="mt-auto flex flex-wrap justify-center gap-2 pt-5">
+                    <div class="hidden md:block lg:block flex-wrap justify-center gap-2 mt-5">
 
                         <span class="rounded-full border border-white/30 px-3 py-1 text-[11px]">
                           Smooth UI
@@ -980,6 +891,13 @@
                         </span>
 
                     </div>
+
+                       <div>
+                    <a href="https://backendcodersindia.com/page/mobile-app-development" aria-label="Explore Mobile Application Development Services"
+                      class="mt-2 inline-flex items-center justify-center rounded-xl bg-white px-5 py-2 text-xs sm:text-sm font-semibold text-[#FD5528] shadow-lg transition-all duration-300 hover:bg-orange-50 hover:text-[#b00000] hover:scale-105 hover:shadow-xl">
+                        Explore Mobile App Development
+                    </a>
+                  </div>
 
                 </div>
 
@@ -998,20 +916,20 @@
 
                 <div class="flex h-full flex-col items-center justify-center text-center">
 
-                    <span class="text-[0.65rem] font-semibold uppercase tracking-[0.4em] text-[#FD5528]">
+                    <span class="text-sm md:text-[0.65rem] font-semibold uppercase md:tracking-[0.4em] text-[#FD5528]">
                   API Layer
                     </span>
 
-                    <div class="mt-5 flex h-24 w-24 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] shadow-xl">
+                    <div class="md:mt-5 flex h-12 w-12 md:h-24 md:w-24 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] shadow-xl">
 
                         <img
                             src="https://img.icons8.com/?size=100&id=6kPR2dlup5KK&format=png&color=ffffff"
-                            alt=""
-                            class="h-24 w-24 p-2">
+                            alt="API Development by Backend Coders India"
+                            class="h-12 w-12 md:h-24 md:w-24 p-2">
 
                     </div>
 
-                    <h3 class="mt-6 text-2xl font-bold text-slate-900">
+                    <h3 class="md:mt-6 text-sm md:text-2xl font-bold text-slate-900">
                      API Development
                     </h3>
 
@@ -1022,30 +940,17 @@
             <!-- BACK -->
             <article class="flip-back bg-gradient-to-br from-[#b00000] via-[#FD5528] to-[#fb813b] p-6 text-white shadow-[0_25px_60px_rgba(0,0,0,0.15)]">
 
-                <div class="flex h-full flex-col">
+                <div class="flex h-full flex-col justify-center text-center">
 
-                    <!-- <div class="flex justify-center">
+                    <div class="mt-5 text-center text-sm md:text-xl font-bold">
+                     API Development
+                    </div>
 
-                        <div class="flex h-20 w-20 items-center justify-center rounded-full bg-white/15 backdrop-blur">
-
-                            <img
-                                src="https://img.icons8.com/?size=100&id=6kPR2dlup5KK&format=png&color=ffffff"
-                                alt=""
-                                class="h-12 w-12">
-
-                        </div>
-
-                    </div>-->
-
-                    <h3 class="mt-5 text-center text-xl font-bold">
-                      Mobile App Development
-                    </h3>
-
-                    <p class="mt-4 text-center text-sm leading-7 text-white/90">
+                    <p class="md:mt-4 text-center text-sm md:leading-7 text-white/90">
                  We create secure APIs for apps, SaaS platforms, and third-party integrations.
                     </p>
 
-                    <div class="mt-auto flex flex-wrap justify-center gap-2 pt-5">
+                    <div class="hidden md:block lg:block flex-wrap justify-center gap-2 mt-5">
 
                         <span class="rounded-full border border-white/30 px-3 py-1 text-[11px]">
                        REST API
@@ -1056,6 +961,13 @@
                           Web Hooks
                         </span>
                     </div>
+
+                       <div>
+                    <a href="https://backendcodersindia.com/page/api-development" aria-label="Explore API Architecture and Integration Services"
+                      class="mt-2 inline-flex items-center justify-center rounded-xl bg-white px-5 py-2 text-xs sm:text-sm font-semibold text-[#FD5528] shadow-lg transition-all duration-300 hover:bg-orange-50 hover:text-[#b00000] hover:scale-105 hover:shadow-xl">
+                        Explore API Development
+                    </a>
+                  </div>
 
                 </div>
 
@@ -1074,20 +986,20 @@
 
                 <div class="flex h-full flex-col items-center justify-center text-center">
 
-                    <span class="text-[0.65rem] font-semibold uppercase tracking-[0.4em] text-[#FD5528]">
+                    <span class="text-sm md:text-[0.65rem] font-semibold uppercase md:tracking-[0.4em] text-[#FD5528]">
                 Growth Duo
                     </span>
 
-                    <div class="mt-5 flex h-24 w-24 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] shadow-xl">
+                    <div class="md:mt-5 flex h-12 w-12 md:h-24 md:w-24 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] shadow-xl">
 
                         <img
                             src="https://img.icons8.com/?size=100&id=103102&format=png&color=ffffff"
-                            alt=""
-                            class="h-24 w-24 p-2">
+                            alt="Growth Duo by Backend Coders India"
+                            class="h-12 w-12 md:h-24 md:w-24 p-2">
 
                     </div>
 
-                    <h3 class="mt-6 text-2xl font-bold text-slate-900">
+                    <h3 class="md:mt-6 text-sm md:text-2xl font-bold text-slate-900">
                     Digital Marketing & SEO
                     </h3>
 
@@ -1098,30 +1010,17 @@
             <!-- BACK -->
             <article class="flip-back bg-gradient-to-br from-[#b00000] via-[#FD5528] to-[#fb813b] p-6 text-white shadow-[0_25px_60px_rgba(0,0,0,0.15)]">
 
-                <div class="flex h-full flex-col">
+                <div class="flex h-full flex-col justify-center text-center">
 
-                    <!-- <div class="flex justify-center">
-
-                        <div class="flex h-20 w-20 items-center justify-center rounded-full bg-white/15 backdrop-blur">
-
-                            <img
-                                src="https://img.icons8.com/?size=100&id=103102&format=png&color=ffffff"
-                                alt=""
-                                class="h-12 w-12">
-
-                        </div> 
-
-                    </div>-->
-
-                    <h3 class="mt-2 text-center text-xl font-bold">
+                    <div class="mt-4 text-center text-sm md:text-xl font-bold">
                      Digital Marketing & SEO
-                    </h3>
+                    </div>
 
-                    <p class="mt-2 text-center text-sm leading-7 text-white/90">
+                    <p class="md:mt-5 text-center text-sm md:leading-7 text-white/90">
                         We help businesses grow visibility through SEO, content, and digital marketing strategies.
                     </p>
 
-                    <div class="mt-auto flex flex-wrap justify-center gap-2 pt-5">
+                    <div class="hidden md:block lg:block flex-wrap justify-center gap-2 mt-5">
 
                         <span class="rounded-full border border-white/30 px-3 py-1 text-[11px]">
                         Analytics
@@ -1132,6 +1031,13 @@
 
                         </span>
                     </div>
+
+                       <div>
+                    <a href="{{ route('frontend.seo') }}" aria-label="Explore SEO and Digital Marketing Services"
+                      class="mt-2 inline-flex items-center justify-center rounded-xl bg-white px-5 py-2 text-xs sm:text-sm font-semibold text-[#FD5528] shadow-lg transition-all duration-300 hover:bg-orange-50 hover:text-[#b00000] hover:scale-105 hover:shadow-xl">
+                        Explore SEO & Digital Marketing
+                    </a>
+                  </div>
 
                 </div>
 
@@ -1153,20 +1059,20 @@
 
                 <div class="flex h-full flex-col items-center justify-center text-center">
 
-                    <span class="text-[0.65rem] font-semibold uppercase tracking-[0.4em] text-[#FD5528]">
+                    <span class="text-sm md:text-[0.65rem] font-semibold uppercase md:tracking-[0.4em] text-[#FD5528]">
                Startup Sprint
                     </span>
 
-                    <div class="mt-5 flex h-24 w-24 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] shadow-xl">
+                    <div class="md:mt-5 flex h-12 w-12 md:h-24 md:w-24 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] shadow-xl">
 
                         <img
                             src="https://img.icons8.com/?size=100&id=KR7IxBJfODTv&format=png&color=ffffff"
-                            alt=""
-                            class="h-24 w-24 p-2">
+                            alt="Startup Sprint by Backend Coders India"
+                            class="h-12 w-12 md:h-24 md:w-24 p-2">
 
                     </div>
 
-                    <h3 class="mt-6 text-2xl font-bold text-slate-900">
+                    <h3 class="md:mt-6 text-sm md:text-2xl font-bold text-slate-900">
                   Startup MVP Development
                     </h3>
 
@@ -1177,30 +1083,16 @@
             <!-- BACK -->
             <article class="flip-back bg-gradient-to-br from-[#b00000] via-[#FD5528] to-[#fb813b] p-6 text-white shadow-[0_25px_60px_rgba(0,0,0,0.15)]">
 
-                <div class="flex h-full flex-col">
-
-                    <!-- <div class="flex justify-center">
-
-                        <div class="flex h-20 w-20 items-center justify-center rounded-full bg-white/15 backdrop-blur">
-
-                            <img
-                                src="https://img.icons8.com/?size=100&id=KR7IxBJfODTv&format=png&color=ffffff"
-                                alt=""
-                                class="h-12 w-12">
-
-                        </div>
-
-                    </div> -->
-
-                    <h3 class="mt-5 text-center text-xl font-bold">
+                <div class="flex h-full flex-col justify-center text-center">
+                    <div class="mt-5 text-center text-sm md:text-xl font-bold">
                     Startup MVP Development
-                    </h3>
+                    </div>
 
-                    <p class="mt-4 text-center text-sm leading-7 text-white/90">
+                    <p class="md:mt-4 text-center text-sm md:leading-7 text-white/90">
        We help founders launch MVPs quickly with lean development and scalable foundations.
                     </p>
 
-                    <div class="mt-auto flex flex-wrap justify-center gap-2 pt-5">
+                    <div class="hidden md:block lg:block flex-wrap justify-center gap-2 mt-5">
 
                         <span class="rounded-full border border-white/30 px-3 py-1 text-[11px]">
                         Rapid Launch
@@ -1210,6 +1102,13 @@
                        Validated
                         </span>
                     </div>
+
+                       <div>
+                    <a href="https://backendcodersindia.com/page/startup-mvp-development" aria-label="Explore Startup MVP Engineering and Launch Services"
+                      class="mt-2 inline-flex items-center justify-center rounded-xl bg-white px-5 py-2 text-xs sm:text-sm font-semibold text-[#FD5528] shadow-lg transition-all duration-300 hover:bg-orange-50 hover:text-[#b00000] hover:scale-105 hover:shadow-xl">
+                        Explore Startup MVP Development
+                    </a>
+                  </div>
 
                 </div>
 
@@ -1370,123 +1269,169 @@ Understand goals, audience, scope, and technical needs.
   </div>
 
 </section>
-<!-- pr -->
+
 
 <!-- BLOG -->
-<section id="blog" class="bg-white px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
 
-  <div class="max-w-9xl lg:mx-24 mx-auto">
 
-    <!-- HEADER -->
-    <div class="text-center max-w-2xl mx-auto">
+   <section class="py-12 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-     <p 
-      data-aos="fade-up"
-      class="inline-block text-xs sm:text-sm font-semibold uppercase tracking-[0.35em] 
-         text-[#FD5528] relative px-5 py-2 rounded-full 
-         bg-white/60 backdrop-blur-md 
-         shadow-[0_8px_20px_rgba(0,0,0,0.08)] 
-         border border-white/40
-         before:absolute before:inset-0 before:rounded-full 
-         before:bg-gradient-to-r before:from-[#FD5528]/20 before:to-orange-200/30 
-         before:-z-10">
+        <!-- Heading -->
+        <div class="text-center max-w-3xl mx-auto mb-14">
+            <span class="inline-flex items-center px-4 py-1 rounded-full bg-orange-100 text-orange-600 text-sm font-semibold">
+                Latest Insights
+            </span>
 
-          Blog
+            <h2 class="mt-4 text-4xl md:text-5xl font-bold text-gray-900">
+                Latest Blogs &
+                <span class="text-orange-500">Industry News</span>
+            </h2>
 
-    </p>
-      <!-- <p class="text-[10px] sm:text-xs font-semibold uppercase tracking-[0.35em] text-[#FD5528]">
-        Blog
-      </p> -->
-
-      <h2 class="mt-3 sm:mt-4 text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 leading-tight">
-        Insights, Updates & Technology Expertise
-      </h2>
-
-      <p class="mt-3 text-sm sm:text-base text-gray-500">
-       Stay updated with our latest insights on web development, software architecture, SaaS growth, UI/UX, mobile apps, SEO, digital marketing, AI solutions, and scalable systems for modern businesses in India and across global markets.
-      </p>
-
-    </div>
-
-    <!-- GRID -->
-    <div class="mt-10 sm:mt-12 lg:mt-16 grid gap-6 sm:gap-8 grid-cols-1 md:grid-cols-2">
-
-      <!-- CARD -->
-      <article 
-        data-aos="fade-up"
-        class="group rounded-2xl border border-gray-200 bg-white p-5 sm:p-6 lg:p-7 
-               shadow-sm transition duration-300 
-               hover:shadow-lg hover:shadow-[#FD5528]/20 
-               hover:-translate-y-1">
-
-        <p class="text-[10px] sm:text-xs font-semibold uppercase tracking-[0.35em] text-[#FD5528]">
-          Build
-        </p>
-
-        <h3 class="mt-3 text-lg sm:text-xl font-semibold text-gray-900 leading-snug group-hover:text-[#FD5528] transition">
-          How to Build Scalable SaaS Products for Growing Businesses
-        </h3>
-
-        <p class="mt-3 text-sm sm:text-base text-gray-600">
-         Learn how architecture, user experience, pricing logic, and deployment strategy shape successful SaaS platforms.
-        </p>
-
-        <!-- CTA -->
-        <div class="mt-4 flex items-center text-sm font-medium text-[#FD5528] opacity-0 group-hover:opacity-100 transition">
-          <a href="{{ route('frontend.blog') }}" class="underline">
-            Read More →
-          </a>
+            <p class="mt-5 text-lg text-gray-600 leading-relaxed">
+                Discover expert articles on Web Development, SEO, Digital Marketing,
+                Custom Software, Mobile Apps, AI and Business Growth.
+            </p>
         </div>
 
-      </article>
+        <!-- Blog Grid -->
+        <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-2">
 
-      <!-- CARD -->
-      <article 
-        data-aos="fade-up"
-        data-aos-delay="150"
-        class="group rounded-2xl border border-gray-200 bg-white p-5 sm:p-6 lg:p-7 
-               shadow-sm transition duration-300 
-               hover:shadow-lg hover:shadow-[#FD5528]/20 
-               hover:-translate-y-1">
+                <article
+                class="group overflow-hidden rounded-3xl bg-white shadow-lg transition duration-500 hover:-translate-y-2 hover:shadow-2xl">
 
-        <p class="text-[10px] sm:text-xs font-semibold uppercase tracking-[0.35em] text-[#FD5528]">
-          Design
-        </p>
+                <a href="https://backendcodersindia.com/blog/custom-web-application-development-company-in-india-build-smarter-software-for-business-growth">
+                    <div class="relative h-64 overflow-hidden">
 
-        <h3 class="mt-3 text-lg sm:text-xl font-semibold text-gray-900 leading-snug group-hover:text-[#FD5528] transition">
-          Why Businesses in Kanpur Need SEO-Friendly Websites in 2026
-        </h3>
+                        <img
+                            src="{{ asset('assets/images/blogcus.png') }}"
+                            alt="Custom Software Development"
+                            class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
 
-        <p class="mt-3 text-sm sm:text-base text-gray-600">
-          Discover how local SEO, mobile performance, and content structure help businesses rank better and generate more leads.
-        </p>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
 
-        <!-- CTA -->
-        <div class="mt-4 flex items-center text-sm font-medium text-[#FD5528] opacity-0 group-hover:opacity-100 transition">
-          <a href="{{ route('frontend.blog') }}" class="underline">
-            Read More →
-          </a>
+                        <span
+                            class="absolute left-5 bottom-5 bg-black text-white px-4 py-2 rounded-full text-xs font-semibold">
+                            CUSTOM SOFTWARE
+                        </span>
+
+                        <span
+                            class="absolute right-5 bottom-5 bg-white/90 backdrop-blur px-4 py-2 rounded-full text-sm font-semibold text-gray-700">
+                            {{ $homepageBlogDate('custom-web-application-development-company-in-india-build-smarter-software-for-business-growth', '09 Jul, 2026') }}
+                        </span>
+
+                    </div>
+                </a>
+
+                <div class="p-7">
+
+                    <h3 class="text-2xl font-bold leading-tight text-gray-900 group-hover:text-orange-500 transition">
+                        <a href="https://backendcodersindia.com/blog/custom-web-application-development-company-in-india-build-smarter-software-for-business-growth">
+                            Build a custom application around your workflows, integrations, and business goals. This guide explains what to plan before development begins.
+                        </a>
+                    </h3>
+
+                    <p class="mt-4 text-gray-600 leading-8 line-clamp-3">
+                        Build a custom application around your workflows, integrations, and business goals. This guide explains what to plan before development begins.
+                    </p>
+
+                    <div class="mt-2 flex items-center justify-end border-t pt-2">
+                        <a
+                            href="https://backendcodersindia.com/blog/custom-web-application-development-company-in-india-build-smarter-software-for-business-growth"
+                            class="font-semibold text-orange-500 hover:text-orange-600 transition">
+                            Read More →
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+            <!-- Third Card -->
+
+            <article
+                class="group overflow-hidden rounded-3xl bg-white shadow-lg transition duration-500 hover:-translate-y-2 hover:shadow-2xl">
+
+                <a href="https://backendcodersindia.com/blog/how-much-does-website-development-cost-for-startups-in-india-2026-guide">
+                    <div class="relative h-64 overflow-hidden">
+
+                        <img
+                            src="{{ asset('assets/images/blogweb.webp') }}"
+                            alt="SEO Services"
+                            class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+
+                        <span
+                            class="absolute left-5 bottom-5 bg-black text-white px-4 py-2 rounded-full text-xs font-semibold">
+                            WEBSITE DEVELOPMENT
+                        </span>
+
+                        <span
+                            class="absolute right-5 bottom-5 bg-white/90 backdrop-blur px-4 py-2 rounded-full text-sm font-semibold text-gray-700">
+                            {{ $homepageBlogDate('how-much-does-website-development-cost-for-startups-in-india-2026-guide', '05 Jul, 2026') }}
+                        </span>
+
+                    </div>
+                </a>
+
+                <div class="p-7">
+
+                    <h3 class="text-2xl font-bold leading-tight text-gray-900 group-hover:text-orange-500 transition">
+                        <a href="https://backendcodersindia.com/blog/how-much-does-website-development-cost-for-startups-in-india-2026-guide">
+                          How Much Does Website Development Cost for Startups in India? (2026 Guide)
+                        </a>
+                    </h3>
+
+                    <p class="mt-4 text-gray-600 leading-8 line-clamp-3">
+                        Compare website project scopes, understand what affects an estimate, and plan for hosting, maintenance, and search-ready foundations.
+                    </p>
+
+                    <div class="mt-2 flex items-center justify-end border-t pt-2">
+                        <a
+                            href="https://backendcodersindia.com/blog/how-much-does-website-development-cost-for-startups-in-india-2026-guide"
+                            class="font-semibold text-orange-500 hover:text-orange-600 transition">
+                            Read More →
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
         </div>
 
-      </article>
+        <!-- Button -->
+        <div class="text-center mt-6">
+
+            <a
+                href="{{ route('frontend.blog') }}"
+                class="inline-flex items-center gap-3 rounded-full border-2 border-orange-500 text-orange-600 px-8 py-4 font-semibold hover:text-white transition hover:bg-orange-600 shadow-lg hover:shadow-xl">
+                View All Blogs
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none"
+                    viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+            </a>
+
+        </div>
 
     </div>
-
-  </div>
-
 </section>
+
 <!-- END BLOG -->
 
-
-<!-- 
-{{-- faq --}} -->
+<!--{{-- faq --}} -->
 <section class="relative overflow-hidden bg-gradient-to-br from-white via-slate-50 to-slate-100 py-16 sm:py-20 lg:py-24 px-4 sm:px-6">
 
   <div class="max-w-6xl lg:max-w-7xl mx-auto relative z-10">
 
     <!-- Heading -->
     <div class="text-center mb-10 sm:mb-14">
-      <p 
+      <h2 
         data-aos="fade-up"
         class="inline-block text-xs sm:text-sm font-semibold uppercase tracking-[0.35em] 
           text-[#FD5528] relative px-5 py-2 rounded-full 
@@ -1497,7 +1442,7 @@ Understand goals, audience, scope, and technical needs.
           before:bg-gradient-to-r before:from-[#FD5528]/20 before:to-orange-200/30 
           before:-z-10">
         FAQ
-      </p>
+      </h2>
 
       <h2 class="mt-5 text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900">
         Frequently Asked Questions
@@ -1515,11 +1460,20 @@ Understand goals, audience, scope, and technical needs.
       <!-- LEFT IMAGE -->
       <div class="order-1 lg:order-2 relative rounded-[32px] bg-gradient-to-br from-[#FFEDD5] via-white to-[#FEE2E2] p-6 shadow-[0_25px_60px_rgba(253,85,40,0.25)]">
         <div class="absolute inset-x-4 top-4 h-2 rounded-full bg-gradient-to-r from-[#FD5528]/60 to-orange-200/70 blur-3xl opacity-70"></div>
-        <img 
-          src="{{asset('assets/images/faq.png')}}"
-          alt="FAQ Illustration"
-          class="rounded-2xl shadow-2xl w-full h-[360px] object-cover relative z-10"
-        >
+      <img
+    src="/assets/images/faq-1x.webp"
+    srcset="
+        /assets/images/faq-1x.webp 560w,
+        /assets/images/faq-1x.webp 768w,
+        /assets/images/faq-1x.webp 1200w
+    "
+    sizes="(max-width:768px) 100vw, 560px"
+    width="560"
+    height="373"
+    alt="FAQ Illustration for Backend Coders India"
+    loading="lazy"
+    decoding="async"
+    class="rounded-2xl shadow-2xl w-full h-[360px] object-cover">
       </div>
 
       <!-- FAQ LIST -->
@@ -1649,294 +1603,487 @@ Understand goals, audience, scope, and technical needs.
 
 
 <!-- testimonial -->
-<section class="relative py-28 px-6 overflow-hidden">
+<style>
+  .testimonials-swiper .swiper-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
 
-  <!-- BACKGROUND GLOW -->
-  <div class="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_top,_#FD5528,_transparent_60%)]"></div>
+  .testimonials-swiper .swiper-pagination-bullet {
+    width: 0.7rem;
+    height: 0.7rem;
+    background: #fd5528;
+    opacity: 0.35;
+    transition: all 0.3s ease;
+  }
 
-  <div class="relative max-w-6xl mx-auto text-center">
+  .testimonials-swiper .swiper-pagination-bullet-active {
+    opacity: 1;
+    transform: scale(1.15);
+    box-shadow: 0 0 0 4px rgba(253, 85, 40, 0.16);
+  }
 
+  .testimonials-swiper .swiper-button-next::after,
+  .testimonials-swiper .swiper-button-prev::after {
+    content: none;
+  }
 
-     <span 
-    
-      data-aos="fade-up"
-      class="inline-block text-xs sm:text-sm font-semibold uppercase tracking-[0.35em] 
-         text-[#FD5528] relative px-5 py-2 rounded-full 
-         bg-white/60 backdrop-blur-md 
-         shadow-[0_8px_20px_rgba(0,0,0,0.08)] 
-         border border-white/40
-         before:absolute before:inset-0 before:rounded-full 
-         before:bg-gradient-to-r before:from-[#FD5528]/20 before:to-orange-200/30 
-         before:-z-10">
+  .testimonials-swiper .testimonial-card {
+    min-height: 24rem;
+    justify-content: space-between;
+  }
 
-         Testimonials
-      </span>
-    <!-- BADGE -->
-    <!-- <span class="inline-block text-xs font-semibold uppercase tracking-[0.35em] text-[#FD5528] px-5 py-2 rounded-full bg-white shadow">
-      Testimonials
-    </span> -->
+  .testimonials-swiper .review-text {
+    min-height: 5.25rem;
+    line-height: 1.7;
+  }
+</style>
 
-    <!-- TITLE -->
-    <h2 class="mt-6 text-3xl md:text-5xl font-bold text-black">
-      What Our <span class="text-[#FD5528]">Clients Say</span>
-    </h2>
-    <p> Our clients trust Backend Coders India for clear communication, reliable development, scalable architecture, SEO growth, and digital solutions that create measurable business impact.</p>
+<section class="relative overflow-hidden bg-white px-6 py-20 sm:py-24 lg:py-28">
+    <div class="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_top,_#FD5528,_transparent_60%)]"></div>
 
-    <!-- SWIPER -->
-    <div class="swiper mt-16">
+    <div class="relative mx-auto max-w-7xl text-center">
+      <h2
+        data-aos="fade-up"
+        class="inline-block rounded-full border border-white/40 bg-white/60 px-5 py-2 text-xs font-semibold uppercase tracking-[0.35em] text-[#FD5528] shadow-[0_8px_20px_rgba(0,0,0,0.08)] backdrop-blur-md before:absolute before:inset-0 before:-z-10 before:rounded-full before:bg-gradient-to-r before:from-[#FD5528]/20 before:to-orange-200/30"
+      >
+        Testimonials
+      </h2>
 
-      <div class="swiper-wrapper">
+      <h2 class="mt-6 text-3xl font-bold text-black md:text-5xl">
+        What Our <span class="text-[#FD5528]">Clients Say</span>
+      </h2>
 
-        <!-- SLIDE -->
-        <div class="swiper-slide">
-          <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition duration-300 p-6 max-w-md border border-gray-100">
+      <p class="mx-auto mt-4 max-w-3xl text-base leading-relaxed text-slate-600 sm:text-lg">
+        Our clients trust Backend Coders India for clear communication, reliable delivery, thoughtful architecture, and measurable business growth.
+      </p>
 
-            <!-- HEADER -->
-            <div class="flex items-center justify-between mb-4">
-
-              <!-- USER -->
-              <div class="flex items-center gap-3">
-                <div class="relative">
-                  <img src="{{ asset('assets/images/client1-d') }}" alt="client"
-                      class="w-12 h-12 rounded-full object-cover">
-
-                  <!-- VERIFIED BADGE -->
-                  <span class="absolute -bottom-1 -right-1 bg-green-500 text-white text-[10px] px-1 rounded-full">✔</span>
+      <div class="testimonials-swiper swiper mt-14 overflow-hidden sm:mt-16">
+        <div class="swiper-wrapper gap-2">
+          @if(false) {{-- Omitted until this review has a verifiable public source link. --}}
+          <div class="swiper-slide h-auto">
+            <article class="testimonial-card flex h-full flex-col rounded-[28px] border border-gray-100 bg-white p-6 text-left shadow-[0_20px_60px_rgba(15,23,42,0.08)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_25px_70px_rgba(253,85,40,0.16)] sm:p-7">
+              <div class="flex items-center justify-between gap-3">
+                <div class="flex items-center gap-3">
+                  <div class="relative">
+                    <img src="{{ asset('assets/images/client1-d-84.webp') }}" alt="Dashawn Robinson testimonial for Backend Coders India" class="h-12 w-12 rounded-full object-cover" />
+                    <span class="absolute -bottom-1 -right-1 rounded-full bg-green-500 px-1 text-[10px] text-white">✔</span>
+                  </div>
+                  <div>
+                    <h3 class="text-sm font-semibold text-gray-900">Dashawn Robinson</h3>
+                    <p class="text-xs text-gray-500">June 6, 2025</p>
+                  </div>
                 </div>
-
-                <div>
-                  <h4 class="font-semibold text-gray-900 text-sm">Dashawn Robinson</h4>
-                  <p class="text-xs text-gray-500">June 6, 2025</p>
-                </div>
+                <a href="https://www.upwork.com/freelancers/~0116b8c17b9610ea4e" target="_blank" rel="noopener noreferrer" aria-label="View Backend Coders India on Upwork">
+                  <img src="{{ asset('assets/icons/upwork.png') }}" alt="Upwork client review" class="h-8 w-8 opacity-80" />
+                </a>
               </div>
 
-              <!-- GOOGLE LOGO -->
-          <img src="https://upload.wikimedia.org/wikipedia/commons/f/f4/Upwork_Logo.svg" alt="logo"
-              class="w-12 opacity-80">
+              <div class="mt-4 flex items-center gap-1 text-yellow-400">
+                <span class="text-lg">★★★★★</span>
+              </div>
+
+              <p class="review-text mt-4 text-sm leading-relaxed text-slate-700"
+                data-full="Freelancer was extremely communicative, skilled, prompt and professional. Their work exceeded my expectation. I’d definitely hire them again and refer them to my colleagues."
+                data-short="Freelancer was extremely communicative, skilled, prompt and professional. Their work exceeded my expectation. I’d definitely hire them again and refer them to my colleagues.">
+                Freelancer was extremely communicative, skilled, prompt and professional. Their work exceeded my expectation. I’d definitely hire them again and refer them to my colleagues.
+              </p>
+            
+
+              <div class="mt-6 flex items-center justify-between border-t border-gray-100 pt-4 text-xs text-gray-500">
+                <span class="rounded-full bg-gray-100 px-2.5 py-1 text-orange-500">United States</span>
+                <span class="font-semibold text-orange-700">CEO</span>
+              </div>
+            </article>
+          </div>
+          @endif
+
+            <div class="swiper-slide h-auto">
+            <article class="testimonial-card flex h-full flex-col rounded-[28px] border border-gray-100 bg-white p-6 text-left shadow-[0_20px_60px_rgba(15,23,42,0.08)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_25px_70px_rgba(253,85,40,0.16)] sm:p-7">
+              <div class="flex items-center justify-between gap-3">
+                <div class="flex items-center gap-3">
+                  <div class="relative">
+                    <img src="{{ asset('assets/images/google1.png') }}" alt="vishwanath pratap singh Yadav testimonial for Backend Coders India" class="h-12 w-12 rounded-full object-cover" />
+                    <span class="absolute -bottom-1 -right-1 rounded-full bg-green-500 px-1 text-[10px] text-white">✔</span>
+                  </div>
+                  <div>
+                    <h3 class="text-sm font-semibold text-gray-900">vishwanath pratap singh Yadav</h3>
+                    <p class="text-xs text-gray-500">jan 15, 2025</p>
+                  </div>
+                </div>
+                <img src="{{ asset('assets/icons/google.png') }}" alt="Google translation for Backend Coders India" class="h-8 w-8 opacity-80" />
+              </div>
+
+              <div class="mt-4 flex items-center gap-1 text-yellow-400">
+                <span class="text-lg">★★★★★</span>
+              </div>
+
+              <p class="review-text mt-4 text-sm leading-relaxed text-slate-700"
+                data-full="Ravindra went above and beyond fixing major issues left by a previous developer, saving the project with top-notch skills, great attitude, and reliability."
+                data-short="Ravindra went above and beyond fixing major issues left by a previous developer, saving the project with top-notch skills, great attitude, and reliability.">
+         “Excellent experience with Backend Coders India. Their team was professional, responsive, technically strong, and delivered quality results on time. Highly recommended for reliable IT solutions.”
+              </p>
+            
+
+              <div class="mt-6 flex items-center justify-between border-t border-gray-100 pt-4 text-xs text-gray-500">
+                <span class="rounded-full bg-gray-100 px-2.5 py-1 text-orange-500">India</span>
+                <span class="font-medium text-orange-500">CEO</span>
+              </div>
+            </article>
+          </div>
+
+          <div class="swiper-slide h-auto">
+            <article class="testimonial-card flex h-full flex-col rounded-[28px] border border-gray-100 bg-white p-6 text-left shadow-[0_20px_60px_rgba(15,23,42,0.08)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_25px_70px_rgba(253,85,40,0.16)] sm:p-7">
+              <div class="flex items-center justify-between gap-3">
+                <div class="flex items-center gap-3">
+                  <div class="relative">
+                    <img src="{{ asset('assets/images/client-mj-84.webp') }}" alt="Minwoon Jung testimonial for Backend Coders India" class="h-12 w-12 rounded-full object-cover" />
+                    <span class="absolute -bottom-1 -right-1 rounded-full bg-green-500 px-1 text-[10px] text-white">✔</span>
+                  </div>
+                  <div>
+                    <h3 class="text-sm font-semibold text-gray-900">Minwoon Jung</h3>
+                    <p class="text-xs text-gray-500">May 5, 2025</p>
+                  </div>
+                </div>
+                <a href="https://www.upwork.com/freelancers/~0116b8c17b9610ea4e" target="_blank" rel="noopener noreferrer" aria-label="View Backend Coders India on Upwork">
+                  <img src="{{ asset('assets/icons/upwork.png') }}" alt="Upwork client review" class="h-8 w-8 opacity-80" />
+                </a>
+              </div>
+
+              <div class="mt-4 flex items-center gap-1 text-yellow-400">
+                <span class="text-lg">★★★★★</span>
+              </div>
+
+              <p class="review-text mt-4 text-sm leading-relaxed text-slate-700"
+                data-full="Ravindra went above and beyond fixing major issues left by a previous developer, saving the project with top-notch skills, great attitude, and reliability."
+                data-short="Ravindra went above and beyond fixing major issues left by a previous developer, saving the project with top-notch skills, great attitude, and reliability.">
+                Ravindra went above and beyond fixing major issues left by a previous developer, saving the project with top-notch skills, great attitude, and reliability.
+              </p>
+            
+
+              <div class="mt-6 flex items-center justify-between border-t border-gray-100 pt-4 text-xs text-gray-500">
+                <span class="rounded-full bg-gray-100 px-2.5 py-1 text-orange-500">United States</span>
+                <span class="font-medium text-orange-500">CEO</span>
+              </div>
+            </article>
+          </div>
+
+          <div class="swiper-slide h-auto">
+            <article class="testimonial-card flex h-full flex-col rounded-[28px] border border-gray-100 bg-white p-6 text-left shadow-[0_20px_60px_rgba(15,23,42,0.08)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_25px_70px_rgba(253,85,40,0.16)] sm:p-7">
+              <div class="flex items-center justify-between gap-3">
+                <div class="flex items-center gap-3">
+                  <div class="relative">
+                    <img src="{{ asset('assets/images/client-p-84.webp') }}" alt="Peter Farrell testimonial for Backend Coders India" class="h-12 w-12 rounded-full object-cover" />
+                    <span class="absolute -bottom-1 -right-1 rounded-full bg-green-500 px-1 text-[10px] text-white">✔</span>
+                  </div>
+                  <div>
+                    <h3 class="text-sm font-semibold text-gray-900">Peter Farrell</h3>
+                    <p class="text-xs text-gray-500">May 5, 2025</p>
+                  </div>
+                </div>
+                <a href="https://www.upwork.com/freelancers/~0116b8c17b9610ea4e" target="_blank" rel="noopener noreferrer" aria-label="View Backend Coders India on Upwork">
+                  <img src="{{ asset('assets/icons/upwork.png') }}" alt="Upwork client review" class="h-8 w-8 opacity-80" />
+                </a>
+              </div>
+
+              <div class="mt-4 flex items-center gap-1 text-yellow-400">
+                <span class="text-lg">★★★★★</span>
+              </div>
+
+              <p class="review-text mt-4 text-sm leading-relaxed text-slate-700"
+                data-full="Very pleased with the work provided, understood my requirements and delivered on time. Highly recommended."
+                data-short="Very pleased with the work provided, understood my requirements and delivered on time. Highly recommended.">
+                Very pleased with the work provided, understood my requirements and delivered on time. Highly recommended.
+              </p>
+            
+
+              <div class="mt-6 flex items-center justify-between border-t border-gray-100 pt-4 text-xs text-gray-500">
+                <span class="rounded-full bg-gray-100 px-2.5 py-1 text-orange-500">United Kingdom</span>
+                <span class="font-medium text-orange-500">Director</span>
+              </div>
+            </article>
+          </div>
+
+          <div class="swiper-slide h-auto">
+            <article class="testimonial-card flex h-full flex-col rounded-[28px] border border-gray-100 bg-white p-6 text-left shadow-[0_20px_60px_rgba(15,23,42,0.08)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_25px_70px_rgba(253,85,40,0.16)] sm:p-7">
+              <div class="flex items-center justify-between gap-3">
+                <div class="flex items-center gap-3">
+                  <div class="relative">
+                    <img src="{{ asset('assets/images/client-v-84.webp') }}" alt="Veera Linga testimonial for Backend Coders India" class="h-12 w-12 rounded-full object-cover" />
+                    <span class="absolute -bottom-1 -right-1 rounded-full bg-green-500 px-1 text-[10px] text-white">✔</span>
+                  </div>
+                  <div>
+                    <h3 class="text-sm font-semibold text-gray-900">Veera Linga</h3>
+                    <p class="text-xs text-gray-500">May 5, 2025</p>
+                  </div>
+                </div>
+                <a href="https://www.upwork.com/freelancers/~0116b8c17b9610ea4e" target="_blank" rel="noopener noreferrer" aria-label="View Backend Coders India on Upwork">
+                  <img src="{{ asset('assets/icons/upwork.png') }}" alt="Upwork client review" class="h-8 w-8 opacity-80" />
+                </a>
+              </div>
+
+              <div class="mt-4 flex items-center gap-1 text-yellow-400">
+                <span class="text-lg">★★★★★</span>
+              </div>
+
+              <p class="review-text mt-4 text-sm leading-relaxed text-slate-700"
+                data-full="Ravindra delivered a visually appealing, responsive, and highly functional website with top-notch skills, great communication, flexibility, and strong post-launch support, highly recommended."
+                data-short="Ravindra delivered a visually appealing, responsive, and highly functional website with top-notch skills, great communication, flexibility, and strong post-launch support, highly recommended.">
+                Ravindra delivered a visually appealing, responsive, and highly functional website with top-notch skills, great communication, flexibility, and strong post-launch support, highly recommended.
+              </p>
+            
+
+              <div class="mt-6 flex items-center justify-between border-t border-gray-100 pt-4 text-xs text-gray-500">
+                <span class="rounded-full bg-gray-100 px-2.5 py-1 text-orange-500">United States</span>
+                <span class="font-medium text-orange-500">Director</span>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="mt-8 flex items-center justify-center gap-3">
+          <button type="button" class="swiper-button-prev group inline-flex h-12 w-12 items-center justify-center rounded-full border border-[#FD5528]/20 bg-gradient-to-br from-white to-orange-50 text-[#FD5528] shadow-[0_10px_24px_rgba(253,85,40,0.12)] transition duration-300 hover:-translate-y-0.5 hover:bg-[#FD5528] hover:text-white hover:shadow-[0_14px_30px_rgba(253,85,40,0.24)]" aria-label="Previous testimonial">
+            <svg class="h-5 w-5 text-[#FD5528] transition group-hover:-translate-x-0.5 group-hover:text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M15 18l-6-6 6-6"/>
+            </svg>
+          </button>
+          <div class="swiper-pagination !static"></div>
+          <button type="button" class="swiper-button-next group inline-flex h-12 w-12 items-center justify-center rounded-full border border-[#FD5528]/20 bg-gradient-to-br from-white to-orange-50 text-[#FD5528] shadow-[0_10px_24px_rgba(253,85,40,0.12)] transition duration-300 hover:-translate-y-0.5 hover:bg-[#FD5528] hover:text-white hover:shadow-[0_14px_30px_rgba(253,85,40,0.24)]" aria-label="Next testimonial">
+            <svg class="h-5 w-5 text-[#FD5528] transition group-hover:translate-x-0.5 group-hover:text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 18l6-6-6-6"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+</section>
+
+<!-- WHY KANPUR BUSINESSES CHOOSE US -->
+<section id="why-kanpur-businesses"
+  class="relative overflow-hidden bg-white px-4 py-10 sm:px-3 sm:py-6 md:py-10 lg:px-8 lg:py-12">
+
+  <!-- BACKGROUND DECORATION -->
+  <div
+    class="pointer-events-none absolute -right-32 top-10 h-72 w-72 rounded-full
+    bg-[#FD5528]/5 blur-3xl">
+  </div>
+
+  <div
+    class="pointer-events-none absolute -left-32 bottom-0 h-72 w-72 rounded-full
+    bg-orange-200/20 blur-3xl">
+  </div>
+
+
+  <div class="relative mx-auto max-w-[1400px]">
+<!-- SECTION HEADER -->
+<div class="mx-auto max-w-4xl text-center">
+
+
+  <!-- MAIN HEADING -->
+  <h2
+    class="mx-auto mt-2 max-w-4xl
+    text-3xl font-bold leading-[1.1]
+    tracking-tight text-black
+    sm:mt-6 sm:text-4xl
+    md:text-5xl
+    lg:text-[3.5rem]"
+  >
+    Why Kanpur
+    <span class="text-[#FD5528]">
+      Businesses Choose Us
+    </span>
+  </h2>
+
+
+  <!-- SUPPORTING HEADING -->
+  <h2
+    class="mx-auto mt-4 max-w-3xl
+    text-base font-medium leading-relaxed
+    text-black
+    sm:mt-5 sm:text-lg
+    md:text-xl
+    lg:text-2xl"
+  >
+    Kanpur's Trusted Partner for
+    <span class="font-semibold text-gray-800">
+      Web Development, Software & Digital Marketing
+    </span>
+  </h2>
+
+</div>
+
+    <!-- CONTENT AREA -->
+    <div class="mt-10 sm:mt-12 lg:mt-16">
+
+      <div
+        class="relative overflow-hidden rounded-3xl
+        border border-gray-100
+        bg-gradient-to-br from-gray-50 via-white to-orange-50/30
+        p-5
+        shadow-[0_20px_60px_rgba(15,23,42,0.06)]
+        sm:p-8
+        md:p-10
+        lg:p-12">
+
+        <!-- TOP ACCENT -->
+        <div
+          class="absolute left-0 top-0 h-1 w-full
+          bg-gradient-to-r from-[#FD5528] via-[#fbb03b] to-transparent">
+        </div>
+
+
+        <!-- DECORATIVE SHAPE -->
+        <div
+          class="pointer-events-none absolute -right-24 -top-24
+          h-64 w-64 rounded-full
+          bg-[#FD5528]/5 blur-3xl">
+        </div>
+
+
+        <div class="relative grid gap-4 lg:grid-cols-1">
+
+      
+
+
+          <!-- RIGHT CONTENT -->
+          <div class="space-y-6">
+
+            <!-- PARAGRAPH 1 -->
+            <div
+              class="rounded-2xl border border-gray-100 bg-white/80
+              p-5 shadow-[0_10px_30px_rgba(15,23,42,0.04)]
+              backdrop-blur-sm
+              sm:p-6">
+
+              <p
+                class="text-sm leading-7 text-gray-600
+                sm:text-base sm:leading-8">
+
+                Businesses looking for
+                <a
+                  href="{{ route('frontend.seo') }}"
+                  class="font-semibold text-[#FD5528]
+                  decoration-[#FD5528]/30 
+                  transition-colors duration-200
+                  hover:text-orange-600 hover:decoration-[#FD5528]">
+                  digital marketing support
+                </a>
+                that also accounts for their software needs, or
+                <a
+                  href="https://backendcodersindia.com/page/website-design-development"
+                  class="font-semibold text-[#FD5528]
+                   decoration-[#FD5528]/30 
+                  transition-colors duration-200
+                  hover:text-orange-600 hover:decoration-[#FD5528]">
+                  web development services
+                </a>
+                that can scale with their business can find both services at
+                Backend Coders India. Based in Krishna Nagar, Kanpur, the team
+                works locally and with clients across Delhi NCR,
+                Lucknow, Pune, Mumbai, and internationally.
+
+              </p>
+
             </div>
 
-            <!-- STARS -->
-            <div class="flex items-center gap-1 mb-3">
-              <span class="text-yellow-400 text-lg">★★★★★</span>
+
+            <!-- PARAGRAPH 2 -->
+            <div
+              class="rounded-2xl border border-gray-100 bg-white/80
+              p-5 shadow-[0_10px_30px_rgba(15,23,42,0.04)]
+              backdrop-blur-sm
+              sm:p-6">
+
+              <p
+                class="text-sm leading-7 text-gray-600
+                sm:text-base sm:leading-8">
+
+                The team develops
+                <a
+                  href="https://backendcodersindia.com/page/custom-web-applications"
+                  class="font-semibold text-[#FD5528]
+                   decoration-[#FD5528]/30 
+                  transition-colors duration-200
+                  hover:text-orange-600 hover:decoration-[#FD5528]">
+                  custom web applications
+                </a>,
+                along with SaaS platforms, ERP and POS
+                systems, and mobile apps for businesses that have outgrown
+                off-the-shelf tools. It also provides
+                <a
+                  href="https://backendcodersindia.com/page/local-seo"
+                  class="font-semibold text-[#FD5528]
+                 decoration-[#FD5528]/30 
+                  transition-colors duration-200
+                  hover:text-orange-600 hover:decoration-[#FD5528]">
+                  search optimization services
+                </a>,
+                that includes technical site audits, local visibility, and content planning based on customer questions.
+
+              </p>
+
             </div>
 
-            <!-- REVIEW TEXT -->
-            <p class="text-gray-700 text-start text-sm leading-relaxed mb-2 line-clamp-2 review-text">
-            Freelancer was extremely communicative, skilled, prompt and professional. Their work exceeded my expectation. I'd definitely hire them again and refer them to my colleagues
-            </p>
-            <button class="read-more-btn text-[#FD5528] text-xs font-medium mb-4">
-    Read More
-</button>
 
-            <!-- FOOTER -->
-            <div class="flex items-center justify-between text-xs text-gray-400">
+            <!-- PARAGRAPH 3 -->
+            <div
+              class="rounded-2xl border border-gray-100 bg-white/80
+              p-5 shadow-[0_10px_30px_rgba(15,23,42,0.04)]
+              backdrop-blur-sm
+              sm:p-6">
 
-              <!-- CATEGORY -->
-              <span class="bg-gray-100 px-2 py-1 rounded-full text-orange-500">
-                United States
-              </span>
+              <p
+                class="text-sm leading-7 text-gray-600
+                sm:text-base sm:leading-8">
 
-              <!-- ACTION -->
-              <button class="flex items-center gap-1 text-orange-500 hover:text-[#FD5528] transition">
-                CEO
-              </button>
+                Whether you are launching a brand with a
+                <strong class="font-semibold text-[#FD5528]
+                   decoration-[#FD5528]/30 
+                  transition-colors duration-200
+                  hover:text-orange-600 hover:decoration-[#FD5528]">
+                  website
+                </strong>
+                , seeking
+                <strong class="font-semibold text-[#FD5528]
+                  decoration-[#FD5528]/30 
+                  transition-colors duration-200
+                  hover:text-orange-600 hover:decoration-[#FD5528]">
+                  ongoing technical support
+                </strong>
+                , or a development partner for a
+                <strong class="font-semibold text-[#FD5528]
+                  decoration-[#FD5528]/30 
+                  transition-colors duration-200
+                  hover:text-orange-600 hover:decoration-[#FD5528]">
+                  SaaS development
+                </strong>
+                or
+                <strong class="font-semibold text-[#FD5528]
+                 decoration-[#FD5528]/30 
+                  transition-colors duration-200
+                  hover:text-orange-600 hover:decoration-[#FD5528]">
+                  mobile app development
+                </strong>
+                project that spans India and international markets, our team
+                handles strategy, design, development, and growth end-to-end.
+
+              </p>
 
             </div>
 
           </div>
+
         </div>
 
-        <!-- SLIDE -->
-        <div class="swiper-slide">
-          <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition duration-300 p-6 max-w-md border border-gray-100">
-
-            <!-- HEADER -->
-            <div class="flex items-center justify-between mb-4">
-
-              <!-- USER -->
-              <div class="flex items-center gap-3">
-                <div class="relative">
-                  <img src="{{ asset('assets/images/client-mj.webp') }}" alt="Client testimonial highlighting satisfaction with mobile app development and IT support services"
-  title="Client feedback on mobile app and IT solutions"
-                      class="w-12 h-12 rounded-full object-cover">
-
-                  <!-- VERIFIED BADGE -->
-                  <span class="absolute -bottom-1 -right-1 bg-green-500 text-white text-[10px] px-1 rounded-full">✔</span>
-                </div>
-
-                <div>
-                  <h4 class="font-semibold text-gray-900 text-sm">Minwoon Jung </h4>
-                  <p class="text-xs text-gray-500">May 5, 2025</p>
-                </div>
-              </div>
-
-              <!-- GOOGLE LOGO -->
-              <img src="https://upload.wikimedia.org/wikipedia/commons/f/f4/Upwork_Logo.svg" alt="logo"
-                  class="w-12 opacity-80">
-            </div>
-
-            <!-- STARS -->
-            <div class="flex items-center gap-1 mb-3">
-              <span class="text-yellow-400 text-lg">★★★★★</span>
-            </div>
-
-            <!-- REVIEW TEXT -->
-            <p class="text-gray-700 text-start text-sm leading-relaxed mb-2 line-clamp-2 review-text">
-         Ravindra went above and beyond fixing major issues left by a previous developer, saving the project with top-notch skills, great attitude, and reliability.
-            </p>
-            <button class="read-more-btn text-[#FD5528] text-xs font-medium mb-4">
-    Read More
-</button>
-
-            <!-- FOOTER -->
-            <div class="flex items-center justify-between text-xs text-gray-400">
-
-              <!-- CATEGORY -->
-              <span class="bg-gray-100 px-2 py-1 rounded-full text-orange-500">
-                United States
-              </span>
-
-              <!-- ACTION -->
-              <button class="flex items-center gap-1 text-orange-500 hover:text-[#FD5528] transition">
-               Ceo
-              </button>
-
-            </div>
-
-          </div>
-        </div>
-
-        <!-- SLIDE -->
-      <div class="swiper-slide">
-                <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition duration-300 p-6 max-w-md border border-gray-100">
-
-                  <!-- HEADER -->
-                  <div class="flex items-center justify-between mb-4">
-
-                    <!-- USER -->
-                    <div class="flex items-center gap-3">
-                      <div class="relative">
-                        <img src="{{ asset('assets/images/client-p.webp') }}"   alt="Client sharing positive feedback on web development and IT services"
-  title="Client testimonial for software and IT solutions"
-                            class="w-12 h-12 rounded-full object-cover">
-
-                        <!-- VERIFIED BADGE -->
-                        <span class="absolute -bottom-1 -right-1 bg-green-500 text-white text-[10px] px-1 rounded-full">✔</span>
-                      </div>
-
-                      <div>
-                        <h4 class="font-semibold text-gray-900 text-sm">Peter Farrell </h4>
-                        <p class="text-xs text-gray-500">May 5, 2025</p>
-                      </div>
-                    </div>
-
-                    <!-- GOOGLE LOGO -->
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f4/Upwork_Logo.svg" alt="logo"
-                        class="w-12 opacity-80">
-                  </div>
-
-                  <!-- STARS -->
-                  <div class="flex items-center gap-1 mb-3">
-                    <span class="text-yellow-400 text-lg">★★★★★</span>
-                  </div>
-
-                  <!-- REVIEW TEXT -->
-                  <p class="text-gray-700 text-start text-sm leading-relaxed mb-2 line-clamp-2 review-text">
-                "Very pleased with the work provided, understood my requirements and delivered on time. Highly recommended."
-                  </p>
-                  <button class="read-more-btn text-[#FD5528] text-xs font-medium mb-4">
-    Read More
-</button>
-
-                  <!-- FOOTER -->
-                  <div class="flex items-center justify-between text-xs text-gray-400">
-
-                    <!-- CATEGORY -->
-                    <span class="bg-gray-100 px-2 py-1 rounded-full text-orange-500">
-                      United kingdom
-                    </span>
-
-                    <!-- ACTION -->
-                    <button class="flex items-center gap-1 text-orange-500 hover:text-[#FD5528] transition">
-                      Director
-                    </button>
-
-                  </div>
-
-                </div>
       </div>
-
-
-         <!-- SLIDE -->
-      <div class="swiper-slide">
-                <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition duration-300 p-6 max-w-md border border-gray-100">
-
-                  <!-- HEADER -->
-                  <div class="flex items-center justify-between mb-4">
-
-                    <!-- USER -->
-                    <div class="flex items-center gap-3">
-                      <div class="relative">
-                        <img src="{{ asset('assets/images/client-v.webp') }}"   alt="Happy client reviewing IT services and web development solutions" title="Client testimonial for IT and web development services"
-                            class="w-12 h-12 rounded-full object-cover">
-
-                        <!-- VERIFIED BADGE -->
-                        <span class="absolute -bottom-1 -right-1 bg-green-500 text-white text-[10px] px-1 rounded-full">✔</span>
-                      </div>
-
-                      <div>
-                        <h4 class="font-semibold text-gray-900 text-sm">Veera Linga</h4>
-                        <p class="text-xs text-gray-500">May 5, 2025</p>
-                      </div>
-                    </div>
-
-                    <!-- GOOGLE LOGO -->
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f4/Upwork_Logo.svg" alt="logo"
-                        class="w-12 opacity-80">
-                  </div>
-
-                  <!-- STARS -->
-                  <div class="flex items-center gap-1 mb-3">
-                    <span class="text-yellow-400 text-lg">★★★★★</span>
-                  </div>
-
-                  <!-- REVIEW TEXT -->
-                  <p class="text-gray-700 text-start text-sm leading-relaxed mb-2 line-clamp-2 review-text">
-           Ravindra delivered a visually appealing, responsive, and highly functional website with top-notch skills, great communication, flexibility, and strong post-launch support, highly recommended.
-                  </p>
-                    <button class="read-more-btn text-[#FD5528] text-xs font-medium mb-4">
-    Read More
-</button>
-
-                  <!-- FOOTER -->
-                  <div class="flex items-center justify-between text-xs text-gray-400">
-
-                    <!-- CATEGORY -->
-                    <span class="bg-gray-100 px-2 py-1 rounded-full text-orange-500">
-                      United States
-                    </span>
-
-                    <!-- ACTION -->
-                    <button class="flex items-center gap-1 text-orange-500 hover:text-[#FD5528] transition">
-                      Director
-                    </button>
-
-                  </div>
-
-                </div>
-      </div>
-
-         
-       </div>
 
     </div>
 
   </div>
 
-</div>
-
 </section>
-
 
 
 <!-- contact section -->
@@ -1952,7 +2099,7 @@ Understand goals, audience, scope, and technical needs.
 
     <!-- Heading -->
     <div class="text-center mb-12 sm:mb-16">
-       <p 
+       <h2
       data-aos="fade-up"
       class="inline-flex items-center justify-center text-xs sm:text-sm font-semibold uppercase tracking-[0.35em] 
          text-[#FD5528] relative px-5 py-2 rounded-full 
@@ -1965,7 +2112,7 @@ Understand goals, audience, scope, and technical needs.
 
           Contact Us
 
-    </p>
+    </h2>
 
     <h3 class="text-4xl text-[#0D0D0D] md:text-5xl font-bold mb-4 mt-4" data-aos="fade-up">
       Get in Touch
@@ -2001,33 +2148,7 @@ Understand goals, audience, scope, and technical needs.
         </div>
 
         @include('frontend.form')
-        <!-- <form class="relative space-y-6">
-
-          <div class="grid sm:grid-cols-2 gap-4">
-            <input type="text" placeholder="First Name"
-              class="w-full px-4 py-3 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#FD5528]/40 transition duration-200">
-
-            <input type="text" placeholder="Last Name"
-              class="w-full px-4 py-3 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#FD5528]/40 transition duration-200">
-          </div>
-
-          <input type="email" placeholder="Email Address"
-            class="w-full px-4 py-3 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#FD5528]/40 transition duration-200">
-
-          <input type="text" placeholder="Phone"
-            class="w-full px-4 py-3 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#FD5528]/40 transition duration-200">
-
-          <textarea rows="4" placeholder="Your Message"
-            class="w-full px-4 py-3 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#FD5528]/40 transition duration-200"></textarea>
-
-        <div class="relative flex justify-center">
-            <button type="submit"
-            class="max-w-md bg-gradient-to-r from-[#FD5528] to-[#fbb03b] hover:from-[#fbb03b] hover:to-[#FD5528] hover:scale-110  text-white py-3 px-4 rounded-2xl font-semibold shadow-[0_20px_45px_rgba(253,85,40,0.4)] transition duration-200 hover:shadow-[0_25px_60px_rgba(253,85,40,0.5)]">
-            Send Message
-          </button>
-        </div>
-
-        </form> -->
+       
 
       </div>
 
@@ -2085,4 +2206,5 @@ Understand goals, audience, scope, and technical needs.
 </section>
 
 </main>
+
 @endsection

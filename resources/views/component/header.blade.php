@@ -17,57 +17,87 @@
         <div class="flex w-full flex-col items-center gap-3 text-center text-xs sm:flex-row sm:items-start sm:gap-6 sm:text-left sm:text-sm">
             <a href="tel:+91 9140092133" class="flex items-center justify-center gap-2 transition sm:justify-start">
                 <div class="flex h-7 w-7 items-center justify-center rounded-full bg-gradient-to-r from-[#f1e9e9] to-[#f5f1f1] transition-all duration-300 hover:scale-110">
-                    <img src="https://img.icons8.com/?size=100&id=9730&format=png&color=fd5528" class="h-4 w-4" alt="Phone">
+                    <img src="{{ asset('assets/icons/call.png') }}" alt="Phone" class="h-4 w-4" aria-hidden="true">
                 </div>
                 <span>+91 9140092133</span>
             </a>
 
-            <a href="#"
+            <a href="mailto:info@backendcodersindia.com"
                id="email-link"
-               data-user="info"
-               data-domain="backendcodersindia.com"
-               class="flex items-center justify-center gap-2 transition sm:justify-start">
+               aria-label="Email info@backendcodersindia.com"
+               class="flex items-center justify-center gap-2 transition hover:text-white/90 sm:justify-start">
                 <div class="flex h-7 w-7 items-center justify-center rounded-full bg-gradient-to-r from-[#f1e9e9] to-[#f5f1f1] transition-all duration-300 hover:scale-110">
-                    <img src="https://img.icons8.com/?size=100&id=2848&format=png&color=fd5528" class="h-4 w-4" alt="Email">
+                    <img src="{{ asset('assets/icons/mail.png') }}" alt="Email" class="h-4 w-4" aria-hidden="true">
                 </div>
 
-                <span id="email" class="no-copy" style="user-select:none; pointer-events:none;" aria-label="Email address"></span>
+                <span id="email" class="select-text font-medium cursor-pointer">info@backendcodersindia.com</span>
             </a>
         </div>
 
         <div class="flex items-center justify-center gap-3">
-            <a href="https://www.facebook.com/backendcoders/" target="_blank" rel="noreferrer"
+            <!-- <a href="https://www.facebook.com/backendcoders/" target="_blank" rel="noreferrer"
                class="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-r from-[#f1e9e9] to-[#f5f1f1] transition-all duration-300 hover:scale-110">
-                <img src="https://img.icons8.com/?size=100&id=106163&format=png&color=fd5528" class="h-4 w-4" alt="Facebook">
+                <img src="{{ asset('assets/icons/facebook.png') }}" alt="Facebook" class="h-4 w-4" aria-hidden="true">
+            </a> -->
+            <a href="https://www.facebook.com/backendcoders/"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Facebook"
+                class="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-r from-[#f1e9e9] to-[#f5f1f1] transition-all duration-300 hover:scale-110">
+
+                <img src="{{ asset('assets/icons/facebook.png') }}"
+                alt="Backend Coders India Facebook"
+                class="h-4 w-4">
+
+                <span class="text-sm font-medium text-gray-700 hidden">
+                    Follow us on Facebook
+                </span>
             </a>
 
-            <a href="https://www.instagram.com/backendcoders/" target="_blank" rel="noreferrer"
+            <a href="https://www.instagram.com/backendcoders/" target="_blank" rel="noreferrer" aria-label="Instagram"
                class="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-r from-[#f1e9e9] to-[#f5f1f1] transition-all duration-300 hover:scale-110">
-                <img src="https://img.icons8.com/?size=100&id=32309&format=png&color=fd5528" class="h-4 w-4" alt="Instagram">
+                <img src="{{ asset('assets/icons/instagram.png') }}" alt="Instagram" class="h-4 w-4" aria-hidden="true">
             </a>
 
-            <a href="https://www.linkedin.com/company/103738896/admin/dashboard/" target="_blank" rel="noreferrer"
+            <a href="https://www.linkedin.com/company/backendcodersindia/" target="_blank" rel="noreferrer" aria-label="LinkedIn"
                class="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-r from-[#f1e9e9] to-[#f5f1f1] transition-all duration-300 hover:scale-110">
-                <img src="https://img.icons8.com/?size=100&id=34349&format=png&color=fd5528" class="h-4 w-4" alt="LinkedIn">
+                <img src="{{ asset('assets/icons/linkedin.png') }}" alt="LinkedIn" class="h-4 w-4" aria-hidden="true">
             </a>
 
-            <a href="https://wa.me/919140092133" target="_blank" rel="noreferrer"
+            <a href="https://wa.me/919140092133" target="_blank" rel="noreferrer" aria-label="WhatsApp"
                class="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-r from-[#f1e9e9] to-[#f5f1f1] transition-all duration-300 hover:scale-110">
-                <img src="https://img.icons8.com/?size=100&id=16733&format=png&color=fd5528" class="h-4 w-4" alt="WhatsApp">
+                <img src="{{ asset('assets/icons/whatsapp.png') }}" alt="WhatsApp" class="h-4 w-4" aria-hidden="true">
+            </a>
+
+            <a href="https://x.com/backendcodersin" target="_blank" rel="noopener noreferrer" aria-label="Twitter"
+                 class="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-r from-[#f1e9e9] to-[#f5f1f1] transition-all duration-300 hover:scale-110">
+                <img src="{{ asset('assets/icons/twitter.png') }}" class="h-5 w-5" alt="Twitter" aria-hidden="true">
             </a>
         </div>
     </div>
 </div>
 
 <!-- NAVBAR -->
-<header class="sticky top-0 z-40 border-b border-gray-200 bg-black/95 backdrop-blur">
-    <div class="mx-auto flex h-16 max-w-9xl items-center justify-between px-4 sm:px-6">
-        <a href="{{ route('frontend.index') }}" class="flex items-center gap-3">
-            <img src="{{ asset('assets/images/bc_bg.png.webp') }}" width="100" height="40" class="h-10 w-auto" alt="Backend Coders">
+<header class="sticky
+top-0
+z-40
+h-20
+overflow-visible
+bg-black/95
+backdrop-blur">
+    <div class=" max-w-7xl mx-auto h-full flex items-center justify-between px-4">
+        <a href="{{ route('frontend.index') }}" class="flex items-center gap-3" aria-label="Backend Coders India">
+            <img src="{{ asset('assets/images/bc_bg_logo_101x40.png') }}"  
+                 width="180"
+                 height="48"
+                 alt="Backend Coders India"
+                 fetchpriority="high"
+                 decoding="sync"
+                 class="w-[180px] h-12 object-contain">
         </a>
 
         <!-- Desktop Menu -->
-        <nav class="hidden items-center gap-2 text-sm font-medium lg:flex">
+        <nav class="hidden items-center gap-2 lg:flex min-w-[700px] text-sm font-medium ">
             <a href="{{ route('frontend.index') }}"
                class="nav-link rounded-md px-3 py-2 transition hover:bg-orange-50 hover:text-[#FD5528] {{ $activeNavClass('frontend.index') }}"
                aria-current="{{ request()->routeIs('frontend.index') ? 'page' : '' }}">
@@ -93,7 +123,7 @@
                 </button>
 
                 <div id="mega-menu-panel"
-                     class="hidden absolute left-1/2 top-full z-40 mt-3 max-h-[70vh] w-[min(100vw-2rem,850px)] -translate-x-1/2 overflow-hidden rounded-2xl bg-white p-6 shadow-2xl ring-1 ring-black/10"
+                     class="hidden absolute left-1/2 top-full z-[90] mt-3 max-h-[70vh] w-[min(100vw-2rem,850px)] -translate-x-1/2 overflow-hidden rounded-2xl bg-white p-6 shadow-2xl ring-1 ring-black/10"
                      role="menu"
                      aria-hidden="true">
                     <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
@@ -103,7 +133,7 @@
                                 @forelse($digitalMenuItems as $item)
                                     @if($item->page)
                                         <li class="rounded-lg px-3 py-2 transition hover:bg-orange-50 hover:text-[#FD5528]">
-                                            <a class="block" href="{{ route('frontend.page', $item->page->slug) }}">
+                                            <a class="block" href="{{ $item->page->slug === 'seo-services' ? route('frontend.seo') : route('frontend.page', $item->page->slug) }}">
                                                 {{ $item->title }}
                                             </a>
                                         </li>
@@ -120,7 +150,7 @@
                                 @forelse($softwareMenuItems as $item)
                                     @if($item->page)
                                         <li class="rounded-lg px-3 py-2 transition hover:bg-orange-50 hover:text-[#FD5528]">
-                                            <a class="block" href="{{ route('frontend.page', $item->page->slug) }}">
+                                            <a class="block" href="{{ $item->page->slug === 'seo-services' ? route('frontend.seo') : route('frontend.page', $item->page->slug) }}">
                                                 {{ $item->title }}
                                             </a>
                                         </li>
@@ -137,19 +167,19 @@
             <a href="{{ route('frontend.project') }}"
                class="nav-link rounded-md px-3 py-2 transition hover:bg-orange-50 hover:text-[#FD5528] {{ $activeNavClass('frontend.project') }}"
                aria-current="{{ request()->routeIs('frontend.project') ? 'page' : '' }}">
-                Architecture
+                Portfolio
             </a>
 
             <a href="{{ route('frontend.process') }}"
                class="nav-link rounded-md px-3 py-2 transition hover:bg-orange-50 hover:text-[#FD5528] {{ $activeNavClass('frontend.process') }}"
                aria-current="{{ request()->routeIs('frontend.process') ? 'page' : '' }}">
-                Case Studies
+                Process
             </a>
 
-              <a href="{{ route('frontend.demo') }}"
+            <a href="{{ route('frontend.demo') }}"
                class="nav-link rounded-md px-3 py-2 transition hover:bg-orange-50 hover:text-[#FD5528] {{ $activeNavClass('frontend.demo') }}"
                aria-current="{{ request()->routeIs('frontend.demo') ? 'page' : '' }}">
-                Portfolio
+                Live Demos
             </a>
 
             <a href="{{ route('frontend.blog') }}"
@@ -167,13 +197,13 @@
             <a href="{{ route('frontend.career') }}"
                class="nav-link rounded-md px-3 py-2 transition hover:bg-orange-50 hover:text-[#FD5528] {{ $activeNavClass('frontend.career') }}"
                aria-current="{{ request()->routeIs('frontend.career') ? 'page' : '' }}">
-                Insights
+                Careers
             </a>
 
             <a href="{{ route('frontend.contact') }}"
                class="nav-link rounded-md px-3 py-2 transition hover:bg-orange-50 hover:text-[#FD5528] {{ $activeNavClass('frontend.contact') }}"
                aria-current="{{ request()->routeIs('frontend.contact') ? 'page' : '' }}">
-                Ping Us
+                Contact
             </a>
         </nav>
 
@@ -233,7 +263,7 @@
                         <div class="grid max-h-40 gap-2 overflow-y-auto overscroll-contain pr-1 text-sm text-slate-700 sm:max-h-48">
                             @forelse($digitalMenuItems as $item)
                                 @if($item->page)
-                                    <a href="{{ route('frontend.page', $item->page->slug) }}"
+                                    <a href="{{ $item->page->slug === 'seo-services' ? route('frontend.seo') : route('frontend.page', $item->page->slug) }}"
                                        data-mobile-menu-link
                                        class="block rounded-lg px-3 py-2.5 text-[14px] leading-snug transition hover:bg-orange-50 hover:text-[#FD5528] sm:py-2">
                                         {{ $item->title }}
@@ -254,7 +284,7 @@
                         <div class="grid max-h-40 gap-2 overflow-y-auto overscroll-contain pr-1 text-sm text-slate-700 sm:max-h-48">
                             @forelse($softwareMenuItems as $item)
                                 @if($item->page)
-                                    <a href="{{ route('frontend.page', $item->page->slug) }}"
+                                    <a href="{{ $item->page->slug === 'seo-services' ? route('frontend.seo') : route('frontend.page', $item->page->slug) }}"
                                        data-mobile-menu-link
                                        class="block rounded-lg px-3 py-2.5 text-[14px] leading-snug transition hover:bg-orange-50 hover:text-[#FD5528] sm:py-2">
                                         {{ $item->title }}
@@ -272,23 +302,22 @@
                data-mobile-menu-link
                class="nav-link w-full rounded-md px-4 py-3 text-[15px] transition hover:bg-orange-50 sm:text-sm {{ $activeMobileNavClass('frontend.project') }}"
                aria-current="{{ request()->routeIs('frontend.project') ? 'page' : '' }}">
-                Architecture
+                Portfolio
             </a>
 
             <a href="{{ route('frontend.process') }}"
                data-mobile-menu-link
                class="nav-link w-full rounded-md px-4 py-3 text-[15px] transition hover:bg-orange-50 sm:text-sm {{ $activeMobileNavClass('frontend.process') }}"
                aria-current="{{ request()->routeIs('frontend.process') ? 'page' : '' }}">
-                Case Studies
+                Process
             </a>
 
-                <a href="{{ route('frontend.demo') }}"
+            <a href="{{ route('frontend.demo') }}"
                data-mobile-menu-link
                class="nav-link w-full rounded-md px-4 py-3 text-[15px] transition hover:bg-orange-50 sm:text-sm {{ $activeMobileNavClass('frontend.demo') }}"
                aria-current="{{ request()->routeIs('frontend.demo') ? 'page' : '' }}">
-                Portfolio
+                Live Demos
             </a>
-
 
             <a href="{{ route('frontend.blog') }}"
                data-mobile-menu-link
@@ -308,20 +337,26 @@
                data-mobile-menu-link
                class="nav-link w-full rounded-md px-4 py-3 text-[15px] transition hover:bg-orange-50 sm:text-sm {{ $activeMobileNavClass('frontend.career') }}"
                aria-current="{{ request()->routeIs('frontend.career') ? 'page' : '' }}">
-                Insights
+                Careers
             </a>
 
             <a href="{{ route('frontend.contact') }}"
                data-mobile-menu-link
                class="nav-link w-full rounded-md px-4 py-3 text-[15px] transition hover:bg-orange-50 sm:text-sm {{ $activeMobileNavClass('frontend.contact') }}"
                aria-current="{{ request()->routeIs('frontend.contact') ? 'page' : '' }}">
-                Ping Us
+                Contact
             </a>
 
-            <div class="py-2 sm:py-3">
-                <a href="tel:+91 9140092133"
-                   class="inline-flex w-full items-center justify-center rounded-xl bg-[#FD5528] px-4 py-3 text-sm font-semibold text-white transition hover:bg-orange-600">
-                    Initialize
+            <div class="py-2 sm:py-3 space-y-2">
+                <a href="tel:+919140092133"
+                   class="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#FD5528] px-4 py-3 text-sm font-semibold text-white transition hover:bg-orange-600">
+                    <img src="{{ asset('assets/icons/call.png') }}" alt="Phone" class="h-4 w-4" aria-hidden="true">
+                    <span>Call: +91 9140092133</span>
+                </a>
+                <a href="mailto:info@backendcodersindia.com"
+                   class="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/5 px-4 py-3 text-sm font-semibold text-white transition hover:bg-white/10 hover:border-white/40">
+                    <img src="{{ asset('assets/icons/mail.png') }}" alt="Email" class="h-4 w-4" aria-hidden="true">
+                    <span>Email: info@backendcodersindia.com</span>
                 </a>
             </div>
         </div>
@@ -392,15 +427,11 @@
         const emailLink = document.getElementById("email-link");
         const emailText = document.getElementById("email");
 
-        if (!emailLink || !emailText) return;
-
-        const user = emailLink.dataset.user || "";
-        const domain = emailLink.dataset.domain || "";
-        const email = `${user}@${domain}`;
-
-        emailText.textContent = email;
-        emailLink.href = `mailto:${email}`;
-        emailLink.setAttribute("aria-label", `Email ${email}`);
+        if (emailLink && emailText) {
+            emailText.textContent = "info@backendcodersindia.com";
+            emailLink.href = "mailto:info@backendcodersindia.com";
+            emailLink.setAttribute("aria-label", "Email info@backendcodersindia.com");
+        }
     });
 </script>
 

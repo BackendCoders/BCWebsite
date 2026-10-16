@@ -5,7 +5,7 @@
 
   <!-- BACKGROUND IMAGE -->
   <img 
-    src="{{asset('assets/images/banner.png')}}"
+    src="{{asset('assets/images/banner.png')}}" alt="join with our team or career with backend coders india"
     class="absolute inset-0 w-full h-full object-cover"
   />
 
@@ -52,7 +52,7 @@
 
     <!-- ICON -->
     <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center rounded-full bg-[#FC5124]/10 group-hover:bg-[#FC5124] transition">
-      <img src="https://img.icons8.com/?size=100&id=lXoGyxVvWmqN&format=png&color=f44918"
+      <img src="https://img.icons8.com/?size=100&id=lXoGyxVvWmqN&format=png&color=f44918" alt="learning and for better growth join backend coders india"
            class="w-8 group-hover:brightness-0 group-hover:invert transition">
     </div>
 
@@ -71,7 +71,7 @@
        data-aos="zoom-in" data-aos-delay="100">
 
     <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center rounded-full bg-[#FC5124]/10 group-hover:bg-[#FC5124] transition">
-      <img src="https://img.icons8.com/ios-filled/50/FC5124/teamwork.png"
+      <img src="https://img.icons8.com/ios-filled/50/FC5124/teamwork.png" alt="positive environment and supportive seniors at backend coders india"
            class="w-8 group-hover:brightness-0 group-hover:invert transition">
     </div>
 
@@ -90,7 +90,7 @@
        data-aos="zoom-in" data-aos-delay="200">
 
     <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center rounded-full bg-[#FC5124]/10 group-hover:bg-[#FC5124] transition">
-      <img src="https://img.icons8.com/ios-filled/50/FC5124/time.png"
+      <img src="https://img.icons8.com/ios-filled/50/FC5124/time.png" alt="flexible work hours and work from home at backend coders india"
            class="w-8 group-hover:brightness-0 group-hover:invert transition">
     </div>
 
@@ -109,7 +109,7 @@
        data-aos="zoom-in" data-aos-delay="300">
 
     <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center rounded-full bg-[#FC5124]/10 group-hover:bg-[#FC5124] transition">
-      <img src="https://img.icons8.com/ios-filled/50/FC5124/trophy.png"
+      <img src="https://img.icons8.com/ios-filled/50/FC5124/trophy.png" alt="get remards and level up at your role at backend coders india   "
            class="w-8 group-hover:brightness-0 group-hover:invert transition">
     </div>
 
@@ -183,20 +183,52 @@
     <form class="bg-white p-8 rounded-xl shadow space-y-4" data-aos="fade-up" method="POST" action="{{ route('career.apply') }}" enctype="multipart/form-data">
       @csrf
 
-      <input type="text" name="full_name" placeholder="Full Name"
+      @if(session('success'))
+          <div class="rounded-xl border border-emerald-200 bg-emerald-50 p-4 text-emerald-800 shadow-sm flex items-start gap-3">
+              <svg class="h-5 w-5 text-emerald-500 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <div class="text-sm font-medium">
+                  {{ session('success') }}
+              </div>
+          </div>
+      @endif
+
+      @if(session('error'))
+          <div class="rounded-xl border border-red-200 bg-red-50 p-4 text-red-800 shadow-sm flex items-start gap-3">
+              <svg class="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
+              </svg>
+              <div class="text-sm font-medium">
+                  {{ session('error') }}
+              </div>
+          </div>
+      @endif
+
+      @if($errors->any())
+          <div class="rounded-xl border border-red-200 bg-red-50 p-4 text-red-800 shadow-sm">
+              <ul class="list-disc list-inside text-sm space-y-1">
+                  @foreach($errors->all() as $error)
+                      <li>{{ $error }}</li>
+                  @endforeach
+              </ul>
+          </div>
+      @endif
+
+      <input type="text" name="full_name" value="{{ old('full_name') }}" placeholder="Full Name" required
         class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FC5124]">
 
-      <input type="text" name="phone" placeholder="Phone Number"
+      <input type="text" name="phone" value="{{ old('phone') }}" placeholder="Phone Number" required
         class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FC5124]">
 
-      <input type="email" name="email" placeholder="Email Address"
+      <input type="email" name="email" value="{{ old('email') }}" placeholder="Email Address" required
         class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FC5124]">
 
-      <input type="text" name="position" placeholder="Position Applying For"
+      <input type="text" name="position" value="{{ old('position') }}" placeholder="Position Applying For" required
         class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FC5124]">
 
       <textarea name="about" placeholder="Tell us about yourself"
-        class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FC5124]"></textarea>
+        class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FC5124]">{{ old('about') }}</textarea>
 
       <input type="file" name="resume" accept=".pdf,.doc,.docx"
         class="w-full px-4 py-3 border rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-[#FC5124]">

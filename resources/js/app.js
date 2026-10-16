@@ -2,6 +2,9 @@ import './bootstrap';
 
 import Alpine from 'alpinejs';
 
-window.Alpine = Alpine;
+const cspAlpinePage = document.querySelector('[data-alpine-csp]');
 
-Alpine.start();
+if (!cspAlpinePage) {
+    window.Alpine = Alpine;
+    Alpine.start();
+}

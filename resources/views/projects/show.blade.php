@@ -27,7 +27,7 @@
     <div class="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
         <div class="overflow-hidden rounded-[2rem] border border-slate-200/70 bg-white shadow-xl shadow-slate-200/40">
             <div class="relative h-72 sm:h-96">
-                <img src="{{ $project->getImageUrl() }}" alt="{{ $project->title }}" class="h-full w-full object-cover">
+                <img alt="" src="{{ $project->getImageUrl() }}" alt="{{ $project->title }}" class="h-full w-full object-cover">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent"></div>
                 <div class="absolute inset-x-0 bottom-0 p-6 sm:p-8">
                     <div class="mb-4 flex flex-wrap gap-2">
