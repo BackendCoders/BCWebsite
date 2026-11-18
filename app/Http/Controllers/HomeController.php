@@ -955,9 +955,9 @@ class HomeController extends Controller
                 'is_featured' => false,
             ],
             [
-                'title' => 'Kajal Kumari – Managing Director',
-                'caption' => 'Managing Director overseeing strategic operations, human relations, and enterprise delivery excellence.',
-                'alt_text' => 'Kajal Kumari Managing Director at Backend Coders India',
+                'title' => 'Swati Verma – Managing Director',
+                'caption' => 'Managing Director directing executive strategy, operational excellence, and enterprise client partnerships at Backend Coders India.',
+                'alt_text' => 'Swati Verma Managing Director of Backend Coders India',
                 'image_url' => asset('assets/images/director.webp'),
                 'category' => 'Team & People',
                 'order' => 8,

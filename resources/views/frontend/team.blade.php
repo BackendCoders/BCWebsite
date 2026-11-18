@@ -273,14 +273,14 @@
                                 <div class="block h-full w-full relative">
                                     <img
                                         src="{{ asset('assets/images/director.webp') }}"
-                                        alt="Swati Verma - Director & Operations Head"
+                                        alt="Swati Verma - Managing Director"
                                         loading="lazy"
                                         decoding="async"
                                         class="h-full w-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
                                     />
                                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent"></div>
                                     <span class="absolute bottom-2 left-2 right-2 text-center text-[10px] font-extrabold uppercase tracking-widest text-white bg-slate-900/80 backdrop-blur-md py-1 rounded-lg border border-white/10">
-                                        Director
+                                        Managing Director
                                     </span>
                                 </div>
                             </div>
@@ -288,20 +288,20 @@
                             <!-- Name, Title & Bio Intro -->
                             <div class="flex-1 text-center sm:text-left">
                                 <div class="inline-flex items-center gap-1.5 rounded-full bg-orange-50 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-[#FD5528] border border-orange-200/80">
-                                    Operations &amp; Strategy
+                                    Executive Leadership &amp; Strategy
                                 </div>
                                 <h3 class="mt-2 text-2xl sm:text-3xl font-black tracking-tight text-slate-900 group-hover:text-[#FD5528] transition-colors duration-300">
                                     Swati Verma
                                 </h3>
                                 <p class="mt-1 text-xs sm:text-sm font-semibold uppercase tracking-wider text-slate-500">
-                                    Director &amp; Operations Head
+                                    Managing Director
                                 </p>
                                 
                                 <p class="mt-3 text-xs sm:text-sm leading-relaxed text-slate-600">
-                                    Swati leads our daily work and client support. She helps our team work well together and deliver projects on time.
+                                    As Managing Director, Swati steers strategic operations, enterprise client relationships, and organizational excellence at Backend Coders India. She champions delivery precision, cross-functional engineering collaboration, and sustainable growth across global digital product initiatives.
                                 </p>
                                 <span class="inline-flex items-center gap-1.5 mt-3 text-xs sm:text-sm font-bold text-slate-700">
-                                    Operations Leadership &amp; Growth &rarr;
+                                    Executive Operations &amp; Growth &rarr;
                                 </span>
                             </div>
                         </div>
@@ -310,20 +310,20 @@
                         <div class="mt-6 rounded-2xl border border-slate-200/70 bg-slate-50/80 p-4 sm:p-5 relative">
                             <span class="text-xs font-bold uppercase tracking-widest text-[#FD5528] block mb-1.5">Leadership Focus</span>
                             <p class="text-xs sm:text-sm leading-relaxed text-slate-700 italic">
-                                "We help our clients grow through clear plans, good teamwork, and strong partnerships."
+                                "Sustainable digital growth is built on disciplined execution, architectural clarity, and transparent long-term client partnerships."
                             </p>
                         </div>
 
                         <!-- Core Competency Tags -->
                         <div class="mt-5 flex flex-wrap gap-2">
                             <span class="inline-flex items-center rounded-lg bg-slate-100 px-3 py-1.5 text-xs font-medium text-slate-700 border border-slate-200/80">
-                                <span class="h-1.5 w-1.5 rounded-full bg-[#FD5528] mr-2"></span>Operational Growth
+                                <span class="h-1.5 w-1.5 rounded-full bg-[#FD5528] mr-2"></span>Operational Excellence
+                            </span>
+                            <span class="inline-flex items-center rounded-lg bg-slate-100 px-3 py-1.5 text-xs font-medium text-slate-700 border border-slate-200/80">
+                                <span class="h-1.5 w-1.5 rounded-full bg-[#FD5528] mr-2"></span>Enterprise Strategy
                             </span>
                             <span class="inline-flex items-center rounded-lg bg-slate-100 px-3 py-1.5 text-xs font-medium text-slate-700 border border-slate-200/80">
                                 <span class="h-1.5 w-1.5 rounded-full bg-[#FD5528] mr-2"></span>Global Partnerships
-                            </span>
-                            <span class="inline-flex items-center rounded-lg bg-slate-100 px-3 py-1.5 text-xs font-medium text-slate-700 border border-slate-200/80">
-                                <span class="h-1.5 w-1.5 rounded-full bg-[#FD5528] mr-2"></span>Talent &amp; Teams
                             </span>
                         </div>
                     </div>
