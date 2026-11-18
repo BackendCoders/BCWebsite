@@ -16,20 +16,26 @@ document.addEventListener("DOMContentLoaded", () => {
                 const element = entry.target;
                 const target =
                     parseInt(element.getAttribute("data-counter"), 10) || 0;
-                let current = 0;
-                const step = Math.max(1, Math.round(target / 60));
+                const startTime = performance.now();
+                const duration = 1200;
 
-                const interval = setInterval(() => {
-                    current += step;
+                const animateCount = (now) => {
+                    const elapsed = now - startTime;
+                    const progress = Math.min(elapsed / duration, 1);
+                    // easeOutQuad
+                    const easeProgress = 1 - (1 - progress) * (1 - progress);
+                    const currentVal = Math.floor(easeProgress * target);
 
-                    if (current >= target) {
-                        element.textContent = target.toLocaleString();
-                        clearInterval(interval);
+                    element.textContent = currentVal.toLocaleString();
+
+                    if (progress < 1) {
+                        requestAnimationFrame(animateCount);
                     } else {
-                        element.textContent = current.toLocaleString();
+                        element.textContent = target.toLocaleString();
                     }
-                }, 30);
+                };
 
+                requestAnimationFrame(animateCount);
                 observer.unobserve(element);
             });
         },
@@ -285,14 +291,18 @@ function initSwiper() {
         swiperEl.addEventListener("mouseleave", startAutoplay);
         swiperEl.addEventListener("transitionend", handleTransitionEnd);
 
+        let resizeTimeout = null;
         window.addEventListener("resize", () => {
-            const previousSlidesPerView = slidesPerView;
-            const nextSlidesPerView = slidesPerViewForCurrentWidth();
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => {
+                const previousSlidesPerView = slidesPerView;
+                const nextSlidesPerView = slidesPerViewForCurrentWidth();
 
-            if (previousSlidesPerView === nextSlidesPerView) return;
+                if (previousSlidesPerView === nextSlidesPerView) return;
 
-            prepare();
-        });
+                prepare();
+            }, 100);
+        }, { passive: true });
 
         prepare();
         startAutoplay();
@@ -320,3 +330,27 @@ navLinks.forEach((link) => {
         this.classList.add("text-orange-600", "bg-orange-50", "font-semibold");
     });
 });
+
+// GA4 Engagement Tracking for WhatsApp & Phone Call Clicks
+document.addEventListener("click", (e) => {
+    const link = e.target.closest("a");
+    if (!link) return;
+    const href = link.getAttribute("href") || "";
+    if (href.includes("wa.me") || href.includes("whatsapp.com")) {
+        if (typeof window.gtag === "function") {
+            window.gtag("event", "contact", {
+                event_category: "engagement",
+                event_label: "WhatsApp Click",
+                method: "WhatsApp",
+            });
+        }
+    } else if (href.startsWith("tel:")) {
+        if (typeof window.gtag === "function") {
+            window.gtag("event", "contact", {
+                event_category: "engagement",
+                event_label: "Phone Call Click",
+                method: "Phone",
+            });
+        }
+    }
+}, { passive: true });

@@ -33,12 +33,12 @@ HTML;
                     ->orWhere('title', 'like', '%How to Choose%');
             })
             ->update([
-                'title' => 'How to Choose a Web Developer in Kanpur',
+                'title' => 'How to Choose a Web Development Company in Kanpur: 10-Point Checklist',
                 'slug' => 'how-to-choose-a-website-development-company-in-kanpur',
-                'excerpt' => 'Compare website developers using project scope, relevant work, technical fit, communication, and support. A practical guide for choosing a provider in Kanpur.',
+                'excerpt' => 'Evaluating web developers in Kanpur? Use this practical 10-point checklist covering requirements, live portfolios, technology stacks, IP ownership, pricing models, and post-launch support.',
                 'content' => $content,
-                'meta_title' => 'How to Choose a Web Developer in Kanpur | Backend Coders India',
-                'meta_description' => 'A practical guide to comparing website developers in Kanpur by project scope, relevant work, technical fit, communication, and post-launch support.',
+                'meta_title' => 'How to Choose a Web Development Company in Kanpur: 10-Point Checklist | Backend Coders India',
+                'meta_description' => 'A practical 10-point checklist for evaluating web development companies in Kanpur. Compare portfolios, code ownership, technical architecture, pricing, and SLAs.',
                 'updated_at' => now(),
             ]);
     }

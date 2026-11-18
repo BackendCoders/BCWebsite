@@ -1,4 +1,9 @@
 @extends('component.main')
+
+@push('head')
+    <link rel="preload" as="image" href="https://images.unsplash.com/photo-1555066931-4365d14bab8c" fetchpriority="high">
+@endpush
+
 @section('content')
 
 <!-- HERO -->
@@ -26,7 +31,10 @@
     </div>
 
     <div>
-      <img alt="" src="https://images.unsplash.com/photo-1555066931-4365d14bab8c"
+      <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c"
+        alt="Custom web application architecture and development"
+        width="600" height="400"
+        loading="eager" fetchpriority="high" decoding="async"
         class="rounded-2xl shadow-lg w-full object-cover">
     </div>
 
@@ -65,7 +73,7 @@
           <span class="text-xs uppercase tracking-widest text-[#FD5528]">Development</span>
 
           <div class="flex h-20 w-20 mx-auto items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] shadow-inner">
-            <img alt="" src="https://img.icons8.com/?size=100&id=11668&format=png&color=ffffff" class="h-14 w-14" />
+            <img src="https://img.icons8.com/?size=100&id=11668&format=png&color=ffffff" alt="Custom web application development icon" width="56" height="56" loading="lazy" decoding="async" class="h-14 w-14" />
           </div>
 
           <h3 class="text-xl font-semibold">Custom Web App Development</h3>
@@ -94,7 +102,7 @@
           <span class="text-xs uppercase tracking-widest text-[#FD5528]">Design</span>
 
           <div class="flex h-20 w-20 mx-auto items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b]">
-            <img alt="" src="https://img.icons8.com/?size=100&id=86127&format=png&color=ffffff" class="h-14 w-14" />
+            <img src="https://img.icons8.com/?size=100&id=86127&format=png&color=ffffff" alt="UI/UX design icon" width="56" height="56" loading="lazy" decoding="async" class="h-14 w-14" />
           </div>
 
           <h3 class="text-xl font-semibold">UI/UX Design</h3>
@@ -121,7 +129,7 @@
           <span class="text-xs uppercase tracking-widest text-[#FD5528]">Integration</span>
 
           <div class="flex h-20 w-20 mx-auto items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b]">
-            <img alt="" src="https://img.icons8.com/?size=100&id=59873&format=png&color=ffffff" class="h-14 w-14" />
+            <img src="https://img.icons8.com/?size=100&id=59873&format=png&color=ffffff" alt="API integration icon" width="56" height="56" loading="lazy" decoding="async" class="h-14 w-14" />
           </div>
 
           <h3 class="text-xl font-semibold">API Integration</h3>
@@ -148,7 +156,7 @@
           <span class="text-xs uppercase tracking-widest text-[#FD5528]">SaaS</span>
 
           <div class="flex h-20 w-20 mx-auto items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b]">
-            <img alt="" src="https://img.icons8.com/?size=100&id=85375&format=png&color=ffffff" class="h-14 w-14" />
+            <img src="https://img.icons8.com/?size=100&id=85375&format=png&color=ffffff" alt="SaaS platform development icon" width="56" height="56" loading="lazy" decoding="async" class="h-14 w-14" />
           </div>
 
           <h3 class="text-xl font-semibold">SaaS Development</h3>
@@ -175,7 +183,7 @@
           <span class="text-xs uppercase tracking-widest text-[#FD5528]">CRM / ERP</span>
 
           <div class="flex h-20 w-20 mx-auto items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b]">
-            <img alt="" src="https://img.icons8.com/?size=100&id=85467&format=png&color=ffffff" class="h-14 w-14" />
+            <img src="https://img.icons8.com/?size=100&id=85467&format=png&color=ffffff" alt="CRM and ERP software systems icon" width="56" height="56" loading="lazy" decoding="async" class="h-14 w-14" />
           </div>
 
           <h3 class="text-xl font-semibold">CRM & ERP Systems</h3>
@@ -202,7 +210,7 @@
           <span class="text-xs uppercase tracking-widest text-[#FD5528]">Support</span>
 
           <div class="flex h-20 w-20 mx-auto items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b]">
-            <img alt="" src="https://img.icons8.com/?size=100&id=110249&format=png&color=ffffff" class="h-14 w-14" />
+            <img src="https://img.icons8.com/?size=100&id=110249&format=png&color=ffffff" alt="Web application maintenance and support icon" width="56" height="56" loading="lazy" decoding="async" class="h-14 w-14" />
           </div>
 
           <h3 class="text-xl font-semibold">Maintenance & Support</h3>

@@ -24,3 +24,6 @@ Homestead.yaml
 Thumbs.db
 /bci.zip
 /.agents.zip
+*.zip
+*.tar.gz
+*.rar

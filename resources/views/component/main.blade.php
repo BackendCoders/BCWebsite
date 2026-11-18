@@ -1,6 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google tag (gtag.js) & Google Tag Manager (deferred on interaction) -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-T5Y8JWD332');
+
+    // Defer heavy tracking scripts (GA4 & GTM) until after initial paint / user interaction
+    (function() {
+      let loaded = false;
+      const events = ['pointerdown', 'touchstart', 'scroll', 'keydown', 'mousemove'];
+
+      function loadTracking() {
+        if (loaded) return;
+        loaded = true;
+
+        events.forEach(function(evt) {
+          window.removeEventListener(evt, loadTracking, { passive: true });
+        });
+
+        // Load GA4
+        const gaScript = document.createElement('script');
+        gaScript.async = true;
+        gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-T5Y8JWD332';
+        document.head.appendChild(gaScript);
+
+        // Load GTM
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-WLWCJJ7N');
+      }
+
+      events.forEach(function(evt) {
+        window.addEventListener(evt, loadTracking, { once: true, passive: true });
+      });
+
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(function() { setTimeout(loadTracking, 2000); });
+      } else {
+        setTimeout(loadTracking, 3000);
+      }
+    })();
+  </script>
+
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -22,7 +68,7 @@
     $canonicalBase = 'https://backendcodersindia.com';
     $rawPath = trim((string) request()->path(), '/');
     $normalizedPath = ($rawPath === '' || $rawPath === '/') ? '' : '/' . $rawPath;
-    $selfCanonical = $canonicalBase . $normalizedPath;
+    $selfCanonical = ($normalizedPath === '') ? $canonicalBase . '/' : $canonicalBase . $normalizedPath;
 
     $customCanonical = trim((string) data_get($page ?? null, 'canonical_url'));
     $canonicalUrl = (filter_var($customCanonical, FILTER_VALIDATE_URL)
@@ -30,10 +76,130 @@
             ? preg_replace('#^https?://www\.backendcodersindia\.com#i', 'https://backendcodersindia.com', $customCanonical)
             : $selfCanonical;
 
+    // Ensure root homepage canonical always retains its trailing slash format
+    if ($normalizedPath === '' && in_array(rtrim($canonicalUrl, '/'), [$canonicalBase, rtrim((string) config('app.url'), '/')], true)) {
+        $canonicalUrl = $canonicalBase . '/';
+    }
+
     // Never allow an inner subpage to canonicalise to the root homepage
     if ($normalizedPath !== '' && in_array(rtrim($canonicalUrl, '/'), [$canonicalBase, rtrim(config('app.url'), '/')], true)) {
         $canonicalUrl = $selfCanonical;
     }
+
+    // Preserve valid pagination parameter on canonical URLs
+    if (request()->has('page') && (int) request()->query('page') > 1 && ! str_contains($canonicalUrl, 'page=')) {
+        $canonicalUrl = rtrim($canonicalUrl, '/') . '?page=' . (int) request()->query('page');
+    }
+
+    $sitewideGraphSchema = [
+        '@context' => 'https://schema.org',
+        '@graph' => [
+            [
+                '@type' => 'WebSite',
+                '@id' => 'https://backendcodersindia.com/#website',
+                'url' => 'https://backendcodersindia.com',
+                'name' => 'Backend Coders India',
+                'description' => 'Custom Software Development, Web Development, SaaS, Mobile Apps & SEO Services in Kanpur, India',
+                'publisher' => [
+                    '@id' => 'https://backendcodersindia.com/#organization',
+                ],
+                'potentialAction' => [
+                    [
+                        '@type' => 'SearchAction',
+                        'target' => [
+                            '@type' => 'EntryPoint',
+                            'urlTemplate' => 'https://backendcodersindia.com/blog?q={search_term_string}',
+                        ],
+                        'query-input' => 'required name=search_term_string',
+                    ],
+                ],
+                'inLanguage' => 'en',
+            ],
+            [
+                '@type' => 'ProfessionalService',
+                '@id' => 'https://backendcodersindia.com/#organization',
+                'name' => 'Backend Coders India',
+                'alternateName' => 'Backend Coders',
+                'url' => 'https://backendcodersindia.com',
+                'logo' => [
+                    '@type' => 'ImageObject',
+                    '@id' => 'https://backendcodersindia.com/#logo',
+                    'url' => 'https://backendcodersindia.com/assets/images/bci_icon.png',
+                    'caption' => 'Backend Coders India',
+                ],
+                'image' => 'https://backendcodersindia.com/assets/images/banner.png',
+                'telephone' => '+919140092133',
+                'email' => 'info@backendcodersindia.com',
+                'priceRange' => '₹₹',
+                'address' => [
+                    '@type' => 'PostalAddress',
+                    'streetAddress' => '11/42, Krishna Nagar',
+                    'addressLocality' => 'Kanpur',
+                    'addressRegion' => 'Uttar Pradesh',
+                    'postalCode' => '208007',
+                    'addressCountry' => 'IN',
+                ],
+                'geo' => [
+                    '@type' => 'GeoCoordinates',
+                    'latitude' => 26.4204,
+                    'longitude' => 80.3723,
+                ],
+                'hasMap' => 'https://maps.google.com/?q=26.420444,80.372306',
+                'founder' => [
+                    '@type' => 'Person',
+                    '@id' => 'https://backendcodersindia.com/owner#ravindra-verma',
+                    'name' => 'Ravindra Verma',
+                    'jobTitle' => 'Founder and Chief Executive Officer',
+                    'url' => 'https://backendcodersindia.com/owner',
+                ],
+                'contactPoint' => [
+                    [
+                        '@type' => 'ContactPoint',
+                        'telephone' => '+919140092133',
+                        'contactType' => 'customer support',
+                        'email' => 'info@backendcodersindia.com',
+                        'areaServed' => ['IN'],
+                        'availableLanguage' => ['en', 'hi'],
+                    ],
+                ],
+                'areaServed' => [
+                    [
+                        '@type' => 'City',
+                        'name' => 'Kanpur',
+                    ],
+                    [
+                        '@type' => 'State',
+                        'name' => 'Uttar Pradesh',
+                    ],
+                    [
+                        '@type' => 'Country',
+                        'name' => 'India',
+                    ],
+                ],
+                'openingHoursSpecification' => [
+                    [
+                        '@type' => 'OpeningHoursSpecification',
+                        'dayOfWeek' => [
+                            'Monday',
+                            'Tuesday',
+                            'Wednesday',
+                            'Thursday',
+                            'Friday',
+                            'Saturday',
+                        ],
+                        'opens' => '09:30',
+                        'closes' => '18:30',
+                    ],
+                ],
+                'sameAs' => [
+                    'https://www.linkedin.com/company/backendcodersindia/',
+                    'https://www.facebook.com/backendcoders/',
+                    'https://www.instagram.com/backendcoders/',
+                    'https://x.com/backendcodersin',
+                ],
+            ],
+        ],
+    ];
 @endphp
 <title>{{ $metaTitle }}</title>
 
@@ -73,83 +239,7 @@
 
 <!-- Organization & WebSite Structured Data -->
 <script type="application/ld+json">
-{!! json_encode([
-  '@@context' => 'https://schema.org',
-  '@graph' => [
-    [
-      '@type' => 'WebSite',
-      '@id' => 'https://backendcodersindia.com/#website',
-      'url' => 'https://backendcodersindia.com',
-      'name' => 'Backend Coders India',
-      'description' => 'Custom Software Development, Web Development, SaaS, Mobile Apps & SEO Services in Kanpur, India',
-      'publisher' => [
-        '@id' => 'https://backendcodersindia.com/#organization'
-      ],
-      'potentialAction' => [
-        [
-          '@type' => 'SearchAction',
-          'target' => [
-            '@type' => 'EntryPoint',
-            'urlTemplate' => 'https://backendcodersindia.com/blog?q={search_term_string}'
-          ],
-          'query-input' => 'required name=search_term_string'
-        ]
-      ],
-      'inLanguage' => 'en'
-    ],
-    [
-      '@type' => ['ProfessionalService', 'Organization'],
-      '@id' => 'https://backendcodersindia.com/#organization',
-      'name' => 'Backend Coders India',
-      'alternateName' => 'Backend Coders',
-      'url' => 'https://backendcodersindia.com',
-      'logo' => [
-        '@type' => 'ImageObject',
-        '@id' => 'https://backendcodersindia.com/#logo',
-        'url' => 'https://backendcodersindia.com/assets/images/bci_icon.png',
-        'caption' => 'Backend Coders India'
-      ],
-      'image' => 'https://backendcodersindia.com/assets/images/banner.png',
-      'telephone' => '+91 914 0092 133',
-      'email' => 'info@backendcodersindia.com',
-      'priceRange' => '$$',
-      'address' => [
-        '@type' => 'PostalAddress',
-        'streetAddress' => '11/42, Krishna Nagar',
-        'addressLocality' => 'Kanpur',
-        'addressRegion' => 'Uttar Pradesh',
-        'postalCode' => '208007',
-        'addressCountry' => 'IN'
-      ],
-      'geo' => [
-        '@type' => 'GeoCoordinates',
-        'latitude' => '26.4499',
-        'longitude' => '80.3319'
-      ],
-      'openingHoursSpecification' => [
-        [
-          '@type' => 'OpeningHoursSpecification',
-          'dayOfWeek' => [
-            'Monday',
-            'Tuesday',
-            'Wednesday',
-            'Thursday',
-            'Friday',
-            'Saturday'
-          ],
-          'opens' => '09:30',
-          'closes' => '18:30'
-        ]
-      ],
-      'sameAs' => [
-        'https://www.linkedin.com/company/backendcodersindia/',
-        'https://www.facebook.com/backendcoders/',
-        'https://www.instagram.com/backendcoders/',
-        'https://x.com/backendcodersin'
-      ]
-    ]
-  ]
-], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) !!}
+{!! json_encode($sitewideGraphSchema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) !!}
 </script>
 
 @stack('head')
@@ -157,18 +247,40 @@
 @vite([ 'resources/js/app.js'])
 
 @php
-$manifest = json_decode(file_get_contents(public_path('build/manifest.json')), true);
-$appCss = asset('build/'.$manifest['resources/css/app.css']['file']);
+    $appCss = null;
+    $manifestPath = public_path('build/manifest.json');
+    if (file_exists($manifestPath)) {
+        $manifest = json_decode(@file_get_contents($manifestPath), true);
+        $manifestCssRel = $manifest['resources/css/app.css']['file'] ?? null;
+        if ($manifestCssRel && file_exists(public_path('build/' . $manifestCssRel))) {
+            $appCss = asset('build/' . $manifestCssRel);
+        }
+    }
+
+    if (! $appCss) {
+        $builtCssFiles = glob(public_path('build/assets/*.css'));
+        if (! empty($builtCssFiles)) {
+            $appCss = asset('build/assets/' . basename($builtCssFiles[0]));
+        }
+    }
+
+    if (! $appCss && file_exists(public_path('assets/css/app.css'))) {
+        $appCss = asset('assets/css/app.css') . '?v=' . filemtime(public_path('assets/css/app.css'));
+    }
+
+    if (! $appCss) {
+        $appCss = asset('assets/css/app.css');
+    }
 @endphp
 
 <link rel="stylesheet" href="{{ $appCss }}">
 @include('layout.blog-content-styles')
 
-<link rel="icon" type="image/svg+xml" alt="web development company in Kanpur" href="{{asset('assets/images/bci_icon.png')}}" class="bg-black"/>
+<link rel="icon" href="{{ asset('favicon.ico') }}" sizes="any">
+<link rel="icon" type="image/png" href="{{ asset('assets/images/bci_icon.png') }}">
+<link rel="apple-touch-icon" href="{{ asset('assets/images/bci_icon.png') }}">
 
-@if(request()->routeIs('frontend.index'))
-<link rel="preload" as="image" href="{{ asset('assets/images/backend_coders_split_1.webp.webp') }}" fetchpriority="high">
-@endif
+
 
 <style>
 body {
@@ -470,19 +582,12 @@ h1, h2, h3, h4, h5, h6 {
 
 </head>
 <body>
-  
   <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WLWCJJ7N"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WLWCJJ7N"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  
 
-    <!-- Site Preloader -->
-    <div id="site-preloader" class="fixed inset-0 z-[9999] flex items-center justify-center bg-white transition-opacity duration-500">
-        <img src="{{ asset('assets/images/bci_icon.png') }}" alt="Backend Coders India" width="80" height="80" fetchpriority="high" decoding="sync" class="h-20 w-20 animate-pulse object-contain">
-    </div>
-    <noscript>
-        <style>#site-preloader { display: none !important; }</style>
-    </noscript>
 
     @include('component.header')
 
@@ -493,18 +598,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             type="button"
             class="flex h-14 w-14 items-center justify-center rounded-full bg-[#1aac26] text-white shadow-lg transition hover:scale-110"
             aria-label="Open contact menu">
-            <img src="{{asset('assets/icons/person.png')}}" class="w-6 h-6" alt="Contact">
+            <img src="{{asset('assets/icons/person.png')}}" width="24" height="24" loading="lazy" decoding="async" class="w-6 h-6" alt="Contact">
         </button>
 
         <div id="contactMenu"
             class="absolute bottom-20 right-0 w-64 space-y-2 rounded-2xl border bg-white p-3 opacity-0 shadow-2xl transition-all duration-300 pointer-events-none invisible translate-y-5 scale-95 origin-bottom-right">
             <a href="tel:+919140092133" class="flex items-center gap-3 rounded-xl p-3 hover:bg-orange-50" aria-label="Call Us">
-                <img src="{{ asset('assets/icons/phone.png') }}" class="w-6 h-6" alt=" connect with us">
+                <img src="{{ asset('assets/icons/phone.png') }}" width="24" height="24" loading="lazy" decoding="async" class="w-6 h-6" alt="Call Backend Coders India">
                 <span>Call Us</span>
             </a>
 
             <a href="https://wa.me/919140092133" target="_blank" class="flex items-center gap-3 rounded-xl p-3 hover:bg-orange-50" aria-label="Chat on WhatsApp">
-                <img src="{{ asset('assets/icons/whatsapp.png') }}" class="w-6 h-6" alt="Chat on WhatsApp">
+                <img src="{{ asset('assets/icons/whatsapp.png') }}" width="24" height="24" loading="lazy" decoding="async" class="w-6 h-6" alt="Chat on WhatsApp">
                 <span>WhatsApp</span>
             </a>
         </div>
@@ -569,25 +674,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     @include('component.footer')
 <script>
-function dismissSitePreloader() {
-    const preloader = document.getElementById('site-preloader');
-    if (preloader && !preloader.__dismissed) {
-        preloader.__dismissed = true;
-        preloader.classList.add('opacity-0');
-        setTimeout(() => {
-            preloader.classList.add('hidden');
-            preloader.style.display = 'none';
-        }, 400);
-    }
-}
 
-if (document.readyState === 'complete' || document.readyState === 'interactive') {
-    dismissSitePreloader();
-} else {
-    document.addEventListener('DOMContentLoaded', dismissSitePreloader);
-}
-window.addEventListener('load', dismissSitePreloader);
-setTimeout(dismissSitePreloader, 800);
 
 document.addEventListener('DOMContentLoaded', function () {
   const contactToggle = document.getElementById('contactToggle');
@@ -795,7 +882,7 @@ function toggleDropdown() {
 document.addEventListener("click", function (e) {
     const dropdown = document.getElementById("serviceDropdown");
 
-    if (!e.target.closest(".relative")) {
+    if (dropdown && !e.target.closest(".relative")) {
         dropdown.classList.add("hidden");
     }
 });
@@ -811,32 +898,32 @@ function initContactFormCaptcha() {
         form.__captchaInitialized = true;
 
         const questionEl = form.querySelector("#captchaQuestion");
-        const correctInput = form.querySelector("#captchaCorrect, input[name='captcha_correct']");
         const captchaInput = form.querySelector("#captchaInput, input[name='captcha']");
         const errorEl = form.querySelector("#captchaError");
         const reloadBtns = form.querySelectorAll(".reload-captcha-btn");
 
         function refreshCaptcha() {
-            const num1 = Math.floor(Math.random() * 8) + 2;
-            const num2 = Math.floor(Math.random() * 9) + 1;
-            if (questionEl) {
-                questionEl.innerHTML = `What is ${num1} + ${num2}? <span class="text-red-500 font-bold">*</span>`;
-            }
-            if (correctInput) {
-                correctInput.value = (num1 + num2).toString();
-            }
-            if (captchaInput) {
-                captchaInput.value = "";
-                captchaInput.focus();
-            }
-            if (errorEl) {
-                errorEl.classList.add("hidden");
-            }
-        }
-
-        // If for any reason captcha was not pre-populated server-side, populate it now
-        if (correctInput && (!correctInput.value || correctInput.value.trim() === "")) {
-            refreshCaptcha();
+            fetch("/captcha/refresh", {
+                headers: {
+                    "Accept": "application/json",
+                    "X-Requested-With": "XMLHttpRequest"
+                }
+            })
+            .then(function(res) { return res.json(); })
+            .then(function(data) {
+                if (data && data.success && data.question && questionEl) {
+                    questionEl.innerHTML = `${data.question} <span class="text-red-500 font-bold">*</span>`;
+                }
+                if (captchaInput) {
+                    captchaInput.value = "";
+                }
+                if (errorEl) {
+                    errorEl.classList.add("hidden");
+                }
+            })
+            .catch(function(err) {
+                console.warn("Unable to refresh captcha challenge:", err);
+            });
         }
 
         // Bind reload challenge buttons
@@ -883,15 +970,15 @@ function initContactFormCaptcha() {
                 return;
             }
 
-            // CAPTCHA check
+            // Client non-empty check (answer is validated securely on server)
             const userAnswer = captchaInput ? captchaInput.value.trim() : "";
-            const correctAnswer = correctInput ? correctInput.value.trim() : "";
-
-            if (!userAnswer || !correctAnswer || userAnswer !== correctAnswer) {
+            if (!userAnswer) {
                 e.preventDefault();
-                refreshCaptcha();
                 if (errorEl) {
                     errorEl.classList.remove("hidden");
+                }
+                if (captchaInput) {
+                    captchaInput.focus();
                 }
                 return;
             }
@@ -917,11 +1004,31 @@ function initContactFormCaptcha() {
                 `;
             }
 
+            // Synchronize client telemetry metadata
+            const visitorInput = form.querySelector("input[name='visitor_id']");
+            if (visitorInput && (!visitorInput.value || visitorInput.value.trim() === "")) {
+                const match = document.cookie.match(/(?:^|;\s*)bc_visitor_id=([^;]+)/);
+                if (match && match[1]) {
+                    visitorInput.value = decodeURIComponent(match[1]);
+                }
+            }
+
+            const referrerInput = form.querySelector("input[name='referrer']");
+            if (referrerInput && (!referrerInput.value || referrerInput.value.trim() === "")) {
+                referrerInput.value = document.referrer || "";
+            }
+
+            const landingInput = form.querySelector("input[name='landing_page']");
+            if (landingInput && (!landingInput.value || landingInput.value.trim() === "")) {
+                landingInput.value = window.location.href;
+            }
+
             const formData = new FormData(form);
 
             fetch(form.action, {
                 method: "POST",
                 body: formData,
+                credentials: "same-origin",
                 headers: {
                     "Accept": "application/json",
                     "X-Requested-With": "XMLHttpRequest"
@@ -979,7 +1086,13 @@ function initContactFormCaptcha() {
                         dynamicFeedback.classList.remove("hidden");
                         dynamicFeedback.scrollIntoView({ behavior: "smooth", block: "center" });
                     }
-                    refreshCaptcha();
+
+                    if (data && data.new_question && questionEl) {
+                        questionEl.innerHTML = `${data.new_question} <span class="text-red-500 font-bold">*</span>`;
+                        if (captchaInput) captchaInput.value = "";
+                    } else {
+                        refreshCaptcha();
+                    }
                 }
             })
             .catch(function(err) {
@@ -1001,12 +1114,8 @@ function initContactFormCaptcha() {
 window.generateCaptcha = function() {
     const forms = document.querySelectorAll("[data-contact-form], #packageContactForm");
     forms.forEach(function(form) {
-        const questionEl = form.querySelector("#captchaQuestion");
-        const correctInput = form.querySelector("#captchaCorrect, input[name='captcha_correct']");
-        const num1 = Math.floor(Math.random() * 8) + 2;
-        const num2 = Math.floor(Math.random() * 9) + 1;
-        if (questionEl) questionEl.innerHTML = `What is ${num1} + ${num2}? <span class="text-red-500 font-bold">*</span>`;
-        if (correctInput) correctInput.value = (num1 + num2).toString();
+        const reloadBtn = form.querySelector(".reload-captcha-btn");
+        if (reloadBtn) reloadBtn.click();
     });
 };
 
@@ -1180,6 +1289,18 @@ if (document.readyState === 'loading') {
     initHeroVideoCards();
 }
 </script>
+
+@if(session('success'))
+<script>
+    if (typeof window.gtag === 'function') {
+        window.gtag('event', 'generate_lead', {
+            event_category: 'form',
+            event_label: 'Contact Form Submission',
+            value: 1
+        });
+    }
+</script>
+@endif
 
 
 

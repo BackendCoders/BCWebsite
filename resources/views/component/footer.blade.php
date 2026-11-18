@@ -2,8 +2,7 @@
   <div class="mx-auto grid max-w-7xl grid-cols-1 gap-12 md:grid-cols-2 xl:grid-cols-5 xl:gap-10">
     <div class="xl:col-span-2">
       <a href="{{ route('frontend.index') }}" class="inline-flex items-center gap-3">
-        <img src="{{ asset('assets/images/bc_bg_logo_101x40.png') }}" alt="Backend Coders India logo"   width="100"
-    height="40" class="h-12 w-auto sm:h-14" >
+        <img src="{{ asset('assets/images/bc_bg_logo_101x40.png') }}" alt="Backend Coders India logo" width="100" height="40" loading="lazy" decoding="async" class="h-12 w-auto sm:h-14">
       </a>
 
       <p class="mt-4 max-w-md text-sm leading-relaxed">
@@ -13,27 +12,27 @@
       <div class="mt-6 flex flex-wrap gap-3 sm:gap-4">
         <a href="https://www.facebook.com/backendcoders/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"
            class="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-r from-[#f1e9e9] to-[#f5f1f1] transition-all duration-300 hover:scale-110">
-          <img src="{{ asset('assets/icons/facebook.png') }}" alt="Facebook" class="h-5 w-5" aria-hidden="true">
+          <img src="{{ asset('assets/icons/facebook.png') }}" width="20" height="20" loading="lazy" decoding="async" alt="Facebook" class="h-5 w-5" aria-hidden="true">
         </a>
 
         <a href="https://www.instagram.com/backendcoders/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"
            class="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-r from-[#f1e9e9] to-[#f5f1f1] transition-all duration-300 hover:scale-110">
-          <img src="{{ asset('assets/icons/instagram.png') }}" alt="Instagram" class="h-5 w-5" aria-hidden="true">
+          <img src="{{ asset('assets/icons/instagram.png') }}" width="20" height="20" loading="lazy" decoding="async" alt="Instagram" class="h-5 w-5" aria-hidden="true">
         </a>
 
         <a href="https://www.linkedin.com/company/backendcodersindia/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"
            class="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-r from-[#f1e9e9] to-[#f5f1f1] transition-all duration-300 hover:scale-110">
-          <img src="{{ asset('assets/icons/linkedin.png') }}" class="h-5 w-5" alt="LinkedIn" aria-hidden="true">
+          <img src="{{ asset('assets/icons/linkedin.png') }}" width="20" height="20" loading="lazy" decoding="async" class="h-5 w-5" alt="LinkedIn" aria-hidden="true">
         </a>
 
         <a href="https://wa.me/919140092133" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"
            class="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-r from-[#f1e9e9] to-[#f5f1f1] transition-all duration-300 hover:scale-110">
-          <img src="{{ asset('assets/icons/whatsapp.png') }}" class="h-5 w-5" alt="WhatsApp" aria-hidden="true">
+          <img src="{{ asset('assets/icons/whatsapp.png') }}" width="20" height="20" loading="lazy" decoding="async" class="h-5 w-5" alt="WhatsApp" aria-hidden="true">
         </a>
 
          <a href="https://x.com/backendcodersin" target="_blank" rel="noopener noreferrer" aria-label="Twitter"
            class="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-r from-[#f1e9e9] to-[#f5f1f1] transition-all duration-300 hover:scale-110">
-          <img src="{{ asset('assets/icons/twitter.png') }}" class="h-5 w-5" alt="Twitter" aria-hidden="true">
+          <img src="{{ asset('assets/icons/twitter.png') }}" width="20" height="20" loading="lazy" decoding="async" class="h-5 w-5" alt="Twitter" aria-hidden="true">
         </a>
       </div>
     </div>
@@ -42,7 +41,8 @@
       <h3 class="mb-4 font-semibold text-white">Quick Links</h3>
       <ul class="space-y-2 text-sm leading-7">
         <li><a href="{{ route('frontend.about') }}" class="hover:text-[#FD5528]">Company</a></li>
-        <li><a href="{{ route('frontend.project') }}" class="hover:text-[#FD5528]">Portfolio</a></li>
+        <li><a href="{{ route('frontend.team') }}" class="hover:text-[#FD5528]">Our Team</a></li> 
+        <li><a href="{{ route('frontend.office_gallery') }}" class="hover:text-[#FD5528]">Office Gallery</a></li>
         <li><a href="{{ route('frontend.process') }}" class="hover:text-[#FD5528]">Process</a></li>
         <li><a href="{{ route('frontend.career') }}" class="hover:text-[#FD5528]">Careers</a></li>
         <li><a href="{{ route('frontend.blog') }}" class="hover:text-[#FD5528]">Latest Blog</a></li>
@@ -67,7 +67,7 @@
         <li>
           <div class="flex items-start gap-3 sm:gap-4">
             <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white transition duration-300 hover:scale-110">
-              <img src="{{ asset('assets/icons/address.png') }}" class="h-5 w-5" alt="Office Address" aria-hidden="true">
+              <img src="{{ asset('assets/icons/address.png') }}" width="20" height="20" loading="lazy" decoding="async" class="h-5 w-5" alt="Office Address" aria-hidden="true">
             </div>
 
             <div class="flex-1">
@@ -82,7 +82,7 @@
         <li>
           <div class="flex items-start gap-3 sm:gap-4">
             <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white transition duration-300 hover:scale-110">
-              <img src="{{ asset('assets/icons/call.png') }}" class="h-5 w-5" alt="Phone" aria-hidden="true">
+              <img src="{{ asset('assets/icons/call.png') }}" width="20" height="20" loading="lazy" decoding="async" class="h-5 w-5" alt="Phone" aria-hidden="true">
             </div>
 
             <div class="flex-1">
@@ -112,21 +112,13 @@
                    class="max-w-full break-all text-gray-300 transition hover:text-[#FD5528]">
                   <span id="footer-email" class="select-text leading-relaxed font-medium">info@backendcodersindia.com</span>
                 </a>
-                <button type="button"
-                        id="copy-email-btn"
-                        onclick="copyFooterEmail(this)"
-                        class="inline-flex items-center gap-1 rounded border border-gray-700 bg-gray-800 px-2 py-0.5 text-xs font-medium text-gray-300 hover:border-gray-500 hover:bg-gray-700 hover:text-white transition cursor-pointer"
-                        title="Copy email address"
-                        aria-label="Copy email address">
-                  <svg class="h-3 w-3 copy-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
-                  </svg>
-                  <span class="copy-text">Copy</span>
-                </button>
+               
               </div>
             </div>
           </div>
         </li>
+
+     
       </ul>
     </div>
   </div>

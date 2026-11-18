@@ -1,4 +1,9 @@
 @extends('component.main')
+
+@push('head')
+    <link rel="preload" as="image" href="https://images.unsplash.com/photo-1689439518156-3659596b5c6c?q=80&w=1170&auto=format&fit=crop" fetchpriority="high">
+@endpush
+
 @section('content')
 
 <!-- HERO -->
@@ -16,7 +21,7 @@
       </p>
 
       <p class="mt-4 text-gray-600">
-         From audience targeting to creative ad design and campaign optimization, we ensure your ads reach the right audience and deliver measurable results.
+         From audience targeting to creative ad design and campaign optimization, we ensure your ads reach the right audience and deliver measurable results. Complement your paid campaigns with long-term organic <a href="{{ route('frontend.page', ['slug' => 'content-marketing']) }}" class="text-[#FD5528] font-semibold hover:underline">Content Marketing</a>.
       </p>
 
       <a href="{{ route('frontend.contact') }}"
@@ -26,7 +31,10 @@
     </div>
 
     <div>
-      <img alt="" src="https://images.unsplash.com/photo-1689439518156-3659596b5c6c?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      <img src="https://images.unsplash.com/photo-1689439518156-3659596b5c6c?q=80&w=1170&auto=format&fit=crop"
+        alt="Performance-driven Meta and social media advertising campaigns"
+        width="600" height="400"
+        loading="eager" fetchpriority="high" decoding="async"
         class="rounded-2xl shadow-lg w-full object-cover">
     </div>
 
@@ -69,7 +77,7 @@
     </span>
 
     <div class="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] shadow-inner">
-      <img alt="" src="https://img.icons8.com/?size=100&id=11668&format=png&color=ffffff" class="h-14 w-14" />
+      <img src="https://img.icons8.com/?size=100&id=11668&format=png&color=ffffff" alt="Facebook Lead Ads icon" width="56" height="56" loading="lazy" decoding="async" class="h-14 w-14" />
     </div>
 
     <h3 class="text-xl font-semibold">FACEBOOK LEAD ADS</h3>
@@ -99,7 +107,7 @@
     </span>
 
     <div class="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b]">
-      <img alt="" src="https://img.icons8.com/?size=100&id=86127&format=png&color=ffffff" class="h-14 w-14" />
+      <img src="https://img.icons8.com/?size=100&id=86127&format=png&color=ffffff" alt="Instagram Advertising icon" width="56" height="56" loading="lazy" decoding="async" class="h-14 w-14" />
     </div>
 
     <h3 class="text-xl font-semibold">Instagram Advertising</h3>
@@ -129,7 +137,7 @@
     </span>
 
     <div class="flex h-20 w-20 mx-auto items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b]">
-      <img alt="" src="https://img.icons8.com/?size=100&id=110249&format=png&color=ffffff" class="h-14 w-14" />
+      <img src="https://img.icons8.com/?size=100&id=110249&format=png&color=ffffff" alt="Meta Retargeting Ads icon" width="56" height="56" loading="lazy" decoding="async" class="h-14 w-14" />
     </div>
 
     <h3 class="text-xl font-semibold">Meta Retargeting Ads</h3>
@@ -163,7 +171,7 @@
 
     <!-- ICON -->
     <div class="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] shadow-inner">
-      <img src="https://img.icons8.com/?size=100&id=85375&format=png&color=FFFFFF" alt="YouTube Ads" class="h-14 w-14" />
+      <img src="https://img.icons8.com/?size=100&id=85375&format=png&color=FFFFFF" alt="Facebook and Instagram Video Ads icon" width="56" height="56" loading="lazy" decoding="async" class="h-14 w-14" />
     </div>
 
     <!-- TITLE -->
@@ -198,7 +206,7 @@
     </span>
 
     <div class="flex h-20 w-20 mx-auto items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b]">
-      <img alt="" src="https://img.icons8.com/?size=100&id=85467&format=png&color=ffffff" class="h-14 w-14" />
+      <img src="https://img.icons8.com/?size=100&id=85467&format=png&color=ffffff" alt="Meta Shopping Ads icon" width="56" height="56" loading="lazy" decoding="async" class="h-14 w-14" />
     </div>
 
     <h3 class="text-xl font-semibold">Meta Shopping Ads</h3>
@@ -228,7 +236,7 @@
     </span>
 
     <div class="flex h-20 w-20 mx-auto items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b]">
-      <img alt="" src="https://img.icons8.com/?size=100&id=59873&format=png&color=ffffff" class="h-14 w-14" />
+      <img src="https://img.icons8.com/?size=100&id=59873&format=png&color=ffffff" alt="Meta Ads Management icon" width="56" height="56" loading="lazy" decoding="async" class="h-14 w-14" />
     </div>
 
     <h3 class="text-xl font-semibold">Meta Ads Management</h3>

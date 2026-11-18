@@ -1,8 +1,12 @@
 @extends('component.main')
+@push('head')
+<link rel="preload" as="image" href="{{ asset('assets/images/backend_coders_split_1(1)_compressed.webp') }}" imagesrcset="{{ asset('assets/images/backend_coders_split_1-320.webp') }} 320w, {{ asset('assets/images/backend_coders_split_1-480.webp') }} 480w, {{ asset('assets/images/backend_coders_split_1-640.webp') }} 640w, {{ asset('assets/images/backend_coders_split_1(1)_compressed.webp') }} 1024w" imagesizes="(max-width: 640px) 50vw, (max-width: 1024px) 25vw, 322px" fetchpriority="high">
+@endpush
 @section('content')
 
 @php
     $homepageBlogs = $homepageBlogs ?? collect();
+    $latestBlogs = $latestBlogs ?? collect();
     $homepageBlogDate = function (string $slug, string $fallback) use ($homepageBlogs): string {
         $blog = $homepageBlogs->get($slug);
         return optional($blog?->published_at ?? $blog?->created_at)->format('d M, Y') ?: $fallback;
@@ -51,31 +55,34 @@
         class="mt-4 sm:mt-5 text-xs xs:text-sm sm:text-base md:text-lg 
         leading-relaxed text-gray-600">
     
-      Backend Coders India is a Kanpur-based web development and digital marketing company helping startups, SMEs, and enterprises across India — and clients in the USA and UK — build
+      Backend Coders India is a Kanpur-based web development company and Digital Marketing Agency in Kanpur helping startups, SMEs, and enterprises across India — and clients in the USA and UK — build
       high-performance websites, custom software, SaaS platforms, and SEO and digital marketing campaigns. Our team partners with businesses that want measurable growth, not just delivery.
 
       </p>
 
       <!-- BUTTONS -->
       <div 
-        class="mt-6 sm:mt-7 flex flex-col sm:flex-row gap-3 sm:gap-4 
-        justify-center lg:justify-start">
+        class="mt-6 sm:mt-7 flex flex-wrap gap-3 sm:gap-4 
+        justify-center lg:justify-start items-center">
 
         <a href="#contact"
-          class="w-full sm:w-auto inline-flex items-center justify-center 
-          rounded-lg bg-gradient-to-r from-[#FD5528] to-[#fbb03b] hover:from-[#fbb03b] hover:to-[#FD5528] hover:scale-110 transition-all duration-300 px-5 sm:px-6 py-2.5 sm:py-3 text-xs sm:text-sm font-semibold text-white 
-          shadow-md  hover:bg-orange-600 hover:shadow-lg">
-
-          Start Your Project
+          class="inline-flex items-center justify-center gap-2 
+          rounded-2xl bg-[#FD5528] px-6 py-3 text-sm font-semibold text-white 
+          shadow-[0_16px_36px_rgba(253,85,40,0.28)] transition hover:-translate-y-0.5 hover:bg-[#e94c20]"
+          id="home-hero-call-now-btn">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          <span>Start Your Project</span>
         </a>
 
-        <a href="{{ route('frontend.project') }}"
-          class="w-full sm:w-auto inline-flex items-center justify-center 
-          rounded-lg border border-gray-300 px-5 sm:px-6 py-2.5 sm:py-3 text-xs sm:text-sm font-semibold text-gray-700 
-          transition hover:border-[#FD5528] hover:text-[#FD5528]">
-
-          View Our Work
+        <a href="{{ route('frontend.project') }}" target="_blank" rel="noopener noreferrer"
+          class="inline-flex items-center justify-center gap-2 
+          rounded-2xl border border-emerald-500 bg-emerald-50 px-5 py-3 text-sm font-semibold text-emerald-800 
+          shadow-sm transition hover:-translate-y-0.5 hover:bg-emerald-100"
+          id="home-hero-whatsapp-btn">
+      
+          <span>View Our Work</span>
         </a>
+
 
       </div>
 
@@ -89,8 +96,15 @@
         <!-- CARD -->
       <div class="relative overflow-hidden rounded-xl group video-card translate-y-4 sm:translate-y-6">
 
-          <img src="{{asset('assets/images/backend_coders_split_1.webp.webp')}}" width="300"
-    height="195" alt="IT team working on backend development and coding solutions" title="Backend Development Team at Work"
+          <img src="{{asset('assets/images/backend_coders_split_1(1)_compressed.webp')}}"
+            srcset="{{asset('assets/images/backend_coders_split_1-320.webp')}} 320w,
+                    {{asset('assets/images/backend_coders_split_1-480.webp')}} 480w,
+                    {{asset('assets/images/backend_coders_split_1-640.webp')}} 640w,
+                    {{asset('assets/images/backend_coders_split_1(1)_compressed.webp')}} 1024w"
+            sizes="(max-width: 640px) 50vw, (max-width: 1024px) 25vw, 322px"
+            width="322" height="215"
+            alt="IT team working on backend development and coding solutions"
+            title="Backend Development Team at Work"
             fetchpriority="high" loading="eager" decoding="async"
             class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
 
@@ -104,8 +118,16 @@
         <!-- CARD -->
         <div class="relative overflow-hidden rounded-xl group video-card -translate-y-4 sm:-translate-y-6">
 
-          <img src="{{asset('assets/images/backend_coders_split_2.webp.webp')}}"  width="300"
-    height="195" alt="Software developers collaborating on web application development and system architecture" title="Web Application Development Team"
+          <img src="{{asset('assets/images/backend_coders_split_2_compressed.webp')}}"
+            srcset="{{asset('assets/images/backend_coders_split_2-320.webp')}} 320w,
+                    {{asset('assets/images/backend_coders_split_2-480.webp')}} 480w,
+                    {{asset('assets/images/backend_coders_split_2-640.webp')}} 640w,
+                    {{asset('assets/images/backend_coders_split_2_compressed.webp')}} 1024w"
+            sizes="(max-width: 640px) 50vw, (max-width: 1024px) 25vw, 322px"
+            width="322" height="215"
+            alt="Software developers collaborating on web application development and system architecture"
+            title="Web Application Development Team"
+            loading="lazy" decoding="async"
             class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
 
           <video muted loop playsinline preload="none" aria-label="Developers building scalable web applications and backend systems" title="Software Development in Progress"
@@ -118,9 +140,16 @@
         <!-- CARD -->
         <div class="relative overflow-hidden rounded-xl group video-card translate-y-4 sm:translate-y-6">
 
-          <img src="{{asset('assets/images/backend_coders_split_3.webp.webp')}}"  width="300"
-    height="195"   alt="IT engineers managing cloud infrastructure and deploying scalable applications"
-    title="Cloud Infrastructure and DevOps Engineering"
+          <img src="{{asset('assets/images/backend_coders_split_3_compressed.webp')}}"
+            srcset="{{asset('assets/images/backend_coders_split_3-320.webp')}} 320w,
+                    {{asset('assets/images/backend_coders_split_3-480.webp')}} 480w,
+                    {{asset('assets/images/backend_coders_split_3-640.webp')}} 640w,
+                    {{asset('assets/images/backend_coders_split_3_compressed.webp')}} 1024w"
+            sizes="(max-width: 640px) 50vw, (max-width: 1024px) 25vw, 322px"
+            width="322" height="215"
+            alt="IT engineers managing cloud infrastructure and deploying scalable applications"
+            title="Cloud Infrastructure and DevOps Engineering"
+            loading="lazy" decoding="async"
             class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
 
           <video muted loop playsinline preload="none" aria-label="DevOps engineers deploying applications and managing cloud servers" title="DevOps and Cloud Management in Action"
@@ -133,8 +162,16 @@
         <!-- CARD -->
         <div class="relative overflow-hidden rounded-xl group video-card -translate-y-4 sm:-translate-y-6">
 
-          <img src="{{asset('assets/images/backend_coders_split_4.webp.webp')}}"  width="300"
-    height="195" alt="IT professionals providing technical support and maintenance services" title="Technical Support and Maintenance Team"
+          <img src="{{asset('assets/images/backend_coders_split_4_compressed.webp')}}"
+            srcset="{{asset('assets/images/backend_coders_split_4-320.webp')}} 320w,
+                    {{asset('assets/images/backend_coders_split_4-480.webp')}} 480w,
+                    {{asset('assets/images/backend_coders_split_4-640.webp')}} 640w,
+                    {{asset('assets/images/backend_coders_split_4_compressed.webp')}} 1024w"
+            sizes="(max-width: 640px) 50vw, (max-width: 1024px) 25vw, 322px"
+            width="322" height="215"
+            alt="IT professionals providing technical support and maintenance services"
+            title="Technical Support and Maintenance Team"
+            loading="lazy" decoding="async"
             class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
 
           <video muted loop playsinline preload="none" aria-label="IT professionals providing technical support and maintenance services" title="Technical Support and Maintenance"
@@ -245,8 +282,10 @@
 
         <!-- MAP IMAGE -->
         <img 
-          src="{{ asset('assets/images/map-1x.webp') }}" alt="Serve service internationally from kanpur"   width="1568"
-    height="1003"
+          src="{{ asset('assets/images/map-1x.webp') }}" alt="Serve service internationally from kanpur" width="1568"
+          height="1003"
+          loading="lazy"
+          decoding="async"
           class="w-full lg:h-[500px] grayscale opacity-90 contrast-110 pointer-events-none select-none"
           style="aspect-ratio: 1568 / 1003;"
         />
@@ -263,7 +302,7 @@
 
               <!-- ICON -->
               <img 
-                src="{{asset('assets/icons/address.png')}}" alt="United States service location"
+                src="{{asset('assets/icons/address.png')}}" width="24" height="24" loading="lazy" decoding="async" alt="United States service location"
                 class="w-6 h-6 drop-shadow-lg"
               />
 
@@ -281,7 +320,7 @@
               <span class="absolute h-6 w-6 rounded-full bg-orange-500/30 animate-ping"></span>
 
               <img 
-                src="{{asset('assets/icons/address.png')}}" alt="United Kingdom service location"
+                src="{{asset('assets/icons/address.png')}}" width="24" height="24" loading="lazy" decoding="async" alt="United Kingdom service location"
                 class="w-6 h-6 drop-shadow-lg"
               />
 
@@ -298,7 +337,7 @@
               <span class="absolute h-6 w-6 rounded-full bg-orange-500/30 animate-ping"></span>
 
               <img 
-                src="{{asset('assets/icons/address.png')}}" alt="India service location"
+                src="{{asset('assets/icons/address.png')}}" width="24" height="24" loading="lazy" decoding="async" alt="India service location"
                 class="w-6 h-6 drop-shadow-lg"
               />
 
@@ -324,7 +363,7 @@
   <!-- CARD: PROJECTS DELIVERED -->
   <div class="stat-card group p-6 rounded-2xl bg-gradient-to-br from-orange-50 via-white to-white border border-orange-100 shadow-sm text-center transition-all duration-300 hover:shadow-md hover:-translate-y-1 hover:border-orange-200">
     <div class="flex items-center justify-center gap-0.5">
-      <h3 class="text-3xl font-bold text-orange-500 counter" data-target="50">50+</h3>
+      <h3 class="text-3xl font-bold text-[#C2410C] counter" data-target="50">50+</h3>
     </div>
     <p class="text-sm font-semibold text-slate-800 mt-2">Projects Delivered</p>
     <p class="text-xs text-slate-500 mt-1">Web, apps & custom software</p>
@@ -333,7 +372,7 @@
   <!-- CARD: HAPPY CLIENTS -->
   <div class="stat-card group p-6 rounded-2xl bg-gradient-to-br from-orange-50 via-white to-white border border-orange-100 shadow-sm text-center transition-all duration-300 hover:shadow-md hover:-translate-y-1 hover:border-orange-200">
     <div class="flex items-center justify-center gap-0.5">
-      <h3 class="text-3xl font-bold text-orange-500 counter" data-target="40">40+</h3>
+      <h3 class="text-3xl font-bold text-[#C2410C] counter" data-target="40">40+</h3>
     </div>
     <p class="text-sm font-semibold text-slate-800 mt-2">Happy Clients</p>
     <p class="text-xs text-slate-500 mt-1">Startups, SMEs & enterprises</p>
@@ -342,7 +381,7 @@
   <!-- CARD: COUNTRIES SERVED -->
   <div class="stat-card group p-6 rounded-2xl bg-gradient-to-br from-orange-50 via-white to-white border border-orange-100 shadow-sm text-center transition-all duration-300 hover:shadow-md hover:-translate-y-1 hover:border-orange-200">
     <div class="flex items-center justify-center gap-0.5">
-      <h3 class="text-3xl font-bold text-orange-500 counter" data-target="3">3+</h3>
+      <h3 class="text-3xl font-bold text-[#C2410C] counter" data-target="3">3+</h3>
     </div>
     <p class="text-sm font-semibold text-slate-800 mt-2">Countries Served</p>
     <p class="text-xs text-slate-500 mt-1">India, UK & international</p>
@@ -477,8 +516,9 @@
                           <div class="flex h-12 w-12 md:h-24 md:w-24 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] shadow-xl">
 
                               <img
-                                  src="https://img.icons8.com/?size=100&id=DCkAZ79sIYhT&format=png&color=ffffff"
-                                 alt="Custom web application development by Backend Coders India"
+                                  src="{{ asset('assets/icons/home/custom-web-apps.png') }}"
+                                  alt="Custom web application development by Backend Coders India"
+                                  width="96" height="96" loading="lazy" decoding="async"
                                   class="h-12 w-12 md:h-24 md:w-24">
 
                           </div>
@@ -503,14 +543,13 @@
 
                   </div>
 
-                  <p class="md:mt-3 text-xs sm:text-sm lg:text-base leading-5 sm:leading-6 lg:leading-7 text-white/90 max-w-[320px] mx-auto">
+                  <p class="md:mt-2 text-xs sm:text-sm lg:text-base leading-5 sm:leading-6 lg:leading-7 text-white/90 max-w-[320px] mx-auto">
 
-                      We build secure custom web applications designed for your workflows,
-                      users, and long-term business growth.
+                     Secure custom web applications built for your workflows and business growth.
 
                   </p>
 
-                  <div class="hidden md:block lg:block flex-wrap justify-center gap-2 mt-5">
+                  <div class="hidden md:block lg:block flex-wrap justify-center gap-2 mt-3">
 
                       <span class="rounded-full border border-white/30 bg-white/10 px-3 py-1 text-[10px] lg:text-[32px] md:text-xs lg:text-sm font-semibold backdrop-blur">
 
@@ -534,7 +573,7 @@
 
                   <div>
                     <a href="https://backendcodersindia.com/page/custom-web-applications" aria-label="Explore Custom Web Application Development Services"
-                      class="mt-5 inline-flex items-center justify-center rounded-xl bg-white px-5 py-2.5 text-xs sm:text-sm font-semibold text-[#FD5528] shadow-lg transition-all duration-300 hover:bg-orange-50 hover:text-[#b00000] hover:scale-105 hover:shadow-xl">
+                      class="mt-4 inline-flex items-center justify-center rounded-xl bg-white px-5 py-2.5 text-xs sm:text-sm font-semibold text-[#C2410C] shadow-lg transition-all duration-300 hover:bg-orange-50 hover:text-[#b00000] hover:scale-105 hover:shadow-xl">
                         Explore Custom Web Applications
                     </a>
                   </div>
@@ -565,8 +604,9 @@
                     <div class="mt-2 md:mt-5 flex h-12 w-12 md:h-24 md:w-24 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] shadow-xl">
 
                         <img
-                            src="https://img.icons8.com/?size=100&id=8Y6ohiJ337rc&format=png&color=ffffff"
-                           alt="Website design and development by Backend Coders India"
+                            src="{{ asset('assets/icons/home/website-design.png') }}"
+                            alt="Website design and development by Backend Coders India"
+                            width="96" height="96" loading="lazy" decoding="async"
                             class="h-12 w-12 md:h-24 md:w-24 p-2">
 
                     </div>
@@ -607,7 +647,7 @@
                     </div>
                        <div>
                     <a href="https://backendcodersindia.com/page/website-design-development" aria-label="Explore Website Design and Development Services"
-                      class="mt-2 inline-flex items-center justify-center rounded-xl bg-white px-5 py-2 text-xs sm:text-sm font-semibold text-[#FD5528] shadow-lg transition-all duration-300 hover:bg-orange-50 hover:text-[#b00000] hover:scale-105 hover:shadow-xl">
+                      class="mt-2 inline-flex items-center justify-center rounded-xl bg-white px-5 py-2 text-xs sm:text-sm font-semibold text-[#C2410C] shadow-lg transition-all duration-300 hover:bg-orange-50 hover:text-[#b00000] hover:scale-105 hover:shadow-xl">
                         Explore Website Design & Development
                     </a>
                   </div>
@@ -637,8 +677,9 @@
                     <div class="md:mt-5 flex h-12 w-12  md:h-24 md:w-24 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] shadow-xl">
 
                         <img
-                            src="https://img.icons8.com/?size=100&id=k8TSihyFk2cJ&format=png&color=ffffff"
+                            src="{{ asset('assets/icons/home/saas-product.png') }}"
                             alt="SaaS development by Backend Coders India"
+                            width="96" height="96" loading="lazy" decoding="async"
                             class="h-12 w-12 md:h-24 md:w-24 p-2">
 
                     </div>
@@ -680,7 +721,7 @@
 
                        <div>
                     <a href="https://backendcodersindia.com/page/saas-development" aria-label="Explore SaaS Product Development Services"
-                      class="mt-2 inline-flex items-center justify-center rounded-xl bg-white px-5 py-2 text-xs sm:text-sm font-semibold text-[#FD5528] shadow-lg transition-all duration-300 hover:bg-orange-50 hover:text-[#b00000] hover:scale-105 hover:shadow-xl">
+                      class="mt-2 inline-flex items-center justify-center rounded-xl bg-white px-5 py-2 text-xs sm:text-sm font-semibold text-[#C2410C] shadow-lg transition-all duration-300 hover:bg-orange-50 hover:text-[#b00000] hover:scale-105 hover:shadow-xl">
                         Explore SaaS Development
                     </a>
                   </div>
@@ -709,8 +750,9 @@
                     <div class="md:mt-5 flex h-12 w-12 md:h-24 md:w-24 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] shadow-xl">
 
                         <img
-                            src="https://img.icons8.com/?size=100&id=Rk5rrSlqrNZO&format=png&color=ffffff"
+                            src="{{ asset('assets/icons/home/erp-crm.png') }}"
                             alt="Enterprise Core software by Backend Coders India"
+                            width="96" height="96" loading="lazy" decoding="async"
                             class="h-12 w-12 md:h-24 md:w-24 p-2">
 
                     </div>
@@ -752,7 +794,7 @@
 
                        <div>
                     <a href="https://backendcodersindia.com/page/erp-pos-software" aria-label="Explore ERP and POS Software Solutions"
-                      class="mt-2 inline-flex items-center justify-center rounded-xl bg-white px-5 py-2 text-xs sm:text-sm font-semibold text-[#FD5528] shadow-lg transition-all duration-300 hover:bg-orange-50 hover:text-[#b00000] hover:scale-105 hover:shadow-xl">
+                      class="mt-2 inline-flex items-center justify-center rounded-xl bg-white px-5 py-2 text-xs sm:text-sm font-semibold text-[#C2410C] shadow-lg transition-all duration-300 hover:bg-orange-50 hover:text-[#b00000] hover:scale-105 hover:shadow-xl">
                         Explore ERP & POS Software
                     </a>
                   </div>
@@ -781,8 +823,9 @@
                     <div class="md:mt-5 flex h-12 w-12 md:h-24 md:w-24 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] shadow-xl">
 
                         <img
-                            src="https://img.icons8.com/?size=100&id=8OxFnElAJgpE&format=png&color=ffffff"
+                            src="{{ asset('assets/icons/home/ecommerce.png') }}"
                             alt="E-commerce Development by Backend Coders India"
+                            width="96" height="96" loading="lazy" decoding="async"
                             class="h-12 w-12 md:h-24 md:w-24 p-2">
 
                     </div>
@@ -822,7 +865,7 @@
 
                        <div>
                     <a href="https://backendcodersindia.com/page/ecommerce-development"
-                      class="mt-2 inline-flex items-center justify-center rounded-xl bg-white px-5 py-2 text-xs sm:text-sm font-semibold text-[#FD5528] shadow-lg transition-all duration-300 hover:bg-orange-50 hover:text-[#b00000] hover:scale-105 hover:shadow-xl"
+                      class="mt-2 inline-flex items-center justify-center rounded-xl bg-white px-5 py-2 text-xs sm:text-sm font-semibold text-[#C2410C] shadow-lg transition-all duration-300 hover:bg-orange-50 hover:text-[#b00000] hover:scale-105 hover:shadow-xl"
                       aria-label="Explore E-Commerce Development Solutions">
                         Explore E-Commerce Development
                     </a>
@@ -852,8 +895,9 @@
                     <div class="md:mt-5 flex h-12 w-12  md:h-24 md:w-24 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] shadow-xl">
 
                         <img
-                            src="https://img.icons8.com/?size=100&id=67475&format=png&color=ffffff"
+                            src="{{ asset('assets/icons/home/mobile-apps.png') }}"
                             alt="Mobile App Development by Backend Coders India"
+                            width="96" height="96" loading="lazy" decoding="async"
                             class="h-12 w-12 md:h-24 md:w-24 p-2">
 
                     </div>
@@ -894,7 +938,7 @@
 
                        <div>
                     <a href="https://backendcodersindia.com/page/mobile-app-development" aria-label="Explore Mobile Application Development Services"
-                      class="mt-2 inline-flex items-center justify-center rounded-xl bg-white px-5 py-2 text-xs sm:text-sm font-semibold text-[#FD5528] shadow-lg transition-all duration-300 hover:bg-orange-50 hover:text-[#b00000] hover:scale-105 hover:shadow-xl">
+                      class="mt-2 inline-flex items-center justify-center rounded-xl bg-white px-5 py-2 text-xs sm:text-sm font-semibold text-[#C2410C] shadow-lg transition-all duration-300 hover:bg-orange-50 hover:text-[#b00000] hover:scale-105 hover:shadow-xl">
                         Explore Mobile App Development
                     </a>
                   </div>
@@ -923,8 +967,9 @@
                     <div class="md:mt-5 flex h-12 w-12 md:h-24 md:w-24 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] shadow-xl">
 
                         <img
-                            src="https://img.icons8.com/?size=100&id=6kPR2dlup5KK&format=png&color=ffffff"
+                            src="{{ asset('assets/icons/home/cloud-devops.png') }}"
                             alt="API Development by Backend Coders India"
+                            width="96" height="96" loading="lazy" decoding="async"
                             class="h-12 w-12 md:h-24 md:w-24 p-2">
 
                     </div>
@@ -964,7 +1009,7 @@
 
                        <div>
                     <a href="https://backendcodersindia.com/page/api-development" aria-label="Explore API Architecture and Integration Services"
-                      class="mt-2 inline-flex items-center justify-center rounded-xl bg-white px-5 py-2 text-xs sm:text-sm font-semibold text-[#FD5528] shadow-lg transition-all duration-300 hover:bg-orange-50 hover:text-[#b00000] hover:scale-105 hover:shadow-xl">
+                      class="mt-2 inline-flex items-center justify-center rounded-xl bg-white px-5 py-2 text-xs sm:text-sm font-semibold text-[#C2410C] shadow-lg transition-all duration-300 hover:bg-orange-50 hover:text-[#b00000] hover:scale-105 hover:shadow-xl">
                         Explore API Development
                     </a>
                   </div>
@@ -993,8 +1038,9 @@
                     <div class="md:mt-5 flex h-12 w-12 md:h-24 md:w-24 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] shadow-xl">
 
                         <img
-                            src="https://img.icons8.com/?size=100&id=103102&format=png&color=ffffff"
+                            src="{{ asset('assets/icons/home/seo-marketing.png') }}"
                             alt="Growth Duo by Backend Coders India"
+                            width="96" height="96" loading="lazy" decoding="async"
                             class="h-12 w-12 md:h-24 md:w-24 p-2">
 
                     </div>
@@ -1017,7 +1063,7 @@
                     </div>
 
                     <p class="md:mt-5 text-center text-sm md:leading-7 text-white/90">
-                        We help businesses grow visibility through SEO, content, and digital marketing strategies.
+                        As a results-focused <a href="{{ route('frontend.digital_marketing_kanpur') }}" class="underline decoration-white/70 hover:text-white font-medium">Digital Marketing Agency in Kanpur</a>, we help businesses grow visibility through SEO, content, and digital marketing strategies.
                     </p>
 
                     <div class="hidden md:block lg:block flex-wrap justify-center gap-2 mt-5">
@@ -1034,7 +1080,7 @@
 
                        <div>
                     <a href="{{ route('frontend.seo') }}" aria-label="Explore SEO and Digital Marketing Services"
-                      class="mt-2 inline-flex items-center justify-center rounded-xl bg-white px-5 py-2 text-xs sm:text-sm font-semibold text-[#FD5528] shadow-lg transition-all duration-300 hover:bg-orange-50 hover:text-[#b00000] hover:scale-105 hover:shadow-xl">
+                      class="mt-2 inline-flex items-center justify-center rounded-xl bg-white px-5 py-2 text-xs sm:text-sm font-semibold text-[#C2410C] shadow-lg transition-all duration-300 hover:bg-orange-50 hover:text-[#b00000] hover:scale-105 hover:shadow-xl">
                         Explore SEO & Digital Marketing
                     </a>
                   </div>
@@ -1066,8 +1112,9 @@
                     <div class="md:mt-5 flex h-12 w-12 md:h-24 md:w-24 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] shadow-xl">
 
                         <img
-                            src="https://img.icons8.com/?size=100&id=KR7IxBJfODTv&format=png&color=ffffff"
+                            src="{{ asset('assets/icons/home/mvp-startups.png') }}"
                             alt="Startup Sprint by Backend Coders India"
+                            width="96" height="96" loading="lazy" decoding="async"
                             class="h-12 w-12 md:h-24 md:w-24 p-2">
 
                     </div>
@@ -1105,7 +1152,7 @@
 
                        <div>
                     <a href="https://backendcodersindia.com/page/startup-mvp-development" aria-label="Explore Startup MVP Engineering and Launch Services"
-                      class="mt-2 inline-flex items-center justify-center rounded-xl bg-white px-5 py-2 text-xs sm:text-sm font-semibold text-[#FD5528] shadow-lg transition-all duration-300 hover:bg-orange-50 hover:text-[#b00000] hover:scale-105 hover:shadow-xl">
+                      class="mt-2 inline-flex items-center justify-center rounded-xl bg-white px-5 py-2 text-xs sm:text-sm font-semibold text-[#C2410C] shadow-lg transition-all duration-300 hover:bg-orange-50 hover:text-[#b00000] hover:scale-105 hover:shadow-xl">
                         Explore Startup MVP Development
                     </a>
                   </div>
@@ -1171,13 +1218,13 @@
         <div class="flex items-start gap-4 lg:flex-col lg:items-center text-left lg:text-center group">
 
           <!-- CIRCLE -->
-          <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#FD5528] font-semibold transition     ">
+          <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#C2410C] font-semibold transition     ">
             01
           </div>
 
           <!-- TEXT -->
           <div>
-            <h3 class="font-semibold text-gray-900 group-hover:text-[#FD5528]">
+            <h3 class="font-semibold text-gray-900 group-hover:text-[#C2410C]">
                    Discovery
             </h3>
             <p class="text-sm text-gray-500 mt-1">
@@ -1189,11 +1236,11 @@ Understand goals, audience, scope, and technical needs.
 
         <!-- STEP -->
         <div class="flex items-start gap-4 lg:flex-col lg:items-center text-left lg:text-center group">
-          <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#FD5528] font-semibold transition ] ">
+          <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#C2410C] font-semibold transition ] ">
             02
           </div>
           <div>
-            <h3 class="font-semibold text-gray-900 group-hover:text-[#FD5528]">
+            <h3 class="font-semibold text-gray-900 group-hover:text-[#C2410C]">
               UI / UX
             </h3>
             <p class="text-sm text-gray-500 mt-1">
@@ -1204,11 +1251,11 @@ Understand goals, audience, scope, and technical needs.
 
         <!-- STEP -->
         <div class="flex items-start gap-4 lg:flex-col lg:items-center text-left lg:text-center group">
-          <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#FD5528] font-semibold transition ] ">
+          <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#C2410C] font-semibold transition ] ">
             03
           </div>
           <div>
-            <h3 class="font-semibold text-gray-900 group-hover:text-[#FD5528]">
+            <h3 class="font-semibold text-gray-900 group-hover:text-[#C2410C]">
               Development
             </h3>
             <p class="text-sm text-gray-500 mt-1">
@@ -1219,11 +1266,11 @@ Understand goals, audience, scope, and technical needs.
 
         <!-- STEP -->
         <div class="flex items-start gap-4 lg:flex-col lg:items-center text-left lg:text-center group">
-          <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#FD5528] font-semibold transition ] ">
+          <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#C2410C] font-semibold transition ] ">
             04
           </div>
           <div>
-            <h3 class="font-semibold text-gray-900 group-hover:text-[#FD5528]">
+            <h3 class="font-semibold text-gray-900 group-hover:text-[#C2410C]">
               Testing
             </h3>
             <p class="text-sm text-gray-500 mt-1">
@@ -1234,11 +1281,11 @@ Understand goals, audience, scope, and technical needs.
 
         <!-- STEP -->
         <div class="flex items-start gap-4 lg:flex-col lg:items-center text-left lg:text-center group">
-          <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#FD5528] font-semibold transition ">
+          <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#C2410C] font-semibold transition ">
             05
           </div>
           <div>
-            <h3 class="font-semibold text-gray-900 group-hover:text-[#FD5528]">
+            <h3 class="font-semibold text-gray-900 group-hover:text-[#C2410C]">
               Deployment
             </h3>
             <p class="text-sm text-gray-500 mt-1">
@@ -1249,11 +1296,11 @@ Understand goals, audience, scope, and technical needs.
 
         <!-- STEP -->
         <div class="flex items-start gap-4 lg:flex-col lg:items-center text-left lg:text-center group">
-          <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#FD5528] font-semibold transition ">
+          <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#C2410C] font-semibold transition ">
             06
           </div>
           <div>
-            <h3 class="font-semibold text-gray-900 group-hover:text-[#FD5528]">
+            <h3 class="font-semibold text-gray-900 group-hover:text-[#C2410C]">
               Support
             </h3>
             <p class="text-sm text-gray-500 mt-1">
@@ -1272,143 +1319,137 @@ Understand goals, audience, scope, and technical needs.
 
 
 <!-- BLOG -->
-
-
-   <section class="py-12 bg-gray-50">
+<section class="py-16 sm:py-20 bg-gray-50 border-t border-gray-200/60 overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        <!-- Heading -->
-        <div class="text-center max-w-3xl mx-auto mb-14">
-            <span class="inline-flex items-center px-4 py-1 rounded-full bg-orange-100 text-orange-600 text-sm font-semibold">
-                Latest Insights
-            </span>
+        <!-- Heading & Controls -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+            <div class="text-left max-w-2xl">
+                <span class="inline-flex items-center px-4 py-1 rounded-full bg-orange-100 text-[#C2410C] text-sm font-semibold">
+                    Latest Insights
+                </span>
 
-            <h2 class="mt-4 text-4xl md:text-5xl font-bold text-gray-900">
-                Latest Blogs &
-                <span class="text-orange-500">Industry News</span>
-            </h2>
+                <h2 class="mt-4 text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+                    Latest Blogs &amp;
+                    <span class="text-[#C2410C]">Industry News</span>
+                </h2>
 
-            <p class="mt-5 text-lg text-gray-600 leading-relaxed">
-                Discover expert articles on Web Development, SEO, Digital Marketing,
-                Custom Software, Mobile Apps, AI and Business Growth.
-            </p>
+                <p class="mt-4 text-base sm:text-lg text-gray-600 leading-relaxed">
+                    Discover expert articles on Web Development, SEO, Digital Marketing,
+                    Custom Software, Mobile Apps, AI and Business Growth.
+                </p>
+            </div>
+
+            <!-- Carousel Controls -->
+            @if($latestBlogs->count() > 2)
+            <div class="flex items-center gap-3 shrink-0 self-start md:self-end">
+                <button
+                    id="blog-prev-btn"
+                    type="button"
+                    class="flex h-11 w-11 items-center justify-center rounded-full border border-gray-300 bg-white text-gray-700 shadow-sm transition hover:border-[#FD5528] hover:bg-orange-50 hover:text-[#FD5528] active:scale-95 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:border-gray-300 disabled:hover:bg-white disabled:hover:text-gray-700"
+                    aria-label="Previous articles">
+                    <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7" /></svg>
+                </button>
+                <button
+                    id="blog-next-btn"
+                    type="button"
+                    class="flex h-11 w-11 items-center justify-center rounded-full border border-gray-300 bg-white text-gray-700 shadow-sm transition hover:border-[#FD5528] hover:bg-orange-50 hover:text-[#FD5528] active:scale-95 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:border-gray-300 disabled:hover:bg-white disabled:hover:text-gray-700"
+                    aria-label="Next articles">
+                    <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7" /></svg>
+                </button>
+            </div>
+            @endif
         </div>
 
-        <!-- Blog Grid -->
-        <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-2">
+        <style>
+            #blog-carousel-track::-webkit-scrollbar {
+                display: none;
+            }
+            .blog-carousel-card {
+                flex: 0 0 100%;
+                width: 100%;
+                max-width: 100%;
+            }
+            @media (min-width: 640px) {
+                .blog-carousel-card {
+                    flex: 0 0 calc(50% - 16px);
+                    width: calc(50% - 16px);
+                    max-width: calc(50% - 16px);
+                }
+            }
+        </style>
 
+        <!-- Blog Carousel Track (Displays 2 blogs simultaneously on sm & above) -->
+        <div
+            id="blog-carousel-track"
+            class="flex gap-8 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-6 pt-1 px-1"
+            style="scrollbar-width: none; -ms-overflow-style: none;">
+
+            @forelse($latestBlogs as $blog)
                 <article
-                class="group overflow-hidden rounded-3xl bg-white shadow-lg transition duration-500 hover:-translate-y-2 hover:shadow-2xl">
+                    class="blog-carousel-card shrink-0 snap-start flex flex-col justify-between overflow-hidden rounded-3xl bg-white shadow-lg transition duration-500 hover:-translate-y-2 hover:shadow-2xl border border-gray-100 group">
 
-                <a href="https://backendcodersindia.com/blog/custom-web-application-development-company-in-india-build-smarter-software-for-business-growth">
-                    <div class="relative h-64 overflow-hidden">
+                    <div>
+                        <a href="{{ route('frontend.blog-detail', ['slug' => $blog->slug]) }}" class="block">
+                            <div class="relative h-64 overflow-hidden bg-slate-100">
+                                <img
+                                    src="{{ $blog->getImageUrl() }}"
+                                    alt="{{ $blog->title }}"
+                                    width="600"
+                                    height="256"
+                                    loading="lazy"
+                                    decoding="async"
+                                    class="w-full h-full object-cover transition duration-700 group-hover:scale-105">
 
-                        <img
-                            src="{{ asset('assets/images/blogcus.png') }}"
-                            alt="Custom Software Development"
-                            class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
 
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+                                <span class="absolute left-5 bottom-5 bg-black/85 backdrop-blur text-white px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase">
+                                    {{ $blog->category?->name ?: 'Engineering' }}
+                                </span>
 
-                        <span
-                            class="absolute left-5 bottom-5 bg-black text-white px-4 py-2 rounded-full text-xs font-semibold">
-                            CUSTOM SOFTWARE
-                        </span>
-
-                        <span
-                            class="absolute right-5 bottom-5 bg-white/90 backdrop-blur px-4 py-2 rounded-full text-sm font-semibold text-gray-700">
-                            {{ $homepageBlogDate('custom-web-application-development-company-in-india-build-smarter-software-for-business-growth', '09 Jul, 2026') }}
-                        </span>
-
-                    </div>
-                </a>
-
-                <div class="p-7">
-
-                    <h3 class="text-2xl font-bold leading-tight text-gray-900 group-hover:text-orange-500 transition">
-                        <a href="https://backendcodersindia.com/blog/custom-web-application-development-company-in-india-build-smarter-software-for-business-growth">
-                            Build a custom application around your workflows, integrations, and business goals. This guide explains what to plan before development begins.
+                                <span class="absolute right-5 bottom-5 bg-white/95 backdrop-blur px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold text-gray-700 shadow-sm">
+                                    {{ ($blog->published_at ?: $blog->created_at)?->format('d M, Y') }}
+                                </span>
+                            </div>
                         </a>
-                    </h3>
 
-                    <p class="mt-4 text-gray-600 leading-8 line-clamp-3">
-                        Build a custom application around your workflows, integrations, and business goals. This guide explains what to plan before development begins.
-                    </p>
+                        <div class="p-6 sm:p-7">
+                            <h3 class="text-xl sm:text-2xl font-bold leading-tight text-gray-900 group-hover:text-[#C2410C] transition line-clamp-2">
+                                <a href="{{ route('frontend.blog-detail', ['slug' => $blog->slug]) }}">
+                                    {{ $blog->title }}
+                                </a>
+                            </h3>
 
-                    <div class="mt-2 flex items-center justify-end border-t pt-2">
+                            <p class="mt-3 text-sm sm:text-base text-gray-600 leading-relaxed line-clamp-3">
+                                {{ $blog->excerpt ?: \Illuminate\Support\Str::limit(strip_tags((string)$blog->content), 130) }}
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="px-6 sm:px-7 pb-6 pt-3 border-t border-gray-100 flex items-center justify-between">
+                        <span class="text-xs sm:text-sm text-gray-500 font-medium">
+                            {{ $blog->author_name ?: 'Backend Coders' }}
+                        </span>
                         <a
-                            href="https://backendcodersindia.com/blog/custom-web-application-development-company-in-india-build-smarter-software-for-business-growth"
-                            class="font-semibold text-orange-500 hover:text-orange-600 transition">
-                            Read More →
+                            href="{{ route('frontend.blog-detail', ['slug' => $blog->slug]) }}"
+                            class="inline-flex items-center gap-1 font-semibold text-[#C2410C] hover:text-[#9A3412] transition text-sm sm:text-base">
+                            Read More &rarr;
                         </a>
-
                     </div>
-
+                </article>
+            @empty
+                <div class="w-full py-12 text-center text-gray-500">
+                    No articles published yet. Check back soon!
                 </div>
-
-            </article>
-
-            <!-- Third Card -->
-
-            <article
-                class="group overflow-hidden rounded-3xl bg-white shadow-lg transition duration-500 hover:-translate-y-2 hover:shadow-2xl">
-
-                <a href="https://backendcodersindia.com/blog/how-much-does-website-development-cost-for-startups-in-india-2026-guide">
-                    <div class="relative h-64 overflow-hidden">
-
-                        <img
-                            src="{{ asset('assets/images/blogweb.webp') }}"
-                            alt="SEO Services"
-                            class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
-
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
-
-                        <span
-                            class="absolute left-5 bottom-5 bg-black text-white px-4 py-2 rounded-full text-xs font-semibold">
-                            WEBSITE DEVELOPMENT
-                        </span>
-
-                        <span
-                            class="absolute right-5 bottom-5 bg-white/90 backdrop-blur px-4 py-2 rounded-full text-sm font-semibold text-gray-700">
-                            {{ $homepageBlogDate('how-much-does-website-development-cost-for-startups-in-india-2026-guide', '05 Jul, 2026') }}
-                        </span>
-
-                    </div>
-                </a>
-
-                <div class="p-7">
-
-                    <h3 class="text-2xl font-bold leading-tight text-gray-900 group-hover:text-orange-500 transition">
-                        <a href="https://backendcodersindia.com/blog/how-much-does-website-development-cost-for-startups-in-india-2026-guide">
-                          How Much Does Website Development Cost for Startups in India? (2026 Guide)
-                        </a>
-                    </h3>
-
-                    <p class="mt-4 text-gray-600 leading-8 line-clamp-3">
-                        Compare website project scopes, understand what affects an estimate, and plan for hosting, maintenance, and search-ready foundations.
-                    </p>
-
-                    <div class="mt-2 flex items-center justify-end border-t pt-2">
-                        <a
-                            href="https://backendcodersindia.com/blog/how-much-does-website-development-cost-for-startups-in-india-2026-guide"
-                            class="font-semibold text-orange-500 hover:text-orange-600 transition">
-                            Read More →
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </article>
+            @endforelse
 
         </div>
 
         <!-- Button -->
-        <div class="text-center mt-6">
-
+        <div class="text-center mt-10">
             <a
                 href="{{ route('frontend.blog') }}"
-                class="inline-flex items-center gap-3 rounded-full border-2 border-orange-500 text-orange-600 px-8 py-4 font-semibold hover:text-white transition hover:bg-orange-600 shadow-lg hover:shadow-xl">
+                class="inline-flex items-center gap-3 rounded-full border-2 border-orange-500 text-[#C2410C] px-8 py-4 font-semibold hover:text-white transition hover:bg-[#C2410C] shadow-lg hover:shadow-xl">
                 View All Blogs
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none"
                     viewBox="0 0 24 24" stroke="currentColor">
@@ -1416,12 +1457,52 @@ Understand goals, audience, scope, and technical needs.
                         stroke-width="2" d="M9 5l7 7-7 7" />
                 </svg>
             </a>
-
         </div>
 
     </div>
 </section>
 
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const track = document.getElementById('blog-carousel-track');
+        const prevBtn = document.getElementById('blog-prev-btn');
+        const nextBtn = document.getElementById('blog-next-btn');
+
+        if (!track || !prevBtn || !nextBtn) return;
+
+        function getScrollStep() {
+            const firstCard = track.querySelector('.blog-carousel-card');
+            if (firstCard) {
+                // Scroll by 1 card plus the 32px (gap-8) gap
+                return firstCard.offsetWidth + 32;
+            }
+            return track.offsetWidth * 0.5;
+        }
+
+        prevBtn.addEventListener('click', function () {
+            track.scrollBy({ left: -getScrollStep(), behavior: 'smooth' });
+        });
+
+        nextBtn.addEventListener('click', function () {
+            track.scrollBy({ left: getScrollStep(), behavior: 'smooth' });
+        });
+
+        function updateArrows() {
+            const maxScroll = track.scrollWidth - track.clientWidth;
+            if (maxScroll <= 5) {
+                prevBtn.disabled = true;
+                nextBtn.disabled = true;
+            } else {
+                prevBtn.disabled = track.scrollLeft <= 5;
+                nextBtn.disabled = track.scrollLeft >= maxScroll - 5;
+            }
+        }
+
+        track.addEventListener('scroll', updateArrows, { passive: true });
+        window.addEventListener('resize', updateArrows, { passive: true });
+        updateArrows();
+    });
+</script>
 <!-- END BLOG -->
 
 <!--{{-- faq --}} -->
@@ -1693,7 +1774,7 @@ Understand goals, audience, scope, and technical needs.
             
 
               <div class="mt-6 flex items-center justify-between border-t border-gray-100 pt-4 text-xs text-gray-500">
-                <span class="rounded-full bg-gray-100 px-2.5 py-1 text-orange-500">United States</span>
+                <span class="rounded-full bg-gray-100 px-2.5 py-1 text-[#C2410C]">United States</span>
                 <span class="font-semibold text-orange-700">CEO</span>
               </div>
             </article>
@@ -1705,7 +1786,7 @@ Understand goals, audience, scope, and technical needs.
               <div class="flex items-center justify-between gap-3">
                 <div class="flex items-center gap-3">
                   <div class="relative">
-                    <img src="{{ asset('assets/images/google1.png') }}" alt="vishwanath pratap singh Yadav testimonial for Backend Coders India" class="h-12 w-12 rounded-full object-cover" />
+                    <img src="{{ asset('assets/images/google1.webp') }}" width="48" height="48" loading="lazy" decoding="async" alt="vishwanath pratap singh Yadav testimonial for Backend Coders India" class="h-12 w-12 rounded-full object-cover" />
                     <span class="absolute -bottom-1 -right-1 rounded-full bg-green-500 px-1 text-[10px] text-white">✔</span>
                   </div>
                   <div>
@@ -1713,7 +1794,7 @@ Understand goals, audience, scope, and technical needs.
                     <p class="text-xs text-gray-500">jan 15, 2025</p>
                   </div>
                 </div>
-                <img src="{{ asset('assets/icons/google.png') }}" alt="Google translation for Backend Coders India" class="h-8 w-8 opacity-80" />
+                <img src="{{ asset('assets/icons/google.png') }}" width="32" height="32" loading="lazy" decoding="async" alt="Google translation for Backend Coders India" class="h-8 w-8 opacity-80" />
               </div>
 
               <div class="mt-4 flex items-center gap-1 text-yellow-400">
@@ -1728,8 +1809,8 @@ Understand goals, audience, scope, and technical needs.
             
 
               <div class="mt-6 flex items-center justify-between border-t border-gray-100 pt-4 text-xs text-gray-500">
-                <span class="rounded-full bg-gray-100 px-2.5 py-1 text-orange-500">India</span>
-                <span class="font-medium text-orange-500">CEO</span>
+                <span class="rounded-full bg-gray-100 px-2.5 py-1 text-[#C2410C]">India</span>
+                <span class="font-medium text-[#C2410C]">CEO</span>
               </div>
             </article>
           </div>
@@ -1739,7 +1820,7 @@ Understand goals, audience, scope, and technical needs.
               <div class="flex items-center justify-between gap-3">
                 <div class="flex items-center gap-3">
                   <div class="relative">
-                    <img src="{{ asset('assets/images/client-mj-84.webp') }}" alt="Minwoon Jung testimonial for Backend Coders India" class="h-12 w-12 rounded-full object-cover" />
+                    <img src="{{ asset('assets/images/client-mj-84.webp') }}" width="48" height="48" loading="lazy" decoding="async" alt="Minwoon Jung testimonial for Backend Coders India" class="h-12 w-12 rounded-full object-cover" />
                     <span class="absolute -bottom-1 -right-1 rounded-full bg-green-500 px-1 text-[10px] text-white">✔</span>
                   </div>
                   <div>
@@ -1748,7 +1829,7 @@ Understand goals, audience, scope, and technical needs.
                   </div>
                 </div>
                 <a href="https://www.upwork.com/freelancers/~0116b8c17b9610ea4e" target="_blank" rel="noopener noreferrer" aria-label="View Backend Coders India on Upwork">
-                  <img src="{{ asset('assets/icons/upwork.png') }}" alt="Upwork client review" class="h-8 w-8 opacity-80" />
+                  <img src="{{ asset('assets/icons/upwork.png') }}" width="32" height="32" loading="lazy" decoding="async" alt="Upwork client review" class="h-8 w-8 opacity-80" />
                 </a>
               </div>
 
@@ -1764,8 +1845,8 @@ Understand goals, audience, scope, and technical needs.
             
 
               <div class="mt-6 flex items-center justify-between border-t border-gray-100 pt-4 text-xs text-gray-500">
-                <span class="rounded-full bg-gray-100 px-2.5 py-1 text-orange-500">United States</span>
-                <span class="font-medium text-orange-500">CEO</span>
+                <span class="rounded-full bg-gray-100 px-2.5 py-1 text-[#C2410C]">United States</span>
+                <span class="font-medium text-[#C2410C]">CEO</span>
               </div>
             </article>
           </div>
@@ -1775,7 +1856,7 @@ Understand goals, audience, scope, and technical needs.
               <div class="flex items-center justify-between gap-3">
                 <div class="flex items-center gap-3">
                   <div class="relative">
-                    <img src="{{ asset('assets/images/client-p-84.webp') }}" alt="Peter Farrell testimonial for Backend Coders India" class="h-12 w-12 rounded-full object-cover" />
+                    <img src="{{ asset('assets/images/client-p-84.webp') }}" width="48" height="48" loading="lazy" decoding="async" alt="Peter Farrell testimonial for Backend Coders India" class="h-12 w-12 rounded-full object-cover" />
                     <span class="absolute -bottom-1 -right-1 rounded-full bg-green-500 px-1 text-[10px] text-white">✔</span>
                   </div>
                   <div>
@@ -1784,7 +1865,7 @@ Understand goals, audience, scope, and technical needs.
                   </div>
                 </div>
                 <a href="https://www.upwork.com/freelancers/~0116b8c17b9610ea4e" target="_blank" rel="noopener noreferrer" aria-label="View Backend Coders India on Upwork">
-                  <img src="{{ asset('assets/icons/upwork.png') }}" alt="Upwork client review" class="h-8 w-8 opacity-80" />
+                  <img src="{{ asset('assets/icons/upwork.png') }}" width="32" height="32" loading="lazy" decoding="async" alt="Upwork client review" class="h-8 w-8 opacity-80" />
                 </a>
               </div>
 
@@ -1800,8 +1881,8 @@ Understand goals, audience, scope, and technical needs.
             
 
               <div class="mt-6 flex items-center justify-between border-t border-gray-100 pt-4 text-xs text-gray-500">
-                <span class="rounded-full bg-gray-100 px-2.5 py-1 text-orange-500">United Kingdom</span>
-                <span class="font-medium text-orange-500">Director</span>
+                <span class="rounded-full bg-gray-100 px-2.5 py-1 text-[#C2410C]">United Kingdom</span>
+                <span class="font-medium text-[#C2410C]">Director</span>
               </div>
             </article>
           </div>
@@ -1811,7 +1892,7 @@ Understand goals, audience, scope, and technical needs.
               <div class="flex items-center justify-between gap-3">
                 <div class="flex items-center gap-3">
                   <div class="relative">
-                    <img src="{{ asset('assets/images/client-v-84.webp') }}" alt="Veera Linga testimonial for Backend Coders India" class="h-12 w-12 rounded-full object-cover" />
+                    <img src="{{ asset('assets/images/client-v-84.webp') }}" width="48" height="48" loading="lazy" decoding="async" alt="Veera Linga testimonial for Backend Coders India" class="h-12 w-12 rounded-full object-cover" />
                     <span class="absolute -bottom-1 -right-1 rounded-full bg-green-500 px-1 text-[10px] text-white">✔</span>
                   </div>
                   <div>
@@ -1820,7 +1901,7 @@ Understand goals, audience, scope, and technical needs.
                   </div>
                 </div>
                 <a href="https://www.upwork.com/freelancers/~0116b8c17b9610ea4e" target="_blank" rel="noopener noreferrer" aria-label="View Backend Coders India on Upwork">
-                  <img src="{{ asset('assets/icons/upwork.png') }}" alt="Upwork client review" class="h-8 w-8 opacity-80" />
+                  <img src="{{ asset('assets/icons/upwork.png') }}" width="32" height="32" loading="lazy" decoding="async" alt="Upwork client review" class="h-8 w-8 opacity-80" />
                 </a>
               </div>
 
@@ -1836,8 +1917,8 @@ Understand goals, audience, scope, and technical needs.
             
 
               <div class="mt-6 flex items-center justify-between border-t border-gray-100 pt-4 text-xs text-gray-500">
-                <span class="rounded-full bg-gray-100 px-2.5 py-1 text-orange-500">United States</span>
-                <span class="font-medium text-orange-500">Director</span>
+                <span class="rounded-full bg-gray-100 px-2.5 py-1 text-[#C2410C]">United States</span>
+                <span class="font-medium text-[#C2410C]">Director</span>
               </div>
             </article>
           </div>
@@ -1964,19 +2045,19 @@ Understand goals, audience, scope, and technical needs.
                 Businesses looking for
                 <a
                   href="{{ route('frontend.seo') }}"
-                  class="font-semibold text-[#FD5528]
+                  class="font-semibold text-[#C2410C]
                   decoration-[#FD5528]/30 
                   transition-colors duration-200
-                  hover:text-orange-600 hover:decoration-[#FD5528]">
+                  hover:text-[#9A3412] hover:decoration-[#FD5528]">
                   digital marketing support
                 </a>
                 that also accounts for their software needs, or
                 <a
                   href="https://backendcodersindia.com/page/website-design-development"
-                  class="font-semibold text-[#FD5528]
+                  class="font-semibold text-[#C2410C]
                    decoration-[#FD5528]/30 
                   transition-colors duration-200
-                  hover:text-orange-600 hover:decoration-[#FD5528]">
+                  hover:text-[#9A3412] hover:decoration-[#FD5528]">
                   web development services
                 </a>
                 that can scale with their business can find both services at
@@ -2003,10 +2084,10 @@ Understand goals, audience, scope, and technical needs.
                 The team develops
                 <a
                   href="https://backendcodersindia.com/page/custom-web-applications"
-                  class="font-semibold text-[#FD5528]
+                  class="font-semibold text-[#C2410C]
                    decoration-[#FD5528]/30 
                   transition-colors duration-200
-                  hover:text-orange-600 hover:decoration-[#FD5528]">
+                  hover:text-[#9A3412] hover:decoration-[#FD5528]">
                   custom web applications
                 </a>,
                 along with SaaS platforms, ERP and POS
@@ -2014,10 +2095,10 @@ Understand goals, audience, scope, and technical needs.
                 off-the-shelf tools. It also provides
                 <a
                   href="https://backendcodersindia.com/page/local-seo"
-                  class="font-semibold text-[#FD5528]
+                  class="font-semibold text-[#C2410C]
                  decoration-[#FD5528]/30 
                   transition-colors duration-200
-                  hover:text-orange-600 hover:decoration-[#FD5528]">
+                  hover:text-[#9A3412] hover:decoration-[#FD5528]">
                   search optimization services
                 </a>,
                 that includes technical site audits, local visibility, and content planning based on customer questions.
@@ -2039,31 +2120,31 @@ Understand goals, audience, scope, and technical needs.
                 sm:text-base sm:leading-8">
 
                 Whether you are launching a brand with a
-                <strong class="font-semibold text-[#FD5528]
+                <strong class="font-semibold text-[#C2410C]
                    decoration-[#FD5528]/30 
                   transition-colors duration-200
-                  hover:text-orange-600 hover:decoration-[#FD5528]">
+                  hover:text-[#9A3412] hover:decoration-[#FD5528]">
                   website
                 </strong>
                 , seeking
-                <strong class="font-semibold text-[#FD5528]
+                <strong class="font-semibold text-[#C2410C]
                   decoration-[#FD5528]/30 
                   transition-colors duration-200
-                  hover:text-orange-600 hover:decoration-[#FD5528]">
+                  hover:text-[#9A3412] hover:decoration-[#FD5528]">
                   ongoing technical support
                 </strong>
                 , or a development partner for a
-                <strong class="font-semibold text-[#FD5528]
+                <strong class="font-semibold text-[#C2410C]
                   decoration-[#FD5528]/30 
                   transition-colors duration-200
-                  hover:text-orange-600 hover:decoration-[#FD5528]">
+                  hover:text-[#9A3412] hover:decoration-[#FD5528]">
                   SaaS development
                 </strong>
                 or
-                <strong class="font-semibold text-[#FD5528]
+                <strong class="font-semibold text-[#C2410C]
                  decoration-[#FD5528]/30 
                   transition-colors duration-200
-                  hover:text-orange-600 hover:decoration-[#FD5528]">
+                  hover:text-[#9A3412] hover:decoration-[#FD5528]">
                   mobile app development
                 </strong>
                 project that spans India and international markets, our team
@@ -2122,7 +2203,7 @@ Understand goals, audience, scope, and technical needs.
     
     <p class="text-lg text-gray-600 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
      
-      Have a project in mind or need backend-driven digital solutions? <span class="text-[#FC5124] font-semibold"> Backend Coders India </span> helps businesses in Kanpur, Uttar Pradesh, across India, and international markets build websites, software systems, SaaS products, eCommerce platforms, mobile apps, APIs, SEO campaigns, digital marketing systems, and AI-powered solutions.
+      Have a project in mind or need backend-driven digital solutions? <span class="text-[#C2410C] font-semibold"> Backend Coders India </span> helps businesses in Kanpur, Uttar Pradesh, across India, and international markets build websites, software systems, SaaS products, eCommerce platforms, mobile apps, APIs, SEO campaigns, digital marketing systems, and AI-powered solutions.
     </p>
 
     </div>
@@ -2183,7 +2264,7 @@ Understand goals, audience, scope, and technical needs.
 
       <!-- PRIMARY BUTTON -->
       <a href="{{ route('frontend.contact') }}"
-         class="group inline-flex items-center justify-center bg-white text-[#FC5124] px-6 py-3 rounded-xl font-semibold shadow-lg hover:shadow-2xl hover:scale-105 transition duration-300">
+         class="group inline-flex items-center justify-center bg-white text-[#C2410C] px-6 py-3 rounded-xl font-semibold shadow-lg hover:shadow-2xl hover:scale-105 transition duration-300">
 
         Contact Us
 
@@ -2192,7 +2273,7 @@ Understand goals, audience, scope, and technical needs.
       </a>
 
       <!-- WHATSAPP BUTTON -->
-      <a href="https://wa.me/+919140092133" target="_blank"
+      <a href="https://wa.me/919140092133" target="_blank" rel="noopener noreferrer"
          class="group inline-flex items-center justify-center border border-white/40 px-6 py-3 rounded-xl font-semibold backdrop-blur-md hover:bg-white/10 hover:scale-105 transition duration-300">
 
        

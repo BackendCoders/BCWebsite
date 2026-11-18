@@ -1,6 +1,45 @@
 
 @extends('component.main')
 
+@php
+    $processBreadcrumb = [
+        '@context' => 'https://schema.org',
+        '@type' => 'BreadcrumbList',
+        'itemListElement' => [
+            [
+                '@type' => 'ListItem',
+                'position' => 1,
+                'name' => 'Home',
+                'item' => url('/'),
+            ],
+            [
+                '@type' => 'ListItem',
+                'position' => 2,
+                'name' => 'Development Process',
+                'item' => 'https://backendcodersindia.com/process',
+            ],
+        ],
+    ];
+
+    $processWebPage = [
+        '@context' => 'https://schema.org',
+        '@type' => 'WebPage',
+        '@id' => 'https://backendcodersindia.com/process#webpage',
+        'url' => 'https://backendcodersindia.com/process',
+        'name' => 'Software Development Process | Backend Coders India',
+        'description' => 'Our end-to-end agile software development methodology from architecture planning to cloud deployment.',
+        'isPartOf' => [
+            '@type' => 'WebSite',
+            '@id' => 'https://backendcodersindia.com/#website',
+        ],
+    ];
+@endphp
+
+@push('head')
+    <script type="application/ld+json">{!! json_encode($processBreadcrumb, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) !!}</script>
+    <script type="application/ld+json">{!! json_encode($processWebPage, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) !!}</script>
+@endpush
+
 @section('content')
 <!-- hero section  -->
 <section class="relative h-[30vh] flex items-center justify-center text-center text-white overflow-hidden">
@@ -21,7 +60,7 @@
 
     <!-- HEADING -->
     <h1 class="mt-6 text-4xl sm:text-5xl md:text-6xl font-bold leading-tight">
-        Our Software Development <span class="text-[#FC5124] font-semibold"> Process</span> <span class="text-[#FD5528] font-semibold">
+        Our Software Development <span class="text-[#C2410C] font-semibold"> Process</span> <span class="text-[#FD5528] font-semibold">
 
     </h1>
 
@@ -85,13 +124,13 @@
         <div class="flex items-start gap-4 lg:flex-col lg:items-center text-left lg:text-center group">
 
           <!-- CIRCLE -->
-          <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#FD5528] font-semibold transition     ">
+          <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#C2410C] font-semibold transition     ">
             01
           </div>
 
           <!-- TEXT -->
           <div>
-            <h3 class="font-semibold text-gray-900 group-hover:text-[#FD5528]">
+            <h3 class="font-semibold text-gray-900 group-hover:text-[#C2410C]">
               Discovery
             </h3>
             <p class="text-sm text-gray-500 mt-1">
@@ -103,11 +142,11 @@
 
         <!-- STEP -->
         <div class="flex items-start gap-4 lg:flex-col lg:items-center text-left lg:text-center group">
-          <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#FD5528] font-semibold transition ] ">
+          <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#C2410C] font-semibold transition ] ">
             02
           </div>
           <div>
-            <h3 class="font-semibold text-gray-900 group-hover:text-[#FD5528]">
+            <h3 class="font-semibold text-gray-900 group-hover:text-[#C2410C]">
               UI / UX
             </h3>
             <p class="text-sm text-gray-500 mt-1">
@@ -118,11 +157,11 @@
 
         <!-- STEP -->
         <div class="flex items-start gap-4 lg:flex-col lg:items-center text-left lg:text-center group">
-          <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#FD5528] font-semibold transition ] ">
+          <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#C2410C] font-semibold transition ] ">
             03
           </div>
           <div>
-            <h3 class="font-semibold text-gray-900 group-hover:text-[#FD5528]">
+            <h3 class="font-semibold text-gray-900 group-hover:text-[#C2410C]">
               Development
             </h3>
             <p class="text-sm text-gray-500 mt-1">
@@ -133,11 +172,11 @@
 
         <!-- STEP -->
         <div class="flex items-start gap-4 lg:flex-col lg:items-center text-left lg:text-center group">
-          <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#FD5528] font-semibold transition ] ">
+          <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#C2410C] font-semibold transition ] ">
             04
           </div>
           <div>
-            <h3 class="font-semibold text-gray-900 group-hover:text-[#FD5528]">
+            <h3 class="font-semibold text-gray-900 group-hover:text-[#C2410C]">
               Testing
             </h3>
             <p class="text-sm text-gray-500 mt-1">
@@ -148,11 +187,11 @@
 
         <!-- STEP -->
         <div class="flex items-start gap-4 lg:flex-col lg:items-center text-left lg:text-center group">
-          <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#FD5528] font-semibold transition  ">
+          <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#C2410C] font-semibold transition  ">
             05
           </div>
           <div>
-            <h3 class="font-semibold text-gray-900 group-hover:text-[#FD5528]">
+            <h3 class="font-semibold text-gray-900 group-hover:text-[#C2410C]">
               Deployment
             </h3>
             <p class="text-sm text-gray-500 mt-1">
@@ -163,11 +202,11 @@
 
         <!-- STEP -->
         <div class="flex items-start gap-4 lg:flex-col lg:items-center text-left lg:text-center group">
-          <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#FD5528] font-semibold transition ">
+          <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#C2410C] font-semibold transition ">
             06
           </div>
           <div>
-            <h3 class="font-semibold text-gray-900 group-hover:text-[#FD5528]">
+            <h3 class="font-semibold text-gray-900 group-hover:text-[#C2410C]">
               Support
             </h3>
             <p class="text-sm text-gray-500 mt-1">
@@ -669,55 +708,54 @@ We partner with startups, SMEs, and growing businesses to deliver technology sol
             </span>
           </div>
 
-         
-           <div class="mt-8 grid gap-4 grid-cols-3 sm:grid-cols-3 xl:grid-cols-4">
-            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition  hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg" class="w-12 h-12" alt="Dotnet Core - Backend Coders India">
-              <span class="text-sm font-semibold text-gray-900">.NET Core</span>
+          <div class="mt-8 grid gap-3 sm:gap-4 grid-cols-2 sm:grid-cols-3 md:grid-cols-4">
+            <div class="flex flex-col items-center justify-center gap-3 rounded-2xl border border-gray-200/80 bg-white/90 p-4 sm:p-5 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#FD5528]/50 hover:bg-white hover:shadow-md">
+              <img src="{{ asset('assets/icons/tech/dotnetcore.svg') }}" width="48" height="48" loading="lazy" decoding="async" class="w-12 h-12 object-contain" alt="Dotnet Core - Backend Coders India">
+              <span class="text-xs sm:text-sm font-semibold text-gray-900 whitespace-nowrap">.NET Core</span>
             </div>
-            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" class="w-12 h-12" alt="React - Backend Coders India">
-              <span class="text-sm font-semibold text-gray-900">React</span>
+            <div class="flex flex-col items-center justify-center gap-3 rounded-2xl border border-gray-200/80 bg-white/90 p-4 sm:p-5 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#FD5528]/50 hover:bg-white hover:shadow-md">
+              <img src="{{ asset('assets/icons/tech/react.svg') }}" width="48" height="48" loading="lazy" decoding="async" class="w-12 h-12 object-contain" alt="React - Backend Coders India">
+              <span class="text-xs sm:text-sm font-semibold text-gray-900 whitespace-nowrap">React</span>
             </div>
-            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" class="w-12 h-12" alt="Node.js - Backend Coders India">
-              <span class="text-sm font-semibold text-gray-900">Node.js</span>
+            <div class="flex flex-col items-center justify-center gap-3 rounded-2xl border border-gray-200/80 bg-white/90 p-4 sm:p-5 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#FD5528]/50 hover:bg-white hover:shadow-md">
+              <img src="{{ asset('assets/icons/tech/nodejs.svg') }}" width="48" height="48" loading="lazy" decoding="async" class="w-12 h-12 object-contain" alt="Node.js - Backend Coders India">
+              <span class="text-xs sm:text-sm font-semibold text-gray-900 whitespace-nowrap">Node.js</span>
             </div>
-            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" class="w-12 h-12" alt="MongoDB - Backend Coders India">
-              <span class="text-sm font-semibold text-gray-900">MERN</span>
+            <div class="flex flex-col items-center justify-center gap-3 rounded-2xl border border-gray-200/80 bg-white/90 p-4 sm:p-5 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#FD5528]/50 hover:bg-white hover:shadow-md">
+              <img src="{{ asset('assets/icons/tech/mongodb.svg') }}" width="48" height="48" loading="lazy" decoding="async" class="w-12 h-12 object-contain" alt="MongoDB - Backend Coders India">
+              <span class="text-xs sm:text-sm font-semibold text-gray-900 whitespace-nowrap">MERN</span>
             </div>
-            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-original.svg" class="w-12 h-12" alt="WordPress - Backend Coders India">
-              <span class="text-sm font-semibold text-gray-900">WordPress</span>
+            <div class="flex flex-col items-center justify-center gap-3 rounded-2xl border border-gray-200/80 bg-white/90 p-4 sm:p-5 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#FD5528]/50 hover:bg-white hover:shadow-md">
+              <img src="{{ asset('assets/icons/tech/wordpress.svg') }}" width="48" height="48" loading="lazy" decoding="async" class="w-12 h-12 object-contain" alt="WordPress - Backend Coders India">
+              <span class="text-xs sm:text-sm font-semibold text-gray-900 whitespace-nowrap">WordPress</span>
             </div>
-            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
-              <img src="https://cdn.simpleicons.org/spotify/1DB954" class="w-12 h-12" alt="Shopify - Backend Coders India">
-              <span class="text-sm font-semibold text-gray-900">Shopify</span>
+            <div class="flex flex-col items-center justify-center gap-3 rounded-2xl border border-gray-200/80 bg-white/90 p-4 sm:p-5 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#FD5528]/50 hover:bg-white hover:shadow-md">
+              <img src="{{ asset('assets/icons/tech/shopify.svg') }}" width="48" height="48" loading="lazy" decoding="async" class="w-12 h-12 object-contain" alt="Shopify - Backend Coders India">
+              <span class="text-xs sm:text-sm font-semibold text-gray-900 whitespace-nowrap">Shopify</span>
             </div>
-            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" class="w-12 h-12" alt="Laravel - Backend Coders India">
-              <span class="text-sm font-semibold text-gray-900">Laravel</span>
+            <div class="flex flex-col items-center justify-center gap-3 rounded-2xl border border-gray-200/80 bg-white/90 p-4 sm:p-5 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#FD5528]/50 hover:bg-white hover:shadow-md">
+              <img src="{{ asset('assets/icons/tech/laravel.svg') }}" width="48" height="48" loading="lazy" decoding="async" class="w-12 h-12 object-contain" alt="Laravel - Backend Coders India">
+              <span class="text-xs sm:text-sm font-semibold text-gray-900 whitespace-nowrap">Laravel</span>
             </div>
-            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" class="w-12 h-12" alt="SQL Server - Backend Coders India">
-              <span class="text-sm font-semibold text-gray-900">SQL Server</span>
+            <div class="flex flex-col items-center justify-center gap-3 rounded-2xl border border-gray-200/80 bg-white/90 p-4 sm:p-5 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#FD5528]/50 hover:bg-white hover:shadow-md">
+              <img src="{{ asset('assets/icons/tech/mssql.svg') }}" width="48" height="48" loading="lazy" decoding="async" class="w-12 h-12 object-contain" alt="SQL Server - Backend Coders India">
+              <span class="text-xs sm:text-sm font-semibold text-gray-900 whitespace-nowrap">SQL Server</span>
             </div>
-            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" class="w-12 h-12" alt="Firebase - Backend Coders India">
-              <span class="text-sm font-semibold text-gray-900">Firebase</span>
+            <div class="flex flex-col items-center justify-center gap-3 rounded-2xl border border-gray-200/80 bg-white/90 p-4 sm:p-5 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#FD5528]/50 hover:bg-white hover:shadow-md">
+              <img src="{{ asset('assets/icons/tech/firebase.svg') }}" width="48" height="48" loading="lazy" decoding="async" class="w-12 h-12 object-contain" alt="Firebase - Backend Coders India">
+              <span class="text-xs sm:text-sm font-semibold text-gray-900 whitespace-nowrap">Firebase</span>
             </div>
-            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" class="w-12 h-12" alt="AWS - Backend Coders India">
-              <span class="text-sm font-semibold text-gray-900">AWS</span>
+            <div class="flex flex-col items-center justify-center gap-3 rounded-2xl border border-gray-200/80 bg-white/90 p-4 sm:p-5 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#FD5528]/50 hover:bg-white hover:shadow-md">
+              <img src="{{ asset('assets/icons/tech/aws.svg') }}" width="48" height="48" loading="lazy" decoding="async" class="w-12 h-12 object-contain" alt="AWS - Backend Coders India">
+              <span class="text-xs sm:text-sm font-semibold text-gray-900 whitespace-nowrap">AWS</span>
             </div>
-            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" class="w-12 h-12" alt="TypeScript - Backend Coders India">
-              <span class="text-sm font-semibold text-gray-900">TypeScript</span>
+            <div class="flex flex-col items-center justify-center gap-3 rounded-2xl border border-gray-200/80 bg-white/90 p-4 sm:p-5 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#FD5528]/50 hover:bg-white hover:shadow-md">
+              <img src="{{ asset('assets/icons/tech/typescript.svg') }}" width="48" height="48" loading="lazy" decoding="async" class="w-12 h-12 object-contain" alt="TypeScript - Backend Coders India">
+              <span class="text-xs sm:text-sm font-semibold text-gray-900 whitespace-nowrap">TypeScript</span>
             </div>
-            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5 text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" class="w-12 h-12 bg-white p-1 rounded" alt="Next.js - Backend Coders India">
-              <span class="text-sm font-semibold text-gray-900">Next.js</span>
+            <div class="flex flex-col items-center justify-center gap-3 rounded-2xl border border-gray-200/80 bg-white/90 p-4 sm:p-5 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#FD5528]/50 hover:bg-white hover:shadow-md">
+              <img src="{{ asset('assets/icons/tech/nextjs.svg') }}" width="48" height="48" loading="lazy" decoding="async" class="w-12 h-12 object-contain" alt="Next.js - Backend Coders India">
+              <span class="text-xs sm:text-sm font-semibold text-gray-900 whitespace-nowrap">Next.js</span>
             </div>
           </div>
           
@@ -756,7 +794,7 @@ We partner with startups, SMEs, and growing businesses to deliver technology sol
 
       <!-- PRIMARY BUTTON -->
       <a href="{{ route('frontend.contact') }}"
-         class="group inline-flex items-center justify-center bg-white text-[#FC5124] px-6 py-3 rounded-xl font-semibold shadow-lg hover:shadow-2xl hover:scale-105 transition duration-300">
+         class="group inline-flex items-center justify-center bg-white text-[#FD5528] px-6 py-3 rounded-xl font-semibold shadow-lg hover:shadow-2xl hover:scale-105 transition duration-300">
 
         Contact Us
 

@@ -1,4 +1,30 @@
 @extends('component.main')
+
+@php
+    $careerBreadcrumb = [
+        '@context' => 'https://schema.org',
+        '@type' => 'BreadcrumbList',
+        'itemListElement' => [
+            [
+                '@type' => 'ListItem',
+                'position' => 1,
+                'name' => 'Home',
+                'item' => 'https://backendcodersindia.com/',
+            ],
+            [
+                '@type' => 'ListItem',
+                'position' => 2,
+                'name' => 'Careers',
+                'item' => 'https://backendcodersindia.com/career',
+            ],
+        ],
+    ];
+@endphp
+
+@push('head')
+    <script type="application/ld+json">{!! json_encode($careerBreadcrumb, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) !!}</script>
+@endpush
+
 @section('content')
 <!-- hero section  -->
 <section class="relative h-[30vh] flex items-center justify-center text-center text-white overflow-hidden">
@@ -182,6 +208,9 @@
 
     <form class="bg-white p-8 rounded-xl shadow space-y-4" data-aos="fade-up" method="POST" action="{{ route('career.apply') }}" enctype="multipart/form-data">
       @csrf
+      <input type="hidden" name="visitor_id" value="{{ request()->cookie('bc_visitor_id') ?? request()->attributes->get('visitor_id') ?? '' }}">
+      <input type="hidden" name="referrer" value="{{ request()->header('referer') ?? '' }}">
+      <input type="hidden" name="landing_page" value="{{ url()->current() }}">
 
       @if(session('success'))
           <div class="rounded-xl border border-emerald-200 bg-emerald-50 p-4 text-emerald-800 shadow-sm flex items-start gap-3">
@@ -265,7 +294,7 @@
     <div class="flex flex-col sm:flex-row justify-center gap-4">
 
       <!-- PRIMARY BUTTON -->
-      <a href="tel:+91 914 0092 133"
+      <a href="tel:+919140092133"
          class="group inline-flex items-center justify-center bg-white text-[#FC5124] px-6 py-3 rounded-xl font-semibold shadow-lg hover:shadow-2xl hover:scale-105 transition duration-300">
 
         Contact Hr

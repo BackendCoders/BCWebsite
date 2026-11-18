@@ -1,5 +1,44 @@
 @extends('component.main')
 
+@php
+    $teamBreadcrumb = [
+        '@context' => 'https://schema.org',
+        '@type' => 'BreadcrumbList',
+        'itemListElement' => [
+            [
+                '@type' => 'ListItem',
+                'position' => 1,
+                'name' => 'Home',
+                'item' => url('/'),
+            ],
+            [
+                '@type' => 'ListItem',
+                'position' => 2,
+                'name' => 'Our Team',
+                'item' => 'https://backendcodersindia.com/team',
+            ],
+        ],
+    ];
+
+    $teamWebPage = [
+        '@context' => 'https://schema.org',
+        '@type' => 'WebPage',
+        '@id' => 'https://backendcodersindia.com/team#webpage',
+        'url' => 'https://backendcodersindia.com/team',
+        'name' => 'Our Team & Culture | Backend Coders India',
+        'description' => 'Meet the engineers, designers, and digital strategists at Backend Coders India in Kanpur.',
+        'isPartOf' => [
+            '@type' => 'WebSite',
+            '@id' => 'https://backendcodersindia.com/#website',
+        ],
+    ];
+@endphp
+
+@push('head')
+    <script type="application/ld+json">{!! json_encode($teamBreadcrumb, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) !!}</script>
+    <script type="application/ld+json">{!! json_encode($teamWebPage, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) !!}</script>
+@endpush
+
 @section('content')
 
 <!-- =========================================================
@@ -156,17 +195,19 @@
                             
                             <!-- Framed Portrait with fixed height -->
                             <div class="relative h-44 w-44 sm:h-48 sm:w-48 flex-shrink-0 rounded-2xl overflow-hidden border border-slate-200 bg-slate-100 shadow-sm group-hover:border-[#FD5528]/50 transition-colors duration-300">
-                               <a href="/owner" ><img
-                                    src="{{ asset('assets/images/ceo.webp') }}"
-                                    alt="Ravindra Verma - Founder & CEO"
-                                    loading="lazy"
-                                    decoding="async"
-                                    class="h-full w-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
-                                />
-                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent"></div>
-                                <span class="absolute bottom-2 left-2 right-2 text-center text-[10px] font-extrabold uppercase tracking-widest text-white bg-slate-900/80 backdrop-blur-md py-1 rounded-lg border border-white/10">
-                                    Founder &amp; CEO
-                                </span> </a>
+                                <a href="{{ route('frontend.owner') }}" class="block h-full w-full relative" aria-label="Ravindra Verma Founder & CEO Profile">
+                                    <img
+                                        src="{{ asset('assets/images/ceo.webp') }}"
+                                        alt="Ravindra Verma - Founder & CEO"
+                                        loading="lazy"
+                                        decoding="async"
+                                        class="h-full w-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
+                                    />
+                                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent"></div>
+                                    <span class="absolute bottom-2 left-2 right-2 text-center text-[10px] font-extrabold uppercase tracking-widest text-white bg-slate-900/80 backdrop-blur-md py-1 rounded-lg border border-white/10">
+                                        Founder &amp; CEO
+                                    </span>
+                                </a>
                             </div>
 
                             <!-- Name, Title & Bio Intro -->
@@ -175,7 +216,7 @@
                                     Chief Executive
                                 </div>
                                 <h3 class="mt-2 text-2xl sm:text-3xl font-black tracking-tight text-slate-900 group-hover:text-[#FD5528] transition-colors duration-300">
-                                    Ravindra Verma
+                                    <a href="{{ route('frontend.owner') }}" class="hover:underline">Ravindra Verma</a>
                                 </h3>
                                 <p class="mt-1 text-xs sm:text-sm font-semibold uppercase tracking-wider text-slate-500">
                                     Founder &amp; Chief Executive Officer
@@ -184,6 +225,9 @@
                                 <p class="mt-3 text-xs sm:text-sm leading-relaxed text-slate-600">
                                     Ravindra leads our work on software and AI tools. He helps businesses choose clear goals and build systems that can grow with them.
                                 </p>
+                                <a href="{{ route('frontend.owner') }}" class="inline-flex items-center gap-1.5 mt-3 text-xs sm:text-sm font-bold text-[#FD5528] hover:text-[#e0451b] transition-colors">
+                                    Read Founder &amp; CEO Profile &rarr;
+                                </a>
                             </div>
                         </div>
 
@@ -208,10 +252,11 @@
                             </span>
                         </div>
                     </div>
-
-         
-                   
                 </article>
+
+                <!-- =============================================
+                     EXECUTIVE 02: SWATI VERMA (DIRECTOR)
+                ============================================== -->
                 <article
                     class="group relative flex flex-col justify-between overflow-hidden rounded-[28px] border border-slate-200/90 bg-white p-6 sm:p-8 shadow-[0_10px_35px_rgba(0,0,0,0.04)] transition-all duration-300 hover:border-[#FD5528]/40 hover:shadow-[0_20px_45px_rgba(253,85,40,0.12)] hover:-translate-y-1.5"
                     data-aos="fade-left"
@@ -225,17 +270,19 @@
                             
                             <!-- Framed Portrait with fixed height -->
                             <div class="relative h-44 w-44 sm:h-48 sm:w-48 flex-shrink-0 rounded-2xl overflow-hidden border border-slate-200 bg-slate-100 shadow-sm group-hover:border-[#FD5528]/50 transition-colors duration-300">
-                                <img
-                                    src="{{ asset('assets/images/director.webp') }}"
-                                    alt="Executive Director"
-                                    loading="lazy"
-                                    decoding="async"
-                                    class="h-full w-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
-                                />
-                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent"></div>
-                                <span class="absolute bottom-2 left-2 right-2 text-center text-[10px] font-extrabold uppercase tracking-widest text-white bg-slate-900/80 backdrop-blur-md py-1 rounded-lg border border-white/10">
-                                    Director
-                                </span>
+                                <div class="block h-full w-full relative">
+                                    <img
+                                        src="{{ asset('assets/images/director.webp') }}"
+                                        alt="Swati Verma - Director & Operations Head"
+                                        loading="lazy"
+                                        decoding="async"
+                                        class="h-full w-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
+                                    />
+                                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent"></div>
+                                    <span class="absolute bottom-2 left-2 right-2 text-center text-[10px] font-extrabold uppercase tracking-widest text-white bg-slate-900/80 backdrop-blur-md py-1 rounded-lg border border-white/10">
+                                        Director
+                                    </span>
+                                </div>
                             </div>
 
                             <!-- Name, Title & Bio Intro -->
@@ -253,6 +300,9 @@
                                 <p class="mt-3 text-xs sm:text-sm leading-relaxed text-slate-600">
                                     Swati leads our daily work and client support. She helps our team work well together and deliver projects on time.
                                 </p>
+                                <span class="inline-flex items-center gap-1.5 mt-3 text-xs sm:text-sm font-bold text-slate-700">
+                                    Operations Leadership &amp; Growth &rarr;
+                                </span>
                             </div>
                         </div>
 
@@ -277,23 +327,6 @@
                             </span>
                         </div>
                     </div>
-
-                    <!-- Footer & Social Connect Bar -->
-                    <!-- <div class="mt-7 flex items-center justify-between border-t border-slate-100 pt-4">
-                        <span class="text-xs font-semibold uppercase tracking-wider text-slate-400">Backend Coders India</span>
-                        
-                        <div class="flex items-center gap-2.5">
-                            <a href="https://www.linkedin.com/company/backendcodersindia/" target="_blank" rel="noopener noreferrer" class="flex h-8 w-8 items-center justify-center rounded-full border border-slate-200 bg-slate-50 transition-all hover:bg-[#FD5528] hover:border-[#FD5528] hover:text-white group/btn" title="Connect on LinkedIn">
-                                <img src="{{ asset('assets/icons/linkedin.png') }}" alt="LinkedIn" class="h-3.5 w-3.5 group-hover/btn:brightness-0 group-hover/btn:invert">
-                            </a>
-                            <a href="https://www.facebook.com/backendcoders/" target="_blank" rel="noopener noreferrer" class="flex h-8 w-8 items-center justify-center rounded-full border border-slate-200 bg-slate-50 transition-all hover:bg-[#FD5528] hover:border-[#FD5528] hover:text-white group/btn" title="Follow on Facebook">
-                                <img src="{{ asset('assets/icons/facebook.png') }}" alt="Facebook" class="h-3.5 w-3.5 group-hover/btn:brightness-0 group-hover/btn:invert">
-                            </a>
-                            <a href="https://www.instagram.com/backendcoders/" target="_blank" rel="noopener noreferrer" class="flex h-8 w-8 items-center justify-center rounded-full border border-slate-200 bg-slate-50 transition-all hover:bg-[#FD5528] hover:border-[#FD5528] hover:text-white group/btn" title="Follow on Instagram">
-                                <img src="{{ asset('assets/icons/instagram.png') }}" alt="Instagram" class="h-3.5 w-3.5 group-hover/btn:brightness-0 group-hover/btn:invert">
-                            </a>
-                        </div>
-                    </div> -->
                 </article>
 
             </div>
@@ -330,69 +363,87 @@
 
                 <!-- Filter Categories -->
                 <div class="mt-7 flex flex-wrap items-center justify-center gap-2">
-                    <button type="button" onclick="filterTeam('all', this)" class="team-filter-btn active-filter rounded-full px-4 py-1.5 text-xs font-bold uppercase tracking-wider transition-all duration-200 bg-[#FD5528] text-white shadow-md shadow-[#FD5528]/25">
-                        All Specialists
+                    <button type="button" onclick="filterTeam('all', this)" class="team-filter-btn active-filter rounded-full px-5 py-2 text-xs font-bold uppercase tracking-wider transition-all duration-200 bg-[#FD5528] text-white shadow-md shadow-[#FD5528]/25 cursor-pointer">
+                        ALL SPECIALISTS
                     </button>
-                    <button type="button" onclick="filterTeam('ai', this)" class="team-filter-btn rounded-full px-4 py-1.5 text-xs font-bold uppercase tracking-wider transition-all duration-200 bg-white text-slate-600 border border-slate-200 hover:border-[#FD5528] hover:text-[#FD5528]">
-                        AI &amp; Data
+                    <button type="button" onclick="filterTeam('ai', this)" class="team-filter-btn rounded-full px-5 py-2 text-xs font-bold uppercase tracking-wider transition-all duration-200 bg-white text-slate-700 border border-slate-200 hover:border-[#FD5528] hover:text-[#FD5528] cursor-pointer">
+                        AI &amp; DATA
                     </button>
-                    <button type="button" onclick="filterTeam('backend', this)" class="team-filter-btn rounded-full px-4 py-1.5 text-xs font-bold uppercase tracking-wider transition-all duration-200 bg-white text-slate-600 border border-slate-200 hover:border-[#FD5528] hover:text-[#FD5528]">
-                        Backend &amp; Fullstack
+                    <button type="button" onclick="filterTeam('backend', this)" class="team-filter-btn rounded-full px-5 py-2 text-xs font-bold uppercase tracking-wider transition-all duration-200 bg-white text-slate-700 border border-slate-200 hover:border-[#FD5528] hover:text-[#FD5528] cursor-pointer">
+                        BACKEND &amp; FULLSTACK
                     </button>
-                    <button type="button" onclick="filterTeam('design', this)" class="team-filter-btn rounded-full px-4 py-1.5 text-xs font-bold uppercase tracking-wider transition-all duration-200 bg-white text-slate-600 border border-slate-200 hover:border-[#FD5528] hover:text-[#FD5528]">
-                        Design &amp; Growth
+                    <button type="button" onclick="filterTeam('design', this)" class="team-filter-btn rounded-full px-5 py-2 text-xs font-bold uppercase tracking-wider transition-all duration-200 bg-white text-slate-700 border border-slate-200 hover:border-[#FD5528] hover:text-[#FD5528] cursor-pointer">
+                        DESIGN &amp; GROWTH
                     </button>
                 </div>
             </div>
 
 
-            <!-- TEAM CARDS: 3 COLUMNS X 2 ROWS = 6 BALANCED SPECIALISTS -->
+            <!-- TEAM CARDS: BALANCED & CENTERED SPECIALISTS GRID -->
             <div
                 id="teamCardsContainer"
-                class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
+                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
             >
 
                 <!-- =============================================
                      MEMBER 01: NUPUR
                 ============================================== -->
                 <div
-                    class="team-card group flex flex-col justify-between rounded-[24px] border border-slate-200 bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:border-[#FD5528]/40 hover:shadow-xl"
-                    data-category="backend"
+                    class="team-card group relative flex flex-col justify-between rounded-3xl border border-slate-200/80 bg-white p-5 sm:p-6 shadow-sm hover:shadow-xl hover:border-[#FD5528]/40 hover:-translate-y-1.5 transition-all duration-300 w-full"
+                    data-category="backend design"
                     data-aos="fade-up"
                     data-aos-delay="0"
                 >
-                    <!-- Exact Fixed Portrait Height Container (230px) -->
-                    <div class="relative h-[230px] w-full overflow-hidden rounded-2xl bg-slate-100">
-                        <img
-                            src="{{ asset('assets/images/nupur.webp') }}"
-                            alt="Nupur - Tech Lead"
-                            loading="lazy"
-                            decoding="async"
-                            class="h-full w-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
-                        />
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+                    <div>
+                        <!-- Portrait Photo Frame: 4:3 with floating category badge -->
+                        <div class="relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-slate-100 shadow-inner group">
+                            <img
+                                src="{{ asset('assets/images/nupur.webp') }}"
+                                alt="Nupur - Tech Lead & Sr. PHP Developer"
+                                width="400"
+                                height="300"
+                                loading="lazy"
+                                decoding="async"
+                                class="h-full w-full object-cover object-[center_15%] transition-transform duration-700 ease-out group-hover:scale-105"
+                            />
+                            <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <div class="absolute top-3 left-3 z-10">
+                                <span class="inline-flex items-center gap-1.5 rounded-full bg-white/95 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-slate-800 shadow-sm backdrop-blur-md border border-white/80">
+                                    <span class="h-1.5 w-1.5 rounded-full bg-[#FD5528]"></span>
+                                    Tech Lead
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Member Meta Details -->
+                        <div class="mt-5 text-center">
+                            <h3 class="text-xl font-bold tracking-tight text-slate-900 group-hover:text-[#FD5528] transition-colors duration-200">
+                                Nupur
+                            </h3>
+                            <p class="mt-1 text-sm font-medium text-slate-600">
+                                Tech Lead &amp; Sr. PHP Developer
+                            </p>
+
+                            <!-- Micro Skill Badges -->
+                            <div class="mt-3.5 flex flex-wrap items-center justify-center gap-1.5">
+                                <span class="inline-block rounded-lg bg-slate-100 px-2.5 py-1 text-[11px] font-semibold text-slate-600">PHP 8+</span>
+                                <span class="inline-block rounded-lg bg-slate-100 px-2.5 py-1 text-[11px] font-semibold text-slate-600">Laravel</span>
+                                <span class="inline-block rounded-lg bg-slate-100 px-2.5 py-1 text-[11px] font-semibold text-slate-600">System Design</span>
+                            </div>
+                        </div>
                     </div>
 
-                    <!-- Member Meta Details -->
-                    <div class="mt-4 text-center">
-                        <h3 class="text-xl font-bold tracking-tight text-slate-900">
-                            Nupur
-                        </h3>
-                        <p class="mt-0.5 text-xs sm:text-sm font-medium text-slate-500">
-                            <span class="font-semibold">Tech Lead</span> &amp; Sr. PHP Developer
-                        </p>
-                    </div>
-
-                    <!-- Distinctive Pill Action Button -->
-                    <div class="mt-4 flex justify-center">
+                    <!-- Single Centered Action Button -->
+                    <div class="mt-6 pt-4 border-t border-slate-100">
                         <button
                             type="button"
                             onclick="openMemberModal('nupur')"
-                            class="inline-flex min-h-[38px] items-center justify-center rounded-full border border-slate-300 bg-white px-6 py-1.5 text-xs font-bold uppercase tracking-[0.16em] text-slate-800 transition-all duration-200 hover:border-[#FD5528] hover:bg-[#FD5528] hover:text-white hover:shadow-md hover:shadow-[#FD5528]/25"
+                            class="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-slate-900 py-2.5 text-xs font-bold uppercase tracking-wider text-white shadow-sm hover:bg-[#FD5528] hover:shadow-md hover:shadow-[#FD5528]/25 transition-all duration-200 cursor-pointer group-hover:bg-[#FD5528]"
                         >
-                         <a href="https://www.linkedin.com/in/nupur-singh-50a257217?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" class="text-xs font-bold uppercase tracking-[0.16em] text-slate-800 transition-all duration-200 hover:text-white">
-                                MEET NUPUR </a>
-                            
+                            <span>MEET NUPUR</span>
+                            <svg class="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                            </svg>
                         </button>
                     </div>
                 </div>
@@ -402,39 +453,57 @@
                      MEMBER 02: UTKARSH SONKAR
                 ============================================== -->
                 <div
-                    class="team-card group flex flex-col justify-between rounded-[24px] border border-slate-200 bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:border-[#FD5528]/40 hover:shadow-xl"
+                    class="team-card group relative flex flex-col justify-between rounded-3xl border border-slate-200/80 bg-white p-5 sm:p-6 shadow-sm hover:shadow-xl hover:border-[#FD5528]/40 hover:-translate-y-1.5 transition-all duration-300 w-full"
                     data-category="backend"
                     data-aos="fade-up"
                     data-aos-delay="50"
                 >
-                    <div class="relative h-[230px] w-full overflow-hidden rounded-2xl bg-slate-100">
-                        <img
-                            src="{{ asset('assets/images/utkarsh.webp') }}"
-                            alt="Utkarsh Sonkar - Project Coordinator"
-                            loading="lazy"
-                            decoding="async"
-                            class="h-full w-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
-                        />
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+                    <div>
+                        <div class="relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-slate-100 shadow-inner group">
+                            <img
+                                src="{{ asset('assets/images/utkarsh.webp') }}"
+                                alt="Utkarsh Sonkar - Project Coordinator & Dotnet Dev"
+                                width="400"
+                                height="300"
+                                loading="lazy"
+                                decoding="async"
+                                class="h-full w-full object-cover object-[center_15%] transition-transform duration-700 ease-out group-hover:scale-105"
+                            />
+                            <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <div class="absolute top-3 left-3 z-10">
+                                <span class="inline-flex items-center gap-1.5 rounded-full bg-white/95 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-slate-800 shadow-sm backdrop-blur-md border border-white/80">
+                                    <span class="h-1.5 w-1.5 rounded-full bg-[#FD5528]"></span>
+                                    Project Coordinator
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="mt-5 text-center">
+                            <h3 class="text-xl font-bold tracking-tight text-slate-900 group-hover:text-[#FD5528] transition-colors duration-200">
+                                Utkarsh Sonkar
+                            </h3>
+                            <p class="mt-1 text-sm font-medium text-slate-600">
+                                Project Coordinator &amp; Dotnet Dev
+                            </p>
+
+                            <div class="mt-3.5 flex flex-wrap items-center justify-center gap-1.5">
+                                <span class="inline-block rounded-lg bg-slate-100 px-2.5 py-1 text-[11px] font-semibold text-slate-600">.NET Core</span>
+                                <span class="inline-block rounded-lg bg-slate-100 px-2.5 py-1 text-[11px] font-semibold text-slate-600">C#</span>
+                                <span class="inline-block rounded-lg bg-slate-100 px-2.5 py-1 text-[11px] font-semibold text-slate-600">React</span>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="mt-4 text-center">
-                        <h3 class="text-xl font-bold tracking-tight text-slate-900">
-                            Utkarsh Sonkar
-                        </h3>
-                        <p class="mt-0.5 text-xs sm:text-sm font-medium text-slate-500">
-                            <span class="text-[#0284c7] font-semibold">Project Coordinator</span> &amp; Dotnet Dev
-                        </p>
-                    </div>
-
-                    <div class="mt-4 flex justify-center">
+                    <div class="mt-6 pt-4 border-t border-slate-100">
                         <button
                             type="button"
                             onclick="openMemberModal('utkarsh')"
-                            class="inline-flex min-h-[38px] items-center justify-center rounded-full border border-slate-300 bg-white px-6 py-1.5 text-xs font-bold uppercase tracking-[0.16em] text-slate-800 transition-all duration-200 hover:border-[#FD5528] hover:bg-[#FD5528] hover:text-white hover:shadow-md hover:shadow-[#FD5528]/25"
+                            class="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-slate-900 py-2.5 text-xs font-bold uppercase tracking-wider text-white shadow-sm hover:bg-[#FD5528] hover:shadow-md hover:shadow-[#FD5528]/25 transition-all duration-200 cursor-pointer group-hover:bg-[#FD5528]"
                         >
-                            <a href="https://www.linkedin.com/in/utkarsh-sonker-2b530421a?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" class="text-xs font-bold uppercase tracking-[0.16em] text-slate-800 transition-all duration-200 hover:text-white">
-                                MEET UTKARSH </a>
+                            <span>MEET UTKARSH</span>
+                            <svg class="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                            </svg>
                         </button>
                     </div>
                 </div>
@@ -444,40 +513,57 @@
                      MEMBER 03: ARVIND VERMA
                 ============================================== -->
                 <div
-                    class="team-card group flex flex-col justify-between rounded-[24px] border border-slate-200 bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:border-[#FD5528]/40 hover:shadow-xl"
-                    data-category="ai"
+                    class="team-card group relative flex flex-col justify-between rounded-3xl border border-slate-200/80 bg-white p-5 sm:p-6 shadow-sm hover:shadow-xl hover:border-[#FD5528]/40 hover:-translate-y-1.5 transition-all duration-300 w-full"
+                    data-category="ai backend"
                     data-aos="fade-up"
                     data-aos-delay="100"
                 >
-                    <div class="relative h-[230px] w-full overflow-hidden rounded-2xl bg-slate-100">
-                        <img
-                            src="{{ asset('assets/images/arvind.webp') }}"
-                            alt="Arvind Verma - AI Development Head"
-                            loading="lazy"
-                            decoding="async"
-                            class="h-full w-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
-                        />
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+                    <div>
+                        <div class="relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-slate-100 shadow-inner group">
+                            <img
+                                src="{{ asset('assets/images/arvind.webp') }}"
+                                alt="Arvind Verma - AI Development Head & Backend Lead"
+                                width="400"
+                                height="300"
+                                loading="lazy"
+                                decoding="async"
+                                class="h-full w-full object-cover object-[center_15%] transition-transform duration-700 ease-out group-hover:scale-105"
+                            />
+                            <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <div class="absolute top-3 left-3 z-10">
+                                <span class="inline-flex items-center gap-1.5 rounded-full bg-white/95 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-slate-800 shadow-sm backdrop-blur-md border border-white/80">
+                                    <span class="h-1.5 w-1.5 rounded-full bg-[#FD5528]"></span>
+                                    AI Development Head
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="mt-5 text-center">
+                            <h3 class="text-xl font-bold tracking-tight text-slate-900 group-hover:text-[#FD5528] transition-colors duration-200">
+                                Arvind Verma
+                            </h3>
+                            <p class="mt-1 text-sm font-medium text-slate-600">
+                                AI Development Head &amp; Backend Lead
+                            </p>
+
+                            <div class="mt-3.5 flex flex-wrap items-center justify-center gap-1.5">
+                                <span class="inline-block rounded-lg bg-slate-100 px-2.5 py-1 text-[11px] font-semibold text-slate-600">Python</span>
+                                <span class="inline-block rounded-lg bg-slate-100 px-2.5 py-1 text-[11px] font-semibold text-slate-600">AI / LLMs</span>
+                                <span class="inline-block rounded-lg bg-slate-100 px-2.5 py-1 text-[11px] font-semibold text-slate-600">Redis</span>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="mt-4 text-center">
-                        <h3 class="text-xl font-bold tracking-tight text-slate-900">
-                            Arvind Verma
-                        </h3>
-                        <p class="mt-0.5 text-xs sm:text-sm font-medium text-slate-500">
-                            <span class="text-[#8b5cf6] font-semibold">AI Development Head</span> &amp; Backend Lead
-                        </p>
-                    </div>
-
-                    <div class="mt-4 flex justify-center">
+                    <div class="mt-6 pt-4 border-t border-slate-100">
                         <button
                             type="button"
                             onclick="openMemberModal('arvind')"
-                            class="inline-flex min-h-[38px] items-center justify-center rounded-full border border-slate-300 bg-white px-6 py-1.5 text-xs font-bold uppercase tracking-[0.16em] text-slate-800 transition-all duration-200 hover:border-[#FD5528] hover:bg-[#FD5528] hover:text-white hover:shadow-md hover:shadow-[#FD5528]/25"
+                            class="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-slate-900 py-2.5 text-xs font-bold uppercase tracking-wider text-white shadow-sm hover:bg-[#FD5528] hover:shadow-md hover:shadow-[#FD5528]/25 transition-all duration-200 cursor-pointer group-hover:bg-[#FD5528]"
                         >
-                         <a href="https://www.linkedin.com/in/arvind-verma-381290292/" target="_blank" rel="noopener noreferrer" class="text-xs font-bold uppercase tracking-[0.16em] text-slate-800 transition-all duration-200 hover:text-white">
-                                MEET ARVIND </a>
-                           
+                            <span>MEET ARVIND</span>
+                            <svg class="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                            </svg>
                         </button>
                     </div>
                 </div>
@@ -487,40 +573,57 @@
                      MEMBER 04: ADARSH SINGH
                 ============================================== -->
                 <div
-                    class="team-card group flex flex-col justify-between rounded-[24px] border border-slate-200 bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:border-[#FD5528]/40 hover:shadow-xl"
+                    class="team-card group relative flex flex-col justify-between rounded-3xl border border-slate-200/80 bg-white p-5 sm:p-6 shadow-sm hover:shadow-xl hover:border-[#FD5528]/40 hover:-translate-y-1.5 transition-all duration-300 w-full"
                     data-category="ai"
                     data-aos="fade-up"
                     data-aos-delay="150"
                 >
-                    <div class="relative h-[230px] w-full overflow-hidden rounded-2xl bg-slate-100">
-                        <img
-                            src="{{ asset('assets/images/adarsh.webp') }}"
-                            alt="Adarsh Singh - AI Developer & Data Science Associate"
-                            loading="lazy"
-                            decoding="async"
-                            class="h-full w-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
-                        />
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+                    <div>
+                        <div class="relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-slate-100 shadow-inner group">
+                            <img
+                                src="{{ asset('assets/images/adarsh.webp') }}"
+                                alt="Adarsh Singh - AI Developer & Data Science Associate"
+                                width="400"
+                                height="300"
+                                loading="lazy"
+                                decoding="async"
+                                class="h-full w-full object-cover object-[center_15%] transition-transform duration-700 ease-out group-hover:scale-105"
+                            />
+                            <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <div class="absolute top-3 left-3 z-10">
+                                <span class="inline-flex items-center gap-1.5 rounded-full bg-white/95 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-slate-800 shadow-sm backdrop-blur-md border border-white/80">
+                                    <span class="h-1.5 w-1.5 rounded-full bg-[#FD5528]"></span>
+                                    AI Developer
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="mt-5 text-center">
+                            <h3 class="text-xl font-bold tracking-tight text-slate-900 group-hover:text-[#FD5528] transition-colors duration-200">
+                                Adarsh Singh
+                            </h3>
+                            <p class="mt-1 text-sm font-medium text-slate-600">
+                                AI Developer &amp; Data Science
+                            </p>
+
+                            <div class="mt-3.5 flex flex-wrap items-center justify-center gap-1.5">
+                                <span class="inline-block rounded-lg bg-slate-100 px-2.5 py-1 text-[11px] font-semibold text-slate-600">PyTorch</span>
+                                <span class="inline-block rounded-lg bg-slate-100 px-2.5 py-1 text-[11px] font-semibold text-slate-600">FastAPI</span>
+                                <span class="inline-block rounded-lg bg-slate-100 px-2.5 py-1 text-[11px] font-semibold text-slate-600">TailwindCSS</span>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="mt-4 text-center">
-                        <h3 class="text-xl font-bold tracking-tight text-slate-900">
-                            Adarsh Singh
-                        </h3>
-                        <p class="mt-0.5 text-xs sm:text-sm font-medium text-slate-500">
-                            <span class="text-[#0d9488] font-semibold">AI Developer</span> &amp; Data Science
-                        </p>
-                    </div>
-
-                    <div class="mt-4 flex justify-center">
+                    <div class="mt-6 pt-4 border-t border-slate-100">
                         <button
                             type="button"
                             onclick="openMemberModal('adarsh')"
-                            class="inline-flex min-h-[38px] items-center justify-center rounded-full border border-slate-300 bg-white px-6 py-1.5 text-xs font-bold uppercase tracking-[0.16em] text-slate-800 transition-all duration-200 hover:border-[#FD5528] hover:bg-[#FD5528] hover:text-white hover:shadow-md hover:shadow-[#FD5528]/25"
+                            class="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-slate-900 py-2.5 text-xs font-bold uppercase tracking-wider text-white shadow-sm hover:bg-[#FD5528] hover:shadow-md hover:shadow-[#FD5528]/25 transition-all duration-200 cursor-pointer group-hover:bg-[#FD5528]"
                         >
-                         <a href="https://www.linkedin.com/in/adarsh-py/" target="_blank" rel="noopener noreferrer" class="text-xs font-bold uppercase tracking-[0.16em] text-slate-800 transition-all duration-200 hover:text-white">
-                                MEET ADARSH </a>
-                         
+                            <span>MEET ADARSH</span>
+                            <svg class="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                            </svg>
                         </button>
                     </div>
                 </div>
@@ -530,40 +633,57 @@
                      MEMBER 05: KAJAL KUMARI
                 ============================================== -->
                 <div
-                    class="team-card group flex flex-col justify-between rounded-[24px] border border-slate-200 bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:border-[#FD5528]/40 hover:shadow-xl"
-                    data-category="backend"
+                    class="team-card group relative flex flex-col justify-between rounded-3xl border border-slate-200/80 bg-white p-5 sm:p-6 shadow-sm hover:shadow-xl hover:border-[#FD5528]/40 hover:-translate-y-1.5 transition-all duration-300 w-full"
+                    data-category="backend ai"
                     data-aos="fade-up"
                     data-aos-delay="200"
                 >
-                    <div class="relative h-[230px] w-full overflow-hidden rounded-2xl bg-slate-100">
-                        <img
-                            src="{{ asset('assets/images/kajal.webp') }}"
-                            alt="Kajal Kumari - AI Coordinator & PHP Developer"
-                            loading="lazy"
-                            decoding="async"
-                            class="h-full w-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
-                        />
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+                    <div>
+                        <div class="relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-slate-100 shadow-inner group">
+                            <img
+                                src="{{ asset('assets/images/kajal.webp') }}"
+                                alt="Kajal Kumari - AI Coordinator & PHP Developer"
+                                width="400"
+                                height="300"
+                                loading="lazy"
+                                decoding="async"
+                                class="h-full w-full object-cover object-[center_15%] transition-transform duration-700 ease-out group-hover:scale-105"
+                            />
+                            <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <div class="absolute top-3 left-3 z-10">
+                                <span class="inline-flex items-center gap-1.5 rounded-full bg-white/95 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-slate-800 shadow-sm backdrop-blur-md border border-white/80">
+                                    <span class="h-1.5 w-1.5 rounded-full bg-[#FD5528]"></span>
+                                    AI Coordinator
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="mt-5 text-center">
+                            <h3 class="text-xl font-bold tracking-tight text-slate-900 group-hover:text-[#FD5528] transition-colors duration-200">
+                                Kajal Kumari
+                            </h3>
+                            <p class="mt-1 text-sm font-medium text-slate-600">
+                                AI Coordinator &amp; PHP Developer
+                            </p>
+
+                            <div class="mt-3.5 flex flex-wrap items-center justify-center gap-1.5">
+                                <span class="inline-block rounded-lg bg-slate-100 px-2.5 py-1 text-[11px] font-semibold text-slate-600">PHP</span>
+                                <span class="inline-block rounded-lg bg-slate-100 px-2.5 py-1 text-[11px] font-semibold text-slate-600">Laravel</span>
+                                <span class="inline-block rounded-lg bg-slate-100 px-2.5 py-1 text-[11px] font-semibold text-slate-600">CI/CD</span>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="mt-4 text-center">
-                        <h3 class="text-xl font-bold tracking-tight text-slate-900">
-                            Kajal Kumari
-                        </h3>
-                        <p class="mt-0.5 text-xs sm:text-sm font-medium text-slate-500">
-                            <span class="text-[#ea580c] font-semibold">AI Coordinator</span> &amp; PHP Developer
-                        </p>
-                    </div>
-
-                    <div class="mt-4 flex justify-center">
+                    <div class="mt-6 pt-4 border-t border-slate-100">
                         <button
                             type="button"
                             onclick="openMemberModal('kajal')"
-                            class="inline-flex min-h-[38px] items-center justify-center rounded-full border border-slate-300 bg-white px-6 py-1.5 text-xs font-bold uppercase tracking-[0.16em] text-slate-800 transition-all duration-200 hover:border-[#FD5528] hover:bg-[#FD5528] hover:text-white hover:shadow-md hover:shadow-[#FD5528]/25"
+                            class="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-slate-900 py-2.5 text-xs font-bold uppercase tracking-wider text-white shadow-sm hover:bg-[#FD5528] hover:shadow-md hover:shadow-[#FD5528]/25 transition-all duration-200 cursor-pointer group-hover:bg-[#FD5528]"
                         >
-                         <a href="https://www.linkedin.com/in/kajal-kumari-668240240?utm_source=share_via&utm_content=profile&utm_medium=member_android/" target="_blank" rel="noopener noreferrer" class="text-xs font-bold uppercase tracking-[0.16em] text-slate-800 transition-all duration-200 hover:text-white">
-                                MEET KAJAL</a>
-                            
+                            <span>MEET KAJAL</span>
+                            <svg class="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                            </svg>
                         </button>
                     </div>
                 </div>
@@ -573,51 +693,68 @@
                      MEMBER 06: ARAMBHI MISHRA
                 ============================================== -->
                 <div
-                    class="team-card group flex flex-col justify-between rounded-[24px] border border-slate-200 bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:border-[#FD5528]/40 hover:shadow-xl"
+                    class="team-card group relative flex flex-col justify-between rounded-3xl border border-slate-200/80 bg-white p-5 sm:p-6 shadow-sm hover:shadow-xl hover:border-[#FD5528]/40 hover:-translate-y-1.5 transition-all duration-300 w-full"
                     data-category="design"
                     data-aos="fade-up"
                     data-aos-delay="250"
                 >
-                    <div class="relative h-[230px] w-full overflow-hidden rounded-2xl bg-slate-100">
-                        <img
-                            src="{{ asset('assets/images/arambhi(1).webp') }}"
-                            alt="Arambhi Mishra - Marketing Associate"
-                            loading="lazy"
-                            decoding="async"
-                            class="h-full w-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
-                        />
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+                    <div>
+                        <div class="relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-slate-100 shadow-inner group">
+                            <img
+                                src="{{ asset('assets/images/arambhi(1).webp') }}"
+                                alt="Arambhi Mishra - Marketing Associate & Designer"
+                                width="400"
+                                height="300"
+                                loading="lazy"
+                                decoding="async"
+                                class="h-full w-full object-cover object-[center_15%] transition-transform duration-700 ease-out group-hover:scale-105"
+                            />
+                            <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <div class="absolute top-3 left-3 z-10">
+                                <span class="inline-flex items-center gap-1.5 rounded-full bg-white/95 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-slate-800 shadow-sm backdrop-blur-md border border-white/80">
+                                    <span class="h-1.5 w-1.5 rounded-full bg-[#FD5528]"></span>
+                                    Marketing &amp; Design
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="mt-5 text-center">
+                            <h3 class="text-xl font-bold tracking-tight text-slate-900 group-hover:text-[#FD5528] transition-colors duration-200">
+                                Arambhi Mishra
+                            </h3>
+                            <p class="mt-1 text-sm font-medium text-slate-600">
+                                Marketing Associate &amp; Designer
+                            </p>
+
+                            <div class="mt-3.5 flex flex-wrap items-center justify-center gap-1.5">
+                                <span class="inline-block rounded-lg bg-slate-100 px-2.5 py-1 text-[11px] font-semibold text-slate-600">Figma</span>
+                                <span class="inline-block rounded-lg bg-slate-100 px-2.5 py-1 text-[11px] font-semibold text-slate-600">UI/UX</span>
+                                <span class="inline-block rounded-lg bg-slate-100 px-2.5 py-1 text-[11px] font-semibold text-slate-600">Creative Strategy</span>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="mt-4 text-center">
-                        <h3 class="text-xl font-bold tracking-tight text-slate-900">
-                            Arambhi Mishra
-                        </h3>
-                        <p class="mt-0.5 text-xs sm:text-sm font-medium text-slate-500">
-                            <span class="text-[#ec4899] font-semibold">Marketing Associate</span> &amp; Designer
-                        </p>
-                    </div>
-
-                    <div class="mt-4 flex justify-center">
+                    <div class="mt-6 pt-4 border-t border-slate-100">
                         <button
                             type="button"
                             onclick="openMemberModal('arambhi')"
-                            class="inline-flex min-h-[38px] items-center justify-center rounded-full border border-slate-300 bg-white px-6 py-1.5 text-xs font-bold uppercase tracking-[0.16em] text-slate-800 transition-all duration-200 hover:border-[#FD5528] hover:bg-[#FD5528] hover:text-white hover:shadow-md hover:shadow-[#FD5528]/25"
+                            class="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-slate-900 py-2.5 text-xs font-bold uppercase tracking-wider text-white shadow-sm hover:bg-[#FD5528] hover:shadow-md hover:shadow-[#FD5528]/25 transition-all duration-200 cursor-pointer group-hover:bg-[#FD5528]"
                         >
-                         <a href="https://www.linkedin.com/in/arambhi-mishra-11b1b743b/" target="_blank" rel="noopener noreferrer" class="text-xs font-bold uppercase tracking-[0.16em] text-slate-800 transition-all duration-200 hover:text-white">
-                                MEET ARAMBHI </a>
-                          
+                            <span>MEET ARAMBHI</span>
+                            <svg class="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                            </svg>
                         </button>
                     </div>
                 </div>
 
             </div>
 
-            <!-- STATUS INDICATOR -->
-            <div class="mt-10 flex items-center justify-center gap-3">
-                <span class="text-xs sm:text-sm font-bold tracking-widest text-slate-500">
-                    <span id="activeCountBadge" class="text-slate-900 font-extrabold">6</span> / 6 CORE SPECIALISTS
-                </span>
+            <!-- CORE SPECIALISTS COUNTER -->
+            <div class="mt-12 flex items-center justify-center">
+                <p class="text-xs sm:text-sm font-bold tracking-[0.2em] text-slate-500 uppercase">
+                    <span id="activeCountBadge" class="font-black text-slate-900">6</span> / 6 CORE SPECIALISTS
+                </p>
             </div>
 
         </div>
@@ -673,7 +810,7 @@
                     data-album-category="sprint"
                     data-aos="fade-up"
                     data-aos-delay="0"
-                    onclick="openAlbumLightbox('{{ asset('assets/Office/649709421_1304707445044901_7896336242621366096_n.jpg') }}', 'Sprint Architecture & Collaboration', 'Our tech team plans and solves hard coding tasks together.')"
+                    onclick="openAlbumLightboxIndex(0)"
                 >
                     <!-- Exact fixed 190px landscape container -->
                     <div class="relative h-[190px] w-full overflow-hidden bg-slate-900">
@@ -715,7 +852,7 @@
                     data-album-category="celebration"
                     data-aos="fade-up"
                     data-aos-delay="100"
-                    onclick="openAlbumLightbox('{{ asset('assets/Office/649519728_1304707361711576_8038595386224399026_n.jpg') }}', 'Festival of Lights & Traditional Day', 'Traditional festivities, office decor, lights, sweets, and celebration rituals.')"
+                    onclick="openAlbumLightboxIndex(1)"
                 >
                     <div class="relative h-[190px] w-full overflow-hidden bg-slate-900">
                         <img
@@ -756,7 +893,7 @@
                     data-album-category="celebration"
                     data-aos="fade-up"
                     data-aos-delay="200"
-                    onclick="openAlbumLightbox('{{ asset('assets/Office/650055736_1304707068378272_8027700641331239382_n.jpg') }}', 'Team Wins & Milestone Celebration', 'Celebrating client delivery milestones, product releases, and team birthdays as one family.')"
+                    onclick="openAlbumLightboxIndex(2)"
                 >
                     <div class="relative h-[190px] w-full overflow-hidden bg-slate-900">
                         <img
@@ -797,7 +934,7 @@
                     data-album-category="workplace"
                     data-aos="fade-up"
                     data-aos-delay="0"
-                    onclick="openAlbumLightbox('{{ asset('assets/office/649426716_1304707918378187_6839822695956954278_n.jpg') }}', 'Deep Focus Engineering Hub', 'Clean desks with dual screens give our coders the space to focus and write great code.')"
+                    onclick="openAlbumLightboxIndex(3)"
                 >
                     <div class="relative h-[190px] w-full overflow-hidden bg-slate-900">
                         <img
@@ -838,7 +975,7 @@
                     data-album-category="sprint"
                     data-aos="fade-up"
                     data-aos-delay="100"
-                    onclick="openAlbumLightbox('{{ asset('assets/Office/650253160_1304708771711435_1524565240088187399_n.jpg') }}', 'Tech Brainstorming & Knowledge Sharing', 'We review code together, share tips, and hold team workshops to keep learning.')"
+                    onclick="openAlbumLightboxIndex(4)"
                 >
                     <div class="relative h-[190px] w-full overflow-hidden bg-slate-900">
                         <img
@@ -879,7 +1016,7 @@
                     data-album-category="workplace"
                     data-aos="fade-up"
                     data-aos-delay="200"
-                    onclick="openAlbumLightbox('{{ asset('assets/Office/650656692_1304708898378089_3171840685580638541_n.jpg') }}', 'Modern Development Infrastructure', 'Fast internet, comfy chairs, and new computers help us do our best work.')"
+                    onclick="openAlbumLightboxIndex(5)"
                 >
                     <div class="relative h-[190px] w-full overflow-hidden bg-slate-900">
                         <img
@@ -1005,28 +1142,48 @@
 
 
 <!-- =========================================================
-     INTERACTIVE ALBUM LIGHTBOX MODAL
+     INTERACTIVE ALBUM LIGHTBOX MODAL WITH PREV/NEXT
 ========================================================= -->
-<div id="albumLightbox" class="fixed inset-0 z-50 hidden items-center justify-center p-4 sm:p-6 bg-black/90 backdrop-blur-lg opacity-0 transition-opacity duration-300" aria-modal="true" role="dialog">
-    <div class="relative w-full max-w-4xl overflow-hidden rounded-3xl border border-white/15 bg-[#121316] text-white shadow-2xl transition-all transform scale-95 duration-300" id="lightboxContainer">
+<div id="albumLightbox" class="fixed inset-0 z-50 hidden items-center justify-center p-3 sm:p-6 bg-black/92 backdrop-blur-xl opacity-0 transition-opacity duration-300" aria-modal="true" role="dialog" aria-labelledby="lightboxTitle">
+    <div class="relative w-full max-w-4xl overflow-hidden rounded-3xl border border-white/15 bg-[#111215] text-white shadow-2xl transition-all transform scale-95 duration-300" id="lightboxContainer">
         
         <!-- Close Button -->
-        <button onclick="closeAlbumLightbox()" class="absolute top-4 right-4 z-20 flex h-10 w-10 items-center justify-center rounded-full bg-black/70 text-white hover:bg-[#FD5528] transition-colors focus:outline-none" aria-label="Close lightbox">
+        <button type="button" onclick="closeAlbumLightbox()" class="absolute top-4 right-4 z-30 flex h-10 w-10 items-center justify-center rounded-full bg-black/75 text-white hover:bg-[#FD5528] transition-colors focus:outline-none cursor-pointer shadow-lg" aria-label="Close lightbox">
             <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
             </svg>
         </button>
 
-        <div class="relative aspect-[16/10] sm:aspect-[16/9] w-full bg-black">
-            <img id="lightboxImage" src="" alt="" class="h-full w-full object-contain">
+        <!-- Previous Button -->
+        <button type="button" onclick="prevAlbum(event)" class="absolute left-3 sm:left-4 top-1/2 -translate-y-1/2 z-30 flex h-11 w-11 items-center justify-center rounded-full bg-black/60 text-white backdrop-blur-md border border-white/20 hover:bg-[#FD5528] hover:border-[#FD5528] transition-all cursor-pointer focus:outline-none shadow-lg" aria-label="Previous photo">
+            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+            </svg>
+        </button>
+
+        <!-- Next Button -->
+        <button type="button" onclick="nextAlbum(event)" class="absolute right-3 sm:right-4 top-1/2 -translate-y-1/2 z-30 flex h-11 w-11 items-center justify-center rounded-full bg-black/60 text-white backdrop-blur-md border border-white/20 hover:bg-[#FD5528] hover:border-[#FD5528] transition-all cursor-pointer focus:outline-none shadow-lg" aria-label="Next photo">
+            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+            </svg>
+        </button>
+
+        <!-- Responsive Image Display Viewport -->
+        <div class="relative max-h-[68vh] sm:max-h-[74vh] w-full flex items-center justify-center bg-black overflow-hidden py-2">
+            <img id="lightboxImage" src="" alt="" class="max-h-[68vh] sm:max-h-[74vh] w-auto max-w-full object-contain mx-auto transition-opacity duration-200">
         </div>
 
+        <!-- Lightbox Caption and Navigation Metadata -->
         <div class="p-5 sm:p-6 bg-[#14161b] border-t border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div>
-                <h3 id="lightboxTitle" class="text-lg sm:text-xl font-bold text-white"></h3>
-                <p id="lightboxDescription" class="mt-1 text-xs text-zinc-400"></p>
+                <div class="flex items-center gap-2.5 mb-1.5">
+                    <span id="lightboxBadge" class="text-[10px] font-bold uppercase tracking-widest text-[#FD5528] bg-[#FD5528]/15 px-2.5 py-0.5 rounded-full border border-[#FD5528]/30"></span>
+                    <span id="lightboxCounter" class="text-xs text-zinc-400 font-medium"></span>
+                </div>
+                <h3 id="lightboxTitle" class="text-lg sm:text-xl font-bold text-white tracking-tight"></h3>
+                <p id="lightboxDescription" class="mt-1 text-xs text-zinc-300 leading-relaxed max-w-xl"></p>
             </div>
-            <span class="text-xs font-semibold uppercase tracking-widest text-[#FD5528] bg-[#FD5528]/10 px-3.5 py-1.5 rounded-full border border-[#FD5528]/30 w-fit">
+            <span class="text-xs font-semibold uppercase tracking-widest text-zinc-400 bg-white/5 px-3.5 py-1.5 rounded-full border border-white/10 w-fit shrink-0">
                 Backend Coders HQ
             </span>
         </div>
@@ -1037,14 +1194,14 @@
 <!-- =========================================================
      COMPACT PROFESSIONAL MEMBER MODAL (Guaranteed 380px Max Width)
 ========================================================= -->
-<div id="memberModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 transition-all duration-200 opacity-0" style="background-color: rgba(15, 23, 42, 0.45); backdrop-filter: blur(4px);" aria-modal="true" role="dialog">
+<div id="memberModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 transition-all duration-200 opacity-0" style="background-color: rgba(15, 23, 42, 0.45); backdrop-filter: blur(4px);" aria-modal="true" role="dialog" aria-labelledby="modalName">
     <div id="modalContainer" class="relative overflow-hidden rounded-[26px] bg-white text-slate-900 shadow-2xl transition-all duration-200" style="max-width: 380px; width: 100%; padding: 24px; border: 1px solid #e2e8f0; transform: scale(0.95);">
         
         <!-- Top Accent Gradient -->
         <div class="absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-[#FD5528] via-orange-400 to-[#FD5528]"></div>
 
         <!-- Close Button -->
-        <button type="button" onclick="closeMemberModal()" class="absolute top-4 right-4 flex h-8 w-8 items-center justify-center rounded-full bg-slate-100 text-slate-500 hover:bg-[#FD5528] hover:text-white transition-all focus:outline-none" aria-label="Close modal">
+        <button type="button" onclick="closeMemberModal()" class="absolute top-4 right-4 flex h-8 w-8 items-center justify-center rounded-full bg-slate-100 text-slate-500 hover:bg-[#FD5528] hover:text-white transition-all focus:outline-none cursor-pointer" aria-label="Close modal">
             <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
             </svg>
@@ -1108,6 +1265,7 @@
             skills: ["PHP 8+", "Laravel", "MySQL", "System Design", "Marketing Strategy"],
             linkedin: "https://www.linkedin.com/in/nupur-singh-50a257217?utm_source=share_via&utm_content=profile&utm_medium=member_android"
         },
+        utkarsh: {
             name: "Utkarsh Sonkar",
             roleBadge: "Project Coordinator",
             position: "Dotnet Developer & Project Coordinator",
@@ -1154,6 +1312,48 @@
         }
     };
 
+    /* Culture Album Data */
+    const albumItems = [
+        {
+            src: "{{ asset('assets/Office/649709421_1304707445044901_7896336242621366096_n.jpg') }}",
+            title: "Sprint Architecture & Planning",
+            category: "Tech Sprint",
+            desc: "Our tech team plans and solves hard coding tasks together in intensive collaborative sprints."
+        },
+        {
+            src: "{{ asset('assets/Office/649519728_1304707361711576_8038595386224399026_n.jpg') }}",
+            title: "Festival of Lights & Traditions",
+            category: "Cultural Festival",
+            desc: "Traditional festivities, office decor, lights, sweets, and celebration rituals with the whole team."
+        },
+        {
+            src: "{{ asset('assets/Office/650055736_1304707068378272_8027700641331239382_n.jpg') }}",
+            title: "Milestone Victory & Cake Cutting",
+            category: "Milestone Win",
+            desc: "Celebrating client delivery milestones, product releases, and team birthdays together."
+        },
+        {
+            src: "{{ asset('assets/Office/649426716_1304707918378187_6839822695956954278_n.jpg') }}",
+            title: "Deep Focus Engineering Bay",
+            category: "Workstation",
+            desc: "Clean desks with dual screens give our coders the space to focus and write great code."
+        },
+        {
+            src: "{{ asset('assets/Office/650253160_1304708771711435_1524565240088187399_n.jpg') }}",
+            title: "Knowledge Sharing & Peer Reviews",
+            category: "Knowledge Share",
+            desc: "We review code together, share tips, and hold team workshops to keep learning."
+        },
+        {
+            src: "{{ asset('assets/Office/650656692_1304708898378089_3171840685580638541_n.jpg') }}",
+            title: "Modern Development Bay",
+            category: "Infrastructure",
+            desc: "Ergonomic workstations, high-speed networks, and dedicated focus bays."
+        }
+    ];
+
+    let currentAlbumIndex = 0;
+
     function openMemberModal(key) {
         const member = teamMembersData[key];
         if (!member) return;
@@ -1179,6 +1379,7 @@
         const container = document.getElementById('modalContainer');
         modal.classList.remove('hidden');
         modal.classList.add('flex');
+        document.body.classList.add('overflow-hidden');
         setTimeout(() => {
             modal.classList.remove('opacity-0');
             container.style.transform = 'scale(1)';
@@ -1190,12 +1391,14 @@
         const container = document.getElementById('modalContainer');
         modal.classList.add('opacity-0');
         container.style.transform = 'scale(0.95)';
+        document.body.classList.remove('overflow-hidden');
         setTimeout(() => {
             modal.classList.add('hidden');
             modal.classList.remove('flex');
         }, 200);
     }
 
+    /* Team Multi-Category Filtering */
     function filterTeam(category, btn) {
         const buttons = document.querySelectorAll('.team-filter-btn');
         buttons.forEach(b => {
@@ -1209,8 +1412,18 @@
         const cards = document.querySelectorAll('.team-card');
         let count = 0;
         cards.forEach(card => {
-            if (category === 'all' || card.dataset.category === category) {
+            const categories = (card.dataset.category || '').toLowerCase().split(/\s+/);
+            const matches = (category === 'all') || categories.includes(category.toLowerCase());
+            
+            if (matches) {
                 card.style.display = 'flex';
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(8px) scale(0.98)';
+                setTimeout(() => {
+                    card.style.transition = 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0) scale(1)';
+                }, 20);
                 count++;
             } else {
                 card.style.display = 'none';
@@ -1234,30 +1447,93 @@
 
         const cards = document.querySelectorAll('.album-card');
         cards.forEach(card => {
-            if (category === 'all' || card.dataset.albumCategory === category) {
+            const matches = (category === 'all') || (card.dataset.albumCategory === category);
+            if (matches) {
                 card.style.display = 'flex';
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(8px) scale(0.98)';
+                setTimeout(() => {
+                    card.style.transition = 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0) scale(1)';
+                }, 20);
             } else {
                 card.style.display = 'none';
             }
         });
     }
 
-    /* Lightbox Modal */
-    function openAlbumLightbox(imgSrc, title, desc) {
-        document.getElementById('lightboxImage').src = imgSrc;
-        document.getElementById('lightboxImage').alt = title;
-        document.getElementById('lightboxTitle').textContent = title;
-        document.getElementById('lightboxDescription').textContent = desc;
+    /* Lightbox Modal with Carousel Nav */
+    function showAlbum(index) {
+        if (index < 0) index = albumItems.length - 1;
+        if (index >= albumItems.length) index = 0;
+        currentAlbumIndex = index;
 
+        const item = albumItems[currentAlbumIndex];
+        const img = document.getElementById('lightboxImage');
+        img.style.opacity = '0';
+        setTimeout(() => {
+            img.src = item.src;
+            img.alt = item.title;
+            document.getElementById('lightboxTitle').textContent = item.title;
+            document.getElementById('lightboxDescription').textContent = item.desc;
+            const badge = document.getElementById('lightboxBadge');
+            if (badge) badge.textContent = item.category || 'Culture Album';
+            const counter = document.getElementById('lightboxCounter');
+            if (counter) counter.textContent = `(${currentAlbumIndex + 1} of ${albumItems.length})`;
+            img.style.opacity = '1';
+        }, 150);
+    }
+
+    function openAlbumLightboxIndex(index) {
+        showAlbum(index);
         const lightbox = document.getElementById('albumLightbox');
         const container = document.getElementById('lightboxContainer');
         lightbox.classList.remove('hidden');
         lightbox.classList.add('flex');
+        document.body.classList.add('overflow-hidden');
         setTimeout(() => {
             lightbox.classList.remove('opacity-0');
             container.classList.remove('scale-95');
             container.classList.add('scale-100');
         }, 10);
+    }
+
+    function openAlbumLightbox(imgSrc, title, desc) {
+        const idx = albumItems.findIndex(item => item.src === imgSrc);
+        if (idx !== -1) {
+            openAlbumLightboxIndex(idx);
+        } else {
+            document.getElementById('lightboxImage').src = imgSrc;
+            document.getElementById('lightboxImage').alt = title;
+            document.getElementById('lightboxTitle').textContent = title;
+            document.getElementById('lightboxDescription').textContent = desc;
+            const badge = document.getElementById('lightboxBadge');
+            if (badge) badge.textContent = 'Culture Album';
+            const counter = document.getElementById('lightboxCounter');
+            if (counter) counter.textContent = '';
+            
+            const lightbox = document.getElementById('albumLightbox');
+            const container = document.getElementById('lightboxContainer');
+            lightbox.classList.remove('hidden');
+            lightbox.classList.add('flex');
+            document.body.classList.add('overflow-hidden');
+            setTimeout(() => {
+                lightbox.classList.remove('opacity-0');
+                container.classList.remove('scale-95');
+                container.classList.add('scale-100');
+            }, 10);
+        }
+    }
+
+    function prevAlbum(e) {
+        if (e) e.stopPropagation();
+        showAlbum(currentAlbumIndex - 1);
+    }
+
+    function nextAlbum(e) {
+        if (e) e.stopPropagation();
+        showAlbum(currentAlbumIndex + 1);
     }
 
     function closeAlbumLightbox() {
@@ -1266,13 +1542,14 @@
         lightbox.classList.add('opacity-0');
         container.classList.remove('scale-100');
         container.classList.add('scale-95');
+        document.body.classList.remove('overflow-hidden');
         setTimeout(() => {
             lightbox.classList.add('hidden');
             lightbox.classList.remove('flex');
         }, 300);
     }
 
-    // Close on backdrop click or ESC
+    // Close on backdrop click
     document.getElementById('memberModal').addEventListener('click', function (e) {
         if (e.target === this) closeMemberModal();
     });
@@ -1281,10 +1558,20 @@
         if (e.target === this) closeAlbumLightbox();
     });
 
+    // Keyboard navigation (ESC + Left/Right arrows)
     document.addEventListener('keydown', function (e) {
+        const lightbox = document.getElementById('albumLightbox');
+        const isLightboxOpen = lightbox && !lightbox.classList.contains('hidden');
+
         if (e.key === 'Escape') {
             closeMemberModal();
             closeAlbumLightbox();
+        } else if (isLightboxOpen) {
+            if (e.key === 'ArrowLeft') {
+                prevAlbum();
+            } else if (e.key === 'ArrowRight') {
+                nextAlbum();
+            }
         }
     });
 

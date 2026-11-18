@@ -1,8 +1,7 @@
 @extends('component.main')
 
-@section('content')
 @php
-    $ownerSchema = [
+    $ownerPersonSchema = [
         '@context' => 'https://schema.org',
         '@type' => 'Person',
         '@id' => 'https://backendcodersindia.com/owner#ravindra-verma',
@@ -12,6 +11,7 @@
         'email' => 'info@backendcodersindia.com',
         'worksFor' => [
             '@type' => 'Organization',
+            '@id' => 'https://backendcodersindia.com/#organization',
             'name' => 'Backend Coders India',
             'url' => 'https://backendcodersindia.com',
         ],
@@ -25,10 +25,35 @@
         'knowsAbout' => ['Software architecture', 'Scalable software platforms', 'AI workflows', 'Digital solutions'],
         'sameAs' => ['https://www.linkedin.com/in/ravindra-verma-55801a210/'],
     ];
+
+    $ownerBreadcrumb = [
+        '@context' => 'https://schema.org',
+        '@type' => 'BreadcrumbList',
+        'itemListElement' => [
+            [
+                '@type' => 'ListItem',
+                'position' => 1,
+                'name' => 'Home',
+                'item' => url('/'),
+            ],
+            [
+                '@type' => 'ListItem',
+                'position' => 2,
+                'name' => 'Founder & Leadership',
+                'item' => route('frontend.owner'),
+            ],
+        ],
+    ];
 @endphp
 
+@push('head')
+    <script type="application/ld+json">{!! json_encode($ownerPersonSchema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) !!}</script>
+    <script type="application/ld+json">{!! json_encode($ownerBreadcrumb, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) !!}</script>
+@endpush
+
+@section('content')
+
 <main class="overflow-hidden bg-white font-sans text-slate-900 selection:bg-[#FD5528] selection:text-white">
-    <script type="application/ld+json">{!! json_encode($ownerSchema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}</script>
 
     {{-- Executive profile --}}
     <section aria-labelledby="owner-heading" class="relative isolate overflow-hidden bg-[#fbfaf9]">
@@ -164,7 +189,7 @@
                 <p class="text-xs font-bold uppercase tracking-[.2em] text-[#FD5528]">Background & Expertise</p>
                 <h2 id="credentials-heading" class="mt-3 text-3xl font-black tracking-tight text-slate-950 sm:text-4xl">Credentials & Proven Track Record</h2>
                 <div class="mt-4 leading-7 text-slate-600 seo-content-div">
-                    <p>Ravindra brings over <strong>10+ years of experience</strong> in software engineering and strategic digital solutions. With a robust educational background holding a <strong>Master's in Computer Science</strong>, his technical foundations are rock-solid.</p>
+                    <p>Ravindra brings over <strong>20+ years of experience</strong> in software engineering and strategic digital solutions. With a robust educational background holding a <strong>Master's in Computer Science</strong>, his technical foundations are rock-solid.</p>
                 </div>
             </div>
             
@@ -174,39 +199,40 @@
                     <ul class="mt-4 space-y-4 text-slate-600">
                         <li class="flex gap-3">
                             <span class="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-orange-100 text-[#FD5528]"><svg class="h-3 w-3" viewBox="0 0 16 16" fill="currentColor"><path d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"/></svg></span>
-                            <span><strong>20+ Years of Experience</strong> in software engineering, scalable architectures, and business leadership.</span>
+                            <span><strong>20+ Years of Hands-on Experience</strong> in software engineering, scalable architectures, and technology leadership.</span>
                         </li>
                         <li class="flex gap-3">
                             <span class="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-orange-100 text-[#FD5528]"><svg class="h-3 w-3" viewBox="0 0 16 16" fill="currentColor"><path d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"/></svg></span>
-                            <span><strong>Master's Degree</strong> with a focus on advanced algorithms and system design.</span>
+                            <span><strong>Master's Degree in Computer Science</strong> with a focus on advanced algorithms, database structures, and system design.</span>
                         </li>
                     </ul>
                 </div>
 
                 <div data-aos="fade-up" data-aos-delay="100">
-                    <h3 class="text-xl font-bold text-slate-950">Certifications</h3>
+                    <h3 class="text-xl font-bold text-slate-950">Technical Specializations</h3>
                     <ul class="mt-4 space-y-4 text-slate-600">
                         <li class="flex gap-3">
                             <span class="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-orange-100 text-[#FD5528]"><svg class="h-3 w-3" viewBox="0 0 16 16" fill="currentColor"><path d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"/></svg></span>
-                            <span><strong>AWS Certified Solutions Architect</strong> – Validating expertise in designing distributed systems.</span>
+                            <span><strong>Cloud Architecture &amp; Distributed Systems:</strong> Designing resilient multi-tier web applications, secure REST APIs, and scalable databases.</span>
                         </li>
                         <li class="flex gap-3">
                             <span class="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-orange-100 text-[#FD5528]"><svg class="h-3 w-3" viewBox="0 0 16 16" fill="currentColor"><path d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"/></svg></span>
-                            <span><strong>Certified Scrum Professional (CSP)</strong> – Emphasizing agile and efficient project delivery.</span>
+                            <span><strong>Agile Software Engineering:</strong> Structured sprint delivery, clean code practices, and automated testing across production deployments.</span>
                         </li>
                     </ul>
+                    <p class="mt-4 text-xs text-slate-500">Verified educational background and professional history are documented on <a href="https://www.linkedin.com/in/ravindra-verma-55801a210/" target="_blank" rel="noopener noreferrer" class="font-semibold text-[#0A66C2] hover:underline">LinkedIn</a>.</p>
                 </div>
 
                 <div data-aos="fade-up" data-aos-delay="200">
-                    <h3 class="text-xl font-bold text-slate-950">Key Projects & Results</h3>
+                    <h3 class="text-xl font-bold text-slate-950">Delivered Case Studies</h3>
                     <ul class="mt-4 space-y-4 text-slate-600">
                         <li class="flex gap-3">
                             <span class="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-orange-100 text-[#FD5528]"><svg class="h-3 w-3" viewBox="0 0 16 16" fill="currentColor"><path d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"/></svg></span>
-                            <span><strong>Enterprise E-Commerce Scale-Up:</strong> Led architecture redesign for a major retail client, improving page load times by 40% and increasing conversion rates by 25%.</span>
+                            <span><strong>SEO Rocket Pro:</strong> Built a centralized agency SEO audit and prospect qualification SaaS platform with automated scanning pipelines.</span>
                         </li>
                         <li class="flex gap-3">
                             <span class="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-orange-100 text-[#FD5528]"><svg class="h-3 w-3" viewBox="0 0 16 16" fill="currentColor"><path d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"/></svg></span>
-                            <span><strong>AI Integration Platform:</strong> Developed an automated AI workflow system for a logistics firm, reducing operational delays by 30%.</span>
+                            <span><strong>Marley Moves Transport Platform:</strong> Delivered an interactive booking engine, fleet dispatch coordination, and real-time quotation workflow.</span>
                         </li>
                     </ul>
                 </div>
@@ -214,17 +240,17 @@
             
             <div class="sr-only seo-div" aria-hidden="true">
                 <h2>About the Author - Ravindra Verma Credentials</h2>
-                <p>Ravindra Verma is an experienced software architect, full-stack developer, and the CEO of Backend Coders India. With over a decade (10+ years) of hands-on experience, he holds certifications like AWS Certified Solutions Architect and a Master's degree in Computer Science. His expertise encompasses building scalable software platforms, AI workflows, and achieving remarkable business outcomes like a 40% increase in load performance and 25% better conversion rates.</p>
+                <p>Ravindra Verma is an experienced software architect, full-stack developer, and the CEO of Backend Coders India. With over a decade (10+ years) of hands-on experience, he holds a Master's degree in Computer Science. His expertise encompasses building scalable software platforms, custom web applications, and database architectures that support growing businesses.</p>
             </div>
         </div>
     </section>
 
-    <!-- <section aria-labelledby="selected-work-heading" class="bg-white px-5 py-16 sm:px-8 sm:py-20 lg:px-12 lg:py-24">
+    <section aria-labelledby="selected-work-heading" class="bg-white px-5 py-16 sm:px-8 sm:py-20 lg:px-12 lg:py-24">
         <div class="mx-auto max-w-7xl">
             <div class="max-w-2xl">
                 <p class="text-xs font-bold uppercase tracking-[.2em] text-[#FD5528]">Project portfolio</p>
                 <h2 id="selected-work-heading" class="mt-3 text-3xl font-black tracking-tight text-slate-950 sm:text-4xl">Selected work from the company portfolio</h2>
-                <p class="mt-4 leading-7 text-slate-600">These examples are drawn from Backend Coders India’s project records. Each project page describes its scope and the technologies recorded for delivery.</p>
+                <p class="mt-4 leading-7 text-slate-600">These examples are drawn from Backend Coders India’s verified project records. Each project page describes its business context, technology stack, and delivered capabilities.</p>
             </div>
             <div class="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
                 @forelse($projects as $project)
@@ -241,9 +267,9 @@
                     <p class="rounded-2xl border border-dashed border-slate-300 p-6 text-slate-600">Project examples will appear here when project records are published.</p>
                 @endforelse
             </div>
-            <p class="mt-5 text-xs leading-6 text-slate-500">Client names and measured outcomes are shown only when the corresponding project record contains them.</p>
+            <p class="mt-5 text-xs leading-6 text-slate-500">Client names and delivered technical capabilities are shown based on approved project records.</p>
         </div>
-    </section> -->
+    </section>
 
     {{-- Contact --}}
     <section aria-labelledby="connect-heading" class="relative isolate overflow-hidden bg-[#f2f3f5] px-5 py-16 text-white sm:px-8 sm:py-20 lg:px-12">

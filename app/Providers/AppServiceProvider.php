@@ -21,6 +21,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        \Illuminate\Pagination\Paginator::defaultView('vendor.pagination.custom');
+        \Illuminate\Pagination\Paginator::defaultSimpleView('vendor.pagination.custom');
+
         View::composer('*', function ($view) {
             $menuItems = MenuItem::with(['page', 'children.page'])
                 ->where('is_active', 1)

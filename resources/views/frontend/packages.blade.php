@@ -1,4 +1,44 @@
 @extends("component.main")
+
+@php
+    $packagesBreadcrumb = [
+        '@context' => 'https://schema.org',
+        '@type' => 'BreadcrumbList',
+        'itemListElement' => [
+            [
+                '@type' => 'ListItem',
+                'position' => 1,
+                'name' => 'Home',
+                'item' => url('/'),
+            ],
+            [
+                '@type' => 'ListItem',
+                'position' => 2,
+                'name' => 'Packages & Pricing',
+                'item' => 'https://backendcodersindia.com/packages',
+            ],
+        ],
+    ];
+
+    $packagesWebPage = [
+        '@context' => 'https://schema.org',
+        '@type' => 'WebPage',
+        '@id' => 'https://backendcodersindia.com/packages#webpage',
+        'url' => 'https://backendcodersindia.com/packages',
+        'name' => 'Web Development & Digital Marketing Packages | Backend Coders India',
+        'description' => 'Transparent packages and pricing for website development, mobile apps, SEO, PPC, and software services.',
+        'isPartOf' => [
+            '@type' => 'WebSite',
+            '@id' => 'https://backendcodersindia.com/#website',
+        ],
+    ];
+@endphp
+
+@push('head')
+    <script type="application/ld+json">{!! json_encode($packagesBreadcrumb, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) !!}</script>
+    <script type="application/ld+json">{!! json_encode($packagesWebPage, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) !!}</script>
+@endpush
+
 @section("content")
 
 <style>
@@ -29,7 +69,7 @@
 
     <!-- HEADING -->
     <h1 class="mt-6 text-4xl sm:text-5xl md:text-6xl font-bold leading-tight">
-      Our Packages
+      Tailored Web Development &amp; Digital Growth Packages
     </h1>
 
     <!-- SUBTEXT -->
@@ -246,7 +286,7 @@
             <span class="text-orange-500">✔</span> Keyword Research (5 Keywords)
           </li>
           <li class="flex items-center gap-3 border-b border-orange-500 pb-3">
-            <span class="text-orange-500">✔</span> 25+ High-Quality Backlinks
+            <span class="text-orange-500">✔</span> Foundational Local Citations &amp; Directory Links
           </li>
           <li class="flex items-center gap-3 border-b border-orange-500 pb-3">
             <span class="text-orange-500">✔</span> Website & Competitor Analysis
@@ -293,7 +333,7 @@
             <span class="text-orange-50">✔</span>Keyword Research (10–15 Keywords)
           </li>
           <li class="flex items-center gap-3 border-b pb-3">
-            <span class="text-orange-50">✔</span> 50+ High-Quality Backlinks
+            <span class="text-orange-50">✔</span> Targeted Industry Outreach &amp; Editorial Link Acquisition
           </li>
           <li class="flex items-center gap-3 border-b pb-3">
             <span class="text-orange-50">✔</span>Advanced On-Page SEO
@@ -339,7 +379,7 @@
             <span class="text-orange-500">✔</span> Keyword Research (20–25+ Keywords)
           </li>
           <li class="flex items-center gap-3 border-b border-orange-500 pb-3">
-            <span class="text-orange-500">✔</span> 100+ High-Authority Backlinks
+            <span class="text-orange-500">✔</span> Authoritative Digital PR &amp; Industry Content Outreach
           </li>
           <li class="flex items-center gap-3 border-b border-orange-500 pb-3">
             <span class="text-orange-500">✔</span> Complete On-Page + Technical SEO
@@ -1094,14 +1134,14 @@
       <div class="faq-item bg-gray-50 p-5 rounded-2xl transition shadow-md hover:shadow-lg">
         <button data-faq-trigger type="button" aria-expanded="false" aria-controls="faq-answer-1" class="flex w-full items-center justify-between gap-4 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FD5528]/60 focus-visible:ring-offset-2 focus-visible:ring-offset-white">
           <span class="text-left text-base font-medium tracking-tight text-slate-900">
-            What services do you offer?
+            What is included in each package scope?
           </span>
           <span class="faq-icon inline-flex h-10 w-10 items-center justify-center  text-[#FD5528]  transition duration-300">
             <span class="faq-icon-text text-3xl leading-none">+</span>
           </span>
         </button>
         <div id="faq-answer-1" class="faq-answer max-h-0 overflow-hidden transition-all duration-500 text-sm text-gray-600 mt-3" aria-hidden="true">
-          Backend engineering, API design, cloud architecture, automation, and enterprise-grade solutions that keep scaling teams aligned.
+          Each package defines specific, verifiable monthly deliverables—such as on-page optimization, content production, technical audit resolution, and structured reporting—with no hidden fees.
         </div>
       </div>
 
@@ -1109,14 +1149,14 @@
       <div class="faq-item bg-gray-50 p-5 rounded-2xl transition shadow-md hover:shadow-lg">
         <button data-faq-trigger type="button" aria-expanded="false" aria-controls="faq-answer-2" class="flex w-full items-center justify-between gap-4 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FD5528]/60 focus-visible:ring-offset-2 focus-visible:ring-offset-white">
           <span class="text-left text-base font-medium tracking-tight text-slate-900">
-            Which technologies do you work with?
+            How do you handle link acquisition in SEO packages?
           </span>
           <span class="faq-icon inline-flex h-10 w-10 items-center justify-center  text-[#FD5528]  transition duration-300">
             <span class="faq-icon-text text-3xl leading-none">+</span>
           </span>
         </button>
         <div id="faq-answer-2" class="faq-answer max-h-0 overflow-hidden transition-all duration-500 text-sm text-gray-600 mt-3" aria-hidden="true">
-            .NET Core, Node.js, Laravel, Go, SQL Server, PostgreSQL, Redis, Kafka, Azure, AWS, and modern DevOps pipelines.
+          We emphasize genuine outreach, digital PR, industry citations, and relevant directory listings. We adhere strictly to Google Webmaster Guidelines and never use automated link networks or low-quality spam.
         </div>
       </div>
 
@@ -1128,28 +1168,28 @@
       <div class="faq-item bg-gray-50 p-5 rounded-2xl transition shadow-md hover:shadow-lg">
         <button data-faq-trigger type="button" aria-expanded="false" aria-controls="faq-answer-3" class="flex w-full items-center justify-between gap-4 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FD5528]/60 focus-visible:ring-offset-2 focus-visible:ring-offset-white">
           <span class="text-left text-base font-medium tracking-tight text-slate-900">
-            Do you provide dedicated development teams?
+            Can I upgrade, downgrade, or customize my plan?
           </span>
           <span class="faq-icon inline-flex h-10 w-10 items-center justify-center  text-[#FD5528]  transition duration-300">
             <span class="faq-icon-text text-3xl leading-none">+</span>
           </span>
         </button>
         <div id="faq-answer-3" class="faq-answer max-h-0 overflow-hidden transition-all duration-500 text-sm text-gray-600 mt-3" aria-hidden="true">
-          Yes, our specialists embed within your product organization with dedicated project leads and sprint reporting.
+          Yes. All monthly packages operate on flexible monthly billing terms without long-term lock-in contracts. You can easily adjust your service tiers or combine SEO with custom web development as your business evolves.
         </div>
       </div>
 
       <div class="faq-item bg-gray-50 p-5 rounded-2xl transition shadow-md hover:shadow-lg">
         <button data-faq-trigger type="button" aria-expanded="false" aria-controls="faq-answer-4" class="flex w-full items-center justify-between gap-4 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FD5528]/60 focus-visible:ring-offset-2 focus-visible:ring-offset-white">
           <span class="text-left text-base font-medium tracking-tight text-slate-900">
-            How do you ensure scalability and performance?
+            What is the typical turnaround time for website development packages?
           </span>
           <span class="faq-icon inline-flex h-10 w-10 items-center justify-center  text-[#FD5528]  transition duration-300">
             <span class="faq-icon-text text-3xl leading-none">+</span>
           </span>
         </button>
         <div id="faq-answer-4" class="faq-answer max-h-0 overflow-hidden transition-all duration-500 text-sm text-gray-600 mt-3" aria-hidden="true">
-        We architect microservices, apply caching strategies, optimize storage, and add observability to catch regressions early.
+          Standard business websites typically deploy within 2 to 3 weeks, while comprehensive web applications and custom platforms follow milestone-based sprint delivery with regular preview demos.
         </div>
       </div>
 
@@ -1161,28 +1201,56 @@
       <div class="faq-item bg-gray-50 p-5 rounded-2xl transition shadow-md hover:shadow-lg">
         <button data-faq-trigger type="button" aria-expanded="false" aria-controls="faq-answer-5" class="flex w-full items-center justify-between gap-4 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FD5528]/60 focus-visible:ring-offset-2 focus-visible:ring-offset-white">
           <span class="text-left text-base font-medium tracking-tight text-slate-900">
-            What is your development process?
+            Are there any hidden setup or licensing fees?
           </span>
           <span class="faq-icon inline-flex h-10 w-10 items-center justify-center  text-[#FD5528]  transition duration-300">
             <span class="faq-icon-text text-3xl leading-none">+</span>
           </span>
         </button>
         <div id="faq-answer-5" class="faq-answer max-h-0 overflow-hidden transition-all duration-500 text-sm text-gray-600 mt-3" aria-hidden="true">
-      We follow a structured agile cadence: discovery, roadmap, sprint-based delivery, QA, deployment, and post-launch retrospectives.
+          No. All pricing is fully transparent. Any external third-party dependencies (such as specialized paid APIs, custom domain registration, or premium server hosting) are explicitly itemized and approved by you in advance.
         </div>
       </div>
 
       <div class="faq-item bg-gray-50 p-5 rounded-2xl transition shadow-md hover:shadow-lg">
         <button data-faq-trigger type="button" aria-expanded="false" aria-controls="faq-answer-6" class="flex w-full items-center justify-between gap-4 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FD5528]/60 focus-visible:ring-offset-2 focus-visible:ring-offset-white">
           <span class="text-left text-base font-medium tracking-tight text-slate-900">
-            Do you provide post-launch support?
+            How do we track performance and campaign milestones?
           </span>
           <span class="faq-icon inline-flex h-10 w-10 items-center justify-center  text-[#FD5528]  transition duration-300">
             <span class="faq-icon-text text-3xl leading-none">+</span>
           </span>
         </button>
         <div id="faq-answer-6" class="faq-answer max-h-0 overflow-hidden transition-all duration-500 text-sm text-gray-600 mt-3" aria-hidden="true">
-          Long-term maintenance, 24/7 monitoring, release planning, and scaling support are included in every retainer plan.
+          You receive regular monthly performance reports detailing keyword ranking trends, organic impressions, user inquiries, and completed technical tasks, coupled with scheduled review check-ins.
+        </div>
+      </div>
+
+      <div class="faq-item bg-gray-50 p-5 rounded-2xl transition shadow-md hover:shadow-lg">
+        <button data-faq-trigger type="button" aria-expanded="false" aria-controls="faq-answer-7" class="flex w-full items-center justify-between gap-4 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FD5528]/60 focus-visible:ring-offset-2 focus-visible:ring-offset-white">
+          <span class="text-left text-base font-medium tracking-tight text-slate-900">
+            Website banwane mein kitna kharcha aata hai?
+          </span>
+          <span class="faq-icon inline-flex h-10 w-10 items-center justify-center  text-[#FD5528]  transition duration-300">
+            <span class="faq-icon-text text-3xl leading-none">+</span>
+          </span>
+        </button>
+        <div id="faq-answer-7" class="faq-answer max-h-0 overflow-hidden transition-all duration-500 text-sm text-gray-600 mt-3" aria-hidden="true">
+          Kanpur mein standard business website ka kharcha ₹7,999 se start hota hai jisme responsive custom design, 1 year hosting, SSL security aur basic SEO setup shamil hota hai. Multi-page corporate sites ₹15,999 aur custom ecommerce portals ₹24,999+ se start hote hain full source code ownership ke sath.
+        </div>
+      </div>
+
+      <div class="faq-item bg-gray-50 p-5 rounded-2xl transition shadow-md hover:shadow-lg">
+        <button data-faq-trigger type="button" aria-expanded="false" aria-controls="faq-answer-8" class="flex w-full items-center justify-between gap-4 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FD5528]/60 focus-visible:ring-offset-2 focus-visible:ring-offset-white">
+          <span class="text-left text-base font-medium tracking-tight text-slate-900">
+            Kanpur mein website banane wali company kaise choose karein?
+          </span>
+          <span class="faq-icon inline-flex h-10 w-10 items-center justify-center  text-[#FD5528]  transition duration-300">
+            <span class="faq-icon-text text-3xl leading-none">+</span>
+          </span>
+        </button>
+        <div id="faq-answer-8" class="faq-answer max-h-0 overflow-hidden transition-all duration-500 text-sm text-gray-600 mt-3" aria-hidden="true">
+          Website company select karte waqt 4 factors zaroor verify karein: (1) Full source code aur hosting ka direct access mile, (2) Real delivered client projects aur live demos dekhein, (3) Mobile responsiveness aur Google speed score check karein, aur (4) Transparent pricing jisme hidden recurring fees na hon.
         </div>
       </div>
 
@@ -1250,6 +1318,10 @@
             $pkgCaptchaNum1 = rand(2, 9);
             $pkgCaptchaNum2 = rand(1, 9);
             $pkgCaptchaSum = $pkgCaptchaNum1 + $pkgCaptchaNum2;
+            session(['contact_captcha' => [
+                'answer' => (string) $pkgCaptchaSum,
+                'expires_at' => now()->addMinutes(15)->timestamp,
+            ]]);
         @endphp
 
         <div id="package-contact-feedback" class="space-y-4 mb-6">
@@ -1388,7 +1460,7 @@
                   name="phone"
                   value="{{ old('phone') }}"
                   required
-                  placeholder="  "
+                  placeholder="+91 98765 43210"
                   autocomplete="tel"
                   pattern="[\+]?[0-9\s\-\(\)]{7,20}"
                   class="peer w-full px-5 pt-5 pb-2 rounded-2xl border border-gray-200 bg-white focus:ring-2 focus:ring-orange-300 placeholder:text-gray-400 placeholder:opacity-0 focus:placeholder:opacity-100 transition-all"
@@ -1455,8 +1527,6 @@
                   autocomplete="off"
                   required
                 >
-                <!-- HIDDEN -->
-                <input type="hidden" name="captcha_correct" id="captchaCorrect" value="{{ $pkgCaptchaSum }}">
                 <!-- ERROR & RECOVERY -->
                 <div id="captchaError" class="mt-2 text-xs text-red-600 font-medium hidden bg-red-50 p-2.5 rounded-lg border border-red-200">
                   <div class="flex items-center justify-between gap-2">

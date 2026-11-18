@@ -100,9 +100,9 @@
         Header set Cache-Control "public, max-age=31536000, immutable"
     </FilesMatch>
 
-    # HTML & PHP
+    # HTML & PHP (allow Laravel Cache-Control headers to pass through)
     <FilesMatch "\.(html|htm|php)$">
-        Header set Cache-Control "no-cache, must-revalidate"
+        Header setifempty Cache-Control "no-cache, must-revalidate"
     </FilesMatch>
 
 </IfModule>
@@ -133,10 +133,18 @@
 
     Header unset X-Powered-By
     Header always unset X-Powered-By
+    Header unset platform
+    Header always unset platform
+    Header unset panel
+    Header always unset panel
+    Header unset X-Hostinger-Platform
+    Header always unset X-Hostinger-Platform
+
     Header always set X-Content-Type-Options "nosniff"
     Header always set X-Frame-Options "SAMEORIGIN"
     Header always set Referrer-Policy "strict-origin-when-cross-origin"
     Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
-    Header always set Content-Security-Policy "default-src 'self' https: data:; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://cdn.quilljs.com https://cdn.jsdelivr.net https://unpkg.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.bunny.net https://cdn.quilljs.com https://unpkg.com; font-src 'self' https://fonts.gstatic.com https://fonts.bunny.net data:; img-src 'self' data: https: blob:; connect-src 'self' https:; frame-src 'self' https:; upgrade-insecure-requests;"
+    Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.tailwindcss.com https://cdn.quilljs.com https://cdn.jsdelivr.net https://unpkg.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.bunny.net https://cdn.quilljs.com https://unpkg.com; font-src 'self' https://fonts.gstatic.com https://fonts.bunny.net data:; img-src 'self' data: https: blob:; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com https://stats.g.doubleclick.net; frame-src 'self' https: https://www.google.com https://www.youtube.com; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests;"
 
 </IfModule>

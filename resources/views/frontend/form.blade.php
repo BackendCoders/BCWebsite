@@ -1,10 +1,17 @@
 <form method="POST" action="{{ route('contact.send') }}" novalidate data-contact-form>
     @csrf
+    <input type="hidden" name="visitor_id" value="{{ request()->cookie('bc_visitor_id') ?? request()->attributes->get('visitor_id') ?? '' }}">
+    <input type="hidden" name="referrer" id="contactFormReferrer" value="">
+    <input type="hidden" name="landing_page" id="contactFormLandingPage" value="{{ url()->current() }}">
 
     @php
         $captchaNum1 = rand(2, 9);
         $captchaNum2 = rand(1, 9);
         $captchaSum = $captchaNum1 + $captchaNum2;
+        session(['contact_captcha' => [
+            'answer' => (string) $captchaSum,
+            'expires_at' => now()->addMinutes(15)->timestamp,
+        ]]);
     @endphp
 
     <div class="w-full max-w-4xl rounded-3xl p-2 md:p-10 space-y-6">
@@ -170,7 +177,7 @@
                     name="phone"
                     value="{{ old('phone') }}"
                     required
-                    placeholder="  "
+                    placeholder="+91 98765 43210"
                     autocomplete="tel"
                     pattern="[\+]?[0-9\s\-\(\)]{7,20}"
                     class="peer w-full px-5 pt-5 pb-2 rounded-2xl border border-gray-200 bg-white focus:ring-2 focus:ring-orange-300 placeholder:text-gray-400 placeholder:opacity-0 focus:placeholder:opacity-100 transition-all"
@@ -249,9 +256,6 @@
             placeholder="Enter answer"
             autocomplete="off"
             required>
-
-        <!-- HIDDEN -->
-        <input type="hidden" name="captcha_correct" id="captchaCorrect" value="{{ $captchaSum }}">
 
         <!-- ERROR & RECOVERY -->
         <div id="captchaError" class="mt-2 text-xs text-red-600 font-medium hidden bg-red-50 p-2.5 rounded-lg border border-red-200">

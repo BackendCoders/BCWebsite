@@ -7,7 +7,9 @@
         <meta name="robots" content="noindex, nofollow">
 
         <title>{{ config('app.name', 'Backend Coders India') }}</title>
-        <link rel="icon" type="image/svg+xml" alt="web development company in Kanpur" href="{{asset('assets/images/bci_icon.png')}}" class="bg-black"/>
+        <link rel="icon" href="{{ asset('favicon.ico') }}" sizes="any">
+        <link rel="icon" type="image/png" href="{{ asset('assets/images/bci_icon.png') }}">
+        <link rel="apple-touch-icon" href="{{ asset('assets/images/bci_icon.png') }}">
    <script src="https://cdn.tailwindcss.com"></script>
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">

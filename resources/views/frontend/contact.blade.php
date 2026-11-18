@@ -1,6 +1,30 @@
 @extends('component.main')
 @section('content')
 
+@php
+    $contactBreadcrumb = [
+        '@context' => 'https://schema.org',
+        '@type' => 'BreadcrumbList',
+        'itemListElement' => [
+            [
+                '@type' => 'ListItem',
+                'position' => 1,
+                'name' => 'Home',
+                'item' => url('/'),
+            ],
+            [
+                '@type' => 'ListItem',
+                'position' => 2,
+                'name' => 'Contact Us',
+                'item' => route('frontend.contact'),
+            ],
+        ],
+    ];
+@endphp
+
+@push('head')
+    <script type="application/ld+json">{!! json_encode($contactBreadcrumb, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) !!}</script>
+@endpush
 
 <!-- hero section  -->
 <section class="relative h-[30vh] flex items-center justify-center text-center text-white overflow-hidden">
@@ -131,7 +155,9 @@ decoding="async"
             Phone
           </h3>
           <p class="text-black mt-2">
-            +91 914 0092 133
+            <a href="tel:+919140092133" class="text-black hover:text-[#FD5528] transition font-medium">
+              +91 914 0092 133
+            </a>
           </p>
         </div>
 
@@ -155,17 +181,30 @@ decoding="async"
             <a href="mailto:info@backendcodersindia.com" class="text-black hover:text-[#FD5528] transition break-all font-medium select-text">
               info@backendcodersindia.com
             </a>
-            <button type="button"
-                    onclick="copyContactEmail(this)"
-                    class="inline-flex items-center gap-1 rounded border border-gray-300 bg-gray-50 px-2 py-0.5 text-xs font-medium text-gray-700 hover:bg-gray-100 hover:text-black transition cursor-pointer"
-                    title="Copy email address"
-                    aria-label="Copy email address">
-              <svg class="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
-              </svg>
-              <span class="copy-text">Copy</span>
-            </button>
+    
           </div>
+        </div>
+
+      </div>
+    </li>
+
+    <!-- GOOGLE RATING -->
+    <li>
+      <div class="flex items-start gap-4 group">
+
+        <div class="w-11 h-11 flex items-center justify-center rounded-xl bg-[#FFF1EC] group-hover:scale-110 transition duration-300">
+          <svg class="h-5 w-5 text-amber-500 fill-current" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+        </div>
+
+        <div class="flex-1">
+          <h3 class="font-semibold text-black leading-none">
+            Google Rating
+          </h3>
+          <p class="mt-2 text-sm text-gray-600">
+            <a href="https://g.page/r/CV9oD5gxne7gEBM/review" target="_blank" rel="noopener noreferrer" class="font-medium text-[#FD5528] hover:underline">
+              Review us on Google &rarr;
+            </a>
+          </p>
         </div>
 
       </div>
@@ -203,16 +242,19 @@ decoding="async"
   </div>
 
   <!-- MAP -->
-  <div aria-labelledby="location-heading"  class="mt-8 rounded-2xl overflow-hidden border border-gray-200 shadow-sm group">
+  <div aria-labelledby="location-heading" class="mt-8 rounded-2xl overflow-hidden border border-gray-200 shadow-sm group">
       <h2 id="location-heading" class="sr-only">
         Backend Coders India Office Location
     </h2>
 
-
-  <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d7146.187936818438!2d80.372306!3d26.420444!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1774945612057!5m2!1sen!2sin" width="600" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade  class="w-full h-[150px] border-0 transition duration-500 group-hover:scale-105"
-  title="Google Map Location for Backend Coders India"></iframe>
- 
-
+    <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d7146.187936818438!2d80.372306!3d26.420444!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1774945612057!5m2!1sen!2sin" width="600" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="w-full h-[150px] border-0 transition duration-500 group-hover:scale-105"
+    title="Google Map Location for Backend Coders India"></iframe>
+    <div class="p-3 bg-gray-50 flex items-center justify-between border-t border-gray-200 text-xs">
+      <span class="text-gray-600">11/42, Krishna Nagar, Kanpur</span>
+      <a href="https://maps.google.com/?q=26.420444,80.372306" target="_blank" rel="noopener noreferrer" class="font-semibold text-[#FD5528] hover:underline flex items-center gap-1">
+        Open in Google Maps &rarr;
+      </a>
+    </div>
   </div>
 
 </div>
@@ -245,6 +287,132 @@ decoding="async"
 
 </section>
 <!-- END contact section -->
+
+<!-- COMPACT FAQ SECTION -->
+@php
+    if (!isset($contactFaqs) || empty($contactFaqs)) {
+        if (class_exists(\App\Support\FaqData::class)) {
+            $contactFaqs = \App\Support\FaqData::forContact();
+        } elseif (method_exists(\App\Http\Controllers\HomeController::class, 'getContactFaqList')) {
+            $contactFaqs = \App\Http\Controllers\HomeController::getContactFaqList();
+        } else {
+            $contactFaqs = [
+                [
+                    'id' => 1,
+                    'q' => 'Where is your office, and can I visit?',
+                    'a' => "Our office is at 11/42, Krishna Nagar, Kanpur, Uttar Pradesh 208007. We're open Monday to Friday, 10:00 am to 6:00 pm.",
+                    'a_html' => "Our office is at 11/42, Krishna Nagar, Kanpur, Uttar Pradesh 208007. We're open Monday to Friday, 10:00 am to 6:00 pm.",
+                ],
+                [
+                    'id' => 2,
+                    'q' => 'How much does a website cost?',
+                    'a' => "Business websites start from ₹7,999. The final price depends on the number of pages, the features you need, and whether you want an online store. Our packages page lists what each plan includes, and we'll give you a fixed quote before any work starts.",
+                    'a_html' => 'Business websites start from ₹7,999. The final price depends on the number of pages, the features you need, and whether you want an online store. Our <a href="https://backendcodersindia.com/packages" class="font-semibold text-[#FD5528] hover:underline">packages page</a> lists what each plan includes, and we\'ll give you a fixed quote before any work starts.',
+                ],
+                [
+                    'id' => 5,
+                    'q' => 'Do you work with clients outside Kanpur or outside India?',
+                    'a' => "Yes. Alongside businesses in Kanpur, we work with clients across India and in the USA and UK. We work remotely by phone, WhatsApp, email and video calls, with regular progress updates.",
+                    'a_html' => "Yes. Alongside businesses in Kanpur, we work with clients across India and in the USA and UK. We work remotely by phone, WhatsApp, email and video calls, with regular progress updates.",
+                ],
+                [
+                    'id' => 7,
+                    'q' => 'Can we talk to you in Hindi?',
+                    'a' => "Yes. Our team supports clients in both Hindi and English, on calls, WhatsApp and in meetings.",
+                    'a_html' => "Yes. Our team supports clients in both Hindi and English, on calls, WhatsApp and in meetings.",
+                ],
+            ];
+        }
+    }
+@endphp
+<section class="bg-white py-16 sm:py-20 border-t border-slate-200/70" aria-label="Frequently Asked Questions">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-10">
+            <span class="inline-block text-xs sm:text-sm font-semibold uppercase tracking-[0.35em] text-[#FD5528] px-4 py-1.5 rounded-full bg-orange-50 border border-orange-200/60 mb-3">
+                Quick Answers
+            </span>
+            <h2 class="text-2xl sm:text-3xl font-bold text-slate-900">
+                Frequently Asked Questions
+            </h2>
+            <p class="mt-2 text-sm sm:text-base text-slate-600 max-w-xl mx-auto">
+                Quick answers to common questions about our office location, website costs, remote client collaboration, and language support.
+            </p>
+        </div>
+
+        <div class="space-y-4" id="contact-faq-accordion">
+            @foreach($contactFaqs as $faq)
+                <div class="contact-faq-item rounded-2xl border border-slate-200 bg-slate-50/50 transition hover:border-[#FD5528]/40 hover:bg-white shadow-sm overflow-hidden">
+                    <button
+                        type="button"
+                        class="contact-faq-toggle flex w-full items-center justify-between gap-4 p-5 sm:p-6 text-left transition focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FD5528]"
+                        aria-expanded="false"
+                        aria-controls="contact-faq-ans-{{ $faq['id'] }}"
+                        id="contact-faq-btn-{{ $faq['id'] }}">
+                        <h3 class="text-base sm:text-lg font-bold text-slate-900 leading-snug">
+                            {{ $faq['q'] }}
+                        </h3>
+                        <span class="contact-faq-icon flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-orange-100 text-[#FD5528] font-bold text-lg transition-transform duration-300">
+                            +
+                        </span>
+                    </button>
+
+                    <div
+                        id="contact-faq-ans-{{ $faq['id'] }}"
+                        role="region"
+                        aria-labelledby="contact-faq-btn-{{ $faq['id'] }}"
+                        class="contact-faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                        <div class="px-5 pb-6 sm:px-6 text-sm sm:text-base text-slate-600 leading-relaxed border-t border-slate-200/60 pt-4 bg-white">
+                            {!! $faq['a_html'] !!}
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+
+        <div class="mt-8 text-center">
+            <a href="{{ route('frontend.faq') }}" class="inline-flex items-center gap-2 font-semibold text-[#FD5528] hover:text-[#e94c20] transition group text-sm sm:text-base">
+                <span>View All Frequently Asked Questions</span>
+                <span class="transition-transform group-hover:translate-x-1">&rarr;</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const toggles = document.querySelectorAll(".contact-faq-toggle");
+
+    toggles.forEach(btn => {
+        btn.addEventListener("click", () => {
+            const isExpanded = btn.getAttribute("aria-expanded") === "true";
+            const content = document.getElementById(btn.getAttribute("aria-controls"));
+            const icon = btn.querySelector(".contact-faq-icon");
+
+            // Close all
+            toggles.forEach(otherBtn => {
+                otherBtn.setAttribute("aria-expanded", "false");
+                const otherContent = document.getElementById(otherBtn.getAttribute("aria-controls"));
+                const otherIcon = otherBtn.querySelector(".contact-faq-icon");
+                if (otherContent) otherContent.style.maxHeight = null;
+                if (otherIcon) {
+                    otherIcon.textContent = "+";
+                    otherIcon.classList.remove("rotate-45");
+                }
+            });
+
+            // If it was closed, open it
+            if (!isExpanded) {
+                btn.setAttribute("aria-expanded", "true");
+                content.style.maxHeight = content.scrollHeight + "px";
+                if (icon) {
+                    icon.textContent = "×";
+                    icon.classList.add("rotate-45");
+                }
+            }
+        });
+    });
+});
+</script>
 
 <script>
   function copyContactEmail(btn) {

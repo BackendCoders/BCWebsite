@@ -1,7 +1,49 @@
 @extends("component.main")
+
+@php
+    $blogBreadcrumb = [
+        '@context' => 'https://schema.org',
+        '@type' => 'BreadcrumbList',
+        'itemListElement' => [
+            [
+                '@type' => 'ListItem',
+                'position' => 1,
+                'name' => 'Home',
+                'item' => url('/'),
+            ],
+            [
+                '@type' => 'ListItem',
+                'position' => 2,
+                'name' => 'Blog',
+                'item' => 'https://backendcodersindia.com/blog',
+            ],
+        ],
+    ];
+
+    $blogCatalogSchema = [
+        '@context' => 'https://schema.org',
+        '@type' => 'Blog',
+        '@id' => 'https://backendcodersindia.com/blog#blog',
+        'url' => 'https://backendcodersindia.com/blog',
+        'name' => 'Backend Coders India Blog',
+        'description' => 'Technical guides, web development tutorials, and SEO insights from Backend Coders India.',
+        'publisher' => [
+            '@type' => 'Organization',
+            '@id' => 'https://backendcodersindia.com/#organization',
+            'name' => 'Backend Coders India',
+        ],
+    ];
+@endphp
+
+@push('head')
+    <link rel="preload" as="image" href="{{ asset('assets/images/banner.png') }}" fetchpriority="high">
+    <script type="application/ld+json">{!! json_encode($blogBreadcrumb, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) !!}</script>
+    <script type="application/ld+json">{!! json_encode($blogCatalogSchema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) !!}</script>
+@endpush
+
 @section("content")
 @php
-    $blogCount = $blogs->count();
+    $blogCount = method_exists($blogs, 'total') ? $blogs->total() : $blogs->count();
     $featuredBlog = $featuredBlog ?? $blogs->first();
     $searchTerm = request('q');
     $activeCategory = request('category');
@@ -12,6 +54,8 @@
   <!-- BACKGROUND IMAGE -->
   <img 
     src="{{asset('assets/images/banner.png')}}" alt="Blog banner - Backend Coders India"
+    width="1920" height="600"
+    fetchpriority="high" loading="eager" decoding="async"
     class="absolute inset-0 w-full h-full object-cover"
   />
 
@@ -91,11 +135,12 @@
         <div class="relative h-56 overflow-hidden">
 
             <!-- Image -->
-            <img alt=""
+            <img 
                 src="{{ $blog->getImageUrl() }}"
                 alt="{{ $blog->title }}"
+                width="600" height="340"
                 class="h-full w-full object-cover transition duration-700 ease-out group-hover:scale-110"
-                loading="lazy"
+                loading="lazy" decoding="async"
             >
 
             <!-- Overlay Gradient -->
@@ -159,6 +204,12 @@
                         </div>
                     @endforelse
                 </div>
+
+                @if(method_exists($blogs, 'hasPages') && $blogs->hasPages())
+                    <div class="mt-8">
+                        {{ $blogs->links('vendor.pagination.custom') }}
+                    </div>
+                @endif
             </div>
 
             <aside class="space-y-6">
@@ -179,11 +230,12 @@
                     <p class="text-xs uppercase tracking-[0.4em] text-slate-400">Featured</p>
                     @if($featuredBlog)
                         <a href="{{ route('frontend.blog-detail', $featuredBlog->slug) }}" class="mt-4 block space-y-4">
-                            <img alt=""
+                            <img 
                                 src="{{ $featuredBlog->getImageUrl() }}"
                                 alt="{{ $featuredBlog->title }}"
+                                width="360" height="176"
                                 class="h-44 w-full rounded-3xl object-cover"
-                                loading="lazy"
+                                loading="lazy" decoding="async"
                             >
                             <div class="space-y-2">
                                 <h3 class="text-lg font-bold text-slate-900">{{ $featuredBlog->title }}</h3>
@@ -297,9 +349,11 @@
             <!-- Image -->
             <div>
                 <img
-                    src="{{ asset('assets/images/img1.webp') }}"
+                    src="{{ asset('assets/images/about.webp') }}"
                     alt="Website Development Company in Kanpur - Backend Coders India"
-                    class="rounded-[32px] shadow-2xl w-full">
+                    width="1536" height="1024"
+                    loading="lazy" decoding="async"
+                    class="rounded-[32px] w-full">
             </div>
 
         </div>

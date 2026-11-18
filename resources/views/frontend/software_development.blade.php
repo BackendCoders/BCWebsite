@@ -1,4 +1,8 @@
 @extends('component.main')
+@push('head')
+    <link rel="preload" as="image" href="{{ asset('assets/images/bannerC.webp') }}" fetchpriority="high">
+@endpush
+
 @section('content')
 
 
@@ -6,8 +10,11 @@
 <section class="relative h-[30vh] flex items-center justify-center text-center text-white overflow-hidden">
 
   <!-- BACKGROUND IMAGE -->
-  <img alt="" 
-    src="{{asset('assets/images/bannerC.png')}}"
+  <img 
+    src="{{asset('assets/images/bannerC.webp')}}"
+    alt="Custom Software Development Services by Backend Coders India"
+    width="1920" height="600"
+    fetchpriority="high" loading="eager" decoding="async"
     class="absolute inset-0 w-full h-full object-cover"
   />
 
@@ -87,7 +94,7 @@
                         <span class="text-[0.6rem] font-semibold uppercase tracking-[0.4em] text-[#FD5528]">Bespoke Web</span>
                         <div class="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] 
                         hover:from-[#fb813b] hover:to-[#b00000]  shadow-inner">
-                            <img src="https://img.icons8.com/?size=100&id=DCkAZ79sIYhT&format=png&color=ffffff" alt="Custom web app" class="h-16 w-16" />
+                            <img src="{{ asset('assets/icons/home/custom-web-apps.png') }}" width="64" height="64" loading="lazy" decoding="async" alt="Custom web app" class="h-16 w-16" />
                         </div>
                         <h3 class="text-xl font-semibold transition duration-500 group-hover:text-black">Custom Web Applications</h3>
                         <p class="text-sm text-gray-600 group-hover:text-gray-900">Scalable platforms with modern stacks, measurable KPIs, and performance-first code.</p>
@@ -105,7 +112,7 @@
                         <span class="text-[0.6rem] font-semibold uppercase tracking-[0.4em] text-[#FD5528]">Design & Build</span>
                         <div class="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] 
                         hover:from-[#fb813b] hover:to-[#b00000] shadow-inner">
-                            <img src="https://img.icons8.com/?size=100&id=8Y6ohiJ337rc&format=png&color=ffffff" alt="Design icon" class="h-16 w-16" />
+                            <img src="{{ asset('assets/icons/home/website-design.png') }}" width="64" height="64" loading="lazy" decoding="async" alt="Design icon" class="h-16 w-16" />
                         </div>
                         <h3 class="text-xl font-semibold transition duration-500 group-hover:text-black">Website Design & Development</h3>
                         <p class="text-sm text-gray-600 group-hover:text-gray-900">Responsive, brand-complete websites that load fast and stay SEO-friendly.</p>
@@ -123,7 +130,7 @@
                         <span class="text-[0.6rem] font-semibold uppercase tracking-[0.4em] text-[#FD5528]">SaaS Platforms</span>
                         <div class="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] 
                         hover:from-[#fb813b] hover:to-[#b00000] shadow-inner">
-                            <img src="https://img.icons8.com/?size=100&id=k8TSihyFk2cJ&format=png&color=ffffff" alt="SaaS icon" class="h-16 w-16" />
+                            <img src="{{ asset('assets/icons/home/saas-product.png') }}" width="64" height="64" loading="lazy" decoding="async" alt="SaaS icon" class="h-16 w-16" />
                         </div>
                         <h3 class="text-xl font-semibold transition duration-500 group-hover:text-black">SaaS Development</h3>
                         <p class="text-sm text-gray-600 group-hover:text-gray-900">Multi-tenant platforms engineered for reliability, governance, and scale.</p>
@@ -141,7 +148,7 @@
                         <span class="text-[0.6rem] font-semibold uppercase tracking-[0.4em] text-[#FD5528]">Enterprise Core</span>
                         <div class="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] 
                         hover:from-[#fb813b] hover:to-[#b00000] shadow-inner">
-                            <img src="https://img.icons8.com/?size=100&id=Rk5rrSlqrNZO&format=png&color=ffffff" alt="ERP icon" class="h-16 w-16" />
+                            <img src="{{ asset('assets/icons/home/erp-crm.png') }}" width="64" height="64" loading="lazy" decoding="async" alt="ERP icon" class="h-16 w-16" />
                         </div>
                         <h3 class="text-xl font-semibold transition duration-500 group-hover:text-black">ERP & POS Software</h3>
                         <p class="text-sm text-gray-600 group-hover:text-gray-900">Operational grade systems that align inventory, payments, and teams.</p>
@@ -159,7 +166,7 @@
                         <span class="text-[0.6rem] font-semibold uppercase tracking-[0.4em] text-[#FD5528]">Commerce Pulse</span>
                         <div class="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] 
                         hover:from-[#fb813b] hover:to-[#b00000] shadow-inner">
-                            <img src="https://img.icons8.com/?size=100&id=8OxFnElAJgpE&format=png&color=ffffff" alt="Commerce icon" class="h-16 w-16" />
+                            <img src="{{ asset('assets/icons/home/ecommerce.png') }}" width="64" height="64" loading="lazy" decoding="async" alt="Commerce icon" class="h-16 w-16" />
                         </div>
                         <h3 class="text-xl font-semibold transition duration-500 group-hover:text-black">E-commerce Development</h3>
                         <p class="text-sm text-gray-600 group-hover:text-gray-900">Conversion-led storefronts with secure payments and real-time analytics.</p>
@@ -177,7 +184,7 @@
                         <span class="text-[0.6rem] font-semibold uppercase tracking-[0.4em] text-[#FD5528]">Mobile Pulse</span>
                         <div class="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] 
                         hover:from-[#fb813b] hover:to-[#b00000] shadow-inner">
-                            <img src="https://img.icons8.com/?size=100&id=67475&format=png&color=ffffff" alt="Mobile icon" class="h-16 w-16" />
+                            <img src="{{ asset('assets/icons/home/mobile-apps.png') }}" width="64" height="64" loading="lazy" decoding="async" alt="Mobile icon" class="h-16 w-16" />
                         </div>
                         <h3 class="text-xl font-semibold transition duration-500 group-hover:text-black">Mobile App Development</h3>
                         <p class="text-sm text-gray-600 group-hover:text-gray-900">Cross-platform experiences with native polish, motion, and accessible flows.</p>
@@ -195,7 +202,7 @@
                         <span class="text-[0.6rem] font-semibold uppercase tracking-[0.4em] text-[#FD5528]">API Layer</span>
                         <div class="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] 
                         hover:from-[#fb813b] hover:to-[#b00000] shadow-inner">
-                            <img src="https://img.icons8.com/?size=100&id=6kPR2dlup5KK&format=png&color=ffffff" alt="API icon" class="h-16 w-16" />
+                            <img src="{{ asset('assets/icons/home/cloud-devops.png') }}" width="64" height="64" loading="lazy" decoding="async" alt="API icon" class="h-16 w-16" />
                         </div>
                         <h3 class="text-xl font-semibold transition duration-500 group-hover:text-black">API Development</h3>
                         <p class="text-sm text-gray-600 group-hover:text-gray-900">Secure REST endpoints, clean contracts, and integration-ready tooling.</p>
@@ -213,7 +220,7 @@
                         <span class="text-[0.6rem] font-semibold uppercase tracking-[0.4em] text-[#FD5528]">Startup Sprint</span>
                         <div class="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] 
                         hover:from-[#fb813b] hover:to-[#b00000] shadow-inner">
-                            <img src="https://img.icons8.com/?size=100&id=KR7IxBJfODTv&format=png&color=ffffff" alt="MVP icon" class="h-16 w-16" />
+                            <img src="{{ asset('assets/icons/home/mvp-startups.png') }}" width="64" height="64" loading="lazy" decoding="async" alt="MVP icon" class="h-16 w-16" />
                         </div>
                         <h3 class="text-xl font-semibold transition duration-500 group-hover:text-black">Startup MVP Development</h3>
                         <p class="text-sm text-gray-600 group-hover:text-gray-900">Rapid prototyping with user testing, guided learnings, and clear success metrics.</p>

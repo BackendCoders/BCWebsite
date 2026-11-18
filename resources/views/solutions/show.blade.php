@@ -1,4 +1,9 @@
 @extends('component.main')
+
+@push('head')
+    <link rel="preload" as="image" href="https://images.unsplash.com/photo-1551288049-bebda4e38f71" fetchpriority="high">
+@endpush
+
 @section('content')
 
 <!-- HERO -->
@@ -26,7 +31,10 @@
     </div>
 
     <div>
-      <img alt="" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71"
+      <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71"
+        alt="Data-driven search engine optimization analytics and growth"
+        width="600" height="400"
+        loading="eager" fetchpriority="high" decoding="async"
         class="rounded-2xl shadow-lg w-full object-cover">
     </div>
 
@@ -72,7 +80,7 @@
 
     <!-- ICON -->
     <div class="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] shadow-inner">
-      <img src="https://img.icons8.com/?size=100&id=11668&format=png&color=ffffff" alt="On Page SEO" class="h-14 w-14" />
+      <img src="https://img.icons8.com/?size=100&id=11668&format=png&color=ffffff" alt="On Page SEO" width="56" height="56" loading="lazy" decoding="async" class="h-14 w-14" />
     </div>
 
     <!-- TITLE -->
@@ -110,7 +118,7 @@
 
     <!-- ICON -->
     <div class="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] shadow-inner">
-      <img src="https://img.icons8.com/?size=100&id=86127&format=png&color=ffffff" alt="Off Page SEO" class="h-14 w-14" />
+      <img src="https://img.icons8.com/?size=100&id=86127&format=png&color=ffffff" alt="Off Page SEO" width="56" height="56" loading="lazy" decoding="async" class="h-14 w-14" />
     </div>
 
     <!-- TITLE -->
@@ -147,7 +155,7 @@
 
     <!-- ICON -->
     <div class="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] shadow-inner">
-      <img src="https://img.icons8.com/?size=100&id=110249&format=png&color=ffffff" alt="Technical SEO" class="h-14 w-14" />
+      <img src="https://img.icons8.com/?size=100&id=110249&format=png&color=ffffff" alt="Technical SEO" width="56" height="56" loading="lazy" decoding="async" class="h-14 w-14" />
     </div>
 
     <!-- TITLE -->
@@ -184,7 +192,7 @@
 
     <!-- ICON -->
     <div class="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] shadow-inner">
-      <img src="https://img.icons8.com/?size=100&id=7880&format=png&color=ffffff" alt="Local SEO" class="h-14 w-14" />
+      <img src="https://img.icons8.com/?size=100&id=7880&format=png&color=ffffff" alt="Local SEO" width="56" height="56" loading="lazy" decoding="async" class="h-14 w-14" />
     </div>
 
     <!-- TITLE -->
@@ -221,7 +229,7 @@
 
     <!-- ICON -->
     <div class="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] shadow-inner">
-      <img src="https://img.icons8.com/?size=100&id=85467&format=png&color=ffffff" alt="Ecommerce SEO" class="h-14 w-14" />
+      <img src="https://img.icons8.com/?size=100&id=85467&format=png&color=ffffff" alt="Ecommerce SEO" width="56" height="56" loading="lazy" decoding="async" class="h-14 w-14" />
     </div>
 
     <!-- TITLE -->
@@ -258,7 +266,7 @@
 
     <!-- ICON -->
     <div class="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] shadow-inner">
-      <img src="https://img.icons8.com/?size=100&id=59873&format=png&color=ffffff" alt="SEO Audit" class="h-14 w-14" />
+      <img src="https://img.icons8.com/?size=100&id=59873&format=png&color=ffffff" alt="SEO Audit" width="56" height="56" loading="lazy" decoding="async" class="h-14 w-14" />
     </div>
 
     <!-- TITLE -->

@@ -1,19 +1,112 @@
 {
   "specVersion": "1.0",
   "host": {
-    "displayName": "Backend Coders",
-    "documentationUrl": "https://backendcodersindia.com"
+    "displayName": "Backend Coders India",
+    "legalName": "Backend Coders India",
+    "documentationUrl": "https://backendcodersindia.com",
+    "location": {
+      "locality": "Kanpur",
+      "region": "Uttar Pradesh",
+      "country": "India"
+    },
+    "telephone": "+91 9140092133",
+    "email": "info@backendcodersindia.com"
   },
   "entries": [
     {
-      "identifier": "urn:air:backendcodersindia.com:services:web-development",
-      "displayName": "Backend Coders Web & API Development",
+      "identifier": "urn:air:backendcodersindia.com:services:website-development",
+      "displayName": "Website Design & Development Services in Kanpur",
       "type": "text/html",
-      "url": "https://backendcodersindia.com/service",
-      "description": "Custom backend engineering, API architecture, web app development, and cloud services.",
+      "url": "https://backendcodersindia.com/page/website-design-development",
+      "description": "Custom responsive website design, business landing pages, and web portals starting from ₹7,999 one-time.",
       "representativeQueries": [
-        "hire backend developers",
-        "custom web application development"
+        "website development company in kanpur",
+        "custom web design services kanpur",
+        "hire laravel website developer"
+      ]
+    },
+    {
+      "identifier": "urn:air:backendcodersindia.com:services:mobile-app-development",
+      "displayName": "Mobile App Development Company in Kanpur",
+      "type": "text/html",
+      "url": "https://backendcodersindia.com/page/mobile-app-development",
+      "description": "Native Android, iOS, and cross-platform Flutter/React Native mobile applications starting from ₹19,999.",
+      "representativeQueries": [
+        "mobile app development company in kanpur",
+        "android app developer kanpur",
+        "flutter app development company"
+      ]
+    },
+    {
+      "identifier": "urn:air:backendcodersindia.com:services:erp-pos-software",
+      "displayName": "ERP & POS Software Development Company in Kanpur",
+      "type": "text/html",
+      "url": "https://backendcodersindia.com/page/erp-pos-software",
+      "description": "Custom ERP and point-of-sale software with GST billing, multi-branch inventory, and offline support starting from ₹39,999.",
+      "representativeQueries": [
+        "erp software company in kanpur",
+        "pos billing software developer kanpur",
+        "custom inventory management software"
+      ]
+    },
+    {
+      "identifier": "urn:air:backendcodersindia.com:services:saas-development",
+      "displayName": "SaaS Platform & Cloud Application Development",
+      "type": "text/html",
+      "url": "https://backendcodersindia.com/page/saas-development",
+      "description": "End-to-end SaaS engineering, multi-tenant architecture, automated subscription billing, and API integrations.",
+      "representativeQueries": [
+        "saas development company",
+        "build multi tenant saas application",
+        "b2b cloud software development"
+      ]
+    },
+    {
+      "identifier": "urn:air:backendcodersindia.com:services:ecommerce-development",
+      "displayName": "Custom E-Commerce Website Development Services",
+      "type": "text/html",
+      "url": "https://backendcodersindia.com/page/ecommerce-development",
+      "description": "High-conversion online stores, custom carts, payment gateways (Razorpay/Stripe), and inventory management starting from ₹24,999.",
+      "representativeQueries": [
+        "ecommerce website development company in kanpur",
+        "custom online store development",
+        "hire ecommerce developer"
+      ]
+    },
+    {
+      "identifier": "urn:air:backendcodersindia.com:services:seo",
+      "displayName": "Search Engine Optimization (SEO) Services in Kanpur",
+      "type": "text/html",
+      "url": "https://backendcodersindia.com/seo",
+      "description": "Ethical white-hat SEO services in Kanpur, technical audits, on-page optimization, and organic lead generation starting from ₹7,999/month.",
+      "representativeQueries": [
+        "seo company in kanpur",
+        "seo services kanpur",
+        "organic search optimization agency"
+      ]
+    },
+    {
+      "identifier": "urn:air:backendcodersindia.com:services:local-seo",
+      "displayName": "Local SEO & Google Business Profile Optimization",
+      "type": "text/html",
+      "url": "https://backendcodersindia.com/page/local-seo",
+      "description": "Local map ranking, Google Business Profile configuration, review strategy, and local citation management for Kanpur businesses.",
+      "representativeQueries": [
+        "local seo services kanpur",
+        "google business profile optimization",
+        "google maps ranking service"
+      ]
+    },
+    {
+      "identifier": "urn:air:backendcodersindia.com:services:packages",
+      "displayName": "Transparent Web Development & SEO Packages",
+      "type": "text/html",
+      "url": "https://backendcodersindia.com/packages",
+      "description": "Published package pricing for web development, SEO, digital marketing, and software engineering with fixed deliverables.",
+      "representativeQueries": [
+        "website development packages india",
+        "seo packages kanpur",
+        "software development pricing"
       ]
     }
   ]

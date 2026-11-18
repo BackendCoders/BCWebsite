@@ -15,6 +15,14 @@ class CareerApplication extends Model
         'resume',
         'visitor_id',
         'ip_address',
+        'user_agent',
+        'browser',
+        'os',
+        'device_type',
+        'referrer',
+        'landing_page',
+        'consent_status',
+        'session_id',
         'status',
     ];
 

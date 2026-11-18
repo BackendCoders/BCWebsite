@@ -1,6 +1,6 @@
 @php
-    $activeNavClass = fn ($route) => request()->routeIs($route) ? 'bg-white text-[#FD5528]' : 'text-white';
-    $activeMobileNavClass = fn ($route) => request()->routeIs($route) ? 'bg-[#FD5528] text-white' : 'text-white';
+    $activeNavClass = fn ($route) => request()->routeIs($route) ? 'bg-white text-[#C2410C]' : 'text-white';
+    $activeMobileNavClass = fn ($route) => request()->routeIs($route) ? 'bg-[#C2410C] text-white' : 'text-white';
 
     $digitalMenuItems = $menuItems->filter(fn ($item) =>
         \App\Models\MenuItem::normalizeType($item->type) === \App\Models\MenuItem::TYPE_DIGITAL
@@ -15,9 +15,9 @@
 <div class="hidden bg-[#FD5528] text-sm text-white md:block lg:block">
     <div class="mx-auto flex max-w-9xl flex-col gap-4 px-4 py-3 sm:flex-row sm:items-center sm:justify-between sm:px-6">
         <div class="flex w-full flex-col items-center gap-3 text-center text-xs sm:flex-row sm:items-start sm:gap-6 sm:text-left sm:text-sm">
-            <a href="tel:+91 9140092133" class="flex items-center justify-center gap-2 transition sm:justify-start">
+            <a href="tel:+919140092133" class="flex items-center justify-center gap-2 transition sm:justify-start">
                 <div class="flex h-7 w-7 items-center justify-center rounded-full bg-gradient-to-r from-[#f1e9e9] to-[#f5f1f1] transition-all duration-300 hover:scale-110">
-                    <img src="{{ asset('assets/icons/call.png') }}" alt="Phone" class="h-4 w-4" aria-hidden="true">
+                    <img src="{{ asset('assets/icons/call.png') }}" width="16" height="16" loading="eager" decoding="async" alt="Phone" class="h-4 w-4" aria-hidden="true">
                 </div>
                 <span>+91 9140092133</span>
             </a>
@@ -27,7 +27,7 @@
                aria-label="Email info@backendcodersindia.com"
                class="flex items-center justify-center gap-2 transition hover:text-white/90 sm:justify-start">
                 <div class="flex h-7 w-7 items-center justify-center rounded-full bg-gradient-to-r from-[#f1e9e9] to-[#f5f1f1] transition-all duration-300 hover:scale-110">
-                    <img src="{{ asset('assets/icons/mail.png') }}" alt="Email" class="h-4 w-4" aria-hidden="true">
+                    <img src="{{ asset('assets/icons/mail.png') }}" width="16" height="16" loading="eager" decoding="async" alt="Email" class="h-4 w-4" aria-hidden="true">
                 </div>
 
                 <span id="email" class="select-text font-medium cursor-pointer">info@backendcodersindia.com</span>
@@ -35,17 +35,17 @@
         </div>
 
         <div class="flex items-center justify-center gap-3">
-            <!-- <a href="https://www.facebook.com/backendcoders/" target="_blank" rel="noreferrer"
-               class="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-r from-[#f1e9e9] to-[#f5f1f1] transition-all duration-300 hover:scale-110">
-                <img src="{{ asset('assets/icons/facebook.png') }}" alt="Facebook" class="h-4 w-4" aria-hidden="true">
-            </a> -->
             <a href="https://www.facebook.com/backendcoders/"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Facebook"
-                class="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-r from-[#f1e9e9] to-[#f5f1f1] transition-all duration-300 hover:scale-110">
+                class="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-r from-[#f1ede9] to-[#f5f1f1] transition-all duration-300 hover:scale-110">
 
                 <img src="{{ asset('assets/icons/facebook.png') }}"
+                width="16"
+                height="16"
+                loading="eager"
+                decoding="async"
                 alt="Backend Coders India Facebook"
                 class="h-4 w-4">
 
@@ -56,22 +56,22 @@
 
             <a href="https://www.instagram.com/backendcoders/" target="_blank" rel="noreferrer" aria-label="Instagram"
                class="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-r from-[#f1e9e9] to-[#f5f1f1] transition-all duration-300 hover:scale-110">
-                <img src="{{ asset('assets/icons/instagram.png') }}" alt="Instagram" class="h-4 w-4" aria-hidden="true">
+                <img src="{{ asset('assets/icons/instagram.png') }}" width="16" height="16" loading="eager" decoding="async" alt="Instagram" class="h-4 w-4" aria-hidden="true">
             </a>
 
             <a href="https://www.linkedin.com/company/backendcodersindia/" target="_blank" rel="noreferrer" aria-label="LinkedIn"
                class="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-r from-[#f1e9e9] to-[#f5f1f1] transition-all duration-300 hover:scale-110">
-                <img src="{{ asset('assets/icons/linkedin.png') }}" alt="LinkedIn" class="h-4 w-4" aria-hidden="true">
+                <img src="{{ asset('assets/icons/linkedin.png') }}" width="16" height="16" loading="eager" decoding="async" alt="LinkedIn" class="h-4 w-4" aria-hidden="true">
             </a>
 
             <a href="https://wa.me/919140092133" target="_blank" rel="noreferrer" aria-label="WhatsApp"
                class="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-r from-[#f1e9e9] to-[#f5f1f1] transition-all duration-300 hover:scale-110">
-                <img src="{{ asset('assets/icons/whatsapp.png') }}" alt="WhatsApp" class="h-4 w-4" aria-hidden="true">
+                <img src="{{ asset('assets/icons/whatsapp.png') }}" width="16" height="16" loading="eager" decoding="async" alt="WhatsApp" class="h-4 w-4" aria-hidden="true">
             </a>
 
             <a href="https://x.com/backendcodersin" target="_blank" rel="noopener noreferrer" aria-label="Twitter"
                  class="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-r from-[#f1e9e9] to-[#f5f1f1] transition-all duration-300 hover:scale-110">
-                <img src="{{ asset('assets/icons/twitter.png') }}" class="h-5 w-5" alt="Twitter" aria-hidden="true">
+                <img src="{{ asset('assets/icons/twitter.png') }}" width="20" height="20" loading="eager" decoding="async" class="h-5 w-5" alt="Twitter" aria-hidden="true">
             </a>
         </div>
     </div>
@@ -91,21 +91,21 @@ backdrop-blur">
                  width="180"
                  height="48"
                  alt="Backend Coders India"
-                 fetchpriority="high"
-                 decoding="sync"
+                 loading="eager"
+                 decoding="async"
                  class="w-[180px] h-12 object-contain">
         </a>
 
         <!-- Desktop Menu -->
         <nav class="hidden items-center gap-2 lg:flex min-w-[700px] text-sm font-medium ">
             <a href="{{ route('frontend.index') }}"
-               class="nav-link rounded-md px-3 py-2 transition hover:bg-orange-50 hover:text-[#FD5528] {{ $activeNavClass('frontend.index') }}"
+               class="nav-link rounded-md px-3 py-2 transition hover:bg-orange-50 hover:text-[#C2410C] {{ $activeNavClass('frontend.index') }}"
                aria-current="{{ request()->routeIs('frontend.index') ? 'page' : '' }}">
                 Overview
             </a>
 
             <a href="{{ route('frontend.about') }}"
-               class="nav-link rounded-md px-3 py-2 transition hover:bg-orange-50 hover:text-[#FD5528] {{ $activeNavClass('frontend.about') }}"
+               class="nav-link rounded-md px-3 py-2 transition hover:bg-orange-50 hover:text-[#C2410C] {{ $activeNavClass('frontend.about') }}"
                aria-current="{{ request()->routeIs('frontend.about') ? 'page' : '' }}">
                 Company
             </a>
@@ -113,7 +113,7 @@ backdrop-blur">
             <div class="relative">
                 <button id="mega-menu-toggle"
                         type="button"
-                        class="nav-link flex items-center gap-1 rounded-md px-3 py-2 transition hover:bg-orange-50 hover:text-[#FD5528] {{ $activeNavClass('frontend.service') }}"
+                        class="nav-link flex items-center gap-1 rounded-md px-3 py-2 transition hover:bg-orange-50 hover:text-[#C2410C] {{ $activeNavClass('frontend.service') }}"
                         aria-expanded="false"
                         aria-controls="mega-menu-panel">
                     Solutions
@@ -128,12 +128,17 @@ backdrop-blur">
                      aria-hidden="true">
                     <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
                         <div class="space-y-3">
-                            <p class="text-xs font-semibold uppercase tracking-wider text-[#FD5528]">Digital Marketing</p>
+                            <p class="text-xs font-semibold uppercase tracking-wider text-[#C2410C]">Digital Marketing</p>
                             <ul class="space-y-2 text-sm text-slate-700">
+                                <!-- <li class="rounded-lg px-3 py-2 transition hover:bg-orange-50 hover:text-[#C2410C]">
+                                    <a class="block font-semibold text-[#FD5528]" href="{{ route('frontend.digital_marketing_kanpur') }}">
+                                        Digital Marketing Agency Kanpur
+                                    </a>
+                                </li> -->
                                 @forelse($digitalMenuItems as $item)
-                                    @if($item->page)
-                                        <li class="rounded-lg px-3 py-2 transition hover:bg-orange-50 hover:text-[#FD5528]">
-                                            <a class="block" href="{{ $item->page->slug === 'seo-services' ? route('frontend.seo') : route('frontend.page', $item->page->slug) }}">
+                                    @if($item->page && $item->page->slug !== 'digital-marketing-agency-kanpur')
+                                        <li class="rounded-lg px-3 py-2 transition hover:bg-orange-50 hover:text-[#C2410C]">
+                                            <a class="block" href="{{ in_array($item->page->slug, ['seo', 'seo-services']) ? route('frontend.seo') : route('frontend.page', $item->page->slug) }}">
                                                 {{ $item->title }}
                                             </a>
                                         </li>
@@ -145,11 +150,16 @@ backdrop-blur">
                         </div>
 
                         <div class="space-y-3">
-                            <p class="text-xs font-semibold uppercase tracking-wider text-[#FD5528]">Software Development</p>
+                            <p class="text-xs font-semibold uppercase tracking-wider text-[#C2410C]">Software Development</p>
                             <ul class="mt-3 space-y-2 text-sm text-slate-700">
+                                <!-- <li class="rounded-lg px-3 py-2 transition hover:bg-orange-50 hover:text-[#C2410C]">
+                                    <a class="block font-semibold text-[#FD5528]" href="{{ route('frontend.software_company_kanpur') }}">
+                                        Software Company Kanpur
+                                    </a>
+                                </li> -->
                                 @forelse($softwareMenuItems as $item)
-                                    @if($item->page)
-                                        <li class="rounded-lg px-3 py-2 transition hover:bg-orange-50 hover:text-[#FD5528]">
+                                    @if($item->page && !in_array($item->page->slug, ['software-company-kanpur', 'it-company-in-kanpur-web-software-digital-services-backend-coders-india'], true))
+                                        <li class="rounded-lg px-3 py-2 transition hover:bg-orange-50 hover:text-[#C2410C]">
                                             <a class="block" href="{{ $item->page->slug === 'seo-services' ? route('frontend.seo') : route('frontend.page', $item->page->slug) }}">
                                                 {{ $item->title }}
                                             </a>
@@ -165,52 +175,53 @@ backdrop-blur">
             </div>
 
             <a href="{{ route('frontend.project') }}"
-               class="nav-link rounded-md px-3 py-2 transition hover:bg-orange-50 hover:text-[#FD5528] {{ $activeNavClass('frontend.project') }}"
+               class="nav-link rounded-md px-3 py-2 transition hover:bg-orange-50 hover:text-[#C2410C] {{ $activeNavClass('frontend.project') }}"
                aria-current="{{ request()->routeIs('frontend.project') ? 'page' : '' }}">
                 Portfolio
             </a>
 
             <a href="{{ route('frontend.process') }}"
-               class="nav-link rounded-md px-3 py-2 transition hover:bg-orange-50 hover:text-[#FD5528] {{ $activeNavClass('frontend.process') }}"
+               class="nav-link rounded-md px-3 py-2 transition hover:bg-orange-50 hover:text-[#C2410C] {{ $activeNavClass('frontend.process') }}"
                aria-current="{{ request()->routeIs('frontend.process') ? 'page' : '' }}">
                 Process
             </a>
 
             <a href="{{ route('frontend.demo') }}"
-               class="nav-link rounded-md px-3 py-2 transition hover:bg-orange-50 hover:text-[#FD5528] {{ $activeNavClass('frontend.demo') }}"
+               class="nav-link rounded-md px-3 py-2 transition hover:bg-orange-50 hover:text-[#C2410C] {{ $activeNavClass('frontend.demo') }}"
                aria-current="{{ request()->routeIs('frontend.demo') ? 'page' : '' }}">
                 Live Demos
             </a>
 
             <a href="{{ route('frontend.blog') }}"
-               class="nav-link rounded-md px-3 py-2 transition hover:bg-orange-50 hover:text-[#FD5528] {{ $activeNavClass('frontend.blog') }}"
+               class="nav-link rounded-md px-3 py-2 transition hover:bg-orange-50 hover:text-[#C2410C] {{ $activeNavClass('frontend.blog') }}"
                aria-current="{{ request()->routeIs('frontend.blog') ? 'page' : '' }}">
                 Blog
             </a>
 
             <a href="{{ route('frontend.packages') }}"
-               class="nav-link rounded-md px-3 py-2 transition hover:bg-orange-50 hover:text-[#FD5528] {{ $activeNavClass('frontend.packages') }}"
+               class="nav-link rounded-md px-3 py-2 transition hover:bg-orange-50 hover:text-[#C2410C] {{ $activeNavClass('frontend.packages') }}"
                aria-current="{{ request()->routeIs('frontend.packages') ? 'page' : '' }}">
                 Packages
             </a>
 
             <a href="{{ route('frontend.career') }}"
-               class="nav-link rounded-md px-3 py-2 transition hover:bg-orange-50 hover:text-[#FD5528] {{ $activeNavClass('frontend.career') }}"
+               class="nav-link rounded-md px-3 py-2 transition hover:bg-orange-50 hover:text-[#C2410C] {{ $activeNavClass('frontend.career') }}"
                aria-current="{{ request()->routeIs('frontend.career') ? 'page' : '' }}">
                 Careers
             </a>
 
             <a href="{{ route('frontend.contact') }}"
-               class="nav-link rounded-md px-3 py-2 transition hover:bg-orange-50 hover:text-[#FD5528] {{ $activeNavClass('frontend.contact') }}"
+               class="nav-link rounded-md px-3 py-2 transition hover:bg-orange-50 hover:text-[#C2410C] {{ $activeNavClass('frontend.contact') }}"
                aria-current="{{ request()->routeIs('frontend.contact') ? 'page' : '' }}">
                 Contact
             </a>
         </nav>
 
         <div class="hidden lg:flex">
-            <a href="tel:+91 9140092133"
-               class="inline-flex items-center justify-center rounded-2xl bg-gradient-to-r from-[#FD5528] to-[#fbb03b] px-5 py-2 font-semibold text-white transition-all duration-200 hover:scale-105 hover:from-[#fbb03b] hover:to-[#FD5528]">
-                Initialize
+            <a href="tel:+919140092133"
+               class="inline-flex items-center justify-center gap-1.5 rounded-2xl bg-gradient-to-r from-[#FD5528] to-[#FD5528] px-5 py-2 font-semibold text-white transition-all duration-200 hover:scale-105 hover:from-[#f88464] hover:to-[#FD5528]">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                Call Now
             </a>
         </div>
 
@@ -257,15 +268,20 @@ backdrop-blur">
                     <div class="w-full rounded-2xl border border-white/10 bg-white/95 p-3 shadow-sm sm:p-4">
                         <div class="mb-2 flex items-center justify-between">
                             <p class="text-[13px] font-semibold text-slate-800 sm:text-sm">Digital Marketing</p>
-                            <span class="text-xs text-[#FD5528]">{{ $digitalMenuItems->count() }} services</span>
+                            <span class="text-xs text-[#C2410C]">{{ $digitalMenuItems->count() }} services</span>
                         </div>
 
                         <div class="grid max-h-40 gap-2 overflow-y-auto overscroll-contain pr-1 text-sm text-slate-700 sm:max-h-48">
+                            <a href="{{ route('frontend.digital_marketing_kanpur') }}"
+                               data-mobile-menu-link
+                               class="block rounded-lg px-3 py-2 text-[14px] font-semibold leading-snug transition bg-orange-50 text-[#C2410C]">
+                                Digital Marketing Agency Kanpur
+                            </a>
                             @forelse($digitalMenuItems as $item)
-                                @if($item->page)
-                                    <a href="{{ $item->page->slug === 'seo-services' ? route('frontend.seo') : route('frontend.page', $item->page->slug) }}"
+                                @if($item->page && $item->page->slug !== 'digital-marketing-agency-kanpur')
+                                    <a href="{{ in_array($item->page->slug, ['seo', 'seo-services']) ? route('frontend.seo') : route('frontend.page', $item->page->slug) }}"
                                        data-mobile-menu-link
-                                       class="block rounded-lg px-3 py-2.5 text-[14px] leading-snug transition hover:bg-orange-50 hover:text-[#FD5528] sm:py-2">
+                                       class="block rounded-lg px-3 py-2.5 text-[14px] leading-snug transition hover:bg-orange-50 hover:text-[#C2410C] sm:py-2">
                                         {{ $item->title }}
                                     </a>
                                 @endif
@@ -278,15 +294,20 @@ backdrop-blur">
                     <div class="w-full rounded-2xl border border-white/10 bg-white/95 p-3 shadow-sm sm:p-4">
                         <div class="mb-2 flex items-center justify-between">
                             <p class="text-[13px] font-semibold text-slate-800 sm:text-sm">Software Development</p>
-                            <span class="text-xs text-[#FD5528]">{{ $softwareMenuItems->count() }} services</span>
+                            <span class="text-xs text-[#C2410C]">{{ $softwareMenuItems->count() }} services</span>
                         </div>
 
                         <div class="grid max-h-40 gap-2 overflow-y-auto overscroll-contain pr-1 text-sm text-slate-700 sm:max-h-48">
+                            <a href="{{ route('frontend.software_company_kanpur') }}"
+                               data-mobile-menu-link
+                               class="block rounded-lg px-3 py-2 text-[14px] font-semibold leading-snug transition bg-orange-50 text-[#C2410C]">
+                                Software Company Kanpur
+                            </a>
                             @forelse($softwareMenuItems as $item)
-                                @if($item->page)
+                                @if($item->page && !in_array($item->page->slug, ['software-company-kanpur', 'it-company-in-kanpur-web-software-digital-services-backend-coders-india'], true))
                                     <a href="{{ $item->page->slug === 'seo-services' ? route('frontend.seo') : route('frontend.page', $item->page->slug) }}"
                                        data-mobile-menu-link
-                                       class="block rounded-lg px-3 py-2.5 text-[14px] leading-snug transition hover:bg-orange-50 hover:text-[#FD5528] sm:py-2">
+                                       class="block rounded-lg px-3 py-2.5 text-[14px] leading-snug transition hover:bg-orange-50 hover:text-[#C2410C] sm:py-2">
                                         {{ $item->title }}
                                     </a>
                                 @endif
@@ -349,13 +370,13 @@ backdrop-blur">
 
             <div class="py-2 sm:py-3 space-y-2">
                 <a href="tel:+919140092133"
-                   class="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#FD5528] px-4 py-3 text-sm font-semibold text-white transition hover:bg-orange-600">
-                    <img src="{{ asset('assets/icons/call.png') }}" alt="Phone" class="h-4 w-4" aria-hidden="true">
+                   class="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#C2410C] px-4 py-3 text-sm font-semibold text-white transition hover:bg-orange-700">
+                    <img src="{{ asset('assets/icons/call.png') }}" width="16" height="16" loading="lazy" decoding="async" alt="Phone" class="h-4 w-4" aria-hidden="true">
                     <span>Call: +91 9140092133</span>
                 </a>
                 <a href="mailto:info@backendcodersindia.com"
                    class="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/5 px-4 py-3 text-sm font-semibold text-white transition hover:bg-white/10 hover:border-white/40">
-                    <img src="{{ asset('assets/icons/mail.png') }}" alt="Email" class="h-4 w-4" aria-hidden="true">
+                    <img src="{{ asset('assets/icons/mail.png') }}" width="16" height="16" loading="lazy" decoding="async" alt="Email" class="h-4 w-4" aria-hidden="true">
                     <span>Email: info@backendcodersindia.com</span>
                 </a>
             </div>

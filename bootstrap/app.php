@@ -16,8 +16,12 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware): void {
         $middleware->trustProxies(
+            at: env('TRUSTED_PROXIES', '*'),
             headers: \Illuminate\Http\Request::HEADER_X_FORWARDED_FOR
-                | \Illuminate\Http\Request::HEADER_X_FORWARDED_PROTO,
+                | \Illuminate\Http\Request::HEADER_X_FORWARDED_HOST
+                | \Illuminate\Http\Request::HEADER_X_FORWARDED_PORT
+                | \Illuminate\Http\Request::HEADER_X_FORWARDED_PROTO
+                | \Illuminate\Http\Request::HEADER_X_FORWARDED_AWS_ELB,
         );
 
         $middleware->web(prepend: [
@@ -25,6 +29,7 @@ return Application::configure(basePath: dirname(__DIR__))
         ], append: [
             \App\Http\Middleware\EnsureVisitorId::class,
             \App\Http\Middleware\TrackSiteVisit::class,
+            \App\Http\Middleware\ApplyPublicPageCacheHeaders::class,
         ]);
 
         $middleware->encryptCookies(except: [

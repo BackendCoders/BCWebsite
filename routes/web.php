@@ -19,6 +19,7 @@ use App\Http\Controllers\SectionController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\MenuItemController;
 use App\Http\Controllers\BotmanController;
+use App\Http\Controllers\OfficeImageController;
 
 
 use App\Models\Page;
@@ -45,55 +46,132 @@ Route::get('/video/{file}', function ($file) {
 
 // sitemap and robots assets
 Route::get('/sitemap.xml', function () {
-    $urls = collect([
-        ['loc' => url('/')],
-        ['loc' => url('/about')],
-        ['loc' => url('/service')],
-        ['loc' => url('/project')],
-        ['loc' => url('/demo')],
-        ['loc' => url('/team')],
-        ['loc' => url('/owner')],
-        ['loc' => url('/process')],
-        ['loc' => url('/packages')],
-        ['loc' => url('/career')],
-        ['loc' => url('/contact')],
-        ['loc' => url('/blog')],
-        ['loc' => url('/faq')],
-        ['loc' => url('/help')],
-        ['loc' => url('/terms')],
-        ['loc' => url('/privacy-policy')],
-        ['loc' => url('/seo')],
-        ['loc' => url('/page/social-media-management')],
-    ]);
+    $staticDefinitions = [
+        '/' => ['view' => 'frontend/index.blade.php', 'slug' => 'home'],
+        '/about' => ['view' => 'frontend/about.blade.php', 'slug' => 'about'],
+        '/service' => ['view' => 'frontend/service.blade.php', 'slug' => 'service'],
+        '/project' => ['view' => 'frontend/project.blade.php', 'slug' => 'project'],
+        '/demo' => ['view' => 'frontend/demo.blade.php', 'slug' => 'demo'],
+        '/team' => ['view' => 'frontend/team.blade.php', 'slug' => 'team'],
+        '/owner' => ['view' => 'frontend/owner.blade.php', 'slug' => 'owner'],
+        '/process' => ['view' => 'frontend/process.blade.php', 'slug' => 'process'],
+        '/packages' => ['view' => 'frontend/packages.blade.php', 'slug' => 'packages'],
+        '/career' => ['view' => 'frontend/career.blade.php', 'slug' => 'career'],
+        '/contact' => ['view' => 'frontend/contact.blade.php', 'slug' => 'contact'],
+        '/blog' => ['view' => 'frontend/blog.blade.php', 'slug' => 'blog'],
+        '/faq' => ['view' => 'frontend/faq.blade.php', 'slug' => 'faq'],
+        '/help' => ['view' => 'frontend/help.blade.php', 'slug' => 'help'],
+        '/terms' => ['view' => 'frontend/terms.blade.php', 'slug' => 'terms'],
+        '/privacy-policy' => ['view' => 'frontend/privacy_policy.blade.php', 'slug' => 'privacy-policy'],
+        '/seo' => ['view' => 'frontend/seo.blade.php', 'slug' => 'seo'],
+        '/digital-marketing-agency-kanpur' => ['view' => 'frontend/digital_marketing_kanpur.blade.php', 'slug' => 'digital-marketing-agency-kanpur'],
+        '/software-company-kanpur' => ['view' => 'frontend/software_company_kanpur.blade.php', 'slug' => 'software-company-kanpur'],
+        '/page/social-media-management' => ['view' => 'frontend/social_media.blade.php', 'slug' => 'social-media-management'],
+        '/page/ppc-ads-google-ads' => ['view' => 'frontend/ads.blade.php', 'slug' => 'ppc-ads-google-ads'],
+        '/page/local-seo' => ['view' => 'frontend/local_seo.blade.php', 'slug' => 'local-seo'],
+        '/page/meta-ads' => ['view' => 'frontend/meta_ads.blade.php', 'slug' => 'meta-ads'],
+        '/page/content-marketing' => ['view' => 'frontend/content_marketing.blade.php', 'slug' => 'content-marketing'],
+        '/page/website-design-development' => ['view' => 'frontend/page.blade.php', 'slug' => 'website-design-development'],
+        '/page/mobile-app-development' => ['view' => 'frontend/page.blade.php', 'slug' => 'mobile-app-development'],
+        '/page/erp-pos-software' => ['view' => 'frontend/page.blade.php', 'slug' => 'erp-pos-software'],
+        '/page/custom-web-applications' => ['view' => 'frontend/page.blade.php', 'slug' => 'custom-web-applications'],
+        '/page/saas-development' => ['view' => 'frontend/page.blade.php', 'slug' => 'saas-development'],
+        '/page/ecommerce-development' => ['view' => 'frontend/page.blade.php', 'slug' => 'ecommerce-development'],
+        '/page/api-development' => ['view' => 'frontend/page.blade.php', 'slug' => 'api-development'],
+        '/page/startup-mvp-development' => ['view' => 'frontend/page.blade.php', 'slug' => 'startup-mvp-development'],
+    ];
+
+    $staticSlugs = collect($staticDefinitions)->pluck('slug')->all();
+    $pageUpdates = \App\Models\Page::query()
+        ->whereIn('slug', $staticSlugs)
+        ->pluck('updated_at', 'slug');
+
+    $urls = collect();
+    foreach ($staticDefinitions as $path => $def) {
+        $loc = ($path === '/') ? rtrim(url('/'), '/') . '/' : url($path);
+        $viewPath = resource_path('views/' . $def['view']);
+
+        $timestamp = null;
+        $dbUpdated = $pageUpdates->get($def['slug']);
+        if ($dbUpdated) {
+            $timestamp = $dbUpdated->timestamp;
+        }
+        if (file_exists($viewPath)) {
+            $fileMtime = filemtime($viewPath);
+            $timestamp = $timestamp ? max($timestamp, $fileMtime) : $fileMtime;
+        }
+
+        $lastmod = $timestamp ? \Carbon\Carbon::createFromTimestamp($timestamp)->toAtomString() : null;
+        $urls->push(['loc' => $loc, 'lastmod' => $lastmod]);
+    }
 
     $looksLikeTest = static fn ($value) => preg_match('/(?:lorem|ipsum|test|sample|placeholder|rerum-pariatur|aspernatur-sit|voluptatem-delectus)/i', (string) $value) === 1;
+
+    $redirectingPageSlugs = [
+        'home',
+        'about-backend-coders-software-digital-marketing-company-in-kanpur',
+        'software-digital-marketing-company-in-kanpur',
+        'website-development-company-kanpur',
+        'seo-services',
+        'seo-services-kanpur',
+        'seo-company-kanpur',
+        'social-media-management',
+        'seo-rocket-pro',
+        'seo-rocket-pro-seo-audit-lead-generation-software',
+        'faqs-backend-coders-india',
+        'software-development-company-kanpur',
+        'it-company-kanpur',
+        'it-company-in-kanpur-web-software-digital-services-backend-coders-india',
+        'meta',
+        'content-marketing-to-rank-on-google',
+    ];
+
+    $excludedPageSlugs = array_unique(array_merge($staticSlugs, $redirectingPageSlugs));
 
     $urls = $urls->merge(\App\Models\Page::query()
         ->where('is_index', true)
         ->whereNotNull('slug')
         ->get(['slug', 'title', 'updated_at'])
         ->filter(fn ($page) => ! $looksLikeTest($page->slug) && ! $looksLikeTest($page->title)
-            && ! in_array($page->slug, ['about', 'service', 'project', 'demo', 'team', 'owner', 'process', 'packages', 'career', 'contact', 'blog', 'faq', 'help', 'terms', 'privacy-policy', 'seo', 'seo-services'], true))
-        ->reject(fn ($page) => in_array($page->slug, [
-            'home',
-            'about-backend-coders-software-digital-marketing-company-in-kanpur',
-            'software-digital-marketing-company-in-kanpur',
-            'seo-rocket-pro',
-            'seo-rocket-pro-seo-audit-lead-generation-software',
-            'faqs-backend-coders-india',
-        ], true))
-        ->map(fn ($page) => ['loc' => url('/page/'.$page->slug), 'lastmod' => $page->updated_at?->toAtomString()]));
+            && ! in_array($page->slug, $excludedPageSlugs, true))
+        ->map(fn ($page) => [
+            'loc' => url('/page/'.$page->slug),
+            'lastmod' => $page->updated_at?->toAtomString(),
+        ]));
+
+    $redirectingBlogMap = [
+        'small-business-india' => 'how-seo-services-in-kanpur-help-businesses-grow-online',
+        'how-to-choose-a-website-development-company-in-kanpur' => 'how-to-choose-a-website-development-company',
+        '7-best-website-development-companies-in-kanpur-2026-comparison' => 'how-to-choose-a-website-development-company',
+        'website-development-company-in-kanpur-build-a-website-that-drives-real-business-growth' => 'how-to-choose-a-website-development-company',
+    ];
 
     $urls = $urls->merge(\App\Models\Blog::query()
         ->where('is_published', true)
         ->get(['slug', 'title', 'content', 'updated_at', 'published_at', 'created_at'])
         ->filter(fn ($blog) => ! $looksLikeTest($blog->slug) && ! $looksLikeTest($blog->title) && filled(strip_tags((string) $blog->content)))
-        ->map(fn ($blog) => ['loc' => url('/blog/'.$blog->slug), 'lastmod' => ($blog->updated_at ?: $blog->published_at ?: $blog->created_at)?->toAtomString()]));
+        ->map(function ($blog) use ($redirectingBlogMap) {
+            $slug = $blog->slug;
+            if (isset($redirectingBlogMap[$slug])) {
+                $slug = $redirectingBlogMap[$slug];
+            }
+            return [
+                'slug' => $slug,
+                'loc' => url('/blog/'.$slug),
+                'lastmod' => ($blog->updated_at ?: $blog->published_at ?: $blog->created_at)?->toAtomString(),
+            ];
+        })
+        ->reject(fn ($item) => in_array($item['slug'], array_keys($redirectingBlogMap), true))
+        ->map(fn ($item) => ['loc' => $item['loc'], 'lastmod' => $item['lastmod']])
+    );
 
     $urls = $urls->merge(\App\Models\Project::query()
         ->get(['title', 'updated_at'])
         ->filter(fn ($project) => ! $looksLikeTest($project->title))
-        ->map(fn ($project) => ['loc' => url('/project/'.\Illuminate\Support\Str::slug($project->title)), 'lastmod' => $project->updated_at?->toAtomString()]));
+        ->map(fn ($project) => [
+            'loc' => url('/project/'.\Illuminate\Support\Str::slug($project->title)),
+            'lastmod' => $project->updated_at?->toAtomString(),
+        ]));
 
     $xml = '<?xml version="1.0" encoding="UTF-8"?>'."\n".'<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
     foreach ($urls->unique('loc') as $item) {
@@ -157,6 +235,7 @@ Route::get('/about', [HomeController::class, 'about'])->name('frontend.about');
 Route::get('/service', [HomeController::class, 'service'])->name('frontend.service');
 Route::get('/project', [HomeController::class, 'project'])->name('frontend.project');
 Route::get('/team', [HomeController::class, 'team'])->name('frontend.team');
+Route::get('/office-gallery', [HomeController::class, 'office_gallery'])->name('frontend.office_gallery');
 Route::get('/owner', function () {
     $page = (object) [
         'title' => 'Ravindra Verma | Founder & CEO of Backend Coders India',
@@ -213,11 +292,13 @@ Route::get('/careers', function () {
     return redirect()->route('frontend.career', [], 301);
 })->name('careers.index');
 Route::get('/demos', fn () => redirect()->route('frontend.demo', [], 301));
+Route::get('/currentDemo.url', fn () => redirect()->route('frontend.demo', [], 301));
 Route::get('/blog', [HomeController::class, 'blog'])->name('frontend.blog');
-Route::get('/blog/7-best-website-development-companies-in-kanpur-2026-comparison', fn () => redirect()->route('frontend.blog-detail', ['slug' => 'how-to-choose-a-website-development-company-in-kanpur'], 301));
+Route::get('/blog/how-to-choose-a-website-development-company-in-kanpur', fn () => redirect()->route('frontend.blog-detail', ['slug' => 'how-to-choose-a-website-development-company'], 301));
+Route::get('/blog/7-best-website-development-companies-in-kanpur-2026-comparison', fn () => redirect()->route('frontend.blog-detail', ['slug' => 'how-to-choose-a-website-development-company'], 301));
 Route::get('/blog/small-business-india', fn () => redirect()->route('frontend.blog-detail', ['slug' => 'how-seo-services-in-kanpur-help-businesses-grow-online'], 301));
 Route::get('/blog/website-development-company-in-kanpur-build-a-website-that-drives-real-business-growth', function () {
-    return redirect()->route('frontend.blog-detail', ['slug' => 'how-to-choose-a-website-development-company-in-kanpur'], 301);
+    return redirect()->route('frontend.blog-detail', ['slug' => 'how-to-choose-a-website-development-company'], 301);
 });
 Route::get('/blog/{slug}', [HomeController::class, 'blog_detail'])->name('frontend.blog-detail');
 Route::get('/terms', [HomeController::class, 'terms'])->name('frontend.terms');
@@ -249,21 +330,27 @@ Route::get('/social_media', function () {
 });
 
 Route::get('/seo', [HomeController::class, 'seo'])->name('frontend.seo');
+Route::get('/digital-marketing-agency-kanpur', [HomeController::class, 'digital_marketing_kanpur'])->name('frontend.digital_marketing_kanpur');
+Route::get('/software-company-kanpur', [HomeController::class, 'software_company_kanpur'])->name('frontend.software_company_kanpur');
+Route::get('/software-development-company-kanpur', fn () => redirect()->route('frontend.software_company_kanpur', [], 301));
+Route::get('/it-company-kanpur', fn () => redirect()->route('frontend.software_company_kanpur', [], 301));
+Route::get('/page/it-company-in-kanpur-web-software-digital-services-backend-coders-india', fn () => redirect()->route('frontend.software_company_kanpur', [], 301));
+Route::get('/it-company-in-kanpur-web-software-digital-services-backend-coders-india', fn () => redirect()->route('frontend.software_company_kanpur', [], 301));
 
 Route::get('/google-ads', [HomeController::class, 'google_ads'])->name('frontend.ads');
 Route::get('/google_ads', function () {
     return redirect()->route('frontend.ads', [], 301);
 });
 
-Route::get('/meta-ads', [HomeController::class, 'meta_ads'])->name('frontend.meta_ads');
-Route::get('/meta_ads', function () {
-    return redirect()->route('frontend.meta_ads', [], 301);
-});
+Route::get('/meta-ads', fn () => redirect()->route('frontend.page', ['slug' => 'meta-ads'], 301))->name('frontend.meta_ads');
+Route::get('/meta_ads', fn () => redirect()->route('frontend.page', ['slug' => 'meta-ads'], 301));
+Route::get('/meta', fn () => redirect()->route('frontend.page', ['slug' => 'meta-ads'], 301));
+Route::get('/page/meta', fn () => redirect()->route('frontend.page', ['slug' => 'meta-ads'], 301));
 
-Route::get('/content-marketing', [HomeController::class, 'content_marketing'])->name('frontend.content_marketing');
-Route::get('/content_marketing', function () {
-    return redirect()->route('frontend.content_marketing', [], 301);
-});
+Route::get('/content-marketing', fn () => redirect()->route('frontend.page', ['slug' => 'content-marketing'], 301))->name('frontend.content_marketing');
+Route::get('/content_marketing', fn () => redirect()->route('frontend.page', ['slug' => 'content-marketing'], 301));
+Route::get('/content-marketing-to-rank-on-google', fn () => redirect()->route('frontend.page', ['slug' => 'content-marketing'], 301));
+Route::get('/page/content-marketing-to-rank-on-google', fn () => redirect()->route('frontend.page', ['slug' => 'content-marketing'], 301));
 
 Route::get('/local-seo', [HomeController::class, 'local_seo'])->name('frontend.local_seo');
 Route::get('/local_seo', function () {
@@ -277,6 +364,8 @@ Route::get('/custom_web', function () {
 Route::get('/web', function () {
     return redirect()->route('frontend.page', ['slug' => 'website-design-development'], 301);
 });
+Route::get('/billing', fn () => redirect()->route('frontend.page', ['slug' => 'erp-pos-software'], 301));
+Route::get('/billing-software-kanpur', fn () => redirect()->route('frontend.page', ['slug' => 'erp-pos-software'], 301));
 Route::get('/page/website-development-company-kanpur', function () {
     return redirect()->route('frontend.page', ['slug' => 'website-design-development'], 301);
 });
@@ -315,6 +404,7 @@ Route::get('/media/{path}', [PageController::class, 'media'])
 
 
 // smtp contact
+Route::get('/captcha/refresh', [ContactController::class, 'refreshCaptcha'])->name('captcha.refresh');
 Route::post('/contact', [ContactController::class, 'send'])->name('contact.send');
 Route::post('/career/apply', [CareerApplicationController::class, 'store'])->name('career.apply');
 // Route::post('/inquiry/leads', [CareerApplicationController::class, 'store'])->name('contact.send');
@@ -397,32 +487,8 @@ Route::resource('service-details', ServiceDetailController::class);
 
 Route::resource('pages', PageController::class);
 Route::resource('menu-items', MenuItemController::class);
-
-
-
-
-Route::prefix('projects')->group(function () {
-
-Route::get('/create', [ProjectController::class, 'create'])
-    ->name('projects.create');
-
-Route::post('/', [ProjectController::class, 'store'])
-    ->name('projects.store');
-
-Route::get('/{project}', [ProjectController::class, 'show'])
-    ->name('projects.show');
-
-Route::get('/{project}/edit', [ProjectController::class, 'edit'])
-    ->name('projects.edit');
-
-Route::put('/{project}', [ProjectController::class, 'update'])
-    ->name('projects.update');
-
-Route::delete('/{project}', [ProjectController::class, 'destroy'])
-    ->name('projects.destroy');
-
-
-});
+Route::resource('office-images', OfficeImageController::class);
+Route::post('office-images/{officeImage}/toggle/{field}', [OfficeImageController::class, 'toggle'])->name('office-images.toggle');
 
 // Route::prefix('banner')->group(function () {
 
@@ -443,5 +509,46 @@ Route::match(['get', 'post'], '/botman', [BotmanController::class, 'handle'])
 
 Route::post('/botman/web-chat', [BotmanController::class, 'webChat'])
     ->name('botman.controller-web-chat');
+
+// Failsafe handler for Vite build assets
+Route::get('/build/assets/{file}', function (string $file) {
+    $path = public_path('build/assets/' . $file);
+    if (file_exists($path)) {
+        $mime = str_ends_with($file, '.css') ? 'text/css' : (str_ends_with($file, '.js') ? 'application/javascript' : 'text/plain');
+        return response()->file($path, [
+            'Content-Type' => $mime,
+            'Cache-Control' => 'public, max-age=31536000, immutable',
+        ]);
+    }
+
+    if (str_ends_with($file, '.css')) {
+        $fallback = public_path('assets/css/app.css');
+        if (file_exists($fallback)) {
+            return response()->file($fallback, [
+                'Content-Type' => 'text/css',
+                'Cache-Control' => 'public, max-age=3600',
+            ]);
+        }
+        $builtCss = glob(public_path('build/assets/*.css'));
+        if (!empty($builtCss)) {
+            return response()->file($builtCss[0], [
+                'Content-Type' => 'text/css',
+                'Cache-Control' => 'public, max-age=3600',
+            ]);
+        }
+    }
+
+    if (str_ends_with($file, '.js')) {
+        $builtJs = glob(public_path('build/assets/*.js'));
+        if (!empty($builtJs)) {
+            return response()->file($builtJs[0], [
+                'Content-Type' => 'application/javascript',
+                'Cache-Control' => 'public, max-age=3600',
+            ]);
+        }
+    }
+
+    abort(404);
+})->where('file', '.*');
 
 require __DIR__.'/auth.php';

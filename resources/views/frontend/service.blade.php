@@ -1,4 +1,45 @@
 @extends('component.main')
+
+@php
+    $servicesBreadcrumb = [
+        '@context' => 'https://schema.org',
+        '@type' => 'BreadcrumbList',
+        'itemListElement' => [
+            [
+                '@type' => 'ListItem',
+                'position' => 1,
+                'name' => 'Home',
+                'item' => url('/'),
+            ],
+            [
+                '@type' => 'ListItem',
+                'position' => 2,
+                'name' => 'Services',
+                'item' => 'https://backendcodersindia.com/service',
+            ],
+        ],
+    ];
+
+    $servicesWebPage = [
+        '@context' => 'https://schema.org',
+        '@type' => 'WebPage',
+        '@id' => 'https://backendcodersindia.com/service#webpage',
+        'url' => 'https://backendcodersindia.com/service',
+        'name' => 'Software & Digital Services | Backend Coders India',
+        'description' => 'Custom software engineering, website development, mobile apps, and digital growth services in Kanpur.',
+        'isPartOf' => [
+            '@type' => 'WebSite',
+            '@id' => 'https://backendcodersindia.com/#website',
+        ],
+    ];
+@endphp
+
+@push('head')
+    <link rel="preload" as="image" href="{{ asset('assets/images/banner.png') }}" fetchpriority="high">
+    <script type="application/ld+json">{!! json_encode($servicesBreadcrumb, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) !!}</script>
+    <script type="application/ld+json">{!! json_encode($servicesWebPage, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) !!}</script>
+@endpush
+
 @section('content')
 
 
@@ -6,8 +47,14 @@
 <section class="relative h-[30vh] flex items-center justify-center text-center text-white overflow-hidden">
 
   <!-- BACKGROUND IMAGE -->
-  <img alt="" 
+  <img 
     src="{{asset('assets/images/banner.png')}}"
+    width="1920"
+    height="600"
+    fetchpriority="high"
+    loading="eager"
+    decoding="async"
+    alt="Professional Web and Custom Software Services - Backend Coders India"
     class="absolute inset-0 w-full h-full object-cover"
   />
 
@@ -21,14 +68,19 @@
 
     <!-- HEADING -->
     <h1 class="mt-6 text-4xl sm:text-5xl md:text-6xl font-bold leading-tight">
-     Our
-      <span class="text-orange-600">Services</span>
+      Professional Web &amp; Custom
+      <span class="text-orange-600">Software Services</span>
     </h1>
 
     <!-- SUBTEXT -->
     <p class="mt-6 text-gray-300 text-sm sm:text-base md:text-lg max-w-2xl mx-auto">
-     We offer a wide range of backend development services to help your business scale and succeed in the digital landscape.
+      End-to-end custom software engineering, website development, mobile apps, and data-driven digital growth services designed to scale your business.
     </p>
+
+    <div class="mt-6 flex flex-wrap justify-center gap-3 text-xs">
+        <a href="{{ route('frontend.software_company_kanpur') }}" class="rounded-full bg-white/10 px-4 py-1.5 text-white backdrop-blur-md border border-white/20 hover:bg-[#FD5528] transition">Software Company in Kanpur &rarr;</a>
+        <a href="{{ route('frontend.digital_marketing_kanpur') }}" class="rounded-full bg-white/10 px-4 py-1.5 text-white backdrop-blur-md border border-white/20 hover:bg-[#FD5528] transition">Digital Marketing Agency in Kanpur &rarr;</a>
+    </div>
 
  
 
@@ -87,10 +139,10 @@
                         <span class="text-[0.6rem] font-semibold uppercase tracking-[0.4em] text-[#FD5528]">Bespoke Web</span>
                         <div class="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] 
         hover:from-[#fb813b] hover:to-[#b00000]  shadow-inner">
-                            <img src="https://img.icons8.com/?size=100&id=DCkAZ79sIYhT&format=png&color=ffffff" alt="Custom web app" class="h-16 w-16" />
+                            <img src="{{ asset('assets/icons/home/custom-web-apps.png') }}" width="64" height="64" loading="lazy" decoding="async" alt="Custom web app" class="h-16 w-16" />
                         </div>
                         <h3 class="text-xl font-semibold transition duration-500 group-hover:text-black">Custom Web Applications</h3>
-                        <p class="text-sm text-gray-600 group-hover:text-gray-900">Scalable platforms with modern stacks, measurable KPIs, and performance-first code.</p>
+                        <p class="text-sm text-gray-600 group-hover:text-gray-900">Custom web apps built for your team and customers. Fast to load, easy to use, and ready to grow with your business.</p>
                         <div class="flex flex-wrap items-center justify-center gap-3 text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-[#FD5528]">
                             <span class="rounded-full border border-[#FD5528]/70 px-3 py-1">Iterative</span>
                             <span class="rounded-full border border-[#FD5528]/70 px-3 py-1">Performance</span>
@@ -105,10 +157,10 @@
                         <span class="text-[0.6rem] font-semibold uppercase tracking-[0.4em] text-[#FD5528]">Design & Build</span>
                         <div class="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] 
       hover:from-[#fb813b] hover:to-[#b00000] shadow-inner">
-                            <img src="https://img.icons8.com/?size=100&id=8Y6ohiJ337rc&format=png&color=ffffff" alt="Design icon" class="h-16 w-16" />
+                            <img src="{{ asset('assets/icons/home/website-design.png') }}" width="64" height="64" loading="lazy" decoding="async" alt="Design icon" class="h-16 w-16" />
                         </div>
                         <h3 class="text-xl font-semibold transition duration-500 group-hover:text-black">Website Design & Development</h3>
-                        <p class="text-sm text-gray-600 group-hover:text-gray-900">Responsive, brand-complete websites that load fast and stay SEO-friendly.</p>
+                        <p class="text-sm text-gray-600 group-hover:text-gray-900">Clean websites designed for phones and computers. Built to look great, load fast, and bring you real business inquiries.</p>
                         <div class="flex flex-wrap items-center justify-center gap-3 text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-[#FD5528]">
                             <span class="rounded-full border border-[#FD5528]/70 px-3 py-1">Pixel Perfect</span>
                             <span class="rounded-full border border-[#FD5528]/70 px-3 py-1">SEO Focus</span>
@@ -123,10 +175,10 @@
                         <span class="text-[0.6rem] font-semibold uppercase tracking-[0.4em] text-[#FD5528]">SaaS Platforms</span>
                         <div class="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] 
       hover:from-[#fb813b] hover:to-[#b00000] shadow-inner">
-                            <img src="https://img.icons8.com/?size=100&id=k8TSihyFk2cJ&format=png&color=ffffff" alt="SaaS icon" class="h-16 w-16" />
+                            <img src="{{ asset('assets/icons/home/saas-product.png') }}" width="64" height="64" loading="lazy" decoding="async" alt="SaaS icon" class="h-16 w-16" />
                         </div>
                         <h3 class="text-xl font-semibold transition duration-500 group-hover:text-black">SaaS Development</h3>
-                        <p class="text-sm text-gray-600 group-hover:text-gray-900">Multi-tenant platforms engineered for reliability, governance, and scale.</p>
+                        <p class="text-sm text-gray-600 group-hover:text-gray-900">Online software products that run smoothly for all your users. Built with secure accounts, reliable uptime, and simple billing.</p>
                         <div class="flex flex-wrap items-center justify-center gap-3 text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-[#FD5528]">
                             <span class="rounded-full border border-[#FD5528]/70 px-3 py-1">Elastic</span>
                             <span class="rounded-full border border-[#FD5528]/70 px-3 py-1">Managed Ops</span>
@@ -141,10 +193,10 @@
                         <span class="text-[0.6rem] font-semibold uppercase tracking-[0.4em] text-[#FD5528]">Enterprise Core</span>
                         <div class="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] 
     hover:from-[#fb813b] hover:to-[#b00000] shadow-inner">
-                            <img src="https://img.icons8.com/?size=100&id=Rk5rrSlqrNZO&format=png&color=ffffff" alt="ERP icon" class="h-16 w-16" />
+                            <img src="{{ asset('assets/icons/home/erp-crm.png') }}" width="64" height="64" loading="lazy" decoding="async" alt="ERP icon" class="h-16 w-16" />
                         </div>
                         <h3 class="text-xl font-semibold transition duration-500 group-hover:text-black">ERP & POS Software</h3>
-                        <p class="text-sm text-gray-600 group-hover:text-gray-900">Operational grade systems that align inventory, payments, and teams.</p>
+                        <p class="text-sm text-gray-600 group-hover:text-gray-900">Smart business systems to manage stock, sales, and billing in one place. Less manual paperwork and fewer mistakes for your staff.</p>
                         <div class="flex flex-wrap items-center justify-center gap-3 text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-[#FD5528]">
                             <span class="rounded-full border border-[#FD5528]/70 px-3 py-1">Real-time</span>
                             <span class="rounded-full border border-[#FD5528]/70 px-3 py-1">Proactive</span>
@@ -159,10 +211,10 @@
                         <span class="text-[0.6rem] font-semibold uppercase tracking-[0.4em] text-[#FD5528]">Commerce Pulse</span>
                         <div class="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] 
     hover:from-[#fb813b] hover:to-[#b00000] shadow-inner">
-                            <img src="https://img.icons8.com/?size=100&id=8OxFnElAJgpE&format=png&color=ffffff" alt="Commerce icon" class="h-16 w-16" />
+                            <img src="{{ asset('assets/icons/home/ecommerce.png') }}" width="64" height="64" loading="lazy" decoding="async" alt="Commerce icon" class="h-16 w-16" />
                         </div>
                         <h3 class="text-xl font-semibold transition duration-500 group-hover:text-black">E-commerce Development</h3>
-                        <p class="text-sm text-gray-600 group-hover:text-gray-900">Conversion-led storefronts with secure payments and real-time analytics.</p>
+                        <p class="text-sm text-gray-600 group-hover:text-gray-900">Online stores that make buying easy. Fast checkouts, safe payment options, and simple product tracking to help you sell more.</p>
                         <div class="flex flex-wrap items-center justify-center gap-3 text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-[#FD5528]">
                             <span class="rounded-full border border-[#FD5528]/70 px-3 py-1">Secure</span>
                             <span class="rounded-full border border-[#FD5528]/70 px-3 py-1">Fast</span>
@@ -177,10 +229,10 @@
                         <span class="text-[0.6rem] font-semibold uppercase tracking-[0.4em] text-[#FD5528]">Mobile Pulse</span>
                         <div class="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] 
       hover:from-[#fb813b] hover:to-[#b00000] shadow-inner">
-                            <img src="https://img.icons8.com/?size=100&id=67475&format=png&color=ffffff" alt="Mobile icon" class="h-16 w-16" />
+                            <img src="{{ asset('assets/icons/home/mobile-apps.png') }}" width="64" height="64" loading="lazy" decoding="async" alt="Mobile icon" class="h-16 w-16" />
                         </div>
                         <h3 class="text-xl font-semibold transition duration-500 group-hover:text-black">Mobile App Development</h3>
-                        <p class="text-sm text-gray-600 group-hover:text-gray-900">Cross-platform experiences with native polish, motion, and accessible flows.</p>
+                        <p class="text-sm text-gray-600 group-hover:text-gray-900">Mobile apps for phones and tablets. Built to feel fast, look clean, and give your customers an easy way to use your services.</p>
                         <div class="flex flex-wrap items-center justify-center gap-3 text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-[#FD5528]">
                             <span class="rounded-full border border-[#FD5528]/70 px-3 py-1">Smooth UI</span>
                             <span class="rounded-full border border-[#FD5528]/70 px-3 py-1">Native Feel</span>
@@ -195,10 +247,10 @@
                         <span class="text-[0.6rem] font-semibold uppercase tracking-[0.4em] text-[#FD5528]">API Layer</span>
                         <div class="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] 
       hover:from-[#fb813b] hover:to-[#b00000] shadow-inner">
-                            <img src="https://img.icons8.com/?size=100&id=6kPR2dlup5KK&format=png&color=ffffff" alt="API icon" class="h-16 w-16" />
+                            <img src="{{ asset('assets/icons/home/cloud-devops.png') }}" width="64" height="64" loading="lazy" decoding="async" alt="API icon" class="h-16 w-16" />
                         </div>
                         <h3 class="text-xl font-semibold transition duration-500 group-hover:text-black">API Development</h3>
-                        <p class="text-sm text-gray-600 group-hover:text-gray-900">Secure REST endpoints, clean contracts, and integration-ready tooling.</p>
+                        <p class="text-sm text-gray-600 group-hover:text-gray-900">Simple APIs to connect your tools, apps, and services. Safe, fast, and easy to maintain as your systems grow.</p>
                         <div class="flex flex-wrap items-center justify-center gap-3 text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-[#FD5528]">
                             <span class="rounded-full border border-[#FD5528]/70 px-3 py-1">REST</span>
                             <span class="rounded-full border border-[#FD5528]/70 px-3 py-1">Webhooks</span>
@@ -213,10 +265,10 @@
                         <span class="text-[0.6rem] font-semibold uppercase tracking-[0.4em] text-[#FD5528]">Growth Duo</span>
                         <div class="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] 
         hover:from-[#fb813b] hover:to-[#b00000] shadow-inner">
-                            <img src="https://img.icons8.com/?size=100&id=103102&format=png&color=ffffff" alt="Marketing icon" class="h-16 w-16" />
+                            <img src="{{ asset('assets/icons/home/seo-marketing.png') }}" width="64" height="64" loading="lazy" decoding="async" alt="Marketing icon" class="h-16 w-16" />
                         </div>
                         <h3 class="text-xl font-semibold transition duration-500 group-hover:text-black">Digital Marketing & SEO</h3>
-                        <p class="text-sm text-gray-600 group-hover:text-gray-900">Data-backed marketing that grows traffic, leads, and conversions.</p>
+                        <p class="text-sm text-gray-600 group-hover:text-gray-900">Search optimization and marketing to help customers find your business on Google and get in touch with your team.</p>
                         <div class="flex flex-wrap items-center justify-center gap-3 text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-[#FD5528]">
                             <span class="rounded-full border border-[#FD5528]/70 px-3 py-1">Analytics</span>
                             <span class="rounded-full border border-[#FD5528]/70 px-3 py-1">Growth</span>
@@ -231,10 +283,10 @@
                         <span class="text-[0.6rem] font-semibold uppercase tracking-[0.4em] text-[#FD5528]">Startup Sprint</span>
                         <div class="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-[#b00000] to-[#fb813b] 
         hover:from-[#fb813b] hover:to-[#b00000] shadow-inner">
-                            <img src="https://img.icons8.com/?size=100&id=KR7IxBJfODTv&format=png&color=ffffff" alt="MVP icon" class="h-16 w-16" />
+                            <img src="{{ asset('assets/icons/home/mvp-startups.png') }}" width="64" height="64" loading="lazy" decoding="async" alt="MVP icon" class="h-16 w-16" />
                         </div>
                         <h3 class="text-xl font-semibold transition duration-500 group-hover:text-black">Startup MVP Development</h3>
-                        <p class="text-sm text-gray-600 group-hover:text-gray-900">Rapid prototyping with user testing, guided learnings, and clear success metrics.</p>
+                        <p class="text-sm text-gray-600 group-hover:text-gray-900">Build the first version of your product quickly. Test it with real users, gather feedback, and launch with confidence.</p>
                         <div class="flex flex-wrap items-center justify-center gap-3 text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-[#FD5528]">
                             <span class="rounded-full border border-[#FD5528]/70 px-3 py-1">Rapid</span>
                             <span class="rounded-full border border-[#FD5528]/70 px-3 py-1">Validated</span>
@@ -291,7 +343,7 @@
         </h3>
 
         <p class="mt-4 text-gray-600 leading-relaxed">
-          We combine backend power, frontend polish, and cloud infrastructure to deliver fast, secure, and scalable digital products.
+          We build clean, fast, and secure software. From the database to the screen, each tool is made to help your business work better every day.
         </p>
 
         <div class="mt-10 grid gap-4 sm:grid-cols-2">
@@ -326,55 +378,54 @@
             </span>
           </div>
 
-         
-           <div class="mt-8 grid gap-4 grid-cols-3 sm:grid-cols-3 xl:grid-cols-4">
-            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5  text-center transition  hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg" class="w-12 h-12" alt="Dotnet Core">
-              <span class="text-sm font-semibold text-gray-900">.NET Core</span>
+          <div class="mt-8 grid gap-3 sm:gap-4 grid-cols-2 sm:grid-cols-3 md:grid-cols-4">
+            <div class="flex flex-col items-center justify-center gap-3 rounded-2xl border border-gray-200/80 bg-white/90 p-4 sm:p-5 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#FD5528]/50 hover:bg-white hover:shadow-md">
+              <img src="{{ asset('assets/icons/tech/dotnetcore.svg') }}" width="48" height="48" loading="lazy" decoding="async" class="w-12 h-12 object-contain" alt="Dotnet Core">
+              <span class="text-xs sm:text-sm font-semibold text-gray-900 whitespace-nowrap">.NET Core</span>
             </div>
-            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5  text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" class="w-12 h-12" alt="React">
-              <span class="text-sm font-semibold text-gray-900">React</span>
+            <div class="flex flex-col items-center justify-center gap-3 rounded-2xl border border-gray-200/80 bg-white/90 p-4 sm:p-5 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#FD5528]/50 hover:bg-white hover:shadow-md">
+              <img src="{{ asset('assets/icons/tech/react.svg') }}" width="48" height="48" loading="lazy" decoding="async" class="w-12 h-12 object-contain" alt="React">
+              <span class="text-xs sm:text-sm font-semibold text-gray-900 whitespace-nowrap">React</span>
             </div>
-            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5  text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" class="w-12 h-12" alt="Node.js">
-              <span class="text-sm font-semibold text-gray-900">Node.js</span>
+            <div class="flex flex-col items-center justify-center gap-3 rounded-2xl border border-gray-200/80 bg-white/90 p-4 sm:p-5 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#FD5528]/50 hover:bg-white hover:shadow-md">
+              <img src="{{ asset('assets/icons/tech/nodejs.svg') }}" width="48" height="48" loading="lazy" decoding="async" class="w-12 h-12 object-contain" alt="Node.js">
+              <span class="text-xs sm:text-sm font-semibold text-gray-900 whitespace-nowrap">Node.js</span>
             </div>
-            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5  text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" class="w-12 h-12" alt="MongoDB">
-              <span class="text-sm font-semibold text-gray-900">MERN</span>
+            <div class="flex flex-col items-center justify-center gap-3 rounded-2xl border border-gray-200/80 bg-white/90 p-4 sm:p-5 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#FD5528]/50 hover:bg-white hover:shadow-md">
+              <img src="{{ asset('assets/icons/tech/mongodb.svg') }}" width="48" height="48" loading="lazy" decoding="async" class="w-12 h-12 object-contain" alt="MongoDB">
+              <span class="text-xs sm:text-sm font-semibold text-gray-900 whitespace-nowrap">MERN</span>
             </div>
-            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5  text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-original.svg" class="w-12 h-12" alt="WordPress">
-              <span class="text-sm font-semibold text-gray-900">WordPress</span>
+            <div class="flex flex-col items-center justify-center gap-3 rounded-2xl border border-gray-200/80 bg-white/90 p-4 sm:p-5 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#FD5528]/50 hover:bg-white hover:shadow-md">
+              <img src="{{ asset('assets/icons/tech/wordpress.svg') }}" width="48" height="48" loading="lazy" decoding="async" class="w-12 h-12 object-contain" alt="WordPress">
+              <span class="text-xs sm:text-sm font-semibold text-gray-900 whitespace-nowrap">WordPress</span>
             </div>
-            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5  text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
-              <img src="https://cdn.simpleicons.org/spotify/1DB954" class="w-12 h-12" alt="Shopify">
-              <span class="text-sm font-semibold text-gray-900">Shopify</span>
+            <div class="flex flex-col items-center justify-center gap-3 rounded-2xl border border-gray-200/80 bg-white/90 p-4 sm:p-5 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#FD5528]/50 hover:bg-white hover:shadow-md">
+              <img src="{{ asset('assets/icons/tech/shopify.svg') }}" width="48" height="48" loading="lazy" decoding="async" class="w-12 h-12 object-contain" alt="Shopify">
+              <span class="text-xs sm:text-sm font-semibold text-gray-900 whitespace-nowrap">Shopify</span>
             </div>
-            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5  text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" class="w-12 h-12" alt="Laravel">
-              <span class="text-sm font-semibold text-gray-900">Laravel</span>
+            <div class="flex flex-col items-center justify-center gap-3 rounded-2xl border border-gray-200/80 bg-white/90 p-4 sm:p-5 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#FD5528]/50 hover:bg-white hover:shadow-md">
+              <img src="{{ asset('assets/icons/tech/laravel.svg') }}" width="48" height="48" loading="lazy" decoding="async" class="w-12 h-12 object-contain" alt="Laravel">
+              <span class="text-xs sm:text-sm font-semibold text-gray-900 whitespace-nowrap">Laravel</span>
             </div>
-            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5  text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" class="w-12 h-12" alt="SQL Server">
-              <span class="text-sm font-semibold text-gray-900">SQL Server</span>
+            <div class="flex flex-col items-center justify-center gap-3 rounded-2xl border border-gray-200/80 bg-white/90 p-4 sm:p-5 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#FD5528]/50 hover:bg-white hover:shadow-md">
+              <img src="{{ asset('assets/icons/tech/mssql.svg') }}" width="48" height="48" loading="lazy" decoding="async" class="w-12 h-12 object-contain" alt="SQL Server">
+              <span class="text-xs sm:text-sm font-semibold text-gray-900 whitespace-nowrap">SQL Server</span>
             </div>
-            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5  text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" class="w-12 h-12" alt="Firebase">
-              <span class="text-sm font-semibold text-gray-900">Firebase</span>
+            <div class="flex flex-col items-center justify-center gap-3 rounded-2xl border border-gray-200/80 bg-white/90 p-4 sm:p-5 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#FD5528]/50 hover:bg-white hover:shadow-md">
+              <img src="{{ asset('assets/icons/tech/firebase.svg') }}" width="48" height="48" loading="lazy" decoding="async" class="w-12 h-12 object-contain" alt="Firebase">
+              <span class="text-xs sm:text-sm font-semibold text-gray-900 whitespace-nowrap">Firebase</span>
             </div>
-            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5  text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" class="w-12 h-12" alt="AWS">
-              <span class="text-sm font-semibold text-gray-900">AWS</span>
+            <div class="flex flex-col items-center justify-center gap-3 rounded-2xl border border-gray-200/80 bg-white/90 p-4 sm:p-5 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#FD5528]/50 hover:bg-white hover:shadow-md">
+              <img src="{{ asset('assets/icons/tech/aws.svg') }}" width="48" height="48" loading="lazy" decoding="async" class="w-12 h-12 object-contain" alt="AWS">
+              <span class="text-xs sm:text-sm font-semibold text-gray-900 whitespace-nowrap">AWS</span>
             </div>
-            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5  text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" class="w-12 h-12" alt="TypeScript">
-              <span class="text-sm font-semibold text-gray-900">TypeScript</span>
+            <div class="flex flex-col items-center justify-center gap-3 rounded-2xl border border-gray-200/80 bg-white/90 p-4 sm:p-5 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#FD5528]/50 hover:bg-white hover:shadow-md">
+              <img src="{{ asset('assets/icons/tech/typescript.svg') }}" width="48" height="48" loading="lazy" decoding="async" class="w-12 h-12 object-contain" alt="TypeScript">
+              <span class="text-xs sm:text-sm font-semibold text-gray-900 whitespace-nowrap">TypeScript</span>
             </div>
-            <div class="flex flex-col items-center gap-3 rounded-3xl border border-gray-200 bg-[#F9FAFB] p-5  text-center transition hover:-translate-y-1 hover:border-[#FD5528] hover:bg-white">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" class="w-12 h-12 bg-white p-1 rounded" alt="Next.js">
-              <span class="text-sm font-semibold text-gray-900">Next.js</span>
+            <div class="flex flex-col items-center justify-center gap-3 rounded-2xl border border-gray-200/80 bg-white/90 p-4 sm:p-5 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#FD5528]/50 hover:bg-white hover:shadow-md">
+              <img src="{{ asset('assets/icons/tech/nextjs.svg') }}" width="48" height="48" loading="lazy" decoding="async" class="w-12 h-12 object-contain" alt="Next.js">
+              <span class="text-xs sm:text-sm font-semibold text-gray-900 whitespace-nowrap">Next.js</span>
             </div>
           </div>
           
@@ -430,13 +481,13 @@
         <div class="flex items-start gap-4 lg:flex-col lg:items-center text-left lg:text-center group">
 
           <!-- CIRCLE -->
-          <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#FD5528] font-semibold transition     ">
+          <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#C2410C] font-semibold transition     ">
             01
           </div>
 
           <!-- TEXT -->
           <div>
-            <h3 class="font-semibold text-gray-900 group-hover:text-[#FD5528]">
+            <h3 class="font-semibold text-gray-900 group-hover:text-[#C2410C]">
               Discovery
             </h3>
             <p class="text-sm text-gray-500 mt-1">
@@ -448,11 +499,11 @@
 
         <!-- STEP -->
         <div class="flex items-start gap-4 lg:flex-col lg:items-center text-left lg:text-center group">
-          <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#FD5528] font-semibold transition ] ">
+          <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#C2410C] font-semibold transition ] ">
             02
           </div>
           <div>
-            <h3 class="font-semibold text-gray-900 group-hover:text-[#FD5528]">
+            <h3 class="font-semibold text-gray-900 group-hover:text-[#C2410C]">
               UI / UX
             </h3>
             <p class="text-sm text-gray-500 mt-1">
@@ -463,11 +514,11 @@
 
         <!-- STEP -->
         <div class="flex items-start gap-4 lg:flex-col lg:items-center text-left lg:text-center group">
-          <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#FD5528] font-semibold transition ] ">
+          <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#C2410C] font-semibold transition ] ">
             03
           </div>
           <div>
-            <h3 class="font-semibold text-gray-900 group-hover:text-[#FD5528]">
+            <h3 class="font-semibold text-gray-900 group-hover:text-[#C2410C]">
               Development
             </h3>
             <p class="text-sm text-gray-500 mt-1">
@@ -478,11 +529,11 @@
 
         <!-- STEP -->
         <div class="flex items-start gap-4 lg:flex-col lg:items-center text-left lg:text-center group">
-          <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#FD5528] font-semibold transition ] ">
+          <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#C2410C] font-semibold transition ] ">
             04
           </div>
           <div>
-            <h3 class="font-semibold text-gray-900 group-hover:text-[#FD5528]">
+            <h3 class="font-semibold text-gray-900 group-hover:text-[#C2410C]">
               Testing
             </h3>
             <p class="text-sm text-gray-500 mt-1">
@@ -493,11 +544,11 @@
 
         <!-- STEP -->
         <div class="flex items-start gap-4 lg:flex-col lg:items-center text-left lg:text-center group">
-          <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#FD5528] font-semibold transition ">
+          <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#C2410C] font-semibold transition ">
             05
           </div>
           <div>
-            <h3 class="font-semibold text-gray-900 group-hover:text-[#FD5528]">
+            <h3 class="font-semibold text-gray-900 group-hover:text-[#C2410C]">
               Deployment
             </h3>
             <p class="text-sm text-gray-500 mt-1">
@@ -508,11 +559,11 @@
 
         <!-- STEP -->
         <div class="flex items-start gap-4 lg:flex-col lg:items-center text-left lg:text-center group">
-          <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#FD5528] font-semibold transition ">
+          <div class="min-w-[48px] h-12 flex items-center justify-center rounded-full border-2 border-[#FD5528] bg-white text-[#C2410C] font-semibold transition ">
             06
           </div>
           <div>
-            <h3 class="font-semibold text-gray-900 group-hover:text-[#FD5528]">
+            <h3 class="font-semibold text-gray-900 group-hover:text-[#C2410C]">
               Support
             </h3>
             <p class="text-sm text-gray-500 mt-1">
@@ -560,10 +611,10 @@
 
           <div>
             <h3 class="text-2xl font-semibold text-gray-800 mb-3">
-              Robust Backend Solutions for Scalable Growth
+              Dependable Backend Systems Built to Last
             </h3>
             <p class="text-gray-600 mb-5">
-              Our backend development services ensure a solid foundation for your applications, enabling scalability, performance, and security. We specialize in building high-performance backends using technologies like Node.js, Python, and Java.
+              A solid backend keeps your software running without delays. We build fast, reliable databases and server code using Node.js, Python, and modern PHP frameworks.
             </p>
 
             <ul class="space-y-3 text-gray-700">
@@ -593,10 +644,10 @@
 
           <div>
             <h3 class="text-2xl font-semibold text-gray-800 mb-3">
-              Leverage the Power of the Cloud
+              Safe and Scalable Cloud Hosting
             </h3>
             <p class="text-gray-600 mb-5">
-              Our cloud solutions help you modernize your IT infrastructure by migrating to AWS, Google Cloud, or Azure. We provide tailored cloud strategies to improve reliability and scalability while reducing costs.
+              We help you host your tools safely on AWS, Google Cloud, or Azure. Your team gets reliable uptime, daily backups, and room to grow without paying for servers you do not need.
             </p>
 
             <ul class="space-y-3 text-gray-700">
@@ -626,10 +677,10 @@
 
           <div>
             <h3 class="text-2xl font-semibold text-gray-800 mb-3">
-              Seamless API Integration for Enhanced Connectivity
+              Simple API Connections for Your Software
             </h3>
             <p class="text-gray-600 mb-5">
-              Our API integration services enable smooth communication between your applications and external services, enhancing functionality and user experience.
+              Connect your software with payment systems, email tools, or external services. We make sure data moves safely and instantly between your systems.
             </p>
 
             <ul class="space-y-3 text-gray-700">
@@ -724,7 +775,7 @@ tabs.forEach(tab => {
 
       <!-- PRIMARY BUTTON -->
       <a href="{{ route('frontend.contact') }}"
-         class="group inline-flex items-center justify-center bg-white text-[#FC5124] px-6 py-3 rounded-xl font-semibold shadow-lg hover:shadow-2xl hover:scale-105 transition duration-300">
+         class="group inline-flex items-center justify-center bg-white text-[#C2410C] px-6 py-3 rounded-xl font-semibold shadow-lg hover:shadow-2xl hover:scale-105 transition duration-300">
 
         Contact Us
 

@@ -47,7 +47,11 @@ class Project extends Model
 
     public function getFaqItemsAttribute(): array
     {
-        return collect($this->faqs ?? [])
+        $isPlaceholder = function (string $text): bool {
+            return (bool) preg_match('/(lorem|ipsum|sunt cupidatat|provident sint|dolor sit amet|consectetur)/i', $text);
+        };
+
+        $cleaned = collect($this->faqs ?? [])
             ->filter()
             ->map(function ($item) {
                 if (is_string($item)) {
@@ -62,9 +66,32 @@ class Project extends Model
                     'answer' => (string) data_get($item, 'answer', ''),
                 ];
             })
-            ->filter(fn ($item) => filled($item['question']))
+            ->filter(function ($item) use ($isPlaceholder) {
+                $q = $item['question'];
+                $a = $item['answer'];
+                return filled($q) && ! $isPlaceholder($q) && ! $isPlaceholder($a);
+            })
             ->values()
             ->all();
+
+        if (empty($cleaned) && Str::slug((string) $this->title) === 'seo-audit-lead-generation-and-agency-workflow-software') {
+            return [
+                [
+                    'question' => 'What core capabilities does the SEO Rocket Pro platform provide?',
+                    'answer' => 'SEO Rocket Pro delivers automated website audit crawls, real-time keyword tracking, competitive intelligence analysis, and automated prospect qualification reports exported in under 3 minutes.',
+                ],
+                [
+                    'question' => 'What architecture powers SEO Rocket Pro?',
+                    'answer' => 'The platform is engineered using Laravel, MySQL, Alpine.js, TailwindCSS, and asynchronous background queue workers to evaluate technical SEO health signals without manual spreadsheet compilation.',
+                ],
+                [
+                    'question' => 'Is SEO Rocket Pro an active production software platform?',
+                    'answer' => 'Yes. SEO Rocket Pro is a proprietary SaaS product designed, developed, and deployed by Backend Coders India, live and accessible at https://seorocketpro.com/.',
+                ],
+            ];
+        }
+
+        return $cleaned;
     }
 
     public function getReadingTimeAttribute(): int

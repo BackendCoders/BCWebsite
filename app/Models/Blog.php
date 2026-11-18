@@ -38,6 +38,26 @@ class Blog extends Model
         return $this->belongsTo(Category::class);
     }
 
+    public function getAuthorNameAttribute(): string
+    {
+        $vermaArticles = [
+            'how-to-choose-a-website-development-company',
+            'how-to-choose-a-website-development-company-in-kanpur',
+            'custom-web-application-development-company-in-india-build-smarter-software-for-business-growth',
+        ];
+
+        if (in_array((string) $this->slug, $vermaArticles, true)) {
+            return 'Ravindra Verma';
+        }
+
+        return 'Backend Coders India Editorial Team';
+    }
+
+    public function getIsIndividualAuthorAttribute(): bool
+    {
+        return $this->author_name === 'Ravindra Verma';
+    }
+
     public function getTableOfContentsItemsAttribute(): array
     {
         $manualItems = collect($this->table_of_contents ?? [])
@@ -188,6 +208,38 @@ class Blog extends Model
             }
         }
 
+        foreach ($dom->getElementsByTagName('img') as $img) {
+            if (!$img->hasAttribute('loading')) {
+                $img->setAttribute('loading', 'lazy');
+            }
+            if (!$img->hasAttribute('decoding')) {
+                $img->setAttribute('decoding', 'async');
+            }
+
+            $alt = trim($img->getAttribute('alt'));
+            if ($alt === '') {
+                $img->setAttribute('alt', $this->title . ' - Backend Coders India');
+            }
+
+            if (!$img->hasAttribute('width') || !$img->hasAttribute('height')) {
+                $src = $img->getAttribute('src');
+                if ($src && !Str::startsWith($src, ['http://', 'https://', '//', 'data:'])) {
+                    $localPath = public_path(ltrim(str_replace(url('/'), '', $src), '/'));
+                    if (file_exists($localPath)) {
+                        $size = @getimagesize($localPath);
+                        if ($size && $size[0] > 0 && $size[1] > 0) {
+                            if (!$img->hasAttribute('width')) {
+                                $img->setAttribute('width', (string) $size[0]);
+                            }
+                            if (!$img->hasAttribute('height')) {
+                                $img->setAttribute('height', (string) $size[1]);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
         $html = '';
         $body = $dom->getElementsByTagName('body')->item(0);
 
@@ -306,6 +358,20 @@ class Blog extends Model
 
         if (Str::startsWith($path, ['http://', 'https://', '//', 'data:'])) {
             return $path;
+        }
+
+        // Check if optimized WebP version exists
+        $webpPath = preg_replace('/\.(png|jpe?g)$/i', '.webp', $path);
+        if ($webpPath !== $path) {
+            if (Storage::disk('public')->exists($webpPath)) {
+                return route('blogs.image', ['path' => $webpPath]);
+            }
+            if (file_exists(public_path($webpPath))) {
+                return asset($webpPath);
+            }
+            if (file_exists(public_path('storage/' . $webpPath))) {
+                return asset('storage/' . $webpPath);
+            }
         }
 
         if (Storage::disk('public')->exists($path)) {

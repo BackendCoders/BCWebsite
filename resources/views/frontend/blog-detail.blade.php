@@ -4,11 +4,113 @@
     $publishedAt = $blog->published_at ?? $blog->created_at;
     $updatedAt = $blog->updated_at && (! $publishedAt || $blog->updated_at->gt($publishedAt)) ? $blog->updated_at : $publishedAt;
     $readingTime = $blog->reading_time;
-    $shareUrl = route('frontend.blog-detail', $blog->slug);
+    $shareUrl = 'https://backendcodersindia.com/blog/' . $blog->slug;
     $tocItems = $blog->table_of_contents_items;
     $faqItems = $blog->faq_items;
     $contentHtml = $blog->processed_content ?: $blog->content;
+
+    $authorName = trim($blog->author_name ?? '');
+    if ($authorName === 'Ravindra Verma' || str_contains($authorName, 'Ravindra')) {
+        $authorSchema = [
+            '@type' => 'Person',
+            '@id' => 'https://backendcodersindia.com/owner#ravindra-verma',
+            'name' => 'Ravindra Verma',
+            'jobTitle' => 'Founder and Chief Executive Officer',
+            'url' => 'https://backendcodersindia.com/owner',
+            'worksFor' => [
+                '@type' => 'Organization',
+                '@id' => 'https://backendcodersindia.com/#organization',
+                'name' => 'Backend Coders India',
+            ],
+            'sameAs' => [
+                'https://www.linkedin.com/in/ravindra-verma-55801a210/',
+            ],
+        ];
+    } elseif ($authorName !== '' && ! str_contains($authorName, 'Editorial Team') && ! str_contains($authorName, 'Backend Coders')) {
+        $authorSchema = [
+            '@type' => 'Person',
+            'name' => $authorName,
+            'worksFor' => [
+                '@type' => 'Organization',
+                '@id' => 'https://backendcodersindia.com/#organization',
+                'name' => 'Backend Coders India',
+            ],
+        ];
+    } else {
+        $authorSchema = [
+            '@type' => 'Organization',
+            '@id' => 'https://backendcodersindia.com/#organization',
+            'name' => 'Backend Coders India',
+            'url' => 'https://backendcodersindia.com',
+        ];
+    }
+
+    $blogPostingSchema = [
+        '@context' => 'https://schema.org',
+        '@type' => 'BlogPosting',
+        '@id' => $shareUrl . '#article',
+        'mainEntityOfPage' => [
+            '@type' => 'WebPage',
+            '@id' => $shareUrl,
+        ],
+        'headline' => $blog->title,
+        'description' => $blog->meta_description ?: ($blog->excerpt ?: \Illuminate\Support\Str::limit(strip_tags($blog->content ?: ''), 158)),
+        'image' => $blog->getImageUrl() ? [url($blog->getImageUrl())] : [asset('assets/images/banner.png')],
+        'datePublished' => $publishedAt ? \Carbon\Carbon::parse($publishedAt)->toIso8601String() : null,
+        'dateModified' => $updatedAt ? \Carbon\Carbon::parse($updatedAt)->toIso8601String() : null,
+        'author' => $authorSchema,
+        'publisher' => [
+            '@type' => 'Organization',
+            '@id' => 'https://backendcodersindia.com/#organization',
+            'name' => 'Backend Coders India',
+            'url' => 'https://backendcodersindia.com',
+            'logo' => [
+                '@type' => 'ImageObject',
+                '@id' => 'https://backendcodersindia.com/#logo',
+                'url' => asset('assets/images/bci_icon.png'),
+            ],
+        ],
+        'articleSection' => $blog->category?->name ?? 'Technology',
+        'keywords' => $blog->seo_keywords,
+    ];
+
+    $blogBreadcrumbSchema = [
+        '@context' => 'https://schema.org',
+        '@type' => 'BreadcrumbList',
+        'itemListElement' => [
+            [
+                '@type' => 'ListItem',
+                'position' => 1,
+                'name' => 'Home',
+                'item' => route('frontend.index'),
+            ],
+            [
+                '@type' => 'ListItem',
+                'position' => 2,
+                'name' => 'Blog',
+                'item' => route('frontend.blog'),
+            ],
+            [
+                '@type' => 'ListItem',
+                'position' => 3,
+                'name' => $blog->category?->name ?? 'Article',
+                'item' => route('frontend.blog'),
+            ],
+            [
+                '@type' => 'ListItem',
+                'position' => 4,
+                'name' => $blog->title,
+                'item' => $shareUrl,
+            ],
+        ],
+    ];
 @endphp
+
+@push('head')
+    @if($blog->getImageUrl())
+        <link rel="preload" as="image" href="{{ $blog->getImageUrl() }}" fetchpriority="high">
+    @endif
+@endpush
 
 <main class="relative overflow-hidden bg-[#f5f7fb] text-slate-950">
 <div class="pointer-events-none absolute inset-x-0 top-0 -z-10 h-72 bg-[radial-gradient(circle_at_top_left,_rgba(253,85,40,.12),_transparent_35%),radial-gradient(circle_at_top_right,_rgba(14,165,233,.10),_transparent_28%)]"></div>
@@ -21,9 +123,11 @@
             <img
                 src="{{ $blog->getImageUrl() }}"
                 alt="{{ $blog->title }}"
+                width="1200" height="630"
                 class="absolute inset-0 h-full w-full object-cover object-center filter brightness-[0.70] contrast-[1.05]"
                 loading="eager"
                 fetchpriority="high"
+                decoding="async"
             >
 
             <!-- Cinematic Gradient Overlay for Maximum Readability -->
@@ -77,10 +181,15 @@
                 <div class="mt-7 flex flex-wrap items-center justify-center gap-3 text-xs sm:text-sm text-slate-200">
                     <div class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 backdrop-blur-md shadow-lg">
                         <span class="flex h-6 w-6 items-center justify-center rounded-full bg-[#FD5528] text-xs font-bold text-white uppercase shadow">
-                            BC
+                            {{ $blog->is_individual_author ? 'RV' : 'BC' }}
                         </span>
                         <span class="font-medium text-white">
-                            Written by <span class="font-bold text-white">Backend Coders India</span>
+                            Written by 
+                            @if($blog->is_individual_author)
+                                <a href="{{ route('frontend.owner') }}" class="font-bold text-white hover:text-orange-200 underline decoration-white/40 underline-offset-2">Ravindra Verma</a>
+                            @else
+                                <span class="font-bold text-white">{{ $blog->author_name }}</span>
+                            @endif
                         </span>
                     </div>
 
@@ -174,7 +283,14 @@
                         <div>
                             <p class="text-xs font-semibold uppercase tracking-[0.35em] text-[#FD5528]">Article</p>
                             <h2 class="mt-2 text-2xl font-bold text-slate-900">Overview</h2>
-                            <p class="mt-2 text-sm text-slate-600">Written by <span class="font-semibold text-slate-900">Backend Coders India</span></p>
+                            <p class="mt-2 text-sm text-slate-600">
+                                Written by 
+                                @if($blog->is_individual_author)
+                                    <a href="{{ route('frontend.owner') }}" class="font-semibold text-slate-900 hover:text-[#FD5528]">Ravindra Verma</a>
+                                @else
+                                    <span class="font-semibold text-slate-900">{{ $blog->author_name }}</span>
+                                @endif
+                            </p>
                         </div>
                     </div>
 
@@ -187,31 +303,118 @@
                             @endif
                         </div>
 
-
+                        {{-- AUTHOR BIO BOX --}}
+                        <div class="mt-8 rounded-2xl border border-slate-200 bg-slate-50 p-6 flex flex-col sm:flex-row items-center sm:items-start gap-5">
+                            <img src="{{ asset('assets/images/ceo.webp') }}" alt="{{ $blog->author_name }}" width="64" height="64" loading="lazy" decoding="async" class="h-16 w-16 rounded-full object-cover border-2 border-[#FD5528]/30 shadow-sm flex-shrink-0">
+                            <div class="text-center sm:text-left">
+                                <span class="text-[11px] font-bold uppercase tracking-wider text-[#FD5528] block">About the Author</span>
+                                <h4 class="text-base font-bold text-slate-900 mt-0.5">
+                                    @if($blog->is_individual_author)
+                                        <a href="{{ route('frontend.owner') }}" class="hover:text-[#FD5528] transition">Ravindra Verma</a>
+                                    @else
+                                        <span>Backend Coders India Editorial Team</span>
+                                    @endif
+                                </h4>
+                                <p class="text-xs text-slate-500 font-medium">
+                                    {{ $blog->is_individual_author ? 'Founder & Lead Architect' : 'Technical Research & Content Team' }} &bull; Backend Coders India
+                                </p>
+                                <p class="mt-2 text-xs sm:text-sm text-slate-600 leading-relaxed">
+                                    @if($blog->is_individual_author)
+                                        Ravindra Verma is the Founder &amp; CEO of Backend Coders India with over 10 years of hands-on experience in full-stack architecture, Laravel engineering, and technical SEO systems.
+                                    @else
+                                        Written and reviewed by the technical engineering and digital search specialists at Backend Coders India, dedicated to delivering verifiable web architecture and transparent digital operations.
+                                    @endif
+                                </p>
+                                <div class="mt-3 flex items-center justify-center sm:justify-start gap-3">
+                                    <a href="{{ route('frontend.owner') }}" class="text-xs font-bold text-[#FD5528] hover:underline">Meet the Founder &rarr;</a>
+                                    <span class="text-slate-300">&bull;</span>
+                                    <a href="https://www.linkedin.com/in/ravindra-verma-55801a210/" target="_blank" rel="noopener noreferrer" class="text-xs font-semibold text-slate-600 hover:text-[#0077b5]">LinkedIn Profile</a>
+                                </div>
+                            </div>
+                        </div>
 
     <div class="mt-6 flex flex-wrap gap-3 sm:gap-4">
         <a href="https://www.facebook.com/backendcoders/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"
            class="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-r from-[#f1e9e9] to-[#f5f1f1] transition-all duration-300 hover:scale-110">
-          <img src="https://img.icons8.com/?size=100&id=106163&format=png&color=fd5528" class="h-5 w-5" alt="" aria-hidden="true">
+          <img src="https://img.icons8.com/?size=100&id=106163&format=png&color=fd5528" class="h-5 w-5" alt="" aria-hidden="true" width="20" height="20" loading="lazy" decoding="async">
         </a>
 
         <a href="https://www.instagram.com/backendcoders/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"
            class="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-r from-[#f1e9e9] to-[#f5f1f1] transition-all duration-300 hover:scale-110">
-          <img src="https://img.icons8.com/?size=100&id=32309&format=png&color=fd5528" class="h-5 w-5" alt="" aria-hidden="true">
+          <img src="https://img.icons8.com/?size=100&id=32309&format=png&color=fd5528" class="h-5 w-5" alt="" aria-hidden="true" width="20" height="20" loading="lazy" decoding="async">
         </a>
 
         <a href="https://www.linkedin.com/company/backendcodersindia/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"
            class="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-r from-[#f1e9e9] to-[#f5f1f1] transition-all duration-300 hover:scale-110">
-          <img src="https://img.icons8.com/?size=100&id=34349&format=png&color=fd5528" class="h-5 w-5" alt="" aria-hidden="true">
+          <img src="https://img.icons8.com/?size=100&id=34349&format=png&color=fd5528" class="h-5 w-5" alt="" aria-hidden="true" width="20" height="20" loading="lazy" decoding="async">
         </a>
 
         <a href="https://wa.me/919140092133" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"
            class="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-r from-[#f1e9e9] to-[#f5f1f1] transition-all duration-300 hover:scale-110">
-          <img src="https://img.icons8.com/?size=100&id=16733&format=png&color=fd5528" class="h-5 w-5" alt="" aria-hidden="true">
+          <img src="https://img.icons8.com/?size=100&id=16733&format=png&color=fd5528" class="h-5 w-5" alt="" aria-hidden="true" width="20" height="20" loading="lazy" decoding="async">
         </a>
       </div>
                     </div>
                 </article>
+
+                {{-- RELATED GUIDES & SERVICES --}}
+                <div class="overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-6 sm:p-8 shadow-[0_20px_60px_rgba(15,23,42,0.08)]">
+                    <div class="flex items-center justify-between border-b border-slate-100 pb-4">
+                        <div>
+                            <p class="text-xs font-semibold uppercase tracking-[0.35em] text-[#FD5528]">Explore More</p>
+                            <h3 class="mt-1 text-xl font-bold text-slate-900">Related Services &amp; Implementation Guides</h3>
+                        </div>
+                        <a href="{{ route('frontend.service') }}" class="hidden sm:inline-flex items-center gap-1.5 text-xs font-bold text-[#FD5528] hover:underline">
+                            All Services &rarr;
+                        </a>
+                    </div>
+                    
+                    <div class="mt-6 grid gap-4 sm:grid-cols-2">
+                        <a href="{{ route('frontend.seo') }}" class="group rounded-2xl border border-slate-100 bg-slate-50 p-4 transition-all hover:-translate-y-0.5 hover:border-[#FD5528]/30 hover:bg-orange-50/30">
+                            <span class="text-[11px] font-bold uppercase tracking-wider text-[#FD5528]">Search Engine Optimization</span>
+                            <h4 class="mt-1 text-sm font-bold text-slate-900 group-hover:text-[#FD5528]">SEO Services in Kanpur</h4>
+                            <p class="mt-1.5 text-xs text-slate-600 line-clamp-2">Data-backed search optimization, technical site audits, and verified monthly growth starting at ₹7,999/mo.</p>
+                            <span class="mt-3 inline-flex items-center text-xs font-semibold text-slate-700 group-hover:text-[#FD5528]">View SEO Solutions &rarr;</span>
+                        </a>
+
+                        <a href="{{ route('frontend.digital_marketing_kanpur') }}" class="group rounded-2xl border border-slate-100 bg-slate-50 p-4 transition-all hover:-translate-y-0.5 hover:border-[#FD5528]/30 hover:bg-orange-50/30">
+                            <span class="text-[11px] font-bold uppercase tracking-wider text-[#FD5528]">Full-Funnel Growth</span>
+                            <h4 class="mt-1 text-sm font-bold text-slate-900 group-hover:text-[#FD5528]">Digital Marketing Agency Kanpur</h4>
+                            <p class="mt-1.5 text-xs text-slate-600 line-clamp-2">Google Ads (PPC), social media campaigns, content strategy, and multi-channel lead acquisition for local brands.</p>
+                            <span class="mt-3 inline-flex items-center text-xs font-semibold text-slate-700 group-hover:text-[#FD5528]">Explore Agency Services &rarr;</span>
+                        </a>
+
+                        <a href="{{ route('frontend.software_company_kanpur') }}" class="group rounded-2xl border border-slate-100 bg-slate-50 p-4 transition-all hover:-translate-y-0.5 hover:border-[#FD5528]/30 hover:bg-orange-50/30">
+                            <span class="text-[11px] font-bold uppercase tracking-wider text-[#FD5528]">Software Engineering</span>
+                            <h4 class="mt-1 text-sm font-bold text-slate-900 group-hover:text-[#FD5528]">Software Company in Kanpur</h4>
+                            <p class="mt-1.5 text-xs text-slate-600 line-clamp-2">Custom business applications, inventory ERPs, POS systems, and API integrations engineered with Laravel and modern stacks.</p>
+                            <span class="mt-3 inline-flex items-center text-xs font-semibold text-slate-700 group-hover:text-[#FD5528]">View Engineering Capabilities &rarr;</span>
+                        </a>
+
+                        <a href="{{ route('frontend.packages') }}" class="group rounded-2xl border border-slate-100 bg-slate-50 p-4 transition-all hover:-translate-y-0.5 hover:border-[#FD5528]/30 hover:bg-orange-50/30">
+                            <span class="text-[11px] font-bold uppercase tracking-wider text-[#FD5528]">Transparent Pricing</span>
+                            <h4 class="mt-1 text-sm font-bold text-slate-900 group-hover:text-[#FD5528]">Web &amp; SEO Packages</h4>
+                            <p class="mt-1.5 text-xs text-slate-600 line-clamp-2">Fixed-scope, transparent packages for responsive website development, e-commerce stores, and ongoing monthly SEO.</p>
+                            <span class="mt-3 inline-flex items-center text-xs font-semibold text-slate-700 group-hover:text-[#FD5528]">Compare Packages &rarr;</span>
+                        </a>
+                    </div>
+
+                    <div class="mt-6 flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-orange-200/60 bg-gradient-to-r from-orange-50 to-amber-50/40 p-4">
+                        <div class="flex items-center gap-3">
+                            <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-[#FD5528] text-white">
+                                <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                            </span>
+                            <div>
+                                <h5 class="text-xs font-bold text-slate-900">Need specific architectural guidance?</h5>
+                                <p class="text-[11px] text-slate-600">Review our verified project case studies or discuss your requirements directly with our engineering team.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <a href="{{ route('frontend.project') }}" class="rounded-xl border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-slate-700 hover:border-[#FD5528] hover:text-[#FD5528]">Case Studies</a>
+                            <a href="{{ route('frontend.contact') }}" class="rounded-xl bg-[#FD5528] px-3.5 py-1.5 text-xs font-semibold text-white hover:bg-[#e94c20]">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
             </section>
 
               
@@ -244,11 +447,12 @@
                     <div class="mt-5 space-y-4">
                         @forelse($recentBlogs as $recent)
                             <a href="{{ route('frontend.blog-detail', $recent->slug) }}" class="group flex gap-3 rounded-2xl border border-slate-200 p-3 transition hover:-translate-y-0.5 hover:border-[#FD5528] hover:shadow-lg">
-                                <img alt=""
+                                <img 
                                     src="{{ $recent->getImageUrl() }}"
                                     alt="{{ $recent->title }}"
+                                    width="80" height="64"
                                     class="h-16 w-20 rounded-xl object-cover"
-                                    loading="lazy"
+                                    loading="lazy" decoding="async"
                                 >
                                 <div class="min-w-0">
                                     <p class="text-xs uppercase tracking-[0.3em] text-slate-400">
@@ -340,7 +544,7 @@
             </button>
         </div>
         <div class="max-h-[80vh] overflow-auto bg-slate-950 p-4 sm:p-6">
-            <img id="blogImageModalImg" src="" alt="Blog image preview" class="mx-auto max-h-[72vh] w-auto rounded-2xl object-contain shadow-2xl">
+            <img id="blogImageModalImg" src="" alt="Blog image preview" width="1024" height="680" loading="lazy" decoding="async" class="mx-auto max-h-[72vh] w-auto rounded-2xl object-contain shadow-2xl">
         </div>
     </div>
 </div>
@@ -419,68 +623,11 @@ document.addEventListener('DOMContentLoaded', function () {
 </script>
 
 <script type="application/ld+json">
-{!! json_encode([
-    '@@context' => 'https://schema.org',
-    '@type' => 'BlogPosting',
-    'mainEntityOfPage' => [
-        '@type' => 'WebPage',
-        '@id' => $shareUrl,
-    ],
-    'headline' => $blog->title,
-    'description' => $blog->meta_description ?: ($blog->excerpt ?: \Illuminate\Support\Str::limit(strip_tags($blog->content ?: ''), 158)),
-    'image' => $blog->getImageUrl() ? [url($blog->getImageUrl())] : [asset('assets/images/banner.png')],
-    'datePublished' => $publishedAt ? \Carbon\Carbon::parse($publishedAt)->toIso8601String() : null,
-    'dateModified' => $updatedAt ? \Carbon\Carbon::parse($updatedAt)->toIso8601String() : null,
-    'author' => [
-        '@type' => 'Organization',
-        'name' => 'Backend Coders',
-        '@id' => 'https://backendcodersindia.com/#organization',
-        'url' => 'https://backendcodersindia.com',
-    ],
-    'publisher' => [
-        '@type' => 'Organization',
-        'name' => 'Backend Coders India',
-        'logo' => [
-            '@type' => 'ImageObject',
-            'url' => asset('assets/images/bci_icon.png'),
-        ],
-    ],
-    'articleSection' => $blog->category?->name ?? 'Technology',
-    'keywords' => $blog->seo_keywords,
-], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) !!}
+{!! json_encode($blogPostingSchema, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) !!}
 </script>
 
 <script type="application/ld+json">
-{!! json_encode([
-    '@@context' => 'https://schema.org',
-    '@type' => 'BreadcrumbList',
-    'itemListElement' => [
-        [
-            '@type' => 'ListItem',
-            'position' => 1,
-            'name' => 'Home',
-            'item' => route('frontend.index'),
-        ],
-        [
-            '@type' => 'ListItem',
-            'position' => 2,
-            'name' => 'Blog',
-            'item' => route('frontend.blog'),
-        ],
-        [
-            '@type' => 'ListItem',
-            'position' => 3,
-            'name' => $blog->category?->name ?? 'Article',
-            'item' => route('frontend.blog'),
-        ],
-        [
-            '@type' => 'ListItem',
-            'position' => 4,
-            'name' => $blog->title,
-            'item' => $shareUrl,
-        ],
-    ],
-], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) !!}
+{!! json_encode($blogBreadcrumbSchema, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) !!}
 </script>
 
 @endsection

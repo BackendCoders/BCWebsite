@@ -1,4 +1,44 @@
-@extends('component.main')
+﻿@extends('component.main')
+
+@php
+    $projectBreadcrumb = [
+        '@context' => 'https://schema.org',
+        '@type' => 'BreadcrumbList',
+        'itemListElement' => [
+            [
+                '@type' => 'ListItem',
+                'position' => 1,
+                'name' => 'Home',
+                'item' => url('/'),
+            ],
+            [
+                '@type' => 'ListItem',
+                'position' => 2,
+                'name' => 'Case Studies & Projects',
+                'item' => 'https://backendcodersindia.com/project',
+            ],
+        ],
+    ];
+
+    $projectCollectionSchema = [
+        '@context' => 'https://schema.org',
+        '@type' => 'CollectionPage',
+        '@id' => 'https://backendcodersindia.com/project#webpage',
+        'url' => 'https://backendcodersindia.com/project',
+        'name' => 'Case Studies & Projects | Backend Coders India',
+        'description' => 'Explore custom software engineering case studies, web applications, and digital platforms built by Backend Coders India.',
+        'isPartOf' => [
+            '@type' => 'WebSite',
+            '@id' => 'https://backendcodersindia.com/#website',
+        ],
+    ];
+@endphp
+
+@push('head')
+    <link rel="preload" as="image" href="{{ asset('assets/images/banner.png') }}" fetchpriority="high">
+    <script type="application/ld+json">{!! json_encode($projectBreadcrumb, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) !!}</script>
+    <script type="application/ld+json">{!! json_encode($projectCollectionSchema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) !!}</script>
+@endpush
 
 @section('content')
 @php($showcaseProject = $projects->firstWhere('is_featured', true) ?? $projects->first())
@@ -29,6 +69,8 @@
   <!-- BACKGROUND IMAGE -->
   <img 
     src="{{asset('assets/images/banner.png')}}" alt="Backend Coders India - Software, Web, App, and Digital Solutions"
+    width="1920" height="600"
+    fetchpriority="high" loading="eager" decoding="async"
     class="absolute inset-0 w-full h-full object-cover"
   />
 
@@ -107,6 +149,8 @@ We build tools that solve business problems. Each project starts with clear goal
               <!-- MAP IMAGE -->
               <img 
                 src="{{ asset('assets/images/map.jpeg.webp') }}"
+                width="1568" height="1003"
+                loading="lazy" decoding="async"
                 class="w-full lg:h-[500px] grayscale opacity-90 contrast-110"
                 alt="Global Presence of Backend Coders India - USA, UK, India"
               />
@@ -282,6 +326,8 @@ We build tools that solve business problems. Each project starts with clear goal
                           <img
                           src="{{ asset('assets/images/seo-pro.jpg') }}"
                           alt="SEO Rocket Pro - AI-Powered SEO Growth Platform"
+                          width="1600" height="860"
+                          loading="lazy" decoding="async"
                           class="w-full h-auto object-contain drop-shadow-2xl transition duration-700 hover:scale-105"
                           />
                       </div>
@@ -320,6 +366,8 @@ We build tools that solve business problems. Each project starts with clear goal
                           <img
                               src="{{ asset('assets/images/Rocket.svg') }}"
                               alt="SEO Rocket Pro - AI-Powered SEO Growth Platform"
+                              width="56" height="56"
+                              loading="lazy" decoding="async"
                               class="h-10 w-10 lg:h-14 lg:w-14 animate-bounce"
                           >
                       </div>
@@ -363,30 +411,30 @@ We build tools that solve business problems. Each project starts with clear goal
                           </div>
                       </div>
 
-                      <!-- CASE STUDY STATS -->
+                      <!-- PLATFORM CAPABILITIES -->
                       <div class="mt-8 rounded-[20px] bg-slate-50 p-6 shadow-inner ring-1 ring-slate-200/50">
-                          <h4 class="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 mb-4">Verified Case Study Results</h4>
+                          <h4 class="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 mb-4">Delivered Platform Capabilities</h4>
                           
                           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                               <div class="rounded-xl bg-white p-4 shadow-sm ring-1 ring-slate-100">
                                   <div class="flex items-end gap-2">
-                                      <div class="text-3xl font-black text-[#FD5528] tracking-tight">+100%</div>
-                                      <div class="text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-1.5">Growth</div>
+                                      <div class="text-2xl sm:text-3xl font-black text-[#FD5528] tracking-tight">Unified</div>
+                                      <div class="text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-1.5">Platform</div>
                                   </div>
-                                  <div class="mt-2 text-xs font-bold text-slate-800">Organic Traffic</div>
+                                  <div class="mt-2 text-xs font-bold text-slate-800">Consolidated Toolset</div>
                                   <div class="mt-1 text-[11px] text-slate-500">
-                                      <span class="font-bold text-slate-700">Base:</span> 5K visits/mo &bull; <span class="font-bold text-slate-700">Time:</span> 12 mos
+                                      Centralizes crawler audits, prospecting scrapers, and outreach pipeline management.
                                   </div>
                               </div>
 
                               <div class="rounded-xl bg-white p-4 shadow-sm ring-1 ring-slate-100">
                                   <div class="flex items-end gap-2">
-                                      <div class="text-3xl font-black text-slate-900 tracking-tight">10K+</div>
-                                      <div class="text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-1.5">Keywords</div>
+                                      <div class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">&lt; 3 Min</div>
+                                      <div class="text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-1.5">Speed</div>
                                   </div>
-                                  <div class="mt-2 text-xs font-bold text-slate-800">Top 10 Rankings</div>
+                                  <div class="mt-2 text-xs font-bold text-slate-800">Automated Audit Crawls</div>
                                   <div class="mt-1 text-[11px] text-slate-500">
-                                      <span class="font-bold text-slate-700">Base:</span> 1.2K keywords &bull; <span class="font-bold text-slate-700">Time:</span> 12 mos
+                                      Asynchronous queues evaluate full technical health signals without manual spreadsheet compilation.
                                   </div>
                               </div>
                           </div>
@@ -395,7 +443,9 @@ We build tools that solve business problems. Each project starts with clear goal
                       <!-- CTA -->
                       <div class="mt-8 flex flex-wrap items-center gap-3">
                           <a
-                             href="{{ $showcaseProject ? route('frontend.project-detail', ['slug' => $showcaseProject->slug]) : route('frontend.project') }}"
+                              href="{{ $showcaseProject?->live_url ?: 'https://seorocketpro.com/' }}"
+                              target="_blank"
+                              rel="noopener noreferrer"
                               class="inline-flex items-center justify-center rounded-full bg-[#FD5528] px-6 py-2.5 text-sm font-bold text-white shadow-md shadow-[#FD5528]/25 transition hover:bg-[#e94c20] hover:shadow-lg hover:shadow-[#FD5528]/40"
                           >
                               View Project
@@ -466,6 +516,7 @@ We build tools that solve business problems. Each project starts with clear goal
                     class="flex h-32 w-64 shrink-0 items-center justify-center rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
                     <img src="{{ asset('assets/images/ifnoss-logo.png') }}"
                         alt="IFNOSS - IT Solutions Provider in India services and software development by Backend Coders India"
+                        width="256" height="81" loading="lazy" decoding="async"
                         class="max-h-20 w-auto object-contain">
                 </div>
 
@@ -473,6 +524,7 @@ We build tools that solve business problems. Each project starts with clear goal
                     class="flex h-32 w-64 shrink-0 items-center justify-center rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
                     <img src="{{ asset('assets/images/marley.png') }}"
                         alt="Marley Moves - Logistics and Transportation Solutions by Backend Coders India"
+                        width="256" height="75" loading="lazy" decoding="async"
                         class="max-h-32 w-auto object-contain">
                 </div>
 
@@ -480,6 +532,7 @@ We build tools that solve business problems. Each project starts with clear goal
                     class="flex h-32 w-64 shrink-0 items-center justify-center rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
                     <img src="{{ asset('assets/images/pulse.png') }}"
                         alt="Pulse Events - Event Management and Planning Solutions by Backend Coders India"
+                        width="256" height="60" loading="lazy" decoding="async"
                         class="max-h-20 w-auto object-contain">
                 </div>
 
@@ -487,6 +540,7 @@ We build tools that solve business problems. Each project starts with clear goal
                     class="flex h-32 w-64 shrink-0 items-center justify-center rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
                     <img src="{{ asset('assets/images/praslin.png') }}"
                         alt="Praslin - Real Estate and Property Management Solutions by Backend Coders India"
+                        width="256" height="116" loading="lazy" decoding="async"
                         class="max-h-32 w-auto object-contain">
                 </div>
 
@@ -494,6 +548,7 @@ We build tools that solve business problems. Each project starts with clear goal
                     class="flex h-32 w-64 shrink-0 items-center justify-center rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
                     <img src="{{ asset('assets/images/la.png') }}"
                         alt="Ladigue - Digital Marketing and Branding Solutions by Backend Coders India"
+                        width="256" height="125" loading="lazy" decoding="async"
                         class="max-h-32 w-auto object-contain">
                 </div>
 
@@ -501,6 +556,7 @@ We build tools that solve business problems. Each project starts with clear goal
                     class="flex h-32 w-64 shrink-0 items-center justify-center rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
                     <img src="{{ asset('assets/images/logo3.png') }}"
                         alt="Client Logo - Custom Software and Web Solutions by Backend Coders India"
+                        width="256" height="110" loading="lazy" decoding="async"
                         class="max-h-20 w-auto object-contain">
                 </div>
 
@@ -510,6 +566,7 @@ We build tools that solve business problems. Each project starts with clear goal
                     class="flex h-32 w-64 shrink-0 items-center justify-center rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
                     <img src="{{ asset('assets/images/arrive.png') }}"
                         alt="IFNOSS - IT Solutions Provider in India"
+                        width="256" height="102" loading="lazy" decoding="async"
                         class="max-h-20 w-auto object-contain">
                 </div>
 
@@ -517,6 +574,7 @@ We build tools that solve business problems. Each project starts with clear goal
                     class="flex h-32 w-64 shrink-0 items-center justify-center rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
                     <img src="{{ asset('assets/images/acetaxi.png') }}"
                         alt="Marley Moves - Logistics and Transportation Solutions by Backend Coders India"
+                        width="256" height="121" loading="lazy" decoding="async"
                         class="max-h-20 w-auto object-contain">
                 </div>
 
@@ -524,6 +582,7 @@ We build tools that solve business problems. Each project starts with clear goal
                     class="flex h-32 w-64 shrink-0 items-center justify-center rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
                     <img src="{{ asset('assets/images/scgo;d.png') }}"
                         alt="Pulse Events - Event Management and Planning Solutions by Backend Coders India"
+                        width="256" height="121" loading="lazy" decoding="async"
                         class="max-h-20 w-auto object-contain">
                 </div>
 
@@ -531,6 +590,7 @@ We build tools that solve business problems. Each project starts with clear goal
                     class="flex h-32 w-64 shrink-0 items-center justify-center rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
                     <img src="{{ asset('assets/images/skyda.jpeg') }}"
                         alt="Praslin - Real Estate and Property Management Solutions by Backend Coders India"
+                        width="256" height="71" loading="lazy" decoding="async"
                         class="max-h-20 w-auto object-contain">
                 </div>
 
@@ -538,6 +598,7 @@ We build tools that solve business problems. Each project starts with clear goal
                     class="flex h-32 w-64 shrink-0 items-center justify-center rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
                     <img src="{{ asset('assets/images/Ladiguelogo.png') }}"
                         alt="Ladigue - Digital Marketing and Branding Solutions by Backend Coders India"
+                        width="256" height="125" loading="lazy" decoding="async"
                         class="max-h-20 w-auto object-contain">
                 </div>
 
@@ -545,6 +606,7 @@ We build tools that solve business problems. Each project starts with clear goal
                     class="flex h-32 w-64 shrink-0 items-center justify-center rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
                     <img src="{{ asset('assets/images/ace.jpeg') }}"
                         alt="Client Logo - Custom Software and Web Solutions by Backend Coders India"
+                        width="256" height="66" loading="lazy" decoding="async"
                         class="max-h-20 w-auto object-contain">
                 </div>
 
@@ -562,7 +624,9 @@ We build tools that solve business problems. Each project starts with clear goal
     <!-- IMAGE -->
     <div class="relative group">
       <img 
-        src="{{asset('assets/images/backend_coders_split_1.webp.webp')}}" alt="backend coder india case study "
+        src="{{asset('assets/images/backend_coders_split_1.webp')}}" alt="Backend Coders India software engineering case study"
+        width="1024" height="683"
+        loading="lazy" decoding="async"
         class="rounded-2xl shadow-xl w-full object-cover transition duration-500 group-hover:scale-105"
       />
 
@@ -593,7 +657,7 @@ From business websites and ecommerce platforms to CRM tools, mobile apps, SaaS p
     
       <!-- CTA -->
       <div class="mt-8 flex gap-4 flex-wrap">
-        <a href="{{ $showcaseProject ? route('frontend.project-detail', ['slug' => $showcaseProject->slug]) : route('frontend.project') }}" class="bg-gradient-to-r from-[#FD5528] to-[#fbb03b] hover:from-[#fbb03b] hover:to-[#FD5528] text-white px-6 py-3 rounded-xl font-semibold shadow hover:scale-105 transition">
+        <a href="{{ $showcaseProject ? route('frontend.project', ['slug' => $showcaseProject->slug]) : route('frontend.project') }}" class="bg-gradient-to-r from-[#FD5528] to-[#fbb03b] hover:from-[#fbb03b] hover:to-[#FD5528] text-white px-6 py-3 rounded-xl font-semibold shadow hover:scale-105 transition">
           View Full Case Study
         </a>
 
@@ -959,7 +1023,7 @@ From business websites and ecommerce platforms to CRM tools, mobile apps, SaaS p
               <div class="flex items-center justify-between gap-3">
                 <div class="flex items-center gap-3">
                   <div class="relative">
-                    <img src="{{ asset('assets/images/client-mj.webp') }}" alt="Minwoon Jung testimonial - Backend Coders India" class="h-12 w-12 rounded-full object-cover" />
+                    <img src="{{ asset('assets/images/client-mj.webp') }}" alt="Minwoon Jung testimonial - Backend Coders India" width="48" height="48" loading="lazy" decoding="async" class="h-12 w-12 rounded-full object-cover" />
                     <span class="absolute -bottom-1 -right-1 rounded-full bg-green-500 px-1 text-[10px] text-white">✔</span>
                   </div>
                   <div>
@@ -968,7 +1032,7 @@ From business websites and ecommerce platforms to CRM tools, mobile apps, SaaS p
                   </div>
                 </div>
                 <a href="https://www.upwork.com/freelancers/~0116b8c17b9610ea4e" target="_blank" rel="noopener noreferrer" aria-label="View Backend Coders India on Upwork">
-                  <img src="{{ asset('assets/icons/upwork.png') }}" alt="Upwork client review" class="h-8 w-8 opacity-80" />
+                  <img src="{{ asset('assets/icons/upwork.png') }}" alt="Upwork client review" width="32" height="32" loading="lazy" decoding="async" class="h-8 w-8 opacity-80" />
                 </a>
               </div>
 
@@ -995,7 +1059,7 @@ From business websites and ecommerce platforms to CRM tools, mobile apps, SaaS p
               <div class="flex items-center justify-between gap-3">
                 <div class="flex items-center gap-3">
                   <div class="relative">
-                    <img src="{{ asset('assets/images/client-p.webp') }}" alt="Peter Farrell testimonial - Backend Coders India" class="h-12 w-12 rounded-full object-cover" />
+                    <img src="{{ asset('assets/images/client-p.webp') }}" alt="Peter Farrell testimonial - Backend Coders India" width="48" height="48" loading="lazy" decoding="async" class="h-12 w-12 rounded-full object-cover" />
                     <span class="absolute -bottom-1 -right-1 rounded-full bg-green-500 px-1 text-[10px] text-white">✔</span>
                   </div>
                   <div>
@@ -1004,7 +1068,7 @@ From business websites and ecommerce platforms to CRM tools, mobile apps, SaaS p
                   </div>
                 </div>
                 <a href="https://www.upwork.com/freelancers/~0116b8c17b9610ea4e" target="_blank" rel="noopener noreferrer" aria-label="View Backend Coders India on Upwork">
-                  <img src="{{ asset('assets/icons/upwork.png') }}" alt="Upwork client review" class="h-8 w-8 opacity-80" />
+                  <img src="{{ asset('assets/icons/upwork.png') }}" alt="Upwork client review" width="32" height="32" loading="lazy" decoding="async" class="h-8 w-8 opacity-80" />
                 </a>
               </div>
 
@@ -1031,7 +1095,7 @@ From business websites and ecommerce platforms to CRM tools, mobile apps, SaaS p
               <div class="flex items-center justify-between gap-3">
                 <div class="flex items-center gap-3">
                   <div class="relative">
-                    <img src="{{ asset('assets/images/client-v.webp') }}" alt="Veera Linga testimonial - Backend Coders India" class="h-12 w-12 rounded-full object-cover" />
+                    <img src="{{ asset('assets/images/client-v.webp') }}" alt="Veera Linga testimonial - Backend Coders India" width="48" height="48" loading="lazy" decoding="async" class="h-12 w-12 rounded-full object-cover" />
                     <span class="absolute -bottom-1 -right-1 rounded-full bg-green-500 px-1 text-[10px] text-white">✔</span>
                   </div>
                   <div>
@@ -1040,7 +1104,7 @@ From business websites and ecommerce platforms to CRM tools, mobile apps, SaaS p
                   </div>
                 </div>
                 <a href="https://www.upwork.com/freelancers/~0116b8c17b9610ea4e" target="_blank" rel="noopener noreferrer" aria-label="View Backend Coders India on Upwork">
-                  <img src="{{ asset('assets/icons/upwork.png') }}" alt="Upwork client review" class="h-8 w-8 opacity-80" />
+                  <img src="{{ asset('assets/icons/upwork.png') }}" alt="Upwork client review" width="32" height="32" loading="lazy" decoding="async" class="h-8 w-8 opacity-80" />
                 </a>
               </div>
 
