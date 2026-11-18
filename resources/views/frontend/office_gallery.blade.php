@@ -27,8 +27,8 @@
             'position' => $index + 1,
             'name' => $img->title ?? 'Backend Coders India Kanpur Office',
             'description' => $img->alt_text ?? 'Backend Coders India workspace, team events, and office in Kanpur',
-            'contentUrl' => $img->image_url,
-            'thumbnailUrl' => $img->image_url,
+            'contentUrl' => $img->image_url ?? asset($img->image_path ?? ''),
+            'thumbnailUrl' => $img->image_url ?? asset($img->image_path ?? ''),
             'author' => [
                 '@type' => 'Organization',
                 'name' => 'Backend Coders India',
@@ -45,253 +45,395 @@
         'url' => route('frontend.office_gallery'),
         'image' => $imageSchemaList,
     ];
+
+    $totalImages = $images->count();
+    $workspaceCount = $workspaceImages->count();
+    $eventCount = $eventImages->count();
+    $teamCount = $teamImages->count();
 @endphp
 
 @push('head')
     <script type="application/ld+json">{!! json_encode($galleryBreadcrumb, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) !!}</script>
     <script type="application/ld+json">{!! json_encode($gallerySchema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) !!}</script>
+    <style>
+        /* Scoped Premium Gallery Styling */
+        .gallery-bento-hero {
+            grid-column: span 1;
+        }
+        @media (min-width: 1024px) {
+            .gallery-bento-hero {
+                grid-column: span 8;
+            }
+            .gallery-bento-side {
+                grid-column: span 4;
+            }
+        }
+        .gallery-card-hover {
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .gallery-card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 35px -10px rgba(15, 23, 42, 0.15), 0 10px 15px -8px rgba(253, 85, 40, 0.08);
+        }
+        .gallery-img-zoom {
+            transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .gallery-card-hover:hover .gallery-img-zoom {
+            transform: scale(1.06);
+        }
+        .filter-btn-active {
+            background-color: #FD5528 !important;
+            color: #ffffff !important;
+            border-color: #FD5528 !important;
+            box-shadow: 0 10px 20px -5px rgba(253, 85, 40, 0.35) !important;
+        }
+        .gallery-shimmer {
+            position: relative;
+            overflow: hidden;
+        }
+        .gallery-shimmer::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+            transform: skewX(-20deg);
+            transition: left 0.75s ease;
+            pointer-events: none;
+        }
+        .gallery-card-hover:hover .gallery-shimmer::after {
+            left: 150%;
+        }
+    </style>
 @endpush
 
 @section('content')
 
-<main class="min-h-screen bg-[#fafbfc] pt-28 sm:pt-32 pb-24">
+<main class="min-h-screen bg-[#f8fafc] pt-28 sm:pt-32 pb-24 text-slate-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <!-- ================================================================= -->
-        <!-- HEADER & CATEGORY FILTER TABS                                     -->
+        <!-- PREMIUM HERO & NAVIGATION HEADER                                  -->
         <!-- ================================================================= -->
-        <header class="mb-12 border-b border-slate-200 pb-8">
-            <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
-                <div>
-                    <nav aria-label="Breadcrumb" class="mb-2 text-xs font-semibold text-slate-400">
-                        <a href="{{ url('/') }}" class="hover:text-slate-700 transition">Home</a>
-                        <span class="mx-1.5 text-slate-300">/</span>
-                        <span class="text-[#FD5528]">Office Gallery</span>
-                    </nav>
-                    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900">
-                        Life at Backend Coders India
-                    </h1>
-                    <p class="mt-2 text-sm sm:text-base text-slate-600 max-w-2xl">
-                        Our workspace, team events, festive celebrations, and engineering culture in Kanpur.
-                    </p>
-                </div>
+        <header class="relative mb-14 text-center max-w-4xl mx-auto pt-4">
+            <!-- Breadcrumbs -->
+            <nav aria-label="Breadcrumb" class="inline-flex items-center gap-2 rounded-full bg-white px-4 py-1.5 text-xs font-semibold text-slate-500 border border-slate-200 shadow-sm mb-4">
+                <a href="{{ url('/') }}" class="hover:text-slate-900 transition">Home</a>
+                <span class="text-slate-300">/</span>
+                <span class="text-[#FD5528] font-bold">Office Gallery</span>
+            </nav>
 
-                <!-- Category Filter Pills -->
-                <div class="flex flex-wrap items-center gap-2">
-                    <button 
-                        type="button" 
-                        data-section-filter="all" 
-                        class="gallery-filter-pill active rounded-full px-5 py-2.5 text-xs font-bold transition bg-[#FD5528] text-white shadow-md shadow-[#FD5528]/25"
-                    >
-                        All Moments
-                    </button>
-                    <button 
-                        type="button" 
-                        data-section-filter="workspace" 
-                        class="gallery-filter-pill rounded-full px-5 py-2.5 text-xs font-bold transition bg-white text-slate-700 border border-slate-200 hover:bg-slate-100 shadow-sm"
-                    >
-                        🏢 Workspace &amp; Office
-                    </button>
-                    <button 
-                        type="button" 
-                        data-section-filter="events" 
-                        class="gallery-filter-pill rounded-full px-5 py-2.5 text-xs font-bold transition bg-white text-slate-700 border border-slate-200 hover:bg-slate-100 shadow-sm"
-                    >
-                        🎉 Events &amp; Fun Activities
-                    </button>
-                    <button 
-                        type="button" 
-                        data-section-filter="team" 
-                        class="gallery-filter-pill rounded-full px-5 py-2.5 text-xs font-bold transition bg-white text-slate-700 border border-slate-200 hover:bg-slate-100 shadow-sm"
-                    >
-                        👥 People &amp; Leadership
-                    </button>
-                </div>
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-slate-900 leading-tight">
+                Life at Backend Coders India
+            </h1>
+
+            <p class="mt-3.5 text-sm sm:text-base lg:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+                Take an exclusive look into our Kanpur engineering labs, dual-screen workstations, festive celebrations, and the brilliant minds behind our digital products.
+            </p>
+
+            <!-- Interactive Category Filter Pill Bar -->
+            <div class="mt-8 flex flex-wrap items-center justify-center gap-2 sm:gap-3" id="galleryFilterNav">
+                <button 
+                    type="button" 
+                    data-filter="all" 
+                    class="filter-pill filter-btn-active inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-xs sm:text-sm font-bold transition-all border border-transparent bg-white text-slate-700 shadow-sm cursor-pointer"
+                >
+                    <span>All Moments</span>
+                    <span class="rounded-full bg-white/20 px-2 py-0.5 text-[11px] font-extrabold">{{ $totalImages }}</span>
+                </button>
+
+                <button 
+                    type="button" 
+                    data-filter="workspace" 
+                    class="filter-pill inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-xs sm:text-sm font-bold transition-all border border-slate-200 bg-white text-slate-700 hover:border-slate-300 shadow-sm cursor-pointer"
+                >
+                    <span>🏢 Workspace &amp; Labs</span>
+                    <span class="rounded-full bg-slate-100 px-2 py-0.5 text-[11px] text-slate-600">{{ $workspaceCount }}</span>
+                </button>
+
+                <button 
+                    type="button" 
+                    data-filter="events" 
+                    class="filter-pill inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-xs sm:text-sm font-bold transition-all border border-slate-200 bg-white text-slate-700 hover:border-slate-300 shadow-sm cursor-pointer"
+                >
+                    <span>🎉 Events &amp; Culture</span>
+                    <span class="rounded-full bg-slate-100 px-2 py-0.5 text-[11px] text-slate-600">{{ $eventCount }}</span>
+                </button>
+
+                <button 
+                    type="button" 
+                    data-filter="team" 
+                    class="filter-pill inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-xs sm:text-sm font-bold transition-all border border-slate-200 bg-white text-slate-700 hover:border-slate-300 shadow-sm cursor-pointer"
+                >
+                    <span>👥 Leadership &amp; Team</span>
+                    <span class="rounded-full bg-slate-100 px-2 py-0.5 text-[11px] text-slate-600">{{ $teamCount }}</span>
+                </button>
             </div>
         </header>
 
         <!-- ================================================================= -->
-        <!-- SECTION 1: WORKSPACE & OFFICE BENTO SHOWCASE                      -->
+        <!-- SECTION 1: WORKSPACE & ENGINEERING LABS (8 Photos Bento Grid)     -->
         <!-- ================================================================= -->
-        <section id="section-workspace" class="gallery-category-block mb-20" aria-label="Workspace and Office Gallery">
-            <div class="mb-8">
-                <span class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#FD5528]">
-                    <span class="h-2 w-2 rounded-full bg-[#FD5528]"></span>
-                    Development Hub
-                </span>
-                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1">
-                    Our Workspace &amp; Engineering Labs
-                </h2>
-                <p class="text-sm text-slate-500 mt-1 max-w-2xl">
-                    Take a look inside our primary development wing at 11/42 Krishna Nagar, Kanpur.
-                </p>
+        <section id="section-workspace" class="gallery-category-section mb-20 scroll-mt-36" aria-label="Workspace & Labs Gallery">
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-7 pb-4 border-b border-slate-200">
+                <div>
+                    <span class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest text-[#FD5528]">
+                        <span class="h-2 w-2 rounded-full bg-[#FD5528] animate-pulse"></span>
+                        Engineering Floor &amp; Infrastructure
+                    </span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1">
+                        Our Workspace &amp; Engineering Labs
+                    </h2>
+                    <p class="text-xs sm:text-sm text-slate-500 mt-1">
+                        Located at 11/42 Krishna Nagar, Kanpur. Designed for focused coding sprints, dual-display rigs, and high-performance engineering.
+                    </p>
+                </div>
+                <div class="shrink-0 text-xs font-semibold text-slate-400">
+                    {{ $workspaceCount }} Authentic Photographs
+                </div>
             </div>
 
-            <!-- Bento Grid -->
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
-                @php
-                    $heroWorkspace = $workspaceImages->first();
-                    $otherWorkspace = $workspaceImages->skip(1);
-                @endphp
-                @if($heroWorkspace)
+            <!-- Bento Showcase Layout -->
+            @php
+                $heroWork = $workspaceImages->first();
+                $sideWork = $workspaceImages->skip(1)->take(2);
+                $gridWork = $workspaceImages->skip(3)->take(3);
+                $extraWork = $workspaceImages->skip(6);
+            @endphp
+
+            <!-- Top Bento Row: 8 Cols Hero + 4 Cols Side Stack -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-6">
+                @if($heroWork)
                     <div 
-                        class="lg:col-span-8 gallery-card group relative overflow-hidden rounded-3xl bg-slate-900 border border-slate-200 shadow-lg cursor-pointer"
-                        data-full-src="{{ $heroWorkspace->image_url }}"
-                        data-title="{{ $heroWorkspace->title ?? 'Engineering Workstation Wing' }}"
-                        data-alt="{{ $heroWorkspace->alt_text ?? 'Backend Coders India main office development hall' }}"
+                        class="gallery-bento-hero gallery-card gallery-card-hover gallery-shimmer group relative overflow-hidden rounded-3xl bg-slate-900 border border-slate-200 shadow-sm cursor-pointer"
+                        data-full-src="{{ $heroWork->image_url ?? asset($heroWork->image_path ?? '') }}"
+                        data-title="{{ $heroWork->title }}"
+                        data-category="Workspace &amp; Labs"
+                        data-alt="{{ $heroWork->alt_text }}"
                         tabindex="0"
                         role="button"
-                        aria-label="View {{ $heroWorkspace->title ?? 'office photo' }} in full screen"
                     >
                         <div class="relative aspect-[16/10] sm:aspect-[16/9] w-full overflow-hidden">
                             <img 
-                                src="{{ $heroWorkspace->image_url }}" 
-                                alt="{{ $heroWorkspace->alt_text ?? 'Backend Coders India office workspace in Kanpur' }}" 
-                                class="h-full w-full object-cover transition duration-700 group-hover:scale-105"
+                                src="{{ $heroWork->image_url ?? asset($heroWork->image_path ?? '') }}" 
+                                alt="{{ $heroWork->alt_text }}" 
+                                class="gallery-img-zoom h-full w-full object-cover"
                                 fetchpriority="high"
                                 decoding="async"
                             />
-                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent opacity-80 group-hover:opacity-90 transition"></div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/25 to-transparent"></div>
                             
-                            <div class="absolute bottom-5 left-5 right-5 flex items-end justify-between text-white">
-                                <div>
-                                    <span class="inline-block rounded-full bg-[#FD5528] px-3 py-0.5 text-xs font-bold uppercase tracking-wider mb-1.5 shadow">
-                                        Primary Engineering Floor
-                                    </span>
-                                    <h3 class="text-lg sm:text-2xl font-bold">
-                                        {{ $heroWorkspace->title ?? 'Main Development Wing' }}
-                                    </h3>
-                                </div>
-                                <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white/20 backdrop-blur text-white opacity-0 group-hover:opacity-100 transition duration-300">
-                                    <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" /></svg>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                @endif
-
-                <!-- Right Stack (4 Cols - 2 Rows) -->
-                <div class="lg:col-span-4 flex flex-col gap-6 justify-between">
-                    @foreach($otherWorkspace->take(2) as $wImg)
-                        <div 
-                            class="gallery-card group relative overflow-hidden rounded-2xl bg-slate-900 border border-slate-200 shadow-md cursor-pointer flex-1"
-                            data-full-src="{{ $wImg->image_url }}"
-                            data-title="{{ $wImg->title ?? 'Workspace View' }}"
-                            data-alt="{{ $wImg->alt_text ?? 'Backend Coders India workspace photograph' }}"
-                            tabindex="0"
-                            role="button"
-                            aria-label="View {{ $wImg->title ?? 'workspace photo' }} in full screen"
-                        >
-                            <div class="relative aspect-[16/9] w-full h-full overflow-hidden">
-                                <img 
-                                    src="{{ $wImg->image_url }}" 
-                                    alt="{{ $wImg->alt_text ?? 'Workspace photo' }}" 
-                                    class="h-full w-full object-cover transition duration-700 group-hover:scale-105"
-                                    loading="lazy"
-                                    decoding="async"
-                                />
-                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-transparent to-transparent opacity-75 group-hover:opacity-90 transition"></div>
-                                <div class="absolute bottom-4 left-4 right-4 text-white">
-                                    <h4 class="font-bold text-sm sm:text-base line-clamp-1">
-                                        {{ $wImg->title ?? 'Office Workspace' }}
-                                    </h4>
-                                </div>
-                            </div>
-                        </div>
-                    @endforeach
-                </div>
-
-                <!-- Additional Workspace Photos Row -->
-                @if($otherWorkspace->count() > 2)
-                    <div class="lg:col-span-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                        @foreach($otherWorkspace->skip(2) as $extraW)
-                            <div 
-                                class="gallery-card group relative overflow-hidden rounded-2xl bg-slate-900 border border-slate-200 shadow-sm cursor-pointer"
-                                data-full-src="{{ $extraW->image_url }}"
-                                data-title="{{ $extraW->title ?? 'Workspace Area' }}"
-                                data-alt="{{ $extraW->alt_text ?? 'Backend Coders workspace' }}"
-                                tabindex="0"
-                                role="button"
-                                aria-label="View {{ $extraW->title ?? 'photo' }} in full screen"
-                            >
-                                <div class="relative aspect-[16/10] w-full overflow-hidden">
-                                    <img 
-                                        src="{{ $extraW->image_url }}" 
-                                        alt="{{ $extraW->alt_text ?? 'Workspace photograph' }}" 
-                                        class="h-full w-full object-cover transition duration-700 group-hover:scale-105"
-                                        loading="lazy"
-                                        decoding="async"
-                                    />
-                                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent opacity-75 group-hover:opacity-90 transition"></div>
-                                    <div class="absolute bottom-4 left-4 right-4 text-white">
-                                        <h4 class="font-bold text-sm line-clamp-1">
-                                            {{ $extraW->title ?? 'Office Area' }}
-                                        </h4>
-                                    </div>
-                                </div>
-                            </div>
-                        @endforeach
-                    </div>
-                @endif
-            </div>
-        </section>
-
-        <!-- ================================================================= -->
-        <!-- SECTION 2: EVENTS, CELEBRATIONS & FUN ACTIVITIES                  -->
-        <!-- ================================================================= -->
-        <section id="section-events" class="gallery-category-block mb-20" aria-label="Team Events and Fun Activities">
-            <div class="mb-8">
-                <span class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#FD5528]">
-                    <span class="h-2 w-2 rounded-full bg-[#FD5528]"></span>
-                    🎉 Life At Backend Coders
-                </span>
-                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1">
-                    Team Events, Celebrations &amp; Fun Activities
-                </h2>
-                <p class="text-sm text-slate-500 mt-1.5 max-w-2xl">
-                    Festivals, milestone gatherings, and fun moments with the engineering team.
-                </p>
-            </div>
-
-            <!-- Events Grid (Balanced Multi-Column) -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-                @foreach($eventImages as $evImg)
-                    <div 
-                        class="gallery-card group relative overflow-hidden rounded-3xl bg-slate-900 border border-slate-200 shadow-lg hover:shadow-2xl transition duration-500 cursor-pointer"
-                        data-full-src="{{ $evImg->image_url }}"
-                        data-title="{{ $evImg->title ?? 'Team Celebration' }}"
-                        data-alt="{{ $evImg->alt_text ?? 'Backend Coders India team celebration event' }}"
-                        tabindex="0"
-                        role="button"
-                        aria-label="View {{ $evImg->title ?? 'event photo' }} in full screen"
-                    >
-                        <div class="relative aspect-[16/10] w-full overflow-hidden">
-                            <img 
-                                src="{{ $evImg->image_url }}" 
-                                alt="{{ $evImg->alt_text ?? 'Team celebration and event at Backend Coders India' }}" 
-                                class="h-full w-full object-cover transition duration-700 group-hover:scale-105"
-                                loading="lazy"
-                                decoding="async"
-                            />
-                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/30 to-transparent opacity-80 group-hover:opacity-90 transition"></div>
-                            
+                            <!-- Badges -->
                             <div class="absolute top-4 left-4">
-                                <span class="rounded-full bg-black/60 backdrop-blur-md px-3 py-1 text-xs font-bold text-white border border-white/10">
-                                    🎉 Team Celebration
+                                <span class="inline-flex items-center gap-1.5 rounded-full bg-white/90 backdrop-blur-md px-3.5 py-1 text-xs font-extrabold text-slate-900 shadow-md">
+                                    <span class="h-2 w-2 rounded-full bg-emerald-500"></span>
+                                    Primary Development Hall
                                 </span>
                             </div>
 
                             <div class="absolute bottom-5 left-5 right-5 flex items-end justify-between text-white">
                                 <div>
-                                    <h3 class="text-base sm:text-lg font-bold">
-                                        {{ $evImg->title ?? 'Team Gathering & Milestone' }}
+                                    <h3 class="text-lg sm:text-2xl font-black tracking-tight">
+                                        {{ $heroWork->title }}
                                     </h3>
-                                    <p class="text-xs text-slate-300 mt-1 line-clamp-1">
-                                        {{ $evImg->caption ?? 'Cultural celebrations and milestone moments at our Kanpur office.' }}
+                                    <p class="mt-1 text-xs sm:text-sm text-slate-300 max-w-xl line-clamp-2">
+                                        {{ $heroWork->caption }}
                                     </p>
                                 </div>
-                                <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#FD5528] text-white shadow-lg opacity-90 group-hover:opacity-100 transition duration-300">
-                                    <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" /></svg>
+                                <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#FD5528] text-white shadow-lg transition duration-300 group-hover:scale-110">
+                                    <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" /></svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endif
+
+                <!-- Side Stack (2 Cards) -->
+                <div class="gallery-bento-side flex flex-col sm:flex-row lg:flex-col gap-6">
+                    @foreach($sideWork as $sImg)
+                        <div 
+                            class="gallery-card gallery-card-hover gallery-shimmer group relative overflow-hidden rounded-2xl bg-slate-900 border border-slate-200 shadow-sm cursor-pointer flex-1"
+                            data-full-src="{{ $sImg->image_url ?? asset($sImg->image_path ?? '') }}"
+                            data-title="{{ $sImg->title }}"
+                            data-category="Workspace &amp; Labs"
+                            data-alt="{{ $sImg->alt_text }}"
+                            tabindex="0"
+                            role="button"
+                        >
+                            <div class="relative aspect-[16/10] sm:aspect-[16/9] lg:aspect-[16/10] w-full h-full overflow-hidden">
+                                <img 
+                                    src="{{ $sImg->image_url ?? asset($sImg->image_path ?? '') }}" 
+                                    alt="{{ $sImg->alt_text }}" 
+                                    class="gallery-img-zoom h-full w-full object-cover"
+                                    loading="lazy"
+                                    decoding="async"
+                                />
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent"></div>
+                                <div class="absolute bottom-4 left-4 right-4 flex items-end justify-between text-white">
+                                    <div>
+                                        <h4 class="font-bold text-sm sm:text-base line-clamp-1">
+                                            {{ $sImg->title }}
+                                        </h4>
+                                        <p class="text-[11px] text-slate-300 line-clamp-1 mt-0.5">
+                                            {{ $sImg->caption }}
+                                        </p>
+                                    </div>
+                                    <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white/20 backdrop-blur text-white opacity-0 group-hover:opacity-100 transition">
+                                        <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+
+            <!-- Middle Row: 3 Symmetrical Cards -->
+            @if($gridWork->isNotEmpty())
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+                    @foreach($gridWork as $gImg)
+                        <div 
+                            class="gallery-card gallery-card-hover gallery-shimmer group relative overflow-hidden rounded-2xl bg-slate-900 border border-slate-200 shadow-sm cursor-pointer"
+                            data-full-src="{{ $gImg->image_url ?? asset($gImg->image_path ?? '') }}"
+                            data-title="{{ $gImg->title }}"
+                            data-category="Workspace &amp; Labs"
+                            data-alt="{{ $gImg->alt_text }}"
+                            tabindex="0"
+                            role="button"
+                        >
+                            <div class="relative aspect-[16/10] w-full overflow-hidden">
+                                <img 
+                                    src="{{ $gImg->image_url ?? asset($gImg->image_path ?? '') }}" 
+                                    alt="{{ $gImg->alt_text }}" 
+                                    class="gallery-img-zoom h-full w-full object-cover"
+                                    loading="lazy"
+                                    decoding="async"
+                                />
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent"></div>
+                                <div class="absolute bottom-4 left-4 right-4 flex items-end justify-between text-white">
+                                    <div>
+                                        <h4 class="font-bold text-sm sm:text-base line-clamp-1">
+                                            {{ $gImg->title }}
+                                        </h4>
+                                        <p class="text-[11px] text-slate-300 line-clamp-1 mt-0.5">
+                                            {{ $gImg->caption }}
+                                        </p>
+                                    </div>
+                                    <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white/20 backdrop-blur text-white opacity-0 group-hover:opacity-100 transition">
+                                        <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            @endif
+
+            <!-- Bottom Row: 2 Wide Balanced Cards -->
+            @if($extraWork->isNotEmpty())
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    @foreach($extraWork as $eImg)
+                        <div 
+                            class="gallery-card gallery-card-hover gallery-shimmer group relative overflow-hidden rounded-2xl bg-slate-900 border border-slate-200 shadow-sm cursor-pointer"
+                            data-full-src="{{ $eImg->image_url ?? asset($eImg->image_path ?? '') }}"
+                            data-title="{{ $eImg->title }}"
+                            data-category="Workspace &amp; Labs"
+                            data-alt="{{ $eImg->alt_text }}"
+                            tabindex="0"
+                            role="button"
+                        >
+                            <div class="relative aspect-[16/9] w-full overflow-hidden">
+                                <img 
+                                    src="{{ $eImg->image_url ?? asset($eImg->image_path ?? '') }}" 
+                                    alt="{{ $eImg->alt_text }}" 
+                                    class="gallery-img-zoom h-full w-full object-cover"
+                                    loading="lazy"
+                                    decoding="async"
+                                />
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent"></div>
+                                <div class="absolute bottom-4 left-4 right-4 flex items-end justify-between text-white">
+                                    <div>
+                                        <h4 class="font-bold text-sm sm:text-base line-clamp-1">
+                                            {{ $eImg->title }}
+                                        </h4>
+                                        <p class="text-[11px] text-slate-300 line-clamp-1 mt-0.5">
+                                            {{ $eImg->caption }}
+                                        </p>
+                                    </div>
+                                    <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white/20 backdrop-blur text-white opacity-0 group-hover:opacity-100 transition">
+                                        <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            @endif
+        </section>
+
+        <!-- ================================================================= -->
+        <!-- SECTION 2: TEAM EVENTS, CELEBRATIONS & FUN ACTIVITIES (6 Photos)  -->
+        <!-- ================================================================= -->
+        <section id="section-events" class="gallery-category-section mb-20 scroll-mt-36" aria-label="Team Events & Culture Gallery">
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-7 pb-4 border-b border-slate-200">
+                <div>
+                    <span class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest text-[#FD5528]">
+                        <span class="h-2 w-2 rounded-full bg-[#FD5528]"></span>
+                        🎉 Culture, Festivals &amp; Celebrations
+                    </span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1">
+                        Team Events, Celebrations &amp; Fun Activities
+                    </h2>
+                    <p class="text-xs sm:text-sm text-slate-500 mt-1">
+                        Celebrating cultural festivals, client delivery milestones, cake cuttings, and the vibrant bonds that power our teamwork.
+                    </p>
+                </div>
+                <div class="shrink-0 text-xs font-semibold text-slate-400">
+                    {{ $eventCount }} Curated Celebrations
+                </div>
+            </div>
+
+            <!-- Balanced 3-Column Symmetrical Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
+                @foreach($eventImages as $evImg)
+                    <div 
+                        class="gallery-card gallery-card-hover gallery-shimmer group relative overflow-hidden rounded-3xl bg-slate-900 border border-slate-200 shadow-sm cursor-pointer flex flex-col"
+                        data-full-src="{{ $evImg->image_url ?? asset($evImg->image_path ?? '') }}"
+                        data-title="{{ $evImg->title }}"
+                        data-category="Events &amp; Culture"
+                        data-alt="{{ $evImg->alt_text }}"
+                        tabindex="0"
+                        role="button"
+                    >
+                        <div class="relative aspect-[16/10] w-full overflow-hidden">
+                            <img 
+                                src="{{ $evImg->image_url ?? asset($evImg->image_path ?? '') }}" 
+                                alt="{{ $evImg->alt_text }}" 
+                                class="gallery-img-zoom h-full w-full object-cover"
+                                loading="lazy"
+                                decoding="async"
+                            />
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/25 to-transparent"></div>
+                            
+                            <div class="absolute top-4 left-4">
+                                <span class="rounded-full bg-slate-900/80 backdrop-blur-md px-3 py-1 text-[11px] font-bold text-amber-300 border border-amber-300/20 shadow">
+                                    ★ Team Celebration
+                                </span>
+                            </div>
+
+                            <div class="absolute bottom-4 left-4 right-4 flex items-end justify-between text-white">
+                                <div>
+                                    <h3 class="font-bold text-base sm:text-lg line-clamp-1">
+                                        {{ $evImg->title }}
+                                    </h3>
+                                    <p class="text-xs text-slate-300 mt-1 line-clamp-1">
+                                        {{ $evImg->caption }}
+                                    </p>
+                                </div>
+                                <div class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#FD5528] text-white shadow-md transition duration-300 group-hover:scale-110">
+                                    <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
                                 </div>
                             </div>
                         </div>
@@ -301,54 +443,74 @@
         </section>
 
         <!-- ================================================================= -->
-        <!-- SECTION 3: PEOPLE & LEADERSHIP CULTURE                            -->
+        <!-- SECTION 3: PEOPLE & LEADERSHIP CULTURE (5 Executive Portraits)    -->
         <!-- ================================================================= -->
-        <section id="section-team" class="gallery-category-block" aria-label="People and Leadership Culture">
-            <div class="mb-8">
-                <span class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#FD5528]">
-                    <span class="h-2 w-2 rounded-full bg-[#FD5528]"></span>
-                    👥 Engineering Minds
-                </span>
-                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1">
-                    People &amp; Leadership Culture
-                </h2>
-                <p class="text-sm text-slate-500 mt-1.5 max-w-2xl">
-                    The software architects, full-stack engineers, and leaders behind our digital products.
-                </p>
+        <section id="section-team" class="gallery-category-section scroll-mt-36" aria-label="Leadership & Team Gallery">
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-7 pb-4 border-b border-slate-200">
+                <div>
+                    <span class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest text-[#FD5528]">
+                        <span class="h-2 w-2 rounded-full bg-[#FD5528]"></span>
+                        👥 Leadership &amp; Engineering Minds
+                    </span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1">
+                        People &amp; Leadership Culture
+                    </h2>
+                    <p class="text-xs sm:text-sm text-slate-500 mt-1">
+                        Meet the leadership and full-stack software architects behind Backend Coders India.
+                    </p>
+                </div>
+                <div class="shrink-0 text-xs font-semibold text-slate-400">
+                    {{ $teamCount }} Executive Portraits
+                </div>
             </div>
 
-            <!-- Balanced Compact 5-Column Grid -->
+            <!-- Balanced 5-Column Grid with Luxury Glass Cards -->
             <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6">
                 @foreach($teamImages as $tImg)
+                    @php
+                        $isExecutive = in_array($tImg->order ?? 0, [15, 16], true) || str_contains($tImg->title ?? '', 'CEO') || str_contains($tImg->title ?? '', 'Managing Director');
+                    @endphp
                     <div 
-                        class="gallery-card group relative overflow-hidden rounded-2xl bg-white border border-slate-200/90 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer flex flex-col"
-                        data-full-src="{{ $tImg->image_url }}"
-                        data-title="{{ $tImg->title ?? 'Team Member' }}"
-                        data-alt="{{ $tImg->alt_text ?? 'Backend Coders India team member' }}"
+                        class="gallery-card gallery-card-hover group relative overflow-hidden rounded-2xl bg-white border {{ $isExecutive ? 'border-orange-300 shadow-md shadow-orange-500/5' : 'border-slate-200/90 shadow-sm' }} cursor-pointer flex flex-col"
+                        data-full-src="{{ $tImg->image_url ?? asset($tImg->image_path ?? '') }}"
+                        data-title="{{ $tImg->title }}"
+                        data-category="Leadership &amp; Team"
+                        data-alt="{{ $tImg->alt_text }}"
                         tabindex="0"
                         role="button"
-                        aria-label="View {{ $tImg->title ?? 'team member' }} in full screen"
                     >
-                        <div class="relative aspect-square w-full overflow-hidden bg-slate-100">
+                        <!-- Portrait Box -->
+                        <div class="relative aspect-[4/5] w-full overflow-hidden bg-slate-100">
                             <img 
-                                src="{{ $tImg->image_url }}" 
-                                alt="{{ $tImg->alt_text ?? 'Team member at Backend Coders India' }}" 
-                                class="h-full w-full object-cover object-top transition duration-500 group-hover:scale-105"
+                                src="{{ $tImg->image_url ?? asset($tImg->image_path ?? '') }}" 
+                                alt="{{ $tImg->alt_text }}" 
+                                class="gallery-img-zoom h-full w-full object-cover object-top"
                                 loading="lazy"
                                 decoding="async"
                             />
-                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent opacity-60 group-hover:opacity-90 transition"></div>
-                            
-                            <div class="absolute top-2.5 right-2.5 flex h-7 w-7 items-center justify-center rounded-full bg-black/40 backdrop-blur text-white opacity-0 group-hover:opacity-100 transition duration-200">
-                                <svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" /></svg>
-                            </div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-60 group-hover:opacity-85 transition"></div>
 
-                            <div class="absolute bottom-3 left-3 right-3 text-white">
-                                <h4 class="font-bold text-xs sm:text-sm line-clamp-1">
-                                    {{ Str::before($tImg->title ?? 'Team Member', '–') }}
-                                </h4>
-                                <p class="text-[11px] text-slate-300 font-medium line-clamp-1">
-                                    {{ Str::contains($tImg->title, '–') ? trim(Str::after($tImg->title, '–')) : 'Engineering Team' }}
+                            @if($isExecutive)
+                                <div class="absolute top-2.5 left-2.5">
+                                    <span class="rounded-full bg-[#FD5528] px-2.5 py-0.5 text-[10px] font-extrabold uppercase tracking-wider text-white shadow">
+                                        Executive
+                                    </span>
+                                </div>
+                            @endif
+
+                            <div class="absolute top-2.5 right-2.5 flex h-7 w-7 items-center justify-center rounded-full bg-black/40 backdrop-blur text-white opacity-0 group-hover:opacity-100 transition">
+                                <svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+                            </div>
+                        </div>
+
+                        <!-- Card Info Footer -->
+                        <div class="p-3.5 bg-white border-t border-slate-100 flex-1 flex flex-col justify-between">
+                            <div>
+                                <h3 class="font-bold text-xs sm:text-sm text-slate-900 group-hover:text-[#FD5528] transition line-clamp-1">
+                                    {{ Str::before($tImg->title, '–') }}
+                                </h3>
+                                <p class="text-[11px] font-semibold text-slate-500 mt-0.5 line-clamp-1">
+                                    {{ trim(Str::after($tImg->title, '–')) }}
                                 </p>
                             </div>
                         </div>
@@ -360,110 +522,118 @@
     </div>
 </main>
 
-<!-- ========================================================================= -->
-<!-- UNIVERSAL FULLSCREEN LIGHTBOX                                             -->
-<!-- ========================================================================= -->
+<!-- ===================================================================== -->
+<!-- UNIVERSAL ULTRA-LUXURY FULLSCREEN LIGHTBOX                            -->
+<!-- ===================================================================== -->
 <div 
     id="galleryLightbox" 
-    class="fixed inset-0 z-50 hidden bg-slate-950/95 backdrop-blur-md flex items-center justify-center p-3 sm:p-6 transition-opacity duration-300"
-    role="dialog"
-    aria-modal="true"
-    aria-label="Fullscreen Image Viewer"
+    class="fixed inset-0 z-50 hidden bg-slate-950/95 backdrop-blur-2xl transition-opacity duration-300 opacity-0 flex flex-col justify-between"
+    role="dialog" 
+    aria-modal="true" 
+    aria-label="Image Preview"
 >
-    <!-- Close Button -->
-    <button 
-        type="button" 
-        id="lightboxClose" 
-        class="absolute top-4 right-4 sm:top-6 sm:right-6 z-30 flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 active:scale-95 transition focus:outline-none"
-        aria-label="Close Lightbox (Esc)"
-    >
-        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-        </svg>
-    </button>
+    <!-- Top Bar -->
+    <div class="flex items-center justify-between p-4 sm:p-6 text-white z-10">
+        <div class="flex items-center gap-3">
+            <span class="rounded-full bg-white/10 px-3 py-1 text-xs font-semibold backdrop-blur text-orange-400" id="lbCategory">
+                Office Gallery
+            </span>
+            <span class="text-xs text-slate-400" id="lbCounter">
+                1 / {{ $totalImages }}
+            </span>
+        </div>
 
-    <!-- Prev Button -->
-    <button 
-        type="button" 
-        id="lightboxPrev" 
-        class="absolute left-3 sm:left-6 z-30 flex h-12 w-12 items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 active:scale-95 transition focus:outline-none"
-        aria-label="Previous Image (Left Arrow)"
-    >
-        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-        </svg>
-    </button>
+        <div class="flex items-center gap-2">
+            <!-- Close Button -->
+            <button 
+                type="button" 
+                id="lbClose" 
+                class="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 hover:bg-white/20 text-white transition cursor-pointer"
+                aria-label="Close Preview (Escape)"
+            >
+                <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12" /></svg>
+            </button>
+        </div>
+    </div>
 
-    <!-- Next Button -->
-    <button 
-        type="button" 
-        id="lightboxNext" 
-        class="absolute right-3 sm:right-6 z-30 flex h-12 w-12 items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 active:scale-95 transition focus:outline-none"
-        aria-label="Next Image (Right Arrow)"
-    >
-        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-        </svg>
-    </button>
+    <!-- Center Stage (Image + Arrows) -->
+    <div class="relative flex-1 flex items-center justify-center p-4 sm:p-8 overflow-hidden select-none" id="lbBackdrop">
+        <!-- Prev Button -->
+        <button 
+            type="button" 
+            id="lbPrev" 
+            class="absolute left-3 sm:left-8 top-1/2 -translate-y-1/2 flex h-12 w-12 items-center justify-center rounded-full bg-black/60 hover:bg-[#FD5528] text-white border border-white/20 transition-all duration-200 hover:scale-110 z-20 cursor-pointer"
+            aria-label="Previous Image (Left Arrow)"
+        >
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7" /></svg>
+        </button>
 
-    <!-- Image Display Container -->
-    <div class="relative max-w-6xl w-full max-h-[92vh] flex flex-col items-center justify-center select-none" id="lightboxContent">
-        <div class="relative max-h-[82vh] max-w-full flex items-center justify-center overflow-hidden">
+        <!-- Image Container -->
+        <div class="relative max-w-5xl max-h-[75vh] sm:max-h-[80vh] flex items-center justify-center">
             <img 
-                id="lightboxImg" 
+                id="lbImage" 
                 src="" 
                 alt="" 
-                class="max-h-[82vh] max-w-full w-auto h-auto object-contain rounded-xl shadow-2xl transition duration-200"
+                class="max-h-[75vh] sm:max-h-[80vh] max-w-full rounded-2xl object-contain shadow-2xl transition duration-300"
             />
         </div>
 
-        <!-- Minimal Title & Counter Bar -->
-        <div class="mt-3 text-center text-white/90">
-            <p id="lightboxTitle" class="text-sm font-bold tracking-tight"></p>
-            <p id="lightboxCounter" class="text-xs text-white/50 font-mono mt-0.5">1 / 1</p>
-        </div>
+        <!-- Next Button -->
+        <button 
+            type="button" 
+            id="lbNext" 
+            class="absolute right-3 sm:right-8 top-1/2 -translate-y-1/2 flex h-12 w-12 items-center justify-center rounded-full bg-black/60 hover:bg-[#FD5528] text-white border border-white/20 transition-all duration-200 hover:scale-110 z-20 cursor-pointer"
+            aria-label="Next Image (Right Arrow)"
+        >
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7" /></svg>
+        </button>
+    </div>
+
+    <!-- Bottom Caption Bar -->
+    <div class="p-4 sm:p-6 text-center text-white z-10 bg-gradient-to-t from-slate-950/90 to-transparent">
+        <h3 id="lbTitle" class="text-base sm:text-xl font-bold tracking-tight"></h3>
+        <p id="lbCaption" class="mt-1 text-xs sm:text-sm text-slate-400 max-w-2xl mx-auto"></p>
     </div>
 </div>
 
-<!-- ========================================================================= -->
-<!-- JAVASCRIPT: FILTER TABS & LIGHTBOX                                        -->
-<!-- ========================================================================= -->
+<!-- ===================================================================== -->
+<!-- INTERACTIVE SCRIPTS: FILTERING, SMOOTH SCROLL & LIGHTBOX              -->
+<!-- ===================================================================== -->
 <script>
-document.addEventListener('DOMContentLoaded', function () {
-    // -------------------------------------------------------------
-    // 1. Interactive Section Filter Tabs
-    // -------------------------------------------------------------
-    const filterPills = document.querySelectorAll('.gallery-filter-pill');
-    const categoryBlocks = {
-        'workspace': document.getElementById('section-workspace'),
-        'events': document.getElementById('section-events'),
-        'team': document.getElementById('section-team'),
+document.addEventListener("DOMContentLoaded", function () {
+    const filterBtns = document.querySelectorAll("#galleryFilterNav .filter-pill");
+    const sections = {
+        workspace: document.getElementById("section-workspace"),
+        events: document.getElementById("section-events"),
+        team: document.getElementById("section-team")
     };
 
-    filterPills.forEach(pill => {
-        pill.addEventListener('click', function () {
-            filterPills.forEach(p => {
-                p.classList.remove('active', 'bg-[#FD5528]', 'text-white', 'shadow-md', 'shadow-[#FD5528]/25');
-                p.classList.add('bg-white', 'text-slate-700', 'border', 'border-slate-200');
+    // Filter pill click behavior
+    filterBtns.forEach(btn => {
+        btn.addEventListener("click", function () {
+            filterBtns.forEach(b => {
+                b.classList.remove("filter-btn-active");
+                b.classList.add("border-slate-200", "bg-white", "text-slate-700");
             });
 
-            this.classList.add('active', 'bg-[#FD5528]', 'text-white', 'shadow-md', 'shadow-[#FD5528]/25');
-            this.classList.remove('bg-white', 'text-slate-700', 'border', 'border-slate-200');
+            this.classList.add("filter-btn-active");
+            this.classList.remove("border-slate-200", "bg-white", "text-slate-700");
 
-            const filter = this.getAttribute('data-section-filter');
+            const filter = this.getAttribute("data-filter");
 
-            if (filter === 'all') {
-                Object.values(categoryBlocks).forEach(block => {
-                    if (block) block.style.display = 'block';
+            if (filter === "all") {
+                Object.values(sections).forEach(sec => {
+                    if (sec) sec.style.display = "";
                 });
+                window.scrollTo({ top: 0, behavior: 'smooth' });
             } else {
-                Object.entries(categoryBlocks).forEach(([key, block]) => {
-                    if (block) {
+                Object.entries(sections).forEach(([key, sec]) => {
+                    if (sec) {
                         if (key === filter) {
-                            block.style.display = 'block';
-                            block.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                            sec.style.display = "";
+                            sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
                         } else {
-                            block.style.display = 'none';
+                            sec.style.display = "none";
                         }
                     }
                 });
@@ -471,134 +641,96 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // -------------------------------------------------------------
-    // 2. Lightbox Interaction
-    // -------------------------------------------------------------
-    const cards = Array.from(document.querySelectorAll('.gallery-card'));
-    const lightbox = document.getElementById('galleryLightbox');
-    const lightboxImg = document.getElementById('lightboxImg');
-    const lightboxTitle = document.getElementById('lightboxTitle');
-    const lightboxCounter = document.getElementById('lightboxCounter');
-    const closeBtn = document.getElementById('lightboxClose');
-    const prevBtn = document.getElementById('lightboxPrev');
-    const nextBtn = document.getElementById('lightboxNext');
+    // Lightbox Functionality
+    const lightbox = document.getElementById("galleryLightbox");
+    const lbImg = document.getElementById("lbImage");
+    const lbTitle = document.getElementById("lbTitle");
+    const lbCaption = document.getElementById("lbCaption");
+    const lbCategory = document.getElementById("lbCategory");
+    const lbCounter = document.getElementById("lbCounter");
+    const lbClose = document.getElementById("lbClose");
+    const lbPrev = document.getElementById("lbPrev");
+    const lbNext = document.getElementById("lbNext");
+    const lbBackdrop = document.getElementById("lbBackdrop");
 
-    if (!cards.length || !lightbox) return;
-
+    const cards = Array.from(document.querySelectorAll(".gallery-card"));
     let currentIndex = 0;
-    let touchStartX = 0;
-    let touchEndX = 0;
-
-    function getVisibleCards() {
-        return cards.filter(c => {
-            const block = c.closest('.gallery-category-block');
-            return !block || block.style.display !== 'none';
-        });
-    }
 
     function openLightbox(index) {
-        const visible = getVisibleCards();
-        if (!visible.length) return;
-
+        if (index < 0) index = cards.length - 1;
+        if (index >= cards.length) index = 0;
         currentIndex = index;
-        updateLightbox();
-        lightbox.classList.remove('hidden');
-        document.body.style.overflow = 'hidden';
+
+        const card = cards[currentIndex];
+        const src = card.getAttribute("data-full-src");
+        const title = card.getAttribute("data-title") || "";
+        const cat = card.getAttribute("data-category") || "Office Gallery";
+        const alt = card.getAttribute("data-alt") || "";
+
+        lbImg.src = src;
+        lbImg.alt = alt;
+        lbTitle.textContent = title;
+        lbCaption.textContent = alt;
+        lbCategory.textContent = cat;
+        lbCounter.textContent = (currentIndex + 1) + " / " + cards.length;
+
+        lightbox.classList.remove("hidden");
+        requestAnimationFrame(() => {
+            lightbox.classList.remove("opacity-0");
+            lightbox.classList.add("opacity-100");
+        });
+        document.body.style.overflow = "hidden";
     }
 
     function closeLightbox() {
-        lightbox.classList.add('hidden');
-        document.body.style.overflow = '';
+        lightbox.classList.remove("opacity-100");
+        lightbox.classList.add("opacity-0");
+        setTimeout(() => {
+            lightbox.classList.add("hidden");
+            lbImg.src = "";
+            document.body.style.overflow = "";
+        }, 300);
     }
 
-    function updateLightbox() {
-        const visible = getVisibleCards();
-        if (!visible.length) return;
-
-        const item = visible[currentIndex];
-        if (!item) return;
-
-        const src = item.getAttribute('data-full-src');
-        const title = item.getAttribute('data-title') || '';
-        const alt = item.getAttribute('data-alt') || 'Office photograph';
-
-        lightboxImg.src = src;
-        lightboxImg.alt = alt;
-        lightboxTitle.textContent = title;
-        lightboxCounter.textContent = `${currentIndex + 1} / ${visible.length}`;
-    }
-
-    function showNext() {
-        const visible = getVisibleCards();
-        if (!visible.length) return;
-        currentIndex = (currentIndex + 1) % visible.length;
-        updateLightbox();
-    }
-
-    function showPrev() {
-        const visible = getVisibleCards();
-        if (!visible.length) return;
-        currentIndex = (currentIndex - 1 + visible.length) % visible.length;
-        updateLightbox();
-    }
-
-    cards.forEach(card => {
-        card.addEventListener('click', function () {
-            const visible = getVisibleCards();
-            const idx = visible.indexOf(this);
-            if (idx !== -1) {
+    cards.forEach((card, idx) => {
+        card.addEventListener("click", () => openLightbox(idx));
+        card.addEventListener("keydown", (e) => {
+            if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
                 openLightbox(idx);
             }
         });
-
-        card.addEventListener('keydown', function (e) {
-            if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                this.click();
-            }
-        });
     });
 
-    closeBtn.addEventListener('click', closeLightbox);
-    nextBtn.addEventListener('click', showNext);
-    prevBtn.addEventListener('click', showPrev);
-
-    lightbox.addEventListener('click', function (e) {
-        if (e.target === lightbox || e.target.id === 'lightboxContent') {
-            closeLightbox();
-        }
+    lbClose.addEventListener("click", closeLightbox);
+    lbBackdrop.addEventListener("click", (e) => {
+        if (e.target === lbBackdrop) closeLightbox();
     });
 
-    document.addEventListener('keydown', function (e) {
-        if (lightbox.classList.contains('hidden')) return;
+    lbPrev.addEventListener("click", () => openLightbox(currentIndex - 1));
+    lbNext.addEventListener("click", () => openLightbox(currentIndex + 1));
 
-        if (e.key === 'Escape') {
-            closeLightbox();
-        } else if (e.key === 'ArrowRight') {
-            showNext();
-        } else if (e.key === 'ArrowLeft') {
-            showPrev();
-        }
+    document.addEventListener("keydown", (e) => {
+        if (lightbox.classList.contains("hidden")) return;
+        if (e.key === "Escape") closeLightbox();
+        if (e.key === "ArrowLeft") openLightbox(currentIndex - 1);
+        if (e.key === "ArrowRight") openLightbox(currentIndex + 1);
     });
 
-    // Touch Swipe for Mobile
-    lightbox.addEventListener('touchstart', function (e) {
+    // Touch swipe support for mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
+    lightbox.addEventListener("touchstart", (e) => {
         touchStartX = e.changedTouches[0].screenX;
     }, { passive: true });
-
-    lightbox.addEventListener('touchend', function (e) {
+    lightbox.addEventListener("touchend", (e) => {
         touchEndX = e.changedTouches[0].screenX;
-        handleSwipe();
-    }, { passive: true });
-
-    function handleSwipe() {
-        const threshold = 50;
-        if (touchEndX < touchStartX - threshold) {
-            showNext();
-        } else if (touchEndX > touchStartX + threshold) {
-            showPrev();
+        if (touchStartX - touchEndX > 50) {
+            openLightbox(currentIndex + 1);
+        } else if (touchEndX - touchStartX > 50) {
+            openLightbox(currentIndex - 1);
         }
-    }
+    }, { passive: true });
 });
 </script>
 
