@@ -147,6 +147,183 @@
         .gallery-card-hover:hover .gallery-shimmer::after {
             left: 150%;
         }
+
+        /* ================================================================= */
+        /* FULLSCREEN CINEMA-GRADE LIGHTBOX - BULLETPROOF FIXED OVERLAY      */
+        /* ================================================================= */
+        #galleryLightbox {
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            right: 0 !important;
+            bottom: 0 !important;
+            width: 100vw !important;
+            height: 100vh !important;
+            height: 100dvh !important;
+            z-index: 999999999 !important; /* Above site header (z-40/90) and floating stack (z-[60]) */
+            background-color: #030712 !important; /* 100% OPAQUE DEEP SLATE/BLACK - ZERO BLEED-THROUGH */
+            display: none;
+            overflow: hidden !important;
+            opacity: 0;
+            transition: opacity 0.25s ease-out;
+        }
+
+        #galleryLightbox.lb-active {
+            display: block !important;
+            opacity: 1 !important;
+        }
+
+        /* Top Bar */
+        .lb-chrome-top {
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            right: 0 !important;
+            height: 68px !important;
+            padding: 0 24px !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: space-between !important;
+            z-index: 1000000001 !important;
+            background: linear-gradient(to bottom, rgba(3, 7, 18, 0.95), transparent) !important;
+        }
+
+        /* Center Stage Container */
+        .lb-chrome-stage {
+            position: fixed !important;
+            top: 68px !important;
+            bottom: 90px !important;
+            left: 0 !important;
+            right: 0 !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            padding: 10px 80px !important;
+            box-sizing: border-box !important;
+            user-select: none !important;
+            -webkit-user-select: none !important;
+            z-index: 1000000000 !important;
+        }
+
+        @media (max-width: 640px) {
+            .lb-chrome-stage {
+                padding: 10px 16px !important;
+                bottom: 110px !important;
+            }
+        }
+
+        #lbImage {
+            max-width: 100% !important;
+            max-height: 100% !important;
+            object-fit: contain !important;
+            border-radius: 12px !important;
+            box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.95), 0 0 0 1px rgba(255, 255, 255, 0.1) !important;
+            transition: opacity 0.18s ease, transform 0.18s ease !important;
+        }
+
+        /* Bottom Caption Bar */
+        .lb-chrome-bottom {
+            position: fixed !important;
+            bottom: 0 !important;
+            left: 0 !important;
+            right: 0 !important;
+            min-height: 90px !important;
+            padding: 16px 24px 20px !important;
+            text-align: center !important;
+            z-index: 1000000001 !important;
+            background: linear-gradient(to top, rgba(3, 7, 18, 0.98) 60%, transparent) !important;
+            pointer-events: none !important;
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            justify-content: center !important;
+        }
+
+        .lb-chrome-bottom > * {
+            pointer-events: auto !important;
+        }
+
+        /* Fixed Viewport Navigation Arrows */
+        .lb-nav-arrow {
+            position: fixed !important;
+            top: 50% !important;
+            transform: translateY(-50%) !important;
+            z-index: 1000000002 !important;
+            width: 52px !important;
+            height: 52px !important;
+            border-radius: 9999px !important;
+            background: rgba(15, 23, 42, 0.85) !important;
+            border: 1px solid rgba(255, 255, 255, 0.25) !important;
+            color: #ffffff !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            cursor: pointer !important;
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6) !important;
+        }
+
+        .lb-nav-arrow:hover {
+            background: #FD5528 !important;
+            border-color: #FD5528 !important;
+            transform: translateY(-50%) scale(1.12) !important;
+        }
+
+        .lb-nav-arrow:active {
+            transform: translateY(-50%) scale(0.95) !important;
+        }
+
+        .lb-nav-prev {
+            left: 24px !important;
+        }
+
+        .lb-nav-next {
+            right: 24px !important;
+        }
+
+        @media (max-width: 640px) {
+            .lb-nav-arrow {
+                width: 42px !important;
+                height: 42px !important;
+            }
+            .lb-nav-prev { left: 10px !important; }
+            .lb-nav-next { right: 10px !important; }
+        }
+
+        /* Close Button */
+        .lb-close-pill {
+            display: inline-flex !important;
+            align-items: center !important;
+            gap: 8px !important;
+            height: 40px !important;
+            padding: 0 16px !important;
+            border-radius: 9999px !important;
+            background: rgba(255, 255, 255, 0.12) !important;
+            border: 1px solid rgba(255, 255, 255, 0.22) !important;
+            color: #ffffff !important;
+            font-size: 13px !important;
+            font-weight: 600 !important;
+            cursor: pointer !important;
+            transition: all 0.2s ease !important;
+            backdrop-filter: blur(8px) !important;
+        }
+
+        .lb-close-pill:hover {
+            background: #FD5528 !important;
+            border-color: #FD5528 !important;
+            transform: scale(1.05) !important;
+        }
+
+        /* Hide external widgets when lightbox is active */
+        body.lb-open {
+            overflow: hidden !important;
+        }
+        body.lb-open #contactToggle,
+        body.lb-open #contactMenu,
+        body.lb-open .fixed.right-5.bottom-6 {
+            display: none !important;
+            visibility: hidden !important;
+        }
     </style>
 @endpush
 
@@ -562,72 +739,77 @@
 <!-- ===================================================================== -->
 <div 
     id="galleryLightbox" 
-    class="fixed inset-0 z-50 hidden bg-slate-950/95 backdrop-blur-2xl transition-opacity duration-300 opacity-0 flex flex-col justify-between"
     role="dialog" 
     aria-modal="true" 
-    aria-label="Image Preview"
+    aria-label="Image Preview Lightbox"
 >
-    <!-- Top Bar -->
-    <div class="flex items-center justify-between p-4 sm:p-6 text-white z-10">
+    <!-- Top Chrome -->
+    <div class="lb-chrome-top">
         <div class="flex items-center gap-3">
-            <span class="rounded-full bg-white/10 px-3 py-1 text-xs font-semibold backdrop-blur text-orange-400" id="lbCategory">
+            <span class="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-3.5 py-1 text-xs font-bold text-orange-400 border border-white/15 backdrop-blur-md" id="lbCategory">
                 Office Gallery
             </span>
-            <span class="text-xs text-slate-400" id="lbCounter">
+            <span class="text-xs font-semibold text-slate-400" id="lbCounter">
                 1 / {{ $totalImages }}
             </span>
         </div>
 
-        <div class="flex items-center gap-2">
-            <!-- Close Button -->
+        <div>
             <button 
                 type="button" 
                 id="lbClose" 
-                class="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 hover:bg-white/20 text-white transition cursor-pointer"
-                aria-label="Close Preview (Escape)"
+                class="lb-close-pill"
+                aria-label="Close Lightbox (Esc)"
             >
-                <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12" /></svg>
+                <span>Close</span>
+                <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
             </button>
         </div>
     </div>
 
-    <!-- Center Stage (Image + Arrows) -->
-    <div class="relative flex-1 flex items-center justify-center p-4 sm:p-8 overflow-hidden select-none" id="lbBackdrop">
-        <!-- Prev Button -->
-        <button 
-            type="button" 
-            id="lbPrev" 
-            class="absolute left-3 sm:left-8 top-1/2 -translate-y-1/2 flex h-12 w-12 items-center justify-center rounded-full bg-black/60 hover:bg-[#FD5528] text-white border border-white/20 transition-all duration-200 hover:scale-110 z-20 cursor-pointer"
-            aria-label="Previous Image (Left Arrow)"
-        >
-            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7" /></svg>
-        </button>
-
-        <!-- Image Container -->
-        <div class="relative max-w-5xl max-h-[75vh] sm:max-h-[80vh] flex items-center justify-center">
-            <img 
-                id="lbImage" 
-                src="" 
-                alt="" 
-                class="max-h-[75vh] sm:max-h-[80vh] max-w-full rounded-2xl object-contain shadow-2xl transition duration-300"
-            />
-        </div>
-
-        <!-- Next Button -->
-        <button 
-            type="button" 
-            id="lbNext" 
-            class="absolute right-3 sm:right-8 top-1/2 -translate-y-1/2 flex h-12 w-12 items-center justify-center rounded-full bg-black/60 hover:bg-[#FD5528] text-white border border-white/20 transition-all duration-200 hover:scale-110 z-20 cursor-pointer"
-            aria-label="Next Image (Right Arrow)"
-        >
-            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7" /></svg>
-        </button>
+    <!-- Center Stage Container (Clicking empty background closes lightbox) -->
+    <div class="lb-chrome-stage" id="lbStage">
+        <img 
+            id="lbImage" 
+            src="" 
+            alt="" 
+        />
     </div>
 
-    <!-- Bottom Caption Bar -->
-    <div class="p-4 sm:p-6 text-center text-white z-10 bg-gradient-to-t from-slate-950/90 to-transparent">
-        <h3 id="lbTitle" class="text-base sm:text-xl font-bold tracking-tight"></h3>
-        <p id="lbCaption" class="mt-1 text-xs sm:text-sm text-slate-400 max-w-2xl mx-auto"></p>
+    <!-- Pinned Viewport Navigation Buttons -->
+    <button 
+        type="button" 
+        id="lbPrev" 
+        class="lb-nav-arrow lb-nav-prev"
+        aria-label="Previous Image (Left Arrow)"
+    >
+        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+        </svg>
+    </button>
+
+    <button 
+        type="button" 
+        id="lbNext" 
+        class="lb-nav-arrow lb-nav-next"
+        aria-label="Next Image (Right Arrow)"
+    >
+        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+        </svg>
+    </button>
+
+    <!-- Bottom Caption Chrome -->
+    <div class="lb-chrome-bottom">
+        <h3 id="lbTitle" class="text-base sm:text-lg font-bold text-white tracking-tight line-clamp-1 max-w-3xl"></h3>
+        <p id="lbCaption" class="mt-1 text-xs sm:text-sm text-slate-300 max-w-2xl line-clamp-2"></p>
+        <div class="text-[11px] text-slate-500 mt-2 hidden sm:flex items-center gap-2">
+            <span>Press <kbd class="px-1.5 py-0.5 rounded bg-white/10 text-slate-300 font-mono text-[10px]">Esc</kbd> to close</span>
+            <span>•</span>
+            <span>Use <kbd class="px-1.5 py-0.5 rounded bg-white/10 text-slate-300 font-mono text-[10px]">←</kbd> <kbd class="px-1.5 py-0.5 rounded bg-white/10 text-slate-300 font-mono text-[10px]">→</kbd> to navigate</span>
+        </div>
     </div>
 </div>
 
@@ -686,12 +868,18 @@ document.addEventListener("DOMContentLoaded", function () {
     const lbClose = document.getElementById("lbClose");
     const lbPrev = document.getElementById("lbPrev");
     const lbNext = document.getElementById("lbNext");
-    const lbBackdrop = document.getElementById("lbBackdrop");
+    const lbStage = document.getElementById("lbStage");
+
+    // Move lightbox to document.body to break out of any container stacking context
+    if (lightbox && lightbox.parentElement !== document.body) {
+        document.body.appendChild(lightbox);
+    }
 
     const cards = Array.from(document.querySelectorAll(".gallery-card"));
     let currentIndex = 0;
 
     function openLightbox(index) {
+        if (!cards.length) return;
         if (index < 0) index = cards.length - 1;
         if (index >= cards.length) index = 0;
         currentIndex = index;
@@ -702,29 +890,47 @@ document.addEventListener("DOMContentLoaded", function () {
         const cat = card.getAttribute("data-category") || "Office Gallery";
         const alt = card.getAttribute("data-alt") || "";
 
-        lbImg.src = src;
-        lbImg.alt = alt;
-        lbTitle.textContent = title;
-        lbCaption.textContent = alt;
-        lbCategory.textContent = cat;
-        lbCounter.textContent = (currentIndex + 1) + " / " + cards.length;
+        // Subtle quick transition
+        lbImg.style.opacity = "0.3";
+        lbImg.style.transform = "scale(0.98)";
 
-        lightbox.classList.remove("hidden");
-        requestAnimationFrame(() => {
-            lightbox.classList.remove("opacity-0");
-            lightbox.classList.add("opacity-100");
-        });
-        document.body.style.overflow = "hidden";
+        const loader = new Image();
+        loader.onload = () => {
+            lbImg.src = src;
+            lbImg.alt = alt;
+            lbTitle.textContent = title;
+            lbCaption.textContent = alt;
+            lbCategory.textContent = cat;
+            lbCounter.textContent = (currentIndex + 1) + " / " + cards.length;
+            requestAnimationFrame(() => {
+                lbImg.style.opacity = "1";
+                lbImg.style.transform = "scale(1)";
+            });
+        };
+        loader.onerror = () => {
+            lbImg.src = src;
+            lbImg.alt = alt;
+            lbTitle.textContent = title;
+            lbCaption.textContent = alt;
+            lbCategory.textContent = cat;
+            lbCounter.textContent = (currentIndex + 1) + " / " + cards.length;
+            lbImg.style.opacity = "1";
+            lbImg.style.transform = "scale(1)";
+        };
+        loader.src = src;
+
+        lightbox.classList.add("lb-active");
+        document.body.classList.add("lb-open");
     }
 
     function closeLightbox() {
-        lightbox.classList.remove("opacity-100");
-        lightbox.classList.add("opacity-0");
+        lightbox.classList.remove("lb-active");
+        document.body.classList.remove("lb-open");
         setTimeout(() => {
-            lightbox.classList.add("hidden");
-            lbImg.src = "";
-            document.body.style.overflow = "";
-        }, 300);
+            if (!lightbox.classList.contains("lb-active")) {
+                lbImg.src = "";
+            }
+        }, 250);
     }
 
     cards.forEach((card, idx) => {
@@ -737,16 +943,18 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    lbClose.addEventListener("click", closeLightbox);
-    lbBackdrop.addEventListener("click", (e) => {
-        if (e.target === lbBackdrop) closeLightbox();
-    });
+    if (lbClose) lbClose.addEventListener("click", closeLightbox);
+    if (lbStage) {
+        lbStage.addEventListener("click", (e) => {
+            if (e.target === lbStage) closeLightbox();
+        });
+    }
 
-    lbPrev.addEventListener("click", () => openLightbox(currentIndex - 1));
-    lbNext.addEventListener("click", () => openLightbox(currentIndex + 1));
+    if (lbPrev) lbPrev.addEventListener("click", (e) => { e.stopPropagation(); openLightbox(currentIndex - 1); });
+    if (lbNext) lbNext.addEventListener("click", (e) => { e.stopPropagation(); openLightbox(currentIndex + 1); });
 
     document.addEventListener("keydown", (e) => {
-        if (lightbox.classList.contains("hidden")) return;
+        if (!lightbox || !lightbox.classList.contains("lb-active")) return;
         if (e.key === "Escape") closeLightbox();
         if (e.key === "ArrowLeft") openLightbox(currentIndex - 1);
         if (e.key === "ArrowRight") openLightbox(currentIndex + 1);
