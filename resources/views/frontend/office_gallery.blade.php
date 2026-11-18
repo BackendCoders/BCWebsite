@@ -176,6 +176,64 @@
             }
         }
 
+        /* High-Contrast Card Captions & Deep Gradient Scrims */
+        .card-scrim-hero {
+            position: absolute !important;
+            inset-x: 0 !important;
+            bottom: 0 !important;
+            padding: 4.5rem 1.75rem 1.75rem !important;
+            background: linear-gradient(to top, rgba(2, 6, 23, 0.98) 0%, rgba(2, 6, 23, 0.88) 50%, rgba(2, 6, 23, 0.45) 80%, transparent 100%) !important;
+            display: flex !important;
+            align-items: flex-end !important;
+            justify-content: space-between !important;
+            gap: 1rem !important;
+            z-index: 10 !important;
+            border-bottom-left-radius: inherit !important;
+            border-bottom-right-radius: inherit !important;
+        }
+
+        .card-scrim-box {
+            position: absolute !important;
+            inset-x: 0 !important;
+            bottom: 0 !important;
+            padding: 3.5rem 1.25rem 1.25rem !important;
+            background: linear-gradient(to top, rgba(2, 6, 23, 0.98) 0%, rgba(2, 6, 23, 0.85) 55%, rgba(2, 6, 23, 0.4) 85%, transparent 100%) !important;
+            display: flex !important;
+            align-items: flex-end !important;
+            justify-content: space-between !important;
+            gap: 0.75rem !important;
+            z-index: 10 !important;
+            border-bottom-left-radius: inherit !important;
+            border-bottom-right-radius: inherit !important;
+        }
+
+        .card-scrim-side {
+            position: absolute !important;
+            inset-x: 0 !important;
+            bottom: 0 !important;
+            padding: 3.5rem 1.25rem 1.25rem !important;
+            background: linear-gradient(to top, rgba(2, 6, 23, 0.98) 0%, rgba(2, 6, 23, 0.85) 55%, rgba(2, 6, 23, 0.4) 85%, transparent 100%) !important;
+            z-index: 10 !important;
+            border-bottom-left-radius: inherit !important;
+            border-bottom-right-radius: inherit !important;
+        }
+
+        .card-text-title {
+            color: #ffffff !important;
+            font-weight: 800 !important;
+            line-height: 1.25 !important;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.95), 0 1px 2px rgba(0, 0, 0, 0.9) !important;
+            letter-spacing: -0.01em !important;
+        }
+
+        .card-text-desc {
+            color: #f8fafc !important; /* Pure high-contrast off-white - 100% visible on any background */
+            font-weight: 500 !important;
+            line-height: 1.4 !important;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.95), 0 1px 2px rgba(0, 0, 0, 0.9) !important;
+            opacity: 0.95 !important;
+        }
+
         /* ================================================================= */
         /* FULLSCREEN CINEMA-GRADE LIGHTBOX - BULLETPROOF FIXED OVERLAY      */
         /* ================================================================= */
@@ -479,16 +537,16 @@
                         </div>
 
                         <!-- Bottom Content -->
-                        <div class="absolute inset-x-0 bottom-0 p-6 sm:p-8 flex items-end justify-between gap-4">
+                        <div class="card-scrim-hero">
                             <div class="max-w-xl">
-                                <h3 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+                                <h3 class="text-xl sm:text-2xl font-bold card-text-title tracking-tight">
                                     {{ $heroWork->title }}
                                 </h3>
-                                <p class="mt-1.5 text-xs sm:text-sm text-slate-300 leading-relaxed">
+                                <p class="mt-2 text-xs sm:text-sm card-text-desc leading-relaxed">
                                     {{ $heroWork->caption }}
                                 </p>
                             </div>
-                            <div class="shrink-0 flex h-12 w-12 items-center justify-center rounded-full bg-[#FD5528] text-white shadow-lg transition-transform duration-300 group-hover:scale-110">
+                            <div class="shrink-0 flex h-12 w-12 items-center justify-center rounded-full bg-[#FD5528] text-white shadow-xl transition-transform duration-300 group-hover:scale-110">
                                 <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" />
                                 </svg>
@@ -516,14 +574,20 @@
                                 loading="lazy"
                                 decoding="async"
                             />
-                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/40 to-transparent"></div>
-                            <div class="absolute inset-x-0 bottom-0 p-5">
-                                <h4 class="font-bold text-base text-white line-clamp-1">
-                                    {{ $sImg->title }}
-                                </h4>
-                                <p class="mt-1 text-xs text-slate-300 line-clamp-1">
-                                    {{ $sImg->caption }}
-                                </p>
+                            <div class="card-scrim-side flex items-end justify-between gap-3">
+                                <div class="min-w-0 flex-1">
+                                    <h4 class="font-bold text-sm sm:text-base card-text-title line-clamp-1">
+                                        {{ $sImg->title }}
+                                    </h4>
+                                    <p class="mt-1 text-xs card-text-desc line-clamp-1">
+                                        {{ $sImg->caption }}
+                                    </p>
+                                </div>
+                                <div class="shrink-0 flex h-8 w-8 items-center justify-center rounded-full bg-[#FD5528] text-white shadow-md transition-transform duration-300 group-hover:scale-110">
+                                    <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                                    </svg>
+                                </div>
                             </div>
                         </div>
                     @endforeach
@@ -551,18 +615,17 @@
                                     loading="lazy"
                                     decoding="async"
                                 />
-                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent"></div>
-                                <div class="absolute bottom-4 left-4 right-4 flex items-end justify-between text-white">
-                                    <div>
-                                        <h4 class="font-bold text-sm sm:text-base line-clamp-1">
+                                <div class="card-scrim-box">
+                                    <div class="min-w-0 flex-1">
+                                        <h4 class="font-bold text-sm sm:text-base card-text-title line-clamp-1">
                                             {{ $gImg->title }}
                                         </h4>
-                                        <p class="text-[11px] text-slate-300 line-clamp-1 mt-0.5">
+                                        <p class="text-xs card-text-desc line-clamp-1 mt-1">
                                             {{ $gImg->caption }}
                                         </p>
                                     </div>
-                                    <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white/20 backdrop-blur text-white opacity-0 group-hover:opacity-100 transition">
-                                        <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+                                    <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#FD5528] text-white shadow-md transition duration-300 group-hover:scale-110">
+                                        <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
                                     </div>
                                 </div>
                             </div>
@@ -592,18 +655,17 @@
                                     loading="lazy"
                                     decoding="async"
                                 />
-                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent"></div>
-                                <div class="absolute bottom-4 left-4 right-4 flex items-end justify-between text-white">
-                                    <div>
-                                        <h4 class="font-bold text-sm sm:text-base line-clamp-1">
+                                <div class="card-scrim-box">
+                                    <div class="min-w-0 flex-1">
+                                        <h4 class="font-bold text-sm sm:text-base card-text-title line-clamp-1">
                                             {{ $eImg->title }}
                                         </h4>
-                                        <p class="text-[11px] text-slate-300 line-clamp-1 mt-0.5">
+                                        <p class="text-xs card-text-desc line-clamp-1 mt-1">
                                             {{ $eImg->caption }}
                                         </p>
                                     </div>
-                                    <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white/20 backdrop-blur text-white opacity-0 group-hover:opacity-100 transition">
-                                        <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+                                    <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#FD5528] text-white shadow-md transition duration-300 group-hover:scale-110">
+                                        <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
                                     </div>
                                 </div>
                             </div>
@@ -655,25 +717,24 @@
                                 loading="lazy"
                                 decoding="async"
                             />
-                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/25 to-transparent"></div>
                             
-                            <div class="absolute top-4 left-4">
+                            <div class="absolute top-4 left-4 z-10">
                                 <span class="rounded-full bg-slate-900/80 backdrop-blur-md px-3 py-1 text-[11px] font-bold text-amber-300 border border-amber-300/20 shadow">
                                     ★ Team Celebration
                                 </span>
                             </div>
 
-                            <div class="absolute bottom-4 left-4 right-4 flex items-end justify-between text-white">
-                                <div>
-                                    <h3 class="font-bold text-base sm:text-lg line-clamp-1">
+                            <div class="card-scrim-box">
+                                <div class="min-w-0 flex-1">
+                                    <h3 class="font-bold text-sm sm:text-base card-text-title line-clamp-1">
                                         {{ $evImg->title }}
                                     </h3>
-                                    <p class="text-xs text-slate-300 mt-1 line-clamp-1">
+                                    <p class="text-xs card-text-desc mt-1 line-clamp-1">
                                         {{ $evImg->caption }}
                                     </p>
                                 </div>
                                 <div class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#FD5528] text-white shadow-md transition duration-300 group-hover:scale-110">
-                                    <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+                                    <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
                                 </div>
                             </div>
                         </div>
@@ -831,12 +892,12 @@
 
     <!-- Bottom Caption Chrome -->
     <div class="lb-chrome-bottom">
-        <h3 id="lbTitle" class="text-base sm:text-lg font-bold text-white tracking-tight line-clamp-1 max-w-3xl"></h3>
-        <p id="lbCaption" class="mt-1 text-xs sm:text-sm text-slate-300 max-w-2xl line-clamp-2"></p>
-        <div class="text-[11px] text-slate-500 mt-2 hidden sm:flex items-center gap-2">
-            <span>Press <kbd class="px-1.5 py-0.5 rounded bg-white/10 text-slate-300 font-mono text-[10px]">Esc</kbd> to close</span>
+        <h3 id="lbTitle" class="text-base sm:text-lg font-bold text-white tracking-tight line-clamp-1 max-w-3xl card-text-title"></h3>
+        <p id="lbCaption" class="mt-1.5 text-xs sm:text-sm text-slate-100 max-w-2xl line-clamp-2 card-text-desc"></p>
+        <div class="text-[11px] text-slate-400 mt-2 hidden sm:flex items-center gap-2">
+            <span>Press <kbd class="px-1.5 py-0.5 rounded bg-white/10 text-white font-mono text-[10px]">Esc</kbd> to close</span>
             <span>•</span>
-            <span>Use <kbd class="px-1.5 py-0.5 rounded bg-white/10 text-slate-300 font-mono text-[10px]">←</kbd> <kbd class="px-1.5 py-0.5 rounded bg-white/10 text-slate-300 font-mono text-[10px]">→</kbd> to navigate</span>
+            <span>Use <kbd class="px-1.5 py-0.5 rounded bg-white/10 text-white font-mono text-[10px]">←</kbd> <kbd class="px-1.5 py-0.5 rounded bg-white/10 text-white font-mono text-[10px]">→</kbd> to navigate</span>
         </div>
     </div>
 </div>
