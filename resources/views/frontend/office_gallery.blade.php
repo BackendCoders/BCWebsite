@@ -57,16 +57,57 @@
     <script type="application/ld+json">{!! json_encode($gallerySchema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) !!}</script>
     <style>
         /* Scoped Premium Gallery Styling */
-        .gallery-bento-hero {
-            grid-column: span 1;
+        .workspace-bento-hero-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
         }
-        @media (min-width: 1024px) {
-            .gallery-bento-hero {
-                grid-column: span 8;
+        @media (min-width: 860px) {
+            .workspace-bento-hero-grid {
+                grid-template-columns: 1.85fr 1fr;
+                align-items: stretch;
             }
-            .gallery-bento-side {
-                grid-column: span 4;
+        }
+        .bento-hero-card {
+            position: relative;
+            border-radius: 1.5rem;
+            overflow: hidden;
+            background-color: #0f172a;
+            box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.1);
+            height: 100%;
+            min-height: 380px;
+        }
+        @media (min-width: 860px) {
+            .bento-hero-card {
+                min-height: 480px;
             }
+        }
+        .bento-side-stack {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            height: 100%;
+        }
+        @media (min-width: 640px) and (max-width: 859px) {
+            .bento-side-stack {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        @media (min-width: 860px) {
+            .bento-side-stack {
+                grid-template-rows: 1fr 1fr;
+                height: 100%;
+            }
+        }
+        .bento-side-card {
+            position: relative;
+            border-radius: 1.25rem;
+            overflow: hidden;
+            background-color: #0f172a;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            height: 100%;
+            min-height: 220px;
         }
         .gallery-card-hover {
             transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
@@ -195,7 +236,7 @@
                 </div>
             </div>
 
-            <!-- Bento Showcase Layout -->
+            <!-- Bento Showcase Layout (Pixel-Perfect Match to Reference) -->
             @php
                 $heroWork = $workspaceImages->first();
                 $sideWork = $workspaceImages->skip(1)->take(2);
@@ -203,11 +244,11 @@
                 $extraWork = $workspaceImages->skip(6);
             @endphp
 
-            <!-- Top Bento Row: 8 Cols Hero + 4 Cols Side Stack -->
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-6">
+            <!-- Top Bento Row: Hero + Side Stack -->
+            <div class="workspace-bento-hero-grid">
                 @if($heroWork)
                     <div 
-                        class="gallery-bento-hero gallery-card gallery-card-hover gallery-shimmer group relative overflow-hidden rounded-3xl bg-slate-900 border border-slate-200 shadow-sm cursor-pointer"
+                        class="bento-hero-card gallery-card gallery-card-hover gallery-shimmer group relative overflow-hidden border border-slate-200 cursor-pointer"
                         data-full-src="{{ $heroWork->image_url ?? asset($heroWork->image_path ?? '') }}"
                         data-title="{{ $heroWork->title }}"
                         data-category="Workspace &amp; Labs"
@@ -215,46 +256,47 @@
                         tabindex="0"
                         role="button"
                     >
-                        <div class="relative aspect-[16/10] sm:aspect-[16/9] w-full overflow-hidden">
-                            <img 
-                                src="{{ $heroWork->image_url ?? asset($heroWork->image_path ?? '') }}" 
-                                alt="{{ $heroWork->alt_text }}" 
-                                class="gallery-img-zoom h-full w-full object-cover"
-                                fetchpriority="high"
-                                decoding="async"
-                            />
-                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/25 to-transparent"></div>
-                            
-                            <!-- Badges -->
-                            <div class="absolute top-4 left-4">
-                                <span class="inline-flex items-center gap-1.5 rounded-full bg-white/90 backdrop-blur-md px-3.5 py-1 text-xs font-extrabold text-slate-900 shadow-md">
-                                    <span class="h-2 w-2 rounded-full bg-emerald-500"></span>
-                                    Primary Development Hall
-                                </span>
-                            </div>
+                        <img 
+                            src="{{ $heroWork->image_url ?? asset($heroWork->image_path ?? '') }}" 
+                            alt="{{ $heroWork->alt_text }}" 
+                            class="gallery-img-zoom h-full w-full object-cover"
+                            fetchpriority="high"
+                            decoding="async"
+                        />
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/30 to-transparent"></div>
+                        
+                        <!-- Top-Left Badge -->
+                        <div class="absolute top-5 left-5 z-10">
+                            <span class="inline-flex items-center gap-2 rounded-full bg-white px-3.5 py-1.5 text-xs font-bold text-slate-800 shadow-md">
+                                <span class="h-2 w-2 rounded-full bg-emerald-500"></span>
+                                Primary Development Hall
+                            </span>
+                        </div>
 
-                            <div class="absolute bottom-5 left-5 right-5 flex items-end justify-between text-white">
-                                <div>
-                                    <h3 class="text-lg sm:text-2xl font-black tracking-tight">
-                                        {{ $heroWork->title }}
-                                    </h3>
-                                    <p class="mt-1 text-xs sm:text-sm text-slate-300 max-w-xl line-clamp-2">
-                                        {{ $heroWork->caption }}
-                                    </p>
-                                </div>
-                                <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#FD5528] text-white shadow-lg transition duration-300 group-hover:scale-110">
-                                    <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" /></svg>
-                                </div>
+                        <!-- Bottom Content -->
+                        <div class="absolute inset-x-0 bottom-0 p-6 sm:p-8 flex items-end justify-between gap-4">
+                            <div class="max-w-xl">
+                                <h3 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+                                    {{ $heroWork->title }}
+                                </h3>
+                                <p class="mt-1.5 text-xs sm:text-sm text-slate-300 leading-relaxed">
+                                    {{ $heroWork->caption }}
+                                </p>
+                            </div>
+                            <div class="shrink-0 flex h-12 w-12 items-center justify-center rounded-full bg-[#FD5528] text-white shadow-lg transition-transform duration-300 group-hover:scale-110">
+                                <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" />
+                                </svg>
                             </div>
                         </div>
                     </div>
                 @endif
 
                 <!-- Side Stack (2 Cards) -->
-                <div class="gallery-bento-side flex flex-col sm:flex-row lg:flex-col gap-6">
+                <div class="bento-side-stack">
                     @foreach($sideWork as $sImg)
                         <div 
-                            class="gallery-card gallery-card-hover gallery-shimmer group relative overflow-hidden rounded-2xl bg-slate-900 border border-slate-200 shadow-sm cursor-pointer flex-1"
+                            class="bento-side-card gallery-card gallery-card-hover gallery-shimmer group relative overflow-hidden border border-slate-200 cursor-pointer"
                             data-full-src="{{ $sImg->image_url ?? asset($sImg->image_path ?? '') }}"
                             data-title="{{ $sImg->title }}"
                             data-category="Workspace &amp; Labs"
@@ -262,28 +304,21 @@
                             tabindex="0"
                             role="button"
                         >
-                            <div class="relative aspect-[16/10] sm:aspect-[16/9] lg:aspect-[16/10] w-full h-full overflow-hidden">
-                                <img 
-                                    src="{{ $sImg->image_url ?? asset($sImg->image_path ?? '') }}" 
-                                    alt="{{ $sImg->alt_text }}" 
-                                    class="gallery-img-zoom h-full w-full object-cover"
-                                    loading="lazy"
-                                    decoding="async"
-                                />
-                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent"></div>
-                                <div class="absolute bottom-4 left-4 right-4 flex items-end justify-between text-white">
-                                    <div>
-                                        <h4 class="font-bold text-sm sm:text-base line-clamp-1">
-                                            {{ $sImg->title }}
-                                        </h4>
-                                        <p class="text-[11px] text-slate-300 line-clamp-1 mt-0.5">
-                                            {{ $sImg->caption }}
-                                        </p>
-                                    </div>
-                                    <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white/20 backdrop-blur text-white opacity-0 group-hover:opacity-100 transition">
-                                        <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
-                                    </div>
-                                </div>
+                            <img 
+                                src="{{ $sImg->image_url ?? asset($sImg->image_path ?? '') }}" 
+                                alt="{{ $sImg->alt_text }}" 
+                                class="gallery-img-zoom h-full w-full object-cover"
+                                loading="lazy"
+                                decoding="async"
+                            />
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/40 to-transparent"></div>
+                            <div class="absolute inset-x-0 bottom-0 p-5">
+                                <h4 class="font-bold text-base text-white line-clamp-1">
+                                    {{ $sImg->title }}
+                                </h4>
+                                <p class="mt-1 text-xs text-slate-300 line-clamp-1">
+                                    {{ $sImg->caption }}
+                                </p>
                             </div>
                         </div>
                     @endforeach
