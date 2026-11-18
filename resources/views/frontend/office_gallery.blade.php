@@ -148,6 +148,34 @@
             left: 150%;
         }
 
+        /* Scoped Aspect Ratio & Grid Fallbacks */
+        .aspect-16-10 {
+            aspect-ratio: 16 / 10 !important;
+        }
+        .aspect-16-9 {
+            aspect-ratio: 16 / 9 !important;
+        }
+        .aspect-4-5 {
+            aspect-ratio: 4 / 5 !important;
+        }
+        .team-leadership-grid {
+            display: grid !important;
+            grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+            gap: 1rem !important;
+        }
+        @media (min-width: 640px) {
+            .team-leadership-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+                gap: 1.5rem !important;
+            }
+        }
+        @media (min-width: 1024px) {
+            .team-leadership-grid {
+                grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+                gap: 1.5rem !important;
+            }
+        }
+
         /* ================================================================= */
         /* FULLSCREEN CINEMA-GRADE LIGHTBOX - BULLETPROOF FIXED OVERLAY      */
         /* ================================================================= */
@@ -515,7 +543,7 @@
                             tabindex="0"
                             role="button"
                         >
-                            <div class="relative aspect-[16/10] w-full overflow-hidden">
+                            <div class="relative aspect-[16/10] aspect-16-10 w-full overflow-hidden">
                                 <img 
                                     src="{{ $gImg->image_url ?? asset($gImg->image_path ?? '') }}" 
                                     alt="{{ $gImg->alt_text }}" 
@@ -556,7 +584,7 @@
                             tabindex="0"
                             role="button"
                         >
-                            <div class="relative aspect-[16/9] w-full overflow-hidden">
+                            <div class="relative aspect-[16/9] aspect-16-9 w-full overflow-hidden">
                                 <img 
                                     src="{{ $eImg->image_url ?? asset($eImg->image_path ?? '') }}" 
                                     alt="{{ $eImg->alt_text }}" 
@@ -619,7 +647,7 @@
                         tabindex="0"
                         role="button"
                     >
-                        <div class="relative aspect-[16/10] w-full overflow-hidden">
+                        <div class="relative aspect-[16/10] aspect-16-10 w-full overflow-hidden">
                             <img 
                                 src="{{ $evImg->image_url ?? asset($evImg->image_path ?? '') }}" 
                                 alt="{{ $evImg->alt_text }}" 
@@ -677,7 +705,7 @@
             </div>
 
             <!-- Balanced 5-Column Grid with Luxury Glass Cards -->
-            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6">
+            <div class="team-leadership-grid grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6">
                 @foreach($teamImages as $tImg)
                     @php
                         $isExecutive = in_array($tImg->order ?? 0, [15, 16], true) || str_contains($tImg->title ?? '', 'CEO') || str_contains($tImg->title ?? '', 'Managing Director');
@@ -692,7 +720,7 @@
                         role="button"
                     >
                         <!-- Portrait Box -->
-                        <div class="relative aspect-[4/5] w-full overflow-hidden bg-slate-100">
+                        <div class="relative aspect-[4/5] aspect-4-5 w-full overflow-hidden bg-slate-100">
                             <img 
                                 src="{{ $tImg->image_url ?? asset($tImg->image_path ?? '') }}" 
                                 alt="{{ $tImg->alt_text }}" 

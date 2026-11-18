@@ -249,17 +249,29 @@
 @php
     $appCss = null;
     $manifestPath = public_path('build/manifest.json');
+    if (! file_exists($manifestPath) && file_exists(base_path('public/build/manifest.json'))) {
+        $manifestPath = base_path('public/build/manifest.json');
+    }
+
     if (file_exists($manifestPath)) {
         $manifest = json_decode(@file_get_contents($manifestPath), true);
         $manifestCssRel = $manifest['resources/css/app.css']['file'] ?? null;
-        if ($manifestCssRel && file_exists(public_path('build/' . $manifestCssRel))) {
-            $appCss = asset('build/' . $manifestCssRel);
+        if ($manifestCssRel) {
+            $candidatePath = public_path('build/' . $manifestCssRel);
+            $baseCandidate = base_path('public/build/' . $manifestCssRel);
+            if (file_exists($candidatePath) || file_exists($baseCandidate)) {
+                $appCss = asset('build/' . $manifestCssRel);
+            }
         }
     }
 
     if (! $appCss) {
-        $builtCssFiles = glob(public_path('build/assets/*.css'));
+        $builtCssFiles = glob(public_path('build/assets/*.css')) ?: glob(base_path('public/build/assets/*.css'));
         if (! empty($builtCssFiles)) {
+            // Sort descending by file modification time so the latest compiled build is ALWAYS loaded, not the oldest alphabetical
+            usort($builtCssFiles, function ($a, $b) {
+                return filemtime($b) - filemtime($a);
+            });
             $appCss = asset('build/assets/' . basename($builtCssFiles[0]));
         }
     }
