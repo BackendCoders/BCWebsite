@@ -924,38 +924,38 @@ class HomeController extends Controller
                 'is_featured' => false,
             ],
             [
-                'title' => 'Dedicated Dual-Screen Developer Rig',
-                'caption' => 'Ergonomic workstation equipped with vertical coding display, wide-angle primary monitor, and dedicated staging server for high-throughput development.',
-                'alt_text' => 'Developer desk and dual-screen workstation rig at Backend Coders India in Kanpur',
-                'image_url' => asset('assets/Office/649089671_1304707215044924_4414194269650809094_n.jpg'),
+                'title' => 'Modern Development Infrastructure',
+                'caption' => 'Ergonomic workstations, high-speed internal networks, and dedicated focus bays inside our Kanpur headquarters.',
+                'alt_text' => 'Modern development infrastructure and engineering bay at Backend Coders India',
+                'image_url' => asset('assets/Office/650656692_1304708898378089_3171840685580638541_n.jpg'),
                 'category' => 'Workspace & Infrastructure',
                 'order' => 5,
                 'is_featured' => false,
             ],
             [
-                'title' => 'Central Engineering Floor & Collaboration Bay',
-                'caption' => 'Spacious open-plan workspace designed for agile standups, pair programming, and uninterrupted deep focus coding sessions.',
-                'alt_text' => 'Central engineering floor and collaboration workstations at Backend Coders India Kanpur',
-                'image_url' => asset('assets/Office/650055736_1304707068378272_8027700641331239382_n.jpg'),
+                'title' => 'Tech Brainstorming & Peer Code Reviews',
+                'caption' => 'Engineers collaborating on architectural optimization, unit tests, and continuous deployment workflows.',
+                'alt_text' => 'Knowledge sharing and code reviews at Backend Coders India Kanpur',
+                'image_url' => asset('assets/Office/650253160_1304708771711435_1524565240088187399_n.jpg'),
                 'category' => 'Workspace & Infrastructure',
                 'order' => 6,
                 'is_featured' => false,
             ],
             [
-                'title' => 'Modern Glass Conference Pod & Brand Wall',
-                'caption' => 'Modern architectural glass-partitioned sprint rooms and client meeting pods designed for delivery reviews and design sprints.',
-                'alt_text' => 'Modern glass meeting room and illuminated brand wall at Backend Coders India Kanpur office',
-                'image_url' => asset('assets/Office/651164235_1304707591711553_3421345658397408471_n.jpg'),
+                'title' => 'Developer Workstation Pods',
+                'caption' => 'Dedicated workstations providing developers with quiet focus areas for complex backend coding.',
+                'alt_text' => 'Developer workstation pods at Backend Coders India',
+                'image_url' => asset('assets/Office/649828056_1304708531711459_7623861269217183882_n.jpg'),
                 'category' => 'Workspace & Infrastructure',
                 'order' => 7,
                 'is_featured' => false,
             ],
             [
-                'title' => 'Illuminated Brand Lounge & Entrance Foyer',
-                'caption' => 'Natural-light entrance foyer featuring our custom 3D illuminated branding, stone cladding, and welcoming greenery.',
-                'alt_text' => 'Office entrance foyer with illuminated Backend Coders brand logo and stone wall in Kanpur',
-                'image_url' => asset('assets/Office/650775321_1304707778378201_3385130484948995123_n.jpg'),
-                'category' => 'Office Interior',
+                'title' => 'Engineering Bay Corridor & Meeting Pod',
+                'caption' => 'Modern glass-partitioned meeting spaces and sprint rooms designed for focused delivery reviews.',
+                'alt_text' => 'Office corridor and meeting spaces at Backend Coders India',
+                'image_url' => asset('assets/Office/650253337_1304706958378283_1119365827911085976_n.jpg'),
+                'category' => 'Workspace & Infrastructure',
                 'order' => 8,
                 'is_featured' => false,
             ],
@@ -998,19 +998,19 @@ class HomeController extends Controller
                 'is_featured' => false,
             ],
             [
-                'title' => 'Culture, Fellowship & Team Milestone Win',
-                'caption' => 'Engineering and operations team gathered together in front of the illuminated brand installation celebrating delivery excellence.',
-                'alt_text' => 'Team culture and milestone celebration at Backend Coders India Kanpur',
-                'image_url' => asset('assets/Office/650656692_1304708898378089_3171840685580638541_n.jpg'),
+                'title' => 'The Backend Coders India Team Family',
+                'caption' => 'The complete engineering, design, and operations family gathered together at our Kanpur headquarters.',
+                'alt_text' => 'Backend Coders India team group photograph inside Kanpur office',
+                'image_url' => asset('assets/images/team.jpg'),
                 'category' => 'Company Activities',
                 'order' => 13,
                 'is_featured' => false,
             ],
             [
-                'title' => 'The Backend Coders India Team Family',
-                'caption' => 'The complete engineering, design, and operations family gathered together at our Kanpur headquarters.',
-                'alt_text' => 'Backend Coders India team group photograph inside Kanpur office',
-                'image_url' => asset('assets/images/team.jpg'),
+                'title' => 'Quarterly Delivery Milestone Win',
+                'caption' => 'Celebrating successful enterprise software delivery sprints and client growth milestones.',
+                'alt_text' => 'Quarterly milestone celebration with the engineering team at Backend Coders India',
+                'image_url' => asset('assets/Office/649770638_1304709371711375_7071558440575672634_n.jpg'),
                 'category' => 'Company Activities',
                 'order' => 14,
                 'is_featured' => false,
@@ -1074,24 +1074,21 @@ class HomeController extends Controller
             \Illuminate\Support\Facades\Log::warning('Office gallery DB fetch fallback: ' . $e->getMessage());
         }
 
-        if ($images->isEmpty()) {
+        $workspaceInDb = $images->filter(fn ($img) => in_array($img->category, ['Workspace & Infrastructure', 'Office Interior'], true));
+        $eventInDb = $images->filter(fn ($img) => in_array($img->category, ['Company Activities', 'Meeting & Collaboration'], true));
+        $teamInDb = $images->filter(fn ($img) => $img->category === 'Team & People');
+
+        if ($images->isEmpty() || $workspaceInDb->count() < 8 || $eventInDb->count() < 6 || $teamInDb->count() < 5) {
             $images = collect($defaultImages)->map(function ($item) {
                 return (object) $item;
             });
-        }
-
-        $workspaceImages = $images->filter(fn ($img) => in_array($img->category, ['Workspace & Infrastructure', 'Office Interior'], true));
-        $eventImages = $images->filter(fn ($img) => in_array($img->category, ['Company Activities', 'Meeting & Collaboration'], true));
-        $teamImages = $images->filter(fn ($img) => $img->category === 'Team & People');
-
-        if ($workspaceImages->isEmpty()) {
-            $workspaceImages = $images->take(4);
-        }
-        if ($eventImages->isEmpty()) {
-            $eventImages = $images->skip(4)->take(2);
-        }
-        if ($teamImages->isEmpty()) {
-            $teamImages = $images->skip(6);
+            $workspaceImages = $images->filter(fn ($img) => in_array($img->category, ['Workspace & Infrastructure', 'Office Interior'], true));
+            $eventImages = $images->filter(fn ($img) => in_array($img->category, ['Company Activities', 'Meeting & Collaboration'], true));
+            $teamImages = $images->filter(fn ($img) => $img->category === 'Team & People');
+        } else {
+            $workspaceImages = $workspaceInDb;
+            $eventImages = $eventInDb;
+            $teamImages = $teamInDb;
         }
 
         $featuredImage = $workspaceImages->firstWhere('is_featured', true) ?? $workspaceImages->first();

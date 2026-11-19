@@ -504,7 +504,7 @@
                 $heroWork = $workspaceImages->first();
                 $sideWork = $workspaceImages->skip(1)->take(2);
                 $gridWork = $workspaceImages->skip(3)->take(3);
-                $extraWork = $workspaceImages->skip(6);
+                $extraWork = $workspaceImages->skip(6)->take(2);
             @endphp
 
             <!-- Top Bento Row: Hero + Side Stack -->
@@ -514,6 +514,7 @@
                         class="bento-hero-card gallery-card gallery-card-hover gallery-shimmer group relative overflow-hidden border border-slate-200 cursor-pointer"
                         data-full-src="{{ $heroWork->image_url ?? asset($heroWork->image_path ?? '') }}"
                         data-title="{{ $heroWork->title }}"
+                        data-caption="{{ $heroWork->caption }}"
                         data-category="Workspace &amp; Labs"
                         data-alt="{{ $heroWork->alt_text }}"
                         tabindex="0"
@@ -562,6 +563,7 @@
                             class="bento-side-card gallery-card gallery-card-hover gallery-shimmer group relative overflow-hidden border border-slate-200 cursor-pointer"
                             data-full-src="{{ $sImg->image_url ?? asset($sImg->image_path ?? '') }}"
                             data-title="{{ $sImg->title }}"
+                            data-caption="{{ $sImg->caption }}"
                             data-category="Workspace &amp; Labs"
                             data-alt="{{ $sImg->alt_text }}"
                             tabindex="0"
@@ -583,7 +585,7 @@
                                         {{ $sImg->caption }}
                                     </p>
                                 </div>
-                                <div class="shrink-0 flex h-8 w-8 items-center justify-center rounded-full bg-[#FD5528] text-white shadow-md transition-transform duration-300 group-hover:scale-110">
+                                <div class="shrink-0 flex h-8 w-8 items-center justify-center rounded-full bg-[#FD5528] text-white shadow-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 group-hover:scale-110">
                                     <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                                     </svg>
@@ -602,6 +604,7 @@
                             class="gallery-card gallery-card-hover gallery-shimmer group relative overflow-hidden rounded-2xl bg-slate-900 border border-slate-200 shadow-sm cursor-pointer"
                             data-full-src="{{ $gImg->image_url ?? asset($gImg->image_path ?? '') }}"
                             data-title="{{ $gImg->title }}"
+                            data-caption="{{ $gImg->caption }}"
                             data-category="Workspace &amp; Labs"
                             data-alt="{{ $gImg->alt_text }}"
                             tabindex="0"
@@ -642,6 +645,7 @@
                             class="gallery-card gallery-card-hover gallery-shimmer group relative overflow-hidden rounded-2xl bg-slate-900 border border-slate-200 shadow-sm cursor-pointer"
                             data-full-src="{{ $eImg->image_url ?? asset($eImg->image_path ?? '') }}"
                             data-title="{{ $eImg->title }}"
+                            data-caption="{{ $eImg->caption }}"
                             data-category="Workspace &amp; Labs"
                             data-alt="{{ $eImg->alt_text }}"
                             tabindex="0"
@@ -664,7 +668,7 @@
                                             {{ $eImg->caption }}
                                         </p>
                                     </div>
-                                    <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#FD5528] text-white shadow-md transition duration-300 group-hover:scale-110">
+                                    <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#FD5528] text-white shadow-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 group-hover:scale-110">
                                         <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
                                     </div>
                                 </div>
@@ -704,6 +708,7 @@
                         class="gallery-card gallery-card-hover gallery-shimmer group relative overflow-hidden rounded-3xl bg-slate-900 border border-slate-200 shadow-sm cursor-pointer flex flex-col"
                         data-full-src="{{ $evImg->image_url ?? asset($evImg->image_path ?? '') }}"
                         data-title="{{ $evImg->title }}"
+                        data-caption="{{ $evImg->caption }}"
                         data-category="Events &amp; Culture"
                         data-alt="{{ $evImg->alt_text }}"
                         tabindex="0"
@@ -775,6 +780,7 @@
                         class="gallery-card gallery-card-hover group relative overflow-hidden rounded-2xl bg-white border {{ $isExecutive ? 'border-orange-300 shadow-md shadow-orange-500/5' : 'border-slate-200/90 shadow-sm' }} cursor-pointer flex flex-col"
                         data-full-src="{{ $tImg->image_url ?? asset($tImg->image_path ?? '') }}"
                         data-title="{{ $tImg->title }}"
+                        data-caption="{{ $tImg->caption }}"
                         data-category="Leadership &amp; Team"
                         data-alt="{{ $tImg->alt_text }}"
                         tabindex="0"
@@ -808,10 +814,10 @@
                         <div class="p-3.5 bg-white border-t border-slate-100 flex-1 flex flex-col justify-between">
                             <div>
                                 <h3 class="font-bold text-xs sm:text-sm text-slate-900 group-hover:text-[#FD5528] transition line-clamp-1">
-                                    {{ Str::before($tImg->title, '–') }}
+                                    {{ Str::before(str_replace('–', '-', $tImg->title), '-') }}
                                 </h3>
                                 <p class="text-[11px] font-semibold text-slate-500 mt-0.5 line-clamp-1">
-                                    {{ trim(Str::after($tImg->title, '–')) }}
+                                    {{ trim(Str::after(str_replace('–', '-', $tImg->title), '-')) }}
                                 </p>
                             </div>
                         </div>
@@ -978,6 +984,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const title = card.getAttribute("data-title") || "";
         const cat = card.getAttribute("data-category") || "Office Gallery";
         const alt = card.getAttribute("data-alt") || "";
+        const caption = card.getAttribute("data-caption") || alt;
 
         // Subtle quick transition
         lbImg.style.opacity = "0.3";
@@ -988,7 +995,7 @@ document.addEventListener("DOMContentLoaded", function () {
             lbImg.src = src;
             lbImg.alt = alt;
             lbTitle.textContent = title;
-            lbCaption.textContent = alt;
+            lbCaption.textContent = caption;
             lbCategory.textContent = cat;
             lbCounter.textContent = (currentIndex + 1) + " / " + cards.length;
             requestAnimationFrame(() => {
@@ -1000,7 +1007,7 @@ document.addEventListener("DOMContentLoaded", function () {
             lbImg.src = src;
             lbImg.alt = alt;
             lbTitle.textContent = title;
-            lbCaption.textContent = alt;
+            lbCaption.textContent = caption;
             lbCategory.textContent = cat;
             lbCounter.textContent = (currentIndex + 1) + " / " + cards.length;
             lbImg.style.opacity = "1";
