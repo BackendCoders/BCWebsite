@@ -25,11 +25,19 @@ class AppServiceProvider extends ServiceProvider
         \Illuminate\Pagination\Paginator::defaultSimpleView('vendor.pagination.custom');
 
         View::composer('*', function ($view) {
-            $menuItems = MenuItem::with(['page', 'children.page'])
-                ->where('is_active', 1)
-                ->whereNull('parent_id') // only main menu
-                ->orderBy('order')
-                ->get();
+            try {
+                if (\Illuminate\Support\Facades\Schema::hasTable('menu_items')) {
+                    $menuItems = MenuItem::with(['page', 'children.page'])
+                        ->where('is_active', 1)
+                        ->whereNull('parent_id') // only main menu
+                        ->orderBy('order')
+                        ->get();
+                } else {
+                    $menuItems = collect();
+                }
+            } catch (\Throwable $e) {
+                $menuItems = collect();
+            }
 
             $view->with('menuItems', $menuItems);
         });

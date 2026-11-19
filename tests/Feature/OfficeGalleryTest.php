@@ -175,4 +175,90 @@ class OfficeGalleryTest extends TestCase
             'id' => $image->id,
         ]);
     }
+
+    public function test_show_redirects_to_edit_without_500_error(): void
+    {
+        $admin = User::factory()->create([
+            'role' => 'admin',
+        ]);
+
+        $image = OfficeImage::create([
+            'title' => 'Test Image for Show',
+            'caption' => 'Test Caption',
+            'alt_text' => 'Test Alt',
+            'image_path' => 'assets/images/office.jpg',
+            'category' => 'Workspace & Infrastructure',
+            'order' => 1,
+            'is_published' => true,
+        ]);
+
+        $response = $this->actingAs($admin)->get("/office-images/{$image->id}");
+        $response->assertStatus(302);
+        $response->assertRedirect(route('office-images.edit', $image));
+    }
+
+    public function test_create_and_edit_views_render_successfully(): void
+    {
+        $admin = User::factory()->create([
+            'role' => 'admin',
+        ]);
+
+        $createResponse = $this->actingAs($admin)->get('/office-images/create');
+        $createResponse->assertStatus(200);
+        $createResponse->assertSee('Upload Office Photos');
+
+        $image = OfficeImage::create([
+            'title' => 'Sample Image',
+            'caption' => 'Sample Caption',
+            'alt_text' => 'Sample Alt',
+            'image_path' => 'assets/images/office.jpg',
+            'category' => 'Workspace & Infrastructure',
+            'order' => 1,
+            'is_published' => true,
+        ]);
+
+        $editResponse = $this->actingAs($admin)->get("/office-images/{$image->id}/edit");
+        $editResponse->assertStatus(200);
+        $editResponse->assertSee('Edit Office Photo');
+        $editResponse->assertSee('Sample Image');
+    }
+
+    public function test_admin_can_toggle_published_and_featured_states(): void
+    {
+        $admin = User::factory()->create([
+            'role' => 'admin',
+        ]);
+
+        $image = OfficeImage::create([
+            'title' => 'Toggle Test Image',
+            'caption' => 'Toggle Caption',
+            'alt_text' => 'Toggle Alt',
+            'image_path' => 'assets/images/office.jpg',
+            'category' => 'Workspace & Infrastructure',
+            'order' => 1,
+            'is_featured' => false,
+            'is_published' => true,
+        ]);
+
+        $togglePub = $this->actingAs($admin)->post("/office-images/{$image->id}/toggle/is_published");
+        $togglePub->assertStatus(302);
+        $this->assertFalse($image->fresh()->is_published);
+
+        $toggleFeat = $this->actingAs($admin)->post("/office-images/{$image->id}/toggle/is_featured");
+        $toggleFeat->assertStatus(302);
+        $this->assertTrue($image->fresh()->is_featured);
+    }
+
+    public function test_office_images_index_handles_missing_table_gracefully(): void
+    {
+        $admin = User::factory()->create([
+            'role' => 'admin',
+        ]);
+
+        \Illuminate\Support\Facades\Schema::dropIfExists('office_images');
+
+        $response = $this->actingAs($admin)->get('/office-images');
+        $response->assertStatus(200);
+        $response->assertSee('Office Gallery CMS');
+    }
 }

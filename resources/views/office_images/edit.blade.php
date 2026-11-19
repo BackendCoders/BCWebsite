@@ -12,7 +12,7 @@
         </div>
     </div>
 
-    @if($errors->any())
+    @if(isset($errors) && $errors->any())
         <div class="rounded-2xl border border-rose-200 bg-rose-50 p-4 text-rose-700 text-sm">
             <ul class="list-disc pl-5 space-y-1">
                 @foreach($errors->all() as $err)

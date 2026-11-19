@@ -1,7 +1,7 @@
 @extends('layout.main')
 
 @section('content')
-<div class="space-y-6 mt-32 relative overflow-hidden">
+<div class="relative mx-auto mt-32 max-w-7xl space-y-6 overflow-hidden">
     <div class="pointer-events-none absolute inset-x-0 top-0 -z-10 h-56 bg-gradient-to-b from-[#FD5528]/10 via-transparent to-transparent blur-3xl"></div>
     <div class="pointer-events-none absolute -right-20 top-16 -z-10 h-48 w-48 rounded-full bg-[#FD5528]/10 blur-3xl"></div>
     <div class="pointer-events-none absolute -left-24 top-28 -z-10 h-64 w-64 rounded-full bg-sky-400/10 blur-3xl"></div>
@@ -28,6 +28,18 @@
     @if(session('success'))
         <div class="rounded-2xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-emerald-700 shadow-sm shadow-emerald-100/60">
             {{ session('success') }}
+        </div>
+    @endif
+
+    @if(session('warning'))
+        <div class="rounded-2xl border border-amber-200 bg-amber-50 px-4 py-3 text-amber-800 shadow-sm shadow-amber-100/60">
+            {{ session('warning') }}
+        </div>
+    @endif
+
+    @if(session('error'))
+        <div class="rounded-2xl border border-rose-200 bg-rose-50 px-4 py-3 text-rose-700 shadow-sm shadow-rose-100/60">
+            {{ session('error') }}
         </div>
     @endif
 

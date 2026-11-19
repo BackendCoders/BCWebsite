@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\OfficeImage;
 use Illuminate\Http\Request;
+use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rule;
 
@@ -11,24 +14,44 @@ class OfficeImageController extends Controller
 {
     public function index(Request $request)
     {
-        $query = OfficeImage::query();
-
-        if ($request->filled('category')) {
-            $query->where('category', $request->input('category'));
-        }
-
-        if ($request->filled('status')) {
-            if ($request->input('status') === 'published') {
-                $query->where('is_published', true);
-            } elseif ($request->input('status') === 'draft') {
-                $query->where('is_published', false);
+        try {
+            if (! Schema::hasTable('office_images')) {
+                $images = new LengthAwarePaginator([], 0, 15);
+                $categories = OfficeImage::CATEGORIES;
+                return view('office_images.index', compact('images', 'categories'))
+                    ->with('warning', 'The office_images database table has not been migrated yet. Please run php artisan migrate.');
             }
+
+            $query = OfficeImage::query();
+
+            if ($request->filled('category')) {
+                $query->where('category', $request->input('category'));
+            }
+
+            if ($request->filled('status')) {
+                if ($request->input('status') === 'published') {
+                    $query->where('is_published', true);
+                } elseif ($request->input('status') === 'draft') {
+                    $query->where('is_published', false);
+                }
+            }
+
+            $images = $query->ordered()->paginate(15)->withQueryString();
+        } catch (\Throwable $e) {
+            Log::error('OfficeImageController@index error: ' . $e->getMessage(), [
+                'exception' => $e,
+            ]);
+            $images = new LengthAwarePaginator([], 0, 15);
         }
 
-        $images = $query->ordered()->paginate(15)->withQueryString();
         $categories = OfficeImage::CATEGORIES;
 
         return view('office_images.index', compact('images', 'categories'));
+    }
+
+    public function show(OfficeImage $officeImage)
+    {
+        return redirect()->route('office-images.edit', $officeImage);
     }
 
     public function create()
